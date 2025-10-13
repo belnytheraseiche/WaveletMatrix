@@ -1,0 +1,1253 @@
+### YamlMime:ManagedReference
+items:
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+  commentId: T:BelNytheraSeiche.WaveletMatrix.LcpIndex
+  id: LcpIndex
+  parent: BelNytheraSeiche.WaveletMatrix
+  children:
+  - BelNytheraSeiche.WaveletMatrix.LcpIndex.CalculateZivLempelComplexity
+  - BelNytheraSeiche.WaveletMatrix.LcpIndex.CountUniqueSubstrings
+  - BelNytheraSeiche.WaveletMatrix.LcpIndex.Create(BelNytheraSeiche.WaveletMatrix.SuffixArray)
+  - BelNytheraSeiche.WaveletMatrix.LcpIndex.Deserialize(System.Byte[])
+  - BelNytheraSeiche.WaveletMatrix.LcpIndex.Deserialize(System.IO.Stream)
+  - BelNytheraSeiche.WaveletMatrix.LcpIndex.Deserialize(System.String)
+  - BelNytheraSeiche.WaveletMatrix.LcpIndex.FindRepeats(System.Int32)
+  - BelNytheraSeiche.WaveletMatrix.LcpIndex.FindTandemRepeats
+  - BelNytheraSeiche.WaveletMatrix.LcpIndex.GetLcp(System.Int32,System.Int32)
+  - BelNytheraSeiche.WaveletMatrix.LcpIndex.Serialize(BelNytheraSeiche.WaveletMatrix.LcpIndex,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  - BelNytheraSeiche.WaveletMatrix.LcpIndex.Serialize(BelNytheraSeiche.WaveletMatrix.LcpIndex,System.IO.Stream,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  - BelNytheraSeiche.WaveletMatrix.LcpIndex.Serialize(BelNytheraSeiche.WaveletMatrix.LcpIndex,System.String,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  - BelNytheraSeiche.WaveletMatrix.LcpIndex.Text
+  langs:
+  - csharp
+  - vb
+  name: LcpIndex
+  nameWithType: LcpIndex
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex
+  type: Class
+  source:
+    id: LcpIndex
+    path: C:\Users\nanto\dev\WaveletMatrix\src\LcpIndex.cs
+    startLine: 38
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Provides an index structure over a Suffix Array's LCP (Longest Common Prefix) array
+
+    to answer advanced stringology queries efficiently.
+  remarks: >-
+    This class builds a <xref href="BelNytheraSeiche.WaveletMatrix.SparseTable%601" data-throw-if-not-resolved="false"></xref> on the LCP array to enable O(1) LCP queries
+
+    between any two suffixes. It is a powerful tool for complex string analysis, such as finding
+
+    repeated substrings or calculating string complexity.
+  example: []
+  syntax:
+    content: public sealed class LcpIndex
+    content.vb: Public NotInheritable Class LcpIndex
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.Text
+  commentId: P:BelNytheraSeiche.WaveletMatrix.LcpIndex.Text
+  id: Text
+  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex
+  langs:
+  - csharp
+  - vb
+  name: Text
+  nameWithType: LcpIndex.Text
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.Text
+  type: Property
+  source:
+    id: Text
+    path: C:\Users\nanto\dev\WaveletMatrix\src\LcpIndex.cs
+    startLine: 46
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Gets the original source text in Suffix Array.
+  example: []
+  syntax:
+    content: public ReadOnlyMemory<char> Text { get; }
+    parameters: []
+    return:
+      type: System.ReadOnlyMemory{System.Char}
+    content.vb: Public ReadOnly Property Text As ReadOnlyMemory(Of Char)
+  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.Text*
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.Create(BelNytheraSeiche.WaveletMatrix.SuffixArray)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.Create(BelNytheraSeiche.WaveletMatrix.SuffixArray)
+  id: Create(BelNytheraSeiche.WaveletMatrix.SuffixArray)
+  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex
+  langs:
+  - csharp
+  - vb
+  name: Create(SuffixArray)
+  nameWithType: LcpIndex.Create(SuffixArray)
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.Create(BelNytheraSeiche.WaveletMatrix.SuffixArray)
+  type: Method
+  source:
+    id: Create
+    path: C:\Users\nanto\dev\WaveletMatrix\src\LcpIndex.cs
+    startLine: 66
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Creates a new instance of the <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex" data-throw-if-not-resolved="false"></xref> for a given <xref href="BelNytheraSeiche.WaveletMatrix.SuffixArray" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static LcpIndex Create(SuffixArray sa)
+    parameters:
+    - id: sa
+      type: BelNytheraSeiche.WaveletMatrix.SuffixArray
+      description: The Suffix Array to build the LCP index upon.
+    return:
+      type: BelNytheraSeiche.WaveletMatrix.LcpIndex
+      description: A new, fully initialized <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex" data-throw-if-not-resolved="false"></xref> instance.
+    content.vb: Public Shared Function Create(sa As SuffixArray) As LcpIndex
+  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.Create*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code class="paramref">sa</code> is null.
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.Serialize(BelNytheraSeiche.WaveletMatrix.LcpIndex,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.Serialize(BelNytheraSeiche.WaveletMatrix.LcpIndex,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  id: Serialize(BelNytheraSeiche.WaveletMatrix.LcpIndex,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex
+  langs:
+  - csharp
+  - vb
+  name: Serialize(LcpIndex, SerializationOptions?)
+  nameWithType: LcpIndex.Serialize(LcpIndex, SerializationOptions?)
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.Serialize(BelNytheraSeiche.WaveletMatrix.LcpIndex, BelNytheraSeiche.WaveletMatrix.SerializationOptions?)
+  type: Method
+  source:
+    id: Serialize
+    path: C:\Users\nanto\dev\WaveletMatrix\src\LcpIndex.cs
+    startLine: 88
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Serializes the <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex" data-throw-if-not-resolved="false"></xref> instance into a byte array.
+  example: []
+  syntax:
+    content: public static byte[] Serialize(LcpIndex obj, SerializationOptions? options = null)
+    parameters:
+    - id: obj
+      type: BelNytheraSeiche.WaveletMatrix.LcpIndex
+      description: The instance to serialize.
+    - id: options
+      type: BelNytheraSeiche.WaveletMatrix.SerializationOptions
+      description: >-
+        Serialization options, such as the compression level. 
+
+        If null, <xref href="BelNytheraSeiche.WaveletMatrix.SerializationOptions.Default" data-throw-if-not-resolved="false"></xref> will be used.
+    return:
+      type: System.Byte[]
+      description: A byte array containing the serialized data.
+    content.vb: Public Shared Function Serialize(obj As LcpIndex, options As SerializationOptions = Nothing) As Byte()
+  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.Serialize*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code class="paramref">obj</code> is null.
+  nameWithType.vb: LcpIndex.Serialize(LcpIndex, SerializationOptions)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.LcpIndex.Serialize(BelNytheraSeiche.WaveletMatrix.LcpIndex, BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  name.vb: Serialize(LcpIndex, SerializationOptions)
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.Serialize(BelNytheraSeiche.WaveletMatrix.LcpIndex,System.String,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.Serialize(BelNytheraSeiche.WaveletMatrix.LcpIndex,System.String,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  id: Serialize(BelNytheraSeiche.WaveletMatrix.LcpIndex,System.String,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex
+  langs:
+  - csharp
+  - vb
+  name: Serialize(LcpIndex, string, SerializationOptions?)
+  nameWithType: LcpIndex.Serialize(LcpIndex, string, SerializationOptions?)
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.Serialize(BelNytheraSeiche.WaveletMatrix.LcpIndex, string, BelNytheraSeiche.WaveletMatrix.SerializationOptions?)
+  type: Method
+  source:
+    id: Serialize
+    path: C:\Users\nanto\dev\WaveletMatrix\src\LcpIndex.cs
+    startLine: 112
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Serializes the <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex" data-throw-if-not-resolved="false"></xref> instance to the specified file.
+  example: []
+  syntax:
+    content: public static void Serialize(LcpIndex obj, string file, SerializationOptions? options = null)
+    parameters:
+    - id: obj
+      type: BelNytheraSeiche.WaveletMatrix.LcpIndex
+      description: The instance to serialize.
+    - id: file
+      type: System.String
+      description: The path of the file to write to.
+    - id: options
+      type: BelNytheraSeiche.WaveletMatrix.SerializationOptions
+      description: >-
+        Serialization options, such as the compression level. 
+
+        If null, <xref href="BelNytheraSeiche.WaveletMatrix.SerializationOptions.Default" data-throw-if-not-resolved="false"></xref> will be used.
+    content.vb: Public Shared Sub Serialize(obj As LcpIndex, file As String, options As SerializationOptions = Nothing)
+  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.Serialize*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code class="paramref">obj</code> or <code class="paramref">file</code> is null.
+  nameWithType.vb: LcpIndex.Serialize(LcpIndex, String, SerializationOptions)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.LcpIndex.Serialize(BelNytheraSeiche.WaveletMatrix.LcpIndex, String, BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  name.vb: Serialize(LcpIndex, String, SerializationOptions)
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.Serialize(BelNytheraSeiche.WaveletMatrix.LcpIndex,System.IO.Stream,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.Serialize(BelNytheraSeiche.WaveletMatrix.LcpIndex,System.IO.Stream,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  id: Serialize(BelNytheraSeiche.WaveletMatrix.LcpIndex,System.IO.Stream,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex
+  langs:
+  - csharp
+  - vb
+  name: Serialize(LcpIndex, Stream, SerializationOptions?)
+  nameWithType: LcpIndex.Serialize(LcpIndex, Stream, SerializationOptions?)
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.Serialize(BelNytheraSeiche.WaveletMatrix.LcpIndex, System.IO.Stream, BelNytheraSeiche.WaveletMatrix.SerializationOptions?)
+  type: Method
+  source:
+    id: Serialize
+    path: C:\Users\nanto\dev\WaveletMatrix\src\LcpIndex.cs
+    startLine: 140
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Serializes the <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex" data-throw-if-not-resolved="false"></xref> instance to a stream.
+
+    This method saves the pre-computed Sparse Table and the associated Suffix Array.
+
+    The data is compressed using Brotli and includes a checksum for integrity verification.
+  example: []
+  syntax:
+    content: public static void Serialize(LcpIndex obj, Stream stream, SerializationOptions? options = null)
+    parameters:
+    - id: obj
+      type: BelNytheraSeiche.WaveletMatrix.LcpIndex
+      description: The instance to serialize.
+    - id: stream
+      type: System.IO.Stream
+      description: The stream to write the serialized data to.
+    - id: options
+      type: BelNytheraSeiche.WaveletMatrix.SerializationOptions
+      description: >-
+        Serialization options, such as the compression level. 
+
+        If null, <xref href="BelNytheraSeiche.WaveletMatrix.SerializationOptions.Default" data-throw-if-not-resolved="false"></xref> will be used.
+    content.vb: Public Shared Sub Serialize(obj As LcpIndex, stream As Stream, options As SerializationOptions = Nothing)
+  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.Serialize*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code class="paramref">obj</code> or <code class="paramref">stream</code> is null.
+  nameWithType.vb: LcpIndex.Serialize(LcpIndex, Stream, SerializationOptions)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.LcpIndex.Serialize(BelNytheraSeiche.WaveletMatrix.LcpIndex, System.IO.Stream, BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  name.vb: Serialize(LcpIndex, Stream, SerializationOptions)
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.Deserialize(System.Byte[])
+  commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.Deserialize(System.Byte[])
+  id: Deserialize(System.Byte[])
+  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex
+  langs:
+  - csharp
+  - vb
+  name: Deserialize(byte[])
+  nameWithType: LcpIndex.Deserialize(byte[])
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.Deserialize(byte[])
+  type: Method
+  source:
+    id: Deserialize
+    path: C:\Users\nanto\dev\WaveletMatrix\src\LcpIndex.cs
+    startLine: 245
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Deserializes a byte array into a <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex" data-throw-if-not-resolved="false"></xref> instance.
+  example: []
+  syntax:
+    content: public static LcpIndex Deserialize(byte[] data)
+    parameters:
+    - id: data
+      type: System.Byte[]
+      description: The byte array containing the serialized data.
+    return:
+      type: BelNytheraSeiche.WaveletMatrix.LcpIndex
+      description: A new, deserialized instance of <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Public Shared Function Deserialize(data As Byte()) As LcpIndex
+  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.Deserialize*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code class="paramref">data</code> is null.
+  nameWithType.vb: LcpIndex.Deserialize(Byte())
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.LcpIndex.Deserialize(Byte())
+  name.vb: Deserialize(Byte())
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.Deserialize(System.String)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.Deserialize(System.String)
+  id: Deserialize(System.String)
+  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex
+  langs:
+  - csharp
+  - vb
+  name: Deserialize(string)
+  nameWithType: LcpIndex.Deserialize(string)
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.Deserialize(string)
+  type: Method
+  source:
+    id: Deserialize
+    path: C:\Users\nanto\dev\WaveletMatrix\src\LcpIndex.cs
+    startLine: 264
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Deserializes a <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex" data-throw-if-not-resolved="false"></xref> instance from the specified file.
+  example: []
+  syntax:
+    content: public static LcpIndex Deserialize(string file)
+    parameters:
+    - id: file
+      type: System.String
+      description: The path of the file to read from.
+    return:
+      type: BelNytheraSeiche.WaveletMatrix.LcpIndex
+      description: A new, deserialized instance.
+    content.vb: Public Shared Function Deserialize(file As String) As LcpIndex
+  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.Deserialize*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code class="paramref">file</code> is null.
+  nameWithType.vb: LcpIndex.Deserialize(String)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.LcpIndex.Deserialize(String)
+  name.vb: Deserialize(String)
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.Deserialize(System.IO.Stream)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.Deserialize(System.IO.Stream)
+  id: Deserialize(System.IO.Stream)
+  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex
+  langs:
+  - csharp
+  - vb
+  name: Deserialize(Stream)
+  nameWithType: LcpIndex.Deserialize(Stream)
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.Deserialize(System.IO.Stream)
+  type: Method
+  source:
+    id: Deserialize
+    path: C:\Users\nanto\dev\WaveletMatrix\src\LcpIndex.cs
+    startLine: 285
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Deserializes a <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex" data-throw-if-not-resolved="false"></xref> instance from a stream.
+
+    It verifies the file format and checksum, and reconstructs the internal Sparse Table and Suffix Array.
+  example: []
+  syntax:
+    content: public static LcpIndex Deserialize(Stream stream)
+    parameters:
+    - id: stream
+      type: System.IO.Stream
+      description: The stream to read the serialized data from.
+    return:
+      type: BelNytheraSeiche.WaveletMatrix.LcpIndex
+      description: A new, deserialized instance.
+    content.vb: Public Shared Function Deserialize(stream As Stream) As LcpIndex
+  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.Deserialize*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code class="paramref">stream</code> is null.
+  - type: System.IO.InvalidDataException
+    commentId: T:System.IO.InvalidDataException
+    description: Thrown if the data format is unsupported, the type is incompatible, or the data is corrupt.
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.GetLcp(System.Int32,System.Int32)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.GetLcp(System.Int32,System.Int32)
+  id: GetLcp(System.Int32,System.Int32)
+  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex
+  langs:
+  - csharp
+  - vb
+  name: GetLcp(int, int)
+  nameWithType: LcpIndex.GetLcp(int, int)
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.GetLcp(int, int)
+  type: Method
+  source:
+    id: GetLcp
+    path: C:\Users\nanto\dev\WaveletMatrix\src\LcpIndex.cs
+    startLine: 354
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Gets the length of the Longest Common Prefix (LCP) between the suffixes starting at <code class="paramref">index1</code> and <code class="paramref">index2</code>.
+
+    This operation is performed in O(1) time.
+  example: []
+  syntax:
+    content: public int GetLcp(int index1, int index2)
+    parameters:
+    - id: index1
+      type: System.Int32
+      description: The zero-based starting position of the first suffix in the original text.
+    - id: index2
+      type: System.Int32
+      description: The zero-based starting position of the second suffix in the original text.
+    return:
+      type: System.Int32
+      description: The length of the longest common prefix.
+    content.vb: Public Function GetLcp(index1 As Integer, index2 As Integer) As Integer
+  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.GetLcp*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if <code class="paramref">index1</code> or <code class="paramref">index2</code> are out of the valid range.
+  nameWithType.vb: LcpIndex.GetLcp(Integer, Integer)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.LcpIndex.GetLcp(Integer, Integer)
+  name.vb: GetLcp(Integer, Integer)
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.CountUniqueSubstrings
+  commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.CountUniqueSubstrings
+  id: CountUniqueSubstrings
+  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex
+  langs:
+  - csharp
+  - vb
+  name: CountUniqueSubstrings()
+  nameWithType: LcpIndex.CountUniqueSubstrings()
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.CountUniqueSubstrings()
+  type: Method
+  source:
+    id: CountUniqueSubstrings
+    path: C:\Users\nanto\dev\WaveletMatrix\src\LcpIndex.cs
+    startLine: 387
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Counts the total number of unique substrings within the text.
+
+    This is calculated in O(N) time using the suffix and LCP arrays.
+  example: []
+  syntax:
+    content: public long CountUniqueSubstrings()
+    return:
+      type: System.Int64
+      description: The total count of unique substrings.
+    content.vb: Public Function CountUniqueSubstrings() As Long
+  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.CountUniqueSubstrings*
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.FindTandemRepeats
+  commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.FindTandemRepeats
+  id: FindTandemRepeats
+  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex
+  langs:
+  - csharp
+  - vb
+  name: FindTandemRepeats()
+  nameWithType: LcpIndex.FindTandemRepeats()
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.FindTandemRepeats()
+  type: Method
+  source:
+    id: FindTandemRepeats
+    path: C:\Users\nanto\dev\WaveletMatrix\src\LcpIndex.cs
+    startLine: 402
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Finds all maximal tandem repeats ( substrings of the form `s`s`s`... ) within the text.
+  example: []
+  syntax:
+    content: public IEnumerable<LcpIndex.TandemRepeat> FindTandemRepeats()
+    return:
+      type: System.Collections.Generic.IEnumerable{BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat}
+      description: An enumerable collection of <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat" data-throw-if-not-resolved="false"></xref> records, ordered by position and length.
+    content.vb: Public Function FindTandemRepeats() As IEnumerable(Of LcpIndex.TandemRepeat)
+  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.FindTandemRepeats*
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.FindRepeats(System.Int32)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.FindRepeats(System.Int32)
+  id: FindRepeats(System.Int32)
+  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex
+  langs:
+  - csharp
+  - vb
+  name: FindRepeats(int)
+  nameWithType: LcpIndex.FindRepeats(int)
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.FindRepeats(int)
+  type: Method
+  source:
+    id: FindRepeats
+    path: C:\Users\nanto\dev\WaveletMatrix\src\LcpIndex.cs
+    startLine: 433
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Finds all unique substrings that are repeated anywhere in the text (adjacent or non-adjacent)
+
+    and meet a minimum length requirement.
+  example: []
+  syntax:
+    content: public IEnumerable<LcpIndex.Repeat> FindRepeats(int minLength = 2)
+    parameters:
+    - id: minLength
+      type: System.Int32
+      description: The minimum length of the repeated substrings to find.
+    return:
+      type: System.Collections.Generic.IEnumerable{BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat}
+      description: An enumerable collection of <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat" data-throw-if-not-resolved="false"></xref> records.
+    content.vb: Public Function FindRepeats(minLength As Integer = 2) As IEnumerable(Of LcpIndex.Repeat)
+  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.FindRepeats*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if <code class="paramref">minLength</code> is negative or 0.
+  nameWithType.vb: LcpIndex.FindRepeats(Integer)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.LcpIndex.FindRepeats(Integer)
+  name.vb: FindRepeats(Integer)
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.CalculateZivLempelComplexity
+  commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.CalculateZivLempelComplexity
+  id: CalculateZivLempelComplexity
+  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex
+  langs:
+  - csharp
+  - vb
+  name: CalculateZivLempelComplexity()
+  nameWithType: LcpIndex.CalculateZivLempelComplexity()
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.CalculateZivLempelComplexity()
+  type: Method
+  source:
+    id: CalculateZivLempelComplexity
+    path: C:\Users\nanto\dev\WaveletMatrix\src\LcpIndex.cs
+    startLine: 471
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Calculates the Ziv-Lempel 78 (LZ78) complexity of the text.
+
+    This value represents the number of phrases in the LZ78 parsing of the string, indicating its compressibility.
+  example: []
+  syntax:
+    content: public int CalculateZivLempelComplexity()
+    return:
+      type: System.Int32
+      description: The LZ78 complexity of the text.
+    content.vb: Public Function CalculateZivLempelComplexity() As Integer
+  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.CalculateZivLempelComplexity*
+references:
+- uid: BelNytheraSeiche.WaveletMatrix.SparseTable`1
+  commentId: T:BelNytheraSeiche.WaveletMatrix.SparseTable`1
+  href: BelNytheraSeiche.WaveletMatrix.SparseTable-1.html
+  name: SparseTable<T>
+  nameWithType: SparseTable<T>
+  fullName: BelNytheraSeiche.WaveletMatrix.SparseTable<T>
+  nameWithType.vb: SparseTable(Of T)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.SparseTable(Of T)
+  name.vb: SparseTable(Of T)
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.SparseTable`1
+    name: SparseTable
+    href: BelNytheraSeiche.WaveletMatrix.SparseTable-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.SparseTable`1
+    name: SparseTable
+    href: BelNytheraSeiche.WaveletMatrix.SparseTable-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: BelNytheraSeiche.WaveletMatrix
+  commentId: N:BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.html
+  name: BelNytheraSeiche.WaveletMatrix
+  nameWithType: BelNytheraSeiche.WaveletMatrix
+  fullName: BelNytheraSeiche.WaveletMatrix
+  spec.csharp:
+  - uid: BelNytheraSeiche
+    name: BelNytheraSeiche
+    href: BelNytheraSeiche.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix
+    name: WaveletMatrix
+    href: BelNytheraSeiche.WaveletMatrix.html
+  spec.vb:
+  - uid: BelNytheraSeiche
+    name: BelNytheraSeiche
+    href: BelNytheraSeiche.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix
+    name: WaveletMatrix
+    href: BelNytheraSeiche.WaveletMatrix.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.Text*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.Text
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_Text
+  name: Text
+  nameWithType: LcpIndex.Text
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.Text
+- uid: System.ReadOnlyMemory{System.Char}
+  commentId: T:System.ReadOnlyMemory{System.Char}
+  parent: System
+  definition: System.ReadOnlyMemory`1
+  href: https://learn.microsoft.com/dotnet/api/system.readonlymemory-1
+  name: ReadOnlyMemory<char>
+  nameWithType: ReadOnlyMemory<char>
+  fullName: System.ReadOnlyMemory<char>
+  nameWithType.vb: ReadOnlyMemory(Of Char)
+  fullName.vb: System.ReadOnlyMemory(Of Char)
+  name.vb: ReadOnlyMemory(Of Char)
+  spec.csharp:
+  - uid: System.ReadOnlyMemory`1
+    name: ReadOnlyMemory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlymemory-1
+  - name: <
+  - uid: System.Char
+    name: char
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: '>'
+  spec.vb:
+  - uid: System.ReadOnlyMemory`1
+    name: ReadOnlyMemory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlymemory-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Char
+    name: Char
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: )
+- uid: System.ReadOnlyMemory`1
+  commentId: T:System.ReadOnlyMemory`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.readonlymemory-1
+  name: ReadOnlyMemory<T>
+  nameWithType: ReadOnlyMemory<T>
+  fullName: System.ReadOnlyMemory<T>
+  nameWithType.vb: ReadOnlyMemory(Of T)
+  fullName.vb: System.ReadOnlyMemory(Of T)
+  name.vb: ReadOnlyMemory(Of T)
+  spec.csharp:
+  - uid: System.ReadOnlyMemory`1
+    name: ReadOnlyMemory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlymemory-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.ReadOnlyMemory`1
+    name: ReadOnlyMemory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlymemory-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+  commentId: T:BelNytheraSeiche.WaveletMatrix.LcpIndex
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  name: LcpIndex
+  nameWithType: LcpIndex
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex
+- uid: BelNytheraSeiche.WaveletMatrix.SuffixArray
+  commentId: T:BelNytheraSeiche.WaveletMatrix.SuffixArray
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.SuffixArray.html
+  name: SuffixArray
+  nameWithType: SuffixArray
+  fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.Create*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.Create
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_Create_BelNytheraSeiche_WaveletMatrix_SuffixArray_
+  name: Create
+  nameWithType: LcpIndex.Create
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.Create
+- uid: BelNytheraSeiche.WaveletMatrix.SerializationOptions.Default
+  commentId: P:BelNytheraSeiche.WaveletMatrix.SerializationOptions.Default
+  href: BelNytheraSeiche.WaveletMatrix.SerializationOptions.html#BelNytheraSeiche_WaveletMatrix_SerializationOptions_Default
+  name: Default
+  nameWithType: SerializationOptions.Default
+  fullName: BelNytheraSeiche.WaveletMatrix.SerializationOptions.Default
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.Serialize*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.Serialize
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_Serialize_BelNytheraSeiche_WaveletMatrix_LcpIndex_BelNytheraSeiche_WaveletMatrix_SerializationOptions_
+  name: Serialize
+  nameWithType: LcpIndex.Serialize
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.Serialize
+- uid: BelNytheraSeiche.WaveletMatrix.SerializationOptions
+  commentId: T:BelNytheraSeiche.WaveletMatrix.SerializationOptions
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.SerializationOptions.html
+  name: SerializationOptions
+  nameWithType: SerializationOptions
+  fullName: BelNytheraSeiche.WaveletMatrix.SerializationOptions
+- uid: System.Byte[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.byte
+  name: byte[]
+  nameWithType: byte[]
+  fullName: byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: (
+  - name: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.IO.Stream
+  commentId: T:System.IO.Stream
+  parent: System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.io.stream
+  name: Stream
+  nameWithType: Stream
+  fullName: System.IO.Stream
+- uid: System.IO
+  commentId: N:System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.IO
+  nameWithType: System.IO
+  fullName: System.IO
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.Deserialize*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.Deserialize
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_Deserialize_System_Byte___
+  name: Deserialize
+  nameWithType: LcpIndex.Deserialize
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.Deserialize
+- uid: System.IO.InvalidDataException
+  commentId: T:System.IO.InvalidDataException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.io.invaliddataexception
+  name: InvalidDataException
+  nameWithType: InvalidDataException
+  fullName: System.IO.InvalidDataException
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception
+  name: ArgumentOutOfRangeException
+  nameWithType: ArgumentOutOfRangeException
+  fullName: System.ArgumentOutOfRangeException
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.GetLcp*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.GetLcp
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_GetLcp_System_Int32_System_Int32_
+  name: GetLcp
+  nameWithType: LcpIndex.GetLcp
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.GetLcp
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.CountUniqueSubstrings*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.CountUniqueSubstrings
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_CountUniqueSubstrings
+  name: CountUniqueSubstrings
+  nameWithType: LcpIndex.CountUniqueSubstrings
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.CountUniqueSubstrings
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int64
+  name: long
+  nameWithType: long
+  fullName: long
+  nameWithType.vb: Long
+  fullName.vb: Long
+  name.vb: Long
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat
+  commentId: T:BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  name: LcpIndex.TandemRepeat
+  nameWithType: LcpIndex.TandemRepeat
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat
+    name: TandemRepeat
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat.html
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat
+    name: TandemRepeat
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat.html
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.FindTandemRepeats*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.FindTandemRepeats
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_FindTandemRepeats
+  name: FindTandemRepeats
+  nameWithType: LcpIndex.FindTandemRepeats
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.FindTandemRepeats
+- uid: System.Collections.Generic.IEnumerable{BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat}
+  commentId: T:System.Collections.Generic.IEnumerable{BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<LcpIndex.TandemRepeat>
+  nameWithType: IEnumerable<LcpIndex.TandemRepeat>
+  fullName: System.Collections.Generic.IEnumerable<BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat>
+  nameWithType.vb: IEnumerable(Of LcpIndex.TandemRepeat)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat)
+  name.vb: IEnumerable(Of LcpIndex.TandemRepeat)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat
+    name: TandemRepeat
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat
+    name: TandemRepeat
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat.html
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat
+  commentId: T:BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  name: LcpIndex.Repeat
+  nameWithType: LcpIndex.Repeat
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat
+    name: Repeat
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat.html
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat
+    name: Repeat
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat.html
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.FindRepeats*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.FindRepeats
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_FindRepeats_System_Int32_
+  name: FindRepeats
+  nameWithType: LcpIndex.FindRepeats
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.FindRepeats
+- uid: System.Collections.Generic.IEnumerable{BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat}
+  commentId: T:System.Collections.Generic.IEnumerable{BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<LcpIndex.Repeat>
+  nameWithType: IEnumerable<LcpIndex.Repeat>
+  fullName: System.Collections.Generic.IEnumerable<BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat>
+  nameWithType.vb: IEnumerable(Of LcpIndex.Repeat)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat)
+  name.vb: IEnumerable(Of LcpIndex.Repeat)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat
+    name: Repeat
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat
+    name: Repeat
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat.html
+  - name: )
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.CalculateZivLempelComplexity*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.CalculateZivLempelComplexity
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_CalculateZivLempelComplexity
+  name: CalculateZivLempelComplexity
+  nameWithType: LcpIndex.CalculateZivLempelComplexity
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.CalculateZivLempelComplexity

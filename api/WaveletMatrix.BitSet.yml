@@ -1,0 +1,649 @@
+### YamlMime:ManagedReference
+items:
+- uid: WaveletMatrix.BitSet
+  commentId: T:WaveletMatrix.BitSet
+  id: BitSet
+  parent: WaveletMatrix
+  children:
+  - WaveletMatrix.BitSet.#ctor(System.Int32)
+  - WaveletMatrix.BitSet.Add(System.Boolean)
+  - WaveletMatrix.BitSet.ArrayAlignment
+  - WaveletMatrix.BitSet.Get(System.Int32)
+  - WaveletMatrix.BitSet.ToImmutable
+  - WaveletMatrix.BitSet.ToImmutable(WaveletMatrix.BitSet)
+  - WaveletMatrix.BitSet.ToRankSelect(System.Boolean)
+  - WaveletMatrix.BitSet.ToRankSelect(WaveletMatrix.BitSet,System.Boolean)
+  langs:
+  - csharp
+  - vb
+  name: BitSet
+  nameWithType: BitSet
+  fullName: WaveletMatrix.BitSet
+  type: Class
+  source:
+    id: BitSet
+    path: D:\実験\WaveletMatrix\src\BitSets.cs
+    startLine: 8
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: Provides a mutable bit set for efficiently building large bit vectors.
+  example: []
+  syntax:
+    content: public sealed class BitSet
+    content.vb: Public NotInheritable Class BitSet
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: WaveletMatrix.BitSet.#ctor(System.Int32)
+  commentId: M:WaveletMatrix.BitSet.#ctor(System.Int32)
+  id: '#ctor(System.Int32)'
+  parent: WaveletMatrix.BitSet
+  langs:
+  - csharp
+  - vb
+  name: BitSet(int)
+  nameWithType: BitSet.BitSet(int)
+  fullName: WaveletMatrix.BitSet.BitSet(int)
+  type: Constructor
+  source:
+    id: .ctor
+    path: D:\実験\WaveletMatrix\src\BitSets.cs
+    startLine: 8
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: Provides a mutable bit set for efficiently building large bit vectors.
+  example: []
+  syntax:
+    content: public BitSet(int arrayAlignment = 65536)
+    parameters:
+    - id: arrayAlignment
+      type: System.Int32
+      description: The alignment size for the internal buffer chunks. Must be a power of 2. Defaults to 65536.
+    content.vb: Public Sub New(arrayAlignment As Integer = 65536)
+  overload: WaveletMatrix.BitSet.#ctor*
+  nameWithType.vb: BitSet.New(Integer)
+  fullName.vb: WaveletMatrix.BitSet.New(Integer)
+  name.vb: New(Integer)
+- uid: WaveletMatrix.BitSet.ArrayAlignment
+  commentId: P:WaveletMatrix.BitSet.ArrayAlignment
+  id: ArrayAlignment
+  parent: WaveletMatrix.BitSet
+  langs:
+  - csharp
+  - vb
+  name: ArrayAlignment
+  nameWithType: BitSet.ArrayAlignment
+  fullName: WaveletMatrix.BitSet.ArrayAlignment
+  type: Property
+  source:
+    id: ArrayAlignment
+    path: D:\実験\WaveletMatrix\src\BitSets.cs
+    startLine: 16
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: Gets the alignment size used by the internal buffer.
+  example: []
+  syntax:
+    content: public int ArrayAlignment { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property ArrayAlignment As Integer
+  overload: WaveletMatrix.BitSet.ArrayAlignment*
+- uid: WaveletMatrix.BitSet.Get(System.Int32)
+  commentId: M:WaveletMatrix.BitSet.Get(System.Int32)
+  id: Get(System.Int32)
+  parent: WaveletMatrix.BitSet
+  langs:
+  - csharp
+  - vb
+  name: Get(int)
+  nameWithType: BitSet.Get(int)
+  fullName: WaveletMatrix.BitSet.Get(int)
+  type: Method
+  source:
+    id: Get
+    path: D:\実験\WaveletMatrix\src\BitSets.cs
+    startLine: 27
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: Gets the bit value at the specified index.
+  example: []
+  syntax:
+    content: public bool Get(int index)
+    parameters:
+    - id: index
+      type: System.Int32
+      description: The zero-based index of the bit to get.
+    return:
+      type: System.Boolean
+      description: The bit value (<code>true</code> for 1, <code>false</code> for 0) at the specified index.
+    content.vb: Public Function [Get](index As Integer) As Boolean
+  overload: WaveletMatrix.BitSet.Get*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: <code class="paramref">index</code> is less than 0 or greater than or equal to the number of bits in the set.
+  nameWithType.vb: BitSet.Get(Integer)
+  fullName.vb: WaveletMatrix.BitSet.Get(Integer)
+  name.vb: Get(Integer)
+- uid: WaveletMatrix.BitSet.Add(System.Boolean)
+  commentId: M:WaveletMatrix.BitSet.Add(System.Boolean)
+  id: Add(System.Boolean)
+  parent: WaveletMatrix.BitSet
+  langs:
+  - csharp
+  - vb
+  name: Add(bool)
+  nameWithType: BitSet.Add(bool)
+  fullName: WaveletMatrix.BitSet.Add(bool)
+  type: Method
+  source:
+    id: Add
+    path: D:\実験\WaveletMatrix\src\BitSets.cs
+    startLine: 47
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: Adds a bit to the end of the bit set.
+  example: []
+  syntax:
+    content: public void Add(bool bit)
+    parameters:
+    - id: bit
+      type: System.Boolean
+      description: The bit to add (<code>true</code> for 1, <code>false</code> for 0).
+    content.vb: Public Sub Add(bit As Boolean)
+  overload: WaveletMatrix.BitSet.Add*
+  nameWithType.vb: BitSet.Add(Boolean)
+  fullName.vb: WaveletMatrix.BitSet.Add(Boolean)
+  name.vb: Add(Boolean)
+- uid: WaveletMatrix.BitSet.ToImmutable
+  commentId: M:WaveletMatrix.BitSet.ToImmutable
+  id: ToImmutable
+  parent: WaveletMatrix.BitSet
+  langs:
+  - csharp
+  - vb
+  name: ToImmutable()
+  nameWithType: BitSet.ToImmutable()
+  fullName: WaveletMatrix.BitSet.ToImmutable()
+  type: Method
+  source:
+    id: ToImmutable
+    path: D:\実験\WaveletMatrix\src\BitSets.cs
+    startLine: 59
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: Creates an immutable, read-only version of this bit set.
+  example: []
+  syntax:
+    content: public ImmutableBitSet ToImmutable()
+    return:
+      type: WaveletMatrix.ImmutableBitSet
+      description: A new <xref href="WaveletMatrix.ImmutableBitSet" data-throw-if-not-resolved="false"></xref> containing the current data.
+    content.vb: Public Function ToImmutable() As ImmutableBitSet
+  overload: WaveletMatrix.BitSet.ToImmutable*
+- uid: WaveletMatrix.BitSet.ToRankSelect(System.Boolean)
+  commentId: M:WaveletMatrix.BitSet.ToRankSelect(System.Boolean)
+  id: ToRankSelect(System.Boolean)
+  parent: WaveletMatrix.BitSet
+  langs:
+  - csharp
+  - vb
+  name: ToRankSelect(bool)
+  nameWithType: BitSet.ToRankSelect(bool)
+  fullName: WaveletMatrix.BitSet.ToRankSelect(bool)
+  type: Method
+  source:
+    id: ToRankSelect
+    path: D:\実験\WaveletMatrix\src\BitSets.cs
+    startLine: 77
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: Creates an immutable version of a specified <xref href="WaveletMatrix.BitSet" data-throw-if-not-resolved="false"></xref>, optimized for high-performance Rank and Select operations.
+  remarks: >-
+    If <code class="paramref">createAuxDir</code> is set to <code>false</code>, this method is very fast, but the returned
+
+    <xref href="WaveletMatrix.RankSelectBitSet" data-throw-if-not-resolved="false"></xref> will not be ready for Rank/Select operations until its auxiliary directories
+
+    are created and set via the <code>SetAuxDir()</code> method.
+
+    If set to <code>true</code> (the default), the auxiliary directories are created during this call, which takes more processing time
+
+    but results in a fully initialized and ready-to-use object.
+  example: []
+  syntax:
+    content: public RankSelectBitSet ToRankSelect(bool createAuxDir = true)
+    parameters:
+    - id: createAuxDir
+      type: System.Boolean
+      description: >-
+        A value indicating whether to immediately create the auxiliary directories required for
+
+        fast Rank and Select operations.
+    return:
+      type: WaveletMatrix.RankSelectBitSet
+      description: A new <xref href="WaveletMatrix.RankSelectBitSet" data-throw-if-not-resolved="false"></xref> containing the data from the provided bit set and pre-calculated auxiliary indexes.
+    content.vb: Public Function ToRankSelect(createAuxDir As Boolean = True) As RankSelectBitSet
+  overload: WaveletMatrix.BitSet.ToRankSelect*
+  nameWithType.vb: BitSet.ToRankSelect(Boolean)
+  fullName.vb: WaveletMatrix.BitSet.ToRankSelect(Boolean)
+  name.vb: ToRankSelect(Boolean)
+- uid: WaveletMatrix.BitSet.ToImmutable(WaveletMatrix.BitSet)
+  commentId: M:WaveletMatrix.BitSet.ToImmutable(WaveletMatrix.BitSet)
+  id: ToImmutable(WaveletMatrix.BitSet)
+  parent: WaveletMatrix.BitSet
+  langs:
+  - csharp
+  - vb
+  name: ToImmutable(BitSet)
+  nameWithType: BitSet.ToImmutable(BitSet)
+  fullName: WaveletMatrix.BitSet.ToImmutable(WaveletMatrix.BitSet)
+  type: Method
+  source:
+    id: ToImmutable
+    path: D:\実験\WaveletMatrix\src\BitSets.cs
+    startLine: 86
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: Creates an immutable, read-only version of a specified <xref href="WaveletMatrix.BitSet" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static ImmutableBitSet ToImmutable(BitSet bitSet)
+    parameters:
+    - id: bitSet
+      type: WaveletMatrix.BitSet
+      description: The mutable bit set to convert.
+    return:
+      type: WaveletMatrix.ImmutableBitSet
+      description: A new <xref href="WaveletMatrix.ImmutableBitSet" data-throw-if-not-resolved="false"></xref> containing the data from the provided bit set.
+    content.vb: Public Shared Function ToImmutable(bitSet As BitSet) As ImmutableBitSet
+  overload: WaveletMatrix.BitSet.ToImmutable*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: <code class="paramref">bitSet</code> is null.
+- uid: WaveletMatrix.BitSet.ToRankSelect(WaveletMatrix.BitSet,System.Boolean)
+  commentId: M:WaveletMatrix.BitSet.ToRankSelect(WaveletMatrix.BitSet,System.Boolean)
+  id: ToRankSelect(WaveletMatrix.BitSet,System.Boolean)
+  parent: WaveletMatrix.BitSet
+  langs:
+  - csharp
+  - vb
+  name: ToRankSelect(BitSet, bool)
+  nameWithType: BitSet.ToRankSelect(BitSet, bool)
+  fullName: WaveletMatrix.BitSet.ToRankSelect(WaveletMatrix.BitSet, bool)
+  type: Method
+  source:
+    id: ToRankSelect
+    path: D:\実験\WaveletMatrix\src\BitSets.cs
+    startLine: 115
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: Creates an immutable version of a specified <xref href="WaveletMatrix.BitSet" data-throw-if-not-resolved="false"></xref>, optimized for high-performance Rank and Select operations.
+  remarks: >-
+    If <code class="paramref">createAuxDir</code> is set to <code>false</code>, this method is very fast, but the returned
+
+    <xref href="WaveletMatrix.RankSelectBitSet" data-throw-if-not-resolved="false"></xref> will not be ready for Rank/Select operations until its auxiliary directories
+
+    are created and set via the <code>SetAuxDir()</code> method.
+
+    If set to <code>true</code> (the default), the auxiliary directories are created during this call, which takes more processing time
+
+    but results in a fully initialized and ready-to-use object.
+  example: []
+  syntax:
+    content: public static RankSelectBitSet ToRankSelect(BitSet bitSet, bool createAuxDir = true)
+    parameters:
+    - id: bitSet
+      type: WaveletMatrix.BitSet
+      description: The mutable bit set to convert.
+    - id: createAuxDir
+      type: System.Boolean
+      description: >-
+        A value indicating whether to immediately create the auxiliary directories required for
+
+        fast Rank and Select operations.
+    return:
+      type: WaveletMatrix.RankSelectBitSet
+      description: A new <xref href="WaveletMatrix.RankSelectBitSet" data-throw-if-not-resolved="false"></xref> containing the data from the provided bit set and pre-calculated auxiliary indexes.
+    content.vb: Public Shared Function ToRankSelect(bitSet As BitSet, createAuxDir As Boolean = True) As RankSelectBitSet
+  overload: WaveletMatrix.BitSet.ToRankSelect*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: <code class="paramref">bitSet</code> is null.
+  nameWithType.vb: BitSet.ToRankSelect(BitSet, Boolean)
+  fullName.vb: WaveletMatrix.BitSet.ToRankSelect(WaveletMatrix.BitSet, Boolean)
+  name.vb: ToRankSelect(BitSet, Boolean)
+references:
+- uid: WaveletMatrix
+  commentId: N:WaveletMatrix
+  href: WaveletMatrix.html
+  name: WaveletMatrix
+  nameWithType: WaveletMatrix
+  fullName: WaveletMatrix
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: WaveletMatrix.BitSet.#ctor*
+  commentId: Overload:WaveletMatrix.BitSet.#ctor
+  href: WaveletMatrix.BitSet.html#WaveletMatrix_BitSet__ctor_System_Int32_
+  name: BitSet
+  nameWithType: BitSet.BitSet
+  fullName: WaveletMatrix.BitSet.BitSet
+  nameWithType.vb: BitSet.New
+  fullName.vb: WaveletMatrix.BitSet.New
+  name.vb: New
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: WaveletMatrix.BitSet.ArrayAlignment*
+  commentId: Overload:WaveletMatrix.BitSet.ArrayAlignment
+  href: WaveletMatrix.BitSet.html#WaveletMatrix_BitSet_ArrayAlignment
+  name: ArrayAlignment
+  nameWithType: BitSet.ArrayAlignment
+  fullName: WaveletMatrix.BitSet.ArrayAlignment
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception
+  name: ArgumentOutOfRangeException
+  nameWithType: ArgumentOutOfRangeException
+  fullName: System.ArgumentOutOfRangeException
+- uid: WaveletMatrix.BitSet.Get*
+  commentId: Overload:WaveletMatrix.BitSet.Get
+  href: WaveletMatrix.BitSet.html#WaveletMatrix_BitSet_Get_System_Int32_
+  name: Get
+  nameWithType: BitSet.Get
+  fullName: WaveletMatrix.BitSet.Get
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: WaveletMatrix.BitSet.Add*
+  commentId: Overload:WaveletMatrix.BitSet.Add
+  href: WaveletMatrix.BitSet.html#WaveletMatrix_BitSet_Add_System_Boolean_
+  name: Add
+  nameWithType: BitSet.Add
+  fullName: WaveletMatrix.BitSet.Add
+- uid: WaveletMatrix.ImmutableBitSet
+  commentId: T:WaveletMatrix.ImmutableBitSet
+  parent: WaveletMatrix
+  href: WaveletMatrix.ImmutableBitSet.html
+  name: ImmutableBitSet
+  nameWithType: ImmutableBitSet
+  fullName: WaveletMatrix.ImmutableBitSet
+- uid: WaveletMatrix.BitSet.ToImmutable*
+  commentId: Overload:WaveletMatrix.BitSet.ToImmutable
+  href: WaveletMatrix.BitSet.html#WaveletMatrix_BitSet_ToImmutable
+  name: ToImmutable
+  nameWithType: BitSet.ToImmutable
+  fullName: WaveletMatrix.BitSet.ToImmutable
+- uid: WaveletMatrix.BitSet
+  commentId: T:WaveletMatrix.BitSet
+  parent: WaveletMatrix
+  href: WaveletMatrix.BitSet.html
+  name: BitSet
+  nameWithType: BitSet
+  fullName: WaveletMatrix.BitSet
+- uid: WaveletMatrix.RankSelectBitSet
+  commentId: T:WaveletMatrix.RankSelectBitSet
+  parent: WaveletMatrix
+  href: WaveletMatrix.RankSelectBitSet.html
+  name: RankSelectBitSet
+  nameWithType: RankSelectBitSet
+  fullName: WaveletMatrix.RankSelectBitSet
+- uid: WaveletMatrix.BitSet.ToRankSelect*
+  commentId: Overload:WaveletMatrix.BitSet.ToRankSelect
+  href: WaveletMatrix.BitSet.html#WaveletMatrix_BitSet_ToRankSelect_System_Boolean_
+  name: ToRankSelect
+  nameWithType: BitSet.ToRankSelect
+  fullName: WaveletMatrix.BitSet.ToRankSelect
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException

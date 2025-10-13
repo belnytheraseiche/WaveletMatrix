@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class ValueBuffer&lt;T&gt; | BelNytheraSeiche.WaveletMatrix </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class ValueBuffer&lt;T&gt; | BelNytheraSeiche.WaveletMatrix ">
+      
+      <meta name="description" content="Represents a buffer for value types, implemented using a list of array chunks.">
+      <link rel="icon" href="../images/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo-small.png" alt="BelNytheraSeiche.WaveletMatrix">
+            BelNytheraSeiche.WaveletMatrix
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="WaveletMatrix.ValueBuffer`1">
+
+
+
+  <h1 id="WaveletMatrix_ValueBuffer_1" data-uid="WaveletMatrix.ValueBuffer`1" class="text-break">
+Class ValueBuffer&lt;T&gt;  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="WaveletMatrix.html">WaveletMatrix</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>WaveletMatrix.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Represents a buffer for value types, implemented using a list of array chunks.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class ValueBuffer&lt;T&gt; : ICollection&lt;T&gt;, IEnumerable&lt;T&gt;, IEnumerable where T : struct</code></pre>
+  </div>
+
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>The type of element, which must be a struct.</p>
+</dd>
+  </dl>
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">ValueBuffer&lt;T&gt;</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;T&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;T&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="WaveletMatrix_ValueBuffer_1_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This class is designed to manage large collections of value types without allocating on the Large Object Heap (LOH).
+It achieves this by storing elements in a series of smaller array &quot;chunks&quot;. The size of these chunks, specified by <a class="xref" href="WaveletMatrix.ValueBuffer-1.html#WaveletMatrix_ValueBuffer_1_ElementsPerChunk">ElementsPerChunk</a>, must be a power of 2.</p>
+</div>
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="WaveletMatrix_ValueBuffer_1__ctor_" data-uid="WaveletMatrix.ValueBuffer`1.#ctor*"></a>
+
+  <h3 id="WaveletMatrix_ValueBuffer_1__ctor_System_Int32_System_Boolean_" data-uid="WaveletMatrix.ValueBuffer`1.#ctor(System.Int32,System.Boolean)">
+  ValueBuffer(int, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="WaveletMatrix.ValueBuffer-1.html">ValueBuffer&lt;T&gt;</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ValueBuffer(int elementsPerChunk, bool extendAutomatically = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>elementsPerChunk</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The size of each internal array chunk. This value must be a power of 2.</p>
+</dd>
+    <dt><code>extendAutomatically</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>A value indicating whether to automatically extend the buffer's capacity when an out-of-bounds index is accessed.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p><code class="paramref">elementsPerChunk</code> is not positive.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p><code class="paramref">elementsPerChunk</code> is not a power of 2.</p>
+</dd>
+  </dl>
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="WaveletMatrix_ValueBuffer_1_Capacity_" data-uid="WaveletMatrix.ValueBuffer`1.Capacity*"></a>
+
+  <h3 id="WaveletMatrix_ValueBuffer_1_Capacity" data-uid="WaveletMatrix.ValueBuffer`1.Capacity">
+  Capacity
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the total number of elements that can be stored across all currently allocated chunks.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Capacity { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="WaveletMatrix_ValueBuffer_1_Count_" data-uid="WaveletMatrix.ValueBuffer`1.Count*"></a>
+
+  <h3 id="WaveletMatrix_ValueBuffer_1_Count" data-uid="WaveletMatrix.ValueBuffer`1.Count">
+  Count
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the number of elements contained in the <a class="xref" href="WaveletMatrix.ValueBuffer-1.html">ValueBuffer&lt;T&gt;</a>.
+This property is an implementation for the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> interface and is an alias for the <a class="xref" href="WaveletMatrix.ValueBuffer-1.html#WaveletMatrix_ValueBuffer_1_Used">Used</a> property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Count { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="WaveletMatrix_ValueBuffer_1_ElementsPerChunk_" data-uid="WaveletMatrix.ValueBuffer`1.ElementsPerChunk*"></a>
+
+  <h3 id="WaveletMatrix_ValueBuffer_1_ElementsPerChunk" data-uid="WaveletMatrix.ValueBuffer`1.ElementsPerChunk">
+  ElementsPerChunk
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the size of each internal array chunk.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ElementsPerChunk { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="WaveletMatrix_ValueBuffer_1_ExtendAutomatically_" data-uid="WaveletMatrix.ValueBuffer`1.ExtendAutomatically*"></a>
+
+  <h3 id="WaveletMatrix_ValueBuffer_1_ExtendAutomatically" data-uid="WaveletMatrix.ValueBuffer`1.ExtendAutomatically">
+  ExtendAutomatically
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets a value indicating whether the buffer will automatically allocate new chunks when an index outside the current capacity is accessed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ExtendAutomatically { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="WaveletMatrix_ValueBuffer_1_IsReadOnly_" data-uid="WaveletMatrix.ValueBuffer`1.IsReadOnly*"></a>
+
+  <h3 id="WaveletMatrix_ValueBuffer_1_IsReadOnly" data-uid="WaveletMatrix.ValueBuffer`1.IsReadOnly">
+  IsReadOnly
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets a value indicating whether the <a class="xref" href="WaveletMatrix.ValueBuffer-1.html">ValueBuffer&lt;T&gt;</a> is read-only.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsReadOnly { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="WaveletMatrix_ValueBuffer_1_Item_" data-uid="WaveletMatrix.ValueBuffer`1.Item*"></a>
+
+  <h3 id="WaveletMatrix_ValueBuffer_1_Item_System_Int32_" data-uid="WaveletMatrix.ValueBuffer`1.Item(System.Int32)">
+  this[int]
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the element at the specified index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ref T this[int index] { get; }</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The zero-based index of the element to get or set.</p>
+</dd>
+  </dl>
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd><p>A reference to the element at the specified index.</p>
+</dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="WaveletMatrix_ValueBuffer_1_Item_System_Int32__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Accessing an index greater than or equal to the current <a class="xref" href="WaveletMatrix.ValueBuffer-1.html#WaveletMatrix_ValueBuffer_1_Used">Used</a> count will update the count to <code>index + 1</code>.
+If <a class="xref" href="WaveletMatrix.ValueBuffer-1.html#WaveletMatrix_ValueBuffer_1_ExtendAutomatically">ExtendAutomatically</a> is true, accessing an index beyond the current <a class="xref" href="WaveletMatrix.ValueBuffer-1.html#WaveletMatrix_ValueBuffer_1_Capacity">Capacity</a> will allocate new chunks.</p>
+</div>
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Thrown if <code class="paramref">index</code> is negative, or if <code class="paramref">index</code> is greater than or equal to <a class="xref" href="WaveletMatrix.ValueBuffer-1.html#WaveletMatrix_ValueBuffer_1_Capacity">Capacity</a> and <a class="xref" href="WaveletMatrix.ValueBuffer-1.html#WaveletMatrix_ValueBuffer_1_ExtendAutomatically">ExtendAutomatically</a> is false.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="WaveletMatrix_ValueBuffer_1_NumberOfChunks_" data-uid="WaveletMatrix.ValueBuffer`1.NumberOfChunks*"></a>
+
+  <h3 id="WaveletMatrix_ValueBuffer_1_NumberOfChunks" data-uid="WaveletMatrix.ValueBuffer`1.NumberOfChunks">
+  NumberOfChunks
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the number of internal array chunks that are currently allocated.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int NumberOfChunks { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="WaveletMatrix_ValueBuffer_1_Used_" data-uid="WaveletMatrix.ValueBuffer`1.Used*"></a>
+
+  <h3 id="WaveletMatrix_ValueBuffer_1_Used" data-uid="WaveletMatrix.ValueBuffer`1.Used">
+  Used
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the number of elements that are considered to be in use within the buffer.
+This value is updated when an element is written to an index greater than the current used count.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Used { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="WaveletMatrix_ValueBuffer_1_Add_" data-uid="WaveletMatrix.ValueBuffer`1.Add*"></a>
+
+  <h3 id="WaveletMatrix_ValueBuffer_1_Add__0_" data-uid="WaveletMatrix.ValueBuffer`1.Add(`0)">
+  Add(T)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Adds an element to the end of the <a class="xref" href="WaveletMatrix.ValueBuffer-1.html">ValueBuffer&lt;T&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(T value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <span class="xref">T</span></dt>
+    <dd><p>The element to add.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WaveletMatrix_ValueBuffer_1_AppendChunkDirectly_" data-uid="WaveletMatrix.ValueBuffer`1.AppendChunkDirectly*"></a>
+
+  <h3 id="WaveletMatrix_ValueBuffer_1_AppendChunkDirectly__0___" data-uid="WaveletMatrix.ValueBuffer`1.AppendChunkDirectly(`0[])">
+  AppendChunkDirectly(T[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Appends a pre-allocated array chunk directly to the internal list of buffers, increasing the capacity.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AppendChunkDirectly(T[] chunk)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>chunk</code> T[]</dt>
+    <dd><p>The array to append. Its length must be exactly equal to <a class="xref" href="WaveletMatrix.ValueBuffer-1.html#WaveletMatrix_ValueBuffer_1_ElementsPerChunk">ElementsPerChunk</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="WaveletMatrix_ValueBuffer_1_AppendChunkDirectly__0____remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is an advanced optimization method that avoids an array allocation and copy by using a caller-provided array.</p>
+</div>
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p><code class="paramref">chunk</code> is null.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>The length of <code class="paramref">chunk</code> is not equal to <a class="xref" href="WaveletMatrix.ValueBuffer-1.html#WaveletMatrix_ValueBuffer_1_ElementsPerChunk">ElementsPerChunk</a>.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="WaveletMatrix_ValueBuffer_1_Clear_" data-uid="WaveletMatrix.ValueBuffer`1.Clear*"></a>
+
+  <h3 id="WaveletMatrix_ValueBuffer_1_Clear" data-uid="WaveletMatrix.ValueBuffer`1.Clear">
+  Clear()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Removes all elements from the <a class="xref" href="WaveletMatrix.ValueBuffer-1.html">ValueBuffer&lt;T&gt;</a> and releases all internal array chunks.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Clear()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WaveletMatrix_ValueBuffer_1_Contains_" data-uid="WaveletMatrix.ValueBuffer`1.Contains*"></a>
+
+  <h3 id="WaveletMatrix_ValueBuffer_1_Contains__0_" data-uid="WaveletMatrix.ValueBuffer`1.Contains(`0)">
+  Contains(T)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines whether the <a class="xref" href="WaveletMatrix.ValueBuffer-1.html">ValueBuffer&lt;T&gt;</a> contains a specific value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Contains(T item)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>item</code> <span class="xref">T</span></dt>
+    <dd><p>The object to locate in the <a class="xref" href="WaveletMatrix.ValueBuffer-1.html">ValueBuffer&lt;T&gt;</a>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true if item is found in the <a class="xref" href="WaveletMatrix.ValueBuffer-1.html">ValueBuffer&lt;T&gt;</a>; otherwise, false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WaveletMatrix_ValueBuffer_1_CopyTo_" data-uid="WaveletMatrix.ValueBuffer`1.CopyTo*"></a>
+
+  <h3 id="WaveletMatrix_ValueBuffer_1_CopyTo__0___System_Int32_" data-uid="WaveletMatrix.ValueBuffer`1.CopyTo(`0[],System.Int32)">
+  CopyTo(T[], int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Copies the elements of the <a class="xref" href="WaveletMatrix.ValueBuffer-1.html">ValueBuffer&lt;T&gt;</a> to an <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.array">Array</a>, starting at a particular <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.array">Array</a> index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CopyTo(T[] array, int arrayIndex)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>array</code> T[]</dt>
+    <dd><p>The one-dimensional <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.array">Array</a> that is the destination of the elements copied from <a class="xref" href="WaveletMatrix.ValueBuffer-1.html">ValueBuffer&lt;T&gt;</a>.</p>
+</dd>
+    <dt><code>arrayIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The zero-based index in <code class="paramref">array</code> at which copying begins.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p><code class="paramref">array</code> is null.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p><code class="paramref">arrayIndex</code> is less than 0.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>The number of elements in the source buffer is greater than the available space from <code class="paramref">arrayIndex</code> to the end of the destination <code class="paramref">array</code>.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="WaveletMatrix_ValueBuffer_1_EnumerateChunks_" data-uid="WaveletMatrix.ValueBuffer`1.EnumerateChunks*"></a>
+
+  <h3 id="WaveletMatrix_ValueBuffer_1_EnumerateChunks" data-uid="WaveletMatrix.ValueBuffer`1.EnumerateChunks">
+  EnumerateChunks()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns an enumerable collection of the internal array chunks.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;T[]&gt; EnumerateChunks()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;T[]&gt;</dt>
+    <dd><p>An <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable&lt;T&gt;</a> (<code class="typeparamref">T</code> is an array) that allows iteration over the raw internal buffers.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="WaveletMatrix_ValueBuffer_1_EnumerateChunks_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method is intended for advanced scenarios where direct read-only access to the underlying chunks is required.</p>
+</div>
+
+
+
+
+  <a id="WaveletMatrix_ValueBuffer_1_ExtendCapacity_" data-uid="WaveletMatrix.ValueBuffer`1.ExtendCapacity*"></a>
+
+  <h3 id="WaveletMatrix_ValueBuffer_1_ExtendCapacity_System_Int32_" data-uid="WaveletMatrix.ValueBuffer`1.ExtendCapacity(System.Int32)">
+  ExtendCapacity(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Ensures that the capacity of this buffer is at least the specified value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ExtendCapacity(int minCapacity)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>minCapacity</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The minimum required capacity.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The new capacity of the buffer, which will be a multiple of <a class="xref" href="WaveletMatrix.ValueBuffer-1.html#WaveletMatrix_ValueBuffer_1_ElementsPerChunk">ElementsPerChunk</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p><code class="paramref">minCapacity</code> is negative.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="WaveletMatrix_ValueBuffer_1_Fill_" data-uid="WaveletMatrix.ValueBuffer`1.Fill*"></a>
+
+  <h3 id="WaveletMatrix_ValueBuffer_1_Fill__0_System_Int32_System_Int32_" data-uid="WaveletMatrix.ValueBuffer`1.Fill(`0,System.Int32,System.Int32)">
+  Fill(T, int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Fills a range of elements in the buffer with a specified value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Fill(T value, int index, int count)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <span class="xref">T</span></dt>
+    <dd><p>The value to assign to each element in the range.</p>
+</dd>
+    <dt><code>index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The zero-based starting index of the range to fill.</p>
+</dd>
+    <dt><code>count</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The number of elements in the range to fill.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p><code class="paramref">index</code> or <code class="paramref">count</code> is negative.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>The sum of <code class="paramref">index</code> and <code class="paramref">count</code> is greater than the buffer's capacity and <a class="xref" href="WaveletMatrix.ValueBuffer-1.html#WaveletMatrix_ValueBuffer_1_ExtendAutomatically">ExtendAutomatically</a> is false.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="WaveletMatrix_ValueBuffer_1_GetEnumerator_" data-uid="WaveletMatrix.ValueBuffer`1.GetEnumerator*"></a>
+
+  <h3 id="WaveletMatrix_ValueBuffer_1_GetEnumerator" data-uid="WaveletMatrix.ValueBuffer`1.GetEnumerator">
+  GetEnumerator()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns an enumerator that iterates through the used elements in the buffer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerator&lt;T&gt; GetEnumerator()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1">IEnumerator</a>&lt;T&gt;</dt>
+    <dd><p>An enumerator for the <a class="xref" href="WaveletMatrix.ValueBuffer-1.html">ValueBuffer&lt;T&gt;</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WaveletMatrix_ValueBuffer_1_Remove_" data-uid="WaveletMatrix.ValueBuffer`1.Remove*"></a>
+
+  <h3 id="WaveletMatrix_ValueBuffer_1_Remove__0_" data-uid="WaveletMatrix.ValueBuffer`1.Remove(`0)">
+  Remove(T)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds the first occurrence of an item and replaces it with the default value of type <code class="typeparamref">T</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Remove(T item)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>item</code> <span class="xref">T</span></dt>
+    <dd><p>The item to locate and replace.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true if the item was found and replaced; otherwise, false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="WaveletMatrix_ValueBuffer_1_Remove__0__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method does not actually remove the element in a way that would shift subsequent elements. It only overwrites the found element with <code>default(T)</code>.
+The <a class="xref" href="WaveletMatrix.ValueBuffer-1.html#WaveletMatrix_ValueBuffer_1_Count">Count</a> and <a class="xref" href="WaveletMatrix.ValueBuffer-1.html#WaveletMatrix_ValueBuffer_1_Used">Used</a> properties are not changed by this operation.</p>
+</div>
+
+
+
+
+  <a id="WaveletMatrix_ValueBuffer_1_SetUsedDirectly_" data-uid="WaveletMatrix.ValueBuffer`1.SetUsedDirectly*"></a>
+
+  <h3 id="WaveletMatrix_ValueBuffer_1_SetUsedDirectly_System_Int32_System_Boolean_" data-uid="WaveletMatrix.ValueBuffer`1.SetUsedDirectly(System.Int32,System.Boolean)">
+  SetUsedDirectly(int, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Directly sets the number of used elements and optionally shrinks the buffer's capacity.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetUsedDirectly(int used, bool shrinkAutomatically = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>used</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The new count of used elements. This value must be between 0 and <a class="xref" href="WaveletMatrix.ValueBuffer-1.html#WaveletMatrix_ValueBuffer_1_Capacity">Capacity</a>.</p>
+</dd>
+    <dt><code>shrinkAutomatically</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>If true, deallocates unused array chunks from the end of the buffer to fit the new used count.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="WaveletMatrix_ValueBuffer_1_SetUsedDirectly_System_Int32_System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is an advanced method and should be used with caution. Setting an incorrect value can lead to an inconsistent state or data corruption.</p>
+</div>
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p><code class="paramref">used</code> is negative or greater than <a class="xref" href="WaveletMatrix.ValueBuffer-1.html#WaveletMatrix_ValueBuffer_1_Capacity">Capacity</a>.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="WaveletMatrix_ValueBuffer_1_ToArray_" data-uid="WaveletMatrix.ValueBuffer`1.ToArray*"></a>
+
+  <h3 id="WaveletMatrix_ValueBuffer_1_ToArray" data-uid="WaveletMatrix.ValueBuffer`1.ToArray">
+  ToArray()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Copies the used elements from the <a class="xref" href="WaveletMatrix.ValueBuffer-1.html">ValueBuffer&lt;T&gt;</a> to a new, single contiguous array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T[] ToArray()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>T[]</dt>
+    <dd><p>A new array containing the elements from the buffer.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

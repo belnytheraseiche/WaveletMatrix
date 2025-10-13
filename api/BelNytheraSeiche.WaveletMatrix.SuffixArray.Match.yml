@@ -1,0 +1,467 @@
+### YamlMime:ManagedReference
+items:
+- uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match
+  commentId: T:BelNytheraSeiche.WaveletMatrix.SuffixArray.Match
+  id: SuffixArray.Match
+  parent: BelNytheraSeiche.WaveletMatrix
+  children:
+  - BelNytheraSeiche.WaveletMatrix.SuffixArray.Match.#ctor(System.Int32,System.Int32)
+  - BelNytheraSeiche.WaveletMatrix.SuffixArray.Match.Length
+  - BelNytheraSeiche.WaveletMatrix.SuffixArray.Match.Position
+  langs:
+  - csharp
+  - vb
+  name: SuffixArray.Match
+  nameWithType: SuffixArray.Match
+  fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match
+  type: Struct
+  source:
+    id: Match
+    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
+    startLine: 1051
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Provides a single match found in a text.
+  example: []
+  syntax:
+    content: 'public record struct SuffixArray.Match : IEquatable<SuffixArray.Match>'
+    content.vb: Public Structure SuffixArray.Match Implements IEquatable(Of SuffixArray.Match)
+  implements:
+  - System.IEquatable{BelNytheraSeiche.WaveletMatrix.SuffixArray.Match}
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match.#ctor(System.Int32,System.Int32)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.SuffixArray.Match.#ctor(System.Int32,System.Int32)
+  id: '#ctor(System.Int32,System.Int32)'
+  parent: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match
+  langs:
+  - csharp
+  - vb
+  name: Match(int, int)
+  nameWithType: SuffixArray.Match.Match(int, int)
+  fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match.Match(int, int)
+  type: Constructor
+  source:
+    id: .ctor
+    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
+    startLine: 1051
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Provides a single match found in a text.
+  example: []
+  syntax:
+    content: public Match(int Position, int Length)
+    parameters:
+    - id: Position
+      type: System.Int32
+      description: The 0-based starting position of the match.
+    - id: Length
+      type: System.Int32
+      description: The length of the match.
+    content.vb: Public Sub New(Position As Integer, Length As Integer)
+  overload: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match.#ctor*
+  nameWithType.vb: SuffixArray.Match.New(Integer, Integer)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match.New(Integer, Integer)
+  name.vb: New(Integer, Integer)
+- uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match.Position
+  commentId: P:BelNytheraSeiche.WaveletMatrix.SuffixArray.Match.Position
+  id: Position
+  parent: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match
+  langs:
+  - csharp
+  - vb
+  name: Position
+  nameWithType: SuffixArray.Match.Position
+  fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match.Position
+  type: Property
+  source:
+    id: Position
+    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
+    startLine: 1051
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: The 0-based starting position of the match.
+  example: []
+  syntax:
+    content: public int Position { readonly get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Position As Integer
+  overload: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match.Position*
+- uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match.Length
+  commentId: P:BelNytheraSeiche.WaveletMatrix.SuffixArray.Match.Length
+  id: Length
+  parent: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match
+  langs:
+  - csharp
+  - vb
+  name: Length
+  nameWithType: SuffixArray.Match.Length
+  fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match.Length
+  type: Property
+  source:
+    id: Length
+    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
+    startLine: 1051
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: The length of the match.
+  example: []
+  syntax:
+    content: public int Length { readonly get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Length As Integer
+  overload: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match.Length*
+references:
+- uid: BelNytheraSeiche.WaveletMatrix
+  commentId: N:BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.html
+  name: BelNytheraSeiche.WaveletMatrix
+  nameWithType: BelNytheraSeiche.WaveletMatrix
+  fullName: BelNytheraSeiche.WaveletMatrix
+  spec.csharp:
+  - uid: BelNytheraSeiche
+    name: BelNytheraSeiche
+    href: BelNytheraSeiche.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix
+    name: WaveletMatrix
+    href: BelNytheraSeiche.WaveletMatrix.html
+  spec.vb:
+  - uid: BelNytheraSeiche
+    name: BelNytheraSeiche
+    href: BelNytheraSeiche.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix
+    name: WaveletMatrix
+    href: BelNytheraSeiche.WaveletMatrix.html
+- uid: System.IEquatable{BelNytheraSeiche.WaveletMatrix.SuffixArray.Match}
+  commentId: T:System.IEquatable{BelNytheraSeiche.WaveletMatrix.SuffixArray.Match}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<SuffixArray.Match>
+  nameWithType: IEquatable<SuffixArray.Match>
+  fullName: System.IEquatable<BelNytheraSeiche.WaveletMatrix.SuffixArray.Match>
+  nameWithType.vb: IEquatable(Of SuffixArray.Match)
+  fullName.vb: System.IEquatable(Of BelNytheraSeiche.WaveletMatrix.SuffixArray.Match)
+  name.vb: IEquatable(Of SuffixArray.Match)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: BelNytheraSeiche.WaveletMatrix.SuffixArray
+    name: SuffixArray
+    href: BelNytheraSeiche.WaveletMatrix.SuffixArray.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match
+    name: Match
+    href: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: BelNytheraSeiche.WaveletMatrix.SuffixArray
+    name: SuffixArray
+    href: BelNytheraSeiche.WaveletMatrix.SuffixArray.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match
+    name: Match
+    href: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match.html
+  - name: )
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match.#ctor*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.SuffixArray.Match.#ctor
+  href: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match.html#BelNytheraSeiche_WaveletMatrix_SuffixArray_Match__ctor_System_Int32_System_Int32_
+  name: Match
+  nameWithType: SuffixArray.Match.Match
+  fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match.Match
+  nameWithType.vb: SuffixArray.Match.New
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match.New
+  name.vb: New
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match.Position*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.SuffixArray.Match.Position
+  href: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match.html#BelNytheraSeiche_WaveletMatrix_SuffixArray_Match_Position
+  name: Position
+  nameWithType: SuffixArray.Match.Position
+  fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match.Position
+- uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match.Length*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.SuffixArray.Match.Length
+  href: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match.html#BelNytheraSeiche_WaveletMatrix_SuffixArray_Match_Length
+  name: Length
+  nameWithType: SuffixArray.Match.Length
+  fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match.Length

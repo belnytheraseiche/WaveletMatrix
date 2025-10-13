@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class WaveletMatrixCore | BelNytheraSeiche.WaveletMatrix </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class WaveletMatrixCore | BelNytheraSeiche.WaveletMatrix ">
+      
+      <meta name="description" content="Provides the core, high-performance implementation of a Wavelet Matrix for integer sequences. This class is not generic and operates directly on coordinate-compressed integer arrays.">
+      <link rel="icon" href="../images/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo-small.png" alt="BelNytheraSeiche.WaveletMatrix">
+            BelNytheraSeiche.WaveletMatrix
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore">
+
+
+
+  <h1 id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore" class="text-break">
+Class WaveletMatrixCore  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="BelNytheraSeiche.html">BelNytheraSeiche</a>.<a class="xref" href="BelNytheraSeiche.WaveletMatrix.html">WaveletMatrix</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>BelNytheraSeiche.WaveletMatrix.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Provides the core, high-performance implementation of a Wavelet Matrix for integer sequences.
+This class is not generic and operates directly on coordinate-compressed integer arrays.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class WaveletMatrixCore</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">WaveletMatrixCore</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This class forms the engine for the generic <a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.html">WaveletMatrixGeneric&lt;T&gt;</a>. It encapsulates
+the bit-level data structures and algorithms, such as Rank, Select, and Quantile.</p>
+</div>
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Size_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Size*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Size" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Size">
+  Size
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the total number of elements in the sequence.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Size { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Access_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Access*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Access_System_Int32_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Access(System.Int32)">
+  Access(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the value of the element at the specified zero-based position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Access(int k)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>k</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The zero-based index of the element to retrieve.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The integer value at the specified position.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Thrown if <code class="paramref">k</code> is out of range.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Create_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Create*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Create_System_Collections_Generic_IEnumerable_System_Int32__" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Create(System.Collections.Generic.IEnumerable{System.Int32})">
+  Create(IEnumerable&lt;int&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a new instance of the <a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html">WaveletMatrixCore</a> from a sequence of non-negative integers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static WaveletMatrixCore Create(IEnumerable&lt;int&gt; sequence)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>sequence</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd><p>The sequence of integers to build the Wavelet Matrix from. All values must be non-negative.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html">WaveletMatrixCore</a></dt>
+    <dd><p>A new, fully initialized <a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html">WaveletMatrixCore</a> instance.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>Thrown if <code class="paramref">sequence</code> is null.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown if <code class="paramref">sequence</code> contains negative values.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Deserialize_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Deserialize*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Deserialize_System_Byte___" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Deserialize(System.Byte[])">
+  Deserialize(byte[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Deserializes a byte array into a <a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html">WaveletMatrixCore</a> instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static WaveletMatrixCore Deserialize(byte[] data)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>data</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>The byte array containing the serialized data.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html">WaveletMatrixCore</a></dt>
+    <dd><p>A new, deserialized instance of <a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html">WaveletMatrixCore</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>Thrown if <code class="paramref">data</code> is null.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Deserialize_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Deserialize*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Deserialize_System_IO_Stream_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Deserialize(System.IO.Stream)">
+  Deserialize(Stream)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Deserializes a <a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html">WaveletMatrixCore</a> instance from a stream.
+It verifies the file format, type identifier, and checksum.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static WaveletMatrixCore Deserialize(Stream stream)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>stream</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd><p>The stream to read the serialized data from.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html">WaveletMatrixCore</a></dt>
+    <dd><p>A new, deserialized instance.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>Thrown if <code class="paramref">stream</code> is null.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.invaliddataexception">InvalidDataException</a></dt>
+    <dd><p>Thrown if the data format is unsupported, the type is incompatible, or the data is corrupt.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Deserialize_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Deserialize*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Deserialize_System_String_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Deserialize(System.String)">
+  Deserialize(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Deserializes a <a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html">WaveletMatrixCore</a> instance from the specified file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static WaveletMatrixCore Deserialize(string file)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>file</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The path of the file to read from.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html">WaveletMatrixCore</a></dt>
+    <dd><p>A new, deserialized instance.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>Thrown if <code class="paramref">file</code> is null.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_LargerValue_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.LargerValue*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_LargerValue_System_Int32_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.LargerValue(System.Int32)">
+  LargerValue(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds the successor of a given value.
+The successor is the smallest value that is strictly larger than the given <code class="paramref">value</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? LargerValue(int value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The reference value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd><p>The successor value, or null if no such value is found.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_LargerValue_System_Int32__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method is a shorthand for calling LargerValue(0, <a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Size">Size</a>, <code class="paramref">value</code>).</p>
+</div>
+
+
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_LargerValue_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.LargerValue*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_LargerValue_System_Int32_System_Int32_System_Int32_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.LargerValue(System.Int32,System.Int32,System.Int32)">
+  LargerValue(int, int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds the successor of a given value in the specified range [start, end).
+The successor is the smallest value in the range that is strictly larger than the given <code class="paramref">value</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? LargerValue(int start, int end, int value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>start</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The inclusive start of the range.</p>
+</dd>
+    <dt><code>end</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The exclusive end of the range.</p>
+</dd>
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The reference value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd><p>The successor value, or null if no such value is found.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Thrown if <code class="paramref">start</code> or <code class="paramref">end</code> is out of range.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown if <code class="paramref">start</code> is greater than or equal <code class="paramref">end</code>.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Quantile_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Quantile*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Quantile_System_Int32_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Quantile(System.Int32)">
+  Quantile(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds the k-th smallest value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Quantile(int k)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>k</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The zero-based rank of the value to find (e.g., k=0 for the smallest value).</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The k-th smallest value.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Quantile_System_Int32__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method is a shorthand for calling Quantile(0, <a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Size">Size</a>, <code class="paramref">k</code>).</p>
+</div>
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown if <code class="paramref">k</code> is out of the valid range.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Thrown if <code class="paramref">k</code> is out of the valid range [0, Size).</p>
+</dd>
+  </dl>
+
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Quantile_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Quantile*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Quantile_System_Int32_System_Int32_System_Int32_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Quantile(System.Int32,System.Int32,System.Int32)">
+  Quantile(int, int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds the k-th smallest value within the specified range [start, end).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Quantile(int start, int end, int k)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>start</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The inclusive start of the range.</p>
+</dd>
+    <dt><code>end</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The exclusive end of the range.</p>
+</dd>
+    <dt><code>k</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The zero-based rank of the value to find (e.g., k=0 for the smallest value).</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The k-th smallest value in the range.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Thrown if <code class="paramref">start</code>, <code class="paramref">end</code> or <code class="paramref">k</code> is out of range.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown if <code class="paramref">start</code> is greater than or equal <code class="paramref">end</code>.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown if <code class="paramref">k</code> is out of the valid range [0, end-start).</p>
+</dd>
+  </dl>
+
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_RangeCount_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeCount*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_RangeCount_System_Int32_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeCount(System.Int32)">
+  RangeCount(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Counts the number of occurrences of a specified value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int RangeCount(int value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The value to count.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The number of occurrences of the value.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_RangeCount_System_Int32__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method is a shorthand for calling RangeCount(0, <a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Size">Size</a>, <code class="paramref">value</code>).</p>
+</div>
+
+
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_RangeCount_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeCount*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_RangeCount_System_Int32_System_Int32_System_Int32_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeCount(System.Int32,System.Int32,System.Int32)">
+  RangeCount(int, int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Counts the number of occurrences of a specified value within the range [start, end).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int RangeCount(int start, int end, int value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>start</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The inclusive start of the range.</p>
+</dd>
+    <dt><code>end</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The exclusive end of the range.</p>
+</dd>
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The value to count.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The number of occurrences of the value in the range.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Thrown if <code class="paramref">start</code> or <code class="paramref">end</code> is out of range.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown if <code class="paramref">start</code> is greater than or equal <code class="paramref">end</code>.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_RangeFreq_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeFreq*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_RangeFreq_System_Int32_System_Int32_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeFreq(System.Int32,System.Int32)">
+  RangeFreq(int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Counts the number of elements whose values are within the value range [minValue, maxValue).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int RangeFreq(int minValue, int maxValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>minValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The inclusive start of the value range.</p>
+</dd>
+    <dt><code>maxValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The exclusive end of the value range.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The count of elements matching the criteria.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_RangeFreq_System_Int32_System_Int32__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method is a shorthand for calling RangeFreq(0, <a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Size">Size</a>, <code class="paramref">minValue</code>, <code class="paramref">maxValue</code>).</p>
+</div>
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown if <code class="paramref">minValue</code> is greater than or equal <code class="paramref">maxValue</code>.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_RangeFreq_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeFreq*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_RangeFreq_System_Int32_System_Int32_System_Int32_System_Int32_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeFreq(System.Int32,System.Int32,System.Int32,System.Int32)">
+  RangeFreq(int, int, int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Counts the number of elements in a position range [start, end) whose values are within the value range [minValue, maxValue).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int RangeFreq(int start, int end, int minValue, int maxValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>start</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The inclusive start of the position range.</p>
+</dd>
+    <dt><code>end</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The exclusive end of the position range.</p>
+</dd>
+    <dt><code>minValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The inclusive start of the value range.</p>
+</dd>
+    <dt><code>maxValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The exclusive end of the value range.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The count of elements matching the criteria.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Thrown if <code class="paramref">start</code> or <code class="paramref">end</code> is out of range.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown if <code class="paramref">start</code> is greater than or equal <code class="paramref">end</code>.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown if <code class="paramref">minValue</code> is greater than or equal <code class="paramref">maxValue</code>.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_RangeMode_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeMode*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_RangeMode" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeMode">
+  RangeMode()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds the most frequent value (the mode) and its frequency.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public WaveletMatrixCore.ValueWithFrequency RangeMode()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html">WaveletMatrixCore</a>.<a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency.html">ValueWithFrequency</a></dt>
+    <dd><p>A <a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency.html">WaveletMatrixCore.ValueWithFrequency</a> record containing the mode and its count.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_RangeMode_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method is a shorthand for calling RangeMode(0, <a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Size">Size</a>).</p>
+</div>
+
+
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_RangeMode_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeMode*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_RangeMode_System_Int32_System_Int32_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeMode(System.Int32,System.Int32)">
+  RangeMode(int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds the most frequent value (the mode) and its frequency within the specified range [start, end).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public WaveletMatrixCore.ValueWithFrequency RangeMode(int start, int end)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>start</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The inclusive start of the range.</p>
+</dd>
+    <dt><code>end</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The exclusive end of the range.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html">WaveletMatrixCore</a>.<a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency.html">ValueWithFrequency</a></dt>
+    <dd><p>A <a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency.html">WaveletMatrixCore.ValueWithFrequency</a> record containing the mode and its count.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Thrown if <code class="paramref">start</code> or <code class="paramref">end</code> is out of range.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown if <code class="paramref">start</code> is greater than or equal <code class="paramref">end</code>.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Rank_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Rank*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Rank_System_Int32_System_Int32_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Rank(System.Int32,System.Int32)">
+  Rank(int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Counts the number of occurrences of a specified value in the prefix of the sequence [0, k).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Rank(int k, int value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>k</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The exclusive end of the range [0, k).</p>
+</dd>
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The value to count.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The number of times the value appears in the specified prefix.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Thrown if <code class="paramref">k</code> is out of range.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Select_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Select*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Select_System_Int32_System_Int32_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Select(System.Int32,System.Int32)">
+  Select(int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds the zero-based position of the k-th occurrence of a specified value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Select(int k, int value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>k</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The one-based rank of the occurrence to find (e.g., k=1 for the first occurrence).</p>
+</dd>
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The value to search for.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The zero-based index of the k-th occurrence of the value, or -1 if not found.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Thrown if <code class="paramref">k</code> is out of range.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Serialize_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Serialize*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Serialize_BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_BelNytheraSeiche_WaveletMatrix_SerializationOptions_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Serialize(BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore,BelNytheraSeiche.WaveletMatrix.SerializationOptions)">
+  Serialize(WaveletMatrixCore, SerializationOptions?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Serializes the <a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html">WaveletMatrixCore</a> instance into a byte array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static byte[] Serialize(WaveletMatrixCore obj, SerializationOptions? options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html">WaveletMatrixCore</a></dt>
+    <dd><p>The instance to serialize.</p>
+</dd>
+    <dt><code>options</code> <a class="xref" href="BelNytheraSeiche.WaveletMatrix.SerializationOptions.html">SerializationOptions</a></dt>
+    <dd><p>Serialization options, such as the compression level.
+If null, <a class="xref" href="BelNytheraSeiche.WaveletMatrix.SerializationOptions.html#BelNytheraSeiche_WaveletMatrix_SerializationOptions_Default">Default</a> will be used.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>A byte array containing the serialized data.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>Thrown if <code class="paramref">obj</code> is null.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Serialize_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Serialize*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Serialize_BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_System_IO_Stream_BelNytheraSeiche_WaveletMatrix_SerializationOptions_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Serialize(BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore,System.IO.Stream,BelNytheraSeiche.WaveletMatrix.SerializationOptions)">
+  Serialize(WaveletMatrixCore, Stream, SerializationOptions?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Serializes the <a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html">WaveletMatrixCore</a> instance to a stream.
+The data is compressed using Brotli and includes a checksum for integrity verification.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Serialize(WaveletMatrixCore obj, Stream stream, SerializationOptions? options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html">WaveletMatrixCore</a></dt>
+    <dd><p>The instance to serialize.</p>
+</dd>
+    <dt><code>stream</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd><p>The stream to write the serialized data to.</p>
+</dd>
+    <dt><code>options</code> <a class="xref" href="BelNytheraSeiche.WaveletMatrix.SerializationOptions.html">SerializationOptions</a></dt>
+    <dd><p>Serialization options, such as the compression level.
+If null, <a class="xref" href="BelNytheraSeiche.WaveletMatrix.SerializationOptions.html#BelNytheraSeiche_WaveletMatrix_SerializationOptions_Default">Default</a> will be used.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>Thrown if <code class="paramref">obj</code> or <code class="paramref">stream</code> is null.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Serialize_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Serialize*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Serialize_BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_System_String_BelNytheraSeiche_WaveletMatrix_SerializationOptions_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Serialize(BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore,System.String,BelNytheraSeiche.WaveletMatrix.SerializationOptions)">
+  Serialize(WaveletMatrixCore, string, SerializationOptions?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Serializes the <a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html">WaveletMatrixCore</a> instance to the specified file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Serialize(WaveletMatrixCore obj, string file, SerializationOptions? options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html">WaveletMatrixCore</a></dt>
+    <dd><p>The instance to serialize.</p>
+</dd>
+    <dt><code>file</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The path of the file to write to.</p>
+</dd>
+    <dt><code>options</code> <a class="xref" href="BelNytheraSeiche.WaveletMatrix.SerializationOptions.html">SerializationOptions</a></dt>
+    <dd><p>Serialization options, such as the compression level.
+If null, <a class="xref" href="BelNytheraSeiche.WaveletMatrix.SerializationOptions.html#BelNytheraSeiche_WaveletMatrix_SerializationOptions_Default">Default</a> will be used.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>Thrown if <code class="paramref">obj</code> or <code class="paramref">file</code> is null.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_SmallerValue_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.SmallerValue*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_SmallerValue_System_Int32_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.SmallerValue(System.Int32)">
+  SmallerValue(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds the predecessor of a given value.
+The predecessor is the largest value that is strictly smaller than the given <code class="paramref">value</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? SmallerValue(int value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The reference value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd><p>The predecessor value, or null if no such value is found.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_SmallerValue_System_Int32__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method is a shorthand for calling SmallerValue(0, <a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Size">Size</a>, <code class="paramref">value</code>).</p>
+</div>
+
+
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_SmallerValue_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.SmallerValue*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_SmallerValue_System_Int32_System_Int32_System_Int32_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.SmallerValue(System.Int32,System.Int32,System.Int32)">
+  SmallerValue(int, int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds the predecessor of a given value in the specified range [start, end).
+The predecessor is the largest value in the range that is strictly smaller than the given <code class="paramref">value</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? SmallerValue(int start, int end, int value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>start</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The inclusive start of the range.</p>
+</dd>
+    <dt><code>end</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The exclusive end of the range.</p>
+</dd>
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The reference value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd><p>The predecessor value, or null if no such value is found.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Thrown if <code class="paramref">start</code> or <code class="paramref">end</code> is out of range.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown if <code class="paramref">start</code> is greater than or equal <code class="paramref">end</code>.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_TopK_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.TopK*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_TopK_System_Int32_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.TopK(System.Int32)">
+  TopK(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds the top K most frequent values and their frequencies.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;WaveletMatrixCore.ValueWithFrequency&gt; TopK(int k)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>k</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The number of top elements to retrieve.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html">WaveletMatrixCore</a>.<a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency.html">ValueWithFrequency</a>&gt;</dt>
+    <dd><p>An enumerable collection of <a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency.html">WaveletMatrixCore.ValueWithFrequency</a> records, ordered by frequency in descending order.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_TopK_System_Int32__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method is a shorthand for calling TopK(0, <a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Size">Size</a>, <code class="paramref">k</code>).</p>
+</div>
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Thrown if <code class="paramref">k</code> is out of range.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_TopK_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.TopK*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_TopK_System_Int32_System_Int32_System_Int32_" data-uid="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.TopK(System.Int32,System.Int32,System.Int32)">
+  TopK(int, int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds the top K most frequent values and their frequencies within the specified range [start, end).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;WaveletMatrixCore.ValueWithFrequency&gt; TopK(int start, int end, int k)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>start</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The inclusive start of the range.</p>
+</dd>
+    <dt><code>end</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The exclusive end of the range.</p>
+</dd>
+    <dt><code>k</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The number of top elements to retrieve.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html">WaveletMatrixCore</a>.<a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency.html">ValueWithFrequency</a>&gt;</dt>
+    <dd><p>An enumerable collection of <a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency.html">WaveletMatrixCore.ValueWithFrequency</a> records, ordered by frequency in descending order.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Thrown if <code class="paramref">start</code>, <code class="paramref">end</code> or <code class="paramref">k</code> is out of range.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown if <code class="paramref">start</code> is greater than or equal <code class="paramref">end</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

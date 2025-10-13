@@ -1,0 +1,546 @@
+### YamlMime:ManagedReference
+items:
+- uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions
+  commentId: T:BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions
+  id: SuffixArray.WildcardOptions
+  parent: BelNytheraSeiche.WaveletMatrix
+  children:
+  - BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.Asterisk
+  - BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.AsteriskMaxLength
+  - BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.AsteriskMinLength
+  - BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.Default
+  - BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.Question
+  - BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.StopCharacters
+  langs:
+  - csharp
+  - vb
+  name: SuffixArray.WildcardOptions
+  nameWithType: SuffixArray.WildcardOptions
+  fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions
+  type: Class
+  source:
+    id: WildcardOptions
+    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
+    startLine: 1071
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Provides options to customize the behavior of a wildcard search.
+  example: []
+  syntax:
+    content: public sealed class SuffixArray.WildcardOptions
+    content.vb: Public NotInheritable Class SuffixArray.WildcardOptions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.Asterisk
+  commentId: P:BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.Asterisk
+  id: Asterisk
+  parent: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions
+  langs:
+  - csharp
+  - vb
+  name: Asterisk
+  nameWithType: SuffixArray.WildcardOptions.Asterisk
+  fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.Asterisk
+  type: Property
+  source:
+    id: Asterisk
+    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
+    startLine: 1077
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: The character to be treated as a variable-length wildcard (*).
+  example: []
+  syntax:
+    content: public char Asterisk { get; set; }
+    parameters: []
+    return:
+      type: System.Char
+    content.vb: Public Property Asterisk As Char
+  overload: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.Asterisk*
+- uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.Question
+  commentId: P:BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.Question
+  id: Question
+  parent: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions
+  langs:
+  - csharp
+  - vb
+  name: Question
+  nameWithType: SuffixArray.WildcardOptions.Question
+  fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.Question
+  type: Property
+  source:
+    id: Question
+    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
+    startLine: 1082
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: The character to be treated as a single-character wildcard (?).
+  example: []
+  syntax:
+    content: public char Question { get; set; }
+    parameters: []
+    return:
+      type: System.Char
+    content.vb: Public Property Question As Char
+  overload: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.Question*
+- uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.AsteriskMinLength
+  commentId: P:BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.AsteriskMinLength
+  id: AsteriskMinLength
+  parent: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions
+  langs:
+  - csharp
+  - vb
+  name: AsteriskMinLength
+  nameWithType: SuffixArray.WildcardOptions.AsteriskMinLength
+  fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.AsteriskMinLength
+  type: Property
+  source:
+    id: AsteriskMinLength
+    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
+    startLine: 1087
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Gets or sets the minimum number of characters the wildcard can match. Defaults to 0.
+  example: []
+  syntax:
+    content: public int AsteriskMinLength { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property AsteriskMinLength As Integer
+  overload: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.AsteriskMinLength*
+- uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.AsteriskMaxLength
+  commentId: P:BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.AsteriskMaxLength
+  id: AsteriskMaxLength
+  parent: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions
+  langs:
+  - csharp
+  - vb
+  name: AsteriskMaxLength
+  nameWithType: SuffixArray.WildcardOptions.AsteriskMaxLength
+  fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.AsteriskMaxLength
+  type: Property
+  source:
+    id: AsteriskMaxLength
+    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
+    startLine: 1092
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Gets or sets the maximum number of characters the wildcard can match. Defaults to Int32.MaxValue.
+  example: []
+  syntax:
+    content: public int AsteriskMaxLength { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property AsteriskMaxLength As Integer
+  overload: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.AsteriskMaxLength*
+- uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.StopCharacters
+  commentId: P:BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.StopCharacters
+  id: StopCharacters
+  parent: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions
+  langs:
+  - csharp
+  - vb
+  name: StopCharacters
+  nameWithType: SuffixArray.WildcardOptions.StopCharacters
+  fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.StopCharacters
+  type: Property
+  source:
+    id: StopCharacters
+    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
+    startLine: 1098
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Gets or sets a set of characters that will stop the match.
+
+    If the match encounters any of these characters, it will end.
+  example: []
+  syntax:
+    content: public char[]? StopCharacters { get; set; }
+    parameters: []
+    return:
+      type: System.Char[]
+    content.vb: Public Property StopCharacters As Char()
+  overload: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.StopCharacters*
+- uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.Default
+  commentId: P:BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.Default
+  id: Default
+  parent: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions
+  langs:
+  - csharp
+  - vb
+  name: Default
+  nameWithType: SuffixArray.WildcardOptions.Default
+  fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.Default
+  type: Property
+  source:
+    id: Default
+    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
+    startLine: 1103
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Gets a singleton instance of <xref href="BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions" data-throw-if-not-resolved="false"></xref> with default values.
+  example: []
+  syntax:
+    content: public static SuffixArray.WildcardOptions Default { get; }
+    parameters: []
+    return:
+      type: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions
+    content.vb: Public Shared ReadOnly Property [Default] As SuffixArray.WildcardOptions
+  overload: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.Default*
+references:
+- uid: BelNytheraSeiche.WaveletMatrix
+  commentId: N:BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.html
+  name: BelNytheraSeiche.WaveletMatrix
+  nameWithType: BelNytheraSeiche.WaveletMatrix
+  fullName: BelNytheraSeiche.WaveletMatrix
+  spec.csharp:
+  - uid: BelNytheraSeiche
+    name: BelNytheraSeiche
+    href: BelNytheraSeiche.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix
+    name: WaveletMatrix
+    href: BelNytheraSeiche.WaveletMatrix.html
+  spec.vb:
+  - uid: BelNytheraSeiche
+    name: BelNytheraSeiche
+    href: BelNytheraSeiche.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix
+    name: WaveletMatrix
+    href: BelNytheraSeiche.WaveletMatrix.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.Asterisk*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.Asterisk
+  href: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.html#BelNytheraSeiche_WaveletMatrix_SuffixArray_WildcardOptions_Asterisk
+  name: Asterisk
+  nameWithType: SuffixArray.WildcardOptions.Asterisk
+  fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.Asterisk
+- uid: System.Char
+  commentId: T:System.Char
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.char
+  name: char
+  nameWithType: char
+  fullName: char
+  nameWithType.vb: Char
+  fullName.vb: Char
+  name.vb: Char
+- uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.Question*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.Question
+  href: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.html#BelNytheraSeiche_WaveletMatrix_SuffixArray_WildcardOptions_Question
+  name: Question
+  nameWithType: SuffixArray.WildcardOptions.Question
+  fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.Question
+- uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.AsteriskMinLength*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.AsteriskMinLength
+  href: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.html#BelNytheraSeiche_WaveletMatrix_SuffixArray_WildcardOptions_AsteriskMinLength
+  name: AsteriskMinLength
+  nameWithType: SuffixArray.WildcardOptions.AsteriskMinLength
+  fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.AsteriskMinLength
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.AsteriskMaxLength*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.AsteriskMaxLength
+  href: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.html#BelNytheraSeiche_WaveletMatrix_SuffixArray_WildcardOptions_AsteriskMaxLength
+  name: AsteriskMaxLength
+  nameWithType: SuffixArray.WildcardOptions.AsteriskMaxLength
+  fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.AsteriskMaxLength
+- uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.StopCharacters*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.StopCharacters
+  href: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.html#BelNytheraSeiche_WaveletMatrix_SuffixArray_WildcardOptions_StopCharacters
+  name: StopCharacters
+  nameWithType: SuffixArray.WildcardOptions.StopCharacters
+  fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.StopCharacters
+- uid: System.Char[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.char
+  name: char[]
+  nameWithType: char[]
+  fullName: char[]
+  nameWithType.vb: Char()
+  fullName.vb: Char()
+  name.vb: Char()
+  spec.csharp:
+  - uid: System.Char
+    name: char
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Char
+    name: Char
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: (
+  - name: )
+- uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions
+  commentId: T:BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.SuffixArray.html
+  name: SuffixArray.WildcardOptions
+  nameWithType: SuffixArray.WildcardOptions
+  fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.SuffixArray
+    name: SuffixArray
+    href: BelNytheraSeiche.WaveletMatrix.SuffixArray.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions
+    name: WildcardOptions
+    href: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.html
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.SuffixArray
+    name: SuffixArray
+    href: BelNytheraSeiche.WaveletMatrix.SuffixArray.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions
+    name: WildcardOptions
+    href: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.html
+- uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.Default*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.Default
+  href: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.html#BelNytheraSeiche_WaveletMatrix_SuffixArray_WildcardOptions_Default
+  name: Default
+  nameWithType: SuffixArray.WildcardOptions.Default
+  fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.Default

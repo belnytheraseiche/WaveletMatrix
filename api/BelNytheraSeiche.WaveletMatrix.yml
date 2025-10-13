@@ -1,0 +1,646 @@
+### YamlMime:ManagedReference
+items:
+- uid: BelNytheraSeiche.WaveletMatrix
+  commentId: N:BelNytheraSeiche.WaveletMatrix
+  id: BelNytheraSeiche.WaveletMatrix
+  children:
+  - BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1
+  - BelNytheraSeiche.WaveletMatrix.BitSet
+  - BelNytheraSeiche.WaveletMatrix.BurrowsWheelerTransform
+  - BelNytheraSeiche.WaveletMatrix.BurrowsWheelerTransform.BwtResult
+  - BelNytheraSeiche.WaveletMatrix.FMIndex
+  - BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder
+  - BelNytheraSeiche.WaveletMatrix.ImmutableBitSet
+  - BelNytheraSeiche.WaveletMatrix.LcpIndex
+  - BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat
+  - BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat
+  - BelNytheraSeiche.WaveletMatrix.RankSelectBitSet
+  - BelNytheraSeiche.WaveletMatrix.SerializationOptions
+  - BelNytheraSeiche.WaveletMatrix.SparseTable`1
+  - BelNytheraSeiche.WaveletMatrix.SparseTable`1.ValueWithIndex
+  - BelNytheraSeiche.WaveletMatrix.SuffixArray
+  - BelNytheraSeiche.WaveletMatrix.SuffixArray.Match
+  - BelNytheraSeiche.WaveletMatrix.SuffixArray.MatchGroup
+  - BelNytheraSeiche.WaveletMatrix.SuffixArray.MatchRepeated
+  - BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions
+  - BelNytheraSeiche.WaveletMatrix.ValueBuffer`1
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.ByteSerializer
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer`1
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.Int32Serializer
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.ValueWithFrequency`1
+  langs:
+  - csharp
+  - vb
+  name: BelNytheraSeiche.WaveletMatrix
+  nameWithType: BelNytheraSeiche.WaveletMatrix
+  fullName: BelNytheraSeiche.WaveletMatrix
+  type: Namespace
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+references:
+- uid: BelNytheraSeiche.WaveletMatrix.BitSet
+  commentId: T:BelNytheraSeiche.WaveletMatrix.BitSet
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.BitSet.html
+  name: BitSet
+  nameWithType: BitSet
+  fullName: BelNytheraSeiche.WaveletMatrix.BitSet
+- uid: BelNytheraSeiche.WaveletMatrix.ImmutableBitSet
+  commentId: T:BelNytheraSeiche.WaveletMatrix.ImmutableBitSet
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.ImmutableBitSet.html
+  name: ImmutableBitSet
+  nameWithType: ImmutableBitSet
+  fullName: BelNytheraSeiche.WaveletMatrix.ImmutableBitSet
+- uid: BelNytheraSeiche.WaveletMatrix.RankSelectBitSet
+  commentId: T:BelNytheraSeiche.WaveletMatrix.RankSelectBitSet
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.RankSelectBitSet.html
+  name: RankSelectBitSet
+  nameWithType: RankSelectBitSet
+  fullName: BelNytheraSeiche.WaveletMatrix.RankSelectBitSet
+- uid: BelNytheraSeiche.WaveletMatrix.BurrowsWheelerTransform
+  commentId: T:BelNytheraSeiche.WaveletMatrix.BurrowsWheelerTransform
+  href: BelNytheraSeiche.WaveletMatrix.BurrowsWheelerTransform.html
+  name: BurrowsWheelerTransform
+  nameWithType: BurrowsWheelerTransform
+  fullName: BelNytheraSeiche.WaveletMatrix.BurrowsWheelerTransform
+- uid: BelNytheraSeiche.WaveletMatrix.BurrowsWheelerTransform.BwtResult
+  commentId: T:BelNytheraSeiche.WaveletMatrix.BurrowsWheelerTransform.BwtResult
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.BurrowsWheelerTransform.html
+  name: BurrowsWheelerTransform.BwtResult
+  nameWithType: BurrowsWheelerTransform.BwtResult
+  fullName: BelNytheraSeiche.WaveletMatrix.BurrowsWheelerTransform.BwtResult
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.BurrowsWheelerTransform
+    name: BurrowsWheelerTransform
+    href: BelNytheraSeiche.WaveletMatrix.BurrowsWheelerTransform.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.BurrowsWheelerTransform.BwtResult
+    name: BwtResult
+    href: BelNytheraSeiche.WaveletMatrix.BurrowsWheelerTransform.BwtResult.html
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.BurrowsWheelerTransform
+    name: BurrowsWheelerTransform
+    href: BelNytheraSeiche.WaveletMatrix.BurrowsWheelerTransform.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.BurrowsWheelerTransform.BwtResult
+    name: BwtResult
+    href: BelNytheraSeiche.WaveletMatrix.BurrowsWheelerTransform.BwtResult.html
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex
+  commentId: T:BelNytheraSeiche.WaveletMatrix.FMIndex
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
+  name: FMIndex
+  nameWithType: FMIndex
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder
+  commentId: T:BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
+  name: FMIndex.SortOrder
+  nameWithType: FMIndex.SortOrder
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex
+    name: FMIndex
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder
+    name: SortOrder
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.html
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex
+    name: FMIndex
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder
+    name: SortOrder
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.html
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+  commentId: T:BelNytheraSeiche.WaveletMatrix.LcpIndex
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  name: LcpIndex
+  nameWithType: LcpIndex
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat
+  commentId: T:BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  name: LcpIndex.TandemRepeat
+  nameWithType: LcpIndex.TandemRepeat
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat
+    name: TandemRepeat
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat.html
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat
+    name: TandemRepeat
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat.html
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat
+  commentId: T:BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  name: LcpIndex.Repeat
+  nameWithType: LcpIndex.Repeat
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat
+    name: Repeat
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat.html
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat
+    name: Repeat
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat.html
+- uid: BelNytheraSeiche.WaveletMatrix.SerializationOptions
+  commentId: T:BelNytheraSeiche.WaveletMatrix.SerializationOptions
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.SerializationOptions.html
+  name: SerializationOptions
+  nameWithType: SerializationOptions
+  fullName: BelNytheraSeiche.WaveletMatrix.SerializationOptions
+- uid: BelNytheraSeiche.WaveletMatrix.SparseTable`1
+  commentId: T:BelNytheraSeiche.WaveletMatrix.SparseTable`1
+  href: BelNytheraSeiche.WaveletMatrix.SparseTable-1.html
+  name: SparseTable<T>
+  nameWithType: SparseTable<T>
+  fullName: BelNytheraSeiche.WaveletMatrix.SparseTable<T>
+  nameWithType.vb: SparseTable(Of T)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.SparseTable(Of T)
+  name.vb: SparseTable(Of T)
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.SparseTable`1
+    name: SparseTable
+    href: BelNytheraSeiche.WaveletMatrix.SparseTable-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.SparseTable`1
+    name: SparseTable
+    href: BelNytheraSeiche.WaveletMatrix.SparseTable-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: BelNytheraSeiche.WaveletMatrix.SparseTable`1.ValueWithIndex
+  commentId: T:BelNytheraSeiche.WaveletMatrix.SparseTable`1.ValueWithIndex
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.SparseTable-1.html
+  name: SparseTable<T>.ValueWithIndex
+  nameWithType: SparseTable<T>.ValueWithIndex
+  fullName: BelNytheraSeiche.WaveletMatrix.SparseTable<T>.ValueWithIndex
+  nameWithType.vb: SparseTable(Of T).ValueWithIndex
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.SparseTable(Of T).ValueWithIndex
+  name.vb: SparseTable(Of T).ValueWithIndex
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.SparseTable`1
+    name: SparseTable
+    href: BelNytheraSeiche.WaveletMatrix.SparseTable-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.SparseTable`1.ValueWithIndex
+    name: ValueWithIndex
+    href: BelNytheraSeiche.WaveletMatrix.SparseTable-1.ValueWithIndex.html
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.SparseTable`1
+    name: SparseTable
+    href: BelNytheraSeiche.WaveletMatrix.SparseTable-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.SparseTable`1.ValueWithIndex
+    name: ValueWithIndex
+    href: BelNytheraSeiche.WaveletMatrix.SparseTable-1.ValueWithIndex.html
+- uid: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1
+  commentId: T:BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1
+  href: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable-1.html
+  name: AggregateSparseTable<T>
+  nameWithType: AggregateSparseTable<T>
+  fullName: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable<T>
+  nameWithType.vb: AggregateSparseTable(Of T)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable(Of T)
+  name.vb: AggregateSparseTable(Of T)
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1
+    name: AggregateSparseTable
+    href: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1
+    name: AggregateSparseTable
+    href: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: BelNytheraSeiche.WaveletMatrix.SuffixArray
+  commentId: T:BelNytheraSeiche.WaveletMatrix.SuffixArray
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.SuffixArray.html
+  name: SuffixArray
+  nameWithType: SuffixArray
+  fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray
+- uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match
+  commentId: T:BelNytheraSeiche.WaveletMatrix.SuffixArray.Match
+  href: BelNytheraSeiche.WaveletMatrix.SuffixArray.html
+  name: SuffixArray.Match
+  nameWithType: SuffixArray.Match
+  fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.SuffixArray
+    name: SuffixArray
+    href: BelNytheraSeiche.WaveletMatrix.SuffixArray.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match
+    name: Match
+    href: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match.html
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.SuffixArray
+    name: SuffixArray
+    href: BelNytheraSeiche.WaveletMatrix.SuffixArray.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match
+    name: Match
+    href: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match.html
+- uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.MatchRepeated
+  commentId: T:BelNytheraSeiche.WaveletMatrix.SuffixArray.MatchRepeated
+  href: BelNytheraSeiche.WaveletMatrix.SuffixArray.html
+  name: SuffixArray.MatchRepeated
+  nameWithType: SuffixArray.MatchRepeated
+  fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.MatchRepeated
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.SuffixArray
+    name: SuffixArray
+    href: BelNytheraSeiche.WaveletMatrix.SuffixArray.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.MatchRepeated
+    name: MatchRepeated
+    href: BelNytheraSeiche.WaveletMatrix.SuffixArray.MatchRepeated.html
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.SuffixArray
+    name: SuffixArray
+    href: BelNytheraSeiche.WaveletMatrix.SuffixArray.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.MatchRepeated
+    name: MatchRepeated
+    href: BelNytheraSeiche.WaveletMatrix.SuffixArray.MatchRepeated.html
+- uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.MatchGroup
+  commentId: T:BelNytheraSeiche.WaveletMatrix.SuffixArray.MatchGroup
+  href: BelNytheraSeiche.WaveletMatrix.SuffixArray.html
+  name: SuffixArray.MatchGroup
+  nameWithType: SuffixArray.MatchGroup
+  fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.MatchGroup
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.SuffixArray
+    name: SuffixArray
+    href: BelNytheraSeiche.WaveletMatrix.SuffixArray.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.MatchGroup
+    name: MatchGroup
+    href: BelNytheraSeiche.WaveletMatrix.SuffixArray.MatchGroup.html
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.SuffixArray
+    name: SuffixArray
+    href: BelNytheraSeiche.WaveletMatrix.SuffixArray.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.MatchGroup
+    name: MatchGroup
+    href: BelNytheraSeiche.WaveletMatrix.SuffixArray.MatchGroup.html
+- uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions
+  commentId: T:BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.SuffixArray.html
+  name: SuffixArray.WildcardOptions
+  nameWithType: SuffixArray.WildcardOptions
+  fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.SuffixArray
+    name: SuffixArray
+    href: BelNytheraSeiche.WaveletMatrix.SuffixArray.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions
+    name: WildcardOptions
+    href: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.html
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.SuffixArray
+    name: SuffixArray
+    href: BelNytheraSeiche.WaveletMatrix.SuffixArray.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions
+    name: WildcardOptions
+    href: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.html
+- uid: BelNytheraSeiche.WaveletMatrix.ValueBuffer`1
+  commentId: T:BelNytheraSeiche.WaveletMatrix.ValueBuffer`1
+  href: BelNytheraSeiche.WaveletMatrix.ValueBuffer-1.html
+  name: ValueBuffer<T>
+  nameWithType: ValueBuffer<T>
+  fullName: BelNytheraSeiche.WaveletMatrix.ValueBuffer<T>
+  nameWithType.vb: ValueBuffer(Of T)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.ValueBuffer(Of T)
+  name.vb: ValueBuffer(Of T)
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.ValueBuffer`1
+    name: ValueBuffer
+    href: BelNytheraSeiche.WaveletMatrix.ValueBuffer-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.ValueBuffer`1
+    name: ValueBuffer
+    href: BelNytheraSeiche.WaveletMatrix.ValueBuffer-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+  commentId: T:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html
+  name: WaveletMatrixCore
+  nameWithType: WaveletMatrixCore
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency
+  commentId: T:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html
+  name: WaveletMatrixCore.ValueWithFrequency
+  nameWithType: WaveletMatrixCore.ValueWithFrequency
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+    name: WaveletMatrixCore
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency
+    name: ValueWithFrequency
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency.html
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+    name: WaveletMatrixCore
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency
+    name: ValueWithFrequency
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency.html
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1
+  commentId: T:BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.html
+  name: WaveletMatrixGeneric<T>
+  nameWithType: WaveletMatrixGeneric<T>
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>
+  nameWithType.vb: WaveletMatrixGeneric(Of T)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric(Of T)
+  name.vb: WaveletMatrixGeneric(Of T)
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer`1
+  commentId: T:BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer`1
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.html
+  name: WaveletMatrixGeneric<T>.IGenericSerializer<Tx>
+  nameWithType: WaveletMatrixGeneric<T>.IGenericSerializer<Tx>
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.IGenericSerializer<Tx>
+  nameWithType.vb: WaveletMatrixGeneric(Of T).IGenericSerializer(Of Tx)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric(Of T).IGenericSerializer(Of Tx)
+  name.vb: WaveletMatrixGeneric(Of T).IGenericSerializer(Of Tx)
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer`1
+    name: IGenericSerializer
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.IGenericSerializer-1.html
+  - name: <
+  - name: Tx
+  - name: '>'
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer`1
+    name: IGenericSerializer
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.IGenericSerializer-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: Tx
+  - name: )
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.ByteSerializer
+  commentId: T:BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.ByteSerializer
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.html
+  name: WaveletMatrixGeneric<T>.ByteSerializer
+  nameWithType: WaveletMatrixGeneric<T>.ByteSerializer
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.ByteSerializer
+  nameWithType.vb: WaveletMatrixGeneric(Of T).ByteSerializer
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric(Of T).ByteSerializer
+  name.vb: WaveletMatrixGeneric(Of T).ByteSerializer
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.ByteSerializer
+    name: ByteSerializer
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.ByteSerializer.html
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.ByteSerializer
+    name: ByteSerializer
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.ByteSerializer.html
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer
+  commentId: T:BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.html
+  name: WaveletMatrixGeneric<T>.CharSerializer
+  nameWithType: WaveletMatrixGeneric<T>.CharSerializer
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.CharSerializer
+  nameWithType.vb: WaveletMatrixGeneric(Of T).CharSerializer
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric(Of T).CharSerializer
+  name.vb: WaveletMatrixGeneric(Of T).CharSerializer
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer
+    name: CharSerializer
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.CharSerializer.html
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer
+    name: CharSerializer
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.CharSerializer.html
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.Int32Serializer
+  commentId: T:BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.Int32Serializer
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.html
+  name: WaveletMatrixGeneric<T>.Int32Serializer
+  nameWithType: WaveletMatrixGeneric<T>.Int32Serializer
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.Int32Serializer
+  nameWithType.vb: WaveletMatrixGeneric(Of T).Int32Serializer
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric(Of T).Int32Serializer
+  name.vb: WaveletMatrixGeneric(Of T).Int32Serializer
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.Int32Serializer
+    name: Int32Serializer
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.Int32Serializer.html
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.Int32Serializer
+    name: Int32Serializer
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.Int32Serializer.html
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.ValueWithFrequency`1
+  commentId: T:BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.ValueWithFrequency`1
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.html
+  name: WaveletMatrixGeneric<T>.ValueWithFrequency<Tx>
+  nameWithType: WaveletMatrixGeneric<T>.ValueWithFrequency<Tx>
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.ValueWithFrequency<Tx>
+  nameWithType.vb: WaveletMatrixGeneric(Of T).ValueWithFrequency(Of Tx)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric(Of T).ValueWithFrequency(Of Tx)
+  name.vb: WaveletMatrixGeneric(Of T).ValueWithFrequency(Of Tx)
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.ValueWithFrequency`1
+    name: ValueWithFrequency
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.ValueWithFrequency-1.html
+  - name: <
+  - name: Tx
+  - name: '>'
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.ValueWithFrequency`1
+    name: ValueWithFrequency
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.ValueWithFrequency-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: Tx
+  - name: )
+- uid: BelNytheraSeiche.WaveletMatrix
+  commentId: N:BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.html
+  name: BelNytheraSeiche.WaveletMatrix
+  nameWithType: BelNytheraSeiche.WaveletMatrix
+  fullName: BelNytheraSeiche.WaveletMatrix
+  spec.csharp:
+  - uid: BelNytheraSeiche
+    name: BelNytheraSeiche
+    href: BelNytheraSeiche.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix
+    name: WaveletMatrix
+    href: BelNytheraSeiche.WaveletMatrix.html
+  spec.vb:
+  - uid: BelNytheraSeiche
+    name: BelNytheraSeiche
+    href: BelNytheraSeiche.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix
+    name: WaveletMatrix
+    href: BelNytheraSeiche.WaveletMatrix.html

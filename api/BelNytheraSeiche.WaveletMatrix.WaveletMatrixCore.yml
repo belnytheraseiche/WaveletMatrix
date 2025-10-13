@@ -1,0 +1,1805 @@
+### YamlMime:ManagedReference
+items:
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+  commentId: T:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+  id: WaveletMatrixCore
+  parent: BelNytheraSeiche.WaveletMatrix
+  children:
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Access(System.Int32)
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Create(System.Collections.Generic.IEnumerable{System.Int32})
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Deserialize(System.Byte[])
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Deserialize(System.IO.Stream)
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Deserialize(System.String)
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.LargerValue(System.Int32)
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.LargerValue(System.Int32,System.Int32,System.Int32)
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Quantile(System.Int32)
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Quantile(System.Int32,System.Int32,System.Int32)
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeCount(System.Int32)
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeCount(System.Int32,System.Int32,System.Int32)
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeFreq(System.Int32,System.Int32)
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeFreq(System.Int32,System.Int32,System.Int32,System.Int32)
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeMode
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeMode(System.Int32,System.Int32)
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Rank(System.Int32,System.Int32)
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Select(System.Int32,System.Int32)
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Serialize(BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Serialize(BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore,System.IO.Stream,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Serialize(BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore,System.String,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Size
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.SmallerValue(System.Int32)
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.SmallerValue(System.Int32,System.Int32,System.Int32)
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.TopK(System.Int32)
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.TopK(System.Int32,System.Int32,System.Int32)
+  langs:
+  - csharp
+  - vb
+  name: WaveletMatrixCore
+  nameWithType: WaveletMatrixCore
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+  type: Class
+  source:
+    id: WaveletMatrixCore
+    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixCore.cs
+    startLine: 37
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Provides the core, high-performance implementation of a Wavelet Matrix for integer sequences.
+
+    This class is not generic and operates directly on coordinate-compressed integer arrays.
+  remarks: >-
+    This class forms the engine for the generic <xref href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric%601" data-throw-if-not-resolved="false"></xref>. It encapsulates
+
+    the bit-level data structures and algorithms, such as Rank, Select, and Quantile.
+  example: []
+  syntax:
+    content: public sealed class WaveletMatrixCore
+    content.vb: Public NotInheritable Class WaveletMatrixCore
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Size
+  commentId: P:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Size
+  id: Size
+  parent: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+  langs:
+  - csharp
+  - vb
+  name: Size
+  nameWithType: WaveletMatrixCore.Size
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Size
+  type: Property
+  source:
+    id: Size
+    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixCore.cs
+    startLine: 46
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Gets the total number of elements in the sequence.
+  example: []
+  syntax:
+    content: public int Size { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Size As Integer
+  overload: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Size*
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Create(System.Collections.Generic.IEnumerable{System.Int32})
+  commentId: M:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Create(System.Collections.Generic.IEnumerable{System.Int32})
+  id: Create(System.Collections.Generic.IEnumerable{System.Int32})
+  parent: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+  langs:
+  - csharp
+  - vb
+  name: Create(IEnumerable<int>)
+  nameWithType: WaveletMatrixCore.Create(IEnumerable<int>)
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Create(System.Collections.Generic.IEnumerable<int>)
+  type: Method
+  source:
+    id: Create
+    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixCore.cs
+    startLine: 63
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Creates a new instance of the <xref href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore" data-throw-if-not-resolved="false"></xref> from a sequence of non-negative integers.
+  example: []
+  syntax:
+    content: public static WaveletMatrixCore Create(IEnumerable<int> sequence)
+    parameters:
+    - id: sequence
+      type: System.Collections.Generic.IEnumerable{System.Int32}
+      description: The sequence of integers to build the Wavelet Matrix from. All values must be non-negative.
+    return:
+      type: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+      description: A new, fully initialized <xref href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore" data-throw-if-not-resolved="false"></xref> instance.
+    content.vb: Public Shared Function Create(sequence As IEnumerable(Of Integer)) As WaveletMatrixCore
+  overload: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Create*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code class="paramref">sequence</code> is null.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if <code class="paramref">sequence</code> contains negative values.
+  nameWithType.vb: WaveletMatrixCore.Create(IEnumerable(Of Integer))
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Create(System.Collections.Generic.IEnumerable(Of Integer))
+  name.vb: Create(IEnumerable(Of Integer))
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Serialize(BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Serialize(BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  id: Serialize(BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  parent: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+  langs:
+  - csharp
+  - vb
+  name: Serialize(WaveletMatrixCore, SerializationOptions?)
+  nameWithType: WaveletMatrixCore.Serialize(WaveletMatrixCore, SerializationOptions?)
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Serialize(BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore, BelNytheraSeiche.WaveletMatrix.SerializationOptions?)
+  type: Method
+  source:
+    id: Serialize
+    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixCore.cs
+    startLine: 124
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Serializes the <xref href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore" data-throw-if-not-resolved="false"></xref> instance into a byte array.
+  example: []
+  syntax:
+    content: public static byte[] Serialize(WaveletMatrixCore obj, SerializationOptions? options = null)
+    parameters:
+    - id: obj
+      type: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+      description: The instance to serialize.
+    - id: options
+      type: BelNytheraSeiche.WaveletMatrix.SerializationOptions
+      description: >-
+        Serialization options, such as the compression level. 
+
+        If null, <xref href="BelNytheraSeiche.WaveletMatrix.SerializationOptions.Default" data-throw-if-not-resolved="false"></xref> will be used.
+    return:
+      type: System.Byte[]
+      description: A byte array containing the serialized data.
+    content.vb: Public Shared Function Serialize(obj As WaveletMatrixCore, options As SerializationOptions = Nothing) As Byte()
+  overload: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Serialize*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code class="paramref">obj</code> is null.
+  nameWithType.vb: WaveletMatrixCore.Serialize(WaveletMatrixCore, SerializationOptions)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Serialize(BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore, BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  name.vb: Serialize(WaveletMatrixCore, SerializationOptions)
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Serialize(BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore,System.String,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Serialize(BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore,System.String,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  id: Serialize(BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore,System.String,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  parent: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+  langs:
+  - csharp
+  - vb
+  name: Serialize(WaveletMatrixCore, string, SerializationOptions?)
+  nameWithType: WaveletMatrixCore.Serialize(WaveletMatrixCore, string, SerializationOptions?)
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Serialize(BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore, string, BelNytheraSeiche.WaveletMatrix.SerializationOptions?)
+  type: Method
+  source:
+    id: Serialize
+    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixCore.cs
+    startLine: 148
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Serializes the <xref href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore" data-throw-if-not-resolved="false"></xref> instance to the specified file.
+  example: []
+  syntax:
+    content: public static void Serialize(WaveletMatrixCore obj, string file, SerializationOptions? options = null)
+    parameters:
+    - id: obj
+      type: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+      description: The instance to serialize.
+    - id: file
+      type: System.String
+      description: The path of the file to write to.
+    - id: options
+      type: BelNytheraSeiche.WaveletMatrix.SerializationOptions
+      description: >-
+        Serialization options, such as the compression level. 
+
+        If null, <xref href="BelNytheraSeiche.WaveletMatrix.SerializationOptions.Default" data-throw-if-not-resolved="false"></xref> will be used.
+    content.vb: Public Shared Sub Serialize(obj As WaveletMatrixCore, file As String, options As SerializationOptions = Nothing)
+  overload: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Serialize*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code class="paramref">obj</code> or <code class="paramref">file</code> is null.
+  nameWithType.vb: WaveletMatrixCore.Serialize(WaveletMatrixCore, String, SerializationOptions)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Serialize(BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore, String, BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  name.vb: Serialize(WaveletMatrixCore, String, SerializationOptions)
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Serialize(BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore,System.IO.Stream,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Serialize(BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore,System.IO.Stream,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  id: Serialize(BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore,System.IO.Stream,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  parent: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+  langs:
+  - csharp
+  - vb
+  name: Serialize(WaveletMatrixCore, Stream, SerializationOptions?)
+  nameWithType: WaveletMatrixCore.Serialize(WaveletMatrixCore, Stream, SerializationOptions?)
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Serialize(BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore, System.IO.Stream, BelNytheraSeiche.WaveletMatrix.SerializationOptions?)
+  type: Method
+  source:
+    id: Serialize
+    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixCore.cs
+    startLine: 175
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Serializes the <xref href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore" data-throw-if-not-resolved="false"></xref> instance to a stream.
+
+    The data is compressed using Brotli and includes a checksum for integrity verification.
+  example: []
+  syntax:
+    content: public static void Serialize(WaveletMatrixCore obj, Stream stream, SerializationOptions? options = null)
+    parameters:
+    - id: obj
+      type: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+      description: The instance to serialize.
+    - id: stream
+      type: System.IO.Stream
+      description: The stream to write the serialized data to.
+    - id: options
+      type: BelNytheraSeiche.WaveletMatrix.SerializationOptions
+      description: >-
+        Serialization options, such as the compression level. 
+
+        If null, <xref href="BelNytheraSeiche.WaveletMatrix.SerializationOptions.Default" data-throw-if-not-resolved="false"></xref> will be used.
+    content.vb: Public Shared Sub Serialize(obj As WaveletMatrixCore, stream As Stream, options As SerializationOptions = Nothing)
+  overload: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Serialize*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code class="paramref">obj</code> or <code class="paramref">stream</code> is null.
+  nameWithType.vb: WaveletMatrixCore.Serialize(WaveletMatrixCore, Stream, SerializationOptions)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Serialize(BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore, System.IO.Stream, BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  name.vb: Serialize(WaveletMatrixCore, Stream, SerializationOptions)
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Deserialize(System.Byte[])
+  commentId: M:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Deserialize(System.Byte[])
+  id: Deserialize(System.Byte[])
+  parent: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+  langs:
+  - csharp
+  - vb
+  name: Deserialize(byte[])
+  nameWithType: WaveletMatrixCore.Deserialize(byte[])
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Deserialize(byte[])
+  type: Method
+  source:
+    id: Deserialize
+    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixCore.cs
+    startLine: 298
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Deserializes a byte array into a <xref href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore" data-throw-if-not-resolved="false"></xref> instance.
+  example: []
+  syntax:
+    content: public static WaveletMatrixCore Deserialize(byte[] data)
+    parameters:
+    - id: data
+      type: System.Byte[]
+      description: The byte array containing the serialized data.
+    return:
+      type: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+      description: A new, deserialized instance of <xref href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Public Shared Function Deserialize(data As Byte()) As WaveletMatrixCore
+  overload: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Deserialize*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code class="paramref">data</code> is null.
+  nameWithType.vb: WaveletMatrixCore.Deserialize(Byte())
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Deserialize(Byte())
+  name.vb: Deserialize(Byte())
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Deserialize(System.String)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Deserialize(System.String)
+  id: Deserialize(System.String)
+  parent: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+  langs:
+  - csharp
+  - vb
+  name: Deserialize(string)
+  nameWithType: WaveletMatrixCore.Deserialize(string)
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Deserialize(string)
+  type: Method
+  source:
+    id: Deserialize
+    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixCore.cs
+    startLine: 317
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Deserializes a <xref href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore" data-throw-if-not-resolved="false"></xref> instance from the specified file.
+  example: []
+  syntax:
+    content: public static WaveletMatrixCore Deserialize(string file)
+    parameters:
+    - id: file
+      type: System.String
+      description: The path of the file to read from.
+    return:
+      type: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+      description: A new, deserialized instance.
+    content.vb: Public Shared Function Deserialize(file As String) As WaveletMatrixCore
+  overload: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Deserialize*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code class="paramref">file</code> is null.
+  nameWithType.vb: WaveletMatrixCore.Deserialize(String)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Deserialize(String)
+  name.vb: Deserialize(String)
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Deserialize(System.IO.Stream)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Deserialize(System.IO.Stream)
+  id: Deserialize(System.IO.Stream)
+  parent: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+  langs:
+  - csharp
+  - vb
+  name: Deserialize(Stream)
+  nameWithType: WaveletMatrixCore.Deserialize(Stream)
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Deserialize(System.IO.Stream)
+  type: Method
+  source:
+    id: Deserialize
+    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixCore.cs
+    startLine: 338
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Deserializes a <xref href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore" data-throw-if-not-resolved="false"></xref> instance from a stream.
+
+    It verifies the file format, type identifier, and checksum.
+  example: []
+  syntax:
+    content: public static WaveletMatrixCore Deserialize(Stream stream)
+    parameters:
+    - id: stream
+      type: System.IO.Stream
+      description: The stream to read the serialized data from.
+    return:
+      type: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+      description: A new, deserialized instance.
+    content.vb: Public Shared Function Deserialize(stream As Stream) As WaveletMatrixCore
+  overload: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Deserialize*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code class="paramref">stream</code> is null.
+  - type: System.IO.InvalidDataException
+    commentId: T:System.IO.InvalidDataException
+    description: Thrown if the data format is unsupported, the type is incompatible, or the data is corrupt.
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Access(System.Int32)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Access(System.Int32)
+  id: Access(System.Int32)
+  parent: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+  langs:
+  - csharp
+  - vb
+  name: Access(int)
+  nameWithType: WaveletMatrixCore.Access(int)
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Access(int)
+  type: Method
+  source:
+    id: Access
+    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixCore.cs
+    startLine: 414
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Gets the value of the element at the specified zero-based position.
+  example: []
+  syntax:
+    content: public int Access(int k)
+    parameters:
+    - id: k
+      type: System.Int32
+      description: The zero-based index of the element to retrieve.
+    return:
+      type: System.Int32
+      description: The integer value at the specified position.
+    content.vb: Public Function Access(k As Integer) As Integer
+  overload: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Access*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if <code class="paramref">k</code> is out of range.
+  nameWithType.vb: WaveletMatrixCore.Access(Integer)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Access(Integer)
+  name.vb: Access(Integer)
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Rank(System.Int32,System.Int32)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Rank(System.Int32,System.Int32)
+  id: Rank(System.Int32,System.Int32)
+  parent: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+  langs:
+  - csharp
+  - vb
+  name: Rank(int, int)
+  nameWithType: WaveletMatrixCore.Rank(int, int)
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Rank(int, int)
+  type: Method
+  source:
+    id: Rank
+    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixCore.cs
+    startLine: 448
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Counts the number of occurrences of a specified value in the prefix of the sequence [0, k).
+  example: []
+  syntax:
+    content: public int Rank(int k, int value)
+    parameters:
+    - id: k
+      type: System.Int32
+      description: The exclusive end of the range [0, k).
+    - id: value
+      type: System.Int32
+      description: The value to count.
+    return:
+      type: System.Int32
+      description: The number of times the value appears in the specified prefix.
+    content.vb: Public Function Rank(k As Integer, value As Integer) As Integer
+  overload: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Rank*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if <code class="paramref">k</code> is out of range.
+  nameWithType.vb: WaveletMatrixCore.Rank(Integer, Integer)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Rank(Integer, Integer)
+  name.vb: Rank(Integer, Integer)
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Select(System.Int32,System.Int32)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Select(System.Int32,System.Int32)
+  id: Select(System.Int32,System.Int32)
+  parent: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+  langs:
+  - csharp
+  - vb
+  name: Select(int, int)
+  nameWithType: WaveletMatrixCore.Select(int, int)
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Select(int, int)
+  type: Method
+  source:
+    id: Select
+    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixCore.cs
+    startLine: 482
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Finds the zero-based position of the k-th occurrence of a specified value.
+  example: []
+  syntax:
+    content: public int Select(int k, int value)
+    parameters:
+    - id: k
+      type: System.Int32
+      description: The one-based rank of the occurrence to find (e.g., k=1 for the first occurrence).
+    - id: value
+      type: System.Int32
+      description: The value to search for.
+    return:
+      type: System.Int32
+      description: The zero-based index of the k-th occurrence of the value, or -1 if not found.
+    content.vb: Public Function [Select](k As Integer, value As Integer) As Integer
+  overload: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Select*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if <code class="paramref">k</code> is out of range.
+  nameWithType.vb: WaveletMatrixCore.Select(Integer, Integer)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Select(Integer, Integer)
+  name.vb: Select(Integer, Integer)
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeCount(System.Int32)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeCount(System.Int32)
+  id: RangeCount(System.Int32)
+  parent: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+  langs:
+  - csharp
+  - vb
+  name: RangeCount(int)
+  nameWithType: WaveletMatrixCore.RangeCount(int)
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeCount(int)
+  type: Method
+  source:
+    id: RangeCount
+    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixCore.cs
+    startLine: 559
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Counts the number of occurrences of a specified value.
+  remarks: This method is a shorthand for calling RangeCount(0, <xref href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Size" data-throw-if-not-resolved="false"></xref>, <code class="paramref">value</code>).
+  example: []
+  syntax:
+    content: public int RangeCount(int value)
+    parameters:
+    - id: value
+      type: System.Int32
+      description: The value to count.
+    return:
+      type: System.Int32
+      description: The number of occurrences of the value.
+    content.vb: Public Function RangeCount(value As Integer) As Integer
+  overload: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeCount*
+  nameWithType.vb: WaveletMatrixCore.RangeCount(Integer)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeCount(Integer)
+  name.vb: RangeCount(Integer)
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeCount(System.Int32,System.Int32,System.Int32)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeCount(System.Int32,System.Int32,System.Int32)
+  id: RangeCount(System.Int32,System.Int32,System.Int32)
+  parent: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+  langs:
+  - csharp
+  - vb
+  name: RangeCount(int, int, int)
+  nameWithType: WaveletMatrixCore.RangeCount(int, int, int)
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeCount(int, int, int)
+  type: Method
+  source:
+    id: RangeCount
+    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixCore.cs
+    startLine: 571
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Counts the number of occurrences of a specified value within the range [start, end).
+  example: []
+  syntax:
+    content: public int RangeCount(int start, int end, int value)
+    parameters:
+    - id: start
+      type: System.Int32
+      description: The inclusive start of the range.
+    - id: end
+      type: System.Int32
+      description: The exclusive end of the range.
+    - id: value
+      type: System.Int32
+      description: The value to count.
+    return:
+      type: System.Int32
+      description: The number of occurrences of the value in the range.
+    content.vb: Public Function RangeCount(start As Integer, [end] As Integer, value As Integer) As Integer
+  overload: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeCount*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if <code class="paramref">start</code> or <code class="paramref">end</code> is out of range.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if <code class="paramref">start</code> is greater than or equal <code class="paramref">end</code>.
+  nameWithType.vb: WaveletMatrixCore.RangeCount(Integer, Integer, Integer)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeCount(Integer, Integer, Integer)
+  name.vb: RangeCount(Integer, Integer, Integer)
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Quantile(System.Int32)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Quantile(System.Int32)
+  id: Quantile(System.Int32)
+  parent: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+  langs:
+  - csharp
+  - vb
+  name: Quantile(int)
+  nameWithType: WaveletMatrixCore.Quantile(int)
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Quantile(int)
+  type: Method
+  source:
+    id: Quantile
+    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixCore.cs
+    startLine: 596
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Finds the k-th smallest value.
+  remarks: This method is a shorthand for calling Quantile(0, <xref href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Size" data-throw-if-not-resolved="false"></xref>, <code class="paramref">k</code>).
+  example: []
+  syntax:
+    content: public int Quantile(int k)
+    parameters:
+    - id: k
+      type: System.Int32
+      description: The zero-based rank of the value to find (e.g., k=0 for the smallest value).
+    return:
+      type: System.Int32
+      description: The k-th smallest value.
+    content.vb: Public Function Quantile(k As Integer) As Integer
+  overload: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Quantile*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if <code class="paramref">k</code> is out of the valid range.
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if <code class="paramref">k</code> is out of the valid range [0, Size).
+  nameWithType.vb: WaveletMatrixCore.Quantile(Integer)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Quantile(Integer)
+  name.vb: Quantile(Integer)
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Quantile(System.Int32,System.Int32,System.Int32)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Quantile(System.Int32,System.Int32,System.Int32)
+  id: Quantile(System.Int32,System.Int32,System.Int32)
+  parent: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+  langs:
+  - csharp
+  - vb
+  name: Quantile(int, int, int)
+  nameWithType: WaveletMatrixCore.Quantile(int, int, int)
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Quantile(int, int, int)
+  type: Method
+  source:
+    id: Quantile
+    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixCore.cs
+    startLine: 609
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Finds the k-th smallest value within the specified range [start, end).
+  example: []
+  syntax:
+    content: public int Quantile(int start, int end, int k)
+    parameters:
+    - id: start
+      type: System.Int32
+      description: The inclusive start of the range.
+    - id: end
+      type: System.Int32
+      description: The exclusive end of the range.
+    - id: k
+      type: System.Int32
+      description: The zero-based rank of the value to find (e.g., k=0 for the smallest value).
+    return:
+      type: System.Int32
+      description: The k-th smallest value in the range.
+    content.vb: Public Function Quantile(start As Integer, [end] As Integer, k As Integer) As Integer
+  overload: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Quantile*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if <code class="paramref">start</code>, <code class="paramref">end</code> or <code class="paramref">k</code> is out of range.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if <code class="paramref">start</code> is greater than or equal <code class="paramref">end</code>.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if <code class="paramref">k</code> is out of the valid range [0, end-start).
+  nameWithType.vb: WaveletMatrixCore.Quantile(Integer, Integer, Integer)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Quantile(Integer, Integer, Integer)
+  name.vb: Quantile(Integer, Integer, Integer)
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeFreq(System.Int32,System.Int32)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeFreq(System.Int32,System.Int32)
+  id: RangeFreq(System.Int32,System.Int32)
+  parent: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+  langs:
+  - csharp
+  - vb
+  name: RangeFreq(int, int)
+  nameWithType: WaveletMatrixCore.RangeFreq(int, int)
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeFreq(int, int)
+  type: Method
+  source:
+    id: RangeFreq
+    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixCore.cs
+    startLine: 657
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Counts the number of elements whose values are within the value range [minValue, maxValue).
+  remarks: This method is a shorthand for calling RangeFreq(0, <xref href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Size" data-throw-if-not-resolved="false"></xref>, <code class="paramref">minValue</code>, <code class="paramref">maxValue</code>).
+  example: []
+  syntax:
+    content: public int RangeFreq(int minValue, int maxValue)
+    parameters:
+    - id: minValue
+      type: System.Int32
+      description: The inclusive start of the value range.
+    - id: maxValue
+      type: System.Int32
+      description: The exclusive end of the value range.
+    return:
+      type: System.Int32
+      description: The count of elements matching the criteria.
+    content.vb: Public Function RangeFreq(minValue As Integer, maxValue As Integer) As Integer
+  overload: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeFreq*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if <code class="paramref">minValue</code> is greater than or equal <code class="paramref">maxValue</code>.
+  nameWithType.vb: WaveletMatrixCore.RangeFreq(Integer, Integer)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeFreq(Integer, Integer)
+  name.vb: RangeFreq(Integer, Integer)
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeFreq(System.Int32,System.Int32,System.Int32,System.Int32)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeFreq(System.Int32,System.Int32,System.Int32,System.Int32)
+  id: RangeFreq(System.Int32,System.Int32,System.Int32,System.Int32)
+  parent: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+  langs:
+  - csharp
+  - vb
+  name: RangeFreq(int, int, int, int)
+  nameWithType: WaveletMatrixCore.RangeFreq(int, int, int, int)
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeFreq(int, int, int, int)
+  type: Method
+  source:
+    id: RangeFreq
+    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixCore.cs
+    startLine: 671
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Counts the number of elements in a position range [start, end) whose values are within the value range [minValue, maxValue).
+  example: []
+  syntax:
+    content: public int RangeFreq(int start, int end, int minValue, int maxValue)
+    parameters:
+    - id: start
+      type: System.Int32
+      description: The inclusive start of the position range.
+    - id: end
+      type: System.Int32
+      description: The exclusive end of the position range.
+    - id: minValue
+      type: System.Int32
+      description: The inclusive start of the value range.
+    - id: maxValue
+      type: System.Int32
+      description: The exclusive end of the value range.
+    return:
+      type: System.Int32
+      description: The count of elements matching the criteria.
+    content.vb: Public Function RangeFreq(start As Integer, [end] As Integer, minValue As Integer, maxValue As Integer) As Integer
+  overload: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeFreq*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if <code class="paramref">start</code> or <code class="paramref">end</code> is out of range.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if <code class="paramref">start</code> is greater than or equal <code class="paramref">end</code>.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if <code class="paramref">minValue</code> is greater than or equal <code class="paramref">maxValue</code>.
+  nameWithType.vb: WaveletMatrixCore.RangeFreq(Integer, Integer, Integer, Integer)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeFreq(Integer, Integer, Integer, Integer)
+  name.vb: RangeFreq(Integer, Integer, Integer, Integer)
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeMode
+  commentId: M:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeMode
+  id: RangeMode
+  parent: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+  langs:
+  - csharp
+  - vb
+  name: RangeMode()
+  nameWithType: WaveletMatrixCore.RangeMode()
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeMode()
+  type: Method
+  source:
+    id: RangeMode
+    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixCore.cs
+    startLine: 697
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Finds the most frequent value (the mode) and its frequency.
+  remarks: This method is a shorthand for calling RangeMode(0, <xref href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Size" data-throw-if-not-resolved="false"></xref>).
+  example: []
+  syntax:
+    content: public WaveletMatrixCore.ValueWithFrequency RangeMode()
+    return:
+      type: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency
+      description: A <xref href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency" data-throw-if-not-resolved="false"></xref> record containing the mode and its count.
+    content.vb: Public Function RangeMode() As WaveletMatrixCore.ValueWithFrequency
+  overload: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeMode*
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeMode(System.Int32,System.Int32)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeMode(System.Int32,System.Int32)
+  id: RangeMode(System.Int32,System.Int32)
+  parent: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+  langs:
+  - csharp
+  - vb
+  name: RangeMode(int, int)
+  nameWithType: WaveletMatrixCore.RangeMode(int, int)
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeMode(int, int)
+  type: Method
+  source:
+    id: RangeMode
+    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixCore.cs
+    startLine: 708
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Finds the most frequent value (the mode) and its frequency within the specified range [start, end).
+  example: []
+  syntax:
+    content: public WaveletMatrixCore.ValueWithFrequency RangeMode(int start, int end)
+    parameters:
+    - id: start
+      type: System.Int32
+      description: The inclusive start of the range.
+    - id: end
+      type: System.Int32
+      description: The exclusive end of the range.
+    return:
+      type: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency
+      description: A <xref href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency" data-throw-if-not-resolved="false"></xref> record containing the mode and its count.
+    content.vb: Public Function RangeMode(start As Integer, [end] As Integer) As WaveletMatrixCore.ValueWithFrequency
+  overload: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeMode*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if <code class="paramref">start</code> or <code class="paramref">end</code> is out of range.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if <code class="paramref">start</code> is greater than or equal <code class="paramref">end</code>.
+  nameWithType.vb: WaveletMatrixCore.RangeMode(Integer, Integer)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeMode(Integer, Integer)
+  name.vb: RangeMode(Integer, Integer)
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.TopK(System.Int32)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.TopK(System.Int32)
+  id: TopK(System.Int32)
+  parent: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+  langs:
+  - csharp
+  - vb
+  name: TopK(int)
+  nameWithType: WaveletMatrixCore.TopK(int)
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.TopK(int)
+  type: Method
+  source:
+    id: TopK
+    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixCore.cs
+    startLine: 765
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Finds the top K most frequent values and their frequencies.
+  remarks: This method is a shorthand for calling TopK(0, <xref href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Size" data-throw-if-not-resolved="false"></xref>, <code class="paramref">k</code>).
+  example: []
+  syntax:
+    content: public IEnumerable<WaveletMatrixCore.ValueWithFrequency> TopK(int k)
+    parameters:
+    - id: k
+      type: System.Int32
+      description: The number of top elements to retrieve.
+    return:
+      type: System.Collections.Generic.IEnumerable{BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency}
+      description: An enumerable collection of <xref href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency" data-throw-if-not-resolved="false"></xref> records, ordered by frequency in descending order.
+    content.vb: Public Function TopK(k As Integer) As IEnumerable(Of WaveletMatrixCore.ValueWithFrequency)
+  overload: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.TopK*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if <code class="paramref">k</code> is out of range.
+  nameWithType.vb: WaveletMatrixCore.TopK(Integer)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.TopK(Integer)
+  name.vb: TopK(Integer)
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.TopK(System.Int32,System.Int32,System.Int32)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.TopK(System.Int32,System.Int32,System.Int32)
+  id: TopK(System.Int32,System.Int32,System.Int32)
+  parent: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+  langs:
+  - csharp
+  - vb
+  name: TopK(int, int, int)
+  nameWithType: WaveletMatrixCore.TopK(int, int, int)
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.TopK(int, int, int)
+  type: Method
+  source:
+    id: TopK
+    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixCore.cs
+    startLine: 777
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Finds the top K most frequent values and their frequencies within the specified range [start, end).
+  example: []
+  syntax:
+    content: public IEnumerable<WaveletMatrixCore.ValueWithFrequency> TopK(int start, int end, int k)
+    parameters:
+    - id: start
+      type: System.Int32
+      description: The inclusive start of the range.
+    - id: end
+      type: System.Int32
+      description: The exclusive end of the range.
+    - id: k
+      type: System.Int32
+      description: The number of top elements to retrieve.
+    return:
+      type: System.Collections.Generic.IEnumerable{BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency}
+      description: An enumerable collection of <xref href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency" data-throw-if-not-resolved="false"></xref> records, ordered by frequency in descending order.
+    content.vb: Public Function TopK(start As Integer, [end] As Integer, k As Integer) As IEnumerable(Of WaveletMatrixCore.ValueWithFrequency)
+  overload: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.TopK*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if <code class="paramref">start</code>, <code class="paramref">end</code> or <code class="paramref">k</code> is out of range.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if <code class="paramref">start</code> is greater than or equal <code class="paramref">end</code>.
+  nameWithType.vb: WaveletMatrixCore.TopK(Integer, Integer, Integer)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.TopK(Integer, Integer, Integer)
+  name.vb: TopK(Integer, Integer, Integer)
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.SmallerValue(System.Int32)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.SmallerValue(System.Int32)
+  id: SmallerValue(System.Int32)
+  parent: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+  langs:
+  - csharp
+  - vb
+  name: SmallerValue(int)
+  nameWithType: WaveletMatrixCore.SmallerValue(int)
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.SmallerValue(int)
+  type: Method
+  source:
+    id: SmallerValue
+    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixCore.cs
+    startLine: 859
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Finds the predecessor of a given value.
+
+    The predecessor is the largest value that is strictly smaller than the given <code class="paramref">value</code>.
+  remarks: This method is a shorthand for calling SmallerValue(0, <xref href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Size" data-throw-if-not-resolved="false"></xref>, <code class="paramref">value</code>).
+  example: []
+  syntax:
+    content: public int? SmallerValue(int value)
+    parameters:
+    - id: value
+      type: System.Int32
+      description: The reference value.
+    return:
+      type: System.Nullable{System.Int32}
+      description: The predecessor value, or null if no such value is found.
+    content.vb: Public Function SmallerValue(value As Integer) As Integer?
+  overload: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.SmallerValue*
+  nameWithType.vb: WaveletMatrixCore.SmallerValue(Integer)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.SmallerValue(Integer)
+  name.vb: SmallerValue(Integer)
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.SmallerValue(System.Int32,System.Int32,System.Int32)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.SmallerValue(System.Int32,System.Int32,System.Int32)
+  id: SmallerValue(System.Int32,System.Int32,System.Int32)
+  parent: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+  langs:
+  - csharp
+  - vb
+  name: SmallerValue(int, int, int)
+  nameWithType: WaveletMatrixCore.SmallerValue(int, int, int)
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.SmallerValue(int, int, int)
+  type: Method
+  source:
+    id: SmallerValue
+    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixCore.cs
+    startLine: 872
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Finds the predecessor of a given value in the specified range [start, end).
+
+    The predecessor is the largest value in the range that is strictly smaller than the given <code class="paramref">value</code>.
+  example: []
+  syntax:
+    content: public int? SmallerValue(int start, int end, int value)
+    parameters:
+    - id: start
+      type: System.Int32
+      description: The inclusive start of the range.
+    - id: end
+      type: System.Int32
+      description: The exclusive end of the range.
+    - id: value
+      type: System.Int32
+      description: The reference value.
+    return:
+      type: System.Nullable{System.Int32}
+      description: The predecessor value, or null if no such value is found.
+    content.vb: Public Function SmallerValue(start As Integer, [end] As Integer, value As Integer) As Integer?
+  overload: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.SmallerValue*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if <code class="paramref">start</code> or <code class="paramref">end</code> is out of range.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if <code class="paramref">start</code> is greater than or equal <code class="paramref">end</code>.
+  nameWithType.vb: WaveletMatrixCore.SmallerValue(Integer, Integer, Integer)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.SmallerValue(Integer, Integer, Integer)
+  name.vb: SmallerValue(Integer, Integer, Integer)
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.LargerValue(System.Int32)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.LargerValue(System.Int32)
+  id: LargerValue(System.Int32)
+  parent: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+  langs:
+  - csharp
+  - vb
+  name: LargerValue(int)
+  nameWithType: WaveletMatrixCore.LargerValue(int)
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.LargerValue(int)
+  type: Method
+  source:
+    id: LargerValue
+    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixCore.cs
+    startLine: 896
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Finds the successor of a given value.
+
+    The successor is the smallest value that is strictly larger than the given <code class="paramref">value</code>.
+  remarks: This method is a shorthand for calling LargerValue(0, <xref href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Size" data-throw-if-not-resolved="false"></xref>, <code class="paramref">value</code>).
+  example: []
+  syntax:
+    content: public int? LargerValue(int value)
+    parameters:
+    - id: value
+      type: System.Int32
+      description: The reference value.
+    return:
+      type: System.Nullable{System.Int32}
+      description: The successor value, or null if no such value is found.
+    content.vb: Public Function LargerValue(value As Integer) As Integer?
+  overload: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.LargerValue*
+  nameWithType.vb: WaveletMatrixCore.LargerValue(Integer)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.LargerValue(Integer)
+  name.vb: LargerValue(Integer)
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.LargerValue(System.Int32,System.Int32,System.Int32)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.LargerValue(System.Int32,System.Int32,System.Int32)
+  id: LargerValue(System.Int32,System.Int32,System.Int32)
+  parent: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+  langs:
+  - csharp
+  - vb
+  name: LargerValue(int, int, int)
+  nameWithType: WaveletMatrixCore.LargerValue(int, int, int)
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.LargerValue(int, int, int)
+  type: Method
+  source:
+    id: LargerValue
+    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixCore.cs
+    startLine: 909
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Finds the successor of a given value in the specified range [start, end).
+
+    The successor is the smallest value in the range that is strictly larger than the given <code class="paramref">value</code>.
+  example: []
+  syntax:
+    content: public int? LargerValue(int start, int end, int value)
+    parameters:
+    - id: start
+      type: System.Int32
+      description: The inclusive start of the range.
+    - id: end
+      type: System.Int32
+      description: The exclusive end of the range.
+    - id: value
+      type: System.Int32
+      description: The reference value.
+    return:
+      type: System.Nullable{System.Int32}
+      description: The successor value, or null if no such value is found.
+    content.vb: Public Function LargerValue(start As Integer, [end] As Integer, value As Integer) As Integer?
+  overload: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.LargerValue*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if <code class="paramref">start</code> or <code class="paramref">end</code> is out of range.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if <code class="paramref">start</code> is greater than or equal <code class="paramref">end</code>.
+  nameWithType.vb: WaveletMatrixCore.LargerValue(Integer, Integer, Integer)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.LargerValue(Integer, Integer, Integer)
+  name.vb: LargerValue(Integer, Integer, Integer)
+references:
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1
+  commentId: T:BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.html
+  name: WaveletMatrixGeneric<T>
+  nameWithType: WaveletMatrixGeneric<T>
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>
+  nameWithType.vb: WaveletMatrixGeneric(Of T)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric(Of T)
+  name.vb: WaveletMatrixGeneric(Of T)
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: BelNytheraSeiche.WaveletMatrix
+  commentId: N:BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.html
+  name: BelNytheraSeiche.WaveletMatrix
+  nameWithType: BelNytheraSeiche.WaveletMatrix
+  fullName: BelNytheraSeiche.WaveletMatrix
+  spec.csharp:
+  - uid: BelNytheraSeiche
+    name: BelNytheraSeiche
+    href: BelNytheraSeiche.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix
+    name: WaveletMatrix
+    href: BelNytheraSeiche.WaveletMatrix.html
+  spec.vb:
+  - uid: BelNytheraSeiche
+    name: BelNytheraSeiche
+    href: BelNytheraSeiche.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix
+    name: WaveletMatrix
+    href: BelNytheraSeiche.WaveletMatrix.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Size*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Size
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Size
+  name: Size
+  nameWithType: WaveletMatrixCore.Size
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Size
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+  commentId: T:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html
+  name: WaveletMatrixCore
+  nameWithType: WaveletMatrixCore
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentexception
+  name: ArgumentException
+  nameWithType: ArgumentException
+  fullName: System.ArgumentException
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Create*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Create
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Create_System_Collections_Generic_IEnumerable_System_Int32__
+  name: Create
+  nameWithType: WaveletMatrixCore.Create
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Create
+- uid: System.Collections.Generic.IEnumerable{System.Int32}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Int32}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<int>
+  nameWithType: IEnumerable<int>
+  fullName: System.Collections.Generic.IEnumerable<int>
+  nameWithType.vb: IEnumerable(Of Integer)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of Integer)
+  name.vb: IEnumerable(Of Integer)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: BelNytheraSeiche.WaveletMatrix.SerializationOptions.Default
+  commentId: P:BelNytheraSeiche.WaveletMatrix.SerializationOptions.Default
+  href: BelNytheraSeiche.WaveletMatrix.SerializationOptions.html#BelNytheraSeiche_WaveletMatrix_SerializationOptions_Default
+  name: Default
+  nameWithType: SerializationOptions.Default
+  fullName: BelNytheraSeiche.WaveletMatrix.SerializationOptions.Default
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Serialize*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Serialize
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Serialize_BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_BelNytheraSeiche_WaveletMatrix_SerializationOptions_
+  name: Serialize
+  nameWithType: WaveletMatrixCore.Serialize
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Serialize
+- uid: BelNytheraSeiche.WaveletMatrix.SerializationOptions
+  commentId: T:BelNytheraSeiche.WaveletMatrix.SerializationOptions
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.SerializationOptions.html
+  name: SerializationOptions
+  nameWithType: SerializationOptions
+  fullName: BelNytheraSeiche.WaveletMatrix.SerializationOptions
+- uid: System.Byte[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.byte
+  name: byte[]
+  nameWithType: byte[]
+  fullName: byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: (
+  - name: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.IO.Stream
+  commentId: T:System.IO.Stream
+  parent: System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.io.stream
+  name: Stream
+  nameWithType: Stream
+  fullName: System.IO.Stream
+- uid: System.IO
+  commentId: N:System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.IO
+  nameWithType: System.IO
+  fullName: System.IO
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Deserialize*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Deserialize
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Deserialize_System_Byte___
+  name: Deserialize
+  nameWithType: WaveletMatrixCore.Deserialize
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Deserialize
+- uid: System.IO.InvalidDataException
+  commentId: T:System.IO.InvalidDataException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.io.invaliddataexception
+  name: InvalidDataException
+  nameWithType: InvalidDataException
+  fullName: System.IO.InvalidDataException
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception
+  name: ArgumentOutOfRangeException
+  nameWithType: ArgumentOutOfRangeException
+  fullName: System.ArgumentOutOfRangeException
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Access*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Access
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Access_System_Int32_
+  name: Access
+  nameWithType: WaveletMatrixCore.Access
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Access
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Rank*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Rank
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Rank_System_Int32_System_Int32_
+  name: Rank
+  nameWithType: WaveletMatrixCore.Rank
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Rank
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Select*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Select
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Select_System_Int32_System_Int32_
+  name: Select
+  nameWithType: WaveletMatrixCore.Select
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Select
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Size
+  commentId: P:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Size
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Size
+  name: Size
+  nameWithType: WaveletMatrixCore.Size
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Size
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeCount*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeCount
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_RangeCount_System_Int32_
+  name: RangeCount
+  nameWithType: WaveletMatrixCore.RangeCount
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeCount
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Quantile*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Quantile
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_Quantile_System_Int32_
+  name: Quantile
+  nameWithType: WaveletMatrixCore.Quantile
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.Quantile
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeFreq*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeFreq
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_RangeFreq_System_Int32_System_Int32_
+  name: RangeFreq
+  nameWithType: WaveletMatrixCore.RangeFreq
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeFreq
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency
+  commentId: T:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html
+  name: WaveletMatrixCore.ValueWithFrequency
+  nameWithType: WaveletMatrixCore.ValueWithFrequency
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+    name: WaveletMatrixCore
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency
+    name: ValueWithFrequency
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency.html
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+    name: WaveletMatrixCore
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency
+    name: ValueWithFrequency
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency.html
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeMode*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeMode
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_RangeMode
+  name: RangeMode
+  nameWithType: WaveletMatrixCore.RangeMode
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.RangeMode
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.TopK*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.TopK
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_TopK_System_Int32_
+  name: TopK
+  nameWithType: WaveletMatrixCore.TopK
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.TopK
+- uid: System.Collections.Generic.IEnumerable{BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency}
+  commentId: T:System.Collections.Generic.IEnumerable{BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<WaveletMatrixCore.ValueWithFrequency>
+  nameWithType: IEnumerable<WaveletMatrixCore.ValueWithFrequency>
+  fullName: System.Collections.Generic.IEnumerable<BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency>
+  nameWithType.vb: IEnumerable(Of WaveletMatrixCore.ValueWithFrequency)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency)
+  name.vb: IEnumerable(Of WaveletMatrixCore.ValueWithFrequency)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+    name: WaveletMatrixCore
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency
+    name: ValueWithFrequency
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+    name: WaveletMatrixCore
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency
+    name: ValueWithFrequency
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency.html
+  - name: )
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.SmallerValue*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.SmallerValue
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_SmallerValue_System_Int32_
+  name: SmallerValue
+  nameWithType: WaveletMatrixCore.SmallerValue
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.SmallerValue
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.LargerValue*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.LargerValue
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixCore_LargerValue_System_Int32_
+  name: LargerValue
+  nameWithType: WaveletMatrixCore.LargerValue
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.LargerValue

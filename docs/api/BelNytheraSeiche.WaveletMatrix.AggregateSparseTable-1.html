@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class AggregateSparseTable&lt;T&gt; | BelNytheraSeiche.WaveletMatrix </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class AggregateSparseTable&lt;T&gt; | BelNytheraSeiche.WaveletMatrix ">
+      
+      <meta name="description" content="Provides a data structure for answering range queries on a static array. This version is more general and supports non-idempotent operations like sum, but its Query operation is not O(1). Preprocessing is O(N log N) and queries are O(log N) but dependent on the aggregator function&#39;s properties.">
+      <link rel="icon" href="../images/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo-small.png" alt="BelNytheraSeiche.WaveletMatrix">
+            BelNytheraSeiche.WaveletMatrix
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1">
+
+
+
+  <h1 id="BelNytheraSeiche_WaveletMatrix_AggregateSparseTable_1" data-uid="BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1" class="text-break">
+Class AggregateSparseTable&lt;T&gt;  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="BelNytheraSeiche.html">BelNytheraSeiche</a>.<a class="xref" href="BelNytheraSeiche.WaveletMatrix.html">WaveletMatrix</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>BelNytheraSeiche.WaveletMatrix.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Provides a data structure for answering range queries on a static array.
+This version is more general and supports non-idempotent operations like sum, but its Query operation is not O(1).
+Preprocessing is O(N log N) and queries are O(log N) but dependent on the aggregator function's properties.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class AggregateSparseTable&lt;T&gt; where T : IComparable&lt;T&gt;</code></pre>
+  </div>
+
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>The type of elements in the array. Must be comparable.</p>
+</dd>
+  </dl>
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">AggregateSparseTable&lt;T&gt;</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="BelNytheraSeiche_WaveletMatrix_AggregateSparseTable_1_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This class is suitable for operations like Range Sum Query, where overlapping subproblems cannot be used in the same way as with idempotent operations.
+Note: The provided Query method is a simplification and may not be O(1) for all aggregator functions. True O(log N) or O(1) for sum requires a different structure like a Fenwick Tree or prefix sum array.</p>
+</div>
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_AggregateSparseTable_1__ctor_" data-uid="BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1.#ctor*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_AggregateSparseTable_1__ctor_System_ReadOnlySpan__0__System_Func__0__0__0__" data-uid="BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1.#ctor(System.ReadOnlySpan{`0},System.Func{`0,`0,`0})">
+  AggregateSparseTable(ReadOnlySpan&lt;T&gt;, Func&lt;T, T, T&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="BelNytheraSeiche.WaveletMatrix.AggregateSparseTable-1.html">AggregateSparseTable&lt;T&gt;</a> class.
+The constructor performs preprocessing which takes O(N log N) time and space.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AggregateSparseTable(ReadOnlySpan&lt;T&gt; array, Func&lt;T, T, T&gt; aggregator)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>array</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;T&gt;</dt>
+    <dd><p>The static array of data to be queried.</p>
+</dd>
+    <dt><code>aggregator</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-3">Func</a>&lt;T, T, T&gt;</dt>
+    <dd><p>A function that aggregates two elements (e.g., <code>(a, b) =&gt; a + b</code> for a sum).</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>Thrown if <code class="paramref">aggregator</code> is null.</p>
+</dd>
+  </dl>
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_AggregateSparseTable_1_Size_" data-uid="BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1.Size*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_AggregateSparseTable_1_Size" data-uid="BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1.Size">
+  Size
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the total number of elements in the sequence.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Size { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_AggregateSparseTable_1_Query_" data-uid="BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1.Query*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_AggregateSparseTable_1_Query" data-uid="BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1.Query">
+  Query()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Queries to get an aggregated value.
+Note: The time complexity of this query is not guaranteed to be O(1) for non-idempotent operations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T Query()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd><p>The aggregated value.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="BelNytheraSeiche_WaveletMatrix_AggregateSparseTable_1_Query_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method is a shorthand for calling Query(0, <a class="xref" href="BelNytheraSeiche.WaveletMatrix.AggregateSparseTable-1.html#BelNytheraSeiche_WaveletMatrix_AggregateSparseTable_1_Size">Size</a>).</p>
+</div>
+
+
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_AggregateSparseTable_1_Query_" data-uid="BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1.Query*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_AggregateSparseTable_1_Query_System_Int32_System_Int32_" data-uid="BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1.Query(System.Int32,System.Int32)">
+  Query(int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Queries the range [start, end) to get an aggregated value.
+Note: This operation takes O(log N) time for non-idempotent operations, but dependent on the aggregator function's properties.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T Query(int start, int end)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>start</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The inclusive, zero-based start of the range.</p>
+</dd>
+    <dt><code>end</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The exclusive, zero-based end of the range.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd><p>The aggregated value for the specified range.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Thrown if <code class="paramref">start</code> or <code class="paramref">end</code> are outside the valid bounds.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown if <code class="paramref">start</code> is greater than or equal <code class="paramref">end</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

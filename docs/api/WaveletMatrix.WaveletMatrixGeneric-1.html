@@ -1,0 +1,1661 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class WaveletMatrixGeneric&lt;T&gt; | BelNytheraSeiche.WaveletMatrix </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class WaveletMatrixGeneric&lt;T&gt; | BelNytheraSeiche.WaveletMatrix ">
+      
+      <meta name="description" content="A generic, compressed data structure for sequences of any comparable type. It provides fast Rank, Select, Quantile, and other advanced queries. This class uses coordinate compression internally, making it highly memory-efficient for data with a small alphabet size.">
+      <link rel="icon" href="../images/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo-small.png" alt="BelNytheraSeiche.WaveletMatrix">
+            BelNytheraSeiche.WaveletMatrix
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="WaveletMatrix.WaveletMatrixGeneric`1">
+
+
+
+  <h1 id="WaveletMatrix_WaveletMatrixGeneric_1" data-uid="WaveletMatrix.WaveletMatrixGeneric`1" class="text-break">
+Class WaveletMatrixGeneric&lt;T&gt;  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="WaveletMatrix.html">WaveletMatrix</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>WaveletMatrix.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>A generic, compressed data structure for sequences of any comparable type.
+It provides fast Rank, Select, Quantile, and other advanced queries.
+This class uses coordinate compression internally, making it highly memory-efficient for data with a small alphabet size.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class WaveletMatrixGeneric&lt;T&gt; where T : IComparable&lt;T&gt;</code></pre>
+  </div>
+
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>The type of elements in the sequence. Must implement <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable&lt;T&gt;</a>.</p>
+</dd>
+  </dl>
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">WaveletMatrixGeneric&lt;T&gt;</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+  <h2 id="WaveletMatrix_WaveletMatrixGeneric_1_examples">Examples</h2>
+  <pre><code class="lang-csharp">var data = new[] { "apple", "banana", "apple", "orange" };
+var wm = WaveletMatrixGeneric&lt;string&gt;.Create(data);
+int rank = wm.Rank(3, "apple"); // Counts "apple" in the range [0, 3). Result: 2
+string value = wm.Access(1);    // Gets the element at index 1. Result: "banana"</code></pre>
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="WaveletMatrix_WaveletMatrixGeneric_1_Size_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.Size*"></a>
+
+  <h3 id="WaveletMatrix_WaveletMatrixGeneric_1_Size" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.Size">
+  Size
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the total number of elements in the sequence.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Size { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="WaveletMatrix_WaveletMatrixGeneric_1_Access_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.Access*"></a>
+
+  <h3 id="WaveletMatrix_WaveletMatrixGeneric_1_Access_System_Int32_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.Access(System.Int32)">
+  Access(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the value of the element at the specified zero-based position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T Access(int k)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>k</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The zero-based index of the element to retrieve.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd><p>The integer value at the specified position.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Thrown if <code class="paramref">k</code> is out of range.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="WaveletMatrix_WaveletMatrixGeneric_1_Create_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.Create*"></a>
+
+  <h3 id="WaveletMatrix_WaveletMatrixGeneric_1_Create_System_Collections_Generic_IEnumerable__0__" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.Create(System.Collections.Generic.IEnumerable{`0})">
+  Create(IEnumerable&lt;T&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a new instance of the <a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.html">WaveletMatrixGeneric&lt;T&gt;</a> from a sequence of elements.
+This factory method performs coordinate compression on the input sequence before building the core data structure.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static WaveletMatrixGeneric&lt;T&gt; Create(IEnumerable&lt;T&gt; sequence)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>sequence</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;T&gt;</dt>
+    <dd><p>The input sequence of data to be indexed.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.html">WaveletMatrixGeneric</a>&lt;T&gt;</dt>
+    <dd><p>A new, fully initialized <a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.html">WaveletMatrixGeneric&lt;T&gt;</a> instance.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>Thrown if <code class="paramref">sequence</code> is null.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="WaveletMatrix_WaveletMatrixGeneric_1_Deserialize_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.Deserialize*"></a>
+
+  <h3 id="WaveletMatrix_WaveletMatrixGeneric_1_Deserialize_System_Byte___WaveletMatrix_WaveletMatrixGeneric__0__IGenericSerializer__0__" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.Deserialize(System.Byte[],WaveletMatrix.WaveletMatrixGeneric{`0}.IGenericSerializer{`0})">
+  Deserialize(byte[], IGenericSerializer&lt;T&gt;?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Deserializes a byte array into a <a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.html">WaveletMatrixGeneric&lt;T&gt;</a> instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static WaveletMatrixGeneric&lt;T&gt; Deserialize(byte[] data, WaveletMatrixGeneric&lt;T&gt;.IGenericSerializer&lt;T&gt;? genericSerializer = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>data</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>The byte array containing the serialized data.</p>
+</dd>
+    <dt><code>genericSerializer</code> <a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.html">WaveletMatrixGeneric</a>&lt;T&gt;.<a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.IGenericSerializer-1.html">IGenericSerializer</a>&lt;T&gt;</dt>
+    <dd><p>An optional serializer for handling the generic type <code class="typeparamref">T</code>.
+If null, a default serializer for <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, or <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a> will be used if applicable.
+If a default serializer is not available for <code class="typeparamref">T</code>, an exception will be thrown.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.html">WaveletMatrixGeneric</a>&lt;T&gt;</dt>
+    <dd><p>A new, deserialized instance of <a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.html">WaveletMatrixGeneric&lt;T&gt;</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>Thrown if <code class="paramref">data</code> is null.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown if <code class="paramref">genericSerializer</code> is null and a default serializer for type <code class="typeparamref">T</code> cannot be found.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="WaveletMatrix_WaveletMatrixGeneric_1_Deserialize_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.Deserialize*"></a>
+
+  <h3 id="WaveletMatrix_WaveletMatrixGeneric_1_Deserialize_System_IO_Stream_WaveletMatrix_WaveletMatrixGeneric__0__IGenericSerializer__0__" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.Deserialize(System.IO.Stream,WaveletMatrix.WaveletMatrixGeneric{`0}.IGenericSerializer{`0})">
+  Deserialize(Stream, IGenericSerializer&lt;T&gt;?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Deserializes a <a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.html">WaveletMatrixGeneric&lt;T&gt;</a> instance from a stream.
+It verifies the file format, type identifier, and checksum.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static WaveletMatrixGeneric&lt;T&gt; Deserialize(Stream stream, WaveletMatrixGeneric&lt;T&gt;.IGenericSerializer&lt;T&gt;? genericSerializer = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>stream</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd><p>The stream to read the serialized data from.</p>
+</dd>
+    <dt><code>genericSerializer</code> <a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.html">WaveletMatrixGeneric</a>&lt;T&gt;.<a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.IGenericSerializer-1.html">IGenericSerializer</a>&lt;T&gt;</dt>
+    <dd><p>An optional serializer for handling the generic type <code class="typeparamref">T</code>.
+If null, a default serializer for <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, or <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a> will be used if applicable.
+If a default serializer is not available for <code class="typeparamref">T</code>, an exception will be thrown.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.html">WaveletMatrixGeneric</a>&lt;T&gt;</dt>
+    <dd><p>A new, deserialized instance.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown if <code class="paramref">genericSerializer</code> is null and a default serializer for type <code class="typeparamref">T</code> cannot be found.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.invaliddataexception">InvalidDataException</a></dt>
+    <dd><p>Thrown if the data format is unsupported, the type is incompatible, or the data is corrupt.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="WaveletMatrix_WaveletMatrixGeneric_1_Deserialize_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.Deserialize*"></a>
+
+  <h3 id="WaveletMatrix_WaveletMatrixGeneric_1_Deserialize_System_String_WaveletMatrix_WaveletMatrixGeneric__0__IGenericSerializer__0__" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.Deserialize(System.String,WaveletMatrix.WaveletMatrixGeneric{`0}.IGenericSerializer{`0})">
+  Deserialize(string, IGenericSerializer&lt;T&gt;?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Deserializes a <a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.html">WaveletMatrixGeneric&lt;T&gt;</a> instance from the specified file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static WaveletMatrixGeneric&lt;T&gt; Deserialize(string file, WaveletMatrixGeneric&lt;T&gt;.IGenericSerializer&lt;T&gt;? genericSerializer = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>file</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The path of the file to read from.</p>
+</dd>
+    <dt><code>genericSerializer</code> <a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.html">WaveletMatrixGeneric</a>&lt;T&gt;.<a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.IGenericSerializer-1.html">IGenericSerializer</a>&lt;T&gt;</dt>
+    <dd><p>An optional serializer for handling the generic type <code class="typeparamref">T</code>.
+If null, a default serializer for <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, or <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a> will be used if applicable.
+If a default serializer is not available for <code class="typeparamref">T</code>, an exception will be thrown.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.html">WaveletMatrixGeneric</a>&lt;T&gt;</dt>
+    <dd><p>A new, deserialized instance.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>Thrown if <code class="paramref">file</code> is null.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown if <code class="paramref">genericSerializer</code> is null and a default serializer for type <code class="typeparamref">T</code> cannot be found.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="WaveletMatrix_WaveletMatrixGeneric_1_LargerValue_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.LargerValue*"></a>
+
+  <h3 id="WaveletMatrix_WaveletMatrixGeneric_1_LargerValue_System_Int32_System_Int32__0__0_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.LargerValue(System.Int32,System.Int32,`0,`0)">
+  LargerValue(int, int, T, T)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds the successor of a given value in the specified range [start, end).
+The successor is the smallest value in the range that is strictly larger than the given <code class="paramref">value</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T LargerValue(int start, int end, T value, T defaultValue = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>start</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The inclusive start of the range.</p>
+</dd>
+    <dt><code>end</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The exclusive end of the range.</p>
+</dd>
+    <dt><code>value</code> <span class="xref">T</span></dt>
+    <dd><p>The reference value.</p>
+</dd>
+    <dt><code>defaultValue</code> <span class="xref">T</span></dt>
+    <dd><p>The value to return if no successor is found.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd><p>The successor value, or <code class="paramref">defaultValue</code> if no such value is found.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Thrown if <code class="paramref">start</code> or <code class="paramref">end</code> is out of range.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown if <code class="paramref">start</code> is greater than or equal <code class="paramref">end</code>.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="WaveletMatrix_WaveletMatrixGeneric_1_LargerValue_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.LargerValue*"></a>
+
+  <h3 id="WaveletMatrix_WaveletMatrixGeneric_1_LargerValue__0__0_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.LargerValue(`0,`0)">
+  LargerValue(T, T)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds the successor of a given value.
+The successor is the smallest value in the range that is strictly larger than the given <code class="paramref">value</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T LargerValue(T value, T defaultValue = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <span class="xref">T</span></dt>
+    <dd><p>The reference value.</p>
+</dd>
+    <dt><code>defaultValue</code> <span class="xref">T</span></dt>
+    <dd><p>The value to return if no successor is found.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd><p>The successor value, or <code class="paramref">defaultValue</code> if no such value is found.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="WaveletMatrix_WaveletMatrixGeneric_1_LargerValue__0__0__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method is a shorthand for calling LargerValue(0, <a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.html#WaveletMatrix_WaveletMatrixGeneric_1_Size">Size</a>, <code class="paramref">value</code>, <code class="paramref">defaultValue</code>).</p>
+</div>
+
+
+
+
+  <a id="WaveletMatrix_WaveletMatrixGeneric_1_Quantile_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.Quantile*"></a>
+
+  <h3 id="WaveletMatrix_WaveletMatrixGeneric_1_Quantile_System_Int32_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.Quantile(System.Int32)">
+  Quantile(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds the k-th smallest value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T Quantile(int k)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>k</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The zero-based rank of the value to find (e.g., k=0 for the smallest value).</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd><p>The k-th smallest value.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="WaveletMatrix_WaveletMatrixGeneric_1_Quantile_System_Int32__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method is a shorthand for calling Quantile(0, <a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.html#WaveletMatrix_WaveletMatrixGeneric_1_Size">Size</a>, <code class="paramref">k</code>).</p>
+</div>
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Thrown if <code class="paramref">k</code> is out of the valid range [0, Size).</p>
+</dd>
+  </dl>
+
+
+
+  <a id="WaveletMatrix_WaveletMatrixGeneric_1_Quantile_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.Quantile*"></a>
+
+  <h3 id="WaveletMatrix_WaveletMatrixGeneric_1_Quantile_System_Int32_System_Int32_System_Int32_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.Quantile(System.Int32,System.Int32,System.Int32)">
+  Quantile(int, int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds the k-th smallest value within the specified range [start, end).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T Quantile(int start, int end, int k)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>start</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The inclusive start of the range.</p>
+</dd>
+    <dt><code>end</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The exclusive end of the range.</p>
+</dd>
+    <dt><code>k</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The zero-based rank of the value to find (e.g., k=0 for the smallest value).</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd><p>The k-th smallest value in the range.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Thrown if <code class="paramref">start</code>, <code class="paramref">end</code> or <code class="paramref">k</code> is out of range.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown if <code class="paramref">start</code> is greater than or equal <code class="paramref">end</code>.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown if <code class="paramref">k</code> is out of the valid range [0, end-start).</p>
+</dd>
+  </dl>
+
+
+
+  <a id="WaveletMatrix_WaveletMatrixGeneric_1_RangeCount_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.RangeCount*"></a>
+
+  <h3 id="WaveletMatrix_WaveletMatrixGeneric_1_RangeCount_System_Int32_System_Int32__0_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.RangeCount(System.Int32,System.Int32,`0)">
+  RangeCount(int, int, T)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Counts the number of occurrences of a specified value within the range [start, end).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int RangeCount(int start, int end, T value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>start</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The inclusive start of the range.</p>
+</dd>
+    <dt><code>end</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The exclusive end of the range.</p>
+</dd>
+    <dt><code>value</code> <span class="xref">T</span></dt>
+    <dd><p>The value to count.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The number of occurrences of the value in the range.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Thrown if <code class="paramref">start</code> or <code class="paramref">end</code> is out of range.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown if <code class="paramref">start</code> is greater than or equal <code class="paramref">end</code>.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="WaveletMatrix_WaveletMatrixGeneric_1_RangeCount_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.RangeCount*"></a>
+
+  <h3 id="WaveletMatrix_WaveletMatrixGeneric_1_RangeCount__0_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.RangeCount(`0)">
+  RangeCount(T)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Counts the number of occurrences of a specified value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int RangeCount(T value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <span class="xref">T</span></dt>
+    <dd><p>The value to count.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The number of occurrences of the value.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="WaveletMatrix_WaveletMatrixGeneric_1_RangeCount__0__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method is a shorthand for calling RangeCount(0, <a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.html#WaveletMatrix_WaveletMatrixGeneric_1_Size">Size</a>, <code class="paramref">value</code>).</p>
+</div>
+
+
+
+
+  <a id="WaveletMatrix_WaveletMatrixGeneric_1_RangeFreq_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.RangeFreq*"></a>
+
+  <h3 id="WaveletMatrix_WaveletMatrixGeneric_1_RangeFreq_System_Int32_System_Int32__0__0_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.RangeFreq(System.Int32,System.Int32,`0,`0)">
+  RangeFreq(int, int, T, T)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Counts the number of elements in a position range [start, end) whose values are within the value range [minValue, maxValue).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int RangeFreq(int start, int end, T minValue, T maxValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>start</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The inclusive start of the position range.</p>
+</dd>
+    <dt><code>end</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The exclusive end of the position range.</p>
+</dd>
+    <dt><code>minValue</code> <span class="xref">T</span></dt>
+    <dd><p>The inclusive start of the value range.</p>
+</dd>
+    <dt><code>maxValue</code> <span class="xref">T</span></dt>
+    <dd><p>The exclusive end of the value range.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The count of elements matching the criteria.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Thrown if <code class="paramref">start</code> or <code class="paramref">end</code> is out of range.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown if <code class="paramref">start</code> is greater than or equal <code class="paramref">end</code>.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown if <code class="paramref">minValue</code> is greater than or equal <code class="paramref">maxValue</code>.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="WaveletMatrix_WaveletMatrixGeneric_1_RangeFreq_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.RangeFreq*"></a>
+
+  <h3 id="WaveletMatrix_WaveletMatrixGeneric_1_RangeFreq__0__0_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.RangeFreq(`0,`0)">
+  RangeFreq(T, T)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Counts the number of elements whose values are within the value range [minValue, maxValue).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int RangeFreq(T minValue, T maxValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>minValue</code> <span class="xref">T</span></dt>
+    <dd><p>The inclusive start of the value range.</p>
+</dd>
+    <dt><code>maxValue</code> <span class="xref">T</span></dt>
+    <dd><p>The exclusive end of the value range.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The count of elements matching the criteria.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="WaveletMatrix_WaveletMatrixGeneric_1_RangeFreq__0__0__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method is a shorthand for calling RangeFreq(0, <a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.html#WaveletMatrix_WaveletMatrixGeneric_1_Size">Size</a>, <code class="paramref">minValue</code>, <code class="paramref">maxValue</code>).</p>
+</div>
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown if <code class="paramref">minValue</code> is greater than or equal <code class="paramref">maxValue</code>.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="WaveletMatrix_WaveletMatrixGeneric_1_RangeMode_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.RangeMode*"></a>
+
+  <h3 id="WaveletMatrix_WaveletMatrixGeneric_1_RangeMode" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.RangeMode">
+  RangeMode()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds the most frequent value (the mode) and its frequency.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public WaveletMatrixGeneric&lt;T&gt;.ValueWithFrequency&lt;T&gt; RangeMode()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.html">WaveletMatrixGeneric</a>&lt;T&gt;.<a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.ValueWithFrequency-1.html">ValueWithFrequency</a>&lt;T&gt;</dt>
+    <dd><p>A <a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.ValueWithFrequency-1.html">WaveletMatrixGeneric&lt;T&gt;.ValueWithFrequency&lt;Tx&gt;</a> record containing the mode and its count.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="WaveletMatrix_WaveletMatrixGeneric_1_RangeMode_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method is a shorthand for calling RangeMode(0, <a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.html#WaveletMatrix_WaveletMatrixGeneric_1_Size">Size</a>).</p>
+</div>
+
+
+
+
+  <a id="WaveletMatrix_WaveletMatrixGeneric_1_RangeMode_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.RangeMode*"></a>
+
+  <h3 id="WaveletMatrix_WaveletMatrixGeneric_1_RangeMode_System_Int32_System_Int32_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.RangeMode(System.Int32,System.Int32)">
+  RangeMode(int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds the most frequent value (the mode) and its frequency within the specified range [start, end).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public WaveletMatrixGeneric&lt;T&gt;.ValueWithFrequency&lt;T&gt; RangeMode(int start, int end)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>start</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The inclusive start of the range.</p>
+</dd>
+    <dt><code>end</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The exclusive end of the range.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.html">WaveletMatrixGeneric</a>&lt;T&gt;.<a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.ValueWithFrequency-1.html">ValueWithFrequency</a>&lt;T&gt;</dt>
+    <dd><p>A <a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.ValueWithFrequency-1.html">WaveletMatrixGeneric&lt;T&gt;.ValueWithFrequency&lt;Tx&gt;</a> record containing the mode and its count.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Thrown if <code class="paramref">start</code> or <code class="paramref">end</code> is out of range.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown if <code class="paramref">start</code> is greater than or equal <code class="paramref">end</code>.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="WaveletMatrix_WaveletMatrixGeneric_1_Rank_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.Rank*"></a>
+
+  <h3 id="WaveletMatrix_WaveletMatrixGeneric_1_Rank_System_Int32__0_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.Rank(System.Int32,`0)">
+  Rank(int, T)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Counts the number of occurrences of a specified value in the prefix of the sequence [0, k).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Rank(int k, T value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>k</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The exclusive end of the range [0, k).</p>
+</dd>
+    <dt><code>value</code> <span class="xref">T</span></dt>
+    <dd><p>The value to count.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The number of times the value appears in the specified prefix.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Thrown if <code class="paramref">k</code> is out of range.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="WaveletMatrix_WaveletMatrixGeneric_1_Select_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.Select*"></a>
+
+  <h3 id="WaveletMatrix_WaveletMatrixGeneric_1_Select_System_Int32__0_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.Select(System.Int32,`0)">
+  Select(int, T)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds the zero-based position of the k-th occurrence of a specified value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Select(int k, T value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>k</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The one-based rank of the occurrence to find (e.g., k=1 for the first occurrence).</p>
+</dd>
+    <dt><code>value</code> <span class="xref">T</span></dt>
+    <dd><p>The value to search for.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The zero-based index of the k-th occurrence of the value, or -1 if not found.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Thrown if <code class="paramref">k</code> is out of range.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="WaveletMatrix_WaveletMatrixGeneric_1_Serialize_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.Serialize*"></a>
+
+  <h3 id="WaveletMatrix_WaveletMatrixGeneric_1_Serialize_WaveletMatrix_WaveletMatrixGeneric__0__System_IO_Stream_WaveletMatrix_WaveletMatrixGeneric__0__IGenericSerializer__0__WaveletMatrix_SerializationOptions_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.Serialize(WaveletMatrix.WaveletMatrixGeneric{`0},System.IO.Stream,WaveletMatrix.WaveletMatrixGeneric{`0}.IGenericSerializer{`0},WaveletMatrix.SerializationOptions)">
+  Serialize(WaveletMatrixGeneric&lt;T&gt;, Stream, IGenericSerializer&lt;T&gt;?, SerializationOptions?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Serializes the <a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.html">WaveletMatrixGeneric&lt;T&gt;</a> instance to a stream.
+The data is compressed using Brotli and includes a checksum for integrity verification.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Serialize(WaveletMatrixGeneric&lt;T&gt; obj, Stream stream, WaveletMatrixGeneric&lt;T&gt;.IGenericSerializer&lt;T&gt;? genericSerializer = null, SerializationOptions? options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.html">WaveletMatrixGeneric</a>&lt;T&gt;</dt>
+    <dd><p>The instance to serialize.</p>
+</dd>
+    <dt><code>stream</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd><p>The stream to write the serialized data to.</p>
+</dd>
+    <dt><code>genericSerializer</code> <a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.html">WaveletMatrixGeneric</a>&lt;T&gt;.<a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.IGenericSerializer-1.html">IGenericSerializer</a>&lt;T&gt;</dt>
+    <dd><p>An optional serializer for handling the generic type <code class="typeparamref">T</code>.
+If null, a default serializer for <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, or <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a> will be used if applicable.
+If a default serializer is not available for <code class="typeparamref">T</code>, an exception will be thrown.</p>
+</dd>
+    <dt><code>options</code> <a class="xref" href="WaveletMatrix.SerializationOptions.html">SerializationOptions</a></dt>
+    <dd><p>Serialization options, such as the compression level.
+If null, <a class="xref" href="WaveletMatrix.SerializationOptions.html#WaveletMatrix_SerializationOptions_Default">Default</a> will be used.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>Thrown if <code class="paramref">obj</code> or <code class="paramref">stream</code> is null.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown if <code class="paramref">genericSerializer</code> is null and a default serializer for type <code class="typeparamref">T</code> cannot be found.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="WaveletMatrix_WaveletMatrixGeneric_1_Serialize_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.Serialize*"></a>
+
+  <h3 id="WaveletMatrix_WaveletMatrixGeneric_1_Serialize_WaveletMatrix_WaveletMatrixGeneric__0__System_String_WaveletMatrix_WaveletMatrixGeneric__0__IGenericSerializer__0__WaveletMatrix_SerializationOptions_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.Serialize(WaveletMatrix.WaveletMatrixGeneric{`0},System.String,WaveletMatrix.WaveletMatrixGeneric{`0}.IGenericSerializer{`0},WaveletMatrix.SerializationOptions)">
+  Serialize(WaveletMatrixGeneric&lt;T&gt;, string, IGenericSerializer&lt;T&gt;?, SerializationOptions?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Serializes the <a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.html">WaveletMatrixGeneric&lt;T&gt;</a> instance to the specified file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Serialize(WaveletMatrixGeneric&lt;T&gt; obj, string file, WaveletMatrixGeneric&lt;T&gt;.IGenericSerializer&lt;T&gt;? genericSerializer = null, SerializationOptions? options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.html">WaveletMatrixGeneric</a>&lt;T&gt;</dt>
+    <dd><p>The instance to serialize.</p>
+</dd>
+    <dt><code>file</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The path of the file to write to.</p>
+</dd>
+    <dt><code>genericSerializer</code> <a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.html">WaveletMatrixGeneric</a>&lt;T&gt;.<a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.IGenericSerializer-1.html">IGenericSerializer</a>&lt;T&gt;</dt>
+    <dd><p>An optional serializer for handling the generic type <code class="typeparamref">T</code>.
+If null, a default serializer for <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, or <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a> will be used if applicable.
+If a default serializer is not available for <code class="typeparamref">T</code>, an exception will be thrown.</p>
+</dd>
+    <dt><code>options</code> <a class="xref" href="WaveletMatrix.SerializationOptions.html">SerializationOptions</a></dt>
+    <dd><p>Serialization options, such as the compression level.
+If null, <a class="xref" href="WaveletMatrix.SerializationOptions.html#WaveletMatrix_SerializationOptions_Default">Default</a> will be used.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>Thrown if <code class="paramref">obj</code> or <code class="paramref">file</code> is null.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown if <code class="paramref">genericSerializer</code> is null and a default serializer for type <code class="typeparamref">T</code> cannot be found.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="WaveletMatrix_WaveletMatrixGeneric_1_Serialize_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.Serialize*"></a>
+
+  <h3 id="WaveletMatrix_WaveletMatrixGeneric_1_Serialize_WaveletMatrix_WaveletMatrixGeneric__0__WaveletMatrix_WaveletMatrixGeneric__0__IGenericSerializer__0__WaveletMatrix_SerializationOptions_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.Serialize(WaveletMatrix.WaveletMatrixGeneric{`0},WaveletMatrix.WaveletMatrixGeneric{`0}.IGenericSerializer{`0},WaveletMatrix.SerializationOptions)">
+  Serialize(WaveletMatrixGeneric&lt;T&gt;, IGenericSerializer&lt;T&gt;?, SerializationOptions?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Serializes the <a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.html">WaveletMatrixGeneric&lt;T&gt;</a> instance into a byte array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static byte[] Serialize(WaveletMatrixGeneric&lt;T&gt; obj, WaveletMatrixGeneric&lt;T&gt;.IGenericSerializer&lt;T&gt;? genericSerializer = null, SerializationOptions? options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.html">WaveletMatrixGeneric</a>&lt;T&gt;</dt>
+    <dd><p>The instance to serialize.</p>
+</dd>
+    <dt><code>genericSerializer</code> <a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.html">WaveletMatrixGeneric</a>&lt;T&gt;.<a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.IGenericSerializer-1.html">IGenericSerializer</a>&lt;T&gt;</dt>
+    <dd><p>An optional serializer for handling the generic type <code class="typeparamref">T</code>.
+If null, a default serializer for <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, or <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a> will be used if applicable.
+If a default serializer is not available for <code class="typeparamref">T</code>, an exception will be thrown.</p>
+</dd>
+    <dt><code>options</code> <a class="xref" href="WaveletMatrix.SerializationOptions.html">SerializationOptions</a></dt>
+    <dd><p>Serialization options, such as the compression level.
+If null, <a class="xref" href="WaveletMatrix.SerializationOptions.html#WaveletMatrix_SerializationOptions_Default">Default</a> will be used.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>A byte array containing the serialized data.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>Thrown if <code class="paramref">obj</code> is null.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown if <code class="paramref">genericSerializer</code> is null and a default serializer for type <code class="typeparamref">T</code> cannot be found.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="WaveletMatrix_WaveletMatrixGeneric_1_SmallerValue_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.SmallerValue*"></a>
+
+  <h3 id="WaveletMatrix_WaveletMatrixGeneric_1_SmallerValue_System_Int32_System_Int32__0__0_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.SmallerValue(System.Int32,System.Int32,`0,`0)">
+  SmallerValue(int, int, T, T)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds the predecessor of a given value in the specified range [start, end).
+The predecessor is the largest value in the range that is strictly smaller than the given <code class="paramref">value</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T SmallerValue(int start, int end, T value, T defaultValue = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>start</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The inclusive start of the range.</p>
+</dd>
+    <dt><code>end</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The exclusive end of the range.</p>
+</dd>
+    <dt><code>value</code> <span class="xref">T</span></dt>
+    <dd><p>The reference value.</p>
+</dd>
+    <dt><code>defaultValue</code> <span class="xref">T</span></dt>
+    <dd><p>The value to return if no predecessor is found.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd><p>The predecessor value, or <code class="paramref">defaultValue</code> if no such value is found.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Thrown if <code class="paramref">start</code> or <code class="paramref">end</code> is out of range.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown if <code class="paramref">start</code> is greater than or equal <code class="paramref">end</code>.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="WaveletMatrix_WaveletMatrixGeneric_1_SmallerValue_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.SmallerValue*"></a>
+
+  <h3 id="WaveletMatrix_WaveletMatrixGeneric_1_SmallerValue__0__0_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.SmallerValue(`0,`0)">
+  SmallerValue(T, T)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds the predecessor of a given value.
+The predecessor is the largest value in the range that is strictly smaller than the given <code class="paramref">value</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T SmallerValue(T value, T defaultValue = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <span class="xref">T</span></dt>
+    <dd><p>The reference value.</p>
+</dd>
+    <dt><code>defaultValue</code> <span class="xref">T</span></dt>
+    <dd><p>The value to return if no predecessor is found.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd><p>The predecessor value, or <code class="paramref">defaultValue</code> if no such value is found.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="WaveletMatrix_WaveletMatrixGeneric_1_SmallerValue__0__0__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method is a shorthand for calling SmallerValue(0, <a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.html#WaveletMatrix_WaveletMatrixGeneric_1_Size">Size</a>, <code class="paramref">value</code>, <code class="paramref">defaultValue</code>).</p>
+</div>
+
+
+
+
+  <a id="WaveletMatrix_WaveletMatrixGeneric_1_TopK_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.TopK*"></a>
+
+  <h3 id="WaveletMatrix_WaveletMatrixGeneric_1_TopK_System_Int32_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.TopK(System.Int32)">
+  TopK(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds the top K most frequent values and their frequencies.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;WaveletMatrixGeneric&lt;T&gt;.ValueWithFrequency&lt;T&gt;&gt; TopK(int k)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>k</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The number of top elements to retrieve.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.html">WaveletMatrixGeneric</a>&lt;T&gt;.<a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.ValueWithFrequency-1.html">ValueWithFrequency</a>&lt;T&gt;&gt;</dt>
+    <dd><p>An enumerable collection of <a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.ValueWithFrequency-1.html">WaveletMatrixGeneric&lt;T&gt;.ValueWithFrequency&lt;Tx&gt;</a> records, ordered by frequency in descending order.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="WaveletMatrix_WaveletMatrixGeneric_1_TopK_System_Int32__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method is a shorthand for calling TopK(0, <a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.html#WaveletMatrix_WaveletMatrixGeneric_1_Size">Size</a>, <code class="paramref">k</code>).</p>
+</div>
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Thrown if <code class="paramref">k</code> is out of range.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="WaveletMatrix_WaveletMatrixGeneric_1_TopK_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.TopK*"></a>
+
+  <h3 id="WaveletMatrix_WaveletMatrixGeneric_1_TopK_System_Int32_System_Int32_System_Int32_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.TopK(System.Int32,System.Int32,System.Int32)">
+  TopK(int, int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds the top K most frequent values and their frequencies within the specified range [start, end).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;WaveletMatrixGeneric&lt;T&gt;.ValueWithFrequency&lt;T&gt;&gt; TopK(int start, int end, int k)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>start</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The inclusive start of the range.</p>
+</dd>
+    <dt><code>end</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The exclusive end of the range.</p>
+</dd>
+    <dt><code>k</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The number of top elements to retrieve.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.html">WaveletMatrixGeneric</a>&lt;T&gt;.<a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.ValueWithFrequency-1.html">ValueWithFrequency</a>&lt;T&gt;&gt;</dt>
+    <dd><p>An enumerable collection of <a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.ValueWithFrequency-1.html">WaveletMatrixGeneric&lt;T&gt;.ValueWithFrequency&lt;Tx&gt;</a> records, ordered by frequency in descending order.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Thrown if <code class="paramref">start</code>, <code class="paramref">end</code> or <code class="paramref">k</code> is out of range.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown if <code class="paramref">start</code> is greater than or equal <code class="paramref">end</code>.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="WaveletMatrix_WaveletMatrixGeneric_1_TryLargerValue_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.TryLargerValue*"></a>
+
+  <h3 id="WaveletMatrix_WaveletMatrixGeneric_1_TryLargerValue_System_Int32_System_Int32__0__0__" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.TryLargerValue(System.Int32,System.Int32,`0,`0@)">
+  TryLargerValue(int, int, T, out T)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds the successor of a given value in the specified range [start, end).
+The successor is the smallest value in the range that is strictly larger than the given <code class="paramref">value</code>.
+This is the robust version that returns a boolean indicating success.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryLargerValue(int start, int end, T value, out T result)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>start</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The inclusive start of the range.</p>
+</dd>
+    <dt><code>end</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The exclusive end of the range.</p>
+</dd>
+    <dt><code>value</code> <span class="xref">T</span></dt>
+    <dd><p>The reference value.</p>
+</dd>
+    <dt><code>result</code> <span class="xref">T</span></dt>
+    <dd><p>When this method returns, contains the successor value if found; otherwise, the default value for the type.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><code>true</code> if a predecessor value was found; otherwise, <code>false</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Thrown if <code class="paramref">start</code> or <code class="paramref">end</code> is out of range.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown if <code class="paramref">start</code> is greater than or equal <code class="paramref">end</code>.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="WaveletMatrix_WaveletMatrixGeneric_1_TryLargerValue_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.TryLargerValue*"></a>
+
+  <h3 id="WaveletMatrix_WaveletMatrixGeneric_1_TryLargerValue__0__0__" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.TryLargerValue(`0,`0@)">
+  TryLargerValue(T, out T)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds the successor of a given value.
+The successor is the smallest value in the range that is strictly larger than the given <code class="paramref">value</code>.
+This is the robust version that returns a boolean indicating success.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryLargerValue(T value, out T result)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <span class="xref">T</span></dt>
+    <dd><p>The reference value.</p>
+</dd>
+    <dt><code>result</code> <span class="xref">T</span></dt>
+    <dd><p>When this method returns, contains the successor value if found; otherwise, the default value for the type.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><code>true</code> if a predecessor value was found; otherwise, <code>false</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="WaveletMatrix_WaveletMatrixGeneric_1_TryLargerValue__0__0___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method is a shorthand for calling TryLargerValue(0, <a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.html#WaveletMatrix_WaveletMatrixGeneric_1_Size">Size</a>, <code class="paramref">value</code>, out <code class="paramref">result</code>).</p>
+</div>
+
+
+
+
+  <a id="WaveletMatrix_WaveletMatrixGeneric_1_TrySmallerValue_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.TrySmallerValue*"></a>
+
+  <h3 id="WaveletMatrix_WaveletMatrixGeneric_1_TrySmallerValue_System_Int32_System_Int32__0__0__" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.TrySmallerValue(System.Int32,System.Int32,`0,`0@)">
+  TrySmallerValue(int, int, T, out T)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds the predecessor of a given value in the specified range [start, end).
+The predecessor is the largest value in the range that is strictly smaller than the given <code class="paramref">value</code>.
+This is the robust version that returns a boolean indicating success.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TrySmallerValue(int start, int end, T value, out T result)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>start</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The inclusive start of the range.</p>
+</dd>
+    <dt><code>end</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The exclusive end of the range.</p>
+</dd>
+    <dt><code>value</code> <span class="xref">T</span></dt>
+    <dd><p>The reference value.</p>
+</dd>
+    <dt><code>result</code> <span class="xref">T</span></dt>
+    <dd><p>When this method returns, contains the successor value if found; otherwise, the default value for the type.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><code>true</code> if a predecessor value was found; otherwise, <code>false</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Thrown if <code class="paramref">start</code> or <code class="paramref">end</code> is out of range.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown if <code class="paramref">start</code> is greater than or equal <code class="paramref">end</code>.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="WaveletMatrix_WaveletMatrixGeneric_1_TrySmallerValue_" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.TrySmallerValue*"></a>
+
+  <h3 id="WaveletMatrix_WaveletMatrixGeneric_1_TrySmallerValue__0__0__" data-uid="WaveletMatrix.WaveletMatrixGeneric`1.TrySmallerValue(`0,`0@)">
+  TrySmallerValue(T, out T)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds the predecessor of a given value.
+The predecessor is the largest value in the range that is strictly smaller than the given <code class="paramref">value</code>.
+This is the robust version that returns a boolean indicating success.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TrySmallerValue(T value, out T result)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <span class="xref">T</span></dt>
+    <dd><p>The reference value.</p>
+</dd>
+    <dt><code>result</code> <span class="xref">T</span></dt>
+    <dd><p>When this method returns, contains the successor value if found; otherwise, the default value for the type.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><code>true</code> if a predecessor value was found; otherwise, <code>false</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="WaveletMatrix_WaveletMatrixGeneric_1_TrySmallerValue__0__0___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method is a shorthand for calling TrySmallerValue(0, <a class="xref" href="WaveletMatrix.WaveletMatrixGeneric-1.html#WaveletMatrix_WaveletMatrixGeneric_1_Size">Size</a>, <code class="paramref">value</code>, out <code class="paramref">result</code>).</p>
+</div>
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

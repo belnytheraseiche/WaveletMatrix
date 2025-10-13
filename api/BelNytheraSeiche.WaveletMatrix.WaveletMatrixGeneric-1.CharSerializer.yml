@@ -1,0 +1,833 @@
+### YamlMime:ManagedReference
+items:
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer
+  commentId: T:BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer
+  id: WaveletMatrixGeneric`1.CharSerializer
+  parent: BelNytheraSeiche.WaveletMatrix
+  children:
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer.Instance
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer.ReadResolveMap(System.IO.Stream)
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer.TypeIdentifier
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer.WriteResolveMap(System.IO.Stream,System.Char[])
+  langs:
+  - csharp
+  - vb
+  name: WaveletMatrixGeneric<T>.CharSerializer
+  nameWithType: WaveletMatrixGeneric<T>.CharSerializer
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.CharSerializer
+  type: Class
+  source:
+    id: CharSerializer
+    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    startLine: 733
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Provides a default serializer for the <xref href="System.Char" data-throw-if-not-resolved="false"></xref> type.
+  example: []
+  syntax:
+    content: 'public sealed class WaveletMatrixGeneric<T>.CharSerializer : WaveletMatrixGeneric<T>.IGenericSerializer<char>'
+    content.vb: Public NotInheritable Class WaveletMatrixGeneric(Of T).CharSerializer Implements WaveletMatrixGeneric(Of T).IGenericSerializer(Of Char)
+  inheritance:
+  - System.Object
+  implements:
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer{System.Char}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  nameWithType.vb: WaveletMatrixGeneric(Of T).CharSerializer
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric(Of T).CharSerializer
+  name.vb: WaveletMatrixGeneric(Of T).CharSerializer
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer.Instance
+  commentId: P:BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer.Instance
+  id: Instance
+  parent: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer
+  langs:
+  - csharp
+  - vb
+  name: Instance
+  nameWithType: WaveletMatrixGeneric<T>.CharSerializer.Instance
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.CharSerializer.Instance
+  type: Property
+  source:
+    id: Instance
+    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    startLine: 738
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Gets the singleton instance of the <xref href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric%601.CharSerializer" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static WaveletMatrixGeneric<T>.IGenericSerializer<char> Instance { get; }
+    parameters: []
+    return:
+      type: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer{System.Char}
+    content.vb: Public Shared ReadOnly Property Instance As WaveletMatrixGeneric(Of T).IGenericSerializer(Of Char)
+  overload: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer.Instance*
+  nameWithType.vb: WaveletMatrixGeneric(Of T).CharSerializer.Instance
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric(Of T).CharSerializer.Instance
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer.TypeIdentifier
+  commentId: P:BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer.TypeIdentifier
+  id: TypeIdentifier
+  parent: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer
+  langs:
+  - csharp
+  - vb
+  name: TypeIdentifier
+  nameWithType: WaveletMatrixGeneric<T>.CharSerializer.TypeIdentifier
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.CharSerializer.TypeIdentifier
+  type: Property
+  source:
+    id: TypeIdentifier
+    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    startLine: 741
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Gets a unique 4-byte identifier for the type <xref href="System.Char" data-throw-if-not-resolved="false"></xref>.
+
+    This identifier is written to the file header to ensure type safety during deserialization.
+  example:
+  - <pre><code class="lang-csharp">public byte[] TypeIdentifier =&gt; "INT_";</code></pre>
+  syntax:
+    content: public byte[] TypeIdentifier { get; }
+    parameters: []
+    return:
+      type: System.Byte[]
+    content.vb: Public ReadOnly Property TypeIdentifier As Byte()
+  overload: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer.TypeIdentifier*
+  implements:
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer{System.Char}.TypeIdentifier
+  nameWithType.vb: WaveletMatrixGeneric(Of T).CharSerializer.TypeIdentifier
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric(Of T).CharSerializer.TypeIdentifier
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer.WriteResolveMap(System.IO.Stream,System.Char[])
+  commentId: M:BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer.WriteResolveMap(System.IO.Stream,System.Char[])
+  id: WriteResolveMap(System.IO.Stream,System.Char[])
+  parent: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer
+  langs:
+  - csharp
+  - vb
+  name: WriteResolveMap(Stream, char[])
+  nameWithType: WaveletMatrixGeneric<T>.CharSerializer.WriteResolveMap(Stream, char[])
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.CharSerializer.WriteResolveMap(System.IO.Stream, char[])
+  type: Method
+  source:
+    id: WriteResolveMap
+    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    startLine: 744
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Writes the resolve map (the dictionary of unique values) to the stream.
+  example: []
+  syntax:
+    content: public void WriteResolveMap(Stream stream, char[] resolveMap)
+    parameters:
+    - id: stream
+      type: System.IO.Stream
+      description: The stream to write to. Typically a <xref href="System.IO.Compression.BrotliStream" data-throw-if-not-resolved="false"></xref> for compression.
+    - id: resolveMap
+      type: System.Char[]
+      description: The array of unique values to serialize.
+    content.vb: Public Sub WriteResolveMap(stream As Stream, resolveMap As Char())
+  overload: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer.WriteResolveMap*
+  implements:
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer{System.Char}.WriteResolveMap(System.IO.Stream,System.Char[])
+  nameWithType.vb: WaveletMatrixGeneric(Of T).CharSerializer.WriteResolveMap(Stream, Char())
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric(Of T).CharSerializer.WriteResolveMap(System.IO.Stream, Char())
+  name.vb: WriteResolveMap(Stream, Char())
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer.ReadResolveMap(System.IO.Stream)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer.ReadResolveMap(System.IO.Stream)
+  id: ReadResolveMap(System.IO.Stream)
+  parent: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer
+  langs:
+  - csharp
+  - vb
+  name: ReadResolveMap(Stream)
+  nameWithType: WaveletMatrixGeneric<T>.CharSerializer.ReadResolveMap(Stream)
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.CharSerializer.ReadResolveMap(System.IO.Stream)
+  type: Method
+  source:
+    id: ReadResolveMap
+    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    startLine: 768
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Reads the resolve map from the stream.
+  example: []
+  syntax:
+    content: public char[] ReadResolveMap(Stream stream)
+    parameters:
+    - id: stream
+      type: System.IO.Stream
+      description: The stream to read from. Typically a <xref href="System.IO.Compression.BrotliStream" data-throw-if-not-resolved="false"></xref> for decompression.
+    return:
+      type: System.Char[]
+      description: An array containing the deserialized unique values.
+    content.vb: Public Function ReadResolveMap(stream As Stream) As Char()
+  overload: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer.ReadResolveMap*
+  implements:
+  - BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer{System.Char}.ReadResolveMap(System.IO.Stream)
+  nameWithType.vb: WaveletMatrixGeneric(Of T).CharSerializer.ReadResolveMap(Stream)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric(Of T).CharSerializer.ReadResolveMap(System.IO.Stream)
+references:
+- uid: System.Char
+  commentId: T:System.Char
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.char
+  name: char
+  nameWithType: char
+  fullName: char
+  nameWithType.vb: Char
+  fullName.vb: Char
+  name.vb: Char
+- uid: BelNytheraSeiche.WaveletMatrix
+  commentId: N:BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.html
+  name: BelNytheraSeiche.WaveletMatrix
+  nameWithType: BelNytheraSeiche.WaveletMatrix
+  fullName: BelNytheraSeiche.WaveletMatrix
+  spec.csharp:
+  - uid: BelNytheraSeiche
+    name: BelNytheraSeiche
+    href: BelNytheraSeiche.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix
+    name: WaveletMatrix
+    href: BelNytheraSeiche.WaveletMatrix.html
+  spec.vb:
+  - uid: BelNytheraSeiche
+    name: BelNytheraSeiche
+    href: BelNytheraSeiche.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix
+    name: WaveletMatrix
+    href: BelNytheraSeiche.WaveletMatrix.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer{System.Char}
+  commentId: T:BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer{System.Char}
+  parent: BelNytheraSeiche.WaveletMatrix
+  definition: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer`1
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.html
+  name: WaveletMatrixGeneric<T>.IGenericSerializer<char>
+  nameWithType: WaveletMatrixGeneric<T>.IGenericSerializer<char>
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.IGenericSerializer<char>
+  nameWithType.vb: WaveletMatrixGeneric(Of T).IGenericSerializer(Of Char)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric(Of T).IGenericSerializer(Of Char)
+  name.vb: WaveletMatrixGeneric(Of T).IGenericSerializer(Of Char)
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer`1
+    name: IGenericSerializer
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.IGenericSerializer-1.html
+  - name: <
+  - uid: System.Char
+    name: char
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: '>'
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer`1
+    name: IGenericSerializer
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.IGenericSerializer-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Char
+    name: Char
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer`1
+  commentId: T:BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer`1
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.html
+  name: WaveletMatrixGeneric<T>.IGenericSerializer<Tx>
+  nameWithType: WaveletMatrixGeneric<T>.IGenericSerializer<Tx>
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.IGenericSerializer<Tx>
+  nameWithType.vb: WaveletMatrixGeneric(Of T).IGenericSerializer(Of Tx)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric(Of T).IGenericSerializer(Of Tx)
+  name.vb: WaveletMatrixGeneric(Of T).IGenericSerializer(Of Tx)
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer`1
+    name: IGenericSerializer
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.IGenericSerializer-1.html
+  - name: <
+  - name: Tx
+  - name: '>'
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer`1
+    name: IGenericSerializer
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.IGenericSerializer-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: Tx
+  - name: )
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer
+  commentId: T:BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.html
+  name: WaveletMatrixGeneric<T>.CharSerializer
+  nameWithType: WaveletMatrixGeneric<T>.CharSerializer
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.CharSerializer
+  nameWithType.vb: WaveletMatrixGeneric(Of T).CharSerializer
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric(Of T).CharSerializer
+  name.vb: WaveletMatrixGeneric(Of T).CharSerializer
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer
+    name: CharSerializer
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.CharSerializer.html
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer
+    name: CharSerializer
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.CharSerializer.html
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer.Instance*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer.Instance
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.CharSerializer.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixGeneric_1_CharSerializer_Instance
+  name: Instance
+  nameWithType: WaveletMatrixGeneric<T>.CharSerializer.Instance
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.CharSerializer.Instance
+  nameWithType.vb: WaveletMatrixGeneric(Of T).CharSerializer.Instance
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric(Of T).CharSerializer.Instance
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer.TypeIdentifier*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer.TypeIdentifier
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.CharSerializer.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixGeneric_1_CharSerializer_TypeIdentifier
+  name: TypeIdentifier
+  nameWithType: WaveletMatrixGeneric<T>.CharSerializer.TypeIdentifier
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.CharSerializer.TypeIdentifier
+  nameWithType.vb: WaveletMatrixGeneric(Of T).CharSerializer.TypeIdentifier
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric(Of T).CharSerializer.TypeIdentifier
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer{System.Char}.TypeIdentifier
+  commentId: P:BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer{System.Char}.TypeIdentifier
+  parent: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer{System.Char}
+  definition: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer`1.TypeIdentifier
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.IGenericSerializer-1.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixGeneric_1_IGenericSerializer_1_TypeIdentifier
+  name: TypeIdentifier
+  nameWithType: WaveletMatrixGeneric<T>.IGenericSerializer<char>.TypeIdentifier
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.IGenericSerializer<char>.TypeIdentifier
+  nameWithType.vb: WaveletMatrixGeneric(Of T).IGenericSerializer(Of Char).TypeIdentifier
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric(Of T).IGenericSerializer(Of Char).TypeIdentifier
+- uid: System.Byte[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.byte
+  name: byte[]
+  nameWithType: byte[]
+  fullName: byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: (
+  - name: )
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer`1.TypeIdentifier
+  commentId: P:BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer`1.TypeIdentifier
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.IGenericSerializer-1.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixGeneric_1_IGenericSerializer_1_TypeIdentifier
+  name: TypeIdentifier
+  nameWithType: WaveletMatrixGeneric<T>.IGenericSerializer<Tx>.TypeIdentifier
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.IGenericSerializer<Tx>.TypeIdentifier
+  nameWithType.vb: WaveletMatrixGeneric(Of T).IGenericSerializer(Of Tx).TypeIdentifier
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric(Of T).IGenericSerializer(Of Tx).TypeIdentifier
+- uid: System.IO.Compression.BrotliStream
+  commentId: T:System.IO.Compression.BrotliStream
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.io.compression.brotlistream
+  name: BrotliStream
+  nameWithType: BrotliStream
+  fullName: System.IO.Compression.BrotliStream
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer.WriteResolveMap*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer.WriteResolveMap
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.CharSerializer.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixGeneric_1_CharSerializer_WriteResolveMap_System_IO_Stream_System_Char___
+  name: WriteResolveMap
+  nameWithType: WaveletMatrixGeneric<T>.CharSerializer.WriteResolveMap
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.CharSerializer.WriteResolveMap
+  nameWithType.vb: WaveletMatrixGeneric(Of T).CharSerializer.WriteResolveMap
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric(Of T).CharSerializer.WriteResolveMap
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer{System.Char}.WriteResolveMap(System.IO.Stream,System.Char[])
+  commentId: M:BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer{System.Char}.WriteResolveMap(System.IO.Stream,System.Char[])
+  parent: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer{System.Char}
+  definition: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer`1.WriteResolveMap(System.IO.Stream,`1[])
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.IGenericSerializer-1.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixGeneric_1_IGenericSerializer_1_WriteResolveMap_System_IO_Stream__1___
+  name: WriteResolveMap(Stream, char[])
+  nameWithType: WaveletMatrixGeneric<T>.IGenericSerializer<char>.WriteResolveMap(Stream, char[])
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.IGenericSerializer<char>.WriteResolveMap(System.IO.Stream, char[])
+  nameWithType.vb: WaveletMatrixGeneric(Of T).IGenericSerializer(Of Char).WriteResolveMap(Stream, Char())
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric(Of T).IGenericSerializer(Of Char).WriteResolveMap(System.IO.Stream, Char())
+  name.vb: WriteResolveMap(Stream, Char())
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer{System.Char}.WriteResolveMap(System.IO.Stream,System.Char[])
+    name: WriteResolveMap
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.IGenericSerializer-1.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixGeneric_1_IGenericSerializer_1_WriteResolveMap_System_IO_Stream__1___
+  - name: (
+  - uid: System.IO.Stream
+    name: Stream
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io.stream
+  - name: ','
+  - name: " "
+  - uid: System.Char
+    name: char
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: '['
+  - name: ']'
+  - name: )
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer{System.Char}.WriteResolveMap(System.IO.Stream,System.Char[])
+    name: WriteResolveMap
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.IGenericSerializer-1.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixGeneric_1_IGenericSerializer_1_WriteResolveMap_System_IO_Stream__1___
+  - name: (
+  - uid: System.IO.Stream
+    name: Stream
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io.stream
+  - name: ','
+  - name: " "
+  - uid: System.Char
+    name: Char
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: (
+  - name: )
+  - name: )
+- uid: System.IO.Stream
+  commentId: T:System.IO.Stream
+  parent: System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.io.stream
+  name: Stream
+  nameWithType: Stream
+  fullName: System.IO.Stream
+- uid: System.Char[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.char
+  name: char[]
+  nameWithType: char[]
+  fullName: char[]
+  nameWithType.vb: Char()
+  fullName.vb: Char()
+  name.vb: Char()
+  spec.csharp:
+  - uid: System.Char
+    name: char
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Char
+    name: Char
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: (
+  - name: )
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer`1.WriteResolveMap(System.IO.Stream,`1[])
+  commentId: M:BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer`1.WriteResolveMap(System.IO.Stream,`1[])
+  isExternal: true
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.IGenericSerializer-1.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixGeneric_1_IGenericSerializer_1_WriteResolveMap_System_IO_Stream__1___
+  name: WriteResolveMap(Stream, Tx[])
+  nameWithType: WaveletMatrixGeneric<T>.IGenericSerializer<Tx>.WriteResolveMap(Stream, Tx[])
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.IGenericSerializer<Tx>.WriteResolveMap(System.IO.Stream, Tx[])
+  nameWithType.vb: WaveletMatrixGeneric(Of T).IGenericSerializer(Of Tx).WriteResolveMap(Stream, Tx())
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric(Of T).IGenericSerializer(Of Tx).WriteResolveMap(System.IO.Stream, Tx())
+  name.vb: WriteResolveMap(Stream, Tx())
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer`1.WriteResolveMap(System.IO.Stream,`1[])
+    name: WriteResolveMap
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.IGenericSerializer-1.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixGeneric_1_IGenericSerializer_1_WriteResolveMap_System_IO_Stream__1___
+  - name: (
+  - uid: System.IO.Stream
+    name: Stream
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io.stream
+  - name: ','
+  - name: " "
+  - name: Tx
+  - name: '['
+  - name: ']'
+  - name: )
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer`1.WriteResolveMap(System.IO.Stream,`1[])
+    name: WriteResolveMap
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.IGenericSerializer-1.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixGeneric_1_IGenericSerializer_1_WriteResolveMap_System_IO_Stream__1___
+  - name: (
+  - uid: System.IO.Stream
+    name: Stream
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io.stream
+  - name: ','
+  - name: " "
+  - name: Tx
+  - name: (
+  - name: )
+  - name: )
+- uid: System.IO
+  commentId: N:System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.IO
+  nameWithType: System.IO
+  fullName: System.IO
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer.ReadResolveMap*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer.ReadResolveMap
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.CharSerializer.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixGeneric_1_CharSerializer_ReadResolveMap_System_IO_Stream_
+  name: ReadResolveMap
+  nameWithType: WaveletMatrixGeneric<T>.CharSerializer.ReadResolveMap
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.CharSerializer.ReadResolveMap
+  nameWithType.vb: WaveletMatrixGeneric(Of T).CharSerializer.ReadResolveMap
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric(Of T).CharSerializer.ReadResolveMap
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer{System.Char}.ReadResolveMap(System.IO.Stream)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer{System.Char}.ReadResolveMap(System.IO.Stream)
+  parent: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer{System.Char}
+  definition: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer`1.ReadResolveMap(System.IO.Stream)
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.IGenericSerializer-1.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixGeneric_1_IGenericSerializer_1_ReadResolveMap_System_IO_Stream_
+  name: ReadResolveMap(Stream)
+  nameWithType: WaveletMatrixGeneric<T>.IGenericSerializer<char>.ReadResolveMap(Stream)
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.IGenericSerializer<char>.ReadResolveMap(System.IO.Stream)
+  nameWithType.vb: WaveletMatrixGeneric(Of T).IGenericSerializer(Of Char).ReadResolveMap(Stream)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric(Of T).IGenericSerializer(Of Char).ReadResolveMap(System.IO.Stream)
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer{System.Char}.ReadResolveMap(System.IO.Stream)
+    name: ReadResolveMap
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.IGenericSerializer-1.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixGeneric_1_IGenericSerializer_1_ReadResolveMap_System_IO_Stream_
+  - name: (
+  - uid: System.IO.Stream
+    name: Stream
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io.stream
+  - name: )
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer{System.Char}.ReadResolveMap(System.IO.Stream)
+    name: ReadResolveMap
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.IGenericSerializer-1.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixGeneric_1_IGenericSerializer_1_ReadResolveMap_System_IO_Stream_
+  - name: (
+  - uid: System.IO.Stream
+    name: Stream
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io.stream
+  - name: )
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer`1.ReadResolveMap(System.IO.Stream)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer`1.ReadResolveMap(System.IO.Stream)
+  isExternal: true
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.IGenericSerializer-1.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixGeneric_1_IGenericSerializer_1_ReadResolveMap_System_IO_Stream_
+  name: ReadResolveMap(Stream)
+  nameWithType: WaveletMatrixGeneric<T>.IGenericSerializer<Tx>.ReadResolveMap(Stream)
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.IGenericSerializer<Tx>.ReadResolveMap(System.IO.Stream)
+  nameWithType.vb: WaveletMatrixGeneric(Of T).IGenericSerializer(Of Tx).ReadResolveMap(Stream)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric(Of T).IGenericSerializer(Of Tx).ReadResolveMap(System.IO.Stream)
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer`1.ReadResolveMap(System.IO.Stream)
+    name: ReadResolveMap
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.IGenericSerializer-1.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixGeneric_1_IGenericSerializer_1_ReadResolveMap_System_IO_Stream_
+  - name: (
+  - uid: System.IO.Stream
+    name: Stream
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io.stream
+  - name: )
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer`1.ReadResolveMap(System.IO.Stream)
+    name: ReadResolveMap
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.IGenericSerializer-1.html#BelNytheraSeiche_WaveletMatrix_WaveletMatrixGeneric_1_IGenericSerializer_1_ReadResolveMap_System_IO_Stream_
+  - name: (
+  - uid: System.IO.Stream
+    name: Stream
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io.stream
+  - name: )

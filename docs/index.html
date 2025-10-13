@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>BelNytheraSeiche.WaveletMatrix | BelNytheraSeiche.WaveletMatrix </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="BelNytheraSeiche.WaveletMatrix | BelNytheraSeiche.WaveletMatrix ">
+      
+      
+      <link rel="icon" href="images/favicon.ico">
+      <link rel="stylesheet" href="public/docfx.min.css">
+      <link rel="stylesheet" href="public/main.css">
+      <meta name="docfx:navrel" content="toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="index.html">
+            <img id="logo" class="svg" src="images/logo-small.png" alt="BelNytheraSeiche.WaveletMatrix">
+            BelNytheraSeiche.WaveletMatrix
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="belnytheraseichewaveletmatrix">BelNytheraSeiche.WaveletMatrix</h1>
+
+<p><a href="https://www.nuget.org/packages/BelNytheraSeiche.WaveletMatrix/"><img src="https://img.shields.io/nuget/v/BelNytheraSeiche.WaveletMatrix.svg" alt="NuGet version"></a></p>
+<!-- [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) -->
+<p>BelNytheraSeiche.WaveletMatrix is a high-performance .NET library for advanced sequence and text analysis. It provides a suite of powerful, low-allocation data structures designed for complex queries and full-text search.</p>
+<p>This library is built with performance and modern .NET idioms in mind, leveraging Span<t>, ReadOnlyMemory<t>, and BinaryPrimitives for efficient, low-allocation memory management.</t></t></p>
+<hr>
+<h2 id="features">Features</h2>
+<ul>
+<li><strong>Generic Wavelet Matrix (<code>WaveletMatrixGeneric&lt;T&gt;</code>)</strong>:
+<ul>
+<li>A compressed data structure for any <code>IComparable&lt;T&gt;</code> sequence.</li>
+<li>Fast <code>Access</code>, <code>Rank</code>, and <code>Select</code> queries.</li>
+<li>Advanced analytical queries: <code>Quantile</code>, <code>RangeCount</code>, <code>RangeFreq</code>, <code>RangeMode</code>, <code>TopK</code>, <code>SmallerValue</code>(predecessor), <code>LargerValue</code>(successor).</li>
+<li>Built-in coordinate compression for high memory efficiency.</li>
+</ul>
+</li>
+</ul>
+<div></div>
+<ul>
+<li><strong>Suffix Array (<code>SuffixArray</code>)</strong>:
+<ul>
+<li>Built using the high-performance <strong>SA-IS</strong> algorithm (<code>O(N)</code>).</li>
+<li>Includes a full <strong>LCP Array</strong> built with Kasai's algorithm (<code>O(N)</code>).</li>
+<li>Advanced search capabilities: <code>Search</code>, <code>SearchRepeated</code>, <code>SearchLongestRepeated</code>, <code>SearchCommon</code>, <code>SearchLongestCommon</code>, <code>SearchWildcard</code>.</li>
+</ul>
+</li>
+</ul>
+<div></div>
+<ul>
+<li><strong>LCP Index (<code>LcpIndex</code>)</strong>:
+<ul>
+<li>Builds on <code>SuffixArray</code> to provide <strong><code>O(1)</code> LCP queries</strong> between any two suffixes using a Sparse Table (RMQ).</li>
+<li>Enables complex string analysis: <code>CountUniqueSubstrings</code>, <code>FindRepeats</code>, <code>FindTandemRepeats</code>, <code>CalculateZivLempelComplexity</code>(LZ78).</li>
+</ul>
+</li>
+</ul>
+<div></div>
+<ul>
+<li><strong>FM-Index (<code>FMIndex</code>)</strong>:
+<ul>
+<li>A complete, fast full-text search index.</li>
+<li><code>O(P)</code> pattern counting, where <code>P</code> is the pattern length.</li>
+<li><code>O(P + k)</code> pattern locating, where <code>k</code> is the number of occurrences (when using the full Suffix Array).</li>
+<li>Includes <code>GetSnippet</code> for displaying context and <code>RestoreSourceText</code> for BWT inversion.</li>
+</ul>
+</li>
+</ul>
+<div></div>
+<ul>
+<li><strong>Robust Serialization</strong>:
+<ul>
+<li>All major data structures support serialization.</li>
+<li>Features compression and checksums for data integrity.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="installation">Installation</h2>
+<p>You can install the library via the .NET CLI:</p>
+<pre><code class="lang-sh">dotnet add package BelNytheraSeiche.WaveletMatrix
+</code></pre>
+<p>Or via the NuGet Package Manager Console:</p>
+<pre><code class="lang-powershell">Install-Package BelNytheraSeiche.WaveletMatrix
+</code></pre>
+<p><a href="https://www.nuget.org/packages/BelNytheraSeiche.WaveletMatrix/"><strong>➡️ View on nuget package page</strong></a></p>
+<hr>
+<h2 id="quick-start">Quick Start</h2>
+<p>Here are some examples of how to use the core components of the library.</p>
+<p><a href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/Program.cs"><strong>➡️ View <code>Program.cs</code> for More Examples</strong></a></p>
+<h3 id="waveletmatrixgenerict"><code>WaveletMatrixGeneric&lt;T&gt;</code></h3>
+<p>Use the Wavelet Matrix for fast queries on generic sequences.</p>
+<pre><code class="lang-csharp">using BelNytheraSeiche.WaveletMatrix;
+
+var data = (int[])[3, 1, 4, 1, 5, 9, 2, 5, 3, 5];
+var wm = WaveletMatrixGeneric&lt;int&gt;.Create(data);
+
+// Get the value at index 4
+var value = wm.Access(4); // -&gt; 5
+
+// Count occurrences of '1' in the prefix [0, 5)
+var rank = wm.Rank(5, 1); // -&gt; 2
+
+// Find the position of the 3rd '5'
+var pos = wm.Select(3, 5); // -&gt; 9
+
+// Find the most frequent value in the range [3, 10)
+var mode = wm.RangeMode(3, 10);
+Console.WriteLine($&quot;Mode: {mode.Value}, Freq: {mode.Frequency}&quot;); // -&gt; Mode: 5, Freq: 3
+</code></pre>
+<h3 id="suffixarray-and-lcpindex"><code>SuffixArray</code> and <code>LcpIndex</code></h3>
+<p>Use <code>SuffixArray</code> for powerful string searches and <code>LcpIndex</code> for advanced analysis.</p>
+<pre><code class="lang-csharp">using BelNytheraSeiche.WaveletMatrix;
+
+var text = &quot;GATTACATACAGATTACA&quot;;
+var sa = SuffixArray.Create(text);
+var lcpIndex = LcpIndex.Create(sa);
+
+// Find all occurrences of &quot;TACA&quot;
+var positions = sa.Search(&quot;TACA&quot;); // -&gt; [3, 7, 14]
+
+// Find the longest repeated substring
+var longestRepeat = sa.SearchLongestRepeated().First();
+Console.WriteLine($&quot;Longest Repeat: '{longestRepeat.Text}'&quot;); // -&gt; 'GATTACA'
+
+// Get the LCP length between the suffix at index 0 and 11 in O(1)
+int lcp = lcpIndex.GetLcp(0, 11); // -&gt; 7 (for &quot;GATTACA&quot;)
+</code></pre>
+<h3 id="fmindex"><code>FMIndex</code></h3>
+<p>Use the <code>FMIndex</code> for efficient full-text search.</p>
+<pre><code class="lang-csharp">using BelNytheraSeiche.WaveletMatrix;
+
+var longText = &quot;The quick brown fox jumps over the lazy dog. The quick brown dog jumps over the lazy fox.&quot;;
+var fmIndex = FMIndex.Create(longText);
+
+// Count occurrences of a pattern
+int count = fmIndex.Count(&quot;fox&quot;); // -&gt; 2
+
+// Locate all occurrences and display snippets
+var pattern = &quot;lazy&quot;;
+foreach (int pos in fmIndex.Locate(pattern))
+{
+    var (snippet, keyIndex) = fmIndex.GetSnippet(pos, pattern.Length, 30);
+    Console.WriteLine($&quot;Found at {pos}: ...{snippet}...&quot;);
+}
+// Found at 35: ...mps over the lazy dog. The qui...
+// Found at 80: ...n dog jumps over the lazy fox....
+</code></pre>
+<hr>
+<h2 id="performance">Performance</h2>
+<p>The following benchmarks were run on [Snapdragon X Plus - X1P42100] with .NET 9.0.
+Benchmarks were run on a typical machine using <code>BenchmarkDotNet</code> to measure the performance of key operations on two standard corpora from the <a href="http://pizzachili.dcc.uchile.cl/">Pizza &amp; Chili Corpus</a>.</p>
+<ul>
+<li><strong><code>english.50MB</code></strong>: A 100MB file of English text, representing a <strong>large alphabet</strong>.</li>
+<li><strong><code>dna.50MB</code></strong>: A 100MB file of DNA sequences, representing a <strong>small alphabet</strong>.</li>
+</ul>
+<p>The patterns used for searching were <code>{&quot;the&quot;, &quot;government&quot;, &quot;internationalization&quot;}</code> for English and <code>{&quot;GATTACA&quot;, &quot;T&quot;, &quot;ACGTACGTACGTACGT&quot;}</code> for DNA.</p>
+<h3 id="benchmark-results">Benchmark Results</h3>
+<p>This benchmark meatures the time taken to perform <code>SuffixArray.Search</code>.</p>
+<ul>
+<li>english.50MB</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>pattern</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">Error</th>
+<th style="text-align: right;">StdDev</th>
+<th style="text-align: right;">Gen0</th>
+<th style="text-align: right;">Allocated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Search</td>
+<td>government</td>
+<td style="text-align: right;">17,079.8 ns</td>
+<td style="text-align: right;">100.55 ns</td>
+<td style="text-align: right;">89.13 ns</td>
+<td style="text-align: right;">4.9438</td>
+<td style="text-align: right;">20680 B</td>
+</tr>
+<tr>
+<td>Search</td>
+<td>internationalization</td>
+<td style="text-align: right;">154.2 ns</td>
+<td style="text-align: right;">0.31 ns</td>
+<td style="text-align: right;">0.29 ns</td>
+<td style="text-align: right;">0.0305</td>
+<td style="text-align: right;">128 B</td>
+</tr>
+<tr>
+<td>Search</td>
+<td>the</td>
+<td style="text-align: right;">89,991,934.4 ns</td>
+<td style="text-align: right;">547,648.45 ns</td>
+<td style="text-align: right;">512,270.70 ns</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">21189896 B</td>
+</tr>
+</tbody>
+</table>
+<p>This benchmark meatures the time taken to perform <code>FMIndex.Count</code>.</p>
+<ul>
+<li>english.50MB</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>pattern</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">Error</th>
+<th style="text-align: right;">StdDev</th>
+<th style="text-align: right;">Allocated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Count</td>
+<td>government</td>
+<td style="text-align: right;">167.9 ns</td>
+<td style="text-align: right;">0.76 ns</td>
+<td style="text-align: right;">0.71 ns</td>
+<td style="text-align: right;">-</td>
+</tr>
+<tr>
+<td>Count</td>
+<td>internationalization</td>
+<td style="text-align: right;">179.7 ns</td>
+<td style="text-align: right;">1.60 ns</td>
+<td style="text-align: right;">1.50 ns</td>
+<td style="text-align: right;">-</td>
+</tr>
+<tr>
+<td>Count</td>
+<td>the</td>
+<td style="text-align: right;">168.9 ns</td>
+<td style="text-align: right;">0.38 ns</td>
+<td style="text-align: right;">0.35 ns</td>
+<td style="text-align: right;">-</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>dna.50MB</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>pattern</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">Error</th>
+<th style="text-align: right;">StdDev</th>
+<th style="text-align: right;">Median</th>
+<th style="text-align: right;">Allocated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Count</td>
+<td>ACGTACGT</td>
+<td style="text-align: right;">655.13 ns</td>
+<td style="text-align: right;">0.489 ns</td>
+<td style="text-align: right;">0.409 ns</td>
+<td style="text-align: right;">655.16 ns</td>
+<td style="text-align: right;">-</td>
+</tr>
+<tr>
+<td>Count</td>
+<td>ACGTACGTACGTACGT</td>
+<td style="text-align: right;">895.86 ns</td>
+<td style="text-align: right;">1.120 ns</td>
+<td style="text-align: right;">1.048 ns</td>
+<td style="text-align: right;">895.78 ns</td>
+<td style="text-align: right;">-</td>
+</tr>
+<tr>
+<td>Count</td>
+<td>GATTACA</td>
+<td style="text-align: right;">523.64 ns</td>
+<td style="text-align: right;">10.282 ns</td>
+<td style="text-align: right;">15.390 ns</td>
+<td style="text-align: right;">532.35 ns</td>
+<td style="text-align: right;">-</td>
+</tr>
+<tr>
+<td>Count</td>
+<td>T</td>
+<td style="text-align: right;">27.33 ns</td>
+<td style="text-align: right;">0.006 ns</td>
+<td style="text-align: right;">0.005 ns</td>
+<td style="text-align: right;">27.33 ns</td>
+<td style="text-align: right;">-</td>
+</tr>
+</tbody>
+</table>
+<p>This benchmark meatures the time taken to perform <code>LcpIndex.GetLcp</code>.</p>
+<ul>
+<li>english.50MB</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">Error</th>
+<th style="text-align: right;">StdDev</th>
+<th style="text-align: right;">Allocated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GetLcp</td>
+<td style="text-align: right;">4.012 ns</td>
+<td style="text-align: right;">0.0060 ns</td>
+<td style="text-align: right;">0.0056 ns</td>
+<td style="text-align: right;">-</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>dna.50MB</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">Error</th>
+<th style="text-align: right;">StdDev</th>
+<th style="text-align: right;">Allocated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GetLcp</td>
+<td style="text-align: right;">4.116 ns</td>
+<td style="text-align: right;">0.0266 ns</td>
+<td style="text-align: right;">0.0248 ns</td>
+<td style="text-align: right;">-</td>
+</tr>
+</tbody>
+</table>
+<p>This benchmark meatures the time taken to perform <code>WaveletMatrixGeneric&lt;char&gt;.Rank</code>.</p>
+<ul>
+<li>dna.50MB</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">Error</th>
+<th style="text-align: right;">StdDev</th>
+<th style="text-align: right;">Allocated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rank</td>
+<td style="text-align: right;">15.05 ns</td>
+<td style="text-align: right;">0.053 ns</td>
+<td style="text-align: right;">0.044 ns</td>
+<td style="text-align: right;">-</td>
+</tr>
+</tbody>
+</table>
+<p>This benchmark measures the final file size after serializing.</p>
+<ul>
+<li>english.50MB</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th style="text-align: right;">Serialized</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SuffixArray</td>
+<td style="text-align: right;">455.33 MB</td>
+</tr>
+<tr>
+<td>FMIndex</td>
+<td style="text-align: right;">467.38 MB</td>
+</tr>
+<tr>
+<td>LcpIndex</td>
+<td style="text-align: right;">914.63 MB</td>
+</tr>
+<tr>
+<td>WaveletMatrix</td>
+<td style="text-align: right;">27.44 MB</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>dna.50MB</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th style="text-align: right;">Serialized</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SuffixArray</td>
+<td style="text-align: right;">417.51 MB</td>
+</tr>
+<tr>
+<td>FMIndex</td>
+<td style="text-align: right;">429.10 MB</td>
+</tr>
+<tr>
+<td>LcpIndex</td>
+<td style="text-align: right;">806.07 MB</td>
+</tr>
+<tr>
+<td>WaveletMatrix</td>
+<td style="text-align: right;">12.32 MB</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="license">License</h2>
+<p>This project is licensed under the MIT License. See the  <strong><a href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/LICENSE">LICENSE</a></strong> file for details.</p>
+<hr>
+<h2 id="project-website">Project Website</h2>
+<p><a href="https://github.com/belnytheraseiche/WaveletMatrix/">Main Page - https://github.com/belnytheraseiche/WaveletMatrix/</a></p>
+<p><a href="https://belnytheraseiche.github.io/WaveletMatrix/">Reference - https://belnytheraseiche.github.io/WaveletMatrix/</a></p>
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,2289 @@
+### YamlMime:ManagedReference
+items:
+- uid: WaveletMatrix.WaveletMatrixGeneric`1
+  commentId: T:WaveletMatrix.WaveletMatrixGeneric`1
+  id: WaveletMatrixGeneric`1
+  parent: WaveletMatrix
+  children:
+  - WaveletMatrix.WaveletMatrixGeneric`1.Access(System.Int32)
+  - WaveletMatrix.WaveletMatrixGeneric`1.Create(System.Collections.Generic.IEnumerable{`0})
+  - WaveletMatrix.WaveletMatrixGeneric`1.Deserialize(System.Byte[],WaveletMatrix.WaveletMatrixGeneric{`0}.IGenericSerializer{`0})
+  - WaveletMatrix.WaveletMatrixGeneric`1.Deserialize(System.IO.Stream,WaveletMatrix.WaveletMatrixGeneric{`0}.IGenericSerializer{`0})
+  - WaveletMatrix.WaveletMatrixGeneric`1.Deserialize(System.String,WaveletMatrix.WaveletMatrixGeneric{`0}.IGenericSerializer{`0})
+  - WaveletMatrix.WaveletMatrixGeneric`1.LargerValue(System.Int32,System.Int32,`0,`0)
+  - WaveletMatrix.WaveletMatrixGeneric`1.LargerValue(`0,`0)
+  - WaveletMatrix.WaveletMatrixGeneric`1.Quantile(System.Int32)
+  - WaveletMatrix.WaveletMatrixGeneric`1.Quantile(System.Int32,System.Int32,System.Int32)
+  - WaveletMatrix.WaveletMatrixGeneric`1.RangeCount(System.Int32,System.Int32,`0)
+  - WaveletMatrix.WaveletMatrixGeneric`1.RangeCount(`0)
+  - WaveletMatrix.WaveletMatrixGeneric`1.RangeFreq(System.Int32,System.Int32,`0,`0)
+  - WaveletMatrix.WaveletMatrixGeneric`1.RangeFreq(`0,`0)
+  - WaveletMatrix.WaveletMatrixGeneric`1.RangeMode
+  - WaveletMatrix.WaveletMatrixGeneric`1.RangeMode(System.Int32,System.Int32)
+  - WaveletMatrix.WaveletMatrixGeneric`1.Rank(System.Int32,`0)
+  - WaveletMatrix.WaveletMatrixGeneric`1.Select(System.Int32,`0)
+  - WaveletMatrix.WaveletMatrixGeneric`1.Serialize(WaveletMatrix.WaveletMatrixGeneric{`0},System.IO.Stream,WaveletMatrix.WaveletMatrixGeneric{`0}.IGenericSerializer{`0},WaveletMatrix.SerializationOptions)
+  - WaveletMatrix.WaveletMatrixGeneric`1.Serialize(WaveletMatrix.WaveletMatrixGeneric{`0},System.String,WaveletMatrix.WaveletMatrixGeneric{`0}.IGenericSerializer{`0},WaveletMatrix.SerializationOptions)
+  - WaveletMatrix.WaveletMatrixGeneric`1.Serialize(WaveletMatrix.WaveletMatrixGeneric{`0},WaveletMatrix.WaveletMatrixGeneric{`0}.IGenericSerializer{`0},WaveletMatrix.SerializationOptions)
+  - WaveletMatrix.WaveletMatrixGeneric`1.Size
+  - WaveletMatrix.WaveletMatrixGeneric`1.SmallerValue(System.Int32,System.Int32,`0,`0)
+  - WaveletMatrix.WaveletMatrixGeneric`1.SmallerValue(`0,`0)
+  - WaveletMatrix.WaveletMatrixGeneric`1.TopK(System.Int32)
+  - WaveletMatrix.WaveletMatrixGeneric`1.TopK(System.Int32,System.Int32,System.Int32)
+  - WaveletMatrix.WaveletMatrixGeneric`1.TryLargerValue(System.Int32,System.Int32,`0,`0@)
+  - WaveletMatrix.WaveletMatrixGeneric`1.TryLargerValue(`0,`0@)
+  - WaveletMatrix.WaveletMatrixGeneric`1.TrySmallerValue(System.Int32,System.Int32,`0,`0@)
+  - WaveletMatrix.WaveletMatrixGeneric`1.TrySmallerValue(`0,`0@)
+  langs:
+  - csharp
+  - vb
+  name: WaveletMatrixGeneric<T>
+  nameWithType: WaveletMatrixGeneric<T>
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>
+  type: Class
+  source:
+    id: WaveletMatrixGeneric
+    path: D:\実験\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    startLine: 22
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: >-
+    A generic, compressed data structure for sequences of any comparable type.
+
+    It provides fast Rank, Select, Quantile, and other advanced queries.
+
+    This class uses coordinate compression internally, making it highly memory-efficient for data with a small alphabet size.
+  example:
+  - >-
+    <pre><code class="lang-csharp">var data = new[] { "apple", "banana", "apple", "orange" };
+
+    var wm = WaveletMatrixGeneric&lt;string&gt;.Create(data);
+
+    int rank = wm.Rank(3, "apple"); // Counts "apple" in the range [0, 3). Result: 2
+
+    string value = wm.Access(1);    // Gets the element at index 1. Result: "banana"</code></pre>
+  syntax:
+    content: 'public sealed class WaveletMatrixGeneric<T> where T : IComparable<T>'
+    typeParameters:
+    - id: T
+      description: The type of elements in the sequence. Must implement <xref href="System.IComparable%601" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Public NotInheritable Class WaveletMatrixGeneric(Of T As IComparable(Of T))
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  nameWithType.vb: WaveletMatrixGeneric(Of T)
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T)
+  name.vb: WaveletMatrixGeneric(Of T)
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.Size
+  commentId: P:WaveletMatrix.WaveletMatrixGeneric`1.Size
+  id: Size
+  parent: WaveletMatrix.WaveletMatrixGeneric`1
+  langs:
+  - csharp
+  - vb
+  name: Size
+  nameWithType: WaveletMatrixGeneric<T>.Size
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.Size
+  type: Property
+  source:
+    id: Size
+    path: D:\実験\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    startLine: 31
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: Gets the total number of elements in the sequence.
+  example: []
+  syntax:
+    content: public int Size { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Size As Integer
+  overload: WaveletMatrix.WaveletMatrixGeneric`1.Size*
+  nameWithType.vb: WaveletMatrixGeneric(Of T).Size
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).Size
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.Create(System.Collections.Generic.IEnumerable{`0})
+  commentId: M:WaveletMatrix.WaveletMatrixGeneric`1.Create(System.Collections.Generic.IEnumerable{`0})
+  id: Create(System.Collections.Generic.IEnumerable{`0})
+  parent: WaveletMatrix.WaveletMatrixGeneric`1
+  langs:
+  - csharp
+  - vb
+  name: Create(IEnumerable<T>)
+  nameWithType: WaveletMatrixGeneric<T>.Create(IEnumerable<T>)
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.Create(System.Collections.Generic.IEnumerable<T>)
+  type: Method
+  source:
+    id: Create
+    path: D:\実験\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    startLine: 49
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: >-
+    Creates a new instance of the <xref href="WaveletMatrix.WaveletMatrixGeneric%601" data-throw-if-not-resolved="false"></xref> from a sequence of elements.
+
+    This factory method performs coordinate compression on the input sequence before building the core data structure.
+  example: []
+  syntax:
+    content: public static WaveletMatrixGeneric<T> Create(IEnumerable<T> sequence)
+    parameters:
+    - id: sequence
+      type: System.Collections.Generic.IEnumerable{{T}}
+      description: The input sequence of data to be indexed.
+    return:
+      type: WaveletMatrix.WaveletMatrixGeneric`1
+      description: A new, fully initialized <xref href="WaveletMatrix.WaveletMatrixGeneric%601" data-throw-if-not-resolved="false"></xref> instance.
+    content.vb: Public Shared Function Create(sequence As IEnumerable(Of T)) As WaveletMatrixGeneric(Of T)
+  overload: WaveletMatrix.WaveletMatrixGeneric`1.Create*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code class="paramref">sequence</code> is null.
+  nameWithType.vb: WaveletMatrixGeneric(Of T).Create(IEnumerable(Of T))
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).Create(System.Collections.Generic.IEnumerable(Of T))
+  name.vb: Create(IEnumerable(Of T))
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.Serialize(WaveletMatrix.WaveletMatrixGeneric{`0},WaveletMatrix.WaveletMatrixGeneric{`0}.IGenericSerializer{`0},WaveletMatrix.SerializationOptions)
+  commentId: M:WaveletMatrix.WaveletMatrixGeneric`1.Serialize(WaveletMatrix.WaveletMatrixGeneric{`0},WaveletMatrix.WaveletMatrixGeneric{`0}.IGenericSerializer{`0},WaveletMatrix.SerializationOptions)
+  id: Serialize(WaveletMatrix.WaveletMatrixGeneric{`0},WaveletMatrix.WaveletMatrixGeneric{`0}.IGenericSerializer{`0},WaveletMatrix.SerializationOptions)
+  parent: WaveletMatrix.WaveletMatrixGeneric`1
+  langs:
+  - csharp
+  - vb
+  name: Serialize(WaveletMatrixGeneric<T>, IGenericSerializer<T>?, SerializationOptions?)
+  nameWithType: WaveletMatrixGeneric<T>.Serialize(WaveletMatrixGeneric<T>, WaveletMatrixGeneric<T>.IGenericSerializer<T>?, SerializationOptions?)
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.Serialize(WaveletMatrix.WaveletMatrixGeneric<T>, WaveletMatrix.WaveletMatrixGeneric<T>.IGenericSerializer<T>?, WaveletMatrix.SerializationOptions?)
+  type: Method
+  source:
+    id: Serialize
+    path: D:\実験\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    startLine: 87
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: Serializes the <xref href="WaveletMatrix.WaveletMatrixGeneric%601" data-throw-if-not-resolved="false"></xref> instance into a byte array.
+  example: []
+  syntax:
+    content: public static byte[] Serialize(WaveletMatrixGeneric<T> obj, WaveletMatrixGeneric<T>.IGenericSerializer<T>? genericSerializer = null, SerializationOptions? options = null)
+    parameters:
+    - id: obj
+      type: WaveletMatrix.WaveletMatrixGeneric`1
+      description: The instance to serialize.
+    - id: genericSerializer
+      type: WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer{{T}}
+      description: >-
+        An optional serializer for handling the generic type <code class="typeparamref">T</code>. 
+
+        If null, a default serializer for <xref href="System.Byte" data-throw-if-not-resolved="false"></xref>, <xref href="System.Int32" data-throw-if-not-resolved="false"></xref>, or <xref href="System.Char" data-throw-if-not-resolved="false"></xref> will be used if applicable.
+
+        If a default serializer is not available for <code class="typeparamref">T</code>, an exception will be thrown.
+    - id: options
+      type: WaveletMatrix.SerializationOptions
+      description: >-
+        Serialization options, such as the compression level. 
+
+        If null, <xref href="WaveletMatrix.SerializationOptions.Default" data-throw-if-not-resolved="false"></xref> will be used.
+    return:
+      type: System.Byte[]
+      description: A byte array containing the serialized data.
+    content.vb: Public Shared Function Serialize(obj As WaveletMatrixGeneric(Of T), genericSerializer As WaveletMatrixGeneric(Of T).IGenericSerializer(Of T) = Nothing, options As SerializationOptions = Nothing) As Byte()
+  overload: WaveletMatrix.WaveletMatrixGeneric`1.Serialize*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code class="paramref">obj</code> is null.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if <code class="paramref">genericSerializer</code> is null and a default serializer for type <code class="typeparamref">T</code> cannot be found.
+  nameWithType.vb: WaveletMatrixGeneric(Of T).Serialize(WaveletMatrixGeneric(Of T), WaveletMatrixGeneric(Of T).IGenericSerializer(Of T), SerializationOptions)
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).Serialize(WaveletMatrix.WaveletMatrixGeneric(Of T), WaveletMatrix.WaveletMatrixGeneric(Of T).IGenericSerializer(Of T), WaveletMatrix.SerializationOptions)
+  name.vb: Serialize(WaveletMatrixGeneric(Of T), IGenericSerializer(Of T), SerializationOptions)
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.Serialize(WaveletMatrix.WaveletMatrixGeneric{`0},System.String,WaveletMatrix.WaveletMatrixGeneric{`0}.IGenericSerializer{`0},WaveletMatrix.SerializationOptions)
+  commentId: M:WaveletMatrix.WaveletMatrixGeneric`1.Serialize(WaveletMatrix.WaveletMatrixGeneric{`0},System.String,WaveletMatrix.WaveletMatrixGeneric{`0}.IGenericSerializer{`0},WaveletMatrix.SerializationOptions)
+  id: Serialize(WaveletMatrix.WaveletMatrixGeneric{`0},System.String,WaveletMatrix.WaveletMatrixGeneric{`0}.IGenericSerializer{`0},WaveletMatrix.SerializationOptions)
+  parent: WaveletMatrix.WaveletMatrixGeneric`1
+  langs:
+  - csharp
+  - vb
+  name: Serialize(WaveletMatrixGeneric<T>, string, IGenericSerializer<T>?, SerializationOptions?)
+  nameWithType: WaveletMatrixGeneric<T>.Serialize(WaveletMatrixGeneric<T>, string, WaveletMatrixGeneric<T>.IGenericSerializer<T>?, SerializationOptions?)
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.Serialize(WaveletMatrix.WaveletMatrixGeneric<T>, string, WaveletMatrix.WaveletMatrixGeneric<T>.IGenericSerializer<T>?, WaveletMatrix.SerializationOptions?)
+  type: Method
+  source:
+    id: Serialize
+    path: D:\実験\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    startLine: 117
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: Serializes the <xref href="WaveletMatrix.WaveletMatrixGeneric%601" data-throw-if-not-resolved="false"></xref> instance to the specified file.
+  example: []
+  syntax:
+    content: public static void Serialize(WaveletMatrixGeneric<T> obj, string file, WaveletMatrixGeneric<T>.IGenericSerializer<T>? genericSerializer = null, SerializationOptions? options = null)
+    parameters:
+    - id: obj
+      type: WaveletMatrix.WaveletMatrixGeneric`1
+      description: The instance to serialize.
+    - id: file
+      type: System.String
+      description: The path of the file to write to.
+    - id: genericSerializer
+      type: WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer{{T}}
+      description: >-
+        An optional serializer for handling the generic type <code class="typeparamref">T</code>. 
+
+        If null, a default serializer for <xref href="System.Byte" data-throw-if-not-resolved="false"></xref>, <xref href="System.Int32" data-throw-if-not-resolved="false"></xref>, or <xref href="System.Char" data-throw-if-not-resolved="false"></xref> will be used if applicable.
+
+        If a default serializer is not available for <code class="typeparamref">T</code>, an exception will be thrown.
+    - id: options
+      type: WaveletMatrix.SerializationOptions
+      description: >-
+        Serialization options, such as the compression level. 
+
+        If null, <xref href="WaveletMatrix.SerializationOptions.Default" data-throw-if-not-resolved="false"></xref> will be used.
+    content.vb: Public Shared Sub Serialize(obj As WaveletMatrixGeneric(Of T), file As String, genericSerializer As WaveletMatrixGeneric(Of T).IGenericSerializer(Of T) = Nothing, options As SerializationOptions = Nothing)
+  overload: WaveletMatrix.WaveletMatrixGeneric`1.Serialize*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code class="paramref">obj</code> or <code class="paramref">file</code> is null.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if <code class="paramref">genericSerializer</code> is null and a default serializer for type <code class="typeparamref">T</code> cannot be found.
+  nameWithType.vb: WaveletMatrixGeneric(Of T).Serialize(WaveletMatrixGeneric(Of T), String, WaveletMatrixGeneric(Of T).IGenericSerializer(Of T), SerializationOptions)
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).Serialize(WaveletMatrix.WaveletMatrixGeneric(Of T), String, WaveletMatrix.WaveletMatrixGeneric(Of T).IGenericSerializer(Of T), WaveletMatrix.SerializationOptions)
+  name.vb: Serialize(WaveletMatrixGeneric(Of T), String, IGenericSerializer(Of T), SerializationOptions)
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.Serialize(WaveletMatrix.WaveletMatrixGeneric{`0},System.IO.Stream,WaveletMatrix.WaveletMatrixGeneric{`0}.IGenericSerializer{`0},WaveletMatrix.SerializationOptions)
+  commentId: M:WaveletMatrix.WaveletMatrixGeneric`1.Serialize(WaveletMatrix.WaveletMatrixGeneric{`0},System.IO.Stream,WaveletMatrix.WaveletMatrixGeneric{`0}.IGenericSerializer{`0},WaveletMatrix.SerializationOptions)
+  id: Serialize(WaveletMatrix.WaveletMatrixGeneric{`0},System.IO.Stream,WaveletMatrix.WaveletMatrixGeneric{`0}.IGenericSerializer{`0},WaveletMatrix.SerializationOptions)
+  parent: WaveletMatrix.WaveletMatrixGeneric`1
+  langs:
+  - csharp
+  - vb
+  name: Serialize(WaveletMatrixGeneric<T>, Stream, IGenericSerializer<T>?, SerializationOptions?)
+  nameWithType: WaveletMatrixGeneric<T>.Serialize(WaveletMatrixGeneric<T>, Stream, WaveletMatrixGeneric<T>.IGenericSerializer<T>?, SerializationOptions?)
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.Serialize(WaveletMatrix.WaveletMatrixGeneric<T>, System.IO.Stream, WaveletMatrix.WaveletMatrixGeneric<T>.IGenericSerializer<T>?, WaveletMatrix.SerializationOptions?)
+  type: Method
+  source:
+    id: Serialize
+    path: D:\実験\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    startLine: 150
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: >-
+    Serializes the <xref href="WaveletMatrix.WaveletMatrixGeneric%601" data-throw-if-not-resolved="false"></xref> instance to a stream.
+
+    The data is compressed using Brotli and includes a checksum for integrity verification.
+  example: []
+  syntax:
+    content: public static void Serialize(WaveletMatrixGeneric<T> obj, Stream stream, WaveletMatrixGeneric<T>.IGenericSerializer<T>? genericSerializer = null, SerializationOptions? options = null)
+    parameters:
+    - id: obj
+      type: WaveletMatrix.WaveletMatrixGeneric`1
+      description: The instance to serialize.
+    - id: stream
+      type: System.IO.Stream
+      description: The stream to write the serialized data to.
+    - id: genericSerializer
+      type: WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer{{T}}
+      description: >-
+        An optional serializer for handling the generic type <code class="typeparamref">T</code>. 
+
+        If null, a default serializer for <xref href="System.Byte" data-throw-if-not-resolved="false"></xref>, <xref href="System.Int32" data-throw-if-not-resolved="false"></xref>, or <xref href="System.Char" data-throw-if-not-resolved="false"></xref> will be used if applicable.
+
+        If a default serializer is not available for <code class="typeparamref">T</code>, an exception will be thrown.
+    - id: options
+      type: WaveletMatrix.SerializationOptions
+      description: >-
+        Serialization options, such as the compression level. 
+
+        If null, <xref href="WaveletMatrix.SerializationOptions.Default" data-throw-if-not-resolved="false"></xref> will be used.
+    content.vb: Public Shared Sub Serialize(obj As WaveletMatrixGeneric(Of T), stream As Stream, genericSerializer As WaveletMatrixGeneric(Of T).IGenericSerializer(Of T) = Nothing, options As SerializationOptions = Nothing)
+  overload: WaveletMatrix.WaveletMatrixGeneric`1.Serialize*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code class="paramref">obj</code> or <code class="paramref">stream</code> is null.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if <code class="paramref">genericSerializer</code> is null and a default serializer for type <code class="typeparamref">T</code> cannot be found.
+  nameWithType.vb: WaveletMatrixGeneric(Of T).Serialize(WaveletMatrixGeneric(Of T), Stream, WaveletMatrixGeneric(Of T).IGenericSerializer(Of T), SerializationOptions)
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).Serialize(WaveletMatrix.WaveletMatrixGeneric(Of T), System.IO.Stream, WaveletMatrix.WaveletMatrixGeneric(Of T).IGenericSerializer(Of T), WaveletMatrix.SerializationOptions)
+  name.vb: Serialize(WaveletMatrixGeneric(Of T), Stream, IGenericSerializer(Of T), SerializationOptions)
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.Deserialize(System.Byte[],WaveletMatrix.WaveletMatrixGeneric{`0}.IGenericSerializer{`0})
+  commentId: M:WaveletMatrix.WaveletMatrixGeneric`1.Deserialize(System.Byte[],WaveletMatrix.WaveletMatrixGeneric{`0}.IGenericSerializer{`0})
+  id: Deserialize(System.Byte[],WaveletMatrix.WaveletMatrixGeneric{`0}.IGenericSerializer{`0})
+  parent: WaveletMatrix.WaveletMatrixGeneric`1
+  langs:
+  - csharp
+  - vb
+  name: Deserialize(byte[], IGenericSerializer<T>?)
+  nameWithType: WaveletMatrixGeneric<T>.Deserialize(byte[], WaveletMatrixGeneric<T>.IGenericSerializer<T>?)
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.Deserialize(byte[], WaveletMatrix.WaveletMatrixGeneric<T>.IGenericSerializer<T>?)
+  type: Method
+  source:
+    id: Deserialize
+    path: D:\実験\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    startLine: 230
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: Deserializes a byte array into a <xref href="WaveletMatrix.WaveletMatrixGeneric%601" data-throw-if-not-resolved="false"></xref> instance.
+  example: []
+  syntax:
+    content: public static WaveletMatrixGeneric<T> Deserialize(byte[] data, WaveletMatrixGeneric<T>.IGenericSerializer<T>? genericSerializer = null)
+    parameters:
+    - id: data
+      type: System.Byte[]
+      description: The byte array containing the serialized data.
+    - id: genericSerializer
+      type: WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer{{T}}
+      description: >-
+        An optional serializer for handling the generic type <code class="typeparamref">T</code>. 
+
+        If null, a default serializer for <xref href="System.Byte" data-throw-if-not-resolved="false"></xref>, <xref href="System.Int32" data-throw-if-not-resolved="false"></xref>, or <xref href="System.Char" data-throw-if-not-resolved="false"></xref> will be used if applicable.
+
+        If a default serializer is not available for <code class="typeparamref">T</code>, an exception will be thrown.
+    return:
+      type: WaveletMatrix.WaveletMatrixGeneric`1
+      description: A new, deserialized instance of <xref href="WaveletMatrix.WaveletMatrixGeneric%601" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Public Shared Function Deserialize(data As Byte(), genericSerializer As WaveletMatrixGeneric(Of T).IGenericSerializer(Of T) = Nothing) As WaveletMatrixGeneric(Of T)
+  overload: WaveletMatrix.WaveletMatrixGeneric`1.Deserialize*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code class="paramref">data</code> is null.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if <code class="paramref">genericSerializer</code> is null and a default serializer for type <code class="typeparamref">T</code> cannot be found.
+  nameWithType.vb: WaveletMatrixGeneric(Of T).Deserialize(Byte(), WaveletMatrixGeneric(Of T).IGenericSerializer(Of T))
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).Deserialize(Byte(), WaveletMatrix.WaveletMatrixGeneric(Of T).IGenericSerializer(Of T))
+  name.vb: Deserialize(Byte(), IGenericSerializer(Of T))
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.Deserialize(System.String,WaveletMatrix.WaveletMatrixGeneric{`0}.IGenericSerializer{`0})
+  commentId: M:WaveletMatrix.WaveletMatrixGeneric`1.Deserialize(System.String,WaveletMatrix.WaveletMatrixGeneric{`0}.IGenericSerializer{`0})
+  id: Deserialize(System.String,WaveletMatrix.WaveletMatrixGeneric{`0}.IGenericSerializer{`0})
+  parent: WaveletMatrix.WaveletMatrixGeneric`1
+  langs:
+  - csharp
+  - vb
+  name: Deserialize(string, IGenericSerializer<T>?)
+  nameWithType: WaveletMatrixGeneric<T>.Deserialize(string, WaveletMatrixGeneric<T>.IGenericSerializer<T>?)
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.Deserialize(string, WaveletMatrix.WaveletMatrixGeneric<T>.IGenericSerializer<T>?)
+  type: Method
+  source:
+    id: Deserialize
+    path: D:\実験\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    startLine: 255
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: Deserializes a <xref href="WaveletMatrix.WaveletMatrixGeneric%601" data-throw-if-not-resolved="false"></xref> instance from the specified file.
+  example: []
+  syntax:
+    content: public static WaveletMatrixGeneric<T> Deserialize(string file, WaveletMatrixGeneric<T>.IGenericSerializer<T>? genericSerializer = null)
+    parameters:
+    - id: file
+      type: System.String
+      description: The path of the file to read from.
+    - id: genericSerializer
+      type: WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer{{T}}
+      description: >-
+        An optional serializer for handling the generic type <code class="typeparamref">T</code>. 
+
+        If null, a default serializer for <xref href="System.Byte" data-throw-if-not-resolved="false"></xref>, <xref href="System.Int32" data-throw-if-not-resolved="false"></xref>, or <xref href="System.Char" data-throw-if-not-resolved="false"></xref> will be used if applicable.
+
+        If a default serializer is not available for <code class="typeparamref">T</code>, an exception will be thrown.
+    return:
+      type: WaveletMatrix.WaveletMatrixGeneric`1
+      description: A new, deserialized instance.
+    content.vb: Public Shared Function Deserialize(file As String, genericSerializer As WaveletMatrixGeneric(Of T).IGenericSerializer(Of T) = Nothing) As WaveletMatrixGeneric(Of T)
+  overload: WaveletMatrix.WaveletMatrixGeneric`1.Deserialize*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code class="paramref">file</code> is null.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if <code class="paramref">genericSerializer</code> is null and a default serializer for type <code class="typeparamref">T</code> cannot be found.
+  nameWithType.vb: WaveletMatrixGeneric(Of T).Deserialize(String, WaveletMatrixGeneric(Of T).IGenericSerializer(Of T))
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).Deserialize(String, WaveletMatrix.WaveletMatrixGeneric(Of T).IGenericSerializer(Of T))
+  name.vb: Deserialize(String, IGenericSerializer(Of T))
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.Deserialize(System.IO.Stream,WaveletMatrix.WaveletMatrixGeneric{`0}.IGenericSerializer{`0})
+  commentId: M:WaveletMatrix.WaveletMatrixGeneric`1.Deserialize(System.IO.Stream,WaveletMatrix.WaveletMatrixGeneric{`0}.IGenericSerializer{`0})
+  id: Deserialize(System.IO.Stream,WaveletMatrix.WaveletMatrixGeneric{`0}.IGenericSerializer{`0})
+  parent: WaveletMatrix.WaveletMatrixGeneric`1
+  langs:
+  - csharp
+  - vb
+  name: Deserialize(Stream, IGenericSerializer<T>?)
+  nameWithType: WaveletMatrixGeneric<T>.Deserialize(Stream, WaveletMatrixGeneric<T>.IGenericSerializer<T>?)
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.Deserialize(System.IO.Stream, WaveletMatrix.WaveletMatrixGeneric<T>.IGenericSerializer<T>?)
+  type: Method
+  source:
+    id: Deserialize
+    path: D:\実験\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    startLine: 281
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: >-
+    Deserializes a <xref href="WaveletMatrix.WaveletMatrixGeneric%601" data-throw-if-not-resolved="false"></xref> instance from a stream.
+
+    It verifies the file format, type identifier, and checksum.
+  example: []
+  syntax:
+    content: public static WaveletMatrixGeneric<T> Deserialize(Stream stream, WaveletMatrixGeneric<T>.IGenericSerializer<T>? genericSerializer = null)
+    parameters:
+    - id: stream
+      type: System.IO.Stream
+      description: The stream to read the serialized data from.
+    - id: genericSerializer
+      type: WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer{{T}}
+      description: >-
+        An optional serializer for handling the generic type <code class="typeparamref">T</code>. 
+
+        If null, a default serializer for <xref href="System.Byte" data-throw-if-not-resolved="false"></xref>, <xref href="System.Int32" data-throw-if-not-resolved="false"></xref>, or <xref href="System.Char" data-throw-if-not-resolved="false"></xref> will be used if applicable.
+
+        If a default serializer is not available for <code class="typeparamref">T</code>, an exception will be thrown.
+    return:
+      type: WaveletMatrix.WaveletMatrixGeneric`1
+      description: A new, deserialized instance.
+    content.vb: Public Shared Function Deserialize(stream As Stream, genericSerializer As WaveletMatrixGeneric(Of T).IGenericSerializer(Of T) = Nothing) As WaveletMatrixGeneric(Of T)
+  overload: WaveletMatrix.WaveletMatrixGeneric`1.Deserialize*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if <code class="paramref">genericSerializer</code> is null and a default serializer for type <code class="typeparamref">T</code> cannot be found.
+  - type: System.IO.InvalidDataException
+    commentId: T:System.IO.InvalidDataException
+    description: Thrown if the data format is unsupported, the type is incompatible, or the data is corrupt.
+  nameWithType.vb: WaveletMatrixGeneric(Of T).Deserialize(Stream, WaveletMatrixGeneric(Of T).IGenericSerializer(Of T))
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).Deserialize(System.IO.Stream, WaveletMatrix.WaveletMatrixGeneric(Of T).IGenericSerializer(Of T))
+  name.vb: Deserialize(Stream, IGenericSerializer(Of T))
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.Access(System.Int32)
+  commentId: M:WaveletMatrix.WaveletMatrixGeneric`1.Access(System.Int32)
+  id: Access(System.Int32)
+  parent: WaveletMatrix.WaveletMatrixGeneric`1
+  langs:
+  - csharp
+  - vb
+  name: Access(int)
+  nameWithType: WaveletMatrixGeneric<T>.Access(int)
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.Access(int)
+  type: Method
+  source:
+    id: Access
+    path: D:\実験\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    startLine: 341
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: Gets the value of the element at the specified zero-based position.
+  example: []
+  syntax:
+    content: public T Access(int k)
+    parameters:
+    - id: k
+      type: System.Int32
+      description: The zero-based index of the element to retrieve.
+    return:
+      type: '{T}'
+      description: The integer value at the specified position.
+    content.vb: Public Function Access(k As Integer) As T
+  overload: WaveletMatrix.WaveletMatrixGeneric`1.Access*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if <code class="paramref">k</code> is out of range.
+  nameWithType.vb: WaveletMatrixGeneric(Of T).Access(Integer)
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).Access(Integer)
+  name.vb: Access(Integer)
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.Rank(System.Int32,`0)
+  commentId: M:WaveletMatrix.WaveletMatrixGeneric`1.Rank(System.Int32,`0)
+  id: Rank(System.Int32,`0)
+  parent: WaveletMatrix.WaveletMatrixGeneric`1
+  langs:
+  - csharp
+  - vb
+  name: Rank(int, T)
+  nameWithType: WaveletMatrixGeneric<T>.Rank(int, T)
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.Rank(int, T)
+  type: Method
+  source:
+    id: Rank
+    path: D:\実験\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    startLine: 351
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: Counts the number of occurrences of a specified value in the prefix of the sequence [0, k).
+  example: []
+  syntax:
+    content: public int Rank(int k, T value)
+    parameters:
+    - id: k
+      type: System.Int32
+      description: The exclusive end of the range [0, k).
+    - id: value
+      type: '{T}'
+      description: The value to count.
+    return:
+      type: System.Int32
+      description: The number of times the value appears in the specified prefix.
+    content.vb: Public Function Rank(k As Integer, value As T) As Integer
+  overload: WaveletMatrix.WaveletMatrixGeneric`1.Rank*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if <code class="paramref">k</code> is out of range.
+  nameWithType.vb: WaveletMatrixGeneric(Of T).Rank(Integer, T)
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).Rank(Integer, T)
+  name.vb: Rank(Integer, T)
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.Select(System.Int32,`0)
+  commentId: M:WaveletMatrix.WaveletMatrixGeneric`1.Select(System.Int32,`0)
+  id: Select(System.Int32,`0)
+  parent: WaveletMatrix.WaveletMatrixGeneric`1
+  langs:
+  - csharp
+  - vb
+  name: Select(int, T)
+  nameWithType: WaveletMatrixGeneric<T>.Select(int, T)
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.Select(int, T)
+  type: Method
+  source:
+    id: Select
+    path: D:\実験\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    startLine: 361
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: Finds the zero-based position of the k-th occurrence of a specified value.
+  example: []
+  syntax:
+    content: public int Select(int k, T value)
+    parameters:
+    - id: k
+      type: System.Int32
+      description: The one-based rank of the occurrence to find (e.g., k=1 for the first occurrence).
+    - id: value
+      type: '{T}'
+      description: The value to search for.
+    return:
+      type: System.Int32
+      description: The zero-based index of the k-th occurrence of the value, or -1 if not found.
+    content.vb: Public Function [Select](k As Integer, value As T) As Integer
+  overload: WaveletMatrix.WaveletMatrixGeneric`1.Select*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if <code class="paramref">k</code> is out of range.
+  nameWithType.vb: WaveletMatrixGeneric(Of T).Select(Integer, T)
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).Select(Integer, T)
+  name.vb: Select(Integer, T)
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.RangeCount(`0)
+  commentId: M:WaveletMatrix.WaveletMatrixGeneric`1.RangeCount(`0)
+  id: RangeCount(`0)
+  parent: WaveletMatrix.WaveletMatrixGeneric`1
+  langs:
+  - csharp
+  - vb
+  name: RangeCount(T)
+  nameWithType: WaveletMatrixGeneric<T>.RangeCount(T)
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.RangeCount(T)
+  type: Method
+  source:
+    id: RangeCount
+    path: D:\実験\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    startLine: 370
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: Counts the number of occurrences of a specified value.
+  remarks: This method is a shorthand for calling RangeCount(0, <xref href="WaveletMatrix.WaveletMatrixGeneric%601.Size" data-throw-if-not-resolved="false"></xref>, <code class="paramref">value</code>).
+  example: []
+  syntax:
+    content: public int RangeCount(T value)
+    parameters:
+    - id: value
+      type: '{T}'
+      description: The value to count.
+    return:
+      type: System.Int32
+      description: The number of occurrences of the value.
+    content.vb: Public Function RangeCount(value As T) As Integer
+  overload: WaveletMatrix.WaveletMatrixGeneric`1.RangeCount*
+  nameWithType.vb: WaveletMatrixGeneric(Of T).RangeCount(T)
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).RangeCount(T)
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.RangeCount(System.Int32,System.Int32,`0)
+  commentId: M:WaveletMatrix.WaveletMatrixGeneric`1.RangeCount(System.Int32,System.Int32,`0)
+  id: RangeCount(System.Int32,System.Int32,`0)
+  parent: WaveletMatrix.WaveletMatrixGeneric`1
+  langs:
+  - csharp
+  - vb
+  name: RangeCount(int, int, T)
+  nameWithType: WaveletMatrixGeneric<T>.RangeCount(int, int, T)
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.RangeCount(int, int, T)
+  type: Method
+  source:
+    id: RangeCount
+    path: D:\実験\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    startLine: 382
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: Counts the number of occurrences of a specified value within the range [start, end).
+  example: []
+  syntax:
+    content: public int RangeCount(int start, int end, T value)
+    parameters:
+    - id: start
+      type: System.Int32
+      description: The inclusive start of the range.
+    - id: end
+      type: System.Int32
+      description: The exclusive end of the range.
+    - id: value
+      type: '{T}'
+      description: The value to count.
+    return:
+      type: System.Int32
+      description: The number of occurrences of the value in the range.
+    content.vb: Public Function RangeCount(start As Integer, [end] As Integer, value As T) As Integer
+  overload: WaveletMatrix.WaveletMatrixGeneric`1.RangeCount*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if <code class="paramref">start</code> or <code class="paramref">end</code> is out of range.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if <code class="paramref">start</code> is greater than or equal <code class="paramref">end</code>.
+  nameWithType.vb: WaveletMatrixGeneric(Of T).RangeCount(Integer, Integer, T)
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).RangeCount(Integer, Integer, T)
+  name.vb: RangeCount(Integer, Integer, T)
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.Quantile(System.Int32)
+  commentId: M:WaveletMatrix.WaveletMatrixGeneric`1.Quantile(System.Int32)
+  id: Quantile(System.Int32)
+  parent: WaveletMatrix.WaveletMatrixGeneric`1
+  langs:
+  - csharp
+  - vb
+  name: Quantile(int)
+  nameWithType: WaveletMatrixGeneric<T>.Quantile(int)
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.Quantile(int)
+  type: Method
+  source:
+    id: Quantile
+    path: D:\実験\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    startLine: 394
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: Finds the k-th smallest value.
+  remarks: This method is a shorthand for calling Quantile(0, <xref href="WaveletMatrix.WaveletMatrixGeneric%601.Size" data-throw-if-not-resolved="false"></xref>, <code class="paramref">k</code>).
+  example: []
+  syntax:
+    content: public T Quantile(int k)
+    parameters:
+    - id: k
+      type: System.Int32
+      description: The zero-based rank of the value to find (e.g., k=0 for the smallest value).
+    return:
+      type: '{T}'
+      description: The k-th smallest value.
+    content.vb: Public Function Quantile(k As Integer) As T
+  overload: WaveletMatrix.WaveletMatrixGeneric`1.Quantile*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if <code class="paramref">k</code> is out of the valid range [0, Size).
+  nameWithType.vb: WaveletMatrixGeneric(Of T).Quantile(Integer)
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).Quantile(Integer)
+  name.vb: Quantile(Integer)
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.Quantile(System.Int32,System.Int32,System.Int32)
+  commentId: M:WaveletMatrix.WaveletMatrixGeneric`1.Quantile(System.Int32,System.Int32,System.Int32)
+  id: Quantile(System.Int32,System.Int32,System.Int32)
+  parent: WaveletMatrix.WaveletMatrixGeneric`1
+  langs:
+  - csharp
+  - vb
+  name: Quantile(int, int, int)
+  nameWithType: WaveletMatrixGeneric<T>.Quantile(int, int, int)
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.Quantile(int, int, int)
+  type: Method
+  source:
+    id: Quantile
+    path: D:\実験\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    startLine: 407
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: Finds the k-th smallest value within the specified range [start, end).
+  example: []
+  syntax:
+    content: public T Quantile(int start, int end, int k)
+    parameters:
+    - id: start
+      type: System.Int32
+      description: The inclusive start of the range.
+    - id: end
+      type: System.Int32
+      description: The exclusive end of the range.
+    - id: k
+      type: System.Int32
+      description: The zero-based rank of the value to find (e.g., k=0 for the smallest value).
+    return:
+      type: '{T}'
+      description: The k-th smallest value in the range.
+    content.vb: Public Function Quantile(start As Integer, [end] As Integer, k As Integer) As T
+  overload: WaveletMatrix.WaveletMatrixGeneric`1.Quantile*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if <code class="paramref">start</code>, <code class="paramref">end</code> or <code class="paramref">k</code> is out of range.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if <code class="paramref">start</code> is greater than or equal <code class="paramref">end</code>.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if <code class="paramref">k</code> is out of the valid range [0, end-start).
+  nameWithType.vb: WaveletMatrixGeneric(Of T).Quantile(Integer, Integer, Integer)
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).Quantile(Integer, Integer, Integer)
+  name.vb: Quantile(Integer, Integer, Integer)
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.RangeFreq(`0,`0)
+  commentId: M:WaveletMatrix.WaveletMatrixGeneric`1.RangeFreq(`0,`0)
+  id: RangeFreq(`0,`0)
+  parent: WaveletMatrix.WaveletMatrixGeneric`1
+  langs:
+  - csharp
+  - vb
+  name: RangeFreq(T, T)
+  nameWithType: WaveletMatrixGeneric<T>.RangeFreq(T, T)
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.RangeFreq(T, T)
+  type: Method
+  source:
+    id: RangeFreq
+    path: D:\実験\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    startLine: 418
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: Counts the number of elements whose values are within the value range [minValue, maxValue).
+  remarks: This method is a shorthand for calling RangeFreq(0, <xref href="WaveletMatrix.WaveletMatrixGeneric%601.Size" data-throw-if-not-resolved="false"></xref>, <code class="paramref">minValue</code>, <code class="paramref">maxValue</code>).
+  example: []
+  syntax:
+    content: public int RangeFreq(T minValue, T maxValue)
+    parameters:
+    - id: minValue
+      type: '{T}'
+      description: The inclusive start of the value range.
+    - id: maxValue
+      type: '{T}'
+      description: The exclusive end of the value range.
+    return:
+      type: System.Int32
+      description: The count of elements matching the criteria.
+    content.vb: Public Function RangeFreq(minValue As T, maxValue As T) As Integer
+  overload: WaveletMatrix.WaveletMatrixGeneric`1.RangeFreq*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if <code class="paramref">minValue</code> is greater than or equal <code class="paramref">maxValue</code>.
+  nameWithType.vb: WaveletMatrixGeneric(Of T).RangeFreq(T, T)
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).RangeFreq(T, T)
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.RangeFreq(System.Int32,System.Int32,`0,`0)
+  commentId: M:WaveletMatrix.WaveletMatrixGeneric`1.RangeFreq(System.Int32,System.Int32,`0,`0)
+  id: RangeFreq(System.Int32,System.Int32,`0,`0)
+  parent: WaveletMatrix.WaveletMatrixGeneric`1
+  langs:
+  - csharp
+  - vb
+  name: RangeFreq(int, int, T, T)
+  nameWithType: WaveletMatrixGeneric<T>.RangeFreq(int, int, T, T)
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.RangeFreq(int, int, T, T)
+  type: Method
+  source:
+    id: RangeFreq
+    path: D:\実験\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    startLine: 432
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: Counts the number of elements in a position range [start, end) whose values are within the value range [minValue, maxValue).
+  example: []
+  syntax:
+    content: public int RangeFreq(int start, int end, T minValue, T maxValue)
+    parameters:
+    - id: start
+      type: System.Int32
+      description: The inclusive start of the position range.
+    - id: end
+      type: System.Int32
+      description: The exclusive end of the position range.
+    - id: minValue
+      type: '{T}'
+      description: The inclusive start of the value range.
+    - id: maxValue
+      type: '{T}'
+      description: The exclusive end of the value range.
+    return:
+      type: System.Int32
+      description: The count of elements matching the criteria.
+    content.vb: Public Function RangeFreq(start As Integer, [end] As Integer, minValue As T, maxValue As T) As Integer
+  overload: WaveletMatrix.WaveletMatrixGeneric`1.RangeFreq*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if <code class="paramref">start</code> or <code class="paramref">end</code> is out of range.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if <code class="paramref">start</code> is greater than or equal <code class="paramref">end</code>.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if <code class="paramref">minValue</code> is greater than or equal <code class="paramref">maxValue</code>.
+  nameWithType.vb: WaveletMatrixGeneric(Of T).RangeFreq(Integer, Integer, T, T)
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).RangeFreq(Integer, Integer, T, T)
+  name.vb: RangeFreq(Integer, Integer, T, T)
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.RangeMode
+  commentId: M:WaveletMatrix.WaveletMatrixGeneric`1.RangeMode
+  id: RangeMode
+  parent: WaveletMatrix.WaveletMatrixGeneric`1
+  langs:
+  - csharp
+  - vb
+  name: RangeMode()
+  nameWithType: WaveletMatrixGeneric<T>.RangeMode()
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.RangeMode()
+  type: Method
+  source:
+    id: RangeMode
+    path: D:\実験\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    startLine: 440
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: Finds the most frequent value (the mode) and its frequency.
+  remarks: This method is a shorthand for calling RangeMode(0, <xref href="WaveletMatrix.WaveletMatrixGeneric%601.Size" data-throw-if-not-resolved="false"></xref>).
+  example: []
+  syntax:
+    content: public WaveletMatrixGeneric<T>.ValueWithFrequency<T> RangeMode()
+    return:
+      type: WaveletMatrix.WaveletMatrixGeneric`1.ValueWithFrequency{{T}}
+      description: A <xref href="WaveletMatrix.WaveletMatrixGeneric%601.ValueWithFrequency%601" data-throw-if-not-resolved="false"></xref> record containing the mode and its count.
+    content.vb: Public Function RangeMode() As WaveletMatrixGeneric(Of T).ValueWithFrequency(Of T)
+  overload: WaveletMatrix.WaveletMatrixGeneric`1.RangeMode*
+  nameWithType.vb: WaveletMatrixGeneric(Of T).RangeMode()
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).RangeMode()
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.RangeMode(System.Int32,System.Int32)
+  commentId: M:WaveletMatrix.WaveletMatrixGeneric`1.RangeMode(System.Int32,System.Int32)
+  id: RangeMode(System.Int32,System.Int32)
+  parent: WaveletMatrix.WaveletMatrixGeneric`1
+  langs:
+  - csharp
+  - vb
+  name: RangeMode(int, int)
+  nameWithType: WaveletMatrixGeneric<T>.RangeMode(int, int)
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.RangeMode(int, int)
+  type: Method
+  source:
+    id: RangeMode
+    path: D:\実験\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    startLine: 451
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: Finds the most frequent value (the mode) and its frequency within the specified range [start, end).
+  example: []
+  syntax:
+    content: public WaveletMatrixGeneric<T>.ValueWithFrequency<T> RangeMode(int start, int end)
+    parameters:
+    - id: start
+      type: System.Int32
+      description: The inclusive start of the range.
+    - id: end
+      type: System.Int32
+      description: The exclusive end of the range.
+    return:
+      type: WaveletMatrix.WaveletMatrixGeneric`1.ValueWithFrequency{{T}}
+      description: A <xref href="WaveletMatrix.WaveletMatrixGeneric%601.ValueWithFrequency%601" data-throw-if-not-resolved="false"></xref> record containing the mode and its count.
+    content.vb: Public Function RangeMode(start As Integer, [end] As Integer) As WaveletMatrixGeneric(Of T).ValueWithFrequency(Of T)
+  overload: WaveletMatrix.WaveletMatrixGeneric`1.RangeMode*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if <code class="paramref">start</code> or <code class="paramref">end</code> is out of range.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if <code class="paramref">start</code> is greater than or equal <code class="paramref">end</code>.
+  nameWithType.vb: WaveletMatrixGeneric(Of T).RangeMode(Integer, Integer)
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).RangeMode(Integer, Integer)
+  name.vb: RangeMode(Integer, Integer)
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.TopK(System.Int32)
+  commentId: M:WaveletMatrix.WaveletMatrixGeneric`1.TopK(System.Int32)
+  id: TopK(System.Int32)
+  parent: WaveletMatrix.WaveletMatrixGeneric`1
+  langs:
+  - csharp
+  - vb
+  name: TopK(int)
+  nameWithType: WaveletMatrixGeneric<T>.TopK(int)
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.TopK(int)
+  type: Method
+  source:
+    id: TopK
+    path: D:\実験\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    startLine: 464
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: Finds the top K most frequent values and their frequencies.
+  remarks: This method is a shorthand for calling TopK(0, <xref href="WaveletMatrix.WaveletMatrixGeneric%601.Size" data-throw-if-not-resolved="false"></xref>, <code class="paramref">k</code>).
+  example: []
+  syntax:
+    content: public IEnumerable<WaveletMatrixGeneric<T>.ValueWithFrequency<T>> TopK(int k)
+    parameters:
+    - id: k
+      type: System.Int32
+      description: The number of top elements to retrieve.
+    return:
+      type: System.Collections.Generic.IEnumerable{WaveletMatrix.WaveletMatrixGeneric`1.ValueWithFrequency{{T}}}
+      description: An enumerable collection of <xref href="WaveletMatrix.WaveletMatrixGeneric%601.ValueWithFrequency%601" data-throw-if-not-resolved="false"></xref> records, ordered by frequency in descending order.
+    content.vb: Public Function TopK(k As Integer) As IEnumerable(Of WaveletMatrixGeneric(Of T).ValueWithFrequency(Of T))
+  overload: WaveletMatrix.WaveletMatrixGeneric`1.TopK*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if <code class="paramref">k</code> is out of range.
+  nameWithType.vb: WaveletMatrixGeneric(Of T).TopK(Integer)
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).TopK(Integer)
+  name.vb: TopK(Integer)
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.TopK(System.Int32,System.Int32,System.Int32)
+  commentId: M:WaveletMatrix.WaveletMatrixGeneric`1.TopK(System.Int32,System.Int32,System.Int32)
+  id: TopK(System.Int32,System.Int32,System.Int32)
+  parent: WaveletMatrix.WaveletMatrixGeneric`1
+  langs:
+  - csharp
+  - vb
+  name: TopK(int, int, int)
+  nameWithType: WaveletMatrixGeneric<T>.TopK(int, int, int)
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.TopK(int, int, int)
+  type: Method
+  source:
+    id: TopK
+    path: D:\実験\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    startLine: 476
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: Finds the top K most frequent values and their frequencies within the specified range [start, end).
+  example: []
+  syntax:
+    content: public IEnumerable<WaveletMatrixGeneric<T>.ValueWithFrequency<T>> TopK(int start, int end, int k)
+    parameters:
+    - id: start
+      type: System.Int32
+      description: The inclusive start of the range.
+    - id: end
+      type: System.Int32
+      description: The exclusive end of the range.
+    - id: k
+      type: System.Int32
+      description: The number of top elements to retrieve.
+    return:
+      type: System.Collections.Generic.IEnumerable{WaveletMatrix.WaveletMatrixGeneric`1.ValueWithFrequency{{T}}}
+      description: An enumerable collection of <xref href="WaveletMatrix.WaveletMatrixGeneric%601.ValueWithFrequency%601" data-throw-if-not-resolved="false"></xref> records, ordered by frequency in descending order.
+    content.vb: Public Function TopK(start As Integer, [end] As Integer, k As Integer) As IEnumerable(Of WaveletMatrixGeneric(Of T).ValueWithFrequency(Of T))
+  overload: WaveletMatrix.WaveletMatrixGeneric`1.TopK*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if <code class="paramref">start</code>, <code class="paramref">end</code> or <code class="paramref">k</code> is out of range.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if <code class="paramref">start</code> is greater than or equal <code class="paramref">end</code>.
+  nameWithType.vb: WaveletMatrixGeneric(Of T).TopK(Integer, Integer, Integer)
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).TopK(Integer, Integer, Integer)
+  name.vb: TopK(Integer, Integer, Integer)
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.SmallerValue(`0,`0)
+  commentId: M:WaveletMatrix.WaveletMatrixGeneric`1.SmallerValue(`0,`0)
+  id: SmallerValue(`0,`0)
+  parent: WaveletMatrix.WaveletMatrixGeneric`1
+  langs:
+  - csharp
+  - vb
+  name: SmallerValue(T, T)
+  nameWithType: WaveletMatrixGeneric<T>.SmallerValue(T, T)
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.SmallerValue(T, T)
+  type: Method
+  source:
+    id: SmallerValue
+    path: D:\実験\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    startLine: 490
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: >-
+    Finds the predecessor of a given value.
+
+    The predecessor is the largest value in the range that is strictly smaller than the given <code class="paramref">value</code>.
+  remarks: This method is a shorthand for calling SmallerValue(0, <xref href="WaveletMatrix.WaveletMatrixGeneric%601.Size" data-throw-if-not-resolved="false"></xref>, <code class="paramref">value</code>, <code class="paramref">defaultValue</code>).
+  example: []
+  syntax:
+    content: public T SmallerValue(T value, T defaultValue = default)
+    parameters:
+    - id: value
+      type: '{T}'
+      description: The reference value.
+    - id: defaultValue
+      type: '{T}'
+      description: The value to return if no predecessor is found.
+    return:
+      type: '{T}'
+      description: The predecessor value, or <code class="paramref">defaultValue</code> if no such value is found.
+    content.vb: Public Function SmallerValue(value As T, defaultValue As T = Nothing) As T
+  overload: WaveletMatrix.WaveletMatrixGeneric`1.SmallerValue*
+  nameWithType.vb: WaveletMatrixGeneric(Of T).SmallerValue(T, T)
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).SmallerValue(T, T)
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.SmallerValue(System.Int32,System.Int32,`0,`0)
+  commentId: M:WaveletMatrix.WaveletMatrixGeneric`1.SmallerValue(System.Int32,System.Int32,`0,`0)
+  id: SmallerValue(System.Int32,System.Int32,`0,`0)
+  parent: WaveletMatrix.WaveletMatrixGeneric`1
+  langs:
+  - csharp
+  - vb
+  name: SmallerValue(int, int, T, T)
+  nameWithType: WaveletMatrixGeneric<T>.SmallerValue(int, int, T, T)
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.SmallerValue(int, int, T, T)
+  type: Method
+  source:
+    id: SmallerValue
+    path: D:\実験\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    startLine: 504
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: >-
+    Finds the predecessor of a given value in the specified range [start, end).
+
+    The predecessor is the largest value in the range that is strictly smaller than the given <code class="paramref">value</code>.
+  example: []
+  syntax:
+    content: public T SmallerValue(int start, int end, T value, T defaultValue = default)
+    parameters:
+    - id: start
+      type: System.Int32
+      description: The inclusive start of the range.
+    - id: end
+      type: System.Int32
+      description: The exclusive end of the range.
+    - id: value
+      type: '{T}'
+      description: The reference value.
+    - id: defaultValue
+      type: '{T}'
+      description: The value to return if no predecessor is found.
+    return:
+      type: '{T}'
+      description: The predecessor value, or <code class="paramref">defaultValue</code> if no such value is found.
+    content.vb: Public Function SmallerValue(start As Integer, [end] As Integer, value As T, defaultValue As T = Nothing) As T
+  overload: WaveletMatrix.WaveletMatrixGeneric`1.SmallerValue*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if <code class="paramref">start</code> or <code class="paramref">end</code> is out of range.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if <code class="paramref">start</code> is greater than or equal <code class="paramref">end</code>.
+  nameWithType.vb: WaveletMatrixGeneric(Of T).SmallerValue(Integer, Integer, T, T)
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).SmallerValue(Integer, Integer, T, T)
+  name.vb: SmallerValue(Integer, Integer, T, T)
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.TrySmallerValue(`0,`0@)
+  commentId: M:WaveletMatrix.WaveletMatrixGeneric`1.TrySmallerValue(`0,`0@)
+  id: TrySmallerValue(`0,`0@)
+  parent: WaveletMatrix.WaveletMatrixGeneric`1
+  langs:
+  - csharp
+  - vb
+  name: TrySmallerValue(T, out T)
+  nameWithType: WaveletMatrixGeneric<T>.TrySmallerValue(T, out T)
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.TrySmallerValue(T, out T)
+  type: Method
+  source:
+    id: TrySmallerValue
+    path: D:\実験\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    startLine: 516
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: >-
+    Finds the predecessor of a given value.
+
+    The predecessor is the largest value in the range that is strictly smaller than the given <code class="paramref">value</code>.
+
+    This is the robust version that returns a boolean indicating success.
+  remarks: This method is a shorthand for calling TrySmallerValue(0, <xref href="WaveletMatrix.WaveletMatrixGeneric%601.Size" data-throw-if-not-resolved="false"></xref>, <code class="paramref">value</code>, out <code class="paramref">result</code>).
+  example: []
+  syntax:
+    content: public bool TrySmallerValue(T value, out T result)
+    parameters:
+    - id: value
+      type: '{T}'
+      description: The reference value.
+    - id: result
+      type: '{T}'
+      description: When this method returns, contains the successor value if found; otherwise, the default value for the type.
+    return:
+      type: System.Boolean
+      description: <code>true</code> if a predecessor value was found; otherwise, <code>false</code>.
+    content.vb: Public Function TrySmallerValue(value As T, result As T) As Boolean
+  overload: WaveletMatrix.WaveletMatrixGeneric`1.TrySmallerValue*
+  nameWithType.vb: WaveletMatrixGeneric(Of T).TrySmallerValue(T, T)
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).TrySmallerValue(T, T)
+  name.vb: TrySmallerValue(T, T)
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.TrySmallerValue(System.Int32,System.Int32,`0,`0@)
+  commentId: M:WaveletMatrix.WaveletMatrixGeneric`1.TrySmallerValue(System.Int32,System.Int32,`0,`0@)
+  id: TrySmallerValue(System.Int32,System.Int32,`0,`0@)
+  parent: WaveletMatrix.WaveletMatrixGeneric`1
+  langs:
+  - csharp
+  - vb
+  name: TrySmallerValue(int, int, T, out T)
+  nameWithType: WaveletMatrixGeneric<T>.TrySmallerValue(int, int, T, out T)
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.TrySmallerValue(int, int, T, out T)
+  type: Method
+  source:
+    id: TrySmallerValue
+    path: D:\実験\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    startLine: 531
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: >-
+    Finds the predecessor of a given value in the specified range [start, end).
+
+    The predecessor is the largest value in the range that is strictly smaller than the given <code class="paramref">value</code>.
+
+    This is the robust version that returns a boolean indicating success.
+  example: []
+  syntax:
+    content: public bool TrySmallerValue(int start, int end, T value, out T result)
+    parameters:
+    - id: start
+      type: System.Int32
+      description: The inclusive start of the range.
+    - id: end
+      type: System.Int32
+      description: The exclusive end of the range.
+    - id: value
+      type: '{T}'
+      description: The reference value.
+    - id: result
+      type: '{T}'
+      description: When this method returns, contains the successor value if found; otherwise, the default value for the type.
+    return:
+      type: System.Boolean
+      description: <code>true</code> if a predecessor value was found; otherwise, <code>false</code>.
+    content.vb: Public Function TrySmallerValue(start As Integer, [end] As Integer, value As T, result As T) As Boolean
+  overload: WaveletMatrix.WaveletMatrixGeneric`1.TrySmallerValue*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if <code class="paramref">start</code> or <code class="paramref">end</code> is out of range.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if <code class="paramref">start</code> is greater than or equal <code class="paramref">end</code>.
+  nameWithType.vb: WaveletMatrixGeneric(Of T).TrySmallerValue(Integer, Integer, T, T)
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).TrySmallerValue(Integer, Integer, T, T)
+  name.vb: TrySmallerValue(Integer, Integer, T, T)
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.LargerValue(`0,`0)
+  commentId: M:WaveletMatrix.WaveletMatrixGeneric`1.LargerValue(`0,`0)
+  id: LargerValue(`0,`0)
+  parent: WaveletMatrix.WaveletMatrixGeneric`1
+  langs:
+  - csharp
+  - vb
+  name: LargerValue(T, T)
+  nameWithType: WaveletMatrixGeneric<T>.LargerValue(T, T)
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.LargerValue(T, T)
+  type: Method
+  source:
+    id: LargerValue
+    path: D:\実験\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    startLine: 555
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: >-
+    Finds the successor of a given value.
+
+    The successor is the smallest value in the range that is strictly larger than the given <code class="paramref">value</code>.
+  remarks: This method is a shorthand for calling LargerValue(0, <xref href="WaveletMatrix.WaveletMatrixGeneric%601.Size" data-throw-if-not-resolved="false"></xref>, <code class="paramref">value</code>, <code class="paramref">defaultValue</code>).
+  example: []
+  syntax:
+    content: public T LargerValue(T value, T defaultValue = default)
+    parameters:
+    - id: value
+      type: '{T}'
+      description: The reference value.
+    - id: defaultValue
+      type: '{T}'
+      description: The value to return if no successor is found.
+    return:
+      type: '{T}'
+      description: The successor value, or <code class="paramref">defaultValue</code> if no such value is found.
+    content.vb: Public Function LargerValue(value As T, defaultValue As T = Nothing) As T
+  overload: WaveletMatrix.WaveletMatrixGeneric`1.LargerValue*
+  nameWithType.vb: WaveletMatrixGeneric(Of T).LargerValue(T, T)
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).LargerValue(T, T)
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.LargerValue(System.Int32,System.Int32,`0,`0)
+  commentId: M:WaveletMatrix.WaveletMatrixGeneric`1.LargerValue(System.Int32,System.Int32,`0,`0)
+  id: LargerValue(System.Int32,System.Int32,`0,`0)
+  parent: WaveletMatrix.WaveletMatrixGeneric`1
+  langs:
+  - csharp
+  - vb
+  name: LargerValue(int, int, T, T)
+  nameWithType: WaveletMatrixGeneric<T>.LargerValue(int, int, T, T)
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.LargerValue(int, int, T, T)
+  type: Method
+  source:
+    id: LargerValue
+    path: D:\実験\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    startLine: 569
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: >-
+    Finds the successor of a given value in the specified range [start, end).
+
+    The successor is the smallest value in the range that is strictly larger than the given <code class="paramref">value</code>.
+  example: []
+  syntax:
+    content: public T LargerValue(int start, int end, T value, T defaultValue = default)
+    parameters:
+    - id: start
+      type: System.Int32
+      description: The inclusive start of the range.
+    - id: end
+      type: System.Int32
+      description: The exclusive end of the range.
+    - id: value
+      type: '{T}'
+      description: The reference value.
+    - id: defaultValue
+      type: '{T}'
+      description: The value to return if no successor is found.
+    return:
+      type: '{T}'
+      description: The successor value, or <code class="paramref">defaultValue</code> if no such value is found.
+    content.vb: Public Function LargerValue(start As Integer, [end] As Integer, value As T, defaultValue As T = Nothing) As T
+  overload: WaveletMatrix.WaveletMatrixGeneric`1.LargerValue*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if <code class="paramref">start</code> or <code class="paramref">end</code> is out of range.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if <code class="paramref">start</code> is greater than or equal <code class="paramref">end</code>.
+  nameWithType.vb: WaveletMatrixGeneric(Of T).LargerValue(Integer, Integer, T, T)
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).LargerValue(Integer, Integer, T, T)
+  name.vb: LargerValue(Integer, Integer, T, T)
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.TryLargerValue(`0,`0@)
+  commentId: M:WaveletMatrix.WaveletMatrixGeneric`1.TryLargerValue(`0,`0@)
+  id: TryLargerValue(`0,`0@)
+  parent: WaveletMatrix.WaveletMatrixGeneric`1
+  langs:
+  - csharp
+  - vb
+  name: TryLargerValue(T, out T)
+  nameWithType: WaveletMatrixGeneric<T>.TryLargerValue(T, out T)
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.TryLargerValue(T, out T)
+  type: Method
+  source:
+    id: TryLargerValue
+    path: D:\実験\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    startLine: 581
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: >-
+    Finds the successor of a given value.
+
+    The successor is the smallest value in the range that is strictly larger than the given <code class="paramref">value</code>.
+
+    This is the robust version that returns a boolean indicating success.
+  remarks: This method is a shorthand for calling TryLargerValue(0, <xref href="WaveletMatrix.WaveletMatrixGeneric%601.Size" data-throw-if-not-resolved="false"></xref>, <code class="paramref">value</code>, out <code class="paramref">result</code>).
+  example: []
+  syntax:
+    content: public bool TryLargerValue(T value, out T result)
+    parameters:
+    - id: value
+      type: '{T}'
+      description: The reference value.
+    - id: result
+      type: '{T}'
+      description: When this method returns, contains the successor value if found; otherwise, the default value for the type.
+    return:
+      type: System.Boolean
+      description: <code>true</code> if a predecessor value was found; otherwise, <code>false</code>.
+    content.vb: Public Function TryLargerValue(value As T, result As T) As Boolean
+  overload: WaveletMatrix.WaveletMatrixGeneric`1.TryLargerValue*
+  nameWithType.vb: WaveletMatrixGeneric(Of T).TryLargerValue(T, T)
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).TryLargerValue(T, T)
+  name.vb: TryLargerValue(T, T)
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.TryLargerValue(System.Int32,System.Int32,`0,`0@)
+  commentId: M:WaveletMatrix.WaveletMatrixGeneric`1.TryLargerValue(System.Int32,System.Int32,`0,`0@)
+  id: TryLargerValue(System.Int32,System.Int32,`0,`0@)
+  parent: WaveletMatrix.WaveletMatrixGeneric`1
+  langs:
+  - csharp
+  - vb
+  name: TryLargerValue(int, int, T, out T)
+  nameWithType: WaveletMatrixGeneric<T>.TryLargerValue(int, int, T, out T)
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.TryLargerValue(int, int, T, out T)
+  type: Method
+  source:
+    id: TryLargerValue
+    path: D:\実験\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    startLine: 596
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: >-
+    Finds the successor of a given value in the specified range [start, end).
+
+    The successor is the smallest value in the range that is strictly larger than the given <code class="paramref">value</code>.
+
+    This is the robust version that returns a boolean indicating success.
+  example: []
+  syntax:
+    content: public bool TryLargerValue(int start, int end, T value, out T result)
+    parameters:
+    - id: start
+      type: System.Int32
+      description: The inclusive start of the range.
+    - id: end
+      type: System.Int32
+      description: The exclusive end of the range.
+    - id: value
+      type: '{T}'
+      description: The reference value.
+    - id: result
+      type: '{T}'
+      description: When this method returns, contains the successor value if found; otherwise, the default value for the type.
+    return:
+      type: System.Boolean
+      description: <code>true</code> if a predecessor value was found; otherwise, <code>false</code>.
+    content.vb: Public Function TryLargerValue(start As Integer, [end] As Integer, value As T, result As T) As Boolean
+  overload: WaveletMatrix.WaveletMatrixGeneric`1.TryLargerValue*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if <code class="paramref">start</code> or <code class="paramref">end</code> is out of range.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if <code class="paramref">start</code> is greater than or equal <code class="paramref">end</code>.
+  nameWithType.vb: WaveletMatrixGeneric(Of T).TryLargerValue(Integer, Integer, T, T)
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).TryLargerValue(Integer, Integer, T, T)
+  name.vb: TryLargerValue(Integer, Integer, T, T)
+references:
+- uid: System.IComparable`1
+  commentId: T:System.IComparable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.icomparable-1
+  name: IComparable<T>
+  nameWithType: IComparable<T>
+  fullName: System.IComparable<T>
+  nameWithType.vb: IComparable(Of T)
+  fullName.vb: System.IComparable(Of T)
+  name.vb: IComparable(Of T)
+  spec.csharp:
+  - uid: System.IComparable`1
+    name: IComparable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icomparable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IComparable`1
+    name: IComparable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icomparable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: WaveletMatrix
+  commentId: N:WaveletMatrix
+  href: WaveletMatrix.html
+  name: WaveletMatrix
+  nameWithType: WaveletMatrix
+  fullName: WaveletMatrix
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.Size*
+  commentId: Overload:WaveletMatrix.WaveletMatrixGeneric`1.Size
+  href: WaveletMatrix.WaveletMatrixGeneric-1.html#WaveletMatrix_WaveletMatrixGeneric_1_Size
+  name: Size
+  nameWithType: WaveletMatrixGeneric<T>.Size
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.Size
+  nameWithType.vb: WaveletMatrixGeneric(Of T).Size
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).Size
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: WaveletMatrix.WaveletMatrixGeneric`1
+  commentId: T:WaveletMatrix.WaveletMatrixGeneric`1
+  parent: WaveletMatrix
+  href: WaveletMatrix.WaveletMatrixGeneric-1.html
+  name: WaveletMatrixGeneric<T>
+  nameWithType: WaveletMatrixGeneric<T>
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>
+  nameWithType.vb: WaveletMatrixGeneric(Of T)
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T)
+  name.vb: WaveletMatrixGeneric(Of T)
+  spec.csharp:
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.Create*
+  commentId: Overload:WaveletMatrix.WaveletMatrixGeneric`1.Create
+  href: WaveletMatrix.WaveletMatrixGeneric-1.html#WaveletMatrix_WaveletMatrixGeneric_1_Create_System_Collections_Generic_IEnumerable__0__
+  name: Create
+  nameWithType: WaveletMatrixGeneric<T>.Create
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.Create
+  nameWithType.vb: WaveletMatrixGeneric(Of T).Create
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).Create
+- uid: System.Collections.Generic.IEnumerable{{T}}
+  commentId: T:System.Collections.Generic.IEnumerable{`0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Byte
+  commentId: T:System.Byte
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.byte
+  name: byte
+  nameWithType: byte
+  fullName: byte
+  nameWithType.vb: Byte
+  fullName.vb: Byte
+  name.vb: Byte
+- uid: System.Char
+  commentId: T:System.Char
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.char
+  name: char
+  nameWithType: char
+  fullName: char
+  nameWithType.vb: Char
+  fullName.vb: Char
+  name.vb: Char
+- uid: WaveletMatrix.SerializationOptions.Default
+  commentId: P:WaveletMatrix.SerializationOptions.Default
+  href: WaveletMatrix.SerializationOptions.html#WaveletMatrix_SerializationOptions_Default
+  name: Default
+  nameWithType: SerializationOptions.Default
+  fullName: WaveletMatrix.SerializationOptions.Default
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentexception
+  name: ArgumentException
+  nameWithType: ArgumentException
+  fullName: System.ArgumentException
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.Serialize*
+  commentId: Overload:WaveletMatrix.WaveletMatrixGeneric`1.Serialize
+  href: WaveletMatrix.WaveletMatrixGeneric-1.html#WaveletMatrix_WaveletMatrixGeneric_1_Serialize_WaveletMatrix_WaveletMatrixGeneric__0__WaveletMatrix_WaveletMatrixGeneric__0__IGenericSerializer__0__WaveletMatrix_SerializationOptions_
+  name: Serialize
+  nameWithType: WaveletMatrixGeneric<T>.Serialize
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.Serialize
+  nameWithType.vb: WaveletMatrixGeneric(Of T).Serialize
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).Serialize
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer{{T}}
+  commentId: T:WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer{`0}
+  parent: WaveletMatrix
+  definition: WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer`1
+  href: WaveletMatrix.WaveletMatrixGeneric-1.html
+  name: WaveletMatrixGeneric<T>.IGenericSerializer<T>
+  nameWithType: WaveletMatrixGeneric<T>.IGenericSerializer<T>
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.IGenericSerializer<T>
+  nameWithType.vb: WaveletMatrixGeneric(Of T).IGenericSerializer(Of T)
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).IGenericSerializer(Of T)
+  name.vb: WaveletMatrixGeneric(Of T).IGenericSerializer(Of T)
+  spec.csharp:
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: .
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer`1
+    name: IGenericSerializer
+    href: WaveletMatrix.WaveletMatrixGeneric-1.IGenericSerializer-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: .
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer`1
+    name: IGenericSerializer
+    href: WaveletMatrix.WaveletMatrixGeneric-1.IGenericSerializer-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: WaveletMatrix.SerializationOptions
+  commentId: T:WaveletMatrix.SerializationOptions
+  parent: WaveletMatrix
+  href: WaveletMatrix.SerializationOptions.html
+  name: SerializationOptions
+  nameWithType: SerializationOptions
+  fullName: WaveletMatrix.SerializationOptions
+- uid: System.Byte[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.byte
+  name: byte[]
+  nameWithType: byte[]
+  fullName: byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: (
+  - name: )
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer`1
+  commentId: T:WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer`1
+  href: WaveletMatrix.WaveletMatrixGeneric-1.html
+  name: WaveletMatrixGeneric<T>.IGenericSerializer<Tx>
+  nameWithType: WaveletMatrixGeneric<T>.IGenericSerializer<Tx>
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.IGenericSerializer<Tx>
+  nameWithType.vb: WaveletMatrixGeneric(Of T).IGenericSerializer(Of Tx)
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).IGenericSerializer(Of Tx)
+  name.vb: WaveletMatrixGeneric(Of T).IGenericSerializer(Of Tx)
+  spec.csharp:
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: .
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer`1
+    name: IGenericSerializer
+    href: WaveletMatrix.WaveletMatrixGeneric-1.IGenericSerializer-1.html
+  - name: <
+  - name: Tx
+  - name: '>'
+  spec.vb:
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: .
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer`1
+    name: IGenericSerializer
+    href: WaveletMatrix.WaveletMatrixGeneric-1.IGenericSerializer-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: Tx
+  - name: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.IO.Stream
+  commentId: T:System.IO.Stream
+  parent: System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.io.stream
+  name: Stream
+  nameWithType: Stream
+  fullName: System.IO.Stream
+- uid: System.IO
+  commentId: N:System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.IO
+  nameWithType: System.IO
+  fullName: System.IO
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.Deserialize*
+  commentId: Overload:WaveletMatrix.WaveletMatrixGeneric`1.Deserialize
+  href: WaveletMatrix.WaveletMatrixGeneric-1.html#WaveletMatrix_WaveletMatrixGeneric_1_Deserialize_System_Byte___WaveletMatrix_WaveletMatrixGeneric__0__IGenericSerializer__0__
+  name: Deserialize
+  nameWithType: WaveletMatrixGeneric<T>.Deserialize
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.Deserialize
+  nameWithType.vb: WaveletMatrixGeneric(Of T).Deserialize
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).Deserialize
+- uid: System.IO.InvalidDataException
+  commentId: T:System.IO.InvalidDataException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.io.invaliddataexception
+  name: InvalidDataException
+  nameWithType: InvalidDataException
+  fullName: System.IO.InvalidDataException
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception
+  name: ArgumentOutOfRangeException
+  nameWithType: ArgumentOutOfRangeException
+  fullName: System.ArgumentOutOfRangeException
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.Access*
+  commentId: Overload:WaveletMatrix.WaveletMatrixGeneric`1.Access
+  href: WaveletMatrix.WaveletMatrixGeneric-1.html#WaveletMatrix_WaveletMatrixGeneric_1_Access_System_Int32_
+  name: Access
+  nameWithType: WaveletMatrixGeneric<T>.Access
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.Access
+  nameWithType.vb: WaveletMatrixGeneric(Of T).Access
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).Access
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.Rank*
+  commentId: Overload:WaveletMatrix.WaveletMatrixGeneric`1.Rank
+  href: WaveletMatrix.WaveletMatrixGeneric-1.html#WaveletMatrix_WaveletMatrixGeneric_1_Rank_System_Int32__0_
+  name: Rank
+  nameWithType: WaveletMatrixGeneric<T>.Rank
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.Rank
+  nameWithType.vb: WaveletMatrixGeneric(Of T).Rank
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).Rank
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.Select*
+  commentId: Overload:WaveletMatrix.WaveletMatrixGeneric`1.Select
+  href: WaveletMatrix.WaveletMatrixGeneric-1.html#WaveletMatrix_WaveletMatrixGeneric_1_Select_System_Int32__0_
+  name: Select
+  nameWithType: WaveletMatrixGeneric<T>.Select
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.Select
+  nameWithType.vb: WaveletMatrixGeneric(Of T).Select
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).Select
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.Size
+  commentId: P:WaveletMatrix.WaveletMatrixGeneric`1.Size
+  href: WaveletMatrix.WaveletMatrixGeneric-1.html#WaveletMatrix_WaveletMatrixGeneric_1_Size
+  name: Size
+  nameWithType: WaveletMatrixGeneric<T>.Size
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.Size
+  nameWithType.vb: WaveletMatrixGeneric(Of T).Size
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).Size
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.RangeCount*
+  commentId: Overload:WaveletMatrix.WaveletMatrixGeneric`1.RangeCount
+  href: WaveletMatrix.WaveletMatrixGeneric-1.html#WaveletMatrix_WaveletMatrixGeneric_1_RangeCount__0_
+  name: RangeCount
+  nameWithType: WaveletMatrixGeneric<T>.RangeCount
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.RangeCount
+  nameWithType.vb: WaveletMatrixGeneric(Of T).RangeCount
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).RangeCount
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.Quantile*
+  commentId: Overload:WaveletMatrix.WaveletMatrixGeneric`1.Quantile
+  href: WaveletMatrix.WaveletMatrixGeneric-1.html#WaveletMatrix_WaveletMatrixGeneric_1_Quantile_System_Int32_
+  name: Quantile
+  nameWithType: WaveletMatrixGeneric<T>.Quantile
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.Quantile
+  nameWithType.vb: WaveletMatrixGeneric(Of T).Quantile
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).Quantile
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.RangeFreq*
+  commentId: Overload:WaveletMatrix.WaveletMatrixGeneric`1.RangeFreq
+  href: WaveletMatrix.WaveletMatrixGeneric-1.html#WaveletMatrix_WaveletMatrixGeneric_1_RangeFreq__0__0_
+  name: RangeFreq
+  nameWithType: WaveletMatrixGeneric<T>.RangeFreq
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.RangeFreq
+  nameWithType.vb: WaveletMatrixGeneric(Of T).RangeFreq
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).RangeFreq
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.ValueWithFrequency`1
+  commentId: T:WaveletMatrix.WaveletMatrixGeneric`1.ValueWithFrequency`1
+  href: WaveletMatrix.WaveletMatrixGeneric-1.html
+  name: WaveletMatrixGeneric<T>.ValueWithFrequency<Tx>
+  nameWithType: WaveletMatrixGeneric<T>.ValueWithFrequency<Tx>
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.ValueWithFrequency<Tx>
+  nameWithType.vb: WaveletMatrixGeneric(Of T).ValueWithFrequency(Of Tx)
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).ValueWithFrequency(Of Tx)
+  name.vb: WaveletMatrixGeneric(Of T).ValueWithFrequency(Of Tx)
+  spec.csharp:
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: .
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1.ValueWithFrequency`1
+    name: ValueWithFrequency
+    href: WaveletMatrix.WaveletMatrixGeneric-1.ValueWithFrequency-1.html
+  - name: <
+  - name: Tx
+  - name: '>'
+  spec.vb:
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: .
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1.ValueWithFrequency`1
+    name: ValueWithFrequency
+    href: WaveletMatrix.WaveletMatrixGeneric-1.ValueWithFrequency-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: Tx
+  - name: )
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.RangeMode*
+  commentId: Overload:WaveletMatrix.WaveletMatrixGeneric`1.RangeMode
+  href: WaveletMatrix.WaveletMatrixGeneric-1.html#WaveletMatrix_WaveletMatrixGeneric_1_RangeMode
+  name: RangeMode
+  nameWithType: WaveletMatrixGeneric<T>.RangeMode
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.RangeMode
+  nameWithType.vb: WaveletMatrixGeneric(Of T).RangeMode
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).RangeMode
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.ValueWithFrequency{{T}}
+  commentId: T:WaveletMatrix.WaveletMatrixGeneric`1.ValueWithFrequency{`0}
+  parent: WaveletMatrix
+  definition: WaveletMatrix.WaveletMatrixGeneric`1.ValueWithFrequency`1
+  href: WaveletMatrix.WaveletMatrixGeneric-1.html
+  name: WaveletMatrixGeneric<T>.ValueWithFrequency<T>
+  nameWithType: WaveletMatrixGeneric<T>.ValueWithFrequency<T>
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.ValueWithFrequency<T>
+  nameWithType.vb: WaveletMatrixGeneric(Of T).ValueWithFrequency(Of T)
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).ValueWithFrequency(Of T)
+  name.vb: WaveletMatrixGeneric(Of T).ValueWithFrequency(Of T)
+  spec.csharp:
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: .
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1.ValueWithFrequency`1
+    name: ValueWithFrequency
+    href: WaveletMatrix.WaveletMatrixGeneric-1.ValueWithFrequency-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: .
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1.ValueWithFrequency`1
+    name: ValueWithFrequency
+    href: WaveletMatrix.WaveletMatrixGeneric-1.ValueWithFrequency-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.TopK*
+  commentId: Overload:WaveletMatrix.WaveletMatrixGeneric`1.TopK
+  href: WaveletMatrix.WaveletMatrixGeneric-1.html#WaveletMatrix_WaveletMatrixGeneric_1_TopK_System_Int32_
+  name: TopK
+  nameWithType: WaveletMatrixGeneric<T>.TopK
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.TopK
+  nameWithType.vb: WaveletMatrixGeneric(Of T).TopK
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).TopK
+- uid: System.Collections.Generic.IEnumerable{WaveletMatrix.WaveletMatrixGeneric`1.ValueWithFrequency{{T}}}
+  commentId: T:System.Collections.Generic.IEnumerable{WaveletMatrix.WaveletMatrixGeneric`1.ValueWithFrequency{`0}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<WaveletMatrixGeneric<T>.ValueWithFrequency<T>>
+  nameWithType: IEnumerable<WaveletMatrixGeneric<T>.ValueWithFrequency<T>>
+  fullName: System.Collections.Generic.IEnumerable<WaveletMatrix.WaveletMatrixGeneric<T>.ValueWithFrequency<T>>
+  nameWithType.vb: IEnumerable(Of WaveletMatrixGeneric(Of T).ValueWithFrequency(Of T))
+  fullName.vb: System.Collections.Generic.IEnumerable(Of WaveletMatrix.WaveletMatrixGeneric(Of T).ValueWithFrequency(Of T))
+  name.vb: IEnumerable(Of WaveletMatrixGeneric(Of T).ValueWithFrequency(Of T))
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: .
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1.ValueWithFrequency`1
+    name: ValueWithFrequency
+    href: WaveletMatrix.WaveletMatrixGeneric-1.ValueWithFrequency-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: .
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1.ValueWithFrequency`1
+    name: ValueWithFrequency
+    href: WaveletMatrix.WaveletMatrixGeneric-1.ValueWithFrequency-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.SmallerValue*
+  commentId: Overload:WaveletMatrix.WaveletMatrixGeneric`1.SmallerValue
+  href: WaveletMatrix.WaveletMatrixGeneric-1.html#WaveletMatrix_WaveletMatrixGeneric_1_SmallerValue__0__0_
+  name: SmallerValue
+  nameWithType: WaveletMatrixGeneric<T>.SmallerValue
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.SmallerValue
+  nameWithType.vb: WaveletMatrixGeneric(Of T).SmallerValue
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).SmallerValue
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.TrySmallerValue*
+  commentId: Overload:WaveletMatrix.WaveletMatrixGeneric`1.TrySmallerValue
+  href: WaveletMatrix.WaveletMatrixGeneric-1.html#WaveletMatrix_WaveletMatrixGeneric_1_TrySmallerValue__0__0__
+  name: TrySmallerValue
+  nameWithType: WaveletMatrixGeneric<T>.TrySmallerValue
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.TrySmallerValue
+  nameWithType.vb: WaveletMatrixGeneric(Of T).TrySmallerValue
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).TrySmallerValue
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.LargerValue*
+  commentId: Overload:WaveletMatrix.WaveletMatrixGeneric`1.LargerValue
+  href: WaveletMatrix.WaveletMatrixGeneric-1.html#WaveletMatrix_WaveletMatrixGeneric_1_LargerValue__0__0_
+  name: LargerValue
+  nameWithType: WaveletMatrixGeneric<T>.LargerValue
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.LargerValue
+  nameWithType.vb: WaveletMatrixGeneric(Of T).LargerValue
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).LargerValue
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.TryLargerValue*
+  commentId: Overload:WaveletMatrix.WaveletMatrixGeneric`1.TryLargerValue
+  href: WaveletMatrix.WaveletMatrixGeneric-1.html#WaveletMatrix_WaveletMatrixGeneric_1_TryLargerValue__0__0__
+  name: TryLargerValue
+  nameWithType: WaveletMatrixGeneric<T>.TryLargerValue
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.TryLargerValue
+  nameWithType.vb: WaveletMatrixGeneric(Of T).TryLargerValue
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).TryLargerValue

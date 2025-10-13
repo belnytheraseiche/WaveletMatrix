@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>API Reference | BelNytheraSeiche.WaveletMatrix </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="API Reference | BelNytheraSeiche.WaveletMatrix ">
+      
+      
+      <link rel="icon" href="../images/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo-small.png" alt="BelNytheraSeiche.WaveletMatrix">
+            BelNytheraSeiche.WaveletMatrix
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="api-reference">API Reference</h1>
+
+<p>Welcome to the API documentation for the <strong>BelNytheraSeiche.WaveletMatrix</strong> library. This library is organized into several key components that work together to provide powerful sequence and text analysis capabilities.</p>
+<p>Below is an overview of the main classes and their roles.</p>
+<hr>
+<h2 id="core-data-structures">Core Data Structures</h2>
+<p>These are the fundamental building blocks of the library.</p>
+<ul>
+<li><h3 id="waveletmatrixgeneric"><a href="WaveletMatrix.WaveletMatrixGeneric-1.html">WaveletMatrixGeneric<t></t></a></h3>
+<p>The main generic class for creating a Wavelet Matrix from any <code>IComparable&lt;T&gt;</code> sequence. It handles coordinate compression and provides a rich set of query APIs.</p>
+</li>
+<li><h3 id="waveletmatrixcore"><a href="WaveletMatrix.WaveletMatrixCore.html">WaveletMatrixCore</a></h3>
+<p>The high-performance, non-generic engine that powers the <code>WaveletMatrixGeneric&lt;T&gt;</code>. It operates directly on integer sequences.</p>
+</li>
+<li><h3 id="sparsetable-and-aggregatesparsetable"><a href="WaveletMatrix.SparseTable-1.html">SparseTable<t></t></a> and <a href="WaveletMatrix.AggregateSparseTable-1.html">AggregateSparseTable<t></t></a></h3>
+<p>Helper data structures used for answering Range Minimum/Maximum Queries (RMQ) in O(1) or O(log N) time, respectively. They are used internally by <code>LcpIndex</code>.</p>
+</li>
+</ul>
+<hr>
+<h2 id="text-analysis-components">Text Analysis Components</h2>
+<p>These classes are specialized for advanced stringology and full-text search.</p>
+<ul>
+<li><h3 id="suffixarray"><a href="WaveletMatrix.SuffixArray.html">SuffixArray</a></h3>
+<p>The foundational class for most text analysis. It builds a Suffix Array and LCP Array from a given text, enabling fast substring searches.</p>
+</li>
+<li><h3 id="lcpindex"><a href="WaveletMatrix.LcpIndex.html">LcpIndex</a></h3>
+<p>An index built on top of a <code>SuffixArray</code> that provides advanced O(1) LCP queries. This is the key to complex analyses like finding tandem repeats or calculating string complexity.</p>
+</li>
+<li><h3 id="fmindex"><a href="WaveletMatrix.FMIndex.html">FMIndex</a></h3>
+<p>The high-level, all-in-one full-text search index. It combines the power of the <code>WaveletMatrix</code>, <code>SuffixArray</code>, and Burrows-Wheeler Transform to offer extremely fast pattern counting (<code>Count</code>) and locating (<code>Locate</code>).</p>
+</li>
+<li><h3 id="burrowswheelertransform"><a href="WaveletMatrix.BurrowsWheelerTransform.html">BurrowsWheelerTransform</a></h3>
+<p>A static utility class that performs the Burrows-Wheeler Transform, a key step in building the <code>FMIndex</code>.</p>
+</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

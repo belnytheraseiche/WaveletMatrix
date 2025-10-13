@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Namespace BelNytheraSeiche.WaveletMatrix | BelNytheraSeiche.WaveletMatrix </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Namespace BelNytheraSeiche.WaveletMatrix | BelNytheraSeiche.WaveletMatrix ">
+      
+      
+      <link rel="icon" href="../images/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo-small.png" alt="BelNytheraSeiche.WaveletMatrix">
+            BelNytheraSeiche.WaveletMatrix
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="BelNytheraSeiche.WaveletMatrix">
+
+  <h1 id="BelNytheraSeiche_WaveletMatrix" data-uid="BelNytheraSeiche.WaveletMatrix" class="text-break">Namespace BelNytheraSeiche.WaveletMatrix</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+
+    <h3 id="classes">
+Classes
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.AggregateSparseTable-1.html">AggregateSparseTable&lt;T&gt;</a></dt>
+      <dd><p>Provides a data structure for answering range queries on a static array.
+This version is more general and supports non-idempotent operations like sum, but its Query operation is not O(1).
+Preprocessing is O(N log N) and queries are O(log N) but dependent on the aggregator function's properties.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.BitSet.html">BitSet</a></dt>
+      <dd><p>Provides a mutable bit set for efficiently building large bit vectors.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.BurrowsWheelerTransform.html">BurrowsWheelerTransform</a></dt>
+      <dd><p>Provides a static method for performing the Burrows-Wheeler Transform (BWT).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.BurrowsWheelerTransform.BwtResult.html">BurrowsWheelerTransform.BwtResult</a></dt>
+      <dd><p>Encapsulates the result of a Burrows-Wheeler Transform operation.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.html">FMIndex</a></dt>
+      <dd><p>Provides a high-performance full-text search index based on the FM-Index algorithm.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.ImmutableBitSet.html">ImmutableBitSet</a></dt>
+      <dd><p>Represents a read-only, immutable bit set.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.LcpIndex.html">LcpIndex</a></dt>
+      <dd><p>Provides an index structure over a Suffix Array's LCP (Longest Common Prefix) array
+to answer advanced stringology queries efficiently.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat.html">LcpIndex.Repeat</a></dt>
+      <dd><p>Represents a epeated substring.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat.html">LcpIndex.TandemRepeat</a></dt>
+      <dd><p>Represents a tandem repeat found in the text.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.RankSelectBitSet.html">RankSelectBitSet</a></dt>
+      <dd><p>An immutable bit set optimized for high-performance Rank and Select operations.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.SerializationOptions.html">SerializationOptions</a></dt>
+      <dd><p>Represents options for serialization.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.SparseTable-1.html">SparseTable&lt;T&gt;</a></dt>
+      <dd><p>Provides a data structure for answering range queries on a static array in O(1) time
+after an O(N log N) preprocessing step. This version is optimized for idempotent operations
+like finding the minimum or maximum, and it also tracks the index of the result.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.SuffixArray.html">SuffixArray</a></dt>
+      <dd><p>Provides a powerful string searching data structure using a Suffix Array and LCP Array.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.html">SuffixArray.WildcardOptions</a></dt>
+      <dd><p>Provides options to customize the behavior of a wildcard search.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.ValueBuffer-1.html">ValueBuffer&lt;T&gt;</a></dt>
+      <dd><p>Represents a buffer for value types, implemented using a list of array chunks.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html">WaveletMatrixCore</a></dt>
+      <dd><p>Provides the core, high-performance implementation of a Wavelet Matrix for integer sequences.
+This class is not generic and operates directly on coordinate-compressed integer arrays.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency.html">WaveletMatrixCore.ValueWithFrequency</a></dt>
+      <dd><p>Represents a value and its frequency of occurrence.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.html">WaveletMatrixGeneric&lt;T&gt;</a></dt>
+      <dd><p>A generic, compressed data structure for sequences of any comparable type.
+It provides fast Rank, Select, Quantile, and other advanced queries.
+This class uses coordinate compression internally, making it highly memory-efficient for data with a small alphabet size.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.ByteSerializer.html">WaveletMatrixGeneric&lt;T&gt;.ByteSerializer</a></dt>
+      <dd><p>Provides a default serializer for the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a> type.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.CharSerializer.html">WaveletMatrixGeneric&lt;T&gt;.CharSerializer</a></dt>
+      <dd><p>Provides a default serializer for the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a> type.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.Int32Serializer.html">WaveletMatrixGeneric&lt;T&gt;.Int32Serializer</a></dt>
+      <dd><p>Provides a default serializer for the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a> type.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.ValueWithFrequency-1.html">WaveletMatrixGeneric&lt;T&gt;.ValueWithFrequency&lt;Tx&gt;</a></dt>
+      <dd><p>Represents a value and its frequency of occurrence.</p>
+</dd>
+    </dl>
+    <h3 id="structs">
+Structs
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.SparseTable-1.ValueWithIndex.html">SparseTable&lt;T&gt;.ValueWithIndex</a></dt>
+      <dd><p>Represents a value and its original index in the input array.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.SuffixArray.Match.html">SuffixArray.Match</a></dt>
+      <dd><p>Provides a single match found in a text.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.SuffixArray.MatchGroup.html">SuffixArray.MatchGroup</a></dt>
+      <dd><p>Provides a common substring found between two texts.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.SuffixArray.MatchRepeated.html">SuffixArray.MatchRepeated</a></dt>
+      <dd><p>Provides a repeated substring and all its occurrences.</p>
+</dd>
+    </dl>
+    <h3 id="interfaces">
+Interfaces
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.IGenericSerializer-1.html">WaveletMatrixGeneric&lt;T&gt;.IGenericSerializer&lt;Tx&gt;</a></dt>
+      <dd><p>Defines the contract for serializing and deserializing elements of type <code class="typeparamref">Tx</code>.</p>
+</dd>
+    </dl>
+    <h3 id="enums">
+Enums
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.html">FMIndex.SortOrder</a></dt>
+      <dd><p>Specifies the sort order for the results of a Locate operation.</p>
+</dd>
+    </dl>
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

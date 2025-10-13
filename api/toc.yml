@@ -1,0 +1,91 @@
+### YamlMime:TableOfContent
+items:
+- uid: BelNytheraSeiche.WaveletMatrix
+  name: BelNytheraSeiche.WaveletMatrix
+  type: Namespace
+  items:
+  - uid: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1
+    name: AggregateSparseTable<T>
+    type: Class
+  - uid: BelNytheraSeiche.WaveletMatrix.BitSet
+    name: BitSet
+    type: Class
+  - uid: BelNytheraSeiche.WaveletMatrix.BurrowsWheelerTransform
+    name: BurrowsWheelerTransform
+    type: Class
+  - uid: BelNytheraSeiche.WaveletMatrix.BurrowsWheelerTransform.BwtResult
+    name: BurrowsWheelerTransform.BwtResult
+    type: Class
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex
+    name: FMIndex
+    type: Class
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder
+    name: FMIndex.SortOrder
+    type: Enum
+  - uid: BelNytheraSeiche.WaveletMatrix.ImmutableBitSet
+    name: ImmutableBitSet
+    type: Class
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    name: LcpIndex
+    type: Class
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat
+    name: LcpIndex.Repeat
+    type: Class
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat
+    name: LcpIndex.TandemRepeat
+    type: Class
+  - uid: BelNytheraSeiche.WaveletMatrix.RankSelectBitSet
+    name: RankSelectBitSet
+    type: Class
+  - uid: BelNytheraSeiche.WaveletMatrix.SerializationOptions
+    name: SerializationOptions
+    type: Class
+  - uid: BelNytheraSeiche.WaveletMatrix.SparseTable`1
+    name: SparseTable<T>
+    type: Class
+  - uid: BelNytheraSeiche.WaveletMatrix.SparseTable`1.ValueWithIndex
+    name: SparseTable<T>.ValueWithIndex
+    type: Struct
+  - uid: BelNytheraSeiche.WaveletMatrix.SuffixArray
+    name: SuffixArray
+    type: Class
+  - uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match
+    name: SuffixArray.Match
+    type: Struct
+  - uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.MatchGroup
+    name: SuffixArray.MatchGroup
+    type: Struct
+  - uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.MatchRepeated
+    name: SuffixArray.MatchRepeated
+    type: Struct
+  - uid: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions
+    name: SuffixArray.WildcardOptions
+    type: Class
+  - uid: BelNytheraSeiche.WaveletMatrix.ValueBuffer`1
+    name: ValueBuffer<T>
+    type: Class
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore
+    name: WaveletMatrixCore
+    type: Class
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency
+    name: WaveletMatrixCore.ValueWithFrequency
+    type: Class
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric<T>
+    type: Class
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.ByteSerializer
+    name: WaveletMatrixGeneric<T>.ByteSerializer
+    type: Class
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer
+    name: WaveletMatrixGeneric<T>.CharSerializer
+    type: Class
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer`1
+    name: WaveletMatrixGeneric<T>.IGenericSerializer<Tx>
+    type: Interface
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.Int32Serializer
+    name: WaveletMatrixGeneric<T>.Int32Serializer
+    type: Class
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1.ValueWithFrequency`1
+    name: WaveletMatrixGeneric<T>.ValueWithFrequency<Tx>
+    type: Class
+memberLayout: SamePage

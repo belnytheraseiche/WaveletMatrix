@@ -1,0 +1,678 @@
+### YamlMime:ManagedReference
+items:
+- uid: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1
+  commentId: T:BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1
+  id: AggregateSparseTable`1
+  parent: BelNytheraSeiche.WaveletMatrix
+  children:
+  - BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1.#ctor(System.ReadOnlySpan{`0},System.Func{`0,`0,`0})
+  - BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1.Query
+  - BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1.Query(System.Int32,System.Int32)
+  - BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1.Size
+  langs:
+  - csharp
+  - vb
+  name: AggregateSparseTable<T>
+  nameWithType: AggregateSparseTable<T>
+  fullName: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable<T>
+  type: Class
+  source:
+    id: AggregateSparseTable
+    path: C:\Users\nanto\dev\WaveletMatrix\src\SparseTable.cs
+    startLine: 180
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Provides a data structure for answering range queries on a static array.
+
+    This version is more general and supports non-idempotent operations like sum, but its Query operation is not O(1).
+
+    Preprocessing is O(N log N) and queries are O(log N) but dependent on the aggregator function's properties.
+  remarks: >-
+    This class is suitable for operations like Range Sum Query, where overlapping subproblems cannot be used in the same way as with idempotent operations.
+
+    Note: The provided Query method is a simplification and may not be O(1) for all aggregator functions. True O(log N) or O(1) for sum requires a different structure like a Fenwick Tree or prefix sum array.
+  example: []
+  syntax:
+    content: 'public sealed class AggregateSparseTable<T> where T : IComparable<T>'
+    typeParameters:
+    - id: T
+      description: The type of elements in the array. Must be comparable.
+    content.vb: Public NotInheritable Class AggregateSparseTable(Of T As IComparable(Of T))
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  nameWithType.vb: AggregateSparseTable(Of T)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable(Of T)
+  name.vb: AggregateSparseTable(Of T)
+- uid: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1.Size
+  commentId: P:BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1.Size
+  id: Size
+  parent: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1
+  langs:
+  - csharp
+  - vb
+  name: Size
+  nameWithType: AggregateSparseTable<T>.Size
+  fullName: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable<T>.Size
+  type: Property
+  source:
+    id: Size
+    path: C:\Users\nanto\dev\WaveletMatrix\src\SparseTable.cs
+    startLine: 191
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Gets the total number of elements in the sequence.
+  example: []
+  syntax:
+    content: public int Size { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Size As Integer
+  overload: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1.Size*
+  nameWithType.vb: AggregateSparseTable(Of T).Size
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable(Of T).Size
+- uid: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1.#ctor(System.ReadOnlySpan{`0},System.Func{`0,`0,`0})
+  commentId: M:BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1.#ctor(System.ReadOnlySpan{`0},System.Func{`0,`0,`0})
+  id: '#ctor(System.ReadOnlySpan{`0},System.Func{`0,`0,`0})'
+  parent: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1
+  langs:
+  - csharp
+  - vb
+  name: AggregateSparseTable(ReadOnlySpan<T>, Func<T, T, T>)
+  nameWithType: AggregateSparseTable<T>.AggregateSparseTable(ReadOnlySpan<T>, Func<T, T, T>)
+  fullName: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable<T>.AggregateSparseTable(System.ReadOnlySpan<T>, System.Func<T, T, T>)
+  type: Constructor
+  source:
+    id: .ctor
+    path: C:\Users\nanto\dev\WaveletMatrix\src\SparseTable.cs
+    startLine: 224
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Initializes a new instance of the <xref href="BelNytheraSeiche.WaveletMatrix.AggregateSparseTable%601" data-throw-if-not-resolved="false"></xref> class.
+
+    The constructor performs preprocessing which takes O(N log N) time and space.
+  example: []
+  syntax:
+    content: public AggregateSparseTable(ReadOnlySpan<T> array, Func<T, T, T> aggregator)
+    parameters:
+    - id: array
+      type: System.ReadOnlySpan{{T}}
+      description: The static array of data to be queried.
+    - id: aggregator
+      type: System.Func{{T},{T},{T}}
+      description: A function that aggregates two elements (e.g., `(a, b) => a + b` for a sum).
+    content.vb: Public Sub New(array As ReadOnlySpan(Of T), aggregator As Func(Of T, T, T))
+  overload: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1.#ctor*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code class="paramref">aggregator</code> is null.
+  nameWithType.vb: AggregateSparseTable(Of T).New(ReadOnlySpan(Of T), Func(Of T, T, T))
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable(Of T).New(System.ReadOnlySpan(Of T), System.Func(Of T, T, T))
+  name.vb: New(ReadOnlySpan(Of T), Func(Of T, T, T))
+- uid: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1.Query
+  commentId: M:BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1.Query
+  id: Query
+  parent: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1
+  langs:
+  - csharp
+  - vb
+  name: Query()
+  nameWithType: AggregateSparseTable<T>.Query()
+  fullName: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable<T>.Query()
+  type: Method
+  source:
+    id: Query
+    path: C:\Users\nanto\dev\WaveletMatrix\src\SparseTable.cs
+    startLine: 264
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Queries to get an aggregated value.
+
+    Note: The time complexity of this query is not guaranteed to be O(1) for non-idempotent operations.
+  remarks: This method is a shorthand for calling Query(0, <xref href="BelNytheraSeiche.WaveletMatrix.AggregateSparseTable%601.Size" data-throw-if-not-resolved="false"></xref>).
+  example: []
+  syntax:
+    content: public T Query()
+    return:
+      type: '{T}'
+      description: The aggregated value.
+    content.vb: Public Function Query() As T
+  overload: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1.Query*
+  nameWithType.vb: AggregateSparseTable(Of T).Query()
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable(Of T).Query()
+- uid: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1.Query(System.Int32,System.Int32)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1.Query(System.Int32,System.Int32)
+  id: Query(System.Int32,System.Int32)
+  parent: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1
+  langs:
+  - csharp
+  - vb
+  name: Query(int, int)
+  nameWithType: AggregateSparseTable<T>.Query(int, int)
+  fullName: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable<T>.Query(int, int)
+  type: Method
+  source:
+    id: Query
+    path: C:\Users\nanto\dev\WaveletMatrix\src\SparseTable.cs
+    startLine: 276
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Queries the range [start, end) to get an aggregated value.
+
+    Note: This operation takes O(log N) time for non-idempotent operations, but dependent on the aggregator function's properties.
+  example: []
+  syntax:
+    content: public T Query(int start, int end)
+    parameters:
+    - id: start
+      type: System.Int32
+      description: The inclusive, zero-based start of the range.
+    - id: end
+      type: System.Int32
+      description: The exclusive, zero-based end of the range.
+    return:
+      type: '{T}'
+      description: The aggregated value for the specified range.
+    content.vb: Public Function Query(start As Integer, [end] As Integer) As T
+  overload: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1.Query*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if <code class="paramref">start</code> or <code class="paramref">end</code> are outside the valid bounds.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if <code class="paramref">start</code> is greater than or equal <code class="paramref">end</code>.
+  nameWithType.vb: AggregateSparseTable(Of T).Query(Integer, Integer)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable(Of T).Query(Integer, Integer)
+  name.vb: Query(Integer, Integer)
+references:
+- uid: BelNytheraSeiche.WaveletMatrix
+  commentId: N:BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.html
+  name: BelNytheraSeiche.WaveletMatrix
+  nameWithType: BelNytheraSeiche.WaveletMatrix
+  fullName: BelNytheraSeiche.WaveletMatrix
+  spec.csharp:
+  - uid: BelNytheraSeiche
+    name: BelNytheraSeiche
+    href: BelNytheraSeiche.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix
+    name: WaveletMatrix
+    href: BelNytheraSeiche.WaveletMatrix.html
+  spec.vb:
+  - uid: BelNytheraSeiche
+    name: BelNytheraSeiche
+    href: BelNytheraSeiche.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix
+    name: WaveletMatrix
+    href: BelNytheraSeiche.WaveletMatrix.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1.Size*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1.Size
+  href: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable-1.html#BelNytheraSeiche_WaveletMatrix_AggregateSparseTable_1_Size
+  name: Size
+  nameWithType: AggregateSparseTable<T>.Size
+  fullName: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable<T>.Size
+  nameWithType.vb: AggregateSparseTable(Of T).Size
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable(Of T).Size
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1
+  commentId: T:BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1
+  href: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable-1.html
+  name: AggregateSparseTable<T>
+  nameWithType: AggregateSparseTable<T>
+  fullName: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable<T>
+  nameWithType.vb: AggregateSparseTable(Of T)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable(Of T)
+  name.vb: AggregateSparseTable(Of T)
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1
+    name: AggregateSparseTable
+    href: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1
+    name: AggregateSparseTable
+    href: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
+- uid: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1.#ctor*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1.#ctor
+  href: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable-1.html#BelNytheraSeiche_WaveletMatrix_AggregateSparseTable_1__ctor_System_ReadOnlySpan__0__System_Func__0__0__0__
+  name: AggregateSparseTable
+  nameWithType: AggregateSparseTable<T>.AggregateSparseTable
+  fullName: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable<T>.AggregateSparseTable
+  nameWithType.vb: AggregateSparseTable(Of T).New
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable(Of T).New
+  name.vb: New
+- uid: System.ReadOnlySpan{{T}}
+  commentId: T:System.ReadOnlySpan{`0}
+  parent: System
+  definition: System.ReadOnlySpan`1
+  href: https://learn.microsoft.com/dotnet/api/system.readonlyspan-1
+  name: ReadOnlySpan<T>
+  nameWithType: ReadOnlySpan<T>
+  fullName: System.ReadOnlySpan<T>
+  nameWithType.vb: ReadOnlySpan(Of T)
+  fullName.vb: System.ReadOnlySpan(Of T)
+  name.vb: ReadOnlySpan(Of T)
+  spec.csharp:
+  - uid: System.ReadOnlySpan`1
+    name: ReadOnlySpan
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlyspan-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.ReadOnlySpan`1
+    name: ReadOnlySpan
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlyspan-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Func{{T},{T},{T}}
+  commentId: T:System.Func{`0,`0,`0}
+  parent: System
+  definition: System.Func`3
+  href: https://learn.microsoft.com/dotnet/api/system.func-3
+  name: Func<T, T, T>
+  nameWithType: Func<T, T, T>
+  fullName: System.Func<T, T, T>
+  nameWithType.vb: Func(Of T, T, T)
+  fullName.vb: System.Func(Of T, T, T)
+  name.vb: Func(Of T, T, T)
+  spec.csharp:
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.ReadOnlySpan`1
+  commentId: T:System.ReadOnlySpan`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.readonlyspan-1
+  name: ReadOnlySpan<T>
+  nameWithType: ReadOnlySpan<T>
+  fullName: System.ReadOnlySpan<T>
+  nameWithType.vb: ReadOnlySpan(Of T)
+  fullName.vb: System.ReadOnlySpan(Of T)
+  name.vb: ReadOnlySpan(Of T)
+  spec.csharp:
+  - uid: System.ReadOnlySpan`1
+    name: ReadOnlySpan
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlyspan-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.ReadOnlySpan`1
+    name: ReadOnlySpan
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlyspan-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Func`3
+  commentId: T:System.Func`3
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-3
+  name: Func<T1, T2, TResult>
+  nameWithType: Func<T1, T2, TResult>
+  fullName: System.Func<T1, T2, TResult>
+  nameWithType.vb: Func(Of T1, T2, TResult)
+  fullName.vb: System.Func(Of T1, T2, TResult)
+  name.vb: Func(Of T1, T2, TResult)
+  spec.csharp:
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: <
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1.Size
+  commentId: P:BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1.Size
+  href: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable-1.html#BelNytheraSeiche_WaveletMatrix_AggregateSparseTable_1_Size
+  name: Size
+  nameWithType: AggregateSparseTable<T>.Size
+  fullName: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable<T>.Size
+  nameWithType.vb: AggregateSparseTable(Of T).Size
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable(Of T).Size
+- uid: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1.Query*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1.Query
+  href: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable-1.html#BelNytheraSeiche_WaveletMatrix_AggregateSparseTable_1_Query
+  name: Query
+  nameWithType: AggregateSparseTable<T>.Query
+  fullName: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable<T>.Query
+  nameWithType.vb: AggregateSparseTable(Of T).Query
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable(Of T).Query
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception
+  name: ArgumentOutOfRangeException
+  nameWithType: ArgumentOutOfRangeException
+  fullName: System.ArgumentOutOfRangeException
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentexception
+  name: ArgumentException
+  nameWithType: ArgumentException
+  fullName: System.ArgumentException

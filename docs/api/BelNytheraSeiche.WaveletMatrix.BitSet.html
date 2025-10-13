@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class BitSet | BelNytheraSeiche.WaveletMatrix </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class BitSet | BelNytheraSeiche.WaveletMatrix ">
+      
+      <meta name="description" content="Provides a mutable bit set for efficiently building large bit vectors.">
+      <link rel="icon" href="../images/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo-small.png" alt="BelNytheraSeiche.WaveletMatrix">
+            BelNytheraSeiche.WaveletMatrix
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="BelNytheraSeiche.WaveletMatrix.BitSet">
+
+
+
+  <h1 id="BelNytheraSeiche_WaveletMatrix_BitSet" data-uid="BelNytheraSeiche.WaveletMatrix.BitSet" class="text-break">
+Class BitSet  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="BelNytheraSeiche.html">BelNytheraSeiche</a>.<a class="xref" href="BelNytheraSeiche.WaveletMatrix.html">WaveletMatrix</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>BelNytheraSeiche.WaveletMatrix.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Provides a mutable bit set for efficiently building large bit vectors.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class BitSet</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">BitSet</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_BitSet__ctor_" data-uid="BelNytheraSeiche.WaveletMatrix.BitSet.#ctor*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_BitSet__ctor_System_Int32_" data-uid="BelNytheraSeiche.WaveletMatrix.BitSet.#ctor(System.Int32)">
+  BitSet(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Provides a mutable bit set for efficiently building large bit vectors.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BitSet(int arrayAlignment = 65536)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>arrayAlignment</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The alignment size for the internal buffer chunks. Must be a power of 2. Defaults to 65536.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_BitSet_ArrayAlignment_" data-uid="BelNytheraSeiche.WaveletMatrix.BitSet.ArrayAlignment*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_BitSet_ArrayAlignment" data-uid="BelNytheraSeiche.WaveletMatrix.BitSet.ArrayAlignment">
+  ArrayAlignment
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the alignment size used by the internal buffer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ArrayAlignment { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_BitSet_Add_" data-uid="BelNytheraSeiche.WaveletMatrix.BitSet.Add*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_BitSet_Add_System_Boolean_" data-uid="BelNytheraSeiche.WaveletMatrix.BitSet.Add(System.Boolean)">
+  Add(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Adds a bit to the end of the bit set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(bool bit)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>bit</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>The bit to add (<code>true</code> for 1, <code>false</code> for 0).</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_BitSet_Get_" data-uid="BelNytheraSeiche.WaveletMatrix.BitSet.Get*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_BitSet_Get_System_Int32_" data-uid="BelNytheraSeiche.WaveletMatrix.BitSet.Get(System.Int32)">
+  Get(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the bit value at the specified index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Get(int index)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The zero-based index of the bit to get.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>The bit value (<code>true</code> for 1, <code>false</code> for 0) at the specified index.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p><code class="paramref">index</code> is less than 0 or greater than or equal to the number of bits in the set.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_BitSet_ToImmutable_" data-uid="BelNytheraSeiche.WaveletMatrix.BitSet.ToImmutable*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_BitSet_ToImmutable" data-uid="BelNytheraSeiche.WaveletMatrix.BitSet.ToImmutable">
+  ToImmutable()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates an immutable, read-only version of this bit set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ImmutableBitSet ToImmutable()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.ImmutableBitSet.html">ImmutableBitSet</a></dt>
+    <dd><p>A new <a class="xref" href="BelNytheraSeiche.WaveletMatrix.ImmutableBitSet.html">ImmutableBitSet</a> containing the current data.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_BitSet_ToImmutable_" data-uid="BelNytheraSeiche.WaveletMatrix.BitSet.ToImmutable*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_BitSet_ToImmutable_BelNytheraSeiche_WaveletMatrix_BitSet_" data-uid="BelNytheraSeiche.WaveletMatrix.BitSet.ToImmutable(BelNytheraSeiche.WaveletMatrix.BitSet)">
+  ToImmutable(BitSet)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates an immutable, read-only version of a specified <a class="xref" href="BelNytheraSeiche.WaveletMatrix.BitSet.html">BitSet</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ImmutableBitSet ToImmutable(BitSet bitSet)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>bitSet</code> <a class="xref" href="BelNytheraSeiche.WaveletMatrix.BitSet.html">BitSet</a></dt>
+    <dd><p>The mutable bit set to convert.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.ImmutableBitSet.html">ImmutableBitSet</a></dt>
+    <dd><p>A new <a class="xref" href="BelNytheraSeiche.WaveletMatrix.ImmutableBitSet.html">ImmutableBitSet</a> containing the data from the provided bit set.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p><code class="paramref">bitSet</code> is null.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_BitSet_ToRankSelect_" data-uid="BelNytheraSeiche.WaveletMatrix.BitSet.ToRankSelect*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_BitSet_ToRankSelect_BelNytheraSeiche_WaveletMatrix_BitSet_System_Boolean_" data-uid="BelNytheraSeiche.WaveletMatrix.BitSet.ToRankSelect(BelNytheraSeiche.WaveletMatrix.BitSet,System.Boolean)">
+  ToRankSelect(BitSet, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates an immutable version of a specified <a class="xref" href="BelNytheraSeiche.WaveletMatrix.BitSet.html">BitSet</a>, optimized for high-performance Rank and Select operations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static RankSelectBitSet ToRankSelect(BitSet bitSet, bool createAuxDir = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>bitSet</code> <a class="xref" href="BelNytheraSeiche.WaveletMatrix.BitSet.html">BitSet</a></dt>
+    <dd><p>The mutable bit set to convert.</p>
+</dd>
+    <dt><code>createAuxDir</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>A value indicating whether to immediately create the auxiliary directories required for
+fast Rank and Select operations.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.RankSelectBitSet.html">RankSelectBitSet</a></dt>
+    <dd><p>A new <a class="xref" href="BelNytheraSeiche.WaveletMatrix.RankSelectBitSet.html">RankSelectBitSet</a> containing the data from the provided bit set and pre-calculated auxiliary indexes.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="BelNytheraSeiche_WaveletMatrix_BitSet_ToRankSelect_BelNytheraSeiche_WaveletMatrix_BitSet_System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>If <code class="paramref">createAuxDir</code> is set to <code>false</code>, this method is very fast, but the returned
+<a class="xref" href="BelNytheraSeiche.WaveletMatrix.RankSelectBitSet.html">RankSelectBitSet</a> will not be ready for Rank/Select operations until its auxiliary directories
+are created and set via the <code>SetAuxDir()</code> method.
+If set to <code>true</code> (the default), the auxiliary directories are created during this call, which takes more processing time
+but results in a fully initialized and ready-to-use object.</p>
+</div>
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p><code class="paramref">bitSet</code> is null.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_BitSet_ToRankSelect_" data-uid="BelNytheraSeiche.WaveletMatrix.BitSet.ToRankSelect*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_BitSet_ToRankSelect_System_Boolean_" data-uid="BelNytheraSeiche.WaveletMatrix.BitSet.ToRankSelect(System.Boolean)">
+  ToRankSelect(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates an immutable version of a specified <a class="xref" href="BelNytheraSeiche.WaveletMatrix.BitSet.html">BitSet</a>, optimized for high-performance Rank and Select operations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RankSelectBitSet ToRankSelect(bool createAuxDir = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>createAuxDir</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>A value indicating whether to immediately create the auxiliary directories required for
+fast Rank and Select operations.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.RankSelectBitSet.html">RankSelectBitSet</a></dt>
+    <dd><p>A new <a class="xref" href="BelNytheraSeiche.WaveletMatrix.RankSelectBitSet.html">RankSelectBitSet</a> containing the data from the provided bit set and pre-calculated auxiliary indexes.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="BelNytheraSeiche_WaveletMatrix_BitSet_ToRankSelect_System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>If <code class="paramref">createAuxDir</code> is set to <code>false</code>, this method is very fast, but the returned
+<a class="xref" href="BelNytheraSeiche.WaveletMatrix.RankSelectBitSet.html">RankSelectBitSet</a> will not be ready for Rank/Select operations until its auxiliary directories
+are created and set via the <code>SetAuxDir()</code> method.
+If set to <code>true</code> (the default), the auxiliary directories are created during this call, which takes more processing time
+but results in a fully initialized and ready-to-use object.</p>
+</div>
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

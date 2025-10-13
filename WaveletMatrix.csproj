@@ -1,0 +1,106 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <!-- <TargetFramework>net9.0</TargetFramework> -->
+    <TargetFrameworks>netstandard2.1;net8.0;net9.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <AssemblyTitle>BelNytheraSeiche: Advanced Sequence and Text Analysis Library</AssemblyTitle>
+    <AssemblyName>BelNytheraSeiche.WaveletMatrix</AssemblyName>
+    <Product>BelNytheraSeiche.WaveletMatrix</Product>
+    <Company></Company>
+    <Version>1.0.1</Version>
+    <Copyright>© belnytheraseiche</Copyright>
+    <Authors>belnytheraseiche</Authors>
+    <PackageId>BelNytheraSeiche.WaveletMatrix</PackageId>
+    <PackageTags>stringology;data-structure;wavelet-matrix;suffix-array;sa-is;lcp-array;rmq;fm-index;bwt;sparse-table;text-search;indexing;succinct;wavelet;lcp</PackageTags>
+    <RepositoryUrl>https://github.com/belnytheraseiche/WaveletMatrix</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/belnytheraseiche/WaveletMatrix</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Title>BelNytheraSeiche: A High-Performance Advanced Sequence and Text Analysis Library for .NET</Title>
+    <Description>
+      A .NET library providing a high-performance Wavelet Matrix, Suffix Array, FM-Index, LCP Index and Burrows Wheeler Transform.
+
+      Core Data Structures:
+      - Wavelet Matrix: Generic implementation supporting various data types with efficient Rank, Select, Quant
+      - Sparse Table: For fast Range Minimum Queries (RMQ) on static arrays.
+
+      Text Analysis Components:
+      - Suffix Array: The foundational class for most text analysis. It builds a Suffix Array and LCP Array from a given text, enabling fast substring searches.
+      - LCP Index: Provides O(1) LCP queries between any two suffixes using a Sparse Table.
+      - FM-Index: A full-text index based on the Burrows-Wheeler Transform, allowing efficient substring search operations (Count/Locate).
+
+      Ideal for applications in bioinformatics, text processing, and data compression.
+
+      For more details, please visit the project repository on GitHub.
+    </Description>
+    <!-- <PackageReleaseNotes>Initial release. Provides WaveletMatrixGeneric, SuffixArray, LcpIndex, and FMIndex classes.</PackageReleaseNotes> -->
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <DebugType>portable</DebugType>
+    <DefineConstants></DefineConstants>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <OutputType>Library</OutputType>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants></DefineConstants>
+    <Optimize>true</Optimize>
+    <TieredPGO>true</TieredPGO>
+    <Deterministic>true</Deterministic>
+    <!-- <OutDir>bin/Release</OutDir> -->
+    <!-- <PublishAot>true</PublishAot> -->
+    <!-- <PublishReadyToRun>true</PublishReadyToRun> -->
+    <!-- <PublishSingleFile>true</PublishSingleFile> -->
+    <!-- <RuntimeIdentifier>win-x64</RuntimeIdentifier> -->
+    <!-- <PublishTrimmed>true</PublishTrimmed> -->
+    <!-- <TrimMode>link</TrimMode> -->
+    <!-- <gcAllowVeryLargeObjects>true</gcAllowVeryLargeObjects> -->
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net9.0'">
+    <NoWarn>CS9191</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
+    <NoWarn>CS9191</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.1'">
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <DebugType>portable</DebugType>
+    <DefineConstants></DefineConstants>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <OutputType>Library</OutputType>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>1591</NoWarn>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants></DefineConstants>
+    <Optimize>true</Optimize>
+    <TieredPGO>true</TieredPGO>
+    <Deterministic>true</Deterministic>
+    <!-- <AnalysisLevel>latest-Recommended</AnalysisLevel> -->
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release' And '$(TargetFramework)' == 'net9.0'">
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release' And '$(TargetFramework)' == 'net8.0'">
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release' And '$(TargetFramework)' == 'netstandard2.1'">
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="src/**/*.cs" />
+    <Compile Remove="src/Program.cs" Condition="'$(OutputType)' == 'Library'" />
+    <!-- <Compile Remove="tests/**/*.cs" /> -->
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.IO.Hashing" Version="9.0.9" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,630 @@
+### YamlMime:ManagedReference
+items:
+- uid: WaveletMatrix
+  commentId: N:WaveletMatrix
+  id: WaveletMatrix
+  children:
+  - WaveletMatrix.AggregateSparseTable`1
+  - WaveletMatrix.BitSet
+  - WaveletMatrix.BurrowsWheelerTransform
+  - WaveletMatrix.BurrowsWheelerTransform.BwtResult
+  - WaveletMatrix.FMIndex
+  - WaveletMatrix.FMIndex.SortOrder
+  - WaveletMatrix.ImmutableBitSet
+  - WaveletMatrix.LcpIndex
+  - WaveletMatrix.LcpIndex.Repeat
+  - WaveletMatrix.LcpIndex.TandemRepeat
+  - WaveletMatrix.RankSelectBitSet
+  - WaveletMatrix.SerializationOptions
+  - WaveletMatrix.SparseTable`1
+  - WaveletMatrix.SparseTable`1.ValueWithIndex
+  - WaveletMatrix.SuffixArray
+  - WaveletMatrix.SuffixArray.Match
+  - WaveletMatrix.SuffixArray.MatchGroup
+  - WaveletMatrix.SuffixArray.MatchRepeated
+  - WaveletMatrix.SuffixArray.WildcardOptions
+  - WaveletMatrix.ValueBuffer`1
+  - WaveletMatrix.WaveletMatrixCore
+  - WaveletMatrix.WaveletMatrixCore.ValueWithFrequency
+  - WaveletMatrix.WaveletMatrixGeneric`1
+  - WaveletMatrix.WaveletMatrixGeneric`1.ByteSerializer
+  - WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer
+  - WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer`1
+  - WaveletMatrix.WaveletMatrixGeneric`1.Int32Serializer
+  - WaveletMatrix.WaveletMatrixGeneric`1.ValueWithFrequency`1
+  langs:
+  - csharp
+  - vb
+  name: WaveletMatrix
+  nameWithType: WaveletMatrix
+  fullName: WaveletMatrix
+  type: Namespace
+  assemblies:
+  - WaveletMatrix
+references:
+- uid: WaveletMatrix.BitSet
+  commentId: T:WaveletMatrix.BitSet
+  parent: WaveletMatrix
+  href: WaveletMatrix.BitSet.html
+  name: BitSet
+  nameWithType: BitSet
+  fullName: WaveletMatrix.BitSet
+- uid: WaveletMatrix.ImmutableBitSet
+  commentId: T:WaveletMatrix.ImmutableBitSet
+  parent: WaveletMatrix
+  href: WaveletMatrix.ImmutableBitSet.html
+  name: ImmutableBitSet
+  nameWithType: ImmutableBitSet
+  fullName: WaveletMatrix.ImmutableBitSet
+- uid: WaveletMatrix.RankSelectBitSet
+  commentId: T:WaveletMatrix.RankSelectBitSet
+  parent: WaveletMatrix
+  href: WaveletMatrix.RankSelectBitSet.html
+  name: RankSelectBitSet
+  nameWithType: RankSelectBitSet
+  fullName: WaveletMatrix.RankSelectBitSet
+- uid: WaveletMatrix.BurrowsWheelerTransform
+  commentId: T:WaveletMatrix.BurrowsWheelerTransform
+  href: WaveletMatrix.BurrowsWheelerTransform.html
+  name: BurrowsWheelerTransform
+  nameWithType: BurrowsWheelerTransform
+  fullName: WaveletMatrix.BurrowsWheelerTransform
+- uid: WaveletMatrix.BurrowsWheelerTransform.BwtResult
+  commentId: T:WaveletMatrix.BurrowsWheelerTransform.BwtResult
+  parent: WaveletMatrix
+  href: WaveletMatrix.BurrowsWheelerTransform.html
+  name: BurrowsWheelerTransform.BwtResult
+  nameWithType: BurrowsWheelerTransform.BwtResult
+  fullName: WaveletMatrix.BurrowsWheelerTransform.BwtResult
+  spec.csharp:
+  - uid: WaveletMatrix.BurrowsWheelerTransform
+    name: BurrowsWheelerTransform
+    href: WaveletMatrix.BurrowsWheelerTransform.html
+  - name: .
+  - uid: WaveletMatrix.BurrowsWheelerTransform.BwtResult
+    name: BwtResult
+    href: WaveletMatrix.BurrowsWheelerTransform.BwtResult.html
+  spec.vb:
+  - uid: WaveletMatrix.BurrowsWheelerTransform
+    name: BurrowsWheelerTransform
+    href: WaveletMatrix.BurrowsWheelerTransform.html
+  - name: .
+  - uid: WaveletMatrix.BurrowsWheelerTransform.BwtResult
+    name: BwtResult
+    href: WaveletMatrix.BurrowsWheelerTransform.BwtResult.html
+- uid: WaveletMatrix.FMIndex
+  commentId: T:WaveletMatrix.FMIndex
+  parent: WaveletMatrix
+  href: WaveletMatrix.FMIndex.html
+  name: FMIndex
+  nameWithType: FMIndex
+  fullName: WaveletMatrix.FMIndex
+- uid: WaveletMatrix.FMIndex.SortOrder
+  commentId: T:WaveletMatrix.FMIndex.SortOrder
+  parent: WaveletMatrix
+  href: WaveletMatrix.FMIndex.html
+  name: FMIndex.SortOrder
+  nameWithType: FMIndex.SortOrder
+  fullName: WaveletMatrix.FMIndex.SortOrder
+  spec.csharp:
+  - uid: WaveletMatrix.FMIndex
+    name: FMIndex
+    href: WaveletMatrix.FMIndex.html
+  - name: .
+  - uid: WaveletMatrix.FMIndex.SortOrder
+    name: SortOrder
+    href: WaveletMatrix.FMIndex.SortOrder.html
+  spec.vb:
+  - uid: WaveletMatrix.FMIndex
+    name: FMIndex
+    href: WaveletMatrix.FMIndex.html
+  - name: .
+  - uid: WaveletMatrix.FMIndex.SortOrder
+    name: SortOrder
+    href: WaveletMatrix.FMIndex.SortOrder.html
+- uid: WaveletMatrix.LcpIndex
+  commentId: T:WaveletMatrix.LcpIndex
+  parent: WaveletMatrix
+  href: WaveletMatrix.LcpIndex.html
+  name: LcpIndex
+  nameWithType: LcpIndex
+  fullName: WaveletMatrix.LcpIndex
+- uid: WaveletMatrix.LcpIndex.TandemRepeat
+  commentId: T:WaveletMatrix.LcpIndex.TandemRepeat
+  href: WaveletMatrix.LcpIndex.html
+  name: LcpIndex.TandemRepeat
+  nameWithType: LcpIndex.TandemRepeat
+  fullName: WaveletMatrix.LcpIndex.TandemRepeat
+  spec.csharp:
+  - uid: WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: WaveletMatrix.LcpIndex.TandemRepeat
+    name: TandemRepeat
+    href: WaveletMatrix.LcpIndex.TandemRepeat.html
+  spec.vb:
+  - uid: WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: WaveletMatrix.LcpIndex.TandemRepeat
+    name: TandemRepeat
+    href: WaveletMatrix.LcpIndex.TandemRepeat.html
+- uid: WaveletMatrix.LcpIndex.Repeat
+  commentId: T:WaveletMatrix.LcpIndex.Repeat
+  href: WaveletMatrix.LcpIndex.html
+  name: LcpIndex.Repeat
+  nameWithType: LcpIndex.Repeat
+  fullName: WaveletMatrix.LcpIndex.Repeat
+  spec.csharp:
+  - uid: WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: WaveletMatrix.LcpIndex.Repeat
+    name: Repeat
+    href: WaveletMatrix.LcpIndex.Repeat.html
+  spec.vb:
+  - uid: WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: WaveletMatrix.LcpIndex.Repeat
+    name: Repeat
+    href: WaveletMatrix.LcpIndex.Repeat.html
+- uid: WaveletMatrix.SerializationOptions
+  commentId: T:WaveletMatrix.SerializationOptions
+  parent: WaveletMatrix
+  href: WaveletMatrix.SerializationOptions.html
+  name: SerializationOptions
+  nameWithType: SerializationOptions
+  fullName: WaveletMatrix.SerializationOptions
+- uid: WaveletMatrix.SparseTable`1
+  commentId: T:WaveletMatrix.SparseTable`1
+  href: WaveletMatrix.SparseTable-1.html
+  name: SparseTable<T>
+  nameWithType: SparseTable<T>
+  fullName: WaveletMatrix.SparseTable<T>
+  nameWithType.vb: SparseTable(Of T)
+  fullName.vb: WaveletMatrix.SparseTable(Of T)
+  name.vb: SparseTable(Of T)
+  spec.csharp:
+  - uid: WaveletMatrix.SparseTable`1
+    name: SparseTable
+    href: WaveletMatrix.SparseTable-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: WaveletMatrix.SparseTable`1
+    name: SparseTable
+    href: WaveletMatrix.SparseTable-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: WaveletMatrix.SparseTable`1.ValueWithIndex
+  commentId: T:WaveletMatrix.SparseTable`1.ValueWithIndex
+  parent: WaveletMatrix
+  href: WaveletMatrix.SparseTable-1.html
+  name: SparseTable<T>.ValueWithIndex
+  nameWithType: SparseTable<T>.ValueWithIndex
+  fullName: WaveletMatrix.SparseTable<T>.ValueWithIndex
+  nameWithType.vb: SparseTable(Of T).ValueWithIndex
+  fullName.vb: WaveletMatrix.SparseTable(Of T).ValueWithIndex
+  name.vb: SparseTable(Of T).ValueWithIndex
+  spec.csharp:
+  - uid: WaveletMatrix.SparseTable`1
+    name: SparseTable
+    href: WaveletMatrix.SparseTable-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: .
+  - uid: WaveletMatrix.SparseTable`1.ValueWithIndex
+    name: ValueWithIndex
+    href: WaveletMatrix.SparseTable-1.ValueWithIndex.html
+  spec.vb:
+  - uid: WaveletMatrix.SparseTable`1
+    name: SparseTable
+    href: WaveletMatrix.SparseTable-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: .
+  - uid: WaveletMatrix.SparseTable`1.ValueWithIndex
+    name: ValueWithIndex
+    href: WaveletMatrix.SparseTable-1.ValueWithIndex.html
+- uid: WaveletMatrix.AggregateSparseTable`1
+  commentId: T:WaveletMatrix.AggregateSparseTable`1
+  href: WaveletMatrix.AggregateSparseTable-1.html
+  name: AggregateSparseTable<T>
+  nameWithType: AggregateSparseTable<T>
+  fullName: WaveletMatrix.AggregateSparseTable<T>
+  nameWithType.vb: AggregateSparseTable(Of T)
+  fullName.vb: WaveletMatrix.AggregateSparseTable(Of T)
+  name.vb: AggregateSparseTable(Of T)
+  spec.csharp:
+  - uid: WaveletMatrix.AggregateSparseTable`1
+    name: AggregateSparseTable
+    href: WaveletMatrix.AggregateSparseTable-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: WaveletMatrix.AggregateSparseTable`1
+    name: AggregateSparseTable
+    href: WaveletMatrix.AggregateSparseTable-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: WaveletMatrix.SuffixArray
+  commentId: T:WaveletMatrix.SuffixArray
+  parent: WaveletMatrix
+  href: WaveletMatrix.SuffixArray.html
+  name: SuffixArray
+  nameWithType: SuffixArray
+  fullName: WaveletMatrix.SuffixArray
+- uid: WaveletMatrix.SuffixArray.Match
+  commentId: T:WaveletMatrix.SuffixArray.Match
+  href: WaveletMatrix.SuffixArray.html
+  name: SuffixArray.Match
+  nameWithType: SuffixArray.Match
+  fullName: WaveletMatrix.SuffixArray.Match
+  spec.csharp:
+  - uid: WaveletMatrix.SuffixArray
+    name: SuffixArray
+    href: WaveletMatrix.SuffixArray.html
+  - name: .
+  - uid: WaveletMatrix.SuffixArray.Match
+    name: Match
+    href: WaveletMatrix.SuffixArray.Match.html
+  spec.vb:
+  - uid: WaveletMatrix.SuffixArray
+    name: SuffixArray
+    href: WaveletMatrix.SuffixArray.html
+  - name: .
+  - uid: WaveletMatrix.SuffixArray.Match
+    name: Match
+    href: WaveletMatrix.SuffixArray.Match.html
+- uid: WaveletMatrix.SuffixArray.MatchRepeated
+  commentId: T:WaveletMatrix.SuffixArray.MatchRepeated
+  href: WaveletMatrix.SuffixArray.html
+  name: SuffixArray.MatchRepeated
+  nameWithType: SuffixArray.MatchRepeated
+  fullName: WaveletMatrix.SuffixArray.MatchRepeated
+  spec.csharp:
+  - uid: WaveletMatrix.SuffixArray
+    name: SuffixArray
+    href: WaveletMatrix.SuffixArray.html
+  - name: .
+  - uid: WaveletMatrix.SuffixArray.MatchRepeated
+    name: MatchRepeated
+    href: WaveletMatrix.SuffixArray.MatchRepeated.html
+  spec.vb:
+  - uid: WaveletMatrix.SuffixArray
+    name: SuffixArray
+    href: WaveletMatrix.SuffixArray.html
+  - name: .
+  - uid: WaveletMatrix.SuffixArray.MatchRepeated
+    name: MatchRepeated
+    href: WaveletMatrix.SuffixArray.MatchRepeated.html
+- uid: WaveletMatrix.SuffixArray.MatchGroup
+  commentId: T:WaveletMatrix.SuffixArray.MatchGroup
+  href: WaveletMatrix.SuffixArray.html
+  name: SuffixArray.MatchGroup
+  nameWithType: SuffixArray.MatchGroup
+  fullName: WaveletMatrix.SuffixArray.MatchGroup
+  spec.csharp:
+  - uid: WaveletMatrix.SuffixArray
+    name: SuffixArray
+    href: WaveletMatrix.SuffixArray.html
+  - name: .
+  - uid: WaveletMatrix.SuffixArray.MatchGroup
+    name: MatchGroup
+    href: WaveletMatrix.SuffixArray.MatchGroup.html
+  spec.vb:
+  - uid: WaveletMatrix.SuffixArray
+    name: SuffixArray
+    href: WaveletMatrix.SuffixArray.html
+  - name: .
+  - uid: WaveletMatrix.SuffixArray.MatchGroup
+    name: MatchGroup
+    href: WaveletMatrix.SuffixArray.MatchGroup.html
+- uid: WaveletMatrix.SuffixArray.WildcardOptions
+  commentId: T:WaveletMatrix.SuffixArray.WildcardOptions
+  parent: WaveletMatrix
+  href: WaveletMatrix.SuffixArray.html
+  name: SuffixArray.WildcardOptions
+  nameWithType: SuffixArray.WildcardOptions
+  fullName: WaveletMatrix.SuffixArray.WildcardOptions
+  spec.csharp:
+  - uid: WaveletMatrix.SuffixArray
+    name: SuffixArray
+    href: WaveletMatrix.SuffixArray.html
+  - name: .
+  - uid: WaveletMatrix.SuffixArray.WildcardOptions
+    name: WildcardOptions
+    href: WaveletMatrix.SuffixArray.WildcardOptions.html
+  spec.vb:
+  - uid: WaveletMatrix.SuffixArray
+    name: SuffixArray
+    href: WaveletMatrix.SuffixArray.html
+  - name: .
+  - uid: WaveletMatrix.SuffixArray.WildcardOptions
+    name: WildcardOptions
+    href: WaveletMatrix.SuffixArray.WildcardOptions.html
+- uid: WaveletMatrix.ValueBuffer`1
+  commentId: T:WaveletMatrix.ValueBuffer`1
+  href: WaveletMatrix.ValueBuffer-1.html
+  name: ValueBuffer<T>
+  nameWithType: ValueBuffer<T>
+  fullName: WaveletMatrix.ValueBuffer<T>
+  nameWithType.vb: ValueBuffer(Of T)
+  fullName.vb: WaveletMatrix.ValueBuffer(Of T)
+  name.vb: ValueBuffer(Of T)
+  spec.csharp:
+  - uid: WaveletMatrix.ValueBuffer`1
+    name: ValueBuffer
+    href: WaveletMatrix.ValueBuffer-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: WaveletMatrix.ValueBuffer`1
+    name: ValueBuffer
+    href: WaveletMatrix.ValueBuffer-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: WaveletMatrix.WaveletMatrixCore
+  commentId: T:WaveletMatrix.WaveletMatrixCore
+  parent: WaveletMatrix
+  href: WaveletMatrix.WaveletMatrixCore.html
+  name: WaveletMatrixCore
+  nameWithType: WaveletMatrixCore
+  fullName: WaveletMatrix.WaveletMatrixCore
+- uid: WaveletMatrix.WaveletMatrixCore.ValueWithFrequency
+  commentId: T:WaveletMatrix.WaveletMatrixCore.ValueWithFrequency
+  parent: WaveletMatrix
+  href: WaveletMatrix.WaveletMatrixCore.html
+  name: WaveletMatrixCore.ValueWithFrequency
+  nameWithType: WaveletMatrixCore.ValueWithFrequency
+  fullName: WaveletMatrix.WaveletMatrixCore.ValueWithFrequency
+  spec.csharp:
+  - uid: WaveletMatrix.WaveletMatrixCore
+    name: WaveletMatrixCore
+    href: WaveletMatrix.WaveletMatrixCore.html
+  - name: .
+  - uid: WaveletMatrix.WaveletMatrixCore.ValueWithFrequency
+    name: ValueWithFrequency
+    href: WaveletMatrix.WaveletMatrixCore.ValueWithFrequency.html
+  spec.vb:
+  - uid: WaveletMatrix.WaveletMatrixCore
+    name: WaveletMatrixCore
+    href: WaveletMatrix.WaveletMatrixCore.html
+  - name: .
+  - uid: WaveletMatrix.WaveletMatrixCore.ValueWithFrequency
+    name: ValueWithFrequency
+    href: WaveletMatrix.WaveletMatrixCore.ValueWithFrequency.html
+- uid: WaveletMatrix.WaveletMatrixGeneric`1
+  commentId: T:WaveletMatrix.WaveletMatrixGeneric`1
+  parent: WaveletMatrix
+  href: WaveletMatrix.WaveletMatrixGeneric-1.html
+  name: WaveletMatrixGeneric<T>
+  nameWithType: WaveletMatrixGeneric<T>
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>
+  nameWithType.vb: WaveletMatrixGeneric(Of T)
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T)
+  name.vb: WaveletMatrixGeneric(Of T)
+  spec.csharp:
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer`1
+  commentId: T:WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer`1
+  href: WaveletMatrix.WaveletMatrixGeneric-1.html
+  name: WaveletMatrixGeneric<T>.IGenericSerializer<Tx>
+  nameWithType: WaveletMatrixGeneric<T>.IGenericSerializer<Tx>
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.IGenericSerializer<Tx>
+  nameWithType.vb: WaveletMatrixGeneric(Of T).IGenericSerializer(Of Tx)
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).IGenericSerializer(Of Tx)
+  name.vb: WaveletMatrixGeneric(Of T).IGenericSerializer(Of Tx)
+  spec.csharp:
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: .
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer`1
+    name: IGenericSerializer
+    href: WaveletMatrix.WaveletMatrixGeneric-1.IGenericSerializer-1.html
+  - name: <
+  - name: Tx
+  - name: '>'
+  spec.vb:
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: .
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1.IGenericSerializer`1
+    name: IGenericSerializer
+    href: WaveletMatrix.WaveletMatrixGeneric-1.IGenericSerializer-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: Tx
+  - name: )
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.ByteSerializer
+  commentId: T:WaveletMatrix.WaveletMatrixGeneric`1.ByteSerializer
+  href: WaveletMatrix.WaveletMatrixGeneric-1.html
+  name: WaveletMatrixGeneric<T>.ByteSerializer
+  nameWithType: WaveletMatrixGeneric<T>.ByteSerializer
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.ByteSerializer
+  nameWithType.vb: WaveletMatrixGeneric(Of T).ByteSerializer
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).ByteSerializer
+  name.vb: WaveletMatrixGeneric(Of T).ByteSerializer
+  spec.csharp:
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: .
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1.ByteSerializer
+    name: ByteSerializer
+    href: WaveletMatrix.WaveletMatrixGeneric-1.ByteSerializer.html
+  spec.vb:
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: .
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1.ByteSerializer
+    name: ByteSerializer
+    href: WaveletMatrix.WaveletMatrixGeneric-1.ByteSerializer.html
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer
+  commentId: T:WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer
+  href: WaveletMatrix.WaveletMatrixGeneric-1.html
+  name: WaveletMatrixGeneric<T>.CharSerializer
+  nameWithType: WaveletMatrixGeneric<T>.CharSerializer
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.CharSerializer
+  nameWithType.vb: WaveletMatrixGeneric(Of T).CharSerializer
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).CharSerializer
+  name.vb: WaveletMatrixGeneric(Of T).CharSerializer
+  spec.csharp:
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: .
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer
+    name: CharSerializer
+    href: WaveletMatrix.WaveletMatrixGeneric-1.CharSerializer.html
+  spec.vb:
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: .
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1.CharSerializer
+    name: CharSerializer
+    href: WaveletMatrix.WaveletMatrixGeneric-1.CharSerializer.html
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.Int32Serializer
+  commentId: T:WaveletMatrix.WaveletMatrixGeneric`1.Int32Serializer
+  href: WaveletMatrix.WaveletMatrixGeneric-1.html
+  name: WaveletMatrixGeneric<T>.Int32Serializer
+  nameWithType: WaveletMatrixGeneric<T>.Int32Serializer
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.Int32Serializer
+  nameWithType.vb: WaveletMatrixGeneric(Of T).Int32Serializer
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).Int32Serializer
+  name.vb: WaveletMatrixGeneric(Of T).Int32Serializer
+  spec.csharp:
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: .
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1.Int32Serializer
+    name: Int32Serializer
+    href: WaveletMatrix.WaveletMatrixGeneric-1.Int32Serializer.html
+  spec.vb:
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: .
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1.Int32Serializer
+    name: Int32Serializer
+    href: WaveletMatrix.WaveletMatrixGeneric-1.Int32Serializer.html
+- uid: WaveletMatrix.WaveletMatrixGeneric`1.ValueWithFrequency`1
+  commentId: T:WaveletMatrix.WaveletMatrixGeneric`1.ValueWithFrequency`1
+  href: WaveletMatrix.WaveletMatrixGeneric-1.html
+  name: WaveletMatrixGeneric<T>.ValueWithFrequency<Tx>
+  nameWithType: WaveletMatrixGeneric<T>.ValueWithFrequency<Tx>
+  fullName: WaveletMatrix.WaveletMatrixGeneric<T>.ValueWithFrequency<Tx>
+  nameWithType.vb: WaveletMatrixGeneric(Of T).ValueWithFrequency(Of Tx)
+  fullName.vb: WaveletMatrix.WaveletMatrixGeneric(Of T).ValueWithFrequency(Of Tx)
+  name.vb: WaveletMatrixGeneric(Of T).ValueWithFrequency(Of Tx)
+  spec.csharp:
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: .
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1.ValueWithFrequency`1
+    name: ValueWithFrequency
+    href: WaveletMatrix.WaveletMatrixGeneric-1.ValueWithFrequency-1.html
+  - name: <
+  - name: Tx
+  - name: '>'
+  spec.vb:
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: .
+  - uid: WaveletMatrix.WaveletMatrixGeneric`1.ValueWithFrequency`1
+    name: ValueWithFrequency
+    href: WaveletMatrix.WaveletMatrixGeneric-1.ValueWithFrequency-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: Tx
+  - name: )
+- uid: WaveletMatrix
+  commentId: N:WaveletMatrix
+  href: WaveletMatrix.html
+  name: WaveletMatrix
+  nameWithType: WaveletMatrix
+  fullName: WaveletMatrix

@@ -1,0 +1,511 @@
+### YamlMime:ManagedReference
+items:
+- uid: WaveletMatrix.LcpIndex.TandemRepeat
+  commentId: T:WaveletMatrix.LcpIndex.TandemRepeat
+  id: LcpIndex.TandemRepeat
+  parent: WaveletMatrix
+  children:
+  - WaveletMatrix.LcpIndex.TandemRepeat.#ctor(System.Int32,System.Int32,System.Int32)
+  - WaveletMatrix.LcpIndex.TandemRepeat.Count
+  - WaveletMatrix.LcpIndex.TandemRepeat.Length
+  - WaveletMatrix.LcpIndex.TandemRepeat.Position
+  langs:
+  - csharp
+  - vb
+  name: LcpIndex.TandemRepeat
+  nameWithType: LcpIndex.TandemRepeat
+  fullName: WaveletMatrix.LcpIndex.TandemRepeat
+  type: Class
+  source:
+    id: TandemRepeat
+    path: D:\実験\WaveletMatrix\src\LcpIndex.cs
+    startLine: 510
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: Represents a tandem repeat found in the text.
+  example: []
+  syntax:
+    content: 'public record LcpIndex.TandemRepeat : IEquatable<LcpIndex.TandemRepeat>'
+    content.vb: Public Class LcpIndex.TandemRepeat Implements IEquatable(Of LcpIndex.TandemRepeat)
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{WaveletMatrix.LcpIndex.TandemRepeat}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: WaveletMatrix.LcpIndex.TandemRepeat.#ctor(System.Int32,System.Int32,System.Int32)
+  commentId: M:WaveletMatrix.LcpIndex.TandemRepeat.#ctor(System.Int32,System.Int32,System.Int32)
+  id: '#ctor(System.Int32,System.Int32,System.Int32)'
+  parent: WaveletMatrix.LcpIndex.TandemRepeat
+  langs:
+  - csharp
+  - vb
+  name: TandemRepeat(int, int, int)
+  nameWithType: LcpIndex.TandemRepeat.TandemRepeat(int, int, int)
+  fullName: WaveletMatrix.LcpIndex.TandemRepeat.TandemRepeat(int, int, int)
+  type: Constructor
+  source:
+    id: .ctor
+    path: D:\実験\WaveletMatrix\src\LcpIndex.cs
+    startLine: 510
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: Represents a tandem repeat found in the text.
+  example: []
+  syntax:
+    content: public TandemRepeat(int Position, int Length, int Count)
+    parameters:
+    - id: Position
+      type: System.Int32
+      description: The 0-based starting position of the entire repeat block.
+    - id: Length
+      type: System.Int32
+      description: The length of the repeating unit string.
+    - id: Count
+      type: System.Int32
+      description: The number of times the unit repeats (will be 2 or more).
+    content.vb: Public Sub New(Position As Integer, Length As Integer, Count As Integer)
+  overload: WaveletMatrix.LcpIndex.TandemRepeat.#ctor*
+  nameWithType.vb: LcpIndex.TandemRepeat.New(Integer, Integer, Integer)
+  fullName.vb: WaveletMatrix.LcpIndex.TandemRepeat.New(Integer, Integer, Integer)
+  name.vb: New(Integer, Integer, Integer)
+- uid: WaveletMatrix.LcpIndex.TandemRepeat.Position
+  commentId: P:WaveletMatrix.LcpIndex.TandemRepeat.Position
+  id: Position
+  parent: WaveletMatrix.LcpIndex.TandemRepeat
+  langs:
+  - csharp
+  - vb
+  name: Position
+  nameWithType: LcpIndex.TandemRepeat.Position
+  fullName: WaveletMatrix.LcpIndex.TandemRepeat.Position
+  type: Property
+  source:
+    id: Position
+    path: D:\実験\WaveletMatrix\src\LcpIndex.cs
+    startLine: 510
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: The 0-based starting position of the entire repeat block.
+  example: []
+  syntax:
+    content: public int Position { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Position As Integer
+  overload: WaveletMatrix.LcpIndex.TandemRepeat.Position*
+- uid: WaveletMatrix.LcpIndex.TandemRepeat.Length
+  commentId: P:WaveletMatrix.LcpIndex.TandemRepeat.Length
+  id: Length
+  parent: WaveletMatrix.LcpIndex.TandemRepeat
+  langs:
+  - csharp
+  - vb
+  name: Length
+  nameWithType: LcpIndex.TandemRepeat.Length
+  fullName: WaveletMatrix.LcpIndex.TandemRepeat.Length
+  type: Property
+  source:
+    id: Length
+    path: D:\実験\WaveletMatrix\src\LcpIndex.cs
+    startLine: 510
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: The length of the repeating unit string.
+  example: []
+  syntax:
+    content: public int Length { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Length As Integer
+  overload: WaveletMatrix.LcpIndex.TandemRepeat.Length*
+- uid: WaveletMatrix.LcpIndex.TandemRepeat.Count
+  commentId: P:WaveletMatrix.LcpIndex.TandemRepeat.Count
+  id: Count
+  parent: WaveletMatrix.LcpIndex.TandemRepeat
+  langs:
+  - csharp
+  - vb
+  name: Count
+  nameWithType: LcpIndex.TandemRepeat.Count
+  fullName: WaveletMatrix.LcpIndex.TandemRepeat.Count
+  type: Property
+  source:
+    id: Count
+    path: D:\実験\WaveletMatrix\src\LcpIndex.cs
+    startLine: 510
+  assemblies:
+  - WaveletMatrix
+  namespace: WaveletMatrix
+  summary: The number of times the unit repeats (will be 2 or more).
+  example: []
+  syntax:
+    content: public int Count { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Count As Integer
+  overload: WaveletMatrix.LcpIndex.TandemRepeat.Count*
+references:
+- uid: WaveletMatrix
+  commentId: N:WaveletMatrix
+  href: WaveletMatrix.html
+  name: WaveletMatrix
+  nameWithType: WaveletMatrix
+  fullName: WaveletMatrix
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IEquatable{WaveletMatrix.LcpIndex.TandemRepeat}
+  commentId: T:System.IEquatable{WaveletMatrix.LcpIndex.TandemRepeat}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<LcpIndex.TandemRepeat>
+  nameWithType: IEquatable<LcpIndex.TandemRepeat>
+  fullName: System.IEquatable<WaveletMatrix.LcpIndex.TandemRepeat>
+  nameWithType.vb: IEquatable(Of LcpIndex.TandemRepeat)
+  fullName.vb: System.IEquatable(Of WaveletMatrix.LcpIndex.TandemRepeat)
+  name.vb: IEquatable(Of LcpIndex.TandemRepeat)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: WaveletMatrix.LcpIndex.TandemRepeat
+    name: TandemRepeat
+    href: WaveletMatrix.LcpIndex.TandemRepeat.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: WaveletMatrix.LcpIndex.TandemRepeat
+    name: TandemRepeat
+    href: WaveletMatrix.LcpIndex.TandemRepeat.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: WaveletMatrix.LcpIndex.TandemRepeat.#ctor*
+  commentId: Overload:WaveletMatrix.LcpIndex.TandemRepeat.#ctor
+  href: WaveletMatrix.LcpIndex.TandemRepeat.html#WaveletMatrix_LcpIndex_TandemRepeat__ctor_System_Int32_System_Int32_System_Int32_
+  name: TandemRepeat
+  nameWithType: LcpIndex.TandemRepeat.TandemRepeat
+  fullName: WaveletMatrix.LcpIndex.TandemRepeat.TandemRepeat
+  nameWithType.vb: LcpIndex.TandemRepeat.New
+  fullName.vb: WaveletMatrix.LcpIndex.TandemRepeat.New
+  name.vb: New
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: WaveletMatrix.LcpIndex.TandemRepeat.Position*
+  commentId: Overload:WaveletMatrix.LcpIndex.TandemRepeat.Position
+  href: WaveletMatrix.LcpIndex.TandemRepeat.html#WaveletMatrix_LcpIndex_TandemRepeat_Position
+  name: Position
+  nameWithType: LcpIndex.TandemRepeat.Position
+  fullName: WaveletMatrix.LcpIndex.TandemRepeat.Position
+- uid: WaveletMatrix.LcpIndex.TandemRepeat.Length*
+  commentId: Overload:WaveletMatrix.LcpIndex.TandemRepeat.Length
+  href: WaveletMatrix.LcpIndex.TandemRepeat.html#WaveletMatrix_LcpIndex_TandemRepeat_Length
+  name: Length
+  nameWithType: LcpIndex.TandemRepeat.Length
+  fullName: WaveletMatrix.LcpIndex.TandemRepeat.Length
+- uid: WaveletMatrix.LcpIndex.TandemRepeat.Count*
+  commentId: Overload:WaveletMatrix.LcpIndex.TandemRepeat.Count
+  href: WaveletMatrix.LcpIndex.TandemRepeat.html#WaveletMatrix_LcpIndex_TandemRepeat_Count
+  name: Count
+  nameWithType: LcpIndex.TandemRepeat.Count
+  fullName: WaveletMatrix.LcpIndex.TandemRepeat.Count

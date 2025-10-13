@@ -1,0 +1,1548 @@
+### YamlMime:ManagedReference
+items:
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex
+  commentId: T:BelNytheraSeiche.WaveletMatrix.FMIndex
+  id: FMIndex
+  parent: BelNytheraSeiche.WaveletMatrix
+  children:
+  - BelNytheraSeiche.WaveletMatrix.FMIndex.Count(System.ReadOnlySpan{System.Char})
+  - BelNytheraSeiche.WaveletMatrix.FMIndex.Create(System.ReadOnlyMemory{System.Char})
+  - BelNytheraSeiche.WaveletMatrix.FMIndex.Create(System.String)
+  - BelNytheraSeiche.WaveletMatrix.FMIndex.Deserialize(System.Byte[])
+  - BelNytheraSeiche.WaveletMatrix.FMIndex.Deserialize(System.IO.Stream)
+  - BelNytheraSeiche.WaveletMatrix.FMIndex.Deserialize(System.String)
+  - BelNytheraSeiche.WaveletMatrix.FMIndex.GetSnippet(System.Int32,System.Int32,System.Int32,System.Double)
+  - BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan{System.Char},BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder)
+  - BelNytheraSeiche.WaveletMatrix.FMIndex.RestoreSourceText
+  - BelNytheraSeiche.WaveletMatrix.FMIndex.SA
+  - BelNytheraSeiche.WaveletMatrix.FMIndex.Serialize(BelNytheraSeiche.WaveletMatrix.FMIndex,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  - BelNytheraSeiche.WaveletMatrix.FMIndex.Serialize(BelNytheraSeiche.WaveletMatrix.FMIndex,System.IO.Stream,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  - BelNytheraSeiche.WaveletMatrix.FMIndex.Serialize(BelNytheraSeiche.WaveletMatrix.FMIndex,System.String,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  - BelNytheraSeiche.WaveletMatrix.FMIndex.Text
+  - BelNytheraSeiche.WaveletMatrix.FMIndex.WM
+  langs:
+  - csharp
+  - vb
+  name: FMIndex
+  nameWithType: FMIndex
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex
+  type: Class
+  source:
+    id: FMIndex
+    path: C:\Users\nanto\dev\WaveletMatrix\src\FMIndex.cs
+    startLine: 36
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Provides a high-performance full-text search index based on the FM-Index algorithm.
+  remarks: >-
+    The FM-Index is a compressed full-text index that allows for fast counting (<xref href="BelNytheraSeiche.WaveletMatrix.FMIndex.Count(System.ReadOnlySpan%7bSystem.Char%7d)" data-throw-if-not-resolved="false"></xref>) and locating (<xref href="BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan%7bSystem.Char%7d%2cBelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder)" data-throw-if-not-resolved="false"></xref>)
+
+    of patterns within a large text. It is constructed using the Burrows-Wheeler Transform (BWT), a Wavelet Matrix, and a Suffix Array.
+  example: []
+  syntax:
+    content: public sealed class FMIndex
+    content.vb: Public NotInheritable Class FMIndex
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Text
+  commentId: P:BelNytheraSeiche.WaveletMatrix.FMIndex.Text
+  id: Text
+  parent: BelNytheraSeiche.WaveletMatrix.FMIndex
+  langs:
+  - csharp
+  - vb
+  name: Text
+  nameWithType: FMIndex.Text
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Text
+  type: Property
+  source:
+    id: Text
+    path: C:\Users\nanto\dev\WaveletMatrix\src\FMIndex.cs
+    startLine: 47
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Gets the original source text used to build the index, excluding the internal terminator character.
+  example: []
+  syntax:
+    content: public ReadOnlyMemory<char> Text { get; }
+    parameters: []
+    return:
+      type: System.ReadOnlyMemory{System.Char}
+    content.vb: Public ReadOnly Property Text As ReadOnlyMemory(Of Char)
+  overload: BelNytheraSeiche.WaveletMatrix.FMIndex.Text*
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.WM
+  commentId: P:BelNytheraSeiche.WaveletMatrix.FMIndex.WM
+  id: WM
+  parent: BelNytheraSeiche.WaveletMatrix.FMIndex
+  langs:
+  - csharp
+  - vb
+  name: WM
+  nameWithType: FMIndex.WM
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.WM
+  type: Property
+  source:
+    id: WM
+    path: C:\Users\nanto\dev\WaveletMatrix\src\FMIndex.cs
+    startLine: 52
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Gets the underlying Wavelet Matrix instance used by this index.
+  example: []
+  syntax:
+    content: public WaveletMatrixGeneric<char> WM { get; }
+    parameters: []
+    return:
+      type: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric{System.Char}
+    content.vb: Public ReadOnly Property WM As WaveletMatrixGeneric(Of Char)
+  overload: BelNytheraSeiche.WaveletMatrix.FMIndex.WM*
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SA
+  commentId: P:BelNytheraSeiche.WaveletMatrix.FMIndex.SA
+  id: SA
+  parent: BelNytheraSeiche.WaveletMatrix.FMIndex
+  langs:
+  - csharp
+  - vb
+  name: SA
+  nameWithType: FMIndex.SA
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SA
+  type: Property
+  source:
+    id: SA
+    path: C:\Users\nanto\dev\WaveletMatrix\src\FMIndex.cs
+    startLine: 57
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Gets the underlying Suffix Array instance used by this index.
+  example: []
+  syntax:
+    content: public SuffixArray SA { get; }
+    parameters: []
+    return:
+      type: BelNytheraSeiche.WaveletMatrix.SuffixArray
+    content.vb: Public ReadOnly Property SA As SuffixArray
+  overload: BelNytheraSeiche.WaveletMatrix.FMIndex.SA*
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Create(System.String)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.Create(System.String)
+  id: Create(System.String)
+  parent: BelNytheraSeiche.WaveletMatrix.FMIndex
+  langs:
+  - csharp
+  - vb
+  name: Create(string)
+  nameWithType: FMIndex.Create(string)
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Create(string)
+  type: Method
+  source:
+    id: Create
+    path: C:\Users\nanto\dev\WaveletMatrix\src\FMIndex.cs
+    startLine: 73
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Creates a new instance of the <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex" data-throw-if-not-resolved="false"></xref> from a string.
+  example: []
+  syntax:
+    content: public static FMIndex Create(string text)
+    parameters:
+    - id: text
+      type: System.String
+      description: The text to be indexed.
+    return:
+      type: BelNytheraSeiche.WaveletMatrix.FMIndex
+      description: A new, fully initialized <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex" data-throw-if-not-resolved="false"></xref> instance.
+    content.vb: Public Shared Function Create(text As String) As FMIndex
+  overload: BelNytheraSeiche.WaveletMatrix.FMIndex.Create*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code class="paramref">text</code> is null.
+  nameWithType.vb: FMIndex.Create(String)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.Create(String)
+  name.vb: Create(String)
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Create(System.ReadOnlyMemory{System.Char})
+  commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.Create(System.ReadOnlyMemory{System.Char})
+  id: Create(System.ReadOnlyMemory{System.Char})
+  parent: BelNytheraSeiche.WaveletMatrix.FMIndex
+  langs:
+  - csharp
+  - vb
+  name: Create(ReadOnlyMemory<char>)
+  nameWithType: FMIndex.Create(ReadOnlyMemory<char>)
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Create(System.ReadOnlyMemory<char>)
+  type: Method
+  source:
+    id: Create
+    path: C:\Users\nanto\dev\WaveletMatrix\src\FMIndex.cs
+    startLine: 82
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Creates a new instance of the <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex" data-throw-if-not-resolved="false"></xref> from a read-only memory segment of characters.
+
+    An internal terminator character ('\0') is appended to the text for correctness.
+  example: []
+  syntax:
+    content: public static FMIndex Create(ReadOnlyMemory<char> text)
+    parameters:
+    - id: text
+      type: System.ReadOnlyMemory{System.Char}
+      description: The text to be indexed.
+    return:
+      type: BelNytheraSeiche.WaveletMatrix.FMIndex
+      description: A new, fully initialized <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex" data-throw-if-not-resolved="false"></xref> instance.
+    content.vb: Public Shared Function Create(text As ReadOnlyMemory(Of Char)) As FMIndex
+  overload: BelNytheraSeiche.WaveletMatrix.FMIndex.Create*
+  nameWithType.vb: FMIndex.Create(ReadOnlyMemory(Of Char))
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.Create(System.ReadOnlyMemory(Of Char))
+  name.vb: Create(ReadOnlyMemory(Of Char))
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Serialize(BelNytheraSeiche.WaveletMatrix.FMIndex,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.Serialize(BelNytheraSeiche.WaveletMatrix.FMIndex,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  id: Serialize(BelNytheraSeiche.WaveletMatrix.FMIndex,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  parent: BelNytheraSeiche.WaveletMatrix.FMIndex
+  langs:
+  - csharp
+  - vb
+  name: Serialize(FMIndex, SerializationOptions?)
+  nameWithType: FMIndex.Serialize(FMIndex, SerializationOptions?)
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Serialize(BelNytheraSeiche.WaveletMatrix.FMIndex, BelNytheraSeiche.WaveletMatrix.SerializationOptions?)
+  type: Method
+  source:
+    id: Serialize
+    path: C:\Users\nanto\dev\WaveletMatrix\src\FMIndex.cs
+    startLine: 130
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Serializes the <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex" data-throw-if-not-resolved="false"></xref> instance into a byte array.
+  example: []
+  syntax:
+    content: public static byte[] Serialize(FMIndex obj, SerializationOptions? options = null)
+    parameters:
+    - id: obj
+      type: BelNytheraSeiche.WaveletMatrix.FMIndex
+      description: The instance to serialize.
+    - id: options
+      type: BelNytheraSeiche.WaveletMatrix.SerializationOptions
+      description: >-
+        Serialization options, such as the compression level. 
+
+        If null, <xref href="BelNytheraSeiche.WaveletMatrix.SerializationOptions.Default" data-throw-if-not-resolved="false"></xref> will be used.
+    return:
+      type: System.Byte[]
+      description: A byte array containing the serialized data.
+    content.vb: Public Shared Function Serialize(obj As FMIndex, options As SerializationOptions = Nothing) As Byte()
+  overload: BelNytheraSeiche.WaveletMatrix.FMIndex.Serialize*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code class="paramref">obj</code> is null.
+  nameWithType.vb: FMIndex.Serialize(FMIndex, SerializationOptions)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.Serialize(BelNytheraSeiche.WaveletMatrix.FMIndex, BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  name.vb: Serialize(FMIndex, SerializationOptions)
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Serialize(BelNytheraSeiche.WaveletMatrix.FMIndex,System.String,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.Serialize(BelNytheraSeiche.WaveletMatrix.FMIndex,System.String,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  id: Serialize(BelNytheraSeiche.WaveletMatrix.FMIndex,System.String,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  parent: BelNytheraSeiche.WaveletMatrix.FMIndex
+  langs:
+  - csharp
+  - vb
+  name: Serialize(FMIndex, string, SerializationOptions?)
+  nameWithType: FMIndex.Serialize(FMIndex, string, SerializationOptions?)
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Serialize(BelNytheraSeiche.WaveletMatrix.FMIndex, string, BelNytheraSeiche.WaveletMatrix.SerializationOptions?)
+  type: Method
+  source:
+    id: Serialize
+    path: C:\Users\nanto\dev\WaveletMatrix\src\FMIndex.cs
+    startLine: 154
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Serializes the <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex" data-throw-if-not-resolved="false"></xref> instance to the specified file.
+  example: []
+  syntax:
+    content: public static void Serialize(FMIndex obj, string file, SerializationOptions? options = null)
+    parameters:
+    - id: obj
+      type: BelNytheraSeiche.WaveletMatrix.FMIndex
+      description: The instance to serialize.
+    - id: file
+      type: System.String
+      description: The path of the file to write to.
+    - id: options
+      type: BelNytheraSeiche.WaveletMatrix.SerializationOptions
+      description: >-
+        Serialization options, such as the compression level. 
+
+        If null, <xref href="BelNytheraSeiche.WaveletMatrix.SerializationOptions.Default" data-throw-if-not-resolved="false"></xref> will be used.
+    content.vb: Public Shared Sub Serialize(obj As FMIndex, file As String, options As SerializationOptions = Nothing)
+  overload: BelNytheraSeiche.WaveletMatrix.FMIndex.Serialize*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code class="paramref">obj</code> or <code class="paramref">file</code> is null.
+  nameWithType.vb: FMIndex.Serialize(FMIndex, String, SerializationOptions)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.Serialize(BelNytheraSeiche.WaveletMatrix.FMIndex, String, BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  name.vb: Serialize(FMIndex, String, SerializationOptions)
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Serialize(BelNytheraSeiche.WaveletMatrix.FMIndex,System.IO.Stream,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.Serialize(BelNytheraSeiche.WaveletMatrix.FMIndex,System.IO.Stream,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  id: Serialize(BelNytheraSeiche.WaveletMatrix.FMIndex,System.IO.Stream,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  parent: BelNytheraSeiche.WaveletMatrix.FMIndex
+  langs:
+  - csharp
+  - vb
+  name: Serialize(FMIndex, Stream, SerializationOptions?)
+  nameWithType: FMIndex.Serialize(FMIndex, Stream, SerializationOptions?)
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Serialize(BelNytheraSeiche.WaveletMatrix.FMIndex, System.IO.Stream, BelNytheraSeiche.WaveletMatrix.SerializationOptions?)
+  type: Method
+  source:
+    id: Serialize
+    path: C:\Users\nanto\dev\WaveletMatrix\src\FMIndex.cs
+    startLine: 181
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Serializes the <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex" data-throw-if-not-resolved="false"></xref> instance to a stream.
+
+    The data is compressed using Brotli and includes a checksum for integrity verification.
+  example: []
+  syntax:
+    content: public static void Serialize(FMIndex obj, Stream stream, SerializationOptions? options = null)
+    parameters:
+    - id: obj
+      type: BelNytheraSeiche.WaveletMatrix.FMIndex
+      description: The instance to serialize.
+    - id: stream
+      type: System.IO.Stream
+      description: The stream to write the serialized data to.
+    - id: options
+      type: BelNytheraSeiche.WaveletMatrix.SerializationOptions
+      description: >-
+        Serialization options, such as the compression level. 
+
+        If null, <xref href="BelNytheraSeiche.WaveletMatrix.SerializationOptions.Default" data-throw-if-not-resolved="false"></xref> will be used.
+    content.vb: Public Shared Sub Serialize(obj As FMIndex, stream As Stream, options As SerializationOptions = Nothing)
+  overload: BelNytheraSeiche.WaveletMatrix.FMIndex.Serialize*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code class="paramref">obj</code> or <code class="paramref">stream</code> is null.
+  nameWithType.vb: FMIndex.Serialize(FMIndex, Stream, SerializationOptions)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.Serialize(BelNytheraSeiche.WaveletMatrix.FMIndex, System.IO.Stream, BelNytheraSeiche.WaveletMatrix.SerializationOptions)
+  name.vb: Serialize(FMIndex, Stream, SerializationOptions)
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Deserialize(System.Byte[])
+  commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.Deserialize(System.Byte[])
+  id: Deserialize(System.Byte[])
+  parent: BelNytheraSeiche.WaveletMatrix.FMIndex
+  langs:
+  - csharp
+  - vb
+  name: Deserialize(byte[])
+  nameWithType: FMIndex.Deserialize(byte[])
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Deserialize(byte[])
+  type: Method
+  source:
+    id: Deserialize
+    path: C:\Users\nanto\dev\WaveletMatrix\src\FMIndex.cs
+    startLine: 289
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Deserializes a byte array into a <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex" data-throw-if-not-resolved="false"></xref> instance.
+  example: []
+  syntax:
+    content: public static FMIndex Deserialize(byte[] data)
+    parameters:
+    - id: data
+      type: System.Byte[]
+      description: The byte array containing the serialized data.
+    return:
+      type: BelNytheraSeiche.WaveletMatrix.FMIndex
+      description: A new, deserialized instance of <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Public Shared Function Deserialize(data As Byte()) As FMIndex
+  overload: BelNytheraSeiche.WaveletMatrix.FMIndex.Deserialize*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code class="paramref">data</code> is null.
+  nameWithType.vb: FMIndex.Deserialize(Byte())
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.Deserialize(Byte())
+  name.vb: Deserialize(Byte())
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Deserialize(System.String)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.Deserialize(System.String)
+  id: Deserialize(System.String)
+  parent: BelNytheraSeiche.WaveletMatrix.FMIndex
+  langs:
+  - csharp
+  - vb
+  name: Deserialize(string)
+  nameWithType: FMIndex.Deserialize(string)
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Deserialize(string)
+  type: Method
+  source:
+    id: Deserialize
+    path: C:\Users\nanto\dev\WaveletMatrix\src\FMIndex.cs
+    startLine: 308
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Deserializes a <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex" data-throw-if-not-resolved="false"></xref> instance from the specified file.
+  example: []
+  syntax:
+    content: public static FMIndex Deserialize(string file)
+    parameters:
+    - id: file
+      type: System.String
+      description: The path of the file to read from.
+    return:
+      type: BelNytheraSeiche.WaveletMatrix.FMIndex
+      description: A new, deserialized instance.
+    content.vb: Public Shared Function Deserialize(file As String) As FMIndex
+  overload: BelNytheraSeiche.WaveletMatrix.FMIndex.Deserialize*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code class="paramref">file</code> is null.
+  nameWithType.vb: FMIndex.Deserialize(String)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.Deserialize(String)
+  name.vb: Deserialize(String)
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Deserialize(System.IO.Stream)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.Deserialize(System.IO.Stream)
+  id: Deserialize(System.IO.Stream)
+  parent: BelNytheraSeiche.WaveletMatrix.FMIndex
+  langs:
+  - csharp
+  - vb
+  name: Deserialize(Stream)
+  nameWithType: FMIndex.Deserialize(Stream)
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Deserialize(System.IO.Stream)
+  type: Method
+  source:
+    id: Deserialize
+    path: C:\Users\nanto\dev\WaveletMatrix\src\FMIndex.cs
+    startLine: 329
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Deserializes a <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex" data-throw-if-not-resolved="false"></xref> instance from a stream.
+
+    It verifies the file format, type identifier, and checksum.
+  example: []
+  syntax:
+    content: public static FMIndex Deserialize(Stream stream)
+    parameters:
+    - id: stream
+      type: System.IO.Stream
+      description: The stream to read the serialized data from.
+    return:
+      type: BelNytheraSeiche.WaveletMatrix.FMIndex
+      description: A new, deserialized instance.
+    content.vb: Public Shared Function Deserialize(stream As Stream) As FMIndex
+  overload: BelNytheraSeiche.WaveletMatrix.FMIndex.Deserialize*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code class="paramref">stream</code> is null.
+  - type: System.IO.InvalidDataException
+    commentId: T:System.IO.InvalidDataException
+    description: Thrown if the data format is unsupported, the type is incompatible, or the data is corrupt.
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Count(System.ReadOnlySpan{System.Char})
+  commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.Count(System.ReadOnlySpan{System.Char})
+  id: Count(System.ReadOnlySpan{System.Char})
+  parent: BelNytheraSeiche.WaveletMatrix.FMIndex
+  langs:
+  - csharp
+  - vb
+  name: Count(ReadOnlySpan<char>)
+  nameWithType: FMIndex.Count(ReadOnlySpan<char>)
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Count(System.ReadOnlySpan<char>)
+  type: Method
+  source:
+    id: Count
+    path: C:\Users\nanto\dev\WaveletMatrix\src\FMIndex.cs
+    startLine: 399
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Counts the number of occurrences of a pattern within the text.
+
+    This operation is extremely fast, typically proportional to the length of the pattern, not the text.
+  example: []
+  syntax:
+    content: public int Count(ReadOnlySpan<char> pattern)
+    parameters:
+    - id: pattern
+      type: System.ReadOnlySpan{System.Char}
+      description: The pattern to search for.
+    return:
+      type: System.Int32
+      description: The total number of non-overlapping occurrences of the pattern.
+    content.vb: Public Function Count(pattern As ReadOnlySpan(Of Char)) As Integer
+  overload: BelNytheraSeiche.WaveletMatrix.FMIndex.Count*
+  nameWithType.vb: FMIndex.Count(ReadOnlySpan(Of Char))
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.Count(System.ReadOnlySpan(Of Char))
+  name.vb: Count(ReadOnlySpan(Of Char))
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan{System.Char},BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan{System.Char},BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder)
+  id: Locate(System.ReadOnlySpan{System.Char},BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder)
+  parent: BelNytheraSeiche.WaveletMatrix.FMIndex
+  langs:
+  - csharp
+  - vb
+  name: Locate(ReadOnlySpan<char>, SortOrder)
+  nameWithType: FMIndex.Locate(ReadOnlySpan<char>, FMIndex.SortOrder)
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan<char>, BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder)
+  type: Method
+  source:
+    id: Locate
+    path: C:\Users\nanto\dev\WaveletMatrix\src\FMIndex.cs
+    startLine: 416
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Finds all starting positions of a pattern within the text.
+  remarks: >-
+    Specifying <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Ascending" data-throw-if-not-resolved="false"></xref> or <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Descending" data-throw-if-not-resolved="false"></xref> requires collecting all results
+
+    and sorting them, which incurs a performance cost proportional to the number of matches (k log k).
+
+    For the highest performance where order is not important, use <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Unordered" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public IEnumerable<int> Locate(ReadOnlySpan<char> pattern, FMIndex.SortOrder sortOrder = SortOrder.Ascending)
+    parameters:
+    - id: pattern
+      type: System.ReadOnlySpan{System.Char}
+      description: The pattern to search for.
+    - id: sortOrder
+      type: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder
+      description: Specifies the order of the returned positions. Defaults to <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Ascending" data-throw-if-not-resolved="false"></xref>.
+    return:
+      type: System.Collections.Generic.IEnumerable{System.Int32}
+      description: An enumerable collection of the zero-based starting positions of all occurrences.
+    content.vb: Public Function Locate(pattern As ReadOnlySpan(Of Char), sortOrder As FMIndex.SortOrder = SortOrder.Ascending) As IEnumerable(Of Integer)
+  overload: BelNytheraSeiche.WaveletMatrix.FMIndex.Locate*
+  nameWithType.vb: FMIndex.Locate(ReadOnlySpan(Of Char), FMIndex.SortOrder)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan(Of Char), BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder)
+  name.vb: Locate(ReadOnlySpan(Of Char), SortOrder)
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.RestoreSourceText
+  commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.RestoreSourceText
+  id: RestoreSourceText
+  parent: BelNytheraSeiche.WaveletMatrix.FMIndex
+  langs:
+  - csharp
+  - vb
+  name: RestoreSourceText()
+  nameWithType: FMIndex.RestoreSourceText()
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.RestoreSourceText()
+  type: Method
+  source:
+    id: RestoreSourceText
+    path: C:\Users\nanto\dev\WaveletMatrix\src\FMIndex.cs
+    startLine: 460
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Reconstructs the original source text from the compressed index.
+
+    This method demonstrates the reversibility of the Burrows-Wheeler Transform.
+  example: []
+  syntax:
+    content: public string RestoreSourceText()
+    return:
+      type: System.String
+      description: The original text that was used to create the index.
+    content.vb: Public Function RestoreSourceText() As String
+  overload: BelNytheraSeiche.WaveletMatrix.FMIndex.RestoreSourceText*
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.GetSnippet(System.Int32,System.Int32,System.Int32,System.Double)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.GetSnippet(System.Int32,System.Int32,System.Int32,System.Double)
+  id: GetSnippet(System.Int32,System.Int32,System.Int32,System.Double)
+  parent: BelNytheraSeiche.WaveletMatrix.FMIndex
+  langs:
+  - csharp
+  - vb
+  name: GetSnippet(int, int, int, double)
+  nameWithType: FMIndex.GetSnippet(int, int, int, double)
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.GetSnippet(int, int, int, double)
+  type: Method
+  source:
+    id: GetSnippet
+    path: C:\Users\nanto\dev\WaveletMatrix\src\FMIndex.cs
+    startLine: 492
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Extracts a snippet of text surrounding a specified position, with a configurable context ratio.
+  remarks: >-
+    The specified <code class="paramref">leadingRatio</code> is a guideline. The method prioritizes returning a snippet of approximately
+
+    <code class="paramref">totalLength</code>. If the keyword is near the start or end of the text, the actual ratio of leading/trailing context will be adjusted to fill the requested length.
+  example: []
+  syntax:
+    content: public (string, int) GetSnippet(int position, int keyLength, int totalLength, double leadingRatio = 0.5)
+    parameters:
+    - id: position
+      type: System.Int32
+      description: The zero-based starting position of the keyword in the original text.
+    - id: keyLength
+      type: System.Int32
+      description: The length of the keyword.
+    - id: totalLength
+      type: System.Int32
+      description: The desired total length of the snippet.
+    - id: leadingRatio
+      type: System.Double
+      description: The desired proportion (0.0 to 1.0) of the context text to appear before the keyword. Defaults to 0.5 for centering the keyword.
+    return:
+      type: System.ValueTuple{System.String,System.Int32}
+      description: A tuple containing the generated snippet string and the zero-based starting position of the keyword within the snippet.
+    content.vb: Public Function GetSnippet(position As Integer, keyLength As Integer, totalLength As Integer, leadingRatio As Double = 0.5) As (String, Integer)
+  overload: BelNytheraSeiche.WaveletMatrix.FMIndex.GetSnippet*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if <code class="paramref">position</code>, <code class="paramref">keyLength</code>, or <code class="paramref">totalLength</code> are invalid, or if <code class="paramref">leadingRatio</code> is not between 0.0 and 1.0.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if <code class="paramref">position</code> + <code class="paramref">keyLength</code> is greater than the length of text.
+  nameWithType.vb: FMIndex.GetSnippet(Integer, Integer, Integer, Double)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.GetSnippet(Integer, Integer, Integer, Double)
+  name.vb: GetSnippet(Integer, Integer, Integer, Double)
+references:
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Count(System.ReadOnlySpan{System.Char})
+  commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.Count(System.ReadOnlySpan{System.Char})
+  isExternal: true
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Count_System_ReadOnlySpan_System_Char__
+  name: Count(ReadOnlySpan<char>)
+  nameWithType: FMIndex.Count(ReadOnlySpan<char>)
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Count(System.ReadOnlySpan<char>)
+  nameWithType.vb: FMIndex.Count(ReadOnlySpan(Of Char))
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.Count(System.ReadOnlySpan(Of Char))
+  name.vb: Count(ReadOnlySpan(Of Char))
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Count(System.ReadOnlySpan{System.Char})
+    name: Count
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Count_System_ReadOnlySpan_System_Char__
+  - name: (
+  - uid: System.ReadOnlySpan`1
+    name: ReadOnlySpan
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlyspan-1
+  - name: <
+  - uid: System.Char
+    name: char
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Count(System.ReadOnlySpan{System.Char})
+    name: Count
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Count_System_ReadOnlySpan_System_Char__
+  - name: (
+  - uid: System.ReadOnlySpan`1
+    name: ReadOnlySpan
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlyspan-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Char
+    name: Char
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: )
+  - name: )
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan{System.Char},BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan{System.Char},BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder)
+  isExternal: true
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Locate_System_ReadOnlySpan_System_Char__BelNytheraSeiche_WaveletMatrix_FMIndex_SortOrder_
+  name: Locate(ReadOnlySpan<char>, SortOrder)
+  nameWithType: FMIndex.Locate(ReadOnlySpan<char>, FMIndex.SortOrder)
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan<char>, BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder)
+  nameWithType.vb: FMIndex.Locate(ReadOnlySpan(Of Char), FMIndex.SortOrder)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan(Of Char), BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder)
+  name.vb: Locate(ReadOnlySpan(Of Char), SortOrder)
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan{System.Char},BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder)
+    name: Locate
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Locate_System_ReadOnlySpan_System_Char__BelNytheraSeiche_WaveletMatrix_FMIndex_SortOrder_
+  - name: (
+  - uid: System.ReadOnlySpan`1
+    name: ReadOnlySpan
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlyspan-1
+  - name: <
+  - uid: System.Char
+    name: char
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder
+    name: SortOrder
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.html
+  - name: )
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan{System.Char},BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder)
+    name: Locate
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Locate_System_ReadOnlySpan_System_Char__BelNytheraSeiche_WaveletMatrix_FMIndex_SortOrder_
+  - name: (
+  - uid: System.ReadOnlySpan`1
+    name: ReadOnlySpan
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlyspan-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Char
+    name: Char
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder
+    name: SortOrder
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.html
+  - name: )
+- uid: BelNytheraSeiche.WaveletMatrix
+  commentId: N:BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.html
+  name: BelNytheraSeiche.WaveletMatrix
+  nameWithType: BelNytheraSeiche.WaveletMatrix
+  fullName: BelNytheraSeiche.WaveletMatrix
+  spec.csharp:
+  - uid: BelNytheraSeiche
+    name: BelNytheraSeiche
+    href: BelNytheraSeiche.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix
+    name: WaveletMatrix
+    href: BelNytheraSeiche.WaveletMatrix.html
+  spec.vb:
+  - uid: BelNytheraSeiche
+    name: BelNytheraSeiche
+    href: BelNytheraSeiche.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix
+    name: WaveletMatrix
+    href: BelNytheraSeiche.WaveletMatrix.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Text*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.Text
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Text
+  name: Text
+  nameWithType: FMIndex.Text
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Text
+- uid: System.ReadOnlyMemory{System.Char}
+  commentId: T:System.ReadOnlyMemory{System.Char}
+  parent: System
+  definition: System.ReadOnlyMemory`1
+  href: https://learn.microsoft.com/dotnet/api/system.readonlymemory-1
+  name: ReadOnlyMemory<char>
+  nameWithType: ReadOnlyMemory<char>
+  fullName: System.ReadOnlyMemory<char>
+  nameWithType.vb: ReadOnlyMemory(Of Char)
+  fullName.vb: System.ReadOnlyMemory(Of Char)
+  name.vb: ReadOnlyMemory(Of Char)
+  spec.csharp:
+  - uid: System.ReadOnlyMemory`1
+    name: ReadOnlyMemory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlymemory-1
+  - name: <
+  - uid: System.Char
+    name: char
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: '>'
+  spec.vb:
+  - uid: System.ReadOnlyMemory`1
+    name: ReadOnlyMemory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlymemory-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Char
+    name: Char
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: )
+- uid: System.ReadOnlyMemory`1
+  commentId: T:System.ReadOnlyMemory`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.readonlymemory-1
+  name: ReadOnlyMemory<T>
+  nameWithType: ReadOnlyMemory<T>
+  fullName: System.ReadOnlyMemory<T>
+  nameWithType.vb: ReadOnlyMemory(Of T)
+  fullName.vb: System.ReadOnlyMemory(Of T)
+  name.vb: ReadOnlyMemory(Of T)
+  spec.csharp:
+  - uid: System.ReadOnlyMemory`1
+    name: ReadOnlyMemory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlymemory-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.ReadOnlyMemory`1
+    name: ReadOnlyMemory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlymemory-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.WM*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.WM
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_WM
+  name: WM
+  nameWithType: FMIndex.WM
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.WM
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric{System.Char}
+  commentId: T:BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric{System.Char}
+  parent: BelNytheraSeiche.WaveletMatrix
+  definition: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.html
+  name: WaveletMatrixGeneric<char>
+  nameWithType: WaveletMatrixGeneric<char>
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<char>
+  nameWithType.vb: WaveletMatrixGeneric(Of Char)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric(Of Char)
+  name.vb: WaveletMatrixGeneric(Of Char)
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: <
+  - uid: System.Char
+    name: char
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: '>'
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Char
+    name: Char
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: )
+- uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1
+  commentId: T:BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.html
+  name: WaveletMatrixGeneric<T>
+  nameWithType: WaveletMatrixGeneric<T>
+  fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>
+  nameWithType.vb: WaveletMatrixGeneric(Of T)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric(Of T)
+  name.vb: WaveletMatrixGeneric(Of T)
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric`1
+    name: WaveletMatrixGeneric
+    href: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SA*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.SA
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_SA
+  name: SA
+  nameWithType: FMIndex.SA
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SA
+- uid: BelNytheraSeiche.WaveletMatrix.SuffixArray
+  commentId: T:BelNytheraSeiche.WaveletMatrix.SuffixArray
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.SuffixArray.html
+  name: SuffixArray
+  nameWithType: SuffixArray
+  fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex
+  commentId: T:BelNytheraSeiche.WaveletMatrix.FMIndex
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
+  name: FMIndex
+  nameWithType: FMIndex
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Create*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.Create
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Create_System_String_
+  name: Create
+  nameWithType: FMIndex.Create
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Create
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: BelNytheraSeiche.WaveletMatrix.SerializationOptions.Default
+  commentId: P:BelNytheraSeiche.WaveletMatrix.SerializationOptions.Default
+  href: BelNytheraSeiche.WaveletMatrix.SerializationOptions.html#BelNytheraSeiche_WaveletMatrix_SerializationOptions_Default
+  name: Default
+  nameWithType: SerializationOptions.Default
+  fullName: BelNytheraSeiche.WaveletMatrix.SerializationOptions.Default
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Serialize*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.Serialize
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Serialize_BelNytheraSeiche_WaveletMatrix_FMIndex_BelNytheraSeiche_WaveletMatrix_SerializationOptions_
+  name: Serialize
+  nameWithType: FMIndex.Serialize
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Serialize
+- uid: BelNytheraSeiche.WaveletMatrix.SerializationOptions
+  commentId: T:BelNytheraSeiche.WaveletMatrix.SerializationOptions
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.SerializationOptions.html
+  name: SerializationOptions
+  nameWithType: SerializationOptions
+  fullName: BelNytheraSeiche.WaveletMatrix.SerializationOptions
+- uid: System.Byte[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.byte
+  name: byte[]
+  nameWithType: byte[]
+  fullName: byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: (
+  - name: )
+- uid: System.IO.Stream
+  commentId: T:System.IO.Stream
+  parent: System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.io.stream
+  name: Stream
+  nameWithType: Stream
+  fullName: System.IO.Stream
+- uid: System.IO
+  commentId: N:System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.IO
+  nameWithType: System.IO
+  fullName: System.IO
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Deserialize*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.Deserialize
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Deserialize_System_Byte___
+  name: Deserialize
+  nameWithType: FMIndex.Deserialize
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Deserialize
+- uid: System.IO.InvalidDataException
+  commentId: T:System.IO.InvalidDataException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.io.invaliddataexception
+  name: InvalidDataException
+  nameWithType: InvalidDataException
+  fullName: System.IO.InvalidDataException
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Count*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.Count
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Count_System_ReadOnlySpan_System_Char__
+  name: Count
+  nameWithType: FMIndex.Count
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Count
+- uid: System.ReadOnlySpan{System.Char}
+  commentId: T:System.ReadOnlySpan{System.Char}
+  parent: System
+  definition: System.ReadOnlySpan`1
+  href: https://learn.microsoft.com/dotnet/api/system.readonlyspan-1
+  name: ReadOnlySpan<char>
+  nameWithType: ReadOnlySpan<char>
+  fullName: System.ReadOnlySpan<char>
+  nameWithType.vb: ReadOnlySpan(Of Char)
+  fullName.vb: System.ReadOnlySpan(Of Char)
+  name.vb: ReadOnlySpan(Of Char)
+  spec.csharp:
+  - uid: System.ReadOnlySpan`1
+    name: ReadOnlySpan
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlyspan-1
+  - name: <
+  - uid: System.Char
+    name: char
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: '>'
+  spec.vb:
+  - uid: System.ReadOnlySpan`1
+    name: ReadOnlySpan
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlyspan-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Char
+    name: Char
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.ReadOnlySpan`1
+  commentId: T:System.ReadOnlySpan`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.readonlyspan-1
+  name: ReadOnlySpan<T>
+  nameWithType: ReadOnlySpan<T>
+  fullName: System.ReadOnlySpan<T>
+  nameWithType.vb: ReadOnlySpan(Of T)
+  fullName.vb: System.ReadOnlySpan(Of T)
+  name.vb: ReadOnlySpan(Of T)
+  spec.csharp:
+  - uid: System.ReadOnlySpan`1
+    name: ReadOnlySpan
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlyspan-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.ReadOnlySpan`1
+    name: ReadOnlySpan
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlyspan-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Ascending
+  commentId: F:BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Ascending
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.html#BelNytheraSeiche_WaveletMatrix_FMIndex_SortOrder_Ascending
+  name: Ascending
+  nameWithType: FMIndex.SortOrder.Ascending
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Ascending
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Descending
+  commentId: F:BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Descending
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.html#BelNytheraSeiche_WaveletMatrix_FMIndex_SortOrder_Descending
+  name: Descending
+  nameWithType: FMIndex.SortOrder.Descending
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Descending
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Unordered
+  commentId: F:BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Unordered
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.html#BelNytheraSeiche_WaveletMatrix_FMIndex_SortOrder_Unordered
+  name: Unordered
+  nameWithType: FMIndex.SortOrder.Unordered
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Unordered
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Locate*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.Locate
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Locate_System_ReadOnlySpan_System_Char__BelNytheraSeiche_WaveletMatrix_FMIndex_SortOrder_
+  name: Locate
+  nameWithType: FMIndex.Locate
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Locate
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder
+  commentId: T:BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
+  name: FMIndex.SortOrder
+  nameWithType: FMIndex.SortOrder
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex
+    name: FMIndex
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder
+    name: SortOrder
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.html
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex
+    name: FMIndex
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder
+    name: SortOrder
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.html
+- uid: System.Collections.Generic.IEnumerable{System.Int32}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Int32}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<int>
+  nameWithType: IEnumerable<int>
+  fullName: System.Collections.Generic.IEnumerable<int>
+  nameWithType.vb: IEnumerable(Of Integer)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of Integer)
+  name.vb: IEnumerable(Of Integer)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.RestoreSourceText*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.RestoreSourceText
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_RestoreSourceText
+  name: RestoreSourceText
+  nameWithType: FMIndex.RestoreSourceText
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.RestoreSourceText
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception
+  name: ArgumentOutOfRangeException
+  nameWithType: ArgumentOutOfRangeException
+  fullName: System.ArgumentOutOfRangeException
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentexception
+  name: ArgumentException
+  nameWithType: ArgumentException
+  fullName: System.ArgumentException
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.GetSnippet*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.GetSnippet
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_GetSnippet_System_Int32_System_Int32_System_Int32_System_Double_
+  name: GetSnippet
+  nameWithType: FMIndex.GetSnippet
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.GetSnippet
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: System.ValueTuple{System.String,System.Int32}
+  commentId: T:System.ValueTuple{System.String,System.Int32}
+  parent: System
+  definition: System.ValueTuple`2
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: (string, int)
+  nameWithType: (string, int)
+  fullName: (string, int)
+  nameWithType.vb: (String, Integer)
+  fullName.vb: (String, Integer)
+  name.vb: (String, Integer)
+  spec.csharp:
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.ValueTuple`2
+  commentId: T:System.ValueTuple`2
+  name: (T1, T2)
+  nameWithType: (T1, T2)
+  fullName: (T1, T2)
+  spec.csharp:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: )
+  spec.vb:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: )
