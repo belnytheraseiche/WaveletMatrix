@@ -14,8 +14,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.BurrowsWheelerTransform
   type: Class
   source:
+    remote:
+      path: src/BurrowsWheelerTransform.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: BurrowsWheelerTransform
-    path: C:\Users\nanto\dev\WaveletMatrix\src\BurrowsWheelerTransform.cs
+    path: src/BurrowsWheelerTransform.cs
     startLine: 31
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -51,8 +55,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.BurrowsWheelerTransform.Transform(System.ReadOnlyMemory<char>)
   type: Method
   source:
+    remote:
+      path: src/BurrowsWheelerTransform.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Transform
-    path: C:\Users\nanto\dev\WaveletMatrix\src\BurrowsWheelerTransform.cs
+    path: src/BurrowsWheelerTransform.cs
     startLine: 38
   assemblies:
   - BelNytheraSeiche.WaveletMatrix

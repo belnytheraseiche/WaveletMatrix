@@ -269,23 +269,21 @@ public sealed class RankSelectBitSet(ulong[] buffer, int count) : ImmutableBitSe
     int totalOnes_ = -1;
 
     int LastRank0 { get => lastRank0_ == -1 ? lastRank0_ = Rank0(this.Count) : lastRank0_; }
+
     int TotalOnes
     {
         get
         {
             if (totalOnes_ == -1)
             {
-                var rank = rankPrimaryAuxDir_[(this.Count - 1) / PrimaryAuxDirInterval] + rankSecondaryAuxDir_[(this.Count - 1) / SecondaryAuxDirInterval];
-                var index = (this.Count - 1) / 64;
-                var offset = this.Count & 63;
-                if (offset > 0)
-                {
-                    var mask = (1ul << offset) - 1;
-                    rank += PopCount(this.Buffer[index] & mask);
-                    totalOnes_ = rank;
-                }
+                var k = this.Count - 1;
+                var rank = rankPrimaryAuxDir_[k / PrimaryAuxDirInterval] + rankSecondaryAuxDir_[k / SecondaryAuxDirInterval];
+                var word = this.Buffer[k / 64];
+                var offset = (k & 63) + 1;
+                var mask = offset == 64 ? UInt64.MaxValue : ((1ul << offset) - 1);
+                totalOnes_ = rank + PopCount(word & mask);
             }
-            
+
             return totalOnes_;
         }
     }
@@ -305,6 +303,7 @@ public sealed class RankSelectBitSet(ulong[] buffer, int count) : ImmutableBitSe
             return 0;
         else if (k >= this.Count)
             return this.TotalOnes;
+
         var rank = rankPrimaryAuxDir_[k / PrimaryAuxDirInterval] + rankSecondaryAuxDir_[k / SecondaryAuxDirInterval];
         var word = this.Buffer[k / 64];
         var offset = k & 63;
@@ -313,8 +312,8 @@ public sealed class RankSelectBitSet(ulong[] buffer, int count) : ImmutableBitSe
     }
 
     /// <summary>
-    /// Finds the position of the k-th unset bit (0).
-    /// This method performs a binary search to find the smallest index p such that the rank of 0 in the range [0, p] is equal to k.
+    /// Calculates the rank of a bit '0' before a specified position (exclusive).
+    /// Rank0 is the total number of unset bits (0s) in the range [0, k).
     /// </summary>
     /// <param name="k">The one-based rank of the unset bit to find (e.g., k=1 for the first '0').</param>
     /// <returns>The zero-based index of the k-th unset bit, or -1 if not found.</returns>

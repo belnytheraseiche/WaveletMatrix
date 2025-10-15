@@ -34,8 +34,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.ValueBuffer<T>
   type: Class
   source:
+    remote:
+      path: src/ValueBuffer.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: ValueBuffer
-    path: C:\Users\nanto\dev\WaveletMatrix\src\ValueBuffer.cs
+    path: src/ValueBuffer.cs
     startLine: 36
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -80,8 +84,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.ValueBuffer<T>.ElementsPerChunk
   type: Property
   source:
+    remote:
+      path: src/ValueBuffer.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: ElementsPerChunk
-    path: C:\Users\nanto\dev\WaveletMatrix\src\ValueBuffer.cs
+    path: src/ValueBuffer.cs
     startLine: 41
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -109,8 +117,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.ValueBuffer<T>.NumberOfChunks
   type: Property
   source:
+    remote:
+      path: src/ValueBuffer.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: NumberOfChunks
-    path: C:\Users\nanto\dev\WaveletMatrix\src\ValueBuffer.cs
+    path: src/ValueBuffer.cs
     startLine: 45
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -138,8 +150,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.ValueBuffer<T>.Used
   type: Property
   source:
+    remote:
+      path: src/ValueBuffer.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Used
-    path: C:\Users\nanto\dev\WaveletMatrix\src\ValueBuffer.cs
+    path: src/ValueBuffer.cs
     startLine: 50
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -170,8 +186,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.ValueBuffer<T>.Capacity
   type: Property
   source:
+    remote:
+      path: src/ValueBuffer.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Capacity
-    path: C:\Users\nanto\dev\WaveletMatrix\src\ValueBuffer.cs
+    path: src/ValueBuffer.cs
     startLine: 54
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -199,8 +219,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.ValueBuffer<T>.ExtendAutomatically
   type: Property
   source:
+    remote:
+      path: src/ValueBuffer.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: ExtendAutomatically
-    path: C:\Users\nanto\dev\WaveletMatrix\src\ValueBuffer.cs
+    path: src/ValueBuffer.cs
     startLine: 58
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -228,8 +252,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.ValueBuffer<T>.Count
   type: Property
   source:
+    remote:
+      path: src/ValueBuffer.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Count
-    path: C:\Users\nanto\dev\WaveletMatrix\src\ValueBuffer.cs
+    path: src/ValueBuffer.cs
     startLine: 63
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -262,8 +290,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.ValueBuffer<T>.IsReadOnly
   type: Property
   source:
+    remote:
+      path: src/ValueBuffer.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: IsReadOnly
-    path: C:\Users\nanto\dev\WaveletMatrix\src\ValueBuffer.cs
+    path: src/ValueBuffer.cs
     startLine: 67
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -293,8 +325,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.ValueBuffer<T>.this[int]
   type: Property
   source:
+    remote:
+      path: src/ValueBuffer.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: this[]
-    path: C:\Users\nanto\dev\WaveletMatrix\src\ValueBuffer.cs
+    path: src/ValueBuffer.cs
     startLine: 81
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -335,8 +371,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.ValueBuffer<T>.ValueBuffer(int, bool)
   type: Constructor
   source:
+    remote:
+      path: src/ValueBuffer.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: .ctor
-    path: C:\Users\nanto\dev\WaveletMatrix\src\ValueBuffer.cs
+    path: src/ValueBuffer.cs
     startLine: 123
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -376,8 +416,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.ValueBuffer<T>.ToArray()
   type: Method
   source:
+    remote:
+      path: src/ValueBuffer.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: ToArray
-    path: C:\Users\nanto\dev\WaveletMatrix\src\ValueBuffer.cs
+    path: src/ValueBuffer.cs
     startLine: 143
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -405,8 +449,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.ValueBuffer<T>.Clear()
   type: Method
   source:
+    remote:
+      path: src/ValueBuffer.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Clear
-    path: C:\Users\nanto\dev\WaveletMatrix\src\ValueBuffer.cs
+    path: src/ValueBuffer.cs
     startLine: 154
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -433,8 +481,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.ValueBuffer<T>.Add(T)
   type: Method
   source:
+    remote:
+      path: src/ValueBuffer.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Add
-    path: C:\Users\nanto\dev\WaveletMatrix\src\ValueBuffer.cs
+    path: src/ValueBuffer.cs
     startLine: 164
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -465,8 +517,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.ValueBuffer<T>.ExtendCapacity(int)
   type: Method
   source:
+    remote:
+      path: src/ValueBuffer.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: ExtendCapacity
-    path: C:\Users\nanto\dev\WaveletMatrix\src\ValueBuffer.cs
+    path: src/ValueBuffer.cs
     startLine: 173
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -503,8 +559,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.ValueBuffer<T>.EnumerateChunks()
   type: Method
   source:
+    remote:
+      path: src/ValueBuffer.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: EnumerateChunks
-    path: C:\Users\nanto\dev\WaveletMatrix\src\ValueBuffer.cs
+    path: src/ValueBuffer.cs
     startLine: 194
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -533,8 +593,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.ValueBuffer<T>.AppendChunkDirectly(T[])
   type: Method
   source:
+    remote:
+      path: src/ValueBuffer.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: AppendChunkDirectly
-    path: C:\Users\nanto\dev\WaveletMatrix\src\ValueBuffer.cs
+    path: src/ValueBuffer.cs
     startLine: 204
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -572,8 +636,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.ValueBuffer<T>.SetUsedDirectly(int, bool)
   type: Method
   source:
+    remote:
+      path: src/ValueBuffer.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: SetUsedDirectly
-    path: C:\Users\nanto\dev\WaveletMatrix\src\ValueBuffer.cs
+    path: src/ValueBuffer.cs
     startLine: 228
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -611,8 +679,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.ValueBuffer<T>.Fill(T, int, int)
   type: Method
   source:
+    remote:
+      path: src/ValueBuffer.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Fill
-    path: C:\Users\nanto\dev\WaveletMatrix\src\ValueBuffer.cs
+    path: src/ValueBuffer.cs
     startLine: 261
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -655,8 +727,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.ValueBuffer<T>.GetEnumerator()
   type: Method
   source:
+    remote:
+      path: src/ValueBuffer.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: GetEnumerator
-    path: C:\Users\nanto\dev\WaveletMatrix\src\ValueBuffer.cs
+    path: src/ValueBuffer.cs
     startLine: 301
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -686,8 +762,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.ValueBuffer<T>.Contains(T)
   type: Method
   source:
+    remote:
+      path: src/ValueBuffer.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Contains
-    path: C:\Users\nanto\dev\WaveletMatrix\src\ValueBuffer.cs
+    path: src/ValueBuffer.cs
     startLine: 315
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -721,8 +801,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.ValueBuffer<T>.CopyTo(T[], int)
   type: Method
   source:
+    remote:
+      path: src/ValueBuffer.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: CopyTo
-    path: C:\Users\nanto\dev\WaveletMatrix\src\ValueBuffer.cs
+    path: src/ValueBuffer.cs
     startLine: 331
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -767,8 +851,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.ValueBuffer<T>.Remove(T)
   type: Method
   source:
+    remote:
+      path: src/ValueBuffer.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Remove
-    path: C:\Users\nanto\dev\WaveletMatrix\src\ValueBuffer.cs
+    path: src/ValueBuffer.cs
     startLine: 359
   assemblies:
   - BelNytheraSeiche.WaveletMatrix

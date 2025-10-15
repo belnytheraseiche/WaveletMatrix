@@ -67,18 +67,27 @@ public class LcpIndexTests
     [TestMethod]
     public void SerializeAndDeserialize()
     {
-        var text = "The quick brown fox jumps over the lazy dog. The quick brown dog jumps over the lazy fox.";
+        var text = "abcxabcyabczabcabc,abcabcabcxyz";
         var sa = SuffixArray.Create(text);
         var lcpIndex1 = LcpIndex.Create(sa);
         var lcpIndex2 = LcpIndex.Deserialize(LcpIndex.Serialize(lcpIndex1));
         var data1 = lcpIndex1.InnerData;
         var data2 = lcpIndex2.InnerData;
-        Assert.AreEqual(data1.LcpRmp.InnerData.N, data2.LcpRmp.InnerData.N);
-        CollectionAssert.AreEqual(data1.LcpRmp.InnerData.Table.Select(n => (n.Index, n.Value)).ToArray(), data2.LcpRmp.InnerData.Table.Select(n => (n.Index, n.Value)).ToArray());
+        Assert.AreEqual(data1.LcpRmp.InnerData.StInit.N, data2.LcpRmp.InnerData.StInit.N);
+        CollectionAssert.AreEqual(data1.LcpRmp.InnerData.StInit.Table.Select(n => (n.Index, n.Value)).ToArray(), data2.LcpRmp.InnerData.StInit.Table.Select(n => (n.Index, n.Value)).ToArray());
         Assert.AreEqual(data1.SA.Text.Span.ToString(), data2.SA.Text.Span.ToString());
         CollectionAssert.AreEqual(data1.SA.SA.ToArray(), data2.SA.SA.ToArray());
         CollectionAssert.AreEqual(data1.SA.Lcp.ToArray(), data2.SA.Lcp.ToArray());
         CollectionAssert.AreEqual(data1.SA.Rank.ToArray(), data2.SA.Rank.ToArray());
+        Assert.AreEqual(lcpIndex1.GetLcp(0, 8), lcpIndex2.GetLcp(0, 8));
+        Assert.AreEqual(lcpIndex1.CountUniqueSubstrings(), lcpIndex2.CountUniqueSubstrings());
+        Assert.AreEqual(lcpIndex1.CalculateZivLempelComplexity(), lcpIndex2.CalculateZivLempelComplexity());
+        var result1 = lcpIndex1.FindRepeats(3).Select(n => (n.Text, String.Join(',', n.Positions.Select(m => m.ToString())))).ToArray();
+        var result2 = lcpIndex2.FindRepeats(3).Select(n => (n.Text, String.Join(',', n.Positions.Select(m => m.ToString())))).ToArray();
+        CollectionAssert.AreEqual(result1, result2);
+        var result3 = lcpIndex1.FindTandemRepeats().Select(n => (n.Position, n.Length)).ToArray();
+        var result4 = lcpIndex2.FindTandemRepeats().Select(n => (n.Position, n.Length)).ToArray();
+        CollectionAssert.AreEqual(result3, result4);
     }
 
     // 

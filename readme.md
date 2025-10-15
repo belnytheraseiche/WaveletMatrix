@@ -133,8 +133,8 @@ int count = fmIndex.Count("fox"); // -> 2
 var pattern = "lazy";
 foreach (int pos in fmIndex.Locate(pattern))
 {
-    var (snippet, keyIndex) = fmIndex.GetSnippet(pos, pattern.Length, 30);
-    Console.WriteLine($"Found at {pos}: ...{snippet}...");
+    var snippet = fmIndex.GetSnippet(pos, pattern.Length, 30);
+    Console.WriteLine($"Found at {pos}: ...{snippet.Text}...");
 }
 // Found at 35: ...mps over the lazy dog. The qui...
 // Found at 80: ...n dog jumps over the lazy fox....
@@ -153,6 +153,10 @@ Benchmarks were run on a typical machine using `BenchmarkDotNet` to measure the 
 The patterns used for searching were `{"the", "government", "internationalization"}` for English and `{"GATTACA", "T", "ACGTACGTACGTACGT"}` for DNA.
 
 ### Benchmark Results
+
+Pending, please wait for a few days.
+
+<!--
 
 This benchmark meatures the time taken to perform `SuffixArray.Search`.
 
@@ -224,6 +228,8 @@ This benchmark measures the final file size after serializing.
 | FMIndex       |  429.10 MB |
 | LcpIndex      |  806.07 MB |
 | WaveletMatrix |   12.32 MB |
+
+-->
 
 ---
 

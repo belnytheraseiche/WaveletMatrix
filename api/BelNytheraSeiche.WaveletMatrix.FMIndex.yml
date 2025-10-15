@@ -6,12 +6,13 @@ items:
   parent: BelNytheraSeiche.WaveletMatrix
   children:
   - BelNytheraSeiche.WaveletMatrix.FMIndex.Count(System.ReadOnlySpan{System.Char})
-  - BelNytheraSeiche.WaveletMatrix.FMIndex.Create(System.ReadOnlyMemory{System.Char})
-  - BelNytheraSeiche.WaveletMatrix.FMIndex.Create(System.String)
+  - BelNytheraSeiche.WaveletMatrix.FMIndex.Create(System.ReadOnlyMemory{System.Char},System.Int32)
+  - BelNytheraSeiche.WaveletMatrix.FMIndex.Create(System.String,System.Int32)
   - BelNytheraSeiche.WaveletMatrix.FMIndex.Deserialize(System.Byte[])
   - BelNytheraSeiche.WaveletMatrix.FMIndex.Deserialize(System.IO.Stream)
   - BelNytheraSeiche.WaveletMatrix.FMIndex.Deserialize(System.String)
   - BelNytheraSeiche.WaveletMatrix.FMIndex.GetSnippet(System.Int32,System.Int32,System.Int32,System.Double)
+  - BelNytheraSeiche.WaveletMatrix.FMIndex.IsSampled
   - BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan{System.Char},BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder)
   - BelNytheraSeiche.WaveletMatrix.FMIndex.RestoreSourceText
   - BelNytheraSeiche.WaveletMatrix.FMIndex.SA
@@ -28,13 +29,20 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.FMIndex
   type: Class
   source:
+    remote:
+      path: src/FMIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: FMIndex
-    path: C:\Users\nanto\dev\WaveletMatrix\src\FMIndex.cs
-    startLine: 36
+    path: src/FMIndex.cs
+    startLine: 37
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
-  summary: Provides a high-performance full-text search index based on the FM-Index algorithm.
+  summary: >-
+    Provides a high-performance full-text search index based on the FM-Index algorithm.
+
+    This implementation supports both a full Suffix Array mode for fast locating and a memory-efficient sampling mode.
   remarks: >-
     The FM-Index is a compressed full-text index that allows for fast counting (<xref href="BelNytheraSeiche.WaveletMatrix.FMIndex.Count(System.ReadOnlySpan%7bSystem.Char%7d)" data-throw-if-not-resolved="false"></xref>) and locating (<xref href="BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan%7bSystem.Char%7d%2cBelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder)" data-throw-if-not-resolved="false"></xref>)
 
@@ -64,13 +72,20 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Text
   type: Property
   source:
+    remote:
+      path: src/FMIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Text
-    path: C:\Users\nanto\dev\WaveletMatrix\src\FMIndex.cs
-    startLine: 47
+    path: src/FMIndex.cs
+    startLine: 54
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
-  summary: Gets the original source text used to build the index, excluding the internal terminator character.
+  summary: >-
+    Gets the original source text used to build the index, excluding the internal terminator character.
+
+    This property is only available when the index is built in full Suffix Array mode (i.e., when <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex.IsSampled" data-throw-if-not-resolved="false"></xref> is <code>false</code>).
   example: []
   syntax:
     content: public ReadOnlyMemory<char> Text { get; }
@@ -79,6 +94,10 @@ items:
       type: System.ReadOnlyMemory{System.Char}
     content.vb: Public ReadOnly Property Text As ReadOnlyMemory(Of Char)
   overload: BelNytheraSeiche.WaveletMatrix.FMIndex.Text*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: Thrown if the index is in sampling mode.
 - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.WM
   commentId: P:BelNytheraSeiche.WaveletMatrix.FMIndex.WM
   id: WM
@@ -91,9 +110,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.WM
   type: Property
   source:
+    remote:
+      path: src/FMIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: WM
-    path: C:\Users\nanto\dev\WaveletMatrix\src\FMIndex.cs
-    startLine: 52
+    path: src/FMIndex.cs
+    startLine: 59
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -118,13 +141,20 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SA
   type: Property
   source:
+    remote:
+      path: src/FMIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: SA
-    path: C:\Users\nanto\dev\WaveletMatrix\src\FMIndex.cs
-    startLine: 57
+    path: src/FMIndex.cs
+    startLine: 66
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
-  summary: Gets the underlying Suffix Array instance used by this index.
+  summary: >-
+    Gets the underlying Suffix Array instance used by this index.
+
+    This property is only available when the index is built in full Suffix Array mode (i.e., when <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex.IsSampled" data-throw-if-not-resolved="false"></xref> is <code>false</code>).
   example: []
   syntax:
     content: public SuffixArray SA { get; }
@@ -133,81 +163,143 @@ items:
       type: BelNytheraSeiche.WaveletMatrix.SuffixArray
     content.vb: Public ReadOnly Property SA As SuffixArray
   overload: BelNytheraSeiche.WaveletMatrix.FMIndex.SA*
-- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Create(System.String)
-  commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.Create(System.String)
-  id: Create(System.String)
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: Thrown if the index is in sampling mode.
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.IsSampled
+  commentId: P:BelNytheraSeiche.WaveletMatrix.FMIndex.IsSampled
+  id: IsSampled
   parent: BelNytheraSeiche.WaveletMatrix.FMIndex
   langs:
   - csharp
   - vb
-  name: Create(string)
-  nameWithType: FMIndex.Create(string)
-  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Create(string)
-  type: Method
+  name: IsSampled
+  nameWithType: FMIndex.IsSampled
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.IsSampled
+  type: Property
   source:
-    id: Create
-    path: C:\Users\nanto\dev\WaveletMatrix\src\FMIndex.cs
-    startLine: 73
+    remote:
+      path: src/FMIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
+    id: IsSampled
+    path: src/FMIndex.cs
+    startLine: 71
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
-  summary: Creates a new instance of the <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex" data-throw-if-not-resolved="false"></xref> from a string.
+  summary: Gets a value indicating whether the index is using Suffix Array sampling.
   example: []
   syntax:
-    content: public static FMIndex Create(string text)
+    content: public bool IsSampled { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsSampled As Boolean
+  overload: BelNytheraSeiche.WaveletMatrix.FMIndex.IsSampled*
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Create(System.String,System.Int32)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.Create(System.String,System.Int32)
+  id: Create(System.String,System.Int32)
+  parent: BelNytheraSeiche.WaveletMatrix.FMIndex
+  langs:
+  - csharp
+  - vb
+  name: Create(string, int)
+  nameWithType: FMIndex.Create(string, int)
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Create(string, int)
+  type: Method
+  source:
+    remote:
+      path: src/FMIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
+    id: Create
+    path: src/FMIndex.cs
+    startLine: 97
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Creates a new instance of the <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex" data-throw-if-not-resolved="false"></xref> from a string, with an optional Suffix Array sampling rate.
+  example: []
+  syntax:
+    content: public static FMIndex Create(string text, int sampleRate = 0)
     parameters:
     - id: text
       type: System.String
       description: The text to be indexed.
+    - id: sampleRate
+      type: System.Int32
+      description: >-
+        The sampling rate for the Suffix Array. If 0 (default), the full Suffix Array is stored for fast locating.
+
+        If greater than 1, only every N-th entry of the Suffix Array is stored to save memory, at the cost of slower locate operations.
     return:
       type: BelNytheraSeiche.WaveletMatrix.FMIndex
       description: A new, fully initialized <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex" data-throw-if-not-resolved="false"></xref> instance.
-    content.vb: Public Shared Function Create(text As String) As FMIndex
+    content.vb: Public Shared Function Create(text As String, sampleRate As Integer = 0) As FMIndex
   overload: BelNytheraSeiche.WaveletMatrix.FMIndex.Create*
   exceptions:
   - type: System.ArgumentNullException
     commentId: T:System.ArgumentNullException
     description: Thrown if <code class="paramref">text</code> is null.
-  nameWithType.vb: FMIndex.Create(String)
-  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.Create(String)
-  name.vb: Create(String)
-- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Create(System.ReadOnlyMemory{System.Char})
-  commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.Create(System.ReadOnlyMemory{System.Char})
-  id: Create(System.ReadOnlyMemory{System.Char})
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if <code class="paramref">sampleRate</code> is less than 0.
+  nameWithType.vb: FMIndex.Create(String, Integer)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.Create(String, Integer)
+  name.vb: Create(String, Integer)
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Create(System.ReadOnlyMemory{System.Char},System.Int32)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.Create(System.ReadOnlyMemory{System.Char},System.Int32)
+  id: Create(System.ReadOnlyMemory{System.Char},System.Int32)
   parent: BelNytheraSeiche.WaveletMatrix.FMIndex
   langs:
   - csharp
   - vb
-  name: Create(ReadOnlyMemory<char>)
-  nameWithType: FMIndex.Create(ReadOnlyMemory<char>)
-  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Create(System.ReadOnlyMemory<char>)
+  name: Create(ReadOnlyMemory<char>, int)
+  nameWithType: FMIndex.Create(ReadOnlyMemory<char>, int)
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Create(System.ReadOnlyMemory<char>, int)
   type: Method
   source:
+    remote:
+      path: src/FMIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Create
-    path: C:\Users\nanto\dev\WaveletMatrix\src\FMIndex.cs
-    startLine: 82
+    path: src/FMIndex.cs
+    startLine: 111
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
   summary: >-
-    Creates a new instance of the <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex" data-throw-if-not-resolved="false"></xref> from a read-only memory segment of characters.
+    Creates a new instance of the <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex" data-throw-if-not-resolved="false"></xref> from a read-only memory segment of characters, with an optional Suffix Array sampling rate.
 
     An internal terminator character ('\0') is appended to the text for correctness.
   example: []
   syntax:
-    content: public static FMIndex Create(ReadOnlyMemory<char> text)
+    content: public static FMIndex Create(ReadOnlyMemory<char> text, int sampleRate = 0)
     parameters:
     - id: text
       type: System.ReadOnlyMemory{System.Char}
       description: The text to be indexed.
+    - id: sampleRate
+      type: System.Int32
+      description: >-
+        The sampling rate for the Suffix Array. If 0 (default), the full Suffix Array is stored for fast locating.
+
+        If greater than 1, only every N-th entry of the Suffix Array is stored, saving memory at the cost of slower locate operations.
     return:
       type: BelNytheraSeiche.WaveletMatrix.FMIndex
       description: A new, fully initialized <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex" data-throw-if-not-resolved="false"></xref> instance.
-    content.vb: Public Shared Function Create(text As ReadOnlyMemory(Of Char)) As FMIndex
+    content.vb: Public Shared Function Create(text As ReadOnlyMemory(Of Char), sampleRate As Integer = 0) As FMIndex
   overload: BelNytheraSeiche.WaveletMatrix.FMIndex.Create*
-  nameWithType.vb: FMIndex.Create(ReadOnlyMemory(Of Char))
-  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.Create(System.ReadOnlyMemory(Of Char))
-  name.vb: Create(ReadOnlyMemory(Of Char))
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if <code class="paramref">sampleRate</code> is less than 0.
+  nameWithType.vb: FMIndex.Create(ReadOnlyMemory(Of Char), Integer)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.Create(System.ReadOnlyMemory(Of Char), Integer)
+  name.vb: Create(ReadOnlyMemory(Of Char), Integer)
 - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Serialize(BelNytheraSeiche.WaveletMatrix.FMIndex,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
   commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.Serialize(BelNytheraSeiche.WaveletMatrix.FMIndex,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
   id: Serialize(BelNytheraSeiche.WaveletMatrix.FMIndex,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
@@ -220,9 +312,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Serialize(BelNytheraSeiche.WaveletMatrix.FMIndex, BelNytheraSeiche.WaveletMatrix.SerializationOptions?)
   type: Method
   source:
+    remote:
+      path: src/FMIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Serialize
-    path: C:\Users\nanto\dev\WaveletMatrix\src\FMIndex.cs
-    startLine: 130
+    path: src/FMIndex.cs
+    startLine: 180
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -264,9 +360,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Serialize(BelNytheraSeiche.WaveletMatrix.FMIndex, string, BelNytheraSeiche.WaveletMatrix.SerializationOptions?)
   type: Method
   source:
+    remote:
+      path: src/FMIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Serialize
-    path: C:\Users\nanto\dev\WaveletMatrix\src\FMIndex.cs
-    startLine: 154
+    path: src/FMIndex.cs
+    startLine: 204
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -308,9 +408,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Serialize(BelNytheraSeiche.WaveletMatrix.FMIndex, System.IO.Stream, BelNytheraSeiche.WaveletMatrix.SerializationOptions?)
   type: Method
   source:
+    remote:
+      path: src/FMIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Serialize
-    path: C:\Users\nanto\dev\WaveletMatrix\src\FMIndex.cs
-    startLine: 181
+    path: src/FMIndex.cs
+    startLine: 231
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -355,9 +459,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Deserialize(byte[])
   type: Method
   source:
+    remote:
+      path: src/FMIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Deserialize
-    path: C:\Users\nanto\dev\WaveletMatrix\src\FMIndex.cs
-    startLine: 289
+    path: src/FMIndex.cs
+    startLine: 384
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -393,9 +501,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Deserialize(string)
   type: Method
   source:
+    remote:
+      path: src/FMIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Deserialize
-    path: C:\Users\nanto\dev\WaveletMatrix\src\FMIndex.cs
-    startLine: 308
+    path: src/FMIndex.cs
+    startLine: 403
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -431,9 +543,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Deserialize(System.IO.Stream)
   type: Method
   source:
+    remote:
+      path: src/FMIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Deserialize
-    path: C:\Users\nanto\dev\WaveletMatrix\src\FMIndex.cs
-    startLine: 329
+    path: src/FMIndex.cs
+    startLine: 424
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -472,16 +588,20 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Count(System.ReadOnlySpan<char>)
   type: Method
   source:
+    remote:
+      path: src/FMIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Count
-    path: C:\Users\nanto\dev\WaveletMatrix\src\FMIndex.cs
-    startLine: 399
+    path: src/FMIndex.cs
+    startLine: 518
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
   summary: >-
     Counts the number of occurrences of a pattern within the text.
 
-    This operation is extremely fast, typically proportional to the length of the pattern, not the text.
+    This operation is extremely fast, with performance proportional to the pattern length, not the text length.
   example: []
   syntax:
     content: public int Count(ReadOnlySpan<char> pattern)
@@ -509,19 +629,25 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan<char>, BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder)
   type: Method
   source:
+    remote:
+      path: src/FMIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Locate
-    path: C:\Users\nanto\dev\WaveletMatrix\src\FMIndex.cs
-    startLine: 416
+    path: src/FMIndex.cs
+    startLine: 536
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
   summary: Finds all starting positions of a pattern within the text.
   remarks: >-
-    Specifying <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Ascending" data-throw-if-not-resolved="false"></xref> or <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Descending" data-throw-if-not-resolved="false"></xref> requires collecting all results
+    In full Suffix Array mode, this operation is very fast. In sampling mode, locating each position requires additional
 
-    and sorting them, which incurs a performance cost proportional to the number of matches (k log k).
+    computation (LF-mapping steps), making it slower but significantly more memory-efficient.
 
-    For the highest performance where order is not important, use <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Unordered" data-throw-if-not-resolved="false"></xref>.
+    Specifying <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Ascending" data-throw-if-not-resolved="false"></xref> or <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Descending" data-throw-if-not-resolved="false"></xref> may require collecting all results
+
+    and sorting them, which incurs a performance cost. For the highest performance where order is not important, use <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Unordered" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public IEnumerable<int> Locate(ReadOnlySpan<char> pattern, FMIndex.SortOrder sortOrder = SortOrder.Ascending)
@@ -552,16 +678,17 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.RestoreSourceText()
   type: Method
   source:
+    remote:
+      path: src/FMIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: RestoreSourceText
-    path: C:\Users\nanto\dev\WaveletMatrix\src\FMIndex.cs
-    startLine: 460
+    path: src/FMIndex.cs
+    startLine: 621
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
-  summary: >-
-    Reconstructs the original source text from the compressed index.
-
-    This method demonstrates the reversibility of the Burrows-Wheeler Transform.
+  summary: Reconstructs the original source text from the compressed index by inverting the Burrows-Wheeler Transform.
   example: []
   syntax:
     content: public string RestoreSourceText()
@@ -582,20 +709,32 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.GetSnippet(int, int, int, double)
   type: Method
   source:
+    remote:
+      path: src/FMIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: GetSnippet
-    path: C:\Users\nanto\dev\WaveletMatrix\src\FMIndex.cs
-    startLine: 492
+    path: src/FMIndex.cs
+    startLine: 657
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
-  summary: Extracts a snippet of text surrounding a specified position, with a configurable context ratio.
+  summary: Calculates the location and optionally extracts the content of a text snippet surrounding a specified position.
   remarks: >-
+    In full Suffix Array mode, the <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet.Text" data-throw-if-not-resolved="false"></xref> property of the returned record will contain the extracted string.
+
+    In sampling mode, the <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet.Text" data-throw-if-not-resolved="false"></xref> property will be <code>null</code>, but the location properties (<xref href="BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet.Index" data-throw-if-not-resolved="false"></xref>, <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet.Length" data-throw-if-not-resolved="false"></xref>, <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet.KeyPosition" data-throw-if-not-resolved="false"></xref>)
+
+    will be correctly calculated, allowing the caller to extract the snippet from their own copy of the source text.
+
     The specified <code class="paramref">leadingRatio</code> is a guideline. The method prioritizes returning a snippet of approximately
 
-    <code class="paramref">totalLength</code>. If the keyword is near the start or end of the text, the actual ratio of leading/trailing context will be adjusted to fill the requested length.
+    <code class="paramref">totalLength</code>. If the keyword is near the start or end of the text, the actual ratio of leading/trailing
+
+    context will be adjusted to fill the requested length.
   example: []
   syntax:
-    content: public (string, int) GetSnippet(int position, int keyLength, int totalLength, double leadingRatio = 0.5)
+    content: public FMIndex.Snippet GetSnippet(int position, int keyLength, int totalLength, double leadingRatio = 0.5)
     parameters:
     - id: position
       type: System.Int32
@@ -610,17 +749,17 @@ items:
       type: System.Double
       description: The desired proportion (0.0 to 1.0) of the context text to appear before the keyword. Defaults to 0.5 for centering the keyword.
     return:
-      type: System.ValueTuple{System.String,System.Int32}
-      description: A tuple containing the generated snippet string and the zero-based starting position of the keyword within the snippet.
-    content.vb: Public Function GetSnippet(position As Integer, keyLength As Integer, totalLength As Integer, leadingRatio As Double = 0.5) As (String, Integer)
+      type: BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet
+      description: A <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet" data-throw-if-not-resolved="false"></xref> record containing the location, length, and (in non-sampling mode) the text content of the snippet.
+    content.vb: Public Function GetSnippet(position As Integer, keyLength As Integer, totalLength As Integer, leadingRatio As Double = 0.5) As FMIndex.Snippet
   overload: BelNytheraSeiche.WaveletMatrix.FMIndex.GetSnippet*
   exceptions:
   - type: System.ArgumentOutOfRangeException
     commentId: T:System.ArgumentOutOfRangeException
-    description: Thrown if <code class="paramref">position</code>, <code class="paramref">keyLength</code>, or <code class="paramref">totalLength</code> are invalid, or if <code class="paramref">leadingRatio</code> is not between 0.0 and 1.0.
+    description: Thrown if <code class="paramref">position</code>, <code class="paramref">keyLength</code>, <code class="paramref">totalLength</code> are invalid, or if <code class="paramref">leadingRatio</code> is not between 0.0 and 1.0.
   - type: System.ArgumentException
     commentId: T:System.ArgumentException
-    description: Thrown if <code class="paramref">position</code> + <code class="paramref">keyLength</code> is greater than the length of text.
+    description: Thrown if <code class="paramref">position</code> + <code class="paramref">keyLength</code> is greater than the length of the text.
   nameWithType.vb: FMIndex.GetSnippet(Integer, Integer, Integer, Double)
   fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.GetSnippet(Integer, Integer, Integer, Double)
   name.vb: GetSnippet(Integer, Integer, Integer, Double)
@@ -958,6 +1097,19 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.IsSampled
+  commentId: P:BelNytheraSeiche.WaveletMatrix.FMIndex.IsSampled
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_IsSampled
+  name: IsSampled
+  nameWithType: FMIndex.IsSampled
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.IsSampled
+- uid: System.InvalidOperationException
+  commentId: T:System.InvalidOperationException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.invalidoperationexception
+  name: InvalidOperationException
+  nameWithType: InvalidOperationException
+  fullName: System.InvalidOperationException
 - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Text*
   commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.Text
   href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Text
@@ -1105,6 +1257,23 @@ references:
   name: SuffixArray
   nameWithType: SuffixArray
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.IsSampled*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.IsSampled
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_IsSampled
+  name: IsSampled
+  nameWithType: FMIndex.IsSampled
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.IsSampled
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
 - uid: BelNytheraSeiche.WaveletMatrix.FMIndex
   commentId: T:BelNytheraSeiche.WaveletMatrix.FMIndex
   parent: BelNytheraSeiche.WaveletMatrix
@@ -1119,9 +1288,16 @@ references:
   name: ArgumentNullException
   nameWithType: ArgumentNullException
   fullName: System.ArgumentNullException
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception
+  name: ArgumentOutOfRangeException
+  nameWithType: ArgumentOutOfRangeException
+  fullName: System.ArgumentOutOfRangeException
 - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Create*
   commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.Create
-  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Create_System_String_
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Create_System_String_System_Int32_
   name: Create
   nameWithType: FMIndex.Create
   fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Create
@@ -1136,6 +1312,17 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
 - uid: BelNytheraSeiche.WaveletMatrix.SerializationOptions.Default
   commentId: P:BelNytheraSeiche.WaveletMatrix.SerializationOptions.Default
   href: BelNytheraSeiche.WaveletMatrix.SerializationOptions.html#BelNytheraSeiche_WaveletMatrix_SerializationOptions_Default
@@ -1267,17 +1454,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.char
   - name: )
-- uid: System.Int32
-  commentId: T:System.Int32
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: int
-  nameWithType: int
-  fullName: int
-  nameWithType.vb: Integer
-  fullName.vb: Integer
-  name.vb: Integer
 - uid: System.ReadOnlySpan`1
   commentId: T:System.ReadOnlySpan`1
   isExternal: true
@@ -1459,13 +1635,53 @@ references:
   name: RestoreSourceText
   nameWithType: FMIndex.RestoreSourceText
   fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.RestoreSourceText
-- uid: System.ArgumentOutOfRangeException
-  commentId: T:System.ArgumentOutOfRangeException
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception
-  name: ArgumentOutOfRangeException
-  nameWithType: ArgumentOutOfRangeException
-  fullName: System.ArgumentOutOfRangeException
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet
+  commentId: T:BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
+  name: FMIndex.Snippet
+  nameWithType: FMIndex.Snippet
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex
+    name: FMIndex
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet
+    name: Snippet
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet.html
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex
+    name: FMIndex
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet
+    name: Snippet
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet.html
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet.Text
+  commentId: P:BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet.Text
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Snippet_Text
+  name: Text
+  nameWithType: FMIndex.Snippet.Text
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet.Text
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet.Index
+  commentId: P:BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet.Index
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Snippet_Index
+  name: Index
+  nameWithType: FMIndex.Snippet.Index
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet.Index
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet.Length
+  commentId: P:BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet.Length
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Snippet_Length
+  name: Length
+  nameWithType: FMIndex.Snippet.Length
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet.Length
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet.KeyPosition
+  commentId: P:BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet.KeyPosition
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Snippet_KeyPosition
+  name: KeyPosition
+  nameWithType: FMIndex.Snippet.KeyPosition
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet.KeyPosition
 - uid: System.ArgumentException
   commentId: T:System.ArgumentException
   isExternal: true
@@ -1490,59 +1706,3 @@ references:
   nameWithType.vb: Double
   fullName.vb: Double
   name.vb: Double
-- uid: System.ValueTuple{System.String,System.Int32}
-  commentId: T:System.ValueTuple{System.String,System.Int32}
-  parent: System
-  definition: System.ValueTuple`2
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: (string, int)
-  nameWithType: (string, int)
-  fullName: (string, int)
-  nameWithType.vb: (String, Integer)
-  fullName.vb: (String, Integer)
-  name.vb: (String, Integer)
-  spec.csharp:
-  - name: (
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: System.Int32
-    name: int
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: )
-  spec.vb:
-  - name: (
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: System.Int32
-    name: Integer
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: )
-- uid: System.ValueTuple`2
-  commentId: T:System.ValueTuple`2
-  name: (T1, T2)
-  nameWithType: (T1, T2)
-  fullName: (T1, T2)
-  spec.csharp:
-  - name: (
-  - name: T1
-  - name: ','
-  - name: " "
-  - name: T2
-  - name: )
-  spec.vb:
-  - name: (
-  - name: T1
-  - name: ','
-  - name: " "
-  - name: T2
-  - name: )

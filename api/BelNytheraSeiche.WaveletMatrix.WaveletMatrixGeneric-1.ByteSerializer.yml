@@ -17,8 +17,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.ByteSerializer
   type: Class
   source:
+    remote:
+      path: src/WaveletMatrixGeneric.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: ByteSerializer
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    path: src/WaveletMatrixGeneric.cs
     startLine: 700
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -54,8 +58,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.ByteSerializer.Instance
   type: Property
   source:
+    remote:
+      path: src/WaveletMatrixGeneric.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Instance
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    path: src/WaveletMatrixGeneric.cs
     startLine: 705
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -83,8 +91,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.ByteSerializer.TypeIdentifier
   type: Property
   source:
+    remote:
+      path: src/WaveletMatrixGeneric.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: TypeIdentifier
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    path: src/WaveletMatrixGeneric.cs
     startLine: 708
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -118,8 +130,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.ByteSerializer.WriteResolveMap(System.IO.Stream, byte[])
   type: Method
   source:
+    remote:
+      path: src/WaveletMatrixGeneric.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: WriteResolveMap
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    path: src/WaveletMatrixGeneric.cs
     startLine: 711
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -154,8 +170,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.ByteSerializer.ReadResolveMap(System.IO.Stream)
   type: Method
   source:
+    remote:
+      path: src/WaveletMatrixGeneric.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: ReadResolveMap
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    path: src/WaveletMatrixGeneric.cs
     startLine: 720
   assemblies:
   - BelNytheraSeiche.WaveletMatrix

@@ -16,8 +16,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.IGenericSerializer<Tx>
   type: Interface
   source:
+    remote:
+      path: src/WaveletMatrixGeneric.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: IGenericSerializer
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    path: src/WaveletMatrixGeneric.cs
     startLine: 673
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -45,8 +49,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.IGenericSerializer<Tx>.TypeIdentifier
   type: Property
   source:
+    remote:
+      path: src/WaveletMatrixGeneric.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: TypeIdentifier
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    path: src/WaveletMatrixGeneric.cs
     startLine: 680
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -78,8 +86,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.IGenericSerializer<Tx>.WriteResolveMap(System.IO.Stream, Tx[])
   type: Method
   source:
+    remote:
+      path: src/WaveletMatrixGeneric.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: WriteResolveMap
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    path: src/WaveletMatrixGeneric.cs
     startLine: 687
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -112,8 +124,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.IGenericSerializer<Tx>.ReadResolveMap(System.IO.Stream)
   type: Method
   source:
+    remote:
+      path: src/WaveletMatrixGeneric.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: ReadResolveMap
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    path: src/WaveletMatrixGeneric.cs
     startLine: 694
   assemblies:
   - BelNytheraSeiche.WaveletMatrix

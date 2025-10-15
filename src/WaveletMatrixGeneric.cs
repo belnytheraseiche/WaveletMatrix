@@ -331,7 +331,7 @@ public sealed class WaveletMatrixGeneric<T> where T : IComparable<T>
             throw new ArgumentException($"{nameof(genericSerializer)}.TypeIdentifier must be 4 bytes.", nameof(genericSerializer));
 
         if (!buffer0[8..12].SequenceEqual(genericSerializer.TypeIdentifier))
-            throw new InvalidDataException($"Type incompatible.");
+            throw new InvalidDataException("Type incompatible.");
 
         // resolveMap
         T[] resolveMap = [];
@@ -405,7 +405,7 @@ public sealed class WaveletMatrixGeneric<T> where T : IComparable<T>
     => TryGetAssigned(value, out var assigned) ? core_.RangeCount(start, end, assigned) : 0;
 
     /// <summary>
-    /// Finds the k-th smallest value.
+    /// Finds the k-th smallest value in the entire sequence.
     /// </summary>
     /// <param name="k">The zero-based rank of the value to find (e.g., k=0 for the smallest value).</param>
     /// <returns>The k-th smallest value.</returns>
@@ -751,11 +751,11 @@ public sealed class WaveletMatrixGeneric<T> where T : IComparable<T>
                 stream.Write(MemoryMarshal.AsBytes(resolveMap.AsSpan()));
             else
             {
-                var buffer2 = new byte[32768];
+                var buffer2 = new byte[16384];
                 var offset = 0;
                 while (offset < resolveMap.Length)
                 {
-                    var length = Math.Min(16384, resolveMap.Length - offset);
+                    var length = Math.Min(8192, resolveMap.Length - offset);
                     var span = resolveMap.AsSpan(offset, length);
                     for (var i = 0; i < span.Length; i++)
                         BinaryPrimitives.WriteUInt16LittleEndian(buffer2.AsSpan(i * 2, 2), (ushort)span[i]);

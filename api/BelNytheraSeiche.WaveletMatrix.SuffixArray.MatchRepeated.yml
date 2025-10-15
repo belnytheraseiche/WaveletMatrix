@@ -16,9 +16,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.MatchRepeated
   type: Struct
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: MatchRepeated
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
-    startLine: 1058
+    path: src/SuffixArray.cs
+    startLine: 1078
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -48,9 +52,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.MatchRepeated.MatchRepeated(string, int[])
   type: Constructor
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: .ctor
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
-    startLine: 1058
+    path: src/SuffixArray.cs
+    startLine: 1078
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -82,9 +90,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.MatchRepeated.Text
   type: Property
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Text
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
-    startLine: 1058
+    path: src/SuffixArray.cs
+    startLine: 1078
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -109,9 +121,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.MatchRepeated.Positions
   type: Property
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Positions
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
-    startLine: 1058
+    path: src/SuffixArray.cs
+    startLine: 1078
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix

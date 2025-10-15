@@ -12,11 +12,11 @@
     <AssemblyName>BelNytheraSeiche.WaveletMatrix</AssemblyName>
     <Product>BelNytheraSeiche.WaveletMatrix</Product>
     <Company></Company>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Copyright>© belnytheraseiche</Copyright>
     <Authors>belnytheraseiche</Authors>
     <PackageId>BelNytheraSeiche.WaveletMatrix</PackageId>
-    <PackageTags>stringology;data-structure;wavelet-matrix;suffix-array;sa-is;lcp-array;rmq;fm-index;bwt;sparse-table;text-search;indexing;succinct;wavelet;lcp</PackageTags>
+    <PackageTags>stringology;data-structures;wavelet-matrix;suffix-array;sa-is;lcp-array;rmq;fm-index;bwt;sparse-table;fischer-heun;text-search;indexing;succinct;wavelet;lcp</PackageTags>
     <RepositoryUrl>https://github.com/belnytheraseiche/WaveletMatrix</RepositoryUrl>
     <PackageProjectUrl>https://github.com/belnytheraseiche/WaveletMatrix</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>

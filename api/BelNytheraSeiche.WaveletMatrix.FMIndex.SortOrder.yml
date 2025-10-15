@@ -16,9 +16,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder
   type: Enum
   source:
+    remote:
+      path: src/FMIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: SortOrder
-    path: C:\Users\nanto\dev\WaveletMatrix\src\FMIndex.cs
-    startLine: 573
+    path: src/FMIndex.cs
+    startLine: 737
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -39,9 +43,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Unordered
   type: Field
   source:
+    remote:
+      path: src/FMIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Unordered
-    path: C:\Users\nanto\dev\WaveletMatrix\src\FMIndex.cs
-    startLine: 578
+    path: src/FMIndex.cs
+    startLine: 742
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -63,9 +71,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Ascending
   type: Field
   source:
+    remote:
+      path: src/FMIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Ascending
-    path: C:\Users\nanto\dev\WaveletMatrix\src\FMIndex.cs
-    startLine: 582
+    path: src/FMIndex.cs
+    startLine: 746
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -87,9 +99,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Descending
   type: Field
   source:
+    remote:
+      path: src/FMIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Descending
-    path: C:\Users\nanto\dev\WaveletMatrix\src\FMIndex.cs
-    startLine: 586
+    path: src/FMIndex.cs
+    startLine: 750
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix

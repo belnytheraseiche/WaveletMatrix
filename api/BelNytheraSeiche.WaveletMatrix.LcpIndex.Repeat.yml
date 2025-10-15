@@ -16,13 +16,17 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat
   type: Class
   source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Repeat
-    path: C:\Users\nanto\dev\WaveletMatrix\src\LcpIndex.cs
-    startLine: 531
+    path: src/LcpIndex.cs
+    startLine: 762
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
-  summary: Represents a epeated substring.
+  summary: Represents a repeated substring and all its occurrences.
   example: []
   syntax:
     content: 'public record LcpIndex.Repeat : IEquatable<LcpIndex.Repeat>'
@@ -51,13 +55,17 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat.Repeat(string, int[])
   type: Constructor
   source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: .ctor
-    path: C:\Users\nanto\dev\WaveletMatrix\src\LcpIndex.cs
-    startLine: 531
+    path: src/LcpIndex.cs
+    startLine: 762
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
-  summary: Represents a epeated substring.
+  summary: Represents a repeated substring and all its occurrences.
   example: []
   syntax:
     content: public Repeat(string Text, int[] Positions)
@@ -85,9 +93,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat.Text
   type: Property
   source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Text
-    path: C:\Users\nanto\dev\WaveletMatrix\src\LcpIndex.cs
-    startLine: 531
+    path: src/LcpIndex.cs
+    startLine: 762
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -112,9 +124,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat.Positions
   type: Property
   source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Positions
-    path: C:\Users\nanto\dev\WaveletMatrix\src\LcpIndex.cs
-    startLine: 531
+    path: src/LcpIndex.cs
+    startLine: 762
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix

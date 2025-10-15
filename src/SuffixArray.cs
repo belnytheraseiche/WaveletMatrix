@@ -82,9 +82,29 @@ public sealed class SuffixArray
     readonly int[] lcp_;
     readonly int[] rank_;
 
+    /// <summary>
+    /// Gets the original text used to build the suffix array.
+    /// </summary>
     public ReadOnlyMemory<char> Text => text_;
+
+    /// <summary>
+    /// Gets the suffix array. This is a sorted array of all suffixes of the text.
+    /// </summary>
+    /// <remarks>
+    /// The 0-th element of the internal array is skipped as it corresponds to the sentinel character used by the SA-IS algorithm.
+    /// </remarks>
     public ReadOnlyMemory<int> SA => sa_[1..];
+
+    /// <summary>
+    /// Gets the LCP (Longest Common Prefix) array.
+    /// `Lcp[i]` stores the length of the longest common prefix between the suffixes starting at `SA[i-1]` and `SA[i]`.
+    /// </summary>
     public ReadOnlyMemory<int> Lcp => lcp_.AsMemory();
+
+    /// <summary>
+    /// Gets the Rank array (also known as the Inverse Suffix Array).
+    /// `Rank[i]` gives the rank (the index in the suffix array) of the suffix starting at position `i` of the original text.
+    /// </summary>
     public ReadOnlyMemory<int> Rank => rank_.AsMemory();
 
     // 
@@ -775,7 +795,7 @@ public sealed class SuffixArray
     {
         options ??= WildcardOptions.Default;
         if (options.Asterisk == options.Question)
-            throw new ArgumentException($"{nameof(options.Asterisk)} must be deferent {nameof(options.Question)}.");
+            throw new ArgumentException($"{nameof(options.Asterisk)} must be different {nameof(options.Question)}.");
         if (options.AsteriskMinLength > options.AsteriskMaxLength)
             throw new ArgumentException($"{nameof(options.AsteriskMinLength)} must be less than or equal {nameof(options.AsteriskMaxLength)}.");
         if (options.StopCharacters?.Any(n => n == options.Asterisk || n == options.Question) ?? false)

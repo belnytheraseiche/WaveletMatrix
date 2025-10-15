@@ -42,8 +42,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>
   type: Class
   source:
+    remote:
+      path: src/WaveletMatrixGeneric.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: WaveletMatrixGeneric
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    path: src/WaveletMatrixGeneric.cs
     startLine: 43
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -93,8 +97,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.Size
   type: Property
   source:
+    remote:
+      path: src/WaveletMatrixGeneric.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Size
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    path: src/WaveletMatrixGeneric.cs
     startLine: 52
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -122,8 +130,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.Create(System.Collections.Generic.IEnumerable<T>)
   type: Method
   source:
+    remote:
+      path: src/WaveletMatrixGeneric.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Create
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    path: src/WaveletMatrixGeneric.cs
     startLine: 70
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -163,8 +175,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.Serialize(BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>, BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.IGenericSerializer<T>?, BelNytheraSeiche.WaveletMatrix.SerializationOptions?)
   type: Method
   source:
+    remote:
+      path: src/WaveletMatrixGeneric.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Serialize
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    path: src/WaveletMatrixGeneric.cs
     startLine: 108
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -218,8 +234,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.Serialize(BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>, string, BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.IGenericSerializer<T>?, BelNytheraSeiche.WaveletMatrix.SerializationOptions?)
   type: Method
   source:
+    remote:
+      path: src/WaveletMatrixGeneric.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Serialize
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    path: src/WaveletMatrixGeneric.cs
     startLine: 138
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -273,8 +293,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.Serialize(BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>, System.IO.Stream, BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.IGenericSerializer<T>?, BelNytheraSeiche.WaveletMatrix.SerializationOptions?)
   type: Method
   source:
+    remote:
+      path: src/WaveletMatrixGeneric.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Serialize
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    path: src/WaveletMatrixGeneric.cs
     startLine: 171
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -331,8 +355,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.Deserialize(byte[], BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.IGenericSerializer<T>?)
   type: Method
   source:
+    remote:
+      path: src/WaveletMatrixGeneric.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Deserialize
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    path: src/WaveletMatrixGeneric.cs
     startLine: 251
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -380,8 +408,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.Deserialize(string, BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.IGenericSerializer<T>?)
   type: Method
   source:
+    remote:
+      path: src/WaveletMatrixGeneric.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Deserialize
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    path: src/WaveletMatrixGeneric.cs
     startLine: 276
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -429,8 +461,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.Deserialize(System.IO.Stream, BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.IGenericSerializer<T>?)
   type: Method
   source:
+    remote:
+      path: src/WaveletMatrixGeneric.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Deserialize
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    path: src/WaveletMatrixGeneric.cs
     startLine: 302
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -481,8 +517,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.Access(int)
   type: Method
   source:
+    remote:
+      path: src/WaveletMatrixGeneric.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Access
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    path: src/WaveletMatrixGeneric.cs
     startLine: 362
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -519,8 +559,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.Rank(int, T)
   type: Method
   source:
+    remote:
+      path: src/WaveletMatrixGeneric.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Rank
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    path: src/WaveletMatrixGeneric.cs
     startLine: 372
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -560,8 +604,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.Select(int, T)
   type: Method
   source:
+    remote:
+      path: src/WaveletMatrixGeneric.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Select
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    path: src/WaveletMatrixGeneric.cs
     startLine: 382
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -601,8 +649,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.RangeCount(T)
   type: Method
   source:
+    remote:
+      path: src/WaveletMatrixGeneric.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: RangeCount
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    path: src/WaveletMatrixGeneric.cs
     startLine: 391
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -635,8 +687,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.RangeCount(int, int, T)
   type: Method
   source:
+    remote:
+      path: src/WaveletMatrixGeneric.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: RangeCount
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    path: src/WaveletMatrixGeneric.cs
     startLine: 403
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -682,13 +738,17 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.Quantile(int)
   type: Method
   source:
+    remote:
+      path: src/WaveletMatrixGeneric.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Quantile
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    path: src/WaveletMatrixGeneric.cs
     startLine: 413
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
-  summary: Finds the k-th smallest value.
+  summary: Finds the k-th smallest value in the entire sequence.
   remarks: This method is a shorthand for calling Quantile(0, <xref href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric%601.Size" data-throw-if-not-resolved="false"></xref>, <code class="paramref">k</code>).
   example: []
   syntax:
@@ -721,8 +781,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.Quantile(int, int, int)
   type: Method
   source:
+    remote:
+      path: src/WaveletMatrixGeneric.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Quantile
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    path: src/WaveletMatrixGeneric.cs
     startLine: 426
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -771,8 +835,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.RangeFreq(T, T)
   type: Method
   source:
+    remote:
+      path: src/WaveletMatrixGeneric.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: RangeFreq
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    path: src/WaveletMatrixGeneric.cs
     startLine: 437
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -812,8 +880,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.RangeFreq(int, int, T, T)
   type: Method
   source:
+    remote:
+      path: src/WaveletMatrixGeneric.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: RangeFreq
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    path: src/WaveletMatrixGeneric.cs
     startLine: 451
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -865,8 +937,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.RangeMode()
   type: Method
   source:
+    remote:
+      path: src/WaveletMatrixGeneric.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: RangeMode
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    path: src/WaveletMatrixGeneric.cs
     startLine: 459
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -895,8 +971,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.RangeMode(int, int)
   type: Method
   source:
+    remote:
+      path: src/WaveletMatrixGeneric.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: RangeMode
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    path: src/WaveletMatrixGeneric.cs
     startLine: 470
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -939,8 +1019,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.TopK(int)
   type: Method
   source:
+    remote:
+      path: src/WaveletMatrixGeneric.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: TopK
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    path: src/WaveletMatrixGeneric.cs
     startLine: 483
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -978,8 +1062,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.TopK(int, int, int)
   type: Method
   source:
+    remote:
+      path: src/WaveletMatrixGeneric.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: TopK
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    path: src/WaveletMatrixGeneric.cs
     startLine: 495
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -1025,8 +1113,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.SmallerValue(T, T)
   type: Method
   source:
+    remote:
+      path: src/WaveletMatrixGeneric.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: SmallerValue
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    path: src/WaveletMatrixGeneric.cs
     startLine: 509
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -1065,8 +1157,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.SmallerValue(int, int, T, T)
   type: Method
   source:
+    remote:
+      path: src/WaveletMatrixGeneric.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: SmallerValue
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    path: src/WaveletMatrixGeneric.cs
     startLine: 523
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -1118,8 +1214,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.TrySmallerValue(T, out T)
   type: Method
   source:
+    remote:
+      path: src/WaveletMatrixGeneric.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: TrySmallerValue
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    path: src/WaveletMatrixGeneric.cs
     startLine: 535
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -1161,8 +1261,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.TrySmallerValue(int, int, T, out T)
   type: Method
   source:
+    remote:
+      path: src/WaveletMatrixGeneric.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: TrySmallerValue
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    path: src/WaveletMatrixGeneric.cs
     startLine: 550
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -1216,8 +1320,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.LargerValue(T, T)
   type: Method
   source:
+    remote:
+      path: src/WaveletMatrixGeneric.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: LargerValue
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    path: src/WaveletMatrixGeneric.cs
     startLine: 574
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -1256,8 +1364,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.LargerValue(int, int, T, T)
   type: Method
   source:
+    remote:
+      path: src/WaveletMatrixGeneric.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: LargerValue
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    path: src/WaveletMatrixGeneric.cs
     startLine: 588
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -1309,8 +1421,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.TryLargerValue(T, out T)
   type: Method
   source:
+    remote:
+      path: src/WaveletMatrixGeneric.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: TryLargerValue
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    path: src/WaveletMatrixGeneric.cs
     startLine: 600
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -1352,8 +1468,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric<T>.TryLargerValue(int, int, T, out T)
   type: Method
   source:
+    remote:
+      path: src/WaveletMatrixGeneric.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: TryLargerValue
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixGeneric.cs
+    path: src/WaveletMatrixGeneric.cs
     startLine: 615
   assemblies:
   - BelNytheraSeiche.WaveletMatrix

@@ -37,8 +37,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray
   type: Class
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: SuffixArray
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
+    path: src/SuffixArray.cs
     startLine: 77
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -75,12 +79,18 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.Text
   type: Property
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Text
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
-    startLine: 84
+    path: src/SuffixArray.cs
+    startLine: 87
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Gets the original text used to build the suffix array.
+  example: []
   syntax:
     content: public ReadOnlyMemory<char> Text { get; }
     parameters: []
@@ -100,12 +110,19 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.SA
   type: Property
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: SA
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
-    startLine: 85
+    path: src/SuffixArray.cs
+    startLine: 95
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Gets the suffix array. This is a sorted array of all suffixes of the text.
+  remarks: The 0-th element of the internal array is skipped as it corresponds to the sentinel character used by the SA-IS algorithm.
+  example: []
   syntax:
     content: public ReadOnlyMemory<int> SA { get; }
     parameters: []
@@ -125,12 +142,21 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.Lcp
   type: Property
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Lcp
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
-    startLine: 86
+    path: src/SuffixArray.cs
+    startLine: 101
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Gets the LCP (Longest Common Prefix) array.
+
+    `Lcp[i]` stores the length of the longest common prefix between the suffixes starting at `SA[i-1]` and `SA[i]`.
+  example: []
   syntax:
     content: public ReadOnlyMemory<int> Lcp { get; }
     parameters: []
@@ -150,12 +176,21 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.Rank
   type: Property
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Rank
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
-    startLine: 87
+    path: src/SuffixArray.cs
+    startLine: 107
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Gets the Rank array (also known as the Inverse Suffix Array).
+
+    `Rank[i]` gives the rank (the index in the suffix array) of the suffix starting at position `i` of the original text.
+  example: []
   syntax:
     content: public ReadOnlyMemory<int> Rank { get; }
     parameters: []
@@ -175,9 +210,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.Create(string)
   type: Method
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Create
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
-    startLine: 104
+    path: src/SuffixArray.cs
+    startLine: 124
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -215,9 +254,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.Create(System.ReadOnlyMemory<char>)
   type: Method
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Create
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
-    startLine: 113
+    path: src/SuffixArray.cs
+    startLine: 133
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -255,9 +298,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.Serialize(BelNytheraSeiche.WaveletMatrix.SuffixArray, BelNytheraSeiche.WaveletMatrix.SerializationOptions?)
   type: Method
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Serialize
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
-    startLine: 137
+    path: src/SuffixArray.cs
+    startLine: 157
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -299,9 +346,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.Serialize(BelNytheraSeiche.WaveletMatrix.SuffixArray, string, BelNytheraSeiche.WaveletMatrix.SerializationOptions?)
   type: Method
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Serialize
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
-    startLine: 161
+    path: src/SuffixArray.cs
+    startLine: 181
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -343,9 +394,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.Serialize(BelNytheraSeiche.WaveletMatrix.SuffixArray, System.IO.Stream, BelNytheraSeiche.WaveletMatrix.SerializationOptions?)
   type: Method
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Serialize
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
-    startLine: 188
+    path: src/SuffixArray.cs
+    startLine: 208
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -390,9 +445,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.Deserialize(byte[])
   type: Method
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Deserialize
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
-    startLine: 329
+    path: src/SuffixArray.cs
+    startLine: 349
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -428,9 +487,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.Deserialize(string)
   type: Method
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Deserialize
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
-    startLine: 348
+    path: src/SuffixArray.cs
+    startLine: 368
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -466,9 +529,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.Deserialize(System.IO.Stream)
   type: Method
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Deserialize
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
-    startLine: 369
+    path: src/SuffixArray.cs
+    startLine: 389
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -507,9 +574,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.Search(System.ReadOnlySpan<char>)
   type: Method
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Search
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
-    startLine: 458
+    path: src/SuffixArray.cs
+    startLine: 478
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -541,9 +612,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.SearchLongestRepeated()
   type: Method
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: SearchLongestRepeated
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
-    startLine: 540
+    path: src/SuffixArray.cs
+    startLine: 560
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -568,9 +643,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.SearchRepeated(int)
   type: Method
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: SearchRepeated
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
-    startLine: 569
+    path: src/SuffixArray.cs
+    startLine: 589
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -606,9 +685,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.SearchLongestCommon(string)
   type: Method
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: SearchLongestCommon
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
-    startLine: 605
+    path: src/SuffixArray.cs
+    startLine: 625
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -644,9 +727,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.SearchLongestCommon(System.ReadOnlyMemory<char>)
   type: Method
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: SearchLongestCommon
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
-    startLine: 608
+    path: src/SuffixArray.cs
+    startLine: 628
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -674,9 +761,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.SearchLongestCommon(string, string)
   type: Method
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: SearchLongestCommon
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
-    startLine: 624
+    path: src/SuffixArray.cs
+    startLine: 644
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -715,9 +806,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.SearchLongestCommon(System.ReadOnlyMemory<char>, System.ReadOnlyMemory<char>)
   type: Method
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: SearchLongestCommon
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
-    startLine: 627
+    path: src/SuffixArray.cs
+    startLine: 647
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -747,9 +842,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.SearchCommon(string, int)
   type: Method
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: SearchCommon
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
-    startLine: 679
+    path: src/SuffixArray.cs
+    startLine: 699
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -791,9 +890,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.SearchCommon(System.ReadOnlyMemory<char>, int)
   type: Method
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: SearchCommon
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
-    startLine: 682
+    path: src/SuffixArray.cs
+    startLine: 702
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -823,9 +926,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.SearchCommon(string, string, int)
   type: Method
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: SearchCommon
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
-    startLine: 707
+    path: src/SuffixArray.cs
+    startLine: 727
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -870,9 +977,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.SearchCommon(System.ReadOnlyMemory<char>, System.ReadOnlyMemory<char>, int)
   type: Method
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: SearchCommon
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
-    startLine: 710
+    path: src/SuffixArray.cs
+    startLine: 730
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -904,9 +1015,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.SearchWildcard(System.ReadOnlySpan<char>, BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions?)
   type: Method
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: SearchWildcard
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
-    startLine: 773
+    path: src/SuffixArray.cs
+    startLine: 793
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix

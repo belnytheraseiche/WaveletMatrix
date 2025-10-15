@@ -16,9 +16,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match
   type: Struct
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Match
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
-    startLine: 1051
+    path: src/SuffixArray.cs
+    startLine: 1071
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -48,9 +52,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match.Match(int, int)
   type: Constructor
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: .ctor
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
-    startLine: 1051
+    path: src/SuffixArray.cs
+    startLine: 1071
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -82,9 +90,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match.Position
   type: Property
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Position
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
-    startLine: 1051
+    path: src/SuffixArray.cs
+    startLine: 1071
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -109,9 +121,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.Match.Length
   type: Property
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Length
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
-    startLine: 1051
+    path: src/SuffixArray.cs
+    startLine: 1071
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix

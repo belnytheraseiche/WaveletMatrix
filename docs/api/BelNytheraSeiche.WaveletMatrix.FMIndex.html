@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class FMIndex | BelNytheraSeiche.WaveletMatrix ">
       
-      <meta name="description" content="Provides a high-performance full-text search index based on the FM-Index algorithm.">
+      <meta name="description" content="Provides a high-performance full-text search index based on the FM-Index algorithm. This implementation supports both a full Suffix Array mode for fast locating and a memory-efficient sampling mode.">
       <link rel="icon" href="../images/favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      
+      <meta name="docfx:docurl" content="https://github.com/belnytheraseiche/WaveletMatrix/new/main/apiSpec/new?filename=BelNytheraSeiche_WaveletMatrix_FMIndex.md&amp;value=---%0Auid%3A%20BelNytheraSeiche.WaveletMatrix.FMIndex%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="BelNytheraSeiche_WaveletMatrix_FMIndex" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex" class="text-break">
-Class FMIndex  
+Class FMIndex  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L38"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class FMIndex
   <dl><dt>Assembly</dt><dd>BelNytheraSeiche.WaveletMatrix.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Provides a high-performance full-text search index based on the FM-Index algorithm.</p>
+  <div class="markdown summary"><p>Provides a high-performance full-text search index based on the FM-Index algorithm.
+This implementation supports both a full Suffix Array mode for fast locating and a memory-efficient sampling mode.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -154,14 +155,47 @@ of patterns within a large text. It is constructed using the Burrows-Wheeler Tra
 </h2>
 
 
+  <a id="BelNytheraSeiche_WaveletMatrix_FMIndex_IsSampled_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.IsSampled*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_IsSampled" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.IsSampled">
+  IsSampled
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L72"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets a value indicating whether the index is using Suffix Array sampling.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsSampled { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="BelNytheraSeiche_WaveletMatrix_FMIndex_SA_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.SA*"></a>
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_SA" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.SA">
   SA
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L67"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Gets the underlying Suffix Array instance used by this index.</p>
+  <div class="markdown level1 summary"><p>Gets the underlying Suffix Array instance used by this index.
+This property is only available when the index is built in full Suffix Array mode (i.e., when <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_IsSampled">IsSampled</a> is <code>false</code>).</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -183,6 +217,12 @@ of patterns within a large text. It is constructed using the Burrows-Wheeler Tra
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></dt>
+    <dd><p>Thrown if the index is in sampling mode.</p>
+</dd>
+  </dl>
 
 
 
@@ -190,10 +230,11 @@ of patterns within a large text. It is constructed using the Burrows-Wheeler Tra
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_Text" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.Text">
   Text
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L55"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Gets the original source text used to build the index, excluding the internal terminator character.</p>
+  <div class="markdown level1 summary"><p>Gets the original source text used to build the index, excluding the internal terminator character.
+This property is only available when the index is built in full Suffix Array mode (i.e., when <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_IsSampled">IsSampled</a> is <code>false</code>).</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -215,6 +256,12 @@ of patterns within a large text. It is constructed using the Burrows-Wheeler Tra
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></dt>
+    <dd><p>Thrown if the index is in sampling mode.</p>
+</dd>
+  </dl>
 
 
 
@@ -222,7 +269,7 @@ of patterns within a large text. It is constructed using the Burrows-Wheeler Tra
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_WM" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.WM">
   WM
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L60"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the underlying Wavelet Matrix instance used by this index.</p>
@@ -258,11 +305,11 @@ of patterns within a large text. It is constructed using the Burrows-Wheeler Tra
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_Count_System_ReadOnlySpan_System_Char__" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.Count(System.ReadOnlySpan{System.Char})">
   Count(ReadOnlySpan&lt;char&gt;)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L519"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Counts the number of occurrences of a pattern within the text.
-This operation is extremely fast, typically proportional to the length of the pattern, not the text.</p>
+This operation is extremely fast, with performance proportional to the pattern length, not the text length.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -296,24 +343,28 @@ This operation is extremely fast, typically proportional to the length of the pa
 
   <a id="BelNytheraSeiche_WaveletMatrix_FMIndex_Create_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.Create*"></a>
 
-  <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_Create_System_ReadOnlyMemory_System_Char__" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.Create(System.ReadOnlyMemory{System.Char})">
-  Create(ReadOnlyMemory&lt;char&gt;)
-  
+  <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_Create_System_ReadOnlyMemory_System_Char__System_Int32_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.Create(System.ReadOnlyMemory{System.Char},System.Int32)">
+  Create(ReadOnlyMemory&lt;char&gt;, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L112"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Creates a new instance of the <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.html">FMIndex</a> from a read-only memory segment of characters.
+  <div class="markdown level1 summary"><p>Creates a new instance of the <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.html">FMIndex</a> from a read-only memory segment of characters, with an optional Suffix Array sampling rate.
 An internal terminator character ('\0') is appended to the text for correctness.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static FMIndex Create(ReadOnlyMemory&lt;char&gt; text)</code></pre>
+    <pre><code class="lang-csharp hljs">public static FMIndex Create(ReadOnlyMemory&lt;char&gt; text, int sampleRate = 0)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a>&gt;</dt>
     <dd><p>The text to be indexed.</p>
+</dd>
+    <dt><code>sampleRate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The sampling rate for the Suffix Array. If 0 (default), the full Suffix Array is stored for fast locating.
+If greater than 1, only every N-th entry of the Suffix Array is stored, saving memory at the cost of slower locate operations.</p>
 </dd>
   </dl>
 
@@ -331,28 +382,38 @@ An internal terminator character ('\0') is appended to the text for correctness.
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Thrown if <code class="paramref">sampleRate</code> is less than 0.</p>
+</dd>
+  </dl>
 
 
 
   <a id="BelNytheraSeiche_WaveletMatrix_FMIndex_Create_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.Create*"></a>
 
-  <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_Create_System_String_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.Create(System.String)">
-  Create(string)
-  
+  <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_Create_System_String_System_Int32_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.Create(System.String,System.Int32)">
+  Create(string, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L98"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Creates a new instance of the <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.html">FMIndex</a> from a string.</p>
+  <div class="markdown level1 summary"><p>Creates a new instance of the <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.html">FMIndex</a> from a string, with an optional Suffix Array sampling rate.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static FMIndex Create(string text)</code></pre>
+    <pre><code class="lang-csharp hljs">public static FMIndex Create(string text, int sampleRate = 0)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd><p>The text to be indexed.</p>
+</dd>
+    <dt><code>sampleRate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The sampling rate for the Suffix Array. If 0 (default), the full Suffix Array is stored for fast locating.
+If greater than 1, only every N-th entry of the Suffix Array is stored to save memory, at the cost of slower locate operations.</p>
 </dd>
   </dl>
 
@@ -375,6 +436,9 @@ An internal terminator character ('\0') is appended to the text for correctness.
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
     <dd><p>Thrown if <code class="paramref">text</code> is null.</p>
 </dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Thrown if <code class="paramref">sampleRate</code> is less than 0.</p>
+</dd>
   </dl>
 
 
@@ -383,7 +447,7 @@ An internal terminator character ('\0') is appended to the text for correctness.
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_Deserialize_System_Byte___" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.Deserialize(System.Byte[])">
   Deserialize(byte[])
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L385"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Deserializes a byte array into a <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.html">FMIndex</a> instance.</p>
@@ -428,7 +492,7 @@ An internal terminator character ('\0') is appended to the text for correctness.
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_Deserialize_System_IO_Stream_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.Deserialize(System.IO.Stream)">
   Deserialize(Stream)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L425"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Deserializes a <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.html">FMIndex</a> instance from a stream.
@@ -477,7 +541,7 @@ It verifies the file format, type identifier, and checksum.</p>
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_Deserialize_System_String_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.Deserialize(System.String)">
   Deserialize(string)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L404"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Deserializes a <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.html">FMIndex</a> instance from the specified file.</p>
@@ -522,15 +586,15 @@ It verifies the file format, type identifier, and checksum.</p>
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_GetSnippet_System_Int32_System_Int32_System_Int32_System_Double_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.GetSnippet(System.Int32,System.Int32,System.Int32,System.Double)">
   GetSnippet(int, int, int, double)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L658"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Extracts a snippet of text surrounding a specified position, with a configurable context ratio.</p>
+  <div class="markdown level1 summary"><p>Calculates the location and optionally extracts the content of a text snippet surrounding a specified position.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public (string, int) GetSnippet(int position, int keyLength, int totalLength, double leadingRatio = 0.5)</code></pre>
+    <pre><code class="lang-csharp hljs">public FMIndex.Snippet GetSnippet(int position, int keyLength, int totalLength, double leadingRatio = 0.5)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -551,8 +615,8 @@ It verifies the file format, type identifier, and checksum.</p>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>)</dt>
-    <dd><p>A tuple containing the generated snippet string and the zero-based starting position of the keyword within the snippet.</p>
+    <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.html">FMIndex</a>.<a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet.html">Snippet</a></dt>
+    <dd><p>A <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet.html">FMIndex.Snippet</a> record containing the location, length, and (in non-sampling mode) the text content of the snippet.</p>
 </dd>
   </dl>
 
@@ -563,17 +627,21 @@ It verifies the file format, type identifier, and checksum.</p>
 
 
   <h4 class="section" id="BelNytheraSeiche_WaveletMatrix_FMIndex_GetSnippet_System_Int32_System_Int32_System_Int32_System_Double__remarks">Remarks</h4>
-  <div class="markdown level1 remarks"><p>The specified <code class="paramref">leadingRatio</code> is a guideline. The method prioritizes returning a snippet of approximately
-<code class="paramref">totalLength</code>. If the keyword is near the start or end of the text, the actual ratio of leading/trailing context will be adjusted to fill the requested length.</p>
+  <div class="markdown level1 remarks"><p>In full Suffix Array mode, the <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Snippet_Text">Text</a> property of the returned record will contain the extracted string.
+In sampling mode, the <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Snippet_Text">Text</a> property will be <code>null</code>, but the location properties (<a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Snippet_Index">Index</a>, <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Snippet_Length">Length</a>, <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Snippet_KeyPosition">KeyPosition</a>)
+will be correctly calculated, allowing the caller to extract the snippet from their own copy of the source text.
+The specified <code class="paramref">leadingRatio</code> is a guideline. The method prioritizes returning a snippet of approximately
+<code class="paramref">totalLength</code>. If the keyword is near the start or end of the text, the actual ratio of leading/trailing
+context will be adjusted to fill the requested length.</p>
 </div>
 
   <h4 class="section">Exceptions</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
-    <dd><p>Thrown if <code class="paramref">position</code>, <code class="paramref">keyLength</code>, or <code class="paramref">totalLength</code> are invalid, or if <code class="paramref">leadingRatio</code> is not between 0.0 and 1.0.</p>
+    <dd><p>Thrown if <code class="paramref">position</code>, <code class="paramref">keyLength</code>, <code class="paramref">totalLength</code> are invalid, or if <code class="paramref">leadingRatio</code> is not between 0.0 and 1.0.</p>
 </dd>
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
-    <dd><p>Thrown if <code class="paramref">position</code> + <code class="paramref">keyLength</code> is greater than the length of text.</p>
+    <dd><p>Thrown if <code class="paramref">position</code> + <code class="paramref">keyLength</code> is greater than the length of the text.</p>
 </dd>
   </dl>
 
@@ -583,7 +651,7 @@ It verifies the file format, type identifier, and checksum.</p>
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_Locate_System_ReadOnlySpan_System_Char__BelNytheraSeiche_WaveletMatrix_FMIndex_SortOrder_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan{System.Char},BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder)">
   Locate(ReadOnlySpan&lt;char&gt;, SortOrder)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L537"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Finds all starting positions of a pattern within the text.</p>
@@ -618,9 +686,10 @@ It verifies the file format, type identifier, and checksum.</p>
 
 
   <h4 class="section" id="BelNytheraSeiche_WaveletMatrix_FMIndex_Locate_System_ReadOnlySpan_System_Char__BelNytheraSeiche_WaveletMatrix_FMIndex_SortOrder__remarks">Remarks</h4>
-  <div class="markdown level1 remarks"><p>Specifying <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.html#BelNytheraSeiche_WaveletMatrix_FMIndex_SortOrder_Ascending">Ascending</a> or <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.html#BelNytheraSeiche_WaveletMatrix_FMIndex_SortOrder_Descending">Descending</a> requires collecting all results
-and sorting them, which incurs a performance cost proportional to the number of matches (k log k).
-For the highest performance where order is not important, use <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.html#BelNytheraSeiche_WaveletMatrix_FMIndex_SortOrder_Unordered">Unordered</a>.</p>
+  <div class="markdown level1 remarks"><p>In full Suffix Array mode, this operation is very fast. In sampling mode, locating each position requires additional
+computation (LF-mapping steps), making it slower but significantly more memory-efficient.
+Specifying <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.html#BelNytheraSeiche_WaveletMatrix_FMIndex_SortOrder_Ascending">Ascending</a> or <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.html#BelNytheraSeiche_WaveletMatrix_FMIndex_SortOrder_Descending">Descending</a> may require collecting all results
+and sorting them, which incurs a performance cost. For the highest performance where order is not important, use <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.html#BelNytheraSeiche_WaveletMatrix_FMIndex_SortOrder_Unordered">Unordered</a>.</p>
 </div>
 
 
@@ -630,11 +699,10 @@ For the highest performance where order is not important, use <a class="xref" hr
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_RestoreSourceText" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.RestoreSourceText">
   RestoreSourceText()
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L622"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Reconstructs the original source text from the compressed index.
-This method demonstrates the reversibility of the Burrows-Wheeler Transform.</p>
+  <div class="markdown level1 summary"><p>Reconstructs the original source text from the compressed index by inverting the Burrows-Wheeler Transform.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -664,7 +732,7 @@ This method demonstrates the reversibility of the Burrows-Wheeler Transform.</p>
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_Serialize_BelNytheraSeiche_WaveletMatrix_FMIndex_BelNytheraSeiche_WaveletMatrix_SerializationOptions_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.Serialize(BelNytheraSeiche.WaveletMatrix.FMIndex,BelNytheraSeiche.WaveletMatrix.SerializationOptions)">
   Serialize(FMIndex, SerializationOptions?)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L181"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Serializes the <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.html">FMIndex</a> instance into a byte array.</p>
@@ -713,7 +781,7 @@ If null, <a class="xref" href="BelNytheraSeiche.WaveletMatrix.SerializationOptio
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_Serialize_BelNytheraSeiche_WaveletMatrix_FMIndex_System_IO_Stream_BelNytheraSeiche_WaveletMatrix_SerializationOptions_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.Serialize(BelNytheraSeiche.WaveletMatrix.FMIndex,System.IO.Stream,BelNytheraSeiche.WaveletMatrix.SerializationOptions)">
   Serialize(FMIndex, Stream, SerializationOptions?)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L232"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Serializes the <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.html">FMIndex</a> instance to a stream.
@@ -760,7 +828,7 @@ If null, <a class="xref" href="BelNytheraSeiche.WaveletMatrix.SerializationOptio
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_Serialize_BelNytheraSeiche_WaveletMatrix_FMIndex_System_String_BelNytheraSeiche_WaveletMatrix_SerializationOptions_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.Serialize(BelNytheraSeiche.WaveletMatrix.FMIndex,System.String,BelNytheraSeiche.WaveletMatrix.SerializationOptions)">
   Serialize(FMIndex, string, SerializationOptions?)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L205"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Serializes the <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.html">FMIndex</a> instance to the specified file.</p>
@@ -806,6 +874,7 @@ If null, <a class="xref" href="BelNytheraSeiche.WaveletMatrix.SerializationOptio
 </article>
 
         <div class="contribution d-print-none">
+          <a href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L38" class="edit-link">Edit this page</a>
         </div>
 
 

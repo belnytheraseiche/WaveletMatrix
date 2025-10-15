@@ -1,0 +1,728 @@
+### YamlMime:ManagedReference
+items:
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
+  commentId: T:BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
+  id: LcpIndex.SimilarityMatcher
+  parent: BelNytheraSeiche.WaveletMatrix
+  children:
+  - BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.#ctor(BelNytheraSeiche.WaveletMatrix.LcpIndex,System.String,System.String)
+  - BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.LcpIndex
+  - BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Matches(System.Int32)
+  - BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Text1
+  - BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Text2
+  langs:
+  - csharp
+  - vb
+  name: LcpIndex.SimilarityMatcher
+  nameWithType: LcpIndex.SimilarityMatcher
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
+  type: Class
+  source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
+    id: SimilarityMatcher
+    path: src/LcpIndex.cs
+    startLine: 665
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Provides functionality to find all common substrings between two texts using a combined <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.LcpIndex" data-throw-if-not-resolved="false"></xref>.
+
+    An instance of this class is created via the <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcher(System.String%2cSystem.String)" data-throw-if-not-resolved="false"></xref> factory method.
+  example: []
+  syntax:
+    content: public sealed class LcpIndex.SimilarityMatcher
+    content.vb: Public NotInheritable Class LcpIndex.SimilarityMatcher
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.#ctor(BelNytheraSeiche.WaveletMatrix.LcpIndex,System.String,System.String)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.#ctor(BelNytheraSeiche.WaveletMatrix.LcpIndex,System.String,System.String)
+  id: '#ctor(BelNytheraSeiche.WaveletMatrix.LcpIndex,System.String,System.String)'
+  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
+  langs:
+  - csharp
+  - vb
+  name: SimilarityMatcher(LcpIndex, string, string)
+  nameWithType: LcpIndex.SimilarityMatcher.SimilarityMatcher(LcpIndex, string, string)
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.SimilarityMatcher(BelNytheraSeiche.WaveletMatrix.LcpIndex, string, string)
+  type: Constructor
+  source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
+    id: .ctor
+    path: src/LcpIndex.cs
+    startLine: 665
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Provides functionality to find all common substrings between two texts using a combined <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.LcpIndex" data-throw-if-not-resolved="false"></xref>.
+
+    An instance of this class is created via the <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcher(System.String%2cSystem.String)" data-throw-if-not-resolved="false"></xref> factory method.
+  example: []
+  syntax:
+    content: public SimilarityMatcher(LcpIndex lcpIndex, string text1, string text2)
+    parameters:
+    - id: lcpIndex
+      type: BelNytheraSeiche.WaveletMatrix.LcpIndex
+      description: The LcpIndex built on the combined text.
+    - id: text1
+      type: System.String
+      description: The first original text.
+    - id: text2
+      type: System.String
+      description: The second original text.
+    content.vb: Public Sub New(lcpIndex As LcpIndex, text1 As String, text2 As String)
+  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.#ctor*
+  nameWithType.vb: LcpIndex.SimilarityMatcher.New(LcpIndex, String, String)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.New(BelNytheraSeiche.WaveletMatrix.LcpIndex, String, String)
+  name.vb: New(LcpIndex, String, String)
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.LcpIndex
+  commentId: P:BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.LcpIndex
+  id: LcpIndex
+  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
+  langs:
+  - csharp
+  - vb
+  name: LcpIndex
+  nameWithType: LcpIndex.SimilarityMatcher.LcpIndex
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.LcpIndex
+  type: Property
+  source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
+    id: LcpIndex
+    path: src/LcpIndex.cs
+    startLine: 670
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Gets the underlying <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.LcpIndex" data-throw-if-not-resolved="false"></xref> built on the combined text.
+  example: []
+  syntax:
+    content: public LcpIndex LcpIndex { get; }
+    parameters: []
+    return:
+      type: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    content.vb: Public ReadOnly Property LcpIndex As LcpIndex
+  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.LcpIndex*
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Text1
+  commentId: P:BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Text1
+  id: Text1
+  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
+  langs:
+  - csharp
+  - vb
+  name: Text1
+  nameWithType: LcpIndex.SimilarityMatcher.Text1
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Text1
+  type: Property
+  source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
+    id: Text1
+    path: src/LcpIndex.cs
+    startLine: 675
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Gets the first original text used for the comparison.
+  example: []
+  syntax:
+    content: public string Text1 { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Text1 As String
+  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Text1*
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Text2
+  commentId: P:BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Text2
+  id: Text2
+  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
+  langs:
+  - csharp
+  - vb
+  name: Text2
+  nameWithType: LcpIndex.SimilarityMatcher.Text2
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Text2
+  type: Property
+  source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
+    id: Text2
+    path: src/LcpIndex.cs
+    startLine: 680
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Gets the second original text used for the comparison.
+  example: []
+  syntax:
+    content: public string Text2 { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Text2 As String
+  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Text2*
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Matches(System.Int32)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Matches(System.Int32)
+  id: Matches(System.Int32)
+  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
+  langs:
+  - csharp
+  - vb
+  name: Matches(int)
+  nameWithType: LcpIndex.SimilarityMatcher.Matches(int)
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Matches(int)
+  type: Method
+  source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
+    id: Matches
+    path: src/LcpIndex.cs
+    startLine: 693
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Finds all common substrings between the two texts that are at least a specified minimum length.
+
+    This method works by scanning the LCP array of the combined text and identifying adjacent suffixes
+
+    that originate from different source texts.
+  example: []
+  syntax:
+    content: public IEnumerable<LcpIndex.SimilarityMatcher.Match> Matches(int minLength = 2)
+    parameters:
+    - id: minLength
+      type: System.Int32
+      description: The minimum length for a substring to be reported as a match. Defaults to 2.
+    return:
+      type: System.Collections.Generic.IEnumerable{BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match}
+      description: An enumerable collection of <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match" data-throw-if-not-resolved="false"></xref> records, each representing a common substring.
+    content.vb: Public Function Matches(minLength As Integer = 2) As IEnumerable(Of LcpIndex.SimilarityMatcher.Match)
+  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Matches*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if <code class="paramref">minLength</code> is less than 0.
+  nameWithType.vb: LcpIndex.SimilarityMatcher.Matches(Integer)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Matches(Integer)
+  name.vb: Matches(Integer)
+references:
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.LcpIndex
+  commentId: P:BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.LcpIndex
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_SimilarityMatcher_LcpIndex
+  name: LcpIndex
+  nameWithType: LcpIndex.SimilarityMatcher.LcpIndex
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.LcpIndex
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcher(System.String,System.String)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcher(System.String,System.String)
+  isExternal: true
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_CreateSimilarityMatcher_System_String_System_String_
+  name: CreateSimilarityMatcher(string, string)
+  nameWithType: LcpIndex.CreateSimilarityMatcher(string, string)
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcher(string, string)
+  nameWithType.vb: LcpIndex.CreateSimilarityMatcher(String, String)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcher(String, String)
+  name.vb: CreateSimilarityMatcher(String, String)
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcher(System.String,System.String)
+    name: CreateSimilarityMatcher
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_CreateSimilarityMatcher_System_String_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcher(System.String,System.String)
+    name: CreateSimilarityMatcher
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_CreateSimilarityMatcher_System_String_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: BelNytheraSeiche.WaveletMatrix
+  commentId: N:BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.html
+  name: BelNytheraSeiche.WaveletMatrix
+  nameWithType: BelNytheraSeiche.WaveletMatrix
+  fullName: BelNytheraSeiche.WaveletMatrix
+  spec.csharp:
+  - uid: BelNytheraSeiche
+    name: BelNytheraSeiche
+    href: BelNytheraSeiche.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix
+    name: WaveletMatrix
+    href: BelNytheraSeiche.WaveletMatrix.html
+  spec.vb:
+  - uid: BelNytheraSeiche
+    name: BelNytheraSeiche
+    href: BelNytheraSeiche.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix
+    name: WaveletMatrix
+    href: BelNytheraSeiche.WaveletMatrix.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.#ctor*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.#ctor
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_SimilarityMatcher__ctor_BelNytheraSeiche_WaveletMatrix_LcpIndex_System_String_System_String_
+  name: SimilarityMatcher
+  nameWithType: LcpIndex.SimilarityMatcher.SimilarityMatcher
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.SimilarityMatcher
+  nameWithType.vb: LcpIndex.SimilarityMatcher.New
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.New
+  name.vb: New
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+  commentId: T:BelNytheraSeiche.WaveletMatrix.LcpIndex
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  name: LcpIndex
+  nameWithType: LcpIndex
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.LcpIndex*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.LcpIndex
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_SimilarityMatcher_LcpIndex
+  name: LcpIndex
+  nameWithType: LcpIndex.SimilarityMatcher.LcpIndex
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.LcpIndex
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Text1*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Text1
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_SimilarityMatcher_Text1
+  name: Text1
+  nameWithType: LcpIndex.SimilarityMatcher.Text1
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Text1
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Text2*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Text2
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_SimilarityMatcher_Text2
+  name: Text2
+  nameWithType: LcpIndex.SimilarityMatcher.Text2
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Text2
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match
+  commentId: T:BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  name: LcpIndex.SimilarityMatcher.Match
+  nameWithType: LcpIndex.SimilarityMatcher.Match
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
+    name: SimilarityMatcher
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match
+    name: Match
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.html
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
+    name: SimilarityMatcher
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match
+    name: Match
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.html
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception
+  name: ArgumentOutOfRangeException
+  nameWithType: ArgumentOutOfRangeException
+  fullName: System.ArgumentOutOfRangeException
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Matches*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Matches
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_SimilarityMatcher_Matches_System_Int32_
+  name: Matches
+  nameWithType: LcpIndex.SimilarityMatcher.Matches
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Matches
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Collections.Generic.IEnumerable{BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match}
+  commentId: T:System.Collections.Generic.IEnumerable{BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<LcpIndex.SimilarityMatcher.Match>
+  nameWithType: IEnumerable<LcpIndex.SimilarityMatcher.Match>
+  fullName: System.Collections.Generic.IEnumerable<BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match>
+  nameWithType.vb: IEnumerable(Of LcpIndex.SimilarityMatcher.Match)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match)
+  name.vb: IEnumerable(Of LcpIndex.SimilarityMatcher.Match)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
+    name: SimilarityMatcher
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match
+    name: Match
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
+    name: SimilarityMatcher
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match
+    name: Match
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.html
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic

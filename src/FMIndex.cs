@@ -29,6 +29,7 @@ namespace BelNytheraSeiche.WaveletMatrix;
 
 /// <summary>
 /// Provides a high-performance full-text search index based on the FM-Index algorithm.
+/// This implementation supports both a full Suffix Array mode for fast locating and a memory-efficient sampling mode.
 /// </summary>
 /// <remarks>
 /// The FM-Index is a compressed full-text index that allows for fast counting (<see cref="Count"/>) and locating (<see cref="Locate"/>)
@@ -37,15 +38,21 @@ namespace BelNytheraSeiche.WaveletMatrix;
 public sealed class FMIndex
 {
     readonly WaveletMatrixGeneric<char> wm_;
-    readonly SuffixArray sa_;
+    readonly SuffixArray? sa_;
+    readonly int[]? sampleSa_;
+    readonly int sampleRate_;
     readonly int original_;
     readonly int length_;
     readonly Dictionary<char, int> ctable_;
 
+    int TextLength => length_ - 1;
+
     /// <summary>
     /// Gets the original source text used to build the index, excluding the internal terminator character.
+    /// This property is only available when the index is built in full Suffix Array mode (i.e., when <see cref="IsSampled"/> is <c>false</c>).
     /// </summary>
-    public ReadOnlyMemory<char> Text => sa_.Text[..^1];
+    /// <exception cref="InvalidOperationException">Thrown if the index is in sampling mode.</exception>
+    public ReadOnlyMemory<char> Text => sa_?.Text[..^1] ?? throw new InvalidOperationException("Has no text on sampling mode.");
 
     /// <summary>
     /// Gets the underlying Wavelet Matrix instance used by this index.
@@ -54,34 +61,66 @@ public sealed class FMIndex
 
     /// <summary>
     /// Gets the underlying Suffix Array instance used by this index.
+    /// This property is only available when the index is built in full Suffix Array mode (i.e., when <see cref="IsSampled"/> is <c>false</c>).
     /// </summary>
-    public SuffixArray SA => sa_;
+    /// <exception cref="InvalidOperationException">Thrown if the index is in sampling mode.</exception>
+    public SuffixArray SA => sa_ ?? throw new InvalidOperationException("Has no instance on sampling mode.");
+
+    /// <summary>
+    /// Gets a value indicating whether the index is using Suffix Array sampling.
+    /// </summary>
+    public bool IsSampled => sa_ == null;
 
     // 
     // 
 
-    FMIndex(Init init)
+    FMIndex(Init1 init)
     {
         (wm_, sa_, original_, length_, ctable_) = init;
     }
 
-    /// <summary>
-    /// Creates a new instance of the <see cref="FMIndex"/> from a string.
-    /// </summary>
-    /// <param name="text">The text to be indexed.</param>
-    /// <returns>A new, fully initialized <see cref="FMIndex"/> instance.</returns>
-    /// <exception cref="ArgumentNullException">Thrown if <paramref name="text"/> is null.</exception>
-    public static FMIndex Create(string text)
-    => Create(text?.AsMemory() ?? throw new ArgumentNullException(nameof(text)));
+    FMIndex(Init2 init)
+    {
+        (wm_, sampleSa_, sampleRate_, original_, length_, ctable_) = init;
+    }
 
     /// <summary>
-    /// Creates a new instance of the <see cref="FMIndex"/> from a read-only memory segment of characters.
+    /// Creates a new instance of the <see cref="FMIndex"/> from a string, with an optional Suffix Array sampling rate.
+    /// </summary>
+    /// <param name="text">The text to be indexed.</param>
+    /// <param name="sampleRate">
+    /// The sampling rate for the Suffix Array. If 0 (default), the full Suffix Array is stored for fast locating.
+    /// If greater than 1, only every N-th entry of the Suffix Array is stored to save memory, at the cost of slower locate operations.
+    /// </param>
+    /// <returns>A new, fully initialized <see cref="FMIndex"/> instance.</returns>
+    /// <exception cref="ArgumentNullException">Thrown if <paramref name="text"/> is null.</exception>
+    /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="sampleRate"/> is less than 0.</exception>
+    public static FMIndex Create(string text, int sampleRate = 0)
+    => Create(text?.AsMemory() ?? throw new ArgumentNullException(nameof(text)), sampleRate);
+
+    /// <summary>
+    /// Creates a new instance of the <see cref="FMIndex"/> from a read-only memory segment of characters, with an optional Suffix Array sampling rate.
     /// An internal terminator character ('\0') is appended to the text for correctness.
     /// </summary>
     /// <param name="text">The text to be indexed.</param>
+    /// <param name="sampleRate">
+    /// The sampling rate for the Suffix Array. If 0 (default), the full Suffix Array is stored for fast locating.
+    /// If greater than 1, only every N-th entry of the Suffix Array is stored, saving memory at the cost of slower locate operations.
+    /// </param>
     /// <returns>A new, fully initialized <see cref="FMIndex"/> instance.</returns>
-    public static FMIndex Create(ReadOnlyMemory<char> text)
+    /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="sampleRate"/> is less than 0.</exception>
+    public static FMIndex Create(ReadOnlyMemory<char> text, int sampleRate = 0)
     {
+#if NET8_0_OR_GREATER
+        ArgumentOutOfRangeException.ThrowIfNegative(sampleRate);
+#else
+        if (sampleRate is < 0)
+            throw new ArgumentOutOfRangeException(nameof(sampleRate), $"{nameof(sampleRate)} must be greater than or equal 0.");
+#endif
+
+        if (sampleRate == 1 || sampleRate >= text.Length)
+            sampleRate = 0;
+
         // append terminator
         var textWithTerminator = new char[text.Length + 1];
         text.CopyTo(textWithTerminator);
@@ -115,7 +154,18 @@ public sealed class FMIndex
         //     sum += kv.Value;
         // }
 
-        return new(new(wm, bwtResult.SA, bwtResult.OriginalIndex, bwtResult.BwtString.Length, ctable));
+        if (sampleRate == 0)
+            return new(new Init1(wm, bwtResult.SA, bwtResult.OriginalIndex, bwtResult.BwtString.Length, ctable));
+        else
+        {
+            // sampling mode
+            var saSpan = bwtResult.SA.SA.Span;
+            var sampleCount = (saSpan.Length + sampleRate - 1) / sampleRate;
+            var sampleSa = new int[sampleCount];
+            for (var i = 0; i < sampleCount; i++)
+                sampleSa[i] = saSpan[i * sampleRate];
+            return new(new Init2(wm, sampleSa, sampleRate, bwtResult.OriginalIndex, bwtResult.BwtString.Length, ctable));
+        }
     }
 
     /// <summary>
@@ -209,10 +259,31 @@ public sealed class FMIndex
                 // count of entries
                 BinaryPrimitives.WriteInt32LittleEndian(buffer1, obj.ctable_.Count);
                 compressStream.Write(buffer1);
+                // entries
                 __WriteStreamCTable(compressStream, obj.ctable_);
             }
             var array = memoryStream.ToArray();
             size1 = array.Length;
+            xxh.Append(array);
+            stream.Write(array);
+        }
+        // sample-sa
+        var size2 = 0;
+        if (obj.sa_ == null)
+        {
+            // sample mode
+            using var memoryStream = new MemoryStream();
+            {
+                using var compressStream = new BrotliStream(memoryStream, options.CompressionLevel);
+                Span<byte> buffer1 = stackalloc byte[4];
+                // count of samples
+                BinaryPrimitives.WriteInt32LittleEndian(buffer1, obj.sampleSa_!.Length);
+                compressStream.Write(buffer1);
+                // samples
+                __WriteStreamFromInt32Memory(compressStream, obj.sampleSa_!);
+            }
+            var array = memoryStream.ToArray();
+            size2 = array.Length;
             xxh.Append(array);
             stream.Write(array);
         }
@@ -229,7 +300,11 @@ public sealed class FMIndex
         BinaryPrimitives.WriteInt32LittleEndian(buffer0[12..], obj.length_);
         // 16: int * 1, size of ctable
         BinaryPrimitives.WriteInt32LittleEndian(buffer0[16..], size1);
-        // 20- empty
+        // 20: int * 1, sample rate
+        BinaryPrimitives.WriteInt32LittleEndian(buffer0[20..], obj.sampleRate_);
+        // 24: int * 1, size of sample-sa
+        BinaryPrimitives.WriteInt32LittleEndian(buffer0[24..], size2);
+        // 28- empty
         stream.Seek(firstPosition, SeekOrigin.Begin);
         stream.Write(buffer0);
 
@@ -238,12 +313,13 @@ public sealed class FMIndex
         // wm
         WaveletMatrixGeneric<char>.Serialize(obj.wm_, stream, WaveletMatrixGeneric<char>.CharSerializer.Instance, options);
         // sa
-        SuffixArray.Serialize(obj.sa_, stream, options);
+        if (obj.sa_ != null)
+            SuffixArray.Serialize(obj.sa_, stream, options);
 
         #region @@
         static void __WriteStreamCTable(Stream stream, Dictionary<char, int> ctable)
         {
-            foreach (var buffer in __EnumeratePacked(ctable, new ulong[4096]))
+            foreach (var buffer in __EnumeratePacked(ctable, new ulong[128]))
                 __WriteStreamFromUInt64Memory(stream, buffer);
 
             #region @@
@@ -264,6 +340,25 @@ public sealed class FMIndex
                     yield return count == buffer.Length ? buffer : buffer[..count];
             }
             #endregion
+        }
+        static void __WriteStreamFromInt32Memory(Stream stream, ReadOnlyMemory<int> memory)
+        {
+            if (BitConverter.IsLittleEndian)
+                stream.Write(MemoryMarshal.AsBytes(memory.Span));
+            else
+            {
+                var buffer = new byte[4194304];
+                var offset = 0;
+                while (offset < memory.Length)
+                {
+                    var length = Math.Min(1048576, memory.Length - offset);
+                    var span = memory.Slice(offset, length).Span;
+                    for (var i = 0; i < span.Length; i++)
+                        BinaryPrimitives.WriteInt32LittleEndian(buffer.AsSpan(i * 4, 4), span[i]);
+                    stream.Write(buffer.AsSpan(0, 4 * length));
+                    offset += length;
+                }
+            }
         }
         static void __WriteStreamFromUInt64Memory(Stream stream, ReadOnlyMemory<ulong> memory)
         {
@@ -358,21 +453,38 @@ public sealed class FMIndex
             foreach (var entry in __ReadCTableFromStream(decompressStream, count))
                 ctable.Add(entry.Item1, entry.Item2);
         }
+        // sample-sa
+        int[]? sampleSa = null;
+        var sampleRate = BinaryPrimitives.ReadInt32LittleEndian(buffer0[20..]);
+        if (sampleRate != 0)
+        {
+            var buffer1 = new byte[BinaryPrimitives.ReadInt32LittleEndian(buffer0[24..])];
+            stream.ReadExactly(buffer1);
+            xxh.Append(buffer1);
+            using var memoryStream = new MemoryStream(buffer1);
+            using var decompressStream = new BrotliStream(memoryStream, CompressionMode.Decompress);
+            Span<byte> buffer2 = stackalloc byte[4];
+            decompressStream.ReadExactly(buffer2);
+            var count = BinaryPrimitives.ReadInt32LittleEndian(buffer2);
+            sampleSa = new int[count];
+            __ReadInt32ArrayFromStream(decompressStream, sampleSa);
+        }
 
         if (xxh.GetCurrentHashAsUInt32() != BinaryPrimitives.ReadUInt32LittleEndian(buffer0[4..]))
             throw new InvalidDataException("Broken.");
 
         var wm = WaveletMatrixGeneric<char>.Deserialize(stream, WaveletMatrixGeneric<char>.CharSerializer.Instance);
-        var sa = SuffixArray.Deserialize(stream);
         var original = BinaryPrimitives.ReadInt32LittleEndian(buffer0[8..]);
         var length = BinaryPrimitives.ReadInt32LittleEndian(buffer0[12..]);
-
-        return new(new(wm, sa, original, length, ctable));
+        if (sampleRate == 0)
+            return new(new Init1(wm, SuffixArray.Deserialize(stream), original, length, ctable));
+        else
+            return new(new Init2(wm, sampleSa!, sampleRate, original, length, ctable));
 
         #region @@
         static IEnumerable<(char, int)> __ReadCTableFromStream(Stream stream, int count)
         {
-            var buffer = new ulong[1048576];
+            var buffer = new ulong[128];
             var offset = 0;
             while (offset < count)
             {
@@ -388,12 +500,19 @@ public sealed class FMIndex
                 offset += length;
             }
         }
+        static void __ReadInt32ArrayFromStream(Stream stream, int[] buffer)
+        {
+            stream.ReadExactly(MemoryMarshal.AsBytes(buffer.AsSpan()));
+            if (!BitConverter.IsLittleEndian)
+                for (var i = 0; i < buffer.Length; i++)
+                    buffer[i] = BinaryPrimitives.ReadInt32LittleEndian(MemoryMarshal.AsBytes(buffer.AsSpan(i)));
+        }
         #endregion
     }
 
     /// <summary>
     /// Counts the number of occurrences of a pattern within the text.
-    /// This operation is extremely fast, typically proportional to the length of the pattern, not the text.
+    /// This operation is extremely fast, with performance proportional to the pattern length, not the text length.
     /// </summary>
     /// <param name="pattern">The pattern to search for.</param>
     /// <returns>The total number of non-overlapping occurrences of the pattern.</returns>
@@ -410,21 +529,23 @@ public sealed class FMIndex
     /// <param name="sortOrder">Specifies the order of the returned positions. Defaults to <see cref="SortOrder.Ascending"/>.</param>
     /// <returns>An enumerable collection of the zero-based starting positions of all occurrences.</returns>
     /// <remarks>
-    /// Specifying <see cref="SortOrder.Ascending"/> or <see cref="SortOrder.Descending"/> requires collecting all results
-    /// and sorting them, which incurs a performance cost proportional to the number of matches (k log k).
-    /// For the highest performance where order is not important, use <see cref="SortOrder.Unordered"/>.
+    /// In full Suffix Array mode, this operation is very fast. In sampling mode, locating each position requires additional
+    /// computation (LF-mapping steps), making it slower but significantly more memory-efficient.
+    /// Specifying <see cref="SortOrder.Ascending"/> or <see cref="SortOrder.Descending"/> may require collecting all results
+    /// and sorting them, which incurs a performance cost. For the highest performance where order is not important, use <see cref="SortOrder.Unordered"/>.
     /// </remarks>
     public IEnumerable<int> Locate(ReadOnlySpan<char> pattern, SortOrder sortOrder = SortOrder.Ascending)
     {
         var (start, end) = FindRange(pattern);
         if (start < end)
-            return __Enumerate(start, end, sortOrder, sa_.SA);
+            return sa_ != null ? __Enumerate(start, end, sortOrder) : __EnumerateSample(start, end, sortOrder);
         else
             return [];
 
         #region @@
-        static IEnumerable<int> __Enumerate(int start, int end, SortOrder sortOrder, ReadOnlyMemory<int> saMemory)
+        IEnumerable<int> __Enumerate(int start, int end, SortOrder sortOrder)
         {
+            ReadOnlyMemory<int> saMemory = sa_!.SA;
             switch (sortOrder)
             {
                 case SortOrder.Unordered:
@@ -450,12 +571,52 @@ public sealed class FMIndex
                     throw new ArgumentException($"Invalid sort order.", nameof(sortOrder));
             }
         }
+        IEnumerable<int> __EnumerateSample(int start, int end, SortOrder sortOrder)
+        {
+            switch (sortOrder)
+            {
+                case SortOrder.Unordered:
+                    {
+                        for (var i = start; i < end; i++)
+                            yield return __CalculateOriginalPosition(i);
+                    }
+                    break;
+                case SortOrder.Ascending:
+                case SortOrder.Descending:
+                    {
+                        var result = new List<int>(end - start);
+                        for (var i = start; i < end; i++)
+                            result.Add(__CalculateOriginalPosition(i));
+                        result.Sort();
+                        if (sortOrder == SortOrder.Descending)
+                            result.Reverse();
+                        foreach (var n in result)
+                            yield return n;
+                    }
+                    break;
+                default:
+                    throw new ArgumentException($"Invalid sort order.", nameof(sortOrder));
+            }
+
+            #region @@
+            int __CalculateOriginalPosition(int index)
+            {
+                var (steps, current) = (0, index);
+                while (current % sampleRate_ != 0)
+                {
+                    var c = wm_.Access(current);
+                    current = ctable_[c] + wm_.Rank(current, c);
+                    steps++;
+                }
+                return (sampleSa_![current / sampleRate_] + steps) % length_;
+            }
+            #endregion
+        }
         #endregion
     }
 
     /// <summary>
-    /// Reconstructs the original source text from the compressed index.
-    /// This method demonstrates the reversibility of the Burrows-Wheeler Transform.
+    /// Reconstructs the original source text from the compressed index by inverting the Burrows-Wheeler Transform.
     /// </summary>
     /// <returns>The original text that was used to create the index.</returns>
     public string RestoreSourceText()
@@ -473,7 +634,7 @@ public sealed class FMIndex
     }
 
     /// <summary>
-    /// Extracts a snippet of text surrounding a specified position, with a configurable context ratio.
+    /// Calculates the location and optionally extracts the content of a text snippet surrounding a specified position.
     /// </summary>
     /// <param name="position">The zero-based starting position of the keyword in the original text.</param>
     /// <param name="keyLength">The length of the keyword.</param>
@@ -481,16 +642,20 @@ public sealed class FMIndex
     /// <param name="leadingRatio">
     /// The desired proportion (0.0 to 1.0) of the context text to appear before the keyword. Defaults to 0.5 for centering the keyword.
     /// </param>
-    /// <returns>A tuple containing the generated snippet string and the zero-based starting position of the keyword within the snippet.</returns>
-    /// <exception cref="ArgumentOutOfRangeException">
-    /// Thrown if <paramref name="position"/>, <paramref name="keyLength"/>, or <paramref name="totalLength"/> are invalid, or if <paramref name="leadingRatio"/> is not between 0.0 and 1.0.
-    /// </exception>
-    /// <exception cref="ArgumentException">Thrown if <paramref name="position"/> + <paramref name="keyLength"/> is greater than the length of text.</exception>
+    /// <returns>A <see cref="Snippet"/> record containing the location, length, and (in non-sampling mode) the text content of the snippet.</returns>
     /// <remarks>
+    /// In full Suffix Array mode, the <see cref="Snippet.Text"/> property of the returned record will contain the extracted string.
+    /// In sampling mode, the <see cref="Snippet.Text"/> property will be <c>null</c>, but the location properties (<see cref="Snippet.Index"/>, <see cref="Snippet.Length"/>, <see cref="Snippet.KeyPosition"/>)
+    /// will be correctly calculated, allowing the caller to extract the snippet from their own copy of the source text.
     /// The specified <paramref name="leadingRatio"/> is a guideline. The method prioritizes returning a snippet of approximately
-    /// <paramref name="totalLength"/>. If the keyword is near the start or end of the text, the actual ratio of leading/trailing context will be adjusted to fill the requested length.
+    /// <paramref name="totalLength"/>. If the keyword is near the start or end of the text, the actual ratio of leading/trailing
+    /// context will be adjusted to fill the requested length.
     /// </remarks>
-    public (string, int) GetSnippet(int position, int keyLength, int totalLength, double leadingRatio = 0.5)
+    /// <exception cref="ArgumentOutOfRangeException">
+    /// Thrown if <paramref name="position"/>, <paramref name="keyLength"/>, <paramref name="totalLength"/> are invalid, or if <paramref name="leadingRatio"/> is not between 0.0 and 1.0.
+    /// </exception>
+    /// <exception cref="ArgumentException">Thrown if <paramref name="position"/> + <paramref name="keyLength"/> is greater than the length of the text.</exception>
+    public Snippet GetSnippet(int position, int keyLength, int totalLength, double leadingRatio = 0.5)
     {
 #if NET8_0_OR_GREATER
         ArgumentOutOfRangeException.ThrowIfNegative(position);
@@ -507,13 +672,11 @@ public sealed class FMIndex
         if (leadingRatio < 0 | 1 < leadingRatio)
             throw new ArgumentOutOfRangeException(nameof(leadingRatio), $"{nameof(leadingRatio)} must be between 0 and 1.");
 
-        var text = this.Text;
-
-        if (position + keyLength > text.Length)
+        if (position + keyLength > this.TextLength)
             throw new ArgumentException($"{nameof(position)}+{nameof(keyLength)} must be less than or equal the length of text.");
 
         if (keyLength >= totalLength)
-            return (text[position..(position + totalLength)].ToString(), 0);
+            return new(__GetText(position, totalLength), position, totalLength, 0);
 
         var contextLength = totalLength - keyLength;
         var leadingLength = (int)Math.Round(contextLength * leadingRatio);
@@ -527,14 +690,19 @@ public sealed class FMIndex
         }
 
         var end = position + keyLength + trailingLength;
-        if (end > text.Length)
+        if (end > this.TextLength)
         {
-            var overflow = end - text.Length;
+            var overflow = end - this.TextLength;
             start = Math.Max(0, start - overflow);
-            end = text.Length;
+            end = this.TextLength;
         }
 
-        return (text.Span[start..end].ToString(), position - start);
+        return new(__GetText(start, end - start), start, end - start, position - start);;
+
+        #region @@
+        string? __GetText(int index, int length)
+        => this.IsSampled ? null : this.Text.Slice(index, length).Span.ToString();
+        #endregion
     }
 
     (int, int) FindRange(ReadOnlySpan<char> pattern)
@@ -545,24 +713,20 @@ public sealed class FMIndex
         var lastChar = pattern[^1];
         if (!ctable_.TryGetValue(lastChar, out var start))
             return (0, 0);
-        else
-        {
-            var end = start + wm_.Rank(length_, lastChar);
-            for (var i = pattern.Length - 2; i >= 0; i--)
-            {
-                var currentChar = pattern[i];
-                if (!ctable_.TryGetValue(currentChar, out var tmp))
-                    return (0, 0);
-                else
-                {
-                    (start, end) = (tmp + wm_.Rank(start, currentChar), tmp + wm_.Rank(end, currentChar));
-                    if (start >= end)
-                        return (0, 0);
-                }
-            }
 
-            return (start, end);
+        var end = start + wm_.Rank(length_, lastChar);
+        for (var i = pattern.Length - 2; i >= 0; i--)
+        {
+            var currentChar = pattern[i];
+            if (!ctable_.TryGetValue(currentChar, out var tmp))
+                return (0, 0);
+
+            (start, end) = (tmp + wm_.Rank(start, currentChar), tmp + wm_.Rank(end, currentChar));
+            if (start >= end)
+                return (0, 0);
         }
+
+        return (start, end);
     }
 
     // 
@@ -587,5 +751,17 @@ public sealed class FMIndex
         Descending,
     }
 
-    record Init(WaveletMatrixGeneric<char> Wm, SuffixArray Sa, int OriginalIndex, int Length, Dictionary<char, int> Ct);
+    /// <summary>
+    /// Represents a snippet of text, including its content and position.
+    /// </summary>
+    /// <param name="Text">
+    /// The text content of the snippet. This will be <c>null</c> if the <see cref="FMIndex"/> was created in sampling mode.
+    /// </param>
+    /// <param name="Index">The zero-based starting position of the snippet within the original source text.</param>
+    /// <param name="Length">The total length of the snippet.</param>
+    /// <param name="KeyPosition">The zero-based starting position of the keyword within this snippet's text.</param>
+    public record Snippet(string? Text, int Index, int Length, int KeyPosition);
+
+    record Init1(WaveletMatrixGeneric<char> Wm, SuffixArray Sa, int OriginalIndex, int Length, Dictionary<char, int> Ct);
+    record Init2(WaveletMatrixGeneric<char> Wm, int[] Sa, int SampleRate, int OriginalIndex, int Length, Dictionary<char, int> Ct);
 }

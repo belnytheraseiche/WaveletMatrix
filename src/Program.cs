@@ -112,10 +112,10 @@ class Program
         foreach (var pos in positions)
         {
             // Get a snippet of 30 characters total, centered around the keyword "fox" (length 3)
-            var (snippet, keyIndex) = fm.GetSnippet(pos, pattern.Length, 30);
-            Console.WriteLine($"...{snippet}...");
+            var snippet = fm.GetSnippet(pos, pattern.Length, 30);
+            Console.WriteLine($"...{snippet.Text}...");
             // Simple highlighting of the keyword within the snippet
-            Console.WriteLine(new string(' ', 3 + keyIndex) + new string('^', pattern.Length));
+            Console.WriteLine(new string(' ', 3 + snippet.KeyPosition) + new string('^', pattern.Length));
         }
 
         // 5. ReconstructText (Restores the original text from the index)

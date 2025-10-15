@@ -21,8 +21,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.RankSelectBitSet
   type: Class
   source:
+    remote:
+      path: src/BitSets.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: RankSelectBitSet
-    path: C:\Users\nanto\dev\WaveletMatrix\src\BitSets.cs
+    path: src/BitSets.cs
     startLine: 260
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -66,8 +70,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.RankSelectBitSet.RankSelectBitSet(ulong[], int)
   type: Constructor
   source:
+    remote:
+      path: src/BitSets.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: .ctor
-    path: C:\Users\nanto\dev\WaveletMatrix\src\BitSets.cs
+    path: src/BitSets.cs
     startLine: 260
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -106,9 +114,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.RankSelectBitSet.Rank1(int)
   type: Method
   source:
+    remote:
+      path: src/BitSets.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Rank1
-    path: C:\Users\nanto\dev\WaveletMatrix\src\BitSets.cs
-    startLine: 301
+    path: src/BitSets.cs
+    startLine: 299
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -143,16 +155,20 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.RankSelectBitSet.Rank0(int)
   type: Method
   source:
+    remote:
+      path: src/BitSets.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Rank0
-    path: C:\Users\nanto\dev\WaveletMatrix\src\BitSets.cs
-    startLine: 320
+    path: src/BitSets.cs
+    startLine: 319
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
   summary: >-
-    Finds the position of the k-th unset bit (0).
+    Calculates the rank of a bit '0' before a specified position (exclusive).
 
-    This method performs a binary search to find the smallest index p such that the rank of 0 in the range [0, p] is equal to k.
+    Rank0 is the total number of unset bits (0s) in the range [0, k).
   example: []
   syntax:
     content: public int Rank0(int k)
@@ -180,9 +196,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.RankSelectBitSet.Select1(int)
   type: Method
   source:
+    remote:
+      path: src/BitSets.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Select1
-    path: C:\Users\nanto\dev\WaveletMatrix\src\BitSets.cs
-    startLine: 329
+    path: src/BitSets.cs
+    startLine: 328
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -214,9 +234,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.RankSelectBitSet.Select0(int)
   type: Method
   source:
+    remote:
+      path: src/BitSets.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Select0
-    path: C:\Users\nanto\dev\WaveletMatrix\src\BitSets.cs
-    startLine: 338
+    path: src/BitSets.cs
+    startLine: 337
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -248,9 +272,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.RankSelectBitSet.SetAuxDir((int[], short[], int[]))
   type: Method
   source:
+    remote:
+      path: src/BitSets.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: SetAuxDir
-    path: C:\Users\nanto\dev\WaveletMatrix\src\BitSets.cs
-    startLine: 360
+    path: src/BitSets.cs
+    startLine: 359
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -279,9 +307,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.RankSelectBitSet.GetAuxDir()
   type: Method
   source:
+    remote:
+      path: src/BitSets.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: GetAuxDir
-    path: C:\Users\nanto\dev\WaveletMatrix\src\BitSets.cs
-    startLine: 369
+    path: src/BitSets.cs
+    startLine: 368
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -306,9 +338,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.RankSelectBitSet.CreateAuxDir(BelNytheraSeiche.WaveletMatrix.ImmutableBitSet)
   type: Method
   source:
+    remote:
+      path: src/BitSets.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: CreateAuxDir
-    path: C:\Users\nanto\dev\WaveletMatrix\src\BitSets.cs
-    startLine: 377
+    path: src/BitSets.cs
+    startLine: 376
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix

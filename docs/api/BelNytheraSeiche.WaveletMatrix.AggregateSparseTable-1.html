@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class AggregateSparseTable&lt;T&gt; | BelNytheraSeiche.WaveletMatrix ">
       
-      <meta name="description" content="Provides a data structure for answering range queries on a static array. This version is more general and supports non-idempotent operations like sum, but its Query operation is not O(1). Preprocessing is O(N log N) and queries are O(log N) but dependent on the aggregator function&#39;s properties.">
+      <meta name="description" content="Provides a general-purpose data structure for answering range aggregation queries on a static array. Preprocessing is O(N log N), and queries are O(log N).">
       <link rel="icon" href="../images/favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      
+      <meta name="docfx:docurl" content="https://github.com/belnytheraseiche/WaveletMatrix/new/main/apiSpec/new?filename=BelNytheraSeiche_WaveletMatrix_AggregateSparseTable_1.md&amp;value=---%0Auid%3A%20BelNytheraSeiche.WaveletMatrix.AggregateSparseTable%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="BelNytheraSeiche_WaveletMatrix_AggregateSparseTable_1" data-uid="BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1" class="text-break">
-Class AggregateSparseTable&lt;T&gt;  
+Class AggregateSparseTable&lt;T&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/SparseTable.cs/#L184"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,9 +97,8 @@ Class AggregateSparseTable&lt;T&gt;
   <dl><dt>Assembly</dt><dd>BelNytheraSeiche.WaveletMatrix.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Provides a data structure for answering range queries on a static array.
-This version is more general and supports non-idempotent operations like sum, but its Query operation is not O(1).
-Preprocessing is O(N log N) and queries are O(log N) but dependent on the aggregator function's properties.</p>
+  <div class="markdown summary"><p>Provides a general-purpose data structure for answering range aggregation queries on a static array.
+Preprocessing is O(N log N), and queries are <strong>O(log N)</strong>.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -153,8 +152,9 @@ Preprocessing is O(N log N) and queries are O(log N) but dependent on the aggreg
 
 
   <h2 id="BelNytheraSeiche_WaveletMatrix_AggregateSparseTable_1_remarks">Remarks</h2>
-  <div class="markdown level0 remarks"><p>This class is suitable for operations like Range Sum Query, where overlapping subproblems cannot be used in the same way as with idempotent operations.
-Note: The provided Query method is a simplification and may not be O(1) for all aggregator functions. True O(log N) or O(1) for sum requires a different structure like a Fenwick Tree or prefix sum array.</p>
+  <div class="markdown level0 remarks"><p>This class is suitable for <strong>non-idempotent</strong> (and associative) operations like Range Sum Query.
+Unlike <a class="xref" href="BelNytheraSeiche.WaveletMatrix.SparseTable-1.html">SparseTable&lt;T&gt;</a>, it correctly handles operations where overlapping subproblems would lead to incorrect results.
+For faster prefix-sum-based queries, consider using a Fenwick Tree.</p>
 </div>
 
 
@@ -166,11 +166,11 @@ Note: The provided Query method is a simplification and may not be O(1) for all 
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_AggregateSparseTable_1__ctor_System_ReadOnlySpan__0__System_Func__0__0__0__" data-uid="BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1.#ctor(System.ReadOnlySpan{`0},System.Func{`0,`0,`0})">
   AggregateSparseTable(ReadOnlySpan&lt;T&gt;, Func&lt;T, T, T&gt;)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/SparseTable.cs/#L228"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="BelNytheraSeiche.WaveletMatrix.AggregateSparseTable-1.html">AggregateSparseTable&lt;T&gt;</a> class.
-The constructor performs preprocessing which takes O(N log N) time and space.</p>
+The constructor performs preprocessing which takes O(N log N) time and O(N log N) space.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -213,7 +213,7 @@ The constructor performs preprocessing which takes O(N log N) time and space.</p
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_AggregateSparseTable_1_Size" data-uid="BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1.Size">
   Size
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/SparseTable.cs/#L195"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the total number of elements in the sequence.</p>
@@ -249,11 +249,11 @@ The constructor performs preprocessing which takes O(N log N) time and space.</p
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_AggregateSparseTable_1_Query" data-uid="BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1.Query">
   Query()
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/SparseTable.cs/#L268"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Queries to get an aggregated value.
-Note: The time complexity of this query is not guaranteed to be O(1) for non-idempotent operations.</p>
+  <div class="markdown level1 summary"><p>Queries the range [start, end) to get an aggregated value.
+This operation takes <strong>O(log N)</strong> time.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -286,11 +286,11 @@ Note: The time complexity of this query is not guaranteed to be O(1) for non-ide
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_AggregateSparseTable_1_Query_System_Int32_System_Int32_" data-uid="BelNytheraSeiche.WaveletMatrix.AggregateSparseTable`1.Query(System.Int32,System.Int32)">
   Query(int, int)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/SparseTable.cs/#L280"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Queries the range [start, end) to get an aggregated value.
-Note: This operation takes O(log N) time for non-idempotent operations, but dependent on the aggregator function's properties.</p>
+This operation takes <strong>O(log N)</strong> time.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -338,6 +338,7 @@ Note: This operation takes O(log N) time for non-idempotent operations, but depe
 </article>
 
         <div class="contribution d-print-none">
+          <a href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/SparseTable.cs/#L184" class="edit-link">Edit this page</a>
         </div>
 
 

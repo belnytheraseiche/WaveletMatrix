@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      
+      <meta name="docfx:docurl" content="https://github.com/belnytheraseiche/WaveletMatrix/new/main/apiSpec/new?filename=BelNytheraSeiche_WaveletMatrix_SparseTable_1.md&amp;value=---%0Auid%3A%20BelNytheraSeiche.WaveletMatrix.SparseTable%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="BelNytheraSeiche_WaveletMatrix_SparseTable_1" data-uid="BelNytheraSeiche.WaveletMatrix.SparseTable`1" class="text-break">
-Class SparseTable&lt;T&gt;  
+Class SparseTable&lt;T&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/SparseTable.cs/#L38"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -98,7 +98,7 @@ Class SparseTable&lt;T&gt;
   </div>
 
   <div class="markdown summary"><p>Provides a data structure for answering range queries on a static array in O(1) time
-after an O(N log N) preprocessing step. This version is optimized for idempotent operations
+after an O(N log N) preprocessing step. This version is optimized for <strong>idempotent</strong> operations
 like finding the minimum or maximum, and it also tracks the index of the result.</p>
 </div>
   <div class="markdown conceptual"></div>
@@ -154,7 +154,8 @@ like finding the minimum or maximum, and it also tracks the index of the result.
 
   <h2 id="BelNytheraSeiche_WaveletMatrix_SparseTable_1_remarks">Remarks</h2>
   <div class="markdown level0 remarks"><p>An operation is idempotent if applying it multiple times to the same value does not change the result (e.g., min(x, x) = x).
-This implementation is suitable for Range Minimum/Maximum Queries (RMQ).</p>
+This implementation is a classic and efficient solution for the static Range Minimum/Maximum Query (RMQ) problem.
+For an O(N) preprocessing solution, see <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FischerHeunSparseTable-1.html">FischerHeunSparseTable&lt;T&gt;</a>.</p>
 </div>
 
 
@@ -166,11 +167,11 @@ This implementation is suitable for Range Minimum/Maximum Queries (RMQ).</p>
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_SparseTable_1__ctor_System_ReadOnlySpan__0__System_Func__0__0_System_Boolean__" data-uid="BelNytheraSeiche.WaveletMatrix.SparseTable`1.#ctor(System.ReadOnlySpan{`0},System.Func{`0,`0,System.Boolean})">
   SparseTable(ReadOnlySpan&lt;T&gt;, Func&lt;T, T, bool&gt;)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/SparseTable.cs/#L85"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="BelNytheraSeiche.WaveletMatrix.SparseTable-1.html">SparseTable&lt;T&gt;</a> class.
-The constructor performs preprocessing which takes O(N log N) time and space.</p>
+The constructor performs preprocessing which takes O(N log N) time and O(N log N) space.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -214,7 +215,7 @@ than the second (e.g., for a minimum query, the comparer would be <code>(a, b) =
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_SparseTable_1_Size" data-uid="BelNytheraSeiche.WaveletMatrix.SparseTable`1.Size">
   Size
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/SparseTable.cs/#L49"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the total number of elements in the sequence.</p>
@@ -250,7 +251,7 @@ than the second (e.g., for a minimum query, the comparer would be <code>(a, b) =
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_SparseTable_1_Query" data-uid="BelNytheraSeiche.WaveletMatrix.SparseTable`1.Query">
   Query()
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/SparseTable.cs/#L128"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Queries to find the best value according to the comparer and its original index.
@@ -287,7 +288,7 @@ This operation takes O(1) time.</p>
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_SparseTable_1_Query_System_Int32_System_Int32_" data-uid="BelNytheraSeiche.WaveletMatrix.SparseTable`1.Query(System.Int32,System.Int32)">
   Query(int, int)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/SparseTable.cs/#L140"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Queries the range [start, end) to find the best value according to the comparer and its original index.
@@ -339,6 +340,7 @@ This operation takes O(1) time.</p>
 </article>
 
         <div class="contribution d-print-none">
+          <a href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/SparseTable.cs/#L38" class="edit-link">Edit this page</a>
         </div>
 
 

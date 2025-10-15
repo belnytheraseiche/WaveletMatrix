@@ -21,6 +21,7 @@
 // SOFTWARE.
 
 using System.IO.Hashing;
+using System.Buffers;
 using System.Buffers.Binary;
 using System.IO.Compression;
 using System.Runtime.InteropServices;
@@ -32,14 +33,22 @@ namespace BelNytheraSeiche.WaveletMatrix;
 /// to answer advanced stringology queries efficiently.
 /// </summary>
 /// <remarks>
-/// This class builds a <see cref="SparseTable{T}"/> on the LCP array to enable O(1) LCP queries
-/// between any two suffixes. It is a powerful tool for complex string analysis, such as finding
-/// repeated substrings or calculating string complexity.
+/// This class builds a <see cref="FischerHeunSparseTable{T}"/> on the LCP array to enable O(1) LCP queries
+/// between any two suffixes after an O(N) preprocessing step. It is a powerful tool for complex string analysis, 
+/// such as finding repeated substrings or calculating string complexity.
 /// </remarks>
 public sealed class LcpIndex
 {
+    static readonly ArrayPool<int> intPool_ = ArrayPool<int>.Shared;
+    static readonly ArrayPool<byte> bytePool_ = ArrayPool<byte>.Shared;
+
     readonly SuffixArray sa_;
-    readonly SparseTable<int> lcpRmq_;
+    readonly FischerHeunSparseTable<int> lcpRmq_;
+
+    /// <summary>
+    /// Gets the original source Suffix Array.
+    /// </summary>
+    public SuffixArray SA => sa_;
 
     /// <summary>
     /// Gets the original source text in Suffix Array.
@@ -73,7 +82,7 @@ public sealed class LcpIndex
             throw new ArgumentNullException(nameof(sa));
 #endif
 
-        return new(new(sa, new(sa.Lcp.Span, (a, b) => a <= b)));
+        return new(new(sa, new(sa.Lcp, (a, b) => a <= b)));
     }
 
     /// <summary>
@@ -163,15 +172,33 @@ public sealed class LcpIndex
             using var memoryStream = new MemoryStream();
             {
                 using var compressStream = new BrotliStream(memoryStream, options.CompressionLevel);
-                var (table, n) = obj.lcpRmq_.InnerData;
-                Span<byte> buffer1 = stackalloc byte[8];
+                var init = obj.lcpRmq_.InnerData;
+                var (table, n) = init.StInit;
+                Span<byte> buffer1 = stackalloc byte[20];
                 // n
                 BinaryPrimitives.WriteInt32LittleEndian(buffer1, n);
                 // length of table
                 BinaryPrimitives.WriteInt32LittleEndian(buffer1[4..], table.Length);
-                compressStream.Write(buffer1);
+                compressStream.Write(buffer1[..8]);
                 // table
                 __WriteTable(compressStream, table);
+                // blockSize
+                BinaryPrimitives.WriteInt32LittleEndian(buffer1, init.BlockSize);
+                // blockCount
+                BinaryPrimitives.WriteInt32LittleEndian(buffer1[4..], init.BlockCount);
+                // length of blockMins
+                BinaryPrimitives.WriteInt32LittleEndian(buffer1[8..], init.BlockMins.Length);
+                // length of blockTypes
+                BinaryPrimitives.WriteInt32LittleEndian(buffer1[12..], init.BlockTypes.Length);
+                // length of patternRmq
+                BinaryPrimitives.WriteInt32LittleEndian(buffer1[16..], init.PatternRmq.Count);
+                compressStream.Write(buffer1);
+                // blockMins
+                __WriteStreamFromInt32Memory(compressStream, init.BlockMins);
+                // blockTypes
+                __WriteStreamFromUInt64Memory(compressStream, init.BlockTypes);
+                // PatternRmq
+                __WritePatternRmq(compressStream, init.PatternRmq);
             }
             var array = memoryStream.ToArray();
             lcpRmpSize = array.Length;
@@ -221,17 +248,66 @@ public sealed class LcpIndex
             }
             #endregion
         }
+        static void __WritePatternRmq(Stream stream, Dictionary<ulong, int[,]> table)
+        {
+            Span<byte> buffer1 = stackalloc byte[8];
+            foreach (var (key, value) in table)
+            {
+                var dimensionLength = (int)(key >> 32);
+                BinaryPrimitives.WriteUInt64LittleEndian(buffer1, key);
+                stream.Write(buffer1);
+                if (dimensionLength != 0)
+                {
+                    var rent = intPool_.Rent(dimensionLength * dimensionLength);
+                    try
+                    {
+                        var memory = rent.AsMemory(0, dimensionLength * dimensionLength);
+                        MemoryMarshal.CreateReadOnlySpan<int>(ref value[0, 0], value.Length).CopyTo(memory.Span);
+                        __WriteStreamFromInt32Memory(stream, memory);
+                    }
+                    finally
+                    {
+                        intPool_.Return(rent);
+                    }
+                }
+            }
+        }
+        static void __WriteStreamFromInt32Memory(Stream stream, ReadOnlyMemory<int> memory)
+        {
+            if (BitConverter.IsLittleEndian)
+                stream.Write(MemoryMarshal.AsBytes(memory.Span));
+            else
+            {
+                var buffer = new byte[4194304];
+                var offset = 0;
+                while (offset < memory.Length)
+                {
+                    var length = Math.Min(1048576, memory.Length - offset);
+                    var span = memory.Slice(offset, length).Span;
+                    for (var i = 0; i < span.Length; i++)
+                        BinaryPrimitives.WriteInt32LittleEndian(buffer.AsSpan(i * 4, 4), span[i]);
+                    stream.Write(buffer.AsSpan(0, 4 * length));
+                    offset += length;
+                }
+            }
+        }
         static void __WriteStreamFromUInt64Memory(Stream stream, ReadOnlyMemory<ulong> memory)
         {
             if (BitConverter.IsLittleEndian)
                 stream.Write(MemoryMarshal.AsBytes(memory.Span));
             else
             {
-                var buffer = new byte[8 * memory.Length];
-                var span = memory.Span;
-                for (var i = 0; i < span.Length; i++)
-                    BinaryPrimitives.WriteUInt64LittleEndian(buffer.AsSpan(i * 8, 8), span[i]);
-                stream.Write(buffer);
+                var buffer = new byte[8388608];
+                var offset = 0;
+                while (offset < memory.Length)
+                {
+                    var length = Math.Min(1048576, memory.Length - offset);
+                    var span = memory.Slice(offset, length).Span;
+                    for (var i = 0; i < span.Length; i++)
+                        BinaryPrimitives.WriteUInt64LittleEndian(buffer.AsSpan(i * 8, 8), span[i]);
+                    stream.Write(buffer.AsSpan(0, 8 * length));
+                    offset += length;
+                }
             }
         }
         #endregion
@@ -300,19 +376,24 @@ public sealed class LcpIndex
             throw new InvalidDataException("Unsupported format.");
 
         // lcpRmp
-        SparseTable<int> lcpRmp = null!;
+        FischerHeunSparseTable<int>.Init lcpRmqInit = null!;
         {
             var buffer1 = new byte[BinaryPrimitives.ReadInt32LittleEndian(buffer0[8..])];
             stream.ReadExactly(buffer1);
             xxh.Append(buffer1);
             using var memoryStream = new MemoryStream(buffer1);
             using var decompressStream = new BrotliStream(memoryStream, CompressionMode.Decompress);
-            Span<byte> buffer2 = stackalloc byte[8];
-            decompressStream.ReadExactly(buffer2);
+            Span<byte> buffer2 = stackalloc byte[20];
+            decompressStream.ReadExactly(buffer2[..8]);
             var (n, length) = (BinaryPrimitives.ReadInt32LittleEndian(buffer2), BinaryPrimitives.ReadInt32LittleEndian(buffer2[4..]));
             var table = new SparseTable<int>.ValueWithIndex[length];
             __ReadTableFromStream(decompressStream, table);
-            lcpRmp = new SparseTable<int>(new SparseTable<int>.Init(table, n), (a, b) => a <= b);
+            decompressStream.ReadExactly(buffer2);
+            var (blockSize, blockCount, blockMinsLength, blockTypesLength, patternRmqCount) = (BinaryPrimitives.ReadInt32LittleEndian(buffer2), BinaryPrimitives.ReadInt32LittleEndian(buffer2[4..]), BinaryPrimitives.ReadInt32LittleEndian(buffer2[8..]), BinaryPrimitives.ReadInt32LittleEndian(buffer2[12..]), BinaryPrimitives.ReadInt32LittleEndian(buffer2[16..]));
+            lcpRmqInit = new(new(table, n), null!, blockSize, blockCount, new int[blockMinsLength], new ulong[blockTypesLength], new(patternRmqCount));
+            __ReadInt32ArrayFromStream(decompressStream, lcpRmqInit.BlockMins);
+            __ReadUInt64ArrayFromStream(decompressStream, lcpRmqInit.BlockTypes);
+            __ReadPatternRmq(decompressStream, lcpRmqInit.PatternRmq, patternRmqCount);
         }
 
         if (xxh.GetCurrentHashAsUInt32() != BinaryPrimitives.ReadUInt32LittleEndian(buffer0[4..]))
@@ -320,6 +401,9 @@ public sealed class LcpIndex
 
         // sa
         var sa = SuffixArray.Deserialize(stream);
+        // lcpRmp
+        var lcpRmp = new FischerHeunSparseTable<int>(lcpRmqInit with { Memory = sa.Lcp }, (a, b) => a <= b);
+
         return new(new(sa, lcpRmp));
 
         #region @@
@@ -340,6 +424,52 @@ public sealed class LcpIndex
 
                 offset += length;
             }
+        }
+        static void __ReadPatternRmq(Stream stream, Dictionary<ulong, int[,]> table, int count)
+        {
+            Span<byte> buffer1 = stackalloc byte[8];
+            while (count-- > 0)
+            {
+                stream.ReadExactly(buffer1);
+                var key = BinaryPrimitives.ReadUInt64LittleEndian(buffer1);
+                var dimensionLength = (int)(key >> 32);
+                if (dimensionLength == 0)
+                    table.Add(key, new int[0, 0]);
+                else
+                {
+                    var rent = bytePool_.Rent(4 * dimensionLength * dimensionLength);
+                    try
+                    {
+                        var memory = rent.AsMemory(0, 4 * dimensionLength * dimensionLength);
+                        stream.ReadExactly(memory.Span);
+                        var value = new int[dimensionLength, dimensionLength];
+                        memory.Span.CopyTo(MemoryMarshal.AsBytes(MemoryMarshal.CreateSpan<int>(ref value[0, 0], value.Length)));
+                        if (!BitConverter.IsLittleEndian)
+                            for (var i = 0; i < dimensionLength; i++)
+                                for (var j = 0; j < dimensionLength; j++)
+                                    value[i, j] = BinaryPrimitives.ReadInt32LittleEndian(memory.Span[(4 * i * dimensionLength + (4 * j))..]);
+                        table.Add(key, value);
+                    }
+                    finally
+                    {
+                        bytePool_.Return(rent);
+                    }
+                }
+            }
+        }
+        static void __ReadInt32ArrayFromStream(Stream stream, int[] buffer)
+        {
+            stream.ReadExactly(MemoryMarshal.AsBytes(buffer.AsSpan()));
+            if (!BitConverter.IsLittleEndian)
+                for (var i = 0; i < buffer.Length; i++)
+                    buffer[i] = BinaryPrimitives.ReadInt32LittleEndian(MemoryMarshal.AsBytes(buffer.AsSpan(i)));
+        }
+        static void __ReadUInt64ArrayFromStream(Stream stream, ulong[] buffer)
+        {
+            stream.ReadExactly(MemoryMarshal.AsBytes(buffer.AsSpan()));
+            if (!BitConverter.IsLittleEndian)
+                for (var i = 0; i < buffer.Length; i++)
+                    buffer[i] = BinaryPrimitives.ReadUInt64LittleEndian(MemoryMarshal.AsBytes(buffer.AsSpan(i)));
         }
         #endregion
     }
@@ -430,7 +560,7 @@ public sealed class LcpIndex
     /// </summary>
     /// <param name="minLength">The minimum length of the repeated substrings to find.</param>
     /// <returns>An enumerable collection of <see cref="Repeat"/> records.</returns>
-    /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="minLength"/> is negative or 0.</exception>
+    /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="minLength"/> is less than or equal 0.</exception>
     public IEnumerable<Repeat> FindRepeats(int minLength = 2)
     {
 #if NET8_0_OR_GREATER
@@ -442,17 +572,17 @@ public sealed class LcpIndex
 
         var saSpan = sa_.SA.Span;
         var lcpSpan = sa_.Lcp.Span;
-        var textSpan = sa_.Text.Span;
-        var results = new Dictionary<string, List<int>>();
+        var textMemory = sa_.Text;
+        var results = new Dictionary<ReadOnlyMemory<char>, List<int>>(CharMemoryComparer.Instance);
 
-        for (var i = 1; i < textSpan.Length; i++)
+        for (var i = 1; i < textMemory.Length; i++)
         {
             var lcpLength = lcpSpan[i];
             if (lcpLength >= minLength)
             {
                 for (var j = minLength; j <= lcpLength; j++)
                 {
-                    var key = textSpan.Slice(saSpan[i], j).ToString();
+                    var key = textMemory.Slice(saSpan[i], j);
                     if (!results.TryGetValue(key, out var positions))
                         results.Add(key, positions = new());
                     positions.AddRange([saSpan[i - 1], saSpan[i]]);
@@ -461,7 +591,7 @@ public sealed class LcpIndex
         }
 
         foreach (var entry in results)
-            yield return new(entry.Key, entry.Value.Distinct().Order().ToArray());
+            yield return new(entry.Key.Span.ToString(), entry.Value.Distinct().Order().ToArray());
     }
 
     /// <summary>
@@ -497,8 +627,109 @@ public sealed class LcpIndex
         return complexity;
     }
 
+    /// <summary>
+    /// Creates a new <see cref="SimilarityMatcher"/> instance to find common substrings between two texts.
+    /// This is achieved by concatenating the two texts with a unique separator and building a single LCP index on the result.
+    /// </summary>
+    /// <param name="text1">The first text to compare.</param>
+    /// <param name="text2">The second text to compare.</param>
+    /// <returns>A new <see cref="SimilarityMatcher"/> instance ready for finding matches.</returns>
+    /// <exception cref="ArgumentNullException">Thrown if <paramref name="text1"/> or <paramref name="text2"/> is null.</exception>
+    public static SimilarityMatcher CreateSimilarityMatcher(string text1, string text2)
+    {
+#if NET6_0_OR_GREATER
+        ArgumentNullException.ThrowIfNull(text1);
+        ArgumentNullException.ThrowIfNull(text2);
+#else
+        if (text1 == null)
+            throw new ArgumentNullException(nameof(text1));
+        if (text2 == null)
+            throw new ArgumentNullException(nameof(text2));
+#endif
+
+        char[] buffer = new char[text1.Length + text2.Length + 1];
+        text1.CopyTo(0, buffer, 0, text1.Length);
+        text2.CopyTo(0, buffer, text1.Length + 1, text2.Length);
+        return new(LcpIndex.Create(SuffixArray.Create(buffer)), text1, text2);
+    }
+
     // 
     // 
+
+    /// <summary>
+    /// Provides functionality to find all common substrings between two texts using a combined <see cref="LcpIndex"/>.
+    /// An instance of this class is created via the <see cref="LcpIndex.CreateSimilarityMatcher"/> factory method.
+    /// </summary>
+    /// <param name="lcpIndex">The LcpIndex built on the combined text.</param>
+    /// <param name="text1">The first original text.</param>
+    /// <param name="text2">The second original text.</param>
+    public sealed class SimilarityMatcher(LcpIndex lcpIndex, string text1, string text2)
+    {
+        /// <summary>
+        /// Gets the underlying <see cref="LcpIndex"/> built on the combined text.
+        /// </summary>
+        public LcpIndex LcpIndex => lcpIndex;
+
+        /// <summary>
+        /// Gets the first original text used for the comparison.
+        /// </summary>
+        public string Text1 => text1;
+        
+        /// <summary>
+        /// Gets the second original text used for the comparison.
+        /// </summary>
+        public string Text2 => text2;
+
+        // 
+        // 
+
+        /// <summary>
+        /// Finds all common substrings between the two texts that are at least a specified minimum length.
+        /// This method works by scanning the LCP array of the combined text and identifying adjacent suffixes
+        /// that originate from different source texts.
+        /// </summary>
+        /// <param name="minLength">The minimum length for a substring to be reported as a match. Defaults to 2.</param>
+        /// <returns>An enumerable collection of <see cref="Match"/> records, each representing a common substring.</returns>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="minLength"/> is less than 0.</exception>
+        public IEnumerable<Match> Matches(int minLength = 2)
+        {
+#if NET8_0_OR_GREATER
+            ArgumentOutOfRangeException.ThrowIfNegative(minLength);
+#else
+            if (minLength < 0)
+                throw new ArgumentOutOfRangeException(nameof(minLength), $"{nameof(minLength)} must be greater than or equal 0.");
+#endif
+
+            var boundaryIndex = this.Text1.Length;
+            var sa = this.LcpIndex.SA;
+            var lcpData = sa.Lcp;
+            for (var i = 1; i < lcpData.Length; i++)
+            {
+                var (positionTmp1, positionTmp2) = (sa.SA.Span[i - 1], sa.SA.Span[i]);
+                if ((positionTmp1 < boundaryIndex && positionTmp2 > boundaryIndex) || (positionTmp2 < boundaryIndex && positionTmp1 > boundaryIndex))
+                {
+                    var lcpLength = lcpData.Span[i];
+                    if (lcpLength >= minLength)
+                    {
+                        var positionResult1 = positionTmp1 < boundaryIndex ? positionTmp1 : positionTmp2;
+                        var positionResult2 = positionTmp1 > boundaryIndex ? positionTmp1 - boundaryIndex - 1 : positionTmp2 - boundaryIndex - 1;
+                        yield return new(positionResult1, positionResult2, lcpLength);
+                    }
+                }
+            }
+        }
+
+        // 
+        // 
+
+        /// <summary>
+        /// Represents a common substring found between two texts.
+        /// </summary>
+        /// <param name="Position1">The zero-based starting position of the match in the first text.</param>
+        /// <param name="Position2">The zero-based starting position of the match in the second text.</param>
+        /// <param name="Length">The length of the common substring.</param>
+        public record Match(int Position1, int Position2, int Length);
+    }
 
     class CharMemoryComparer : IEqualityComparer<ReadOnlyMemory<char>>
     {
@@ -525,12 +756,12 @@ public sealed class LcpIndex
     public record TandemRepeat(int Position, int Length, int Count);
 
     /// <summary>
-    /// Represents a epeated substring.
+    /// Represents a repeated substring and all its occurrences.
     /// </summary>
     /// <param name="Text">The repeating unit string.</param>
     /// <param name="Positions">An array of all 0-based starting positions where the substring occurs.</param>
     public record Repeat(string Text, int[] Positions);
 
     /// <exclude />
-    public record Init(SuffixArray SA, SparseTable<int> LcpRmp);
+    public record Init(SuffixArray SA, FischerHeunSparseTable<int> LcpRmp);
 }

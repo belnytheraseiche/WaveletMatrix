@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      
+      <meta name="docfx:docurl" content="https://github.com/belnytheraseiche/WaveletMatrix/new/main/apiSpec/new?filename=BelNytheraSeiche_WaveletMatrix_SuffixArray.md&amp;value=---%0Auid%3A%20BelNytheraSeiche.WaveletMatrix.SuffixArray%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="BelNytheraSeiche_WaveletMatrix_SuffixArray" data-uid="BelNytheraSeiche.WaveletMatrix.SuffixArray" class="text-break">
-Class SuffixArray  
+Class SuffixArray  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/SuffixArray.cs/#L78"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -159,10 +159,12 @@ While the initial construction can be resource-intensive, subsequent search oper
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_SuffixArray_Lcp" data-uid="BelNytheraSeiche.WaveletMatrix.SuffixArray.Lcp">
   Lcp
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/SuffixArray.cs/#L102"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the LCP (Longest Common Prefix) array.
+<code>Lcp[i]</code> stores the length of the longest common prefix between the suffixes starting at <code>SA[i-1]</code> and <code>SA[i]</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -190,10 +192,12 @@ While the initial construction can be resource-intensive, subsequent search oper
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_SuffixArray_Rank" data-uid="BelNytheraSeiche.WaveletMatrix.SuffixArray.Rank">
   Rank
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/SuffixArray.cs/#L108"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the Rank array (also known as the Inverse Suffix Array).
+<code>Rank[i]</code> gives the rank (the index in the suffix array) of the suffix starting at position <code>i</code> of the original text.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -221,10 +225,11 @@ While the initial construction can be resource-intensive, subsequent search oper
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_SuffixArray_SA" data-uid="BelNytheraSeiche.WaveletMatrix.SuffixArray.SA">
   SA
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/SuffixArray.cs/#L96"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the suffix array. This is a sorted array of all suffixes of the text.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -244,6 +249,9 @@ While the initial construction can be resource-intensive, subsequent search oper
 
 
 
+  <h4 class="section" id="BelNytheraSeiche_WaveletMatrix_SuffixArray_SA_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>The 0-th element of the internal array is skipped as it corresponds to the sentinel character used by the SA-IS algorithm.</p>
+</div>
 
 
 
@@ -252,10 +260,11 @@ While the initial construction can be resource-intensive, subsequent search oper
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_SuffixArray_Text" data-uid="BelNytheraSeiche.WaveletMatrix.SuffixArray.Text">
   Text
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/SuffixArray.cs/#L88"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the original text used to build the suffix array.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -287,7 +296,7 @@ While the initial construction can be resource-intensive, subsequent search oper
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_SuffixArray_Create_System_ReadOnlyMemory_System_Char__" data-uid="BelNytheraSeiche.WaveletMatrix.SuffixArray.Create(System.ReadOnlyMemory{System.Char})">
   Create(ReadOnlyMemory&lt;char&gt;)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/SuffixArray.cs/#L134"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a new instance of the <a class="xref" href="BelNytheraSeiche.WaveletMatrix.SuffixArray.html">SuffixArray</a> class by building the suffix and LCP arrays for the specified text.</p>
@@ -334,7 +343,7 @@ While the initial construction can be resource-intensive, subsequent search oper
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_SuffixArray_Create_System_String_" data-uid="BelNytheraSeiche.WaveletMatrix.SuffixArray.Create(System.String)">
   Create(string)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/SuffixArray.cs/#L125"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a new instance of the <a class="xref" href="BelNytheraSeiche.WaveletMatrix.SuffixArray.html">SuffixArray</a> class by building the suffix and LCP arrays for the specified text.</p>
@@ -381,7 +390,7 @@ While the initial construction can be resource-intensive, subsequent search oper
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_SuffixArray_Deserialize_System_Byte___" data-uid="BelNytheraSeiche.WaveletMatrix.SuffixArray.Deserialize(System.Byte[])">
   Deserialize(byte[])
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/SuffixArray.cs/#L350"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Deserializes a byte array into a <a class="xref" href="BelNytheraSeiche.WaveletMatrix.SuffixArray.html">SuffixArray</a> instance.</p>
@@ -426,7 +435,7 @@ While the initial construction can be resource-intensive, subsequent search oper
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_SuffixArray_Deserialize_System_IO_Stream_" data-uid="BelNytheraSeiche.WaveletMatrix.SuffixArray.Deserialize(System.IO.Stream)">
   Deserialize(Stream)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/SuffixArray.cs/#L390"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Deserializes a <a class="xref" href="BelNytheraSeiche.WaveletMatrix.SuffixArray.html">SuffixArray</a> instance from a stream.
@@ -475,7 +484,7 @@ It verifies the file format, type identifier, and checksum.</p>
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_SuffixArray_Deserialize_System_String_" data-uid="BelNytheraSeiche.WaveletMatrix.SuffixArray.Deserialize(System.String)">
   Deserialize(string)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/SuffixArray.cs/#L369"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Deserializes a <a class="xref" href="BelNytheraSeiche.WaveletMatrix.SuffixArray.html">SuffixArray</a> instance from the specified file.</p>
@@ -520,7 +529,7 @@ It verifies the file format, type identifier, and checksum.</p>
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_SuffixArray_Search_System_ReadOnlySpan_System_Char__" data-uid="BelNytheraSeiche.WaveletMatrix.SuffixArray.Search(System.ReadOnlySpan{System.Char})">
   Search(ReadOnlySpan&lt;char&gt;)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/SuffixArray.cs/#L479"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Finds all starting positions of a specified substring. The search is case-sensitive.</p>
@@ -559,7 +568,7 @@ It verifies the file format, type identifier, and checksum.</p>
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_SuffixArray_SearchCommon_System_ReadOnlyMemory_System_Char__System_Int32_" data-uid="BelNytheraSeiche.WaveletMatrix.SuffixArray.SearchCommon(System.ReadOnlyMemory{System.Char},System.Int32)">
   SearchCommon(ReadOnlyMemory&lt;char&gt;, int)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/SuffixArray.cs/#L703"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -597,7 +606,7 @@ It verifies the file format, type identifier, and checksum.</p>
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_SuffixArray_SearchCommon_System_ReadOnlyMemory_System_Char__System_ReadOnlyMemory_System_Char__System_Int32_" data-uid="BelNytheraSeiche.WaveletMatrix.SuffixArray.SearchCommon(System.ReadOnlyMemory{System.Char},System.ReadOnlyMemory{System.Char},System.Int32)">
   SearchCommon(ReadOnlyMemory&lt;char&gt;, ReadOnlyMemory&lt;char&gt;, int)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/SuffixArray.cs/#L731"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -637,7 +646,7 @@ It verifies the file format, type identifier, and checksum.</p>
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_SuffixArray_SearchCommon_System_String_System_Int32_" data-uid="BelNytheraSeiche.WaveletMatrix.SuffixArray.SearchCommon(System.String,System.Int32)">
   SearchCommon(string, int)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/SuffixArray.cs/#L700"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Finds all common substrings between the text of this instance and another specified text that meet a minimum length requirement.</p>
@@ -688,7 +697,7 @@ It verifies the file format, type identifier, and checksum.</p>
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_SuffixArray_SearchCommon_System_String_System_String_System_Int32_" data-uid="BelNytheraSeiche.WaveletMatrix.SuffixArray.SearchCommon(System.String,System.String,System.Int32)">
   SearchCommon(string, string, int)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/SuffixArray.cs/#L728"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Finds all common substrings between two specified texts that meet a minimum length requirement.</p>
@@ -742,7 +751,7 @@ It verifies the file format, type identifier, and checksum.</p>
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_SuffixArray_SearchLongestCommon_System_ReadOnlyMemory_System_Char__" data-uid="BelNytheraSeiche.WaveletMatrix.SuffixArray.SearchLongestCommon(System.ReadOnlyMemory{System.Char})">
   SearchLongestCommon(ReadOnlyMemory&lt;char&gt;)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/SuffixArray.cs/#L629"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -778,7 +787,7 @@ It verifies the file format, type identifier, and checksum.</p>
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_SuffixArray_SearchLongestCommon_System_ReadOnlyMemory_System_Char__System_ReadOnlyMemory_System_Char__" data-uid="BelNytheraSeiche.WaveletMatrix.SuffixArray.SearchLongestCommon(System.ReadOnlyMemory{System.Char},System.ReadOnlyMemory{System.Char})">
   SearchLongestCommon(ReadOnlyMemory&lt;char&gt;, ReadOnlyMemory&lt;char&gt;)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/SuffixArray.cs/#L648"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -816,7 +825,7 @@ It verifies the file format, type identifier, and checksum.</p>
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_SuffixArray_SearchLongestCommon_System_String_" data-uid="BelNytheraSeiche.WaveletMatrix.SuffixArray.SearchLongestCommon(System.String)">
   SearchLongestCommon(string)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/SuffixArray.cs/#L626"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Finds the longest common substring(s) between the text of this instance and another specified text.</p>
@@ -861,7 +870,7 @@ It verifies the file format, type identifier, and checksum.</p>
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_SuffixArray_SearchLongestCommon_System_String_System_String_" data-uid="BelNytheraSeiche.WaveletMatrix.SuffixArray.SearchLongestCommon(System.String,System.String)">
   SearchLongestCommon(string, string)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/SuffixArray.cs/#L645"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Finds the longest common substring(s) between two specified texts.</p>
@@ -909,7 +918,7 @@ It verifies the file format, type identifier, and checksum.</p>
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_SuffixArray_SearchLongestRepeated" data-uid="BelNytheraSeiche.WaveletMatrix.SuffixArray.SearchLongestRepeated">
   SearchLongestRepeated()
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/SuffixArray.cs/#L561"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Finds the longest substring(s) that appear more than once in the text.</p>
@@ -942,7 +951,7 @@ It verifies the file format, type identifier, and checksum.</p>
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_SuffixArray_SearchRepeated_System_Int32_" data-uid="BelNytheraSeiche.WaveletMatrix.SuffixArray.SearchRepeated(System.Int32)">
   SearchRepeated(int)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/SuffixArray.cs/#L590"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Finds all unique substrings that are repeated in the text and meet a minimum length requirement.</p>
@@ -987,7 +996,7 @@ It verifies the file format, type identifier, and checksum.</p>
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_SuffixArray_SearchWildcard_System_ReadOnlySpan_System_Char__BelNytheraSeiche_WaveletMatrix_SuffixArray_WildcardOptions_" data-uid="BelNytheraSeiche.WaveletMatrix.SuffixArray.SearchWildcard(System.ReadOnlySpan{System.Char},BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions)">
   SearchWildcard(ReadOnlySpan&lt;char&gt;, WildcardOptions?)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/SuffixArray.cs/#L794"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Finds all substrings that match a given pattern containing wildcards.</p>
@@ -1047,7 +1056,7 @@ It verifies the file format, type identifier, and checksum.</p>
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_SuffixArray_Serialize_BelNytheraSeiche_WaveletMatrix_SuffixArray_BelNytheraSeiche_WaveletMatrix_SerializationOptions_" data-uid="BelNytheraSeiche.WaveletMatrix.SuffixArray.Serialize(BelNytheraSeiche.WaveletMatrix.SuffixArray,BelNytheraSeiche.WaveletMatrix.SerializationOptions)">
   Serialize(SuffixArray, SerializationOptions?)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/SuffixArray.cs/#L158"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Serializes the <a class="xref" href="BelNytheraSeiche.WaveletMatrix.SuffixArray.html">SuffixArray</a> instance into a byte array.</p>
@@ -1096,7 +1105,7 @@ If null, <a class="xref" href="BelNytheraSeiche.WaveletMatrix.SerializationOptio
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_SuffixArray_Serialize_BelNytheraSeiche_WaveletMatrix_SuffixArray_System_IO_Stream_BelNytheraSeiche_WaveletMatrix_SerializationOptions_" data-uid="BelNytheraSeiche.WaveletMatrix.SuffixArray.Serialize(BelNytheraSeiche.WaveletMatrix.SuffixArray,System.IO.Stream,BelNytheraSeiche.WaveletMatrix.SerializationOptions)">
   Serialize(SuffixArray, Stream, SerializationOptions?)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/SuffixArray.cs/#L209"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Serializes the <a class="xref" href="BelNytheraSeiche.WaveletMatrix.SuffixArray.html">SuffixArray</a> instance to a stream.
@@ -1143,7 +1152,7 @@ If null, <a class="xref" href="BelNytheraSeiche.WaveletMatrix.SerializationOptio
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_SuffixArray_Serialize_BelNytheraSeiche_WaveletMatrix_SuffixArray_System_String_BelNytheraSeiche_WaveletMatrix_SerializationOptions_" data-uid="BelNytheraSeiche.WaveletMatrix.SuffixArray.Serialize(BelNytheraSeiche.WaveletMatrix.SuffixArray,System.String,BelNytheraSeiche.WaveletMatrix.SerializationOptions)">
   Serialize(SuffixArray, string, SerializationOptions?)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/SuffixArray.cs/#L182"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Serializes the <a class="xref" href="BelNytheraSeiche.WaveletMatrix.SuffixArray.html">SuffixArray</a> instance to the specified file.</p>
@@ -1189,6 +1198,7 @@ If null, <a class="xref" href="BelNytheraSeiche.WaveletMatrix.SerializationOptio
 </article>
 
         <div class="contribution d-print-none">
+          <a href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/SuffixArray.cs/#L78" class="edit-link">Edit this page</a>
         </div>
 
 

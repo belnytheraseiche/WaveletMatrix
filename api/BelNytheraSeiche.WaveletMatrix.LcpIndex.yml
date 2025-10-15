@@ -8,12 +8,14 @@ items:
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.CalculateZivLempelComplexity
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.CountUniqueSubstrings
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.Create(BelNytheraSeiche.WaveletMatrix.SuffixArray)
+  - BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcher(System.String,System.String)
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.Deserialize(System.Byte[])
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.Deserialize(System.IO.Stream)
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.Deserialize(System.String)
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.FindRepeats(System.Int32)
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.FindTandemRepeats
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.GetLcp(System.Int32,System.Int32)
+  - BelNytheraSeiche.WaveletMatrix.LcpIndex.SA
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.Serialize(BelNytheraSeiche.WaveletMatrix.LcpIndex,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.Serialize(BelNytheraSeiche.WaveletMatrix.LcpIndex,System.IO.Stream,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.Serialize(BelNytheraSeiche.WaveletMatrix.LcpIndex,System.String,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
@@ -26,9 +28,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex
   type: Class
   source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: LcpIndex
-    path: C:\Users\nanto\dev\WaveletMatrix\src\LcpIndex.cs
-    startLine: 38
+    path: src/LcpIndex.cs
+    startLine: 39
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -37,11 +43,11 @@ items:
 
     to answer advanced stringology queries efficiently.
   remarks: >-
-    This class builds a <xref href="BelNytheraSeiche.WaveletMatrix.SparseTable%601" data-throw-if-not-resolved="false"></xref> on the LCP array to enable O(1) LCP queries
+    This class builds a <xref href="BelNytheraSeiche.WaveletMatrix.FischerHeunSparseTable%601" data-throw-if-not-resolved="false"></xref> on the LCP array to enable O(1) LCP queries
 
-    between any two suffixes. It is a powerful tool for complex string analysis, such as finding
+    between any two suffixes after an O(N) preprocessing step. It is a powerful tool for complex string analysis, 
 
-    repeated substrings or calculating string complexity.
+    such as finding repeated substrings or calculating string complexity.
   example: []
   syntax:
     content: public sealed class LcpIndex
@@ -55,6 +61,37 @@ items:
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SA
+  commentId: P:BelNytheraSeiche.WaveletMatrix.LcpIndex.SA
+  id: SA
+  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex
+  langs:
+  - csharp
+  - vb
+  name: SA
+  nameWithType: LcpIndex.SA
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.SA
+  type: Property
+  source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
+    id: SA
+    path: src/LcpIndex.cs
+    startLine: 50
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Gets the original source Suffix Array.
+  example: []
+  syntax:
+    content: public SuffixArray SA { get; }
+    parameters: []
+    return:
+      type: BelNytheraSeiche.WaveletMatrix.SuffixArray
+    content.vb: Public ReadOnly Property SA As SuffixArray
+  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.SA*
 - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.Text
   commentId: P:BelNytheraSeiche.WaveletMatrix.LcpIndex.Text
   id: Text
@@ -67,9 +104,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.Text
   type: Property
   source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Text
-    path: C:\Users\nanto\dev\WaveletMatrix\src\LcpIndex.cs
-    startLine: 46
+    path: src/LcpIndex.cs
+    startLine: 55
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -94,9 +135,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.Create(BelNytheraSeiche.WaveletMatrix.SuffixArray)
   type: Method
   source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Create
-    path: C:\Users\nanto\dev\WaveletMatrix\src\LcpIndex.cs
-    startLine: 66
+    path: src/LcpIndex.cs
+    startLine: 75
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -129,9 +174,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.Serialize(BelNytheraSeiche.WaveletMatrix.LcpIndex, BelNytheraSeiche.WaveletMatrix.SerializationOptions?)
   type: Method
   source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Serialize
-    path: C:\Users\nanto\dev\WaveletMatrix\src\LcpIndex.cs
-    startLine: 88
+    path: src/LcpIndex.cs
+    startLine: 97
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -173,9 +222,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.Serialize(BelNytheraSeiche.WaveletMatrix.LcpIndex, string, BelNytheraSeiche.WaveletMatrix.SerializationOptions?)
   type: Method
   source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Serialize
-    path: C:\Users\nanto\dev\WaveletMatrix\src\LcpIndex.cs
-    startLine: 112
+    path: src/LcpIndex.cs
+    startLine: 121
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -217,9 +270,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.Serialize(BelNytheraSeiche.WaveletMatrix.LcpIndex, System.IO.Stream, BelNytheraSeiche.WaveletMatrix.SerializationOptions?)
   type: Method
   source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Serialize
-    path: C:\Users\nanto\dev\WaveletMatrix\src\LcpIndex.cs
-    startLine: 140
+    path: src/LcpIndex.cs
+    startLine: 149
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -266,9 +323,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.Deserialize(byte[])
   type: Method
   source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Deserialize
-    path: C:\Users\nanto\dev\WaveletMatrix\src\LcpIndex.cs
-    startLine: 245
+    path: src/LcpIndex.cs
+    startLine: 321
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -304,9 +365,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.Deserialize(string)
   type: Method
   source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Deserialize
-    path: C:\Users\nanto\dev\WaveletMatrix\src\LcpIndex.cs
-    startLine: 264
+    path: src/LcpIndex.cs
+    startLine: 340
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -342,9 +407,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.Deserialize(System.IO.Stream)
   type: Method
   source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Deserialize
-    path: C:\Users\nanto\dev\WaveletMatrix\src\LcpIndex.cs
-    startLine: 285
+    path: src/LcpIndex.cs
+    startLine: 361
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -383,9 +452,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.GetLcp(int, int)
   type: Method
   source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: GetLcp
-    path: C:\Users\nanto\dev\WaveletMatrix\src\LcpIndex.cs
-    startLine: 354
+    path: src/LcpIndex.cs
+    startLine: 484
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -427,9 +500,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.CountUniqueSubstrings()
   type: Method
   source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: CountUniqueSubstrings
-    path: C:\Users\nanto\dev\WaveletMatrix\src\LcpIndex.cs
-    startLine: 387
+    path: src/LcpIndex.cs
+    startLine: 517
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -457,9 +534,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.FindTandemRepeats()
   type: Method
   source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: FindTandemRepeats
-    path: C:\Users\nanto\dev\WaveletMatrix\src\LcpIndex.cs
-    startLine: 402
+    path: src/LcpIndex.cs
+    startLine: 532
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -484,9 +565,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.FindRepeats(int)
   type: Method
   source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: FindRepeats
-    path: C:\Users\nanto\dev\WaveletMatrix\src\LcpIndex.cs
-    startLine: 433
+    path: src/LcpIndex.cs
+    startLine: 563
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -509,7 +594,7 @@ items:
   exceptions:
   - type: System.ArgumentOutOfRangeException
     commentId: T:System.ArgumentOutOfRangeException
-    description: Thrown if <code class="paramref">minLength</code> is negative or 0.
+    description: Thrown if <code class="paramref">minLength</code> is less than or equal 0.
   nameWithType.vb: LcpIndex.FindRepeats(Integer)
   fullName.vb: BelNytheraSeiche.WaveletMatrix.LcpIndex.FindRepeats(Integer)
   name.vb: FindRepeats(Integer)
@@ -525,9 +610,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.CalculateZivLempelComplexity()
   type: Method
   source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: CalculateZivLempelComplexity
-    path: C:\Users\nanto\dev\WaveletMatrix\src\LcpIndex.cs
-    startLine: 471
+    path: src/LcpIndex.cs
+    startLine: 601
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -543,27 +632,75 @@ items:
       description: The LZ78 complexity of the text.
     content.vb: Public Function CalculateZivLempelComplexity() As Integer
   overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.CalculateZivLempelComplexity*
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcher(System.String,System.String)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcher(System.String,System.String)
+  id: CreateSimilarityMatcher(System.String,System.String)
+  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex
+  langs:
+  - csharp
+  - vb
+  name: CreateSimilarityMatcher(string, string)
+  nameWithType: LcpIndex.CreateSimilarityMatcher(string, string)
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcher(string, string)
+  type: Method
+  source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
+    id: CreateSimilarityMatcher
+    path: src/LcpIndex.cs
+    startLine: 637
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Creates a new <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher" data-throw-if-not-resolved="false"></xref> instance to find common substrings between two texts.
+
+    This is achieved by concatenating the two texts with a unique separator and building a single LCP index on the result.
+  example: []
+  syntax:
+    content: public static LcpIndex.SimilarityMatcher CreateSimilarityMatcher(string text1, string text2)
+    parameters:
+    - id: text1
+      type: System.String
+      description: The first text to compare.
+    - id: text2
+      type: System.String
+      description: The second text to compare.
+    return:
+      type: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
+      description: A new <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher" data-throw-if-not-resolved="false"></xref> instance ready for finding matches.
+    content.vb: Public Shared Function CreateSimilarityMatcher(text1 As String, text2 As String) As LcpIndex.SimilarityMatcher
+  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcher*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code class="paramref">text1</code> or <code class="paramref">text2</code> is null.
+  nameWithType.vb: LcpIndex.CreateSimilarityMatcher(String, String)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcher(String, String)
+  name.vb: CreateSimilarityMatcher(String, String)
 references:
-- uid: BelNytheraSeiche.WaveletMatrix.SparseTable`1
-  commentId: T:BelNytheraSeiche.WaveletMatrix.SparseTable`1
-  href: BelNytheraSeiche.WaveletMatrix.SparseTable-1.html
-  name: SparseTable<T>
-  nameWithType: SparseTable<T>
-  fullName: BelNytheraSeiche.WaveletMatrix.SparseTable<T>
-  nameWithType.vb: SparseTable(Of T)
-  fullName.vb: BelNytheraSeiche.WaveletMatrix.SparseTable(Of T)
-  name.vb: SparseTable(Of T)
+- uid: BelNytheraSeiche.WaveletMatrix.FischerHeunSparseTable`1
+  commentId: T:BelNytheraSeiche.WaveletMatrix.FischerHeunSparseTable`1
+  href: BelNytheraSeiche.WaveletMatrix.FischerHeunSparseTable-1.html
+  name: FischerHeunSparseTable<T>
+  nameWithType: FischerHeunSparseTable<T>
+  fullName: BelNytheraSeiche.WaveletMatrix.FischerHeunSparseTable<T>
+  nameWithType.vb: FischerHeunSparseTable(Of T)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.FischerHeunSparseTable(Of T)
+  name.vb: FischerHeunSparseTable(Of T)
   spec.csharp:
-  - uid: BelNytheraSeiche.WaveletMatrix.SparseTable`1
-    name: SparseTable
-    href: BelNytheraSeiche.WaveletMatrix.SparseTable-1.html
+  - uid: BelNytheraSeiche.WaveletMatrix.FischerHeunSparseTable`1
+    name: FischerHeunSparseTable
+    href: BelNytheraSeiche.WaveletMatrix.FischerHeunSparseTable-1.html
   - name: <
   - name: T
   - name: '>'
   spec.vb:
-  - uid: BelNytheraSeiche.WaveletMatrix.SparseTable`1
-    name: SparseTable
-    href: BelNytheraSeiche.WaveletMatrix.SparseTable-1.html
+  - uid: BelNytheraSeiche.WaveletMatrix.FischerHeunSparseTable`1
+    name: FischerHeunSparseTable
+    href: BelNytheraSeiche.WaveletMatrix.FischerHeunSparseTable-1.html
   - name: (
   - name: Of
   - name: " "
@@ -804,6 +941,19 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SA*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.SA
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_SA
+  name: SA
+  nameWithType: LcpIndex.SA
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.SA
+- uid: BelNytheraSeiche.WaveletMatrix.SuffixArray
+  commentId: T:BelNytheraSeiche.WaveletMatrix.SuffixArray
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.SuffixArray.html
+  name: SuffixArray
+  nameWithType: SuffixArray
+  fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray
 - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.Text*
   commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.Text
   href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_Text
@@ -880,13 +1030,6 @@ references:
   name: LcpIndex
   nameWithType: LcpIndex
   fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex
-- uid: BelNytheraSeiche.WaveletMatrix.SuffixArray
-  commentId: T:BelNytheraSeiche.WaveletMatrix.SuffixArray
-  parent: BelNytheraSeiche.WaveletMatrix
-  href: BelNytheraSeiche.WaveletMatrix.SuffixArray.html
-  name: SuffixArray
-  nameWithType: SuffixArray
-  fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray
 - uid: System.ArgumentNullException
   commentId: T:System.ArgumentNullException
   isExternal: true
@@ -1251,3 +1394,32 @@ references:
   name: CalculateZivLempelComplexity
   nameWithType: LcpIndex.CalculateZivLempelComplexity
   fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.CalculateZivLempelComplexity
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
+  commentId: T:BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  name: LcpIndex.SimilarityMatcher
+  nameWithType: LcpIndex.SimilarityMatcher
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
+    name: SimilarityMatcher
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.html
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
+    name: SimilarityMatcher
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.html
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcher*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcher
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_CreateSimilarityMatcher_System_String_System_String_
+  name: CreateSimilarityMatcher
+  nameWithType: LcpIndex.CreateSimilarityMatcher
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcher

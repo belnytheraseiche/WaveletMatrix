@@ -17,22 +17,26 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable<T>
   type: Class
   source:
+    remote:
+      path: src/SparseTable.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: AggregateSparseTable
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SparseTable.cs
-    startLine: 180
+    path: src/SparseTable.cs
+    startLine: 183
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
   summary: >-
-    Provides a data structure for answering range queries on a static array.
+    Provides a general-purpose data structure for answering range aggregation queries on a static array.
 
-    This version is more general and supports non-idempotent operations like sum, but its Query operation is not O(1).
-
-    Preprocessing is O(N log N) and queries are O(log N) but dependent on the aggregator function's properties.
+    Preprocessing is O(N log N), and queries are **O(log N)**.
   remarks: >-
-    This class is suitable for operations like Range Sum Query, where overlapping subproblems cannot be used in the same way as with idempotent operations.
+    This class is suitable for **non-idempotent** (and associative) operations like Range Sum Query.
 
-    Note: The provided Query method is a simplification and may not be O(1) for all aggregator functions. True O(log N) or O(1) for sum requires a different structure like a Fenwick Tree or prefix sum array.
+    Unlike <xref href="BelNytheraSeiche.WaveletMatrix.SparseTable%601" data-throw-if-not-resolved="false"></xref>, it correctly handles operations where overlapping subproblems would lead to incorrect results.
+
+    For faster prefix-sum-based queries, consider using a Fenwick Tree.
   example: []
   syntax:
     content: 'public sealed class AggregateSparseTable<T> where T : IComparable<T>'
@@ -64,9 +68,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable<T>.Size
   type: Property
   source:
+    remote:
+      path: src/SparseTable.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Size
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SparseTable.cs
-    startLine: 191
+    path: src/SparseTable.cs
+    startLine: 194
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -93,16 +101,20 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable<T>.AggregateSparseTable(System.ReadOnlySpan<T>, System.Func<T, T, T>)
   type: Constructor
   source:
+    remote:
+      path: src/SparseTable.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: .ctor
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SparseTable.cs
-    startLine: 224
+    path: src/SparseTable.cs
+    startLine: 227
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
   summary: >-
     Initializes a new instance of the <xref href="BelNytheraSeiche.WaveletMatrix.AggregateSparseTable%601" data-throw-if-not-resolved="false"></xref> class.
 
-    The constructor performs preprocessing which takes O(N log N) time and space.
+    The constructor performs preprocessing which takes O(N log N) time and O(N log N) space.
   example: []
   syntax:
     content: public AggregateSparseTable(ReadOnlySpan<T> array, Func<T, T, T> aggregator)
@@ -134,16 +146,20 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable<T>.Query()
   type: Method
   source:
+    remote:
+      path: src/SparseTable.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Query
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SparseTable.cs
-    startLine: 264
+    path: src/SparseTable.cs
+    startLine: 267
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
   summary: >-
-    Queries to get an aggregated value.
+    Queries the range [start, end) to get an aggregated value.
 
-    Note: The time complexity of this query is not guaranteed to be O(1) for non-idempotent operations.
+    This operation takes **O(log N)** time.
   remarks: This method is a shorthand for calling Query(0, <xref href="BelNytheraSeiche.WaveletMatrix.AggregateSparseTable%601.Size" data-throw-if-not-resolved="false"></xref>).
   example: []
   syntax:
@@ -167,16 +183,20 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable<T>.Query(int, int)
   type: Method
   source:
+    remote:
+      path: src/SparseTable.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Query
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SparseTable.cs
-    startLine: 276
+    path: src/SparseTable.cs
+    startLine: 279
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
   summary: >-
     Queries the range [start, end) to get an aggregated value.
 
-    Note: This operation takes O(log N) time for non-idempotent operations, but dependent on the aggregator function's properties.
+    This operation takes **O(log N)** time.
   example: []
   syntax:
     content: public T Query(int start, int end)
@@ -203,6 +223,31 @@ items:
   fullName.vb: BelNytheraSeiche.WaveletMatrix.AggregateSparseTable(Of T).Query(Integer, Integer)
   name.vb: Query(Integer, Integer)
 references:
+- uid: BelNytheraSeiche.WaveletMatrix.SparseTable`1
+  commentId: T:BelNytheraSeiche.WaveletMatrix.SparseTable`1
+  href: BelNytheraSeiche.WaveletMatrix.SparseTable-1.html
+  name: SparseTable<T>
+  nameWithType: SparseTable<T>
+  fullName: BelNytheraSeiche.WaveletMatrix.SparseTable<T>
+  nameWithType.vb: SparseTable(Of T)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.SparseTable(Of T)
+  name.vb: SparseTable(Of T)
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.SparseTable`1
+    name: SparseTable
+    href: BelNytheraSeiche.WaveletMatrix.SparseTable-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.SparseTable`1
+    name: SparseTable
+    href: BelNytheraSeiche.WaveletMatrix.SparseTable-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: BelNytheraSeiche.WaveletMatrix
   commentId: N:BelNytheraSeiche.WaveletMatrix
   href: BelNytheraSeiche.html

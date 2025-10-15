@@ -17,8 +17,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.BurrowsWheelerTransform.BwtResult
   type: Class
   source:
+    remote:
+      path: src/BurrowsWheelerTransform.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: BwtResult
-    path: C:\Users\nanto\dev\WaveletMatrix\src\BurrowsWheelerTransform.cs
+    path: src/BurrowsWheelerTransform.cs
     startLine: 65
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -52,8 +56,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.BurrowsWheelerTransform.BwtResult.BwtResult(BelNytheraSeiche.WaveletMatrix.SuffixArray, string, int)
   type: Constructor
   source:
+    remote:
+      path: src/BurrowsWheelerTransform.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: .ctor
-    path: C:\Users\nanto\dev\WaveletMatrix\src\BurrowsWheelerTransform.cs
+    path: src/BurrowsWheelerTransform.cs
     startLine: 65
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -89,8 +97,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.BurrowsWheelerTransform.BwtResult.SA
   type: Property
   source:
+    remote:
+      path: src/BurrowsWheelerTransform.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: SA
-    path: C:\Users\nanto\dev\WaveletMatrix\src\BurrowsWheelerTransform.cs
+    path: src/BurrowsWheelerTransform.cs
     startLine: 65
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -116,8 +128,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.BurrowsWheelerTransform.BwtResult.BwtString
   type: Property
   source:
+    remote:
+      path: src/BurrowsWheelerTransform.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: BwtString
-    path: C:\Users\nanto\dev\WaveletMatrix\src\BurrowsWheelerTransform.cs
+    path: src/BurrowsWheelerTransform.cs
     startLine: 65
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -143,8 +159,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.BurrowsWheelerTransform.BwtResult.OriginalIndex
   type: Property
   source:
+    remote:
+      path: src/BurrowsWheelerTransform.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: OriginalIndex
-    path: C:\Users\nanto\dev\WaveletMatrix\src\BurrowsWheelerTransform.cs
+    path: src/BurrowsWheelerTransform.cs
     startLine: 65
   assemblies:
   - BelNytheraSeiche.WaveletMatrix

@@ -17,22 +17,28 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SparseTable<T>
   type: Class
   source:
+    remote:
+      path: src/SparseTable.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: SparseTable
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SparseTable.cs
-    startLine: 34
+    path: src/SparseTable.cs
+    startLine: 37
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
   summary: >-
     Provides a data structure for answering range queries on a static array in O(1) time
 
-    after an O(N log N) preprocessing step. This version is optimized for idempotent operations
+    after an O(N log N) preprocessing step. This version is optimized for **idempotent** operations
 
     like finding the minimum or maximum, and it also tracks the index of the result.
   remarks: >-
     An operation is idempotent if applying it multiple times to the same value does not change the result (e.g., min(x, x) = x).
 
-    This implementation is suitable for Range Minimum/Maximum Queries (RMQ).
+    This implementation is a classic and efficient solution for the static Range Minimum/Maximum Query (RMQ) problem.
+
+    For an O(N) preprocessing solution, see <xref href="BelNytheraSeiche.WaveletMatrix.FischerHeunSparseTable%601" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: 'public sealed class SparseTable<T> where T : IComparable<T>'
@@ -64,9 +70,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SparseTable<T>.Size
   type: Property
   source:
+    remote:
+      path: src/SparseTable.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Size
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SparseTable.cs
-    startLine: 45
+    path: src/SparseTable.cs
+    startLine: 48
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -93,16 +103,20 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SparseTable<T>.SparseTable(System.ReadOnlySpan<T>, System.Func<T, T, bool>)
   type: Constructor
   source:
+    remote:
+      path: src/SparseTable.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: .ctor
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SparseTable.cs
-    startLine: 81
+    path: src/SparseTable.cs
+    startLine: 84
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
   summary: >-
     Initializes a new instance of the <xref href="BelNytheraSeiche.WaveletMatrix.SparseTable%601" data-throw-if-not-resolved="false"></xref> class.
 
-    The constructor performs preprocessing which takes O(N log N) time and space.
+    The constructor performs preprocessing which takes O(N log N) time and O(N log N) space.
   example: []
   syntax:
     content: public SparseTable(ReadOnlySpan<T> array, Func<T, T, bool> comparer)
@@ -137,9 +151,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SparseTable<T>.Query()
   type: Method
   source:
+    remote:
+      path: src/SparseTable.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Query
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SparseTable.cs
-    startLine: 124
+    path: src/SparseTable.cs
+    startLine: 127
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -170,9 +188,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SparseTable<T>.Query(int, int)
   type: Method
   source:
+    remote:
+      path: src/SparseTable.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Query
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SparseTable.cs
-    startLine: 136
+    path: src/SparseTable.cs
+    startLine: 139
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -206,6 +228,31 @@ items:
   fullName.vb: BelNytheraSeiche.WaveletMatrix.SparseTable(Of T).Query(Integer, Integer)
   name.vb: Query(Integer, Integer)
 references:
+- uid: BelNytheraSeiche.WaveletMatrix.FischerHeunSparseTable`1
+  commentId: T:BelNytheraSeiche.WaveletMatrix.FischerHeunSparseTable`1
+  href: BelNytheraSeiche.WaveletMatrix.FischerHeunSparseTable-1.html
+  name: FischerHeunSparseTable<T>
+  nameWithType: FischerHeunSparseTable<T>
+  fullName: BelNytheraSeiche.WaveletMatrix.FischerHeunSparseTable<T>
+  nameWithType.vb: FischerHeunSparseTable(Of T)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.FischerHeunSparseTable(Of T)
+  name.vb: FischerHeunSparseTable(Of T)
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.FischerHeunSparseTable`1
+    name: FischerHeunSparseTable
+    href: BelNytheraSeiche.WaveletMatrix.FischerHeunSparseTable-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.FischerHeunSparseTable`1
+    name: FischerHeunSparseTable
+    href: BelNytheraSeiche.WaveletMatrix.FischerHeunSparseTable-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: BelNytheraSeiche.WaveletMatrix
   commentId: N:BelNytheraSeiche.WaveletMatrix
   href: BelNytheraSeiche.html

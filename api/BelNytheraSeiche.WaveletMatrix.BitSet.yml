@@ -21,8 +21,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.BitSet
   type: Class
   source:
+    remote:
+      path: src/BitSets.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: BitSet
-    path: C:\Users\nanto\dev\WaveletMatrix\src\BitSets.cs
+    path: src/BitSets.cs
     startLine: 30
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -53,8 +57,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.BitSet.BitSet(int)
   type: Constructor
   source:
+    remote:
+      path: src/BitSets.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: .ctor
-    path: C:\Users\nanto\dev\WaveletMatrix\src\BitSets.cs
+    path: src/BitSets.cs
     startLine: 30
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -84,8 +92,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.BitSet.ArrayAlignment
   type: Property
   source:
+    remote:
+      path: src/BitSets.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: ArrayAlignment
-    path: C:\Users\nanto\dev\WaveletMatrix\src\BitSets.cs
+    path: src/BitSets.cs
     startLine: 38
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -111,8 +123,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.BitSet.Get(int)
   type: Method
   source:
+    remote:
+      path: src/BitSets.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Get
-    path: C:\Users\nanto\dev\WaveletMatrix\src\BitSets.cs
+    path: src/BitSets.cs
     startLine: 49
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -149,8 +165,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.BitSet.Add(bool)
   type: Method
   source:
+    remote:
+      path: src/BitSets.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Add
-    path: C:\Users\nanto\dev\WaveletMatrix\src\BitSets.cs
+    path: src/BitSets.cs
     startLine: 69
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -180,8 +200,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.BitSet.ToImmutable()
   type: Method
   source:
+    remote:
+      path: src/BitSets.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: ToImmutable
-    path: C:\Users\nanto\dev\WaveletMatrix\src\BitSets.cs
+    path: src/BitSets.cs
     startLine: 81
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -207,8 +231,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.BitSet.ToRankSelect(bool)
   type: Method
   source:
+    remote:
+      path: src/BitSets.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: ToRankSelect
-    path: C:\Users\nanto\dev\WaveletMatrix\src\BitSets.cs
+    path: src/BitSets.cs
     startLine: 99
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -254,8 +282,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.BitSet.ToImmutable(BelNytheraSeiche.WaveletMatrix.BitSet)
   type: Method
   source:
+    remote:
+      path: src/BitSets.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: ToImmutable
-    path: C:\Users\nanto\dev\WaveletMatrix\src\BitSets.cs
+    path: src/BitSets.cs
     startLine: 108
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -289,8 +321,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.BitSet.ToRankSelect(BelNytheraSeiche.WaveletMatrix.BitSet, bool)
   type: Method
   source:
+    remote:
+      path: src/BitSets.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: ToRankSelect
-    path: C:\Users\nanto\dev\WaveletMatrix\src\BitSets.cs
+    path: src/BitSets.cs
     startLine: 137
   assemblies:
   - BelNytheraSeiche.WaveletMatrix

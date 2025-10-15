@@ -96,9 +96,8 @@ Classes
 </h3>
     <dl class="jumplist">
       <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.AggregateSparseTable-1.html">AggregateSparseTable&lt;T&gt;</a></dt>
-      <dd><p>Provides a data structure for answering range queries on a static array.
-This version is more general and supports non-idempotent operations like sum, but its Query operation is not O(1).
-Preprocessing is O(N log N) and queries are O(log N) but dependent on the aggregator function's properties.</p>
+      <dd><p>Provides a general-purpose data structure for answering range aggregation queries on a static array.
+Preprocessing is O(N log N), and queries are <strong>O(log N)</strong>.</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -118,7 +117,20 @@ Preprocessing is O(N log N) and queries are O(log N) but dependent on the aggreg
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.html">FMIndex</a></dt>
-      <dd><p>Provides a high-performance full-text search index based on the FM-Index algorithm.</p>
+      <dd><p>Provides a high-performance full-text search index based on the FM-Index algorithm.
+This implementation supports both a full Suffix Array mode for fast locating and a memory-efficient sampling mode.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet.html">FMIndex.Snippet</a></dt>
+      <dd><p>Represents a snippet of text, including its content and position.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.FischerHeunSparseTable-1.html">FischerHeunSparseTable&lt;T&gt;</a></dt>
+      <dd><p>Provides a data structure for answering range queries on a static array in <strong>O(1)</strong> time
+after an <strong>O(N)</strong> preprocessing step, based on the Fischer-Heun structure.
+This implementation is the state-of-the-art solution for idempotent operations like finding the minimum or maximum.</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -134,7 +146,18 @@ to answer advanced stringology queries efficiently.</p>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat.html">LcpIndex.Repeat</a></dt>
-      <dd><p>Represents a epeated substring.</p>
+      <dd><p>Represents a repeated substring and all its occurrences.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.html">LcpIndex.SimilarityMatcher</a></dt>
+      <dd><p>Provides functionality to find all common substrings between two texts using a combined <a class="xref" href="BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_SimilarityMatcher_LcpIndex">LcpIndex</a>.
+An instance of this class is created via the <a class="xref" href="BelNytheraSeiche.WaveletMatrix.LcpIndex.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_CreateSimilarityMatcher_System_String_System_String_">CreateSimilarityMatcher(string, string)</a> factory method.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.html">LcpIndex.SimilarityMatcher.Match</a></dt>
+      <dd><p>Represents a common substring found between two texts.</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -155,7 +178,7 @@ to answer advanced stringology queries efficiently.</p>
     <dl class="jumplist">
       <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.SparseTable-1.html">SparseTable&lt;T&gt;</a></dt>
       <dd><p>Provides a data structure for answering range queries on a static array in O(1) time
-after an O(N log N) preprocessing step. This version is optimized for idempotent operations
+after an O(N log N) preprocessing step. This version is optimized for <strong>idempotent</strong> operations
 like finding the minimum or maximum, and it also tracks the index of the result.</p>
 </dd>
     </dl>

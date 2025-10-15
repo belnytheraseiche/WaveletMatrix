@@ -17,9 +17,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat
   type: Class
   source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: TandemRepeat
-    path: C:\Users\nanto\dev\WaveletMatrix\src\LcpIndex.cs
-    startLine: 524
+    path: src/LcpIndex.cs
+    startLine: 755
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -52,9 +56,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat.TandemRepeat(int, int, int)
   type: Constructor
   source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: .ctor
-    path: C:\Users\nanto\dev\WaveletMatrix\src\LcpIndex.cs
-    startLine: 524
+    path: src/LcpIndex.cs
+    startLine: 755
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -89,9 +97,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat.Position
   type: Property
   source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Position
-    path: C:\Users\nanto\dev\WaveletMatrix\src\LcpIndex.cs
-    startLine: 524
+    path: src/LcpIndex.cs
+    startLine: 755
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -116,9 +128,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat.Length
   type: Property
   source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Length
-    path: C:\Users\nanto\dev\WaveletMatrix\src\LcpIndex.cs
-    startLine: 524
+    path: src/LcpIndex.cs
+    startLine: 755
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -143,9 +159,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat.Count
   type: Property
   source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Count
-    path: C:\Users\nanto\dev\WaveletMatrix\src\LcpIndex.cs
-    startLine: 524
+    path: src/LcpIndex.cs
+    startLine: 755
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix

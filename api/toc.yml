@@ -19,9 +19,15 @@ items:
   - uid: BelNytheraSeiche.WaveletMatrix.FMIndex
     name: FMIndex
     type: Class
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet
+    name: FMIndex.Snippet
+    type: Class
   - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder
     name: FMIndex.SortOrder
     type: Enum
+  - uid: BelNytheraSeiche.WaveletMatrix.FischerHeunSparseTable`1
+    name: FischerHeunSparseTable<T>
+    type: Class
   - uid: BelNytheraSeiche.WaveletMatrix.ImmutableBitSet
     name: ImmutableBitSet
     type: Class
@@ -30,6 +36,12 @@ items:
     type: Class
   - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat
     name: LcpIndex.Repeat
+    type: Class
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
+    name: LcpIndex.SimilarityMatcher
+    type: Class
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match
+    name: LcpIndex.SimilarityMatcher.Match
     type: Class
   - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat
     name: LcpIndex.TandemRepeat

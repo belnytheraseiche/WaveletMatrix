@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      
+      <meta name="docfx:docurl" content="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/api/index.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -93,30 +93,30 @@
 <h2 id="core-data-structures">Core Data Structures</h2>
 <p>These are the fundamental building blocks of the library.</p>
 <ul>
-<li><h3 id="waveletmatrixgeneric"><a href="WaveletMatrix.WaveletMatrixGeneric-1.html">WaveletMatrixGeneric<t></t></a></h3>
+<li><h3 id="waveletmatrixgeneric"><a href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixGeneric-1.html">WaveletMatrixGeneric<t></t></a></h3>
 <p>The main generic class for creating a Wavelet Matrix from any <code>IComparable&lt;T&gt;</code> sequence. It handles coordinate compression and provides a rich set of query APIs.</p>
 </li>
-<li><h3 id="waveletmatrixcore"><a href="WaveletMatrix.WaveletMatrixCore.html">WaveletMatrixCore</a></h3>
+<li><h3 id="waveletmatrixcore"><a href="BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.html">WaveletMatrixCore</a></h3>
 <p>The high-performance, non-generic engine that powers the <code>WaveletMatrixGeneric&lt;T&gt;</code>. It operates directly on integer sequences.</p>
 </li>
-<li><h3 id="sparsetable-and-aggregatesparsetable"><a href="WaveletMatrix.SparseTable-1.html">SparseTable<t></t></a> and <a href="WaveletMatrix.AggregateSparseTable-1.html">AggregateSparseTable<t></t></a></h3>
-<p>Helper data structures used for answering Range Minimum/Maximum Queries (RMQ) in O(1) or O(log N) time, respectively. They are used internally by <code>LcpIndex</code>.</p>
+<li><h3 id="fischerheunsparsetable"><a href="BelNytheraSeiche.WaveletMatrix.FischerHeunSparseTable-1.html">FischerHeunSparseTable<t></t></a></h3>
+<p>Helper data structure used for answering Range Minimum/Maximum Queries (RMQ) in O(1) time, respectively. This is used internally by <code>LcpIndex</code>.</p>
 </li>
 </ul>
 <hr>
 <h2 id="text-analysis-components">Text Analysis Components</h2>
 <p>These classes are specialized for advanced stringology and full-text search.</p>
 <ul>
-<li><h3 id="suffixarray"><a href="WaveletMatrix.SuffixArray.html">SuffixArray</a></h3>
+<li><h3 id="suffixarray"><a href="BelNytheraSeiche.WaveletMatrix.SuffixArray.html">SuffixArray</a></h3>
 <p>The foundational class for most text analysis. It builds a Suffix Array and LCP Array from a given text, enabling fast substring searches.</p>
 </li>
-<li><h3 id="lcpindex"><a href="WaveletMatrix.LcpIndex.html">LcpIndex</a></h3>
+<li><h3 id="lcpindex"><a href="BelNytheraSeiche.WaveletMatrix.LcpIndex.html">LcpIndex</a></h3>
 <p>An index built on top of a <code>SuffixArray</code> that provides advanced O(1) LCP queries. This is the key to complex analyses like finding tandem repeats or calculating string complexity.</p>
 </li>
-<li><h3 id="fmindex"><a href="WaveletMatrix.FMIndex.html">FMIndex</a></h3>
+<li><h3 id="fmindex"><a href="BelNytheraSeiche.WaveletMatrix.FMIndex.html">FMIndex</a></h3>
 <p>The high-level, all-in-one full-text search index. It combines the power of the <code>WaveletMatrix</code>, <code>SuffixArray</code>, and Burrows-Wheeler Transform to offer extremely fast pattern counting (<code>Count</code>) and locating (<code>Locate</code>).</p>
 </li>
-<li><h3 id="burrowswheelertransform"><a href="WaveletMatrix.BurrowsWheelerTransform.html">BurrowsWheelerTransform</a></h3>
+<li><h3 id="burrowswheelertransform"><a href="BelNytheraSeiche.WaveletMatrix.BurrowsWheelerTransform.html">BurrowsWheelerTransform</a></h3>
 <p>A static utility class that performs the Burrows-Wheeler Transform, a key step in building the <code>FMIndex</code>.</p>
 </li>
 </ul>
@@ -124,6 +124,7 @@
 </article>
 
         <div class="contribution d-print-none">
+          <a href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/api/index.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

@@ -15,8 +15,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SerializationOptions
   type: Class
   source:
+    remote:
+      path: src/SerializationOptions.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: SerializationOptions
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SerializationOptions.cs
+    path: src/SerializationOptions.cs
     startLine: 29
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -47,8 +51,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SerializationOptions.CompressionLevel
   type: Property
   source:
+    remote:
+      path: src/SerializationOptions.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: CompressionLevel
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SerializationOptions.cs
+    path: src/SerializationOptions.cs
     startLine: 34
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -74,8 +82,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SerializationOptions.Default
   type: Property
   source:
+    remote:
+      path: src/SerializationOptions.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Default
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SerializationOptions.cs
+    path: src/SerializationOptions.cs
     startLine: 39
   assemblies:
   - BelNytheraSeiche.WaveletMatrix

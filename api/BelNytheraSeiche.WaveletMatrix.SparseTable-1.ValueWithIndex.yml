@@ -16,9 +16,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SparseTable<T>.ValueWithIndex
   type: Struct
   source:
+    remote:
+      path: src/SparseTable.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: ValueWithIndex
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SparseTable.cs
-    startLine: 164
+    path: src/SparseTable.cs
+    startLine: 167
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -51,9 +55,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SparseTable<T>.ValueWithIndex.ValueWithIndex(T, int)
   type: Constructor
   source:
+    remote:
+      path: src/SparseTable.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: .ctor
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SparseTable.cs
-    startLine: 164
+    path: src/SparseTable.cs
+    startLine: 167
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -85,9 +93,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SparseTable<T>.ValueWithIndex.Value
   type: Property
   source:
+    remote:
+      path: src/SparseTable.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Value
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SparseTable.cs
-    startLine: 164
+    path: src/SparseTable.cs
+    startLine: 167
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -114,9 +126,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SparseTable<T>.ValueWithIndex.Index
   type: Property
   source:
+    remote:
+      path: src/SparseTable.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Index
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SparseTable.cs
-    startLine: 164
+    path: src/SparseTable.cs
+    startLine: 167
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix

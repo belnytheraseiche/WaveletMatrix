@@ -16,8 +16,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency
   type: Class
   source:
+    remote:
+      path: src/WaveletMatrixCore.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: ValueWithFrequency
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixCore.cs
+    path: src/WaveletMatrixCore.cs
     startLine: 1042
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -51,8 +55,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency.ValueWithFrequency(int, int)
   type: Constructor
   source:
+    remote:
+      path: src/WaveletMatrixCore.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: .ctor
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixCore.cs
+    path: src/WaveletMatrixCore.cs
     startLine: 1042
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -85,8 +93,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency.Value
   type: Property
   source:
+    remote:
+      path: src/WaveletMatrixCore.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Value
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixCore.cs
+    path: src/WaveletMatrixCore.cs
     startLine: 1042
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
@@ -112,8 +124,12 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.WaveletMatrixCore.ValueWithFrequency.Frequency
   type: Property
   source:
+    remote:
+      path: src/WaveletMatrixCore.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Frequency
-    path: C:\Users\nanto\dev\WaveletMatrix\src\WaveletMatrixCore.cs
+    path: src/WaveletMatrixCore.cs
     startLine: 1042
   assemblies:
   - BelNytheraSeiche.WaveletMatrix

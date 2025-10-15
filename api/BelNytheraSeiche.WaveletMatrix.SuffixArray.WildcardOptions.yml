@@ -19,9 +19,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions
   type: Class
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: WildcardOptions
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
-    startLine: 1071
+    path: src/SuffixArray.cs
+    startLine: 1091
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -51,9 +55,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.Asterisk
   type: Property
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Asterisk
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
-    startLine: 1077
+    path: src/SuffixArray.cs
+    startLine: 1097
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -78,9 +86,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.Question
   type: Property
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Question
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
-    startLine: 1082
+    path: src/SuffixArray.cs
+    startLine: 1102
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -105,9 +117,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.AsteriskMinLength
   type: Property
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: AsteriskMinLength
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
-    startLine: 1087
+    path: src/SuffixArray.cs
+    startLine: 1107
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -132,9 +148,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.AsteriskMaxLength
   type: Property
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: AsteriskMaxLength
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
-    startLine: 1092
+    path: src/SuffixArray.cs
+    startLine: 1112
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -159,9 +179,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.StopCharacters
   type: Property
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: StopCharacters
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
-    startLine: 1098
+    path: src/SuffixArray.cs
+    startLine: 1118
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -189,9 +213,13 @@ items:
   fullName: BelNytheraSeiche.WaveletMatrix.SuffixArray.WildcardOptions.Default
   type: Property
   source:
+    remote:
+      path: src/SuffixArray.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Default
-    path: C:\Users\nanto\dev\WaveletMatrix\src\SuffixArray.cs
-    startLine: 1103
+    path: src/SuffixArray.cs
+    startLine: 1123
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
