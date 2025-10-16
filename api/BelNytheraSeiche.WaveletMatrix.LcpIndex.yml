@@ -6,15 +6,21 @@ items:
   parent: BelNytheraSeiche.WaveletMatrix
   children:
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.CalculateZivLempelComplexity
+  - BelNytheraSeiche.WaveletMatrix.LcpIndex.CountOccurrences(System.ReadOnlySpan{System.Char})
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.CountUniqueSubstrings
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.Create(BelNytheraSeiche.WaveletMatrix.SuffixArray)
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcher(System.String,System.String)
+  - BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcherForPalindrome(System.String)
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.Deserialize(System.Byte[])
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.Deserialize(System.IO.Stream)
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.Deserialize(System.String)
+  - BelNytheraSeiche.WaveletMatrix.LcpIndex.FindAllShortestUniqueSubstrings
+  - BelNytheraSeiche.WaveletMatrix.LcpIndex.FindLongestRepeats
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.FindRepeats(System.Int32)
+  - BelNytheraSeiche.WaveletMatrix.LcpIndex.FindShortestUniqueSubstring
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.FindTandemRepeats
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.GetLcp(System.Int32,System.Int32)
+  - BelNytheraSeiche.WaveletMatrix.LcpIndex.Locate(System.ReadOnlySpan{System.Char},BelNytheraSeiche.WaveletMatrix.SortOrder)
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.SA
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.Serialize(BelNytheraSeiche.WaveletMatrix.LcpIndex,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.Serialize(BelNytheraSeiche.WaveletMatrix.LcpIndex,System.IO.Stream,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
@@ -598,6 +604,42 @@ items:
   nameWithType.vb: LcpIndex.FindRepeats(Integer)
   fullName.vb: BelNytheraSeiche.WaveletMatrix.LcpIndex.FindRepeats(Integer)
   name.vb: FindRepeats(Integer)
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.FindLongestRepeats
+  commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.FindLongestRepeats
+  id: FindLongestRepeats
+  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex
+  langs:
+  - csharp
+  - vb
+  name: FindLongestRepeats()
+  nameWithType: LcpIndex.FindLongestRepeats()
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.FindLongestRepeats()
+  type: Method
+  source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
+    id: FindLongestRepeats
+    path: src/LcpIndex.cs
+    startLine: 604
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Finds the longest substring that appears at least twice in the text.
+
+    This is achieved by finding the maximum value in the LCP array.
+
+    If no substring is repeated, returns null.
+  example: []
+  syntax:
+    content: public LcpIndex.Repeat? FindLongestRepeats()
+    return:
+      type: BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat
+      description: A <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat" data-throw-if-not-resolved="false"></xref> record representing the longest repeated substring and its positions, or null if no repeats exist.
+    content.vb: Public Function FindLongestRepeats() As LcpIndex.Repeat
+  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.FindLongestRepeats*
 - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.CalculateZivLempelComplexity
   commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.CalculateZivLempelComplexity
   id: CalculateZivLempelComplexity
@@ -616,7 +658,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: CalculateZivLempelComplexity
     path: src/LcpIndex.cs
-    startLine: 601
+    startLine: 645
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -650,7 +692,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: CreateSimilarityMatcher
     path: src/LcpIndex.cs
-    startLine: 637
+    startLine: 681
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -680,6 +722,224 @@ items:
   nameWithType.vb: LcpIndex.CreateSimilarityMatcher(String, String)
   fullName.vb: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcher(String, String)
   name.vb: CreateSimilarityMatcher(String, String)
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcherForPalindrome(System.String)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcherForPalindrome(System.String)
+  id: CreateSimilarityMatcherForPalindrome(System.String)
+  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex
+  langs:
+  - csharp
+  - vb
+  name: CreateSimilarityMatcherForPalindrome(string)
+  nameWithType: LcpIndex.CreateSimilarityMatcherForPalindrome(string)
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcherForPalindrome(string)
+  type: Method
+  source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
+    id: CreateSimilarityMatcherForPalindrome
+    path: src/LcpIndex.cs
+    startLine: 711
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Creates a new <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher" data-throw-if-not-resolved="false"></xref> instance specifically configured to find palindromic substrings within a single text.
+
+    This is achieved by concatenating the text with its reverse, separated by a unique character,
+
+    and building an LCP index on the combined result.
+  remarks: >-
+    The returned matcher will have its <code>Text1</code> property set to the original <code class="paramref">text</code> and its <code>Text2</code>
+
+    property set to the reversed version of the text.
+  example: []
+  syntax:
+    content: public static LcpIndex.SimilarityMatcher CreateSimilarityMatcherForPalindrome(string text)
+    parameters:
+    - id: text
+      type: System.String
+      description: The text in which to find palindromes.
+    return:
+      type: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
+      description: A new <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher" data-throw-if-not-resolved="false"></xref> instance ready for palindrome detection.
+    content.vb: Public Shared Function CreateSimilarityMatcherForPalindrome(text As String) As LcpIndex.SimilarityMatcher
+  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcherForPalindrome*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code class="paramref">text</code> is null.
+  nameWithType.vb: LcpIndex.CreateSimilarityMatcherForPalindrome(String)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcherForPalindrome(String)
+  name.vb: CreateSimilarityMatcherForPalindrome(String)
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.CountOccurrences(System.ReadOnlySpan{System.Char})
+  commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.CountOccurrences(System.ReadOnlySpan{System.Char})
+  id: CountOccurrences(System.ReadOnlySpan{System.Char})
+  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex
+  langs:
+  - csharp
+  - vb
+  name: CountOccurrences(ReadOnlySpan<char>)
+  nameWithType: LcpIndex.CountOccurrences(ReadOnlySpan<char>)
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.CountOccurrences(System.ReadOnlySpan<char>)
+  type: Method
+  source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
+    id: CountOccurrences
+    path: src/LcpIndex.cs
+    startLine: 733
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Efficiently counts the occurrences of a specified pattern within the text.
+
+    It leverages binary search over the suffix array to quickly find the range, ensuring high performance even with large texts.
+  example: []
+  syntax:
+    content: public int CountOccurrences(ReadOnlySpan<char> pattern)
+    parameters:
+    - id: pattern
+      type: System.ReadOnlySpan{System.Char}
+      description: The string pattern to search for.
+    return:
+      type: System.Int32
+      description: The number of times the pattern appears in the text.
+    content.vb: Public Function CountOccurrences(pattern As ReadOnlySpan(Of Char)) As Integer
+  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.CountOccurrences*
+  nameWithType.vb: LcpIndex.CountOccurrences(ReadOnlySpan(Of Char))
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.LcpIndex.CountOccurrences(System.ReadOnlySpan(Of Char))
+  name.vb: CountOccurrences(ReadOnlySpan(Of Char))
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.Locate(System.ReadOnlySpan{System.Char},BelNytheraSeiche.WaveletMatrix.SortOrder)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.Locate(System.ReadOnlySpan{System.Char},BelNytheraSeiche.WaveletMatrix.SortOrder)
+  id: Locate(System.ReadOnlySpan{System.Char},BelNytheraSeiche.WaveletMatrix.SortOrder)
+  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex
+  langs:
+  - csharp
+  - vb
+  name: Locate(ReadOnlySpan<char>, SortOrder)
+  nameWithType: LcpIndex.Locate(ReadOnlySpan<char>, SortOrder)
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.Locate(System.ReadOnlySpan<char>, BelNytheraSeiche.WaveletMatrix.SortOrder)
+  type: Method
+  source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
+    id: Locate
+    path: src/LcpIndex.cs
+    startLine: 755
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Finds all starting positions where the specified pattern occurs in the text.
+  remarks: >-
+    Specifying <xref href="BelNytheraSeiche.WaveletMatrix.SortOrder.Unordered" data-throw-if-not-resolved="false"></xref> provides the fastest result by skipping any sorting.
+
+    This option is recommended when the order of occurrences is not important.
+  example: []
+  syntax:
+    content: public IEnumerable<int> Locate(ReadOnlySpan<char> pattern, SortOrder sortOrder = SortOrder.Ascending)
+    parameters:
+    - id: pattern
+      type: System.ReadOnlySpan{System.Char}
+      description: The string pattern to search for.
+    - id: sortOrder
+      type: BelNytheraSeiche.WaveletMatrix.SortOrder
+      description: Specifies the sort order for the resulting positions. The default is <xref href="BelNytheraSeiche.WaveletMatrix.SortOrder.Ascending" data-throw-if-not-resolved="false"></xref>.
+    return:
+      type: System.Collections.Generic.IEnumerable{System.Int32}
+      description: >-
+        An <xref href="System.Collections.Generic.IEnumerable%601" data-throw-if-not-resolved="false"></xref> that enumerates the starting positions (0-based indices) of the pattern's occurrences.
+
+        Returns an empty sequence if the pattern is not found.
+    content.vb: Public Function Locate(pattern As ReadOnlySpan(Of Char), sortOrder As SortOrder = SortOrder.Ascending) As IEnumerable(Of Integer)
+  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.Locate*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if an invalid <code class="paramref">sortOrder</code> is provided.
+  nameWithType.vb: LcpIndex.Locate(ReadOnlySpan(Of Char), SortOrder)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.LcpIndex.Locate(System.ReadOnlySpan(Of Char), BelNytheraSeiche.WaveletMatrix.SortOrder)
+  name.vb: Locate(ReadOnlySpan(Of Char), SortOrder)
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.FindShortestUniqueSubstring
+  commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.FindShortestUniqueSubstring
+  id: FindShortestUniqueSubstring
+  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex
+  langs:
+  - csharp
+  - vb
+  name: FindShortestUniqueSubstring()
+  nameWithType: LcpIndex.FindShortestUniqueSubstring()
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.FindShortestUniqueSubstring()
+  type: Method
+  source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
+    id: FindShortestUniqueSubstring
+    path: src/LcpIndex.cs
+    startLine: 802
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Finds the shortest substring that appears only once in the text.
+
+    This is determined by analyzing the LCP (Longest Common Prefix) values between adjacent suffixes in the suffix array.
+  example: []
+  syntax:
+    content: public LcpIndex.TextWithPosition? FindShortestUniqueSubstring()
+    return:
+      type: BelNytheraSeiche.WaveletMatrix.LcpIndex.TextWithPosition
+      description: >-
+        A <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex.TextWithPosition" data-throw-if-not-resolved="false"></xref> record containing the shortest unique substring and its starting position.
+
+        Returns null if no unique substring exists (e.g., if the text is empty or consists of a single repeating character).
+    content.vb: Public Function FindShortestUniqueSubstring() As LcpIndex.TextWithPosition
+  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.FindShortestUniqueSubstring*
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.FindAllShortestUniqueSubstrings
+  commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.FindAllShortestUniqueSubstrings
+  id: FindAllShortestUniqueSubstrings
+  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex
+  langs:
+  - csharp
+  - vb
+  name: FindAllShortestUniqueSubstrings()
+  nameWithType: LcpIndex.FindAllShortestUniqueSubstrings()
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.FindAllShortestUniqueSubstrings()
+  type: Method
+  source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
+    id: FindAllShortestUniqueSubstrings
+    path: src/LcpIndex.cs
+    startLine: 841
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Finds all shortest substrings that appear only once in the text.
+
+    There can be multiple unique substrings of the same shortest length.
+  example: []
+  syntax:
+    content: public IEnumerable<LcpIndex.TextWithPosition> FindAllShortestUniqueSubstrings()
+    return:
+      type: System.Collections.Generic.IEnumerable{BelNytheraSeiche.WaveletMatrix.LcpIndex.TextWithPosition}
+      description: >-
+        An enumerable collection of <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex.TextWithPosition" data-throw-if-not-resolved="false"></xref> records, each representing
+
+        one of the shortest unique substrings found. Returns an empty collection if no unique substring exists.
+    content.vb: Public Function FindAllShortestUniqueSubstrings() As IEnumerable(Of LcpIndex.TextWithPosition)
+  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.FindAllShortestUniqueSubstrings*
 references:
 - uid: BelNytheraSeiche.WaveletMatrix.FischerHeunSparseTable`1
   commentId: T:BelNytheraSeiche.WaveletMatrix.FischerHeunSparseTable`1
@@ -1321,6 +1581,7 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat
   commentId: T:BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat
+  parent: BelNytheraSeiche.WaveletMatrix
   href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
   name: LcpIndex.Repeat
   nameWithType: LcpIndex.Repeat
@@ -1388,6 +1649,12 @@ references:
     name: Repeat
     href: BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat.html
   - name: )
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.FindLongestRepeats*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.FindLongestRepeats
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_FindLongestRepeats
+  name: FindLongestRepeats
+  nameWithType: LcpIndex.FindLongestRepeats
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.FindLongestRepeats
 - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.CalculateZivLempelComplexity*
   commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.CalculateZivLempelComplexity
   href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_CalculateZivLempelComplexity
@@ -1423,3 +1690,221 @@ references:
   name: CreateSimilarityMatcher
   nameWithType: LcpIndex.CreateSimilarityMatcher
   fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcher
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcherForPalindrome*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcherForPalindrome
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_CreateSimilarityMatcherForPalindrome_System_String_
+  name: CreateSimilarityMatcherForPalindrome
+  nameWithType: LcpIndex.CreateSimilarityMatcherForPalindrome
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcherForPalindrome
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.CountOccurrences*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.CountOccurrences
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_CountOccurrences_System_ReadOnlySpan_System_Char__
+  name: CountOccurrences
+  nameWithType: LcpIndex.CountOccurrences
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.CountOccurrences
+- uid: System.ReadOnlySpan{System.Char}
+  commentId: T:System.ReadOnlySpan{System.Char}
+  parent: System
+  definition: System.ReadOnlySpan`1
+  href: https://learn.microsoft.com/dotnet/api/system.readonlyspan-1
+  name: ReadOnlySpan<char>
+  nameWithType: ReadOnlySpan<char>
+  fullName: System.ReadOnlySpan<char>
+  nameWithType.vb: ReadOnlySpan(Of Char)
+  fullName.vb: System.ReadOnlySpan(Of Char)
+  name.vb: ReadOnlySpan(Of Char)
+  spec.csharp:
+  - uid: System.ReadOnlySpan`1
+    name: ReadOnlySpan
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlyspan-1
+  - name: <
+  - uid: System.Char
+    name: char
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: '>'
+  spec.vb:
+  - uid: System.ReadOnlySpan`1
+    name: ReadOnlySpan
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlyspan-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Char
+    name: Char
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: )
+- uid: System.ReadOnlySpan`1
+  commentId: T:System.ReadOnlySpan`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.readonlyspan-1
+  name: ReadOnlySpan<T>
+  nameWithType: ReadOnlySpan<T>
+  fullName: System.ReadOnlySpan<T>
+  nameWithType.vb: ReadOnlySpan(Of T)
+  fullName.vb: System.ReadOnlySpan(Of T)
+  name.vb: ReadOnlySpan(Of T)
+  spec.csharp:
+  - uid: System.ReadOnlySpan`1
+    name: ReadOnlySpan
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlyspan-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.ReadOnlySpan`1
+    name: ReadOnlySpan
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlyspan-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: BelNytheraSeiche.WaveletMatrix.SortOrder.Ascending
+  commentId: F:BelNytheraSeiche.WaveletMatrix.SortOrder.Ascending
+  href: BelNytheraSeiche.WaveletMatrix.SortOrder.html#BelNytheraSeiche_WaveletMatrix_SortOrder_Ascending
+  name: Ascending
+  nameWithType: SortOrder.Ascending
+  fullName: BelNytheraSeiche.WaveletMatrix.SortOrder.Ascending
+- uid: BelNytheraSeiche.WaveletMatrix.SortOrder.Unordered
+  commentId: F:BelNytheraSeiche.WaveletMatrix.SortOrder.Unordered
+  href: BelNytheraSeiche.WaveletMatrix.SortOrder.html#BelNytheraSeiche_WaveletMatrix_SortOrder_Unordered
+  name: Unordered
+  nameWithType: SortOrder.Unordered
+  fullName: BelNytheraSeiche.WaveletMatrix.SortOrder.Unordered
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentexception
+  name: ArgumentException
+  nameWithType: ArgumentException
+  fullName: System.ArgumentException
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.Locate*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.Locate
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_Locate_System_ReadOnlySpan_System_Char__BelNytheraSeiche_WaveletMatrix_SortOrder_
+  name: Locate
+  nameWithType: LcpIndex.Locate
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.Locate
+- uid: BelNytheraSeiche.WaveletMatrix.SortOrder
+  commentId: T:BelNytheraSeiche.WaveletMatrix.SortOrder
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.SortOrder.html
+  name: SortOrder
+  nameWithType: SortOrder
+  fullName: BelNytheraSeiche.WaveletMatrix.SortOrder
+- uid: System.Collections.Generic.IEnumerable{System.Int32}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Int32}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<int>
+  nameWithType: IEnumerable<int>
+  fullName: System.Collections.Generic.IEnumerable<int>
+  nameWithType.vb: IEnumerable(Of Integer)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of Integer)
+  name.vb: IEnumerable(Of Integer)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.TextWithPosition
+  commentId: T:BelNytheraSeiche.WaveletMatrix.LcpIndex.TextWithPosition
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  name: LcpIndex.TextWithPosition
+  nameWithType: LcpIndex.TextWithPosition
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.TextWithPosition
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.TextWithPosition
+    name: TextWithPosition
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.TextWithPosition.html
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.TextWithPosition
+    name: TextWithPosition
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.TextWithPosition.html
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.FindShortestUniqueSubstring*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.FindShortestUniqueSubstring
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_FindShortestUniqueSubstring
+  name: FindShortestUniqueSubstring
+  nameWithType: LcpIndex.FindShortestUniqueSubstring
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.FindShortestUniqueSubstring
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.FindAllShortestUniqueSubstrings*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.FindAllShortestUniqueSubstrings
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_FindAllShortestUniqueSubstrings
+  name: FindAllShortestUniqueSubstrings
+  nameWithType: LcpIndex.FindAllShortestUniqueSubstrings
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.FindAllShortestUniqueSubstrings
+- uid: System.Collections.Generic.IEnumerable{BelNytheraSeiche.WaveletMatrix.LcpIndex.TextWithPosition}
+  commentId: T:System.Collections.Generic.IEnumerable{BelNytheraSeiche.WaveletMatrix.LcpIndex.TextWithPosition}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<LcpIndex.TextWithPosition>
+  nameWithType: IEnumerable<LcpIndex.TextWithPosition>
+  fullName: System.Collections.Generic.IEnumerable<BelNytheraSeiche.WaveletMatrix.LcpIndex.TextWithPosition>
+  nameWithType.vb: IEnumerable(Of LcpIndex.TextWithPosition)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of BelNytheraSeiche.WaveletMatrix.LcpIndex.TextWithPosition)
+  name.vb: IEnumerable(Of LcpIndex.TextWithPosition)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.TextWithPosition
+    name: TextWithPosition
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.TextWithPosition.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.TextWithPosition
+    name: TextWithPosition
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.TextWithPosition.html
+  - name: )

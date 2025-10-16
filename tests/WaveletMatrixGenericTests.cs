@@ -81,6 +81,11 @@ public class WaveletMatrixGenericTests
     [TestMethod]
     public void TopK()
     {
+        // sequence[1, 10) -> [10, 40, 10, 50, 90, 20, 50, 30, 50], top 2 frequent values? 50 (3 times), 10 (2 times).
+        var result = wmInt_.TopK(1, 10, 2).ToArray();
+        Assert.AreEqual(2, result.Length);
+        Assert.AreEqual((50, 3), (result[0].Value, result[0].Frequency));
+        Assert.AreEqual((10, 2), (result[1].Value, result[1].Frequency));
     }
 
     [TestMethod]

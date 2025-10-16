@@ -570,28 +570,72 @@ public sealed class LcpIndex
             throw new ArgumentOutOfRangeException(nameof(minLength));
 #endif
 
-        var saSpan = sa_.SA.Span;
-        var lcpSpan = sa_.Lcp.Span;
-        var textMemory = sa_.Text;
         var results = new Dictionary<ReadOnlyMemory<char>, List<int>>(CharMemoryComparer.Instance);
-
-        for (var i = 1; i < textMemory.Length; i++)
         {
-            var lcpLength = lcpSpan[i];
-            if (lcpLength >= minLength)
+            var saSpan = sa_.SA.Span;
+            var lcpSpan = sa_.Lcp.Span;
+            var textMemory = sa_.Text;
+
+            for (var i = 1; i < textMemory.Length; i++)
             {
-                for (var j = minLength; j <= lcpLength; j++)
+                var lcpLength = lcpSpan[i];
+                if (lcpLength >= minLength)
                 {
-                    var key = textMemory.Slice(saSpan[i], j);
-                    if (!results.TryGetValue(key, out var positions))
-                        results.Add(key, positions = new());
-                    positions.AddRange([saSpan[i - 1], saSpan[i]]);
+                    for (var j = minLength; j <= lcpLength; j++)
+                    {
+                        var key = textMemory.Slice(saSpan[i], j);
+                        if (!results.TryGetValue(key, out var positions))
+                            results.Add(key, positions = []);
+                        positions.AddRange([saSpan[i - 1], saSpan[i]]);
+                    }
                 }
             }
         }
 
         foreach (var entry in results)
             yield return new(entry.Key.Span.ToString(), entry.Value.Distinct().Order().ToArray());
+    }
+
+    /// <summary>
+    /// Finds the longest substring that appears at least twice in the text.
+    /// This is achieved by finding the maximum value in the LCP array.
+    /// If no substring is repeated, returns null.
+    /// </summary>
+    /// <returns>A <see cref="Repeat"/> record representing the longest repeated substring and its positions, or null if no repeats exist.</returns>
+    public Repeat? FindLongestRepeats()
+    {
+        var lcpSpan = sa_.Lcp.Span;
+        if (lcpSpan.Length == 0)
+            return null;
+
+        var (lcpMax, lcpMaxPosition) = (0, -1);
+        for (var i = 1; i < lcpSpan.Length; i++)
+            if (lcpSpan[i] > lcpMax)
+                lcpMax = lcpSpan[lcpMaxPosition = i];
+
+        if (lcpMax == 0)
+            return null;
+
+        var text = this.Text.Slice(sa_.SA.Span[lcpMaxPosition], lcpMax).Span.ToString();
+        // return new(text, FindRepeats(lcpMax).First(n => n.Text == text).Positions);
+
+        var saSpan = sa_.SA.Span;
+        var positions = new List<int>(4) { saSpan[lcpMaxPosition - 1], saSpan[lcpMaxPosition] };
+        for (var i = lcpMaxPosition - 1; i > 0; i--)
+        {
+            if (lcpSpan[i] == lcpMax)
+                positions.Add(saSpan[i - 1]);
+            else
+                break;
+        }
+        for (var i = lcpMaxPosition + 1; i < lcpSpan.Length; i++)
+        {
+            if (lcpSpan[i] == lcpMax)
+                positions.Add(saSpan[i]);
+            else
+                break;
+        }
+        return new(text, positions.Order().ToArray());
     }
 
     /// <summary>
@@ -647,10 +691,235 @@ public sealed class LcpIndex
             throw new ArgumentNullException(nameof(text2));
 #endif
 
-        char[] buffer = new char[text1.Length + text2.Length + 1];
+        var buffer = new char[text1.Length + text2.Length + 1];
         text1.CopyTo(0, buffer, 0, text1.Length);
         text2.CopyTo(0, buffer, text1.Length + 1, text2.Length);
         return new(LcpIndex.Create(SuffixArray.Create(buffer)), text1, text2);
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="SimilarityMatcher"/> instance specifically configured to find palindromic substrings within a single text.
+    /// This is achieved by concatenating the text with its reverse, separated by a unique character,
+    /// and building an LCP index on the combined result.
+    /// </summary>
+    /// <param name="text">The text in which to find palindromes.</param>
+    /// <returns>A new <see cref="SimilarityMatcher"/> instance ready for palindrome detection.</returns>
+    /// <exception cref="ArgumentNullException">Thrown if <paramref name="text"/> is null.</exception>
+    /// <remarks>
+    /// The returned matcher will have its <c>Text1</c> property set to the original <paramref name="text"/> and its <c>Text2</c>
+    /// property set to the reversed version of the text.
+    /// </remarks>
+    public static SimilarityMatcher CreateSimilarityMatcherForPalindrome(string text)
+    {
+#if NET6_0_OR_GREATER
+        ArgumentNullException.ThrowIfNull(text);
+#else
+        if (text == null)
+            throw new ArgumentNullException(nameof(text));
+#endif
+
+        var buffer = new char[text.Length * 2 + 1];
+        text.CopyTo(0, buffer, 0, text.Length);
+        text.CopyTo(0, buffer, text.Length + 1, text.Length);
+        Array.Reverse(buffer, text.Length + 1, text.Length);
+        return new(LcpIndex.Create(SuffixArray.Create(buffer)), text, new(buffer[(text.Length + 1)..]));
+    }
+
+    /// <summary>
+    /// Efficiently counts the occurrences of a specified pattern within the text.
+    /// It leverages binary search over the suffix array to quickly find the range, ensuring high performance even with large texts.
+    /// </summary>
+    /// <param name="pattern">The string pattern to search for.</param>
+    /// <returns>The number of times the pattern appears in the text.</returns>
+    public int CountOccurrences(ReadOnlySpan<char> pattern)
+    {
+        var (start, end) = FindSuffixRange(pattern);
+        return start != -1 ? end - start + 1 : 0;
+    }
+
+    /// <summary>
+    /// Finds all starting positions where the specified pattern occurs in the text.
+    /// </summary>
+    /// <param name="pattern">The string pattern to search for.</param>
+    /// <param name="sortOrder">
+    /// Specifies the sort order for the resulting positions. The default is <see cref="SortOrder.Ascending"/>.
+    /// </param>
+    /// <returns>
+    /// An <see cref="IEnumerable{Int32}"/> that enumerates the starting positions (0-based indices) of the pattern's occurrences.
+    /// Returns an empty sequence if the pattern is not found.
+    /// </returns>
+    /// <remarks>
+    /// Specifying <see cref="SortOrder.Unordered"/> provides the fastest result by skipping any sorting.
+    /// This option is recommended when the order of occurrences is not important.
+    /// </remarks>
+    /// <exception cref="ArgumentException">Thrown if an invalid <paramref name="sortOrder"/> is provided.</exception>
+    public IEnumerable<int> Locate(ReadOnlySpan<char> pattern, SortOrder sortOrder = SortOrder.Ascending)
+    {
+        if (pattern.IsEmpty)
+            return [];
+
+        var (start, end) = FindSuffixRange(pattern);
+        return __Enumerate(sa_.SA, start, end, sortOrder);
+
+        #region @@
+        static IEnumerable<int> __Enumerate(ReadOnlyMemory<int> saMemory, int start, int end, SortOrder sortOrder)
+        {
+            switch (sortOrder)
+            {
+                case SortOrder.Unordered:
+                    {
+                        for (var i = start; i <= end; i++)
+                            yield return saMemory.Span[i];
+                    }
+                    break;
+                case SortOrder.Ascending:
+                case SortOrder.Descending:
+                    {
+                        var result = new List<int>(end - start);
+                        for (var i = start; i <= end; i++)
+                            result.Add(saMemory.Span[i]);
+                        result.Sort();
+                        if (sortOrder == SortOrder.Descending)
+                            result.Reverse();
+                        foreach (var n in result)
+                            yield return n;
+                    }
+                    break;
+                default:
+                    throw new ArgumentException($"Invalid sort order.", nameof(sortOrder));
+            }
+        }
+        #endregion
+    }
+
+    /// <summary>
+    /// Finds the shortest substring that appears only once in the text.
+    /// This is determined by analyzing the LCP (Longest Common Prefix) values between adjacent suffixes in the suffix array.
+    /// </summary>
+    /// <returns>
+    /// A <see cref="TextWithPosition"/> record containing the shortest unique substring and its starting position.
+    /// Returns null if no unique substring exists (e.g., if the text is empty or consists of a single repeating character).
+    /// </returns>
+    public TextWithPosition? FindShortestUniqueSubstring()
+    {
+        var saSpan = sa_.SA.Span;
+        var lcpSpan = sa_.Lcp.Span;
+        var textSpan = this.Text.Span;
+
+        if (saSpan.Length == 0)
+            return null;
+        else if (saSpan.Length == 1)
+            return new(textSpan.ToString(), 0);
+
+        var (minLength, minPosition) = (lcpSpan[1] + 1, saSpan[0]);
+        var tmpLength = lcpSpan[1] + 1;
+
+        for (var i = 1; i < saSpan.Length - 1; i++)
+        {
+            tmpLength = Math.Max(lcpSpan[i], lcpSpan[i + 1]) + 1;
+            if (tmpLength < minLength)
+                (minLength, minPosition) = (tmpLength, saSpan[i]);
+        }
+
+        tmpLength = lcpSpan[saSpan.Length - 1] + 1;
+        if (tmpLength < minLength)
+            (minLength, minPosition) = (tmpLength, saSpan[^1]);
+
+        if (minPosition == -1 || minLength > saSpan.Length - minPosition)
+            return null;
+
+        return new(textSpan[minPosition..(minPosition + minLength)].ToString(), minPosition);
+    }
+
+    /// <summary>
+    /// Finds all shortest substrings that appear only once in the text.
+    /// There can be multiple unique substrings of the same shortest length.
+    /// </summary>
+    /// <returns>
+    /// An enumerable collection of <see cref="TextWithPosition"/> records, each representing
+    /// one of the shortest unique substrings found. Returns an empty collection if no unique substring exists.
+    /// </returns>
+    public IEnumerable<TextWithPosition> FindAllShortestUniqueSubstrings()
+    {
+        var saSpan = sa_.SA.Span;
+
+        if (saSpan.Length == 0)
+            return [];
+        else if (saSpan.Length == 1)
+            return [new(this.Text.Span.ToString(), 0)];
+
+        var lcpSpan = sa_.Lcp.Span;
+        var minLength = Int32.MaxValue;
+        var results = new List<(int, int)>();
+        for (var i = 0; i < saSpan.Length; i++)
+        {
+            var currentPosition = saSpan[i];
+            var currentLength = i switch
+            {
+                0 => lcpSpan[1] + 1,
+                var n when n == lcpSpan.Length - 1 => lcpSpan[^1] + 1,
+                _ => Math.Max(lcpSpan[i], lcpSpan[i + 1]) + 1,
+            };
+            if (currentPosition + currentLength > saSpan.Length)
+                continue;
+
+            if (currentLength == minLength)
+                results.Add((currentPosition, minLength));
+            else if (currentLength < minLength)
+            {
+                minLength = currentLength;
+                results.Clear();
+                results.Add((currentPosition, minLength));
+            }
+        }
+
+        return results.Order().Select(n => new TextWithPosition(this.Text.Span[n.Item1..(n.Item1 + n.Item2)].ToString(), n.Item1));
+    }
+
+    (int, int) FindSuffixRange(ReadOnlySpan<char> pattern)
+    {
+        if (pattern.Length == 0)
+            return (-1, -1);
+
+        var textSpan = this.Text.Span;
+        var saSpan = sa_.SA.Span;
+
+        var start = -1;
+        {
+            var (left, right) = (0, saSpan.Length - 1);
+            while (left <= right)
+            {
+                var mid = left + (right - left) / 2;
+                var suffixPosition = saSpan[mid];
+                var suffix = textSpan[suffixPosition..];
+                var comparison = suffix.StartsWith(pattern) ? 0 : suffix.CompareTo(pattern, StringComparison.Ordinal);
+                if (comparison == 0)
+                    (start, right) = (mid, mid - 1);
+                else if (comparison < 0)
+                    left = mid + 1;
+                else
+                    right = mid - 1;
+            }
+            if (start == -1)
+                return (-1, -1);
+        }
+
+        var end = start;
+        {
+            var (left, right) = (start, saSpan.Length - 1);
+            while (left <= right)
+            {
+                var mid = left + (right - left) / 2;
+                var suffixPosition = saSpan[mid];
+                var suffix = textSpan[suffixPosition..];
+                if (suffix.StartsWith(pattern))
+                    (end, left) = (mid, mid + 1);
+                else
+                    right = mid - 1;
+            }
+        }
+
+        return (start, end);
     }
 
     // 
@@ -674,7 +943,7 @@ public sealed class LcpIndex
         /// Gets the first original text used for the comparison.
         /// </summary>
         public string Text1 => text1;
-        
+
         /// <summary>
         /// Gets the second original text used for the comparison.
         /// </summary>
@@ -700,23 +969,85 @@ public sealed class LcpIndex
                 throw new ArgumentOutOfRangeException(nameof(minLength), $"{nameof(minLength)} must be greater than or equal 0.");
 #endif
 
-            var boundaryIndex = this.Text1.Length;
-            var sa = this.LcpIndex.SA;
-            var lcpData = sa.Lcp;
-            for (var i = 1; i < lcpData.Length; i++)
+            var boundaryPosition = this.Text1.Length;
+            var saMemory = this.LcpIndex.SA.SA;
+            var lcpMemory = this.LcpIndex.SA.Lcp;
+            for (var i = 1; i < lcpMemory.Length; i++)
             {
-                var (positionTmp1, positionTmp2) = (sa.SA.Span[i - 1], sa.SA.Span[i]);
-                if ((positionTmp1 < boundaryIndex && positionTmp2 > boundaryIndex) || (positionTmp2 < boundaryIndex && positionTmp1 > boundaryIndex))
+                var (tmpPosition1, tmpPosition2) = (saMemory.Span[i - 1], saMemory.Span[i]);
+                if ((tmpPosition1 < boundaryPosition && tmpPosition2 > boundaryPosition) || (tmpPosition2 < boundaryPosition && tmpPosition1 > boundaryPosition))
                 {
-                    var lcpLength = lcpData.Span[i];
+                    var lcpLength = lcpMemory.Span[i];
                     if (lcpLength >= minLength)
                     {
-                        var positionResult1 = positionTmp1 < boundaryIndex ? positionTmp1 : positionTmp2;
-                        var positionResult2 = positionTmp1 > boundaryIndex ? positionTmp1 - boundaryIndex - 1 : positionTmp2 - boundaryIndex - 1;
-                        yield return new(positionResult1, positionResult2, lcpLength);
+                        var resultPosition1 = tmpPosition1 < boundaryPosition ? tmpPosition1 : tmpPosition2;
+                        var resultPosition2 = tmpPosition1 > boundaryPosition ? tmpPosition1 - boundaryPosition - 1 : tmpPosition2 - boundaryPosition - 1;
+                        yield return new(resultPosition1, resultPosition2, lcpLength);
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// Finds the longest common substring between the two texts.
+        /// </summary>
+        /// <returns>A <see cref="Match"/> record representing the longest common substring, or null if no common part exists.</returns>
+        public Match? LongestMatch()
+        {
+            var boundaryPosition = this.Text1.Length;
+            var saSpan = this.LcpIndex.SA.SA.Span;
+            var lcpSpan = this.LcpIndex.SA.Lcp.Span;
+
+            var (lcpMax, lcpMaxPosition1, lcpMaxPosition2) = (0, -1, -1);
+            for (var i = 1; i < lcpSpan.Length; i++)
+            {
+                var lcpLength = lcpSpan[i];
+                if (lcpLength > lcpMax)
+                {
+                    var (tmpPosition1, tmpPosition2) = (saSpan[i - 1], saSpan[i]);
+                    if ((tmpPosition1 < boundaryPosition && tmpPosition2 > boundaryPosition) || (tmpPosition2 < boundaryPosition && tmpPosition1 > boundaryPosition))
+                    {
+                        lcpMax = lcpLength;
+                        lcpMaxPosition1 = tmpPosition1 < boundaryPosition ? tmpPosition1 : tmpPosition2;
+                        lcpMaxPosition2 = tmpPosition1 > boundaryPosition ? tmpPosition1 - boundaryPosition - 1 : tmpPosition2 - boundaryPosition - 1;
+                    }
+                }
+            }
+
+            return lcpMax == 0 ? null : new(lcpMaxPosition1, lcpMaxPosition2, lcpMax);
+        }
+
+        /// <summary>
+        /// Finds the longest palindromic substring within the original text.
+        /// This method requires the <see cref="SimilarityMatcher"/> to be created via <see cref="LcpIndex.CreateSimilarityMatcherForPalindrome"/>.
+        /// It operates by finding the longest common substring between the text and its reverse.
+        /// </summary>
+        /// <returns>A <see cref="Palindrome"/> record for the longest palindrome, or null if no palindrome of length 2 or more exists.</returns>
+        public Palindrome? FindPalindrome()
+        {
+            if (this.Text1.Length <= 1)
+                return null;
+
+            var boundaryPosition = this.Text1.Length;
+            var saSpan = this.LcpIndex.SA.SA.Span;
+            var lcpSpan = this.LcpIndex.SA.Lcp.Span;
+
+            var (lcpMax, startPosition) = (0, -1);
+            for (var i = 1; i < lcpSpan.Length; i++)
+            {
+                var (tmpPosition1, tmpPosition2) = (saSpan[i - 1], saSpan[i]);
+                if ((tmpPosition1 < boundaryPosition && tmpPosition2 > boundaryPosition) || (tmpPosition2 < boundaryPosition && tmpPosition1 > boundaryPosition))
+                {
+                    var lcpLength = lcpSpan[i];
+                    if (lcpLength > lcpMax)
+                    {
+                        lcpMax = lcpLength;
+                        startPosition = tmpPosition1 < boundaryPosition ? tmpPosition1 : tmpPosition2;
+                    }
+                }
+            }
+
+            return lcpMax == 0 ? null : new(startPosition, lcpMax);
         }
 
         // 
@@ -729,6 +1060,13 @@ public sealed class LcpIndex
         /// <param name="Position2">The zero-based starting position of the match in the second text.</param>
         /// <param name="Length">The length of the common substring.</param>
         public record Match(int Position1, int Position2, int Length);
+
+        /// <summary>
+        /// Represents a palindromic substring found in the text.
+        /// </summary>
+        /// <param name="Position">The 0-based starting position of the palindrome in the original text.</param>
+        /// <param name="Length">The length of the palindrome.</param>
+        public record Palindrome(int Position, int Length);
     }
 
     class CharMemoryComparer : IEqualityComparer<ReadOnlyMemory<char>>
@@ -761,6 +1099,13 @@ public sealed class LcpIndex
     /// <param name="Text">The repeating unit string.</param>
     /// <param name="Positions">An array of all 0-based starting positions where the substring occurs.</param>
     public record Repeat(string Text, int[] Positions);
+
+    /// <summary>
+    /// Represents a substring with its starting position in the original text.
+    /// </summary>
+    /// <param name="Text">The content of the substring.</param>
+    /// <param name="Position">The 0-based starting position of the substring in the original text.</param>
+    public record TextWithPosition(string Text, int Position);
 
     /// <exclude />
     public record Init(SuffixArray SA, FischerHeunSparseTable<int> LcpRmp);

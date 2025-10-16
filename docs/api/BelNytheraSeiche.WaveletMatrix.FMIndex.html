@@ -146,7 +146,7 @@ This implementation supports both a full Suffix Array mode for fast locating and
 
 
   <h2 id="BelNytheraSeiche_WaveletMatrix_FMIndex_remarks">Remarks</h2>
-  <div class="markdown level0 remarks"><p>The FM-Index is a compressed full-text index that allows for fast counting (<a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Count_System_ReadOnlySpan_System_Char__">Count(ReadOnlySpan&lt;char&gt;)</a>) and locating (<a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Locate_System_ReadOnlySpan_System_Char__BelNytheraSeiche_WaveletMatrix_FMIndex_SortOrder_">Locate(ReadOnlySpan&lt;char&gt;, SortOrder)</a>)
+  <div class="markdown level0 remarks"><p>The FM-Index is a compressed full-text index that allows for fast counting (<a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Count_System_ReadOnlySpan_System_Char__">Count(ReadOnlySpan&lt;char&gt;)</a>) and locating (<a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Locate_System_ReadOnlySpan_System_Char__BelNytheraSeiche_WaveletMatrix_SortOrder_">Locate(ReadOnlySpan&lt;char&gt;, SortOrder)</a>)
 of patterns within a large text. It is constructed using the Burrows-Wheeler Transform (BWT), a Wavelet Matrix, and a Suffix Array.</p>
 </div>
 
@@ -649,7 +649,7 @@ context will be adjusted to fill the requested length.</p>
 
   <a id="BelNytheraSeiche_WaveletMatrix_FMIndex_Locate_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.Locate*"></a>
 
-  <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_Locate_System_ReadOnlySpan_System_Char__BelNytheraSeiche_WaveletMatrix_FMIndex_SortOrder_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan{System.Char},BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder)">
+  <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_Locate_System_ReadOnlySpan_System_Char__BelNytheraSeiche_WaveletMatrix_SortOrder_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan{System.Char},BelNytheraSeiche.WaveletMatrix.SortOrder)">
   Locate(ReadOnlySpan&lt;char&gt;, SortOrder)
   <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L537"><i class="bi bi-code-slash"></i></a>
   </h3>
@@ -659,7 +659,7 @@ context will be adjusted to fill the requested length.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IEnumerable&lt;int&gt; Locate(ReadOnlySpan&lt;char&gt; pattern, FMIndex.SortOrder sortOrder = SortOrder.Ascending)</code></pre>
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;int&gt; Locate(ReadOnlySpan&lt;char&gt; pattern, SortOrder sortOrder = SortOrder.Ascending)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -667,8 +667,8 @@ context will be adjusted to fill the requested length.</p>
     <dt><code>pattern</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a>&gt;</dt>
     <dd><p>The pattern to search for.</p>
 </dd>
-    <dt><code>sortOrder</code> <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.html">FMIndex</a>.<a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.html">SortOrder</a></dt>
-    <dd><p>Specifies the order of the returned positions. Defaults to <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.html#BelNytheraSeiche_WaveletMatrix_FMIndex_SortOrder_Ascending">Ascending</a>.</p>
+    <dt><code>sortOrder</code> <a class="xref" href="BelNytheraSeiche.WaveletMatrix.SortOrder.html">SortOrder</a></dt>
+    <dd><p>Specifies the order of the returned positions. Defaults to <a class="xref" href="BelNytheraSeiche.WaveletMatrix.SortOrder.html#BelNytheraSeiche_WaveletMatrix_SortOrder_Ascending">Ascending</a>.</p>
 </dd>
   </dl>
 
@@ -685,11 +685,11 @@ context will be adjusted to fill the requested length.</p>
 
 
 
-  <h4 class="section" id="BelNytheraSeiche_WaveletMatrix_FMIndex_Locate_System_ReadOnlySpan_System_Char__BelNytheraSeiche_WaveletMatrix_FMIndex_SortOrder__remarks">Remarks</h4>
+  <h4 class="section" id="BelNytheraSeiche_WaveletMatrix_FMIndex_Locate_System_ReadOnlySpan_System_Char__BelNytheraSeiche_WaveletMatrix_SortOrder__remarks">Remarks</h4>
   <div class="markdown level1 remarks"><p>In full Suffix Array mode, this operation is very fast. In sampling mode, locating each position requires additional
 computation (LF-mapping steps), making it slower but significantly more memory-efficient.
-Specifying <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.html#BelNytheraSeiche_WaveletMatrix_FMIndex_SortOrder_Ascending">Ascending</a> or <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.html#BelNytheraSeiche_WaveletMatrix_FMIndex_SortOrder_Descending">Descending</a> may require collecting all results
-and sorting them, which incurs a performance cost. For the highest performance where order is not important, use <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.html#BelNytheraSeiche_WaveletMatrix_FMIndex_SortOrder_Unordered">Unordered</a>.</p>
+Specifying <a class="xref" href="BelNytheraSeiche.WaveletMatrix.SortOrder.html#BelNytheraSeiche_WaveletMatrix_SortOrder_Ascending">Ascending</a> or <a class="xref" href="BelNytheraSeiche.WaveletMatrix.SortOrder.html#BelNytheraSeiche_WaveletMatrix_SortOrder_Descending">Descending</a> may require collecting all results
+and sorting them, which incurs a performance cost. For the highest performance where order is not important, use <a class="xref" href="BelNytheraSeiche.WaveletMatrix.SortOrder.html#BelNytheraSeiche_WaveletMatrix_SortOrder_Unordered">Unordered</a>.</p>
 </div>
 
 

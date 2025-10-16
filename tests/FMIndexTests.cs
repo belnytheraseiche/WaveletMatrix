@@ -32,16 +32,16 @@ public class FMIndexTests
     [TestMethod]
     public void Locate()
     {
-        var result1 = fm1_.Locate("lazy", FMIndex.SortOrder.Unordered).ToArray();
-        var result2 = fm1_.Locate("quick", FMIndex.SortOrder.Ascending).ToArray();
-        var result3 = fm1_.Locate("jumps", FMIndex.SortOrder.Descending).ToArray();
+        var result1 = fm1_.Locate("lazy", SortOrder.Unordered).ToArray();
+        var result2 = fm1_.Locate("quick", SortOrder.Ascending).ToArray();
+        var result3 = fm1_.Locate("jumps", SortOrder.Descending).ToArray();
         CollectionAssert.AreEquivalent((int[])[35, 80], result1, "Unsorted locate should find all correct positions.");
         CollectionAssert.AreEqual((int[])[4, 49], result2, "Ascending locate should find all correct positions.");
         CollectionAssert.AreEqual((int[])[65, 20], result3, "Descending locate should find all correct positions.");
 
-        var result4 = fm2_.Locate("lazy", FMIndex.SortOrder.Unordered).ToArray();
-        var result5 = fm2_.Locate("quick", FMIndex.SortOrder.Ascending).ToArray();
-        var result6 = fm2_.Locate("jumps", FMIndex.SortOrder.Descending).ToArray();
+        var result4 = fm2_.Locate("lazy", SortOrder.Unordered).ToArray();
+        var result5 = fm2_.Locate("quick", SortOrder.Ascending).ToArray();
+        var result6 = fm2_.Locate("jumps", SortOrder.Descending).ToArray();
         CollectionAssert.AreEquivalent((int[])[35, 80], result4, "Unsorted locate should find all correct positions.");
         CollectionAssert.AreEqual((int[])[4, 49], result5, "Ascending locate should find all correct positions.");
         CollectionAssert.AreEqual((int[])[65, 20], result6, "Descending locate should find all correct positions.");

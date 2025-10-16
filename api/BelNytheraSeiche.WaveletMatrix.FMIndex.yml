@@ -13,7 +13,7 @@ items:
   - BelNytheraSeiche.WaveletMatrix.FMIndex.Deserialize(System.String)
   - BelNytheraSeiche.WaveletMatrix.FMIndex.GetSnippet(System.Int32,System.Int32,System.Int32,System.Double)
   - BelNytheraSeiche.WaveletMatrix.FMIndex.IsSampled
-  - BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan{System.Char},BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder)
+  - BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan{System.Char},BelNytheraSeiche.WaveletMatrix.SortOrder)
   - BelNytheraSeiche.WaveletMatrix.FMIndex.RestoreSourceText
   - BelNytheraSeiche.WaveletMatrix.FMIndex.SA
   - BelNytheraSeiche.WaveletMatrix.FMIndex.Serialize(BelNytheraSeiche.WaveletMatrix.FMIndex,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
@@ -44,7 +44,7 @@ items:
 
     This implementation supports both a full Suffix Array mode for fast locating and a memory-efficient sampling mode.
   remarks: >-
-    The FM-Index is a compressed full-text index that allows for fast counting (<xref href="BelNytheraSeiche.WaveletMatrix.FMIndex.Count(System.ReadOnlySpan%7bSystem.Char%7d)" data-throw-if-not-resolved="false"></xref>) and locating (<xref href="BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan%7bSystem.Char%7d%2cBelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder)" data-throw-if-not-resolved="false"></xref>)
+    The FM-Index is a compressed full-text index that allows for fast counting (<xref href="BelNytheraSeiche.WaveletMatrix.FMIndex.Count(System.ReadOnlySpan%7bSystem.Char%7d)" data-throw-if-not-resolved="false"></xref>) and locating (<xref href="BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan%7bSystem.Char%7d%2cBelNytheraSeiche.WaveletMatrix.SortOrder)" data-throw-if-not-resolved="false"></xref>)
 
     of patterns within a large text. It is constructed using the Burrows-Wheeler Transform (BWT), a Wavelet Matrix, and a Suffix Array.
   example: []
@@ -617,16 +617,16 @@ items:
   nameWithType.vb: FMIndex.Count(ReadOnlySpan(Of Char))
   fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.Count(System.ReadOnlySpan(Of Char))
   name.vb: Count(ReadOnlySpan(Of Char))
-- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan{System.Char},BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder)
-  commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan{System.Char},BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder)
-  id: Locate(System.ReadOnlySpan{System.Char},BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder)
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan{System.Char},BelNytheraSeiche.WaveletMatrix.SortOrder)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan{System.Char},BelNytheraSeiche.WaveletMatrix.SortOrder)
+  id: Locate(System.ReadOnlySpan{System.Char},BelNytheraSeiche.WaveletMatrix.SortOrder)
   parent: BelNytheraSeiche.WaveletMatrix.FMIndex
   langs:
   - csharp
   - vb
   name: Locate(ReadOnlySpan<char>, SortOrder)
-  nameWithType: FMIndex.Locate(ReadOnlySpan<char>, FMIndex.SortOrder)
-  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan<char>, BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder)
+  nameWithType: FMIndex.Locate(ReadOnlySpan<char>, SortOrder)
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan<char>, BelNytheraSeiche.WaveletMatrix.SortOrder)
   type: Method
   source:
     remote:
@@ -645,26 +645,26 @@ items:
 
     computation (LF-mapping steps), making it slower but significantly more memory-efficient.
 
-    Specifying <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Ascending" data-throw-if-not-resolved="false"></xref> or <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Descending" data-throw-if-not-resolved="false"></xref> may require collecting all results
+    Specifying <xref href="BelNytheraSeiche.WaveletMatrix.SortOrder.Ascending" data-throw-if-not-resolved="false"></xref> or <xref href="BelNytheraSeiche.WaveletMatrix.SortOrder.Descending" data-throw-if-not-resolved="false"></xref> may require collecting all results
 
-    and sorting them, which incurs a performance cost. For the highest performance where order is not important, use <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Unordered" data-throw-if-not-resolved="false"></xref>.
+    and sorting them, which incurs a performance cost. For the highest performance where order is not important, use <xref href="BelNytheraSeiche.WaveletMatrix.SortOrder.Unordered" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
-    content: public IEnumerable<int> Locate(ReadOnlySpan<char> pattern, FMIndex.SortOrder sortOrder = SortOrder.Ascending)
+    content: public IEnumerable<int> Locate(ReadOnlySpan<char> pattern, SortOrder sortOrder = SortOrder.Ascending)
     parameters:
     - id: pattern
       type: System.ReadOnlySpan{System.Char}
       description: The pattern to search for.
     - id: sortOrder
-      type: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder
-      description: Specifies the order of the returned positions. Defaults to <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Ascending" data-throw-if-not-resolved="false"></xref>.
+      type: BelNytheraSeiche.WaveletMatrix.SortOrder
+      description: Specifies the order of the returned positions. Defaults to <xref href="BelNytheraSeiche.WaveletMatrix.SortOrder.Ascending" data-throw-if-not-resolved="false"></xref>.
     return:
       type: System.Collections.Generic.IEnumerable{System.Int32}
       description: An enumerable collection of the zero-based starting positions of all occurrences.
-    content.vb: Public Function Locate(pattern As ReadOnlySpan(Of Char), sortOrder As FMIndex.SortOrder = SortOrder.Ascending) As IEnumerable(Of Integer)
+    content.vb: Public Function Locate(pattern As ReadOnlySpan(Of Char), sortOrder As SortOrder = SortOrder.Ascending) As IEnumerable(Of Integer)
   overload: BelNytheraSeiche.WaveletMatrix.FMIndex.Locate*
-  nameWithType.vb: FMIndex.Locate(ReadOnlySpan(Of Char), FMIndex.SortOrder)
-  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan(Of Char), BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder)
+  nameWithType.vb: FMIndex.Locate(ReadOnlySpan(Of Char), SortOrder)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan(Of Char), BelNytheraSeiche.WaveletMatrix.SortOrder)
   name.vb: Locate(ReadOnlySpan(Of Char), SortOrder)
 - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.RestoreSourceText
   commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.RestoreSourceText
@@ -808,20 +808,20 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.char
   - name: )
   - name: )
-- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan{System.Char},BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder)
-  commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan{System.Char},BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder)
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan{System.Char},BelNytheraSeiche.WaveletMatrix.SortOrder)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan{System.Char},BelNytheraSeiche.WaveletMatrix.SortOrder)
   isExternal: true
-  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Locate_System_ReadOnlySpan_System_Char__BelNytheraSeiche_WaveletMatrix_FMIndex_SortOrder_
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Locate_System_ReadOnlySpan_System_Char__BelNytheraSeiche_WaveletMatrix_SortOrder_
   name: Locate(ReadOnlySpan<char>, SortOrder)
-  nameWithType: FMIndex.Locate(ReadOnlySpan<char>, FMIndex.SortOrder)
-  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan<char>, BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder)
-  nameWithType.vb: FMIndex.Locate(ReadOnlySpan(Of Char), FMIndex.SortOrder)
-  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan(Of Char), BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder)
+  nameWithType: FMIndex.Locate(ReadOnlySpan<char>, SortOrder)
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan<char>, BelNytheraSeiche.WaveletMatrix.SortOrder)
+  nameWithType.vb: FMIndex.Locate(ReadOnlySpan(Of Char), SortOrder)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan(Of Char), BelNytheraSeiche.WaveletMatrix.SortOrder)
   name.vb: Locate(ReadOnlySpan(Of Char), SortOrder)
   spec.csharp:
-  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan{System.Char},BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder)
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan{System.Char},BelNytheraSeiche.WaveletMatrix.SortOrder)
     name: Locate
-    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Locate_System_ReadOnlySpan_System_Char__BelNytheraSeiche_WaveletMatrix_FMIndex_SortOrder_
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Locate_System_ReadOnlySpan_System_Char__BelNytheraSeiche_WaveletMatrix_SortOrder_
   - name: (
   - uid: System.ReadOnlySpan`1
     name: ReadOnlySpan
@@ -835,14 +835,14 @@ references:
   - name: '>'
   - name: ','
   - name: " "
-  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder
+  - uid: BelNytheraSeiche.WaveletMatrix.SortOrder
     name: SortOrder
-    href: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.html
+    href: BelNytheraSeiche.WaveletMatrix.SortOrder.html
   - name: )
   spec.vb:
-  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan{System.Char},BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder)
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan{System.Char},BelNytheraSeiche.WaveletMatrix.SortOrder)
     name: Locate
-    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Locate_System_ReadOnlySpan_System_Char__BelNytheraSeiche_WaveletMatrix_FMIndex_SortOrder_
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Locate_System_ReadOnlySpan_System_Char__BelNytheraSeiche_WaveletMatrix_SortOrder_
   - name: (
   - uid: System.ReadOnlySpan`1
     name: ReadOnlySpan
@@ -858,9 +858,9 @@ references:
   - name: )
   - name: ','
   - name: " "
-  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder
+  - uid: BelNytheraSeiche.WaveletMatrix.SortOrder
     name: SortOrder
-    href: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.html
+    href: BelNytheraSeiche.WaveletMatrix.SortOrder.html
   - name: )
 - uid: BelNytheraSeiche.WaveletMatrix
   commentId: N:BelNytheraSeiche.WaveletMatrix
@@ -1482,53 +1482,37 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Ascending
-  commentId: F:BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Ascending
-  href: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.html#BelNytheraSeiche_WaveletMatrix_FMIndex_SortOrder_Ascending
+- uid: BelNytheraSeiche.WaveletMatrix.SortOrder.Ascending
+  commentId: F:BelNytheraSeiche.WaveletMatrix.SortOrder.Ascending
+  href: BelNytheraSeiche.WaveletMatrix.SortOrder.html#BelNytheraSeiche_WaveletMatrix_SortOrder_Ascending
   name: Ascending
-  nameWithType: FMIndex.SortOrder.Ascending
-  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Ascending
-- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Descending
-  commentId: F:BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Descending
-  href: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.html#BelNytheraSeiche_WaveletMatrix_FMIndex_SortOrder_Descending
+  nameWithType: SortOrder.Ascending
+  fullName: BelNytheraSeiche.WaveletMatrix.SortOrder.Ascending
+- uid: BelNytheraSeiche.WaveletMatrix.SortOrder.Descending
+  commentId: F:BelNytheraSeiche.WaveletMatrix.SortOrder.Descending
+  href: BelNytheraSeiche.WaveletMatrix.SortOrder.html#BelNytheraSeiche_WaveletMatrix_SortOrder_Descending
   name: Descending
-  nameWithType: FMIndex.SortOrder.Descending
-  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Descending
-- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Unordered
-  commentId: F:BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Unordered
-  href: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.html#BelNytheraSeiche_WaveletMatrix_FMIndex_SortOrder_Unordered
+  nameWithType: SortOrder.Descending
+  fullName: BelNytheraSeiche.WaveletMatrix.SortOrder.Descending
+- uid: BelNytheraSeiche.WaveletMatrix.SortOrder.Unordered
+  commentId: F:BelNytheraSeiche.WaveletMatrix.SortOrder.Unordered
+  href: BelNytheraSeiche.WaveletMatrix.SortOrder.html#BelNytheraSeiche_WaveletMatrix_SortOrder_Unordered
   name: Unordered
-  nameWithType: FMIndex.SortOrder.Unordered
-  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Unordered
+  nameWithType: SortOrder.Unordered
+  fullName: BelNytheraSeiche.WaveletMatrix.SortOrder.Unordered
 - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Locate*
   commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.Locate
-  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Locate_System_ReadOnlySpan_System_Char__BelNytheraSeiche_WaveletMatrix_FMIndex_SortOrder_
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Locate_System_ReadOnlySpan_System_Char__BelNytheraSeiche_WaveletMatrix_SortOrder_
   name: Locate
   nameWithType: FMIndex.Locate
   fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Locate
-- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder
-  commentId: T:BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder
+- uid: BelNytheraSeiche.WaveletMatrix.SortOrder
+  commentId: T:BelNytheraSeiche.WaveletMatrix.SortOrder
   parent: BelNytheraSeiche.WaveletMatrix
-  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
-  name: FMIndex.SortOrder
-  nameWithType: FMIndex.SortOrder
-  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder
-  spec.csharp:
-  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex
-    name: FMIndex
-    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
-  - name: .
-  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder
-    name: SortOrder
-    href: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.html
-  spec.vb:
-  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex
-    name: FMIndex
-    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
-  - name: .
-  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder
-    name: SortOrder
-    href: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.html
+  href: BelNytheraSeiche.WaveletMatrix.SortOrder.html
+  name: SortOrder
+  nameWithType: SortOrder
+  fullName: BelNytheraSeiche.WaveletMatrix.SortOrder
 - uid: System.Collections.Generic.IEnumerable{System.Int32}
   commentId: T:System.Collections.Generic.IEnumerable{System.Int32}
   parent: System.Collections.Generic

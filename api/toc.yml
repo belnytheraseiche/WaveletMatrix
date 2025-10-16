@@ -22,9 +22,6 @@ items:
   - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet
     name: FMIndex.Snippet
     type: Class
-  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder
-    name: FMIndex.SortOrder
-    type: Enum
   - uid: BelNytheraSeiche.WaveletMatrix.FischerHeunSparseTable`1
     name: FischerHeunSparseTable<T>
     type: Class
@@ -43,8 +40,14 @@ items:
   - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match
     name: LcpIndex.SimilarityMatcher.Match
     type: Class
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Palindrome
+    name: LcpIndex.SimilarityMatcher.Palindrome
+    type: Class
   - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat
     name: LcpIndex.TandemRepeat
+    type: Class
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.TextWithPosition
+    name: LcpIndex.TextWithPosition
     type: Class
   - uid: BelNytheraSeiche.WaveletMatrix.RankSelectBitSet
     name: RankSelectBitSet
@@ -52,6 +55,9 @@ items:
   - uid: BelNytheraSeiche.WaveletMatrix.SerializationOptions
     name: SerializationOptions
     type: Class
+  - uid: BelNytheraSeiche.WaveletMatrix.SortOrder
+    name: SortOrder
+    type: Enum
   - uid: BelNytheraSeiche.WaveletMatrix.SparseTable`1
     name: SparseTable<T>
     type: Class

@@ -10,16 +10,18 @@ items:
   - BelNytheraSeiche.WaveletMatrix.BurrowsWheelerTransform.BwtResult
   - BelNytheraSeiche.WaveletMatrix.FMIndex
   - BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet
-  - BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder
   - BelNytheraSeiche.WaveletMatrix.FischerHeunSparseTable`1
   - BelNytheraSeiche.WaveletMatrix.ImmutableBitSet
   - BelNytheraSeiche.WaveletMatrix.LcpIndex
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match
+  - BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Palindrome
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat
+  - BelNytheraSeiche.WaveletMatrix.LcpIndex.TextWithPosition
   - BelNytheraSeiche.WaveletMatrix.RankSelectBitSet
   - BelNytheraSeiche.WaveletMatrix.SerializationOptions
+  - BelNytheraSeiche.WaveletMatrix.SortOrder
   - BelNytheraSeiche.WaveletMatrix.SparseTable`1
   - BelNytheraSeiche.WaveletMatrix.SparseTable`1.ValueWithIndex
   - BelNytheraSeiche.WaveletMatrix.SuffixArray
@@ -103,29 +105,6 @@ references:
   name: FMIndex
   nameWithType: FMIndex
   fullName: BelNytheraSeiche.WaveletMatrix.FMIndex
-- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder
-  commentId: T:BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder
-  parent: BelNytheraSeiche.WaveletMatrix
-  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
-  name: FMIndex.SortOrder
-  nameWithType: FMIndex.SortOrder
-  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder
-  spec.csharp:
-  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex
-    name: FMIndex
-    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
-  - name: .
-  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder
-    name: SortOrder
-    href: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.html
-  spec.vb:
-  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex
-    name: FMIndex
-    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
-  - name: .
-  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder
-    name: SortOrder
-    href: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.html
 - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet
   commentId: T:BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet
   parent: BelNytheraSeiche.WaveletMatrix
@@ -181,6 +160,7 @@ references:
     href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.html
 - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match
   commentId: T:BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match
+  parent: BelNytheraSeiche.WaveletMatrix
   href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
   name: LcpIndex.SimilarityMatcher.Match
   nameWithType: LcpIndex.SimilarityMatcher.Match
@@ -209,6 +189,37 @@ references:
   - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match
     name: Match
     href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.html
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Palindrome
+  commentId: T:BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Palindrome
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  name: LcpIndex.SimilarityMatcher.Palindrome
+  nameWithType: LcpIndex.SimilarityMatcher.Palindrome
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Palindrome
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
+    name: SimilarityMatcher
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Palindrome
+    name: Palindrome
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Palindrome.html
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
+    name: SimilarityMatcher
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Palindrome
+    name: Palindrome
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Palindrome.html
 - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat
   commentId: T:BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat
   href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
@@ -233,6 +244,7 @@ references:
     href: BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat.html
 - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat
   commentId: T:BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat
+  parent: BelNytheraSeiche.WaveletMatrix
   href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
   name: LcpIndex.Repeat
   nameWithType: LcpIndex.Repeat
@@ -253,6 +265,29 @@ references:
   - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat
     name: Repeat
     href: BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat.html
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.TextWithPosition
+  commentId: T:BelNytheraSeiche.WaveletMatrix.LcpIndex.TextWithPosition
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  name: LcpIndex.TextWithPosition
+  nameWithType: LcpIndex.TextWithPosition
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.TextWithPosition
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.TextWithPosition
+    name: TextWithPosition
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.TextWithPosition.html
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.TextWithPosition
+    name: TextWithPosition
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.TextWithPosition.html
 - uid: BelNytheraSeiche.WaveletMatrix.SerializationOptions
   commentId: T:BelNytheraSeiche.WaveletMatrix.SerializationOptions
   parent: BelNytheraSeiche.WaveletMatrix
@@ -260,6 +295,13 @@ references:
   name: SerializationOptions
   nameWithType: SerializationOptions
   fullName: BelNytheraSeiche.WaveletMatrix.SerializationOptions
+- uid: BelNytheraSeiche.WaveletMatrix.SortOrder
+  commentId: T:BelNytheraSeiche.WaveletMatrix.SortOrder
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.SortOrder.html
+  name: SortOrder
+  nameWithType: SortOrder
+  fullName: BelNytheraSeiche.WaveletMatrix.SortOrder
 - uid: BelNytheraSeiche.WaveletMatrix.SparseTable`1
   commentId: T:BelNytheraSeiche.WaveletMatrix.SparseTable`1
   href: BelNytheraSeiche.WaveletMatrix.SparseTable-1.html

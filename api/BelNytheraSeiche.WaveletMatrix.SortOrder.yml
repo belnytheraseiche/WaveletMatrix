@@ -1,0 +1,147 @@
+### YamlMime:ManagedReference
+items:
+- uid: BelNytheraSeiche.WaveletMatrix.SortOrder
+  commentId: T:BelNytheraSeiche.WaveletMatrix.SortOrder
+  id: SortOrder
+  parent: BelNytheraSeiche.WaveletMatrix
+  children:
+  - BelNytheraSeiche.WaveletMatrix.SortOrder.Ascending
+  - BelNytheraSeiche.WaveletMatrix.SortOrder.Descending
+  - BelNytheraSeiche.WaveletMatrix.SortOrder.Unordered
+  langs:
+  - csharp
+  - vb
+  name: SortOrder
+  nameWithType: SortOrder
+  fullName: BelNytheraSeiche.WaveletMatrix.SortOrder
+  type: Enum
+  source:
+    remote:
+      path: src/SortOrder.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
+    id: SortOrder
+    path: src/SortOrder.cs
+    startLine: 6
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Specifies the sort order for the results of a Locate operation.
+  example: []
+  syntax:
+    content: public enum SortOrder
+    content.vb: Public Enum SortOrder
+- uid: BelNytheraSeiche.WaveletMatrix.SortOrder.Unordered
+  commentId: F:BelNytheraSeiche.WaveletMatrix.SortOrder.Unordered
+  id: Unordered
+  parent: BelNytheraSeiche.WaveletMatrix.SortOrder
+  langs:
+  - csharp
+  - vb
+  name: Unordered
+  nameWithType: SortOrder.Unordered
+  fullName: BelNytheraSeiche.WaveletMatrix.SortOrder.Unordered
+  type: Field
+  source:
+    remote:
+      path: src/SortOrder.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
+    id: Unordered
+    path: src/SortOrder.cs
+    startLine: 11
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: The positions are returned in an unsorted, arbitrary order. This is the most performant option.
+  example: []
+  syntax:
+    content: Unordered = 0
+    return:
+      type: BelNytheraSeiche.WaveletMatrix.SortOrder
+- uid: BelNytheraSeiche.WaveletMatrix.SortOrder.Ascending
+  commentId: F:BelNytheraSeiche.WaveletMatrix.SortOrder.Ascending
+  id: Ascending
+  parent: BelNytheraSeiche.WaveletMatrix.SortOrder
+  langs:
+  - csharp
+  - vb
+  name: Ascending
+  nameWithType: SortOrder.Ascending
+  fullName: BelNytheraSeiche.WaveletMatrix.SortOrder.Ascending
+  type: Field
+  source:
+    remote:
+      path: src/SortOrder.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
+    id: Ascending
+    path: src/SortOrder.cs
+    startLine: 15
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: The positions are returned in ascending numerical order. This requires an internal sort and is less performant than Unordered.
+  example: []
+  syntax:
+    content: Ascending = 1
+    return:
+      type: BelNytheraSeiche.WaveletMatrix.SortOrder
+- uid: BelNytheraSeiche.WaveletMatrix.SortOrder.Descending
+  commentId: F:BelNytheraSeiche.WaveletMatrix.SortOrder.Descending
+  id: Descending
+  parent: BelNytheraSeiche.WaveletMatrix.SortOrder
+  langs:
+  - csharp
+  - vb
+  name: Descending
+  nameWithType: SortOrder.Descending
+  fullName: BelNytheraSeiche.WaveletMatrix.SortOrder.Descending
+  type: Field
+  source:
+    remote:
+      path: src/SortOrder.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
+    id: Descending
+    path: src/SortOrder.cs
+    startLine: 19
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: The positions are returned in descending numerical order. This requires an internal sort and is less performant than Unordered.
+  example: []
+  syntax:
+    content: Descending = 2
+    return:
+      type: BelNytheraSeiche.WaveletMatrix.SortOrder
+references:
+- uid: BelNytheraSeiche.WaveletMatrix
+  commentId: N:BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.html
+  name: BelNytheraSeiche.WaveletMatrix
+  nameWithType: BelNytheraSeiche.WaveletMatrix
+  fullName: BelNytheraSeiche.WaveletMatrix
+  spec.csharp:
+  - uid: BelNytheraSeiche
+    name: BelNytheraSeiche
+    href: BelNytheraSeiche.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix
+    name: WaveletMatrix
+    href: BelNytheraSeiche.WaveletMatrix.html
+  spec.vb:
+  - uid: BelNytheraSeiche
+    name: BelNytheraSeiche
+    href: BelNytheraSeiche.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix
+    name: WaveletMatrix
+    href: BelNytheraSeiche.WaveletMatrix.html
+- uid: BelNytheraSeiche.WaveletMatrix.SortOrder
+  commentId: T:BelNytheraSeiche.WaveletMatrix.SortOrder
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.SortOrder.html
+  name: SortOrder
+  nameWithType: SortOrder
+  fullName: BelNytheraSeiche.WaveletMatrix.SortOrder

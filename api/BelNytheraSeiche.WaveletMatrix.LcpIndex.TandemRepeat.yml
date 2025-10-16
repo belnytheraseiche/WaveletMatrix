@@ -23,7 +23,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: TandemRepeat
     path: src/LcpIndex.cs
-    startLine: 755
+    startLine: 1093
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -62,7 +62,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: .ctor
     path: src/LcpIndex.cs
-    startLine: 755
+    startLine: 1093
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -103,7 +103,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Position
     path: src/LcpIndex.cs
-    startLine: 755
+    startLine: 1093
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -134,7 +134,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Length
     path: src/LcpIndex.cs
-    startLine: 755
+    startLine: 1093
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -165,7 +165,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Count
     path: src/LcpIndex.cs
-    startLine: 755
+    startLine: 1093
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix

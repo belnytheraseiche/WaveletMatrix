@@ -54,6 +54,69 @@ public class LcpIndexTests
     }
 
     [TestMethod]
+    public void FindLongestRepeats()
+    {
+        var text = "ababcxabcyabczabcabcbc";
+        var sa = SuffixArray.Create(text);
+        var lcpIndex = LcpIndex.Create(sa);
+        var repeats = lcpIndex.FindLongestRepeats();
+        Assert.IsNotNull(repeats);
+        Assert.AreEqual("abc", repeats.Text);
+        CollectionAssert.AreEquivalent((int[])[2, 6, 10, 14, 17], repeats.Positions);
+    }
+
+    [TestMethod]
+    public void SimilarityMatches()
+    {
+        var text1 = "011000000";
+        var text2 = "999111999111";
+        var matcher = LcpIndex.CreateSimilarityMatcher(text1, text2);
+        var result = matcher.Matches().Select(n => (n.Position1, n.Position2, n.Length)).ToArray();
+        CollectionAssert.AreEquivalent(((int, int, int)[])[(1, 9, 2), (1, 10, 2)], result);
+    }
+
+    [TestMethod]
+    public void SimilarityLongestMatch()
+    {
+        var text1 = "The quick brown fox jumps over the lazy dog. The quick brown dog jumps over the lazy fox.";
+        var text2 = "The quick brown cat jumps over the lazy dog. The quick brown rabbit jumps over the lazy fox.";
+        var matcher = LcpIndex.CreateSimilarityMatcher(text1, text2);
+        var result = matcher.LongestMatch();
+        Assert.IsNotNull(result);
+        Assert.AreEqual((19, 19, 42), (result.Position1, result.Position2, result.Length));
+    }
+
+    [TestMethod]
+    public void FindPalindrome()
+    {
+        var text = "xabcdefggfedcbay";
+        var matcher = LcpIndex.CreateSimilarityMatcherForPalindrome(text);
+        var result = matcher.FindPalindrome();
+        Assert.IsNotNull(result);
+        Assert.AreEqual((1, 14), (result.Position, result.Length));
+    }
+
+    [TestMethod]
+    public void CountOccurrences()
+    {
+        var text = "The quick brown fox jumps over the lazy dog. The quick brown dog jumps over the lazy fox.";
+        var sa = SuffixArray.Create(text);
+        var lcpIndex = LcpIndex.Create(sa);
+        var result = lcpIndex.CountOccurrences("o");
+        Assert.AreEqual(8, result);
+    }
+
+    [TestMethod]
+    public void Locate()
+    {
+        var text = "The quick brown fox jumps over the lazy dog. The quick brown dog jumps over the lazy fox.";
+        var sa = SuffixArray.Create(text);
+        var lcpIndex = LcpIndex.Create(sa);
+        var result = lcpIndex.Locate("o").ToArray();
+        CollectionAssert.AreEqual((int[])[12, 17, 26, 41, 57, 62, 71, 86], result);
+    }
+
+    [TestMethod]
     public void CalculateZivLempelComplexity()
     {
         var text = "abracadabra";
@@ -62,6 +125,26 @@ public class LcpIndexTests
         int complexity = lcpIndex.CalculateZivLempelComplexity();
         // a|b|r|ac|ad|ab|ra
         Assert.AreEqual(7, complexity, "LZ78 complexity of 'abracadabra' should be 7.");
+    }
+
+    [TestMethod]
+    public void FindShortestUniqueSubstring()
+    {
+        var text = "The quick brown fox jumps over the lazy dog. The quick brown dog jumps over the lazy fox.";
+        var lcpIndex = LcpIndex.Create(SuffixArray.Create(text));
+        var result = lcpIndex.FindShortestUniqueSubstring();
+        Assert.IsNotNull(result);
+        Assert.AreEqual((" T", 44), (result.Text, result.Position));
+    }
+
+    [TestMethod]
+    public void FindAllShortestUniqueSubstrings()
+    {
+        var text = "The quick brown fox jumps over the lazy dog. The quick brown dog jumps over the lazy fox.";
+        var lcpIndex = LcpIndex.Create(SuffixArray.Create(text));
+        var result = lcpIndex.FindAllShortestUniqueSubstrings().ToArray();
+        Assert.AreEqual(6, result.Length);
+        CollectionAssert.AreEqual(((string, int)[])[("x ", 18), ("g.", 42), (". ", 43), (" T", 44), ("g ", 63), ("x.", 87)], result.Select(n => (n.Text, n.Position)).ToArray());
     }
 
     [TestMethod]

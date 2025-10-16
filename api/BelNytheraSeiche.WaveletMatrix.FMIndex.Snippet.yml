@@ -24,7 +24,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Snippet
     path: src/FMIndex.cs
-    startLine: 762
+    startLine: 743
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -63,7 +63,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: .ctor
     path: src/FMIndex.cs
-    startLine: 762
+    startLine: 743
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -107,7 +107,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Text
     path: src/FMIndex.cs
-    startLine: 762
+    startLine: 743
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -138,7 +138,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Index
     path: src/FMIndex.cs
-    startLine: 762
+    startLine: 743
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -169,7 +169,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Length
     path: src/FMIndex.cs
-    startLine: 762
+    startLine: 743
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -200,7 +200,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: KeyPosition
     path: src/FMIndex.cs
-    startLine: 762
+    startLine: 743
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix

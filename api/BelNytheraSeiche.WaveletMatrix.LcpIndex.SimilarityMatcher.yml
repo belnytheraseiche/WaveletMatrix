@@ -6,7 +6,9 @@ items:
   parent: BelNytheraSeiche.WaveletMatrix
   children:
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.#ctor(BelNytheraSeiche.WaveletMatrix.LcpIndex,System.String,System.String)
+  - BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.FindPalindrome
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.LcpIndex
+  - BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.LongestMatch
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Matches(System.Int32)
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Text1
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Text2
@@ -24,7 +26,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: SimilarityMatcher
     path: src/LcpIndex.cs
-    startLine: 665
+    startLine: 934
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -63,7 +65,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: .ctor
     path: src/LcpIndex.cs
-    startLine: 665
+    startLine: 934
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -107,7 +109,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: LcpIndex
     path: src/LcpIndex.cs
-    startLine: 670
+    startLine: 939
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -138,7 +140,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Text1
     path: src/LcpIndex.cs
-    startLine: 675
+    startLine: 944
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -169,7 +171,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Text2
     path: src/LcpIndex.cs
-    startLine: 680
+    startLine: 949
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -200,7 +202,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Matches
     path: src/LcpIndex.cs
-    startLine: 693
+    startLine: 962
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -229,6 +231,73 @@ items:
   nameWithType.vb: LcpIndex.SimilarityMatcher.Matches(Integer)
   fullName.vb: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Matches(Integer)
   name.vb: Matches(Integer)
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.LongestMatch
+  commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.LongestMatch
+  id: LongestMatch
+  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
+  langs:
+  - csharp
+  - vb
+  name: LongestMatch()
+  nameWithType: LcpIndex.SimilarityMatcher.LongestMatch()
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.LongestMatch()
+  type: Method
+  source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
+    id: LongestMatch
+    path: src/LcpIndex.cs
+    startLine: 994
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Finds the longest common substring between the two texts.
+  example: []
+  syntax:
+    content: public LcpIndex.SimilarityMatcher.Match? LongestMatch()
+    return:
+      type: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match
+      description: A <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match" data-throw-if-not-resolved="false"></xref> record representing the longest common substring, or null if no common part exists.
+    content.vb: Public Function LongestMatch() As LcpIndex.SimilarityMatcher.Match
+  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.LongestMatch*
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.FindPalindrome
+  commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.FindPalindrome
+  id: FindPalindrome
+  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
+  langs:
+  - csharp
+  - vb
+  name: FindPalindrome()
+  nameWithType: LcpIndex.SimilarityMatcher.FindPalindrome()
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.FindPalindrome()
+  type: Method
+  source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
+    id: FindPalindrome
+    path: src/LcpIndex.cs
+    startLine: 1025
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Finds the longest palindromic substring within the original text.
+
+    This method requires the <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher" data-throw-if-not-resolved="false"></xref> to be created via <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcherForPalindrome(System.String)" data-throw-if-not-resolved="false"></xref>.
+
+    It operates by finding the longest common substring between the text and its reverse.
+  example: []
+  syntax:
+    content: public LcpIndex.SimilarityMatcher.Palindrome? FindPalindrome()
+    return:
+      type: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Palindrome
+      description: A <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Palindrome" data-throw-if-not-resolved="false"></xref> record for the longest palindrome, or null if no palindrome of length 2 or more exists.
+    content.vb: Public Function FindPalindrome() As LcpIndex.SimilarityMatcher.Palindrome
+  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.FindPalindrome*
 references:
 - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.LcpIndex
   commentId: P:BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.LcpIndex
@@ -560,6 +629,7 @@ references:
   fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Text2
 - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match
   commentId: T:BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match
+  parent: BelNytheraSeiche.WaveletMatrix
   href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
   name: LcpIndex.SimilarityMatcher.Match
   nameWithType: LcpIndex.SimilarityMatcher.Match
@@ -726,3 +796,99 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.LongestMatch*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.LongestMatch
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_SimilarityMatcher_LongestMatch
+  name: LongestMatch
+  nameWithType: LcpIndex.SimilarityMatcher.LongestMatch
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.LongestMatch
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
+  commentId: T:BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  name: LcpIndex.SimilarityMatcher
+  nameWithType: LcpIndex.SimilarityMatcher
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
+    name: SimilarityMatcher
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.html
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
+    name: SimilarityMatcher
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.html
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcherForPalindrome(System.String)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcherForPalindrome(System.String)
+  isExternal: true
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_CreateSimilarityMatcherForPalindrome_System_String_
+  name: CreateSimilarityMatcherForPalindrome(string)
+  nameWithType: LcpIndex.CreateSimilarityMatcherForPalindrome(string)
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcherForPalindrome(string)
+  nameWithType.vb: LcpIndex.CreateSimilarityMatcherForPalindrome(String)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcherForPalindrome(String)
+  name.vb: CreateSimilarityMatcherForPalindrome(String)
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcherForPalindrome(System.String)
+    name: CreateSimilarityMatcherForPalindrome
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_CreateSimilarityMatcherForPalindrome_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcherForPalindrome(System.String)
+    name: CreateSimilarityMatcherForPalindrome
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_CreateSimilarityMatcherForPalindrome_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Palindrome
+  commentId: T:BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Palindrome
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  name: LcpIndex.SimilarityMatcher.Palindrome
+  nameWithType: LcpIndex.SimilarityMatcher.Palindrome
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Palindrome
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
+    name: SimilarityMatcher
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Palindrome
+    name: Palindrome
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Palindrome.html
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
+    name: SimilarityMatcher
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Palindrome
+    name: Palindrome
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Palindrome.html
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.FindPalindrome*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.FindPalindrome
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_SimilarityMatcher_FindPalindrome
+  name: FindPalindrome
+  nameWithType: LcpIndex.SimilarityMatcher.FindPalindrome
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.FindPalindrome

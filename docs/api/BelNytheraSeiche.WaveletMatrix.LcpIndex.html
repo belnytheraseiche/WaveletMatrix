@@ -228,7 +228,7 @@ such as finding repeated substrings or calculating string complexity.</p>
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_LcpIndex_CalculateZivLempelComplexity" data-uid="BelNytheraSeiche.WaveletMatrix.LcpIndex.CalculateZivLempelComplexity">
   CalculateZivLempelComplexity()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/LcpIndex.cs/#L602"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/LcpIndex.cs/#L646"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Calculates the Ziv-Lempel 78 (LZ78) complexity of the text.
@@ -245,6 +245,46 @@ This value represents the number of phrases in the LZ78 parsing of the string, i
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd><p>The LZ78 complexity of the text.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_LcpIndex_CountOccurrences_" data-uid="BelNytheraSeiche.WaveletMatrix.LcpIndex.CountOccurrences*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_LcpIndex_CountOccurrences_System_ReadOnlySpan_System_Char__" data-uid="BelNytheraSeiche.WaveletMatrix.LcpIndex.CountOccurrences(System.ReadOnlySpan{System.Char})">
+  CountOccurrences(ReadOnlySpan&lt;char&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/LcpIndex.cs/#L734"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Efficiently counts the occurrences of a specified pattern within the text.
+It leverages binary search over the suffix array to quickly find the range, ensuring high performance even with large texts.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int CountOccurrences(ReadOnlySpan&lt;char&gt; pattern)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pattern</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a>&gt;</dt>
+    <dd><p>The string pattern to search for.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The number of times the pattern appears in the text.</p>
 </dd>
   </dl>
 
@@ -341,7 +381,7 @@ This is calculated in O(N) time using the suffix and LCP arrays.</p>
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_LcpIndex_CreateSimilarityMatcher_System_String_System_String_" data-uid="BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcher(System.String,System.String)">
   CreateSimilarityMatcher(string, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/LcpIndex.cs/#L638"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/LcpIndex.cs/#L682"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a new <a class="xref" href="BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.html">LcpIndex.SimilarityMatcher</a> instance to find common substrings between two texts.
@@ -381,6 +421,57 @@ This is achieved by concatenating the two texts with a unique separator and buil
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
     <dd><p>Thrown if <code class="paramref">text1</code> or <code class="paramref">text2</code> is null.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_LcpIndex_CreateSimilarityMatcherForPalindrome_" data-uid="BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcherForPalindrome*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_LcpIndex_CreateSimilarityMatcherForPalindrome_System_String_" data-uid="BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcherForPalindrome(System.String)">
+  CreateSimilarityMatcherForPalindrome(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/LcpIndex.cs/#L712"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a new <a class="xref" href="BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.html">LcpIndex.SimilarityMatcher</a> instance specifically configured to find palindromic substrings within a single text.
+This is achieved by concatenating the text with its reverse, separated by a unique character,
+and building an LCP index on the combined result.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static LcpIndex.SimilarityMatcher CreateSimilarityMatcherForPalindrome(string text)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The text in which to find palindromes.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.LcpIndex.html">LcpIndex</a>.<a class="xref" href="BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.html">SimilarityMatcher</a></dt>
+    <dd><p>A new <a class="xref" href="BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.html">LcpIndex.SimilarityMatcher</a> instance ready for palindrome detection.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="BelNytheraSeiche_WaveletMatrix_LcpIndex_CreateSimilarityMatcherForPalindrome_System_String__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>The returned matcher will have its <code>Text1</code> property set to the original <code class="paramref">text</code> and its <code>Text2</code>
+property set to the reversed version of the text.</p>
+</div>
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>Thrown if <code class="paramref">text</code> is null.</p>
 </dd>
   </dl>
 
@@ -525,6 +616,76 @@ It verifies the file format and checksum, and reconstructs the internal Sparse T
 
 
 
+  <a id="BelNytheraSeiche_WaveletMatrix_LcpIndex_FindAllShortestUniqueSubstrings_" data-uid="BelNytheraSeiche.WaveletMatrix.LcpIndex.FindAllShortestUniqueSubstrings*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_LcpIndex_FindAllShortestUniqueSubstrings" data-uid="BelNytheraSeiche.WaveletMatrix.LcpIndex.FindAllShortestUniqueSubstrings">
+  FindAllShortestUniqueSubstrings()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/LcpIndex.cs/#L842"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds all shortest substrings that appear only once in the text.
+There can be multiple unique substrings of the same shortest length.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;LcpIndex.TextWithPosition&gt; FindAllShortestUniqueSubstrings()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="BelNytheraSeiche.WaveletMatrix.LcpIndex.html">LcpIndex</a>.<a class="xref" href="BelNytheraSeiche.WaveletMatrix.LcpIndex.TextWithPosition.html">TextWithPosition</a>&gt;</dt>
+    <dd><p>An enumerable collection of <a class="xref" href="BelNytheraSeiche.WaveletMatrix.LcpIndex.TextWithPosition.html">LcpIndex.TextWithPosition</a> records, each representing
+one of the shortest unique substrings found. Returns an empty collection if no unique substring exists.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_LcpIndex_FindLongestRepeats_" data-uid="BelNytheraSeiche.WaveletMatrix.LcpIndex.FindLongestRepeats*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_LcpIndex_FindLongestRepeats" data-uid="BelNytheraSeiche.WaveletMatrix.LcpIndex.FindLongestRepeats">
+  FindLongestRepeats()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/LcpIndex.cs/#L605"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds the longest substring that appears at least twice in the text.
+This is achieved by finding the maximum value in the LCP array.
+If no substring is repeated, returns null.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LcpIndex.Repeat? FindLongestRepeats()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.LcpIndex.html">LcpIndex</a>.<a class="xref" href="BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat.html">Repeat</a></dt>
+    <dd><p>A <a class="xref" href="BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat.html">LcpIndex.Repeat</a> record representing the longest repeated substring and its positions, or null if no repeats exist.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="BelNytheraSeiche_WaveletMatrix_LcpIndex_FindRepeats_" data-uid="BelNytheraSeiche.WaveletMatrix.LcpIndex.FindRepeats*"></a>
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_LcpIndex_FindRepeats_System_Int32_" data-uid="BelNytheraSeiche.WaveletMatrix.LcpIndex.FindRepeats(System.Int32)">
@@ -568,6 +729,41 @@ and meet a minimum length requirement.</p>
     <dd><p>Thrown if <code class="paramref">minLength</code> is less than or equal 0.</p>
 </dd>
   </dl>
+
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_LcpIndex_FindShortestUniqueSubstring_" data-uid="BelNytheraSeiche.WaveletMatrix.LcpIndex.FindShortestUniqueSubstring*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_LcpIndex_FindShortestUniqueSubstring" data-uid="BelNytheraSeiche.WaveletMatrix.LcpIndex.FindShortestUniqueSubstring">
+  FindShortestUniqueSubstring()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/LcpIndex.cs/#L803"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds the shortest substring that appears only once in the text.
+This is determined by analyzing the LCP (Longest Common Prefix) values between adjacent suffixes in the suffix array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LcpIndex.TextWithPosition? FindShortestUniqueSubstring()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BelNytheraSeiche.WaveletMatrix.LcpIndex.html">LcpIndex</a>.<a class="xref" href="BelNytheraSeiche.WaveletMatrix.LcpIndex.TextWithPosition.html">TextWithPosition</a></dt>
+    <dd><p>A <a class="xref" href="BelNytheraSeiche.WaveletMatrix.LcpIndex.TextWithPosition.html">LcpIndex.TextWithPosition</a> record containing the shortest unique substring and its starting position.
+Returns null if no unique substring exists (e.g., if the text is empty or consists of a single repeating character).</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
 
 
 
@@ -648,6 +844,59 @@ This operation is performed in O(1) time.</p>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
     <dd><p>Thrown if <code class="paramref">index1</code> or <code class="paramref">index2</code> are out of the valid range.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_LcpIndex_Locate_" data-uid="BelNytheraSeiche.WaveletMatrix.LcpIndex.Locate*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_LcpIndex_Locate_System_ReadOnlySpan_System_Char__BelNytheraSeiche_WaveletMatrix_SortOrder_" data-uid="BelNytheraSeiche.WaveletMatrix.LcpIndex.Locate(System.ReadOnlySpan{System.Char},BelNytheraSeiche.WaveletMatrix.SortOrder)">
+  Locate(ReadOnlySpan&lt;char&gt;, SortOrder)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/LcpIndex.cs/#L756"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds all starting positions where the specified pattern occurs in the text.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;int&gt; Locate(ReadOnlySpan&lt;char&gt; pattern, SortOrder sortOrder = SortOrder.Ascending)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pattern</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a>&gt;</dt>
+    <dd><p>The string pattern to search for.</p>
+</dd>
+    <dt><code>sortOrder</code> <a class="xref" href="BelNytheraSeiche.WaveletMatrix.SortOrder.html">SortOrder</a></dt>
+    <dd><p>Specifies the sort order for the resulting positions. The default is <a class="xref" href="BelNytheraSeiche.WaveletMatrix.SortOrder.html#BelNytheraSeiche_WaveletMatrix_SortOrder_Ascending">Ascending</a>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd><p>An <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable&lt;T&gt;</a> that enumerates the starting positions (0-based indices) of the pattern's occurrences.
+Returns an empty sequence if the pattern is not found.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="BelNytheraSeiche_WaveletMatrix_LcpIndex_Locate_System_ReadOnlySpan_System_Char__BelNytheraSeiche_WaveletMatrix_SortOrder__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Specifying <a class="xref" href="BelNytheraSeiche.WaveletMatrix.SortOrder.html#BelNytheraSeiche_WaveletMatrix_SortOrder_Unordered">Unordered</a> provides the fastest result by skipping any sorting.
+This option is recommended when the order of occurrences is not important.</p>
+</div>
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown if an invalid <code class="paramref">sortOrder</code> is provided.</p>
 </dd>
   </dl>
 
