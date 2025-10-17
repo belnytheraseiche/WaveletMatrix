@@ -55,7 +55,7 @@ namespace BelNytheraSeiche.WaveletMatrix
 
         public static void ReadExactly(this Stream stream, Span<byte> buffer)
         {
-            while (buffer.Length != 0)
+            while (!buffer.IsEmpty)
             {
                 var count = stream.Read(buffer);
                 if (count == 0)

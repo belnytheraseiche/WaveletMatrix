@@ -159,7 +159,7 @@ of patterns within a large text. It is constructed using the Burrows-Wheeler Tra
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_IsSampled" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.IsSampled">
   IsSampled
-  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L72"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L81"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets a value indicating whether the index is using Suffix Array sampling.</p>
@@ -191,7 +191,7 @@ of patterns within a large text. It is constructed using the Burrows-Wheeler Tra
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_SA" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.SA">
   SA
-  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L67"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L76"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the underlying Suffix Array instance used by this index.
@@ -230,7 +230,7 @@ This property is only available when the index is built in full Suffix Array mod
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_Text" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.Text">
   Text
-  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L55"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L64"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the original source text used to build the index, excluding the internal terminator character.
@@ -265,11 +265,47 @@ This property is only available when the index is built in full Suffix Array mod
 
 
 
+  <a id="BelNytheraSeiche_WaveletMatrix_FMIndex_UniqueCharacters_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.UniqueCharacters*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_UniqueCharacters" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.UniqueCharacters">
+  UniqueCharacters
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets an enumerable collection of the unique characters present in the indexed text.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;char&gt; UniqueCharacters { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="BelNytheraSeiche_WaveletMatrix_FMIndex_UniqueCharacters_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>The order of the characters in the returned collection is not guaranteed.
+This property provides a simple way to inspect the alphabet of the indexed text.</p>
+</div>
+
+
+
+
   <a id="BelNytheraSeiche_WaveletMatrix_FMIndex_WM_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.WM*"></a>
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_WM" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.WM">
   WM
-  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L60"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L69"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the underlying Wavelet Matrix instance used by this index.</p>
@@ -301,11 +337,50 @@ This property is only available when the index is built in full Suffix Array mod
 </h2>
 
 
+  <a id="BelNytheraSeiche_WaveletMatrix_FMIndex_Contains_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.Contains*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_Contains_System_ReadOnlySpan_System_Char__" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.Contains(System.ReadOnlySpan{System.Char})">
+  Contains(ReadOnlySpan&lt;char&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L527"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines whether the specified pattern exists within the text.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Contains(ReadOnlySpan&lt;char&gt; pattern)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pattern</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a>&gt;</dt>
+    <dd><p>The pattern to check for.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><code>true</code> if the pattern is found; otherwise, <code>false</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="BelNytheraSeiche_WaveletMatrix_FMIndex_Count_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.Count*"></a>
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_Count_System_ReadOnlySpan_System_Char__" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.Count(System.ReadOnlySpan{System.Char})">
   Count(ReadOnlySpan&lt;char&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L519"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L550"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Counts the number of occurrences of a pattern within the text.
@@ -345,7 +420,7 @@ This operation is extremely fast, with performance proportional to the pattern l
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_Create_System_ReadOnlyMemory_System_Char__System_Int32_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.Create(System.ReadOnlyMemory{System.Char},System.Int32)">
   Create(ReadOnlyMemory&lt;char&gt;, int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L112"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L121"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a new instance of the <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.html">FMIndex</a> from a read-only memory segment of characters, with an optional Suffix Array sampling rate.
@@ -395,7 +470,7 @@ If greater than 1, only every N-th entry of the Suffix Array is stored, saving m
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_Create_System_String_System_Int32_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.Create(System.String,System.Int32)">
   Create(string, int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L98"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L107"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a new instance of the <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.html">FMIndex</a> from a string, with an optional Suffix Array sampling rate.</p>
@@ -447,7 +522,7 @@ If greater than 1, only every N-th entry of the Suffix Array is stored to save m
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_Deserialize_System_Byte___" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.Deserialize(System.Byte[])">
   Deserialize(byte[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L385"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L394"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Deserializes a byte array into a <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.html">FMIndex</a> instance.</p>
@@ -492,7 +567,7 @@ If greater than 1, only every N-th entry of the Suffix Array is stored to save m
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_Deserialize_System_IO_Stream_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.Deserialize(System.IO.Stream)">
   Deserialize(Stream)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L425"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L434"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Deserializes a <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.html">FMIndex</a> instance from a stream.
@@ -541,7 +616,7 @@ It verifies the file format, type identifier, and checksum.</p>
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_Deserialize_System_String_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.Deserialize(System.String)">
   Deserialize(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L404"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L413"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Deserializes a <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.html">FMIndex</a> instance from the specified file.</p>
@@ -582,11 +657,50 @@ It verifies the file format, type identifier, and checksum.</p>
 
 
 
+  <a id="BelNytheraSeiche_WaveletMatrix_FMIndex_FindFirst_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.FindFirst*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_FindFirst_System_ReadOnlySpan_System_Char__" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.FindFirst(System.ReadOnlySpan{System.Char})">
+  FindFirst(ReadOnlySpan&lt;char&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L535"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds the first occurrence of a pattern within the text.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int FindFirst(ReadOnlySpan&lt;char&gt; pattern)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pattern</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a>&gt;</dt>
+    <dd><p>The pattern to search for.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The zero-based starting position of the first occurrence, or -1 if the pattern is not found.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="BelNytheraSeiche_WaveletMatrix_FMIndex_GetSnippet_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.GetSnippet*"></a>
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_GetSnippet_System_Int32_System_Int32_System_Int32_System_Double_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.GetSnippet(System.Int32,System.Int32,System.Int32,System.Double)">
   GetSnippet(int, int, int, double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L658"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L1020"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Calculates the location and optionally extracts the content of a text snippet surrounding a specified position.</p>
@@ -651,7 +765,7 @@ context will be adjusted to fill the requested length.</p>
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_Locate_System_ReadOnlySpan_System_Char__BelNytheraSeiche_WaveletMatrix_SortOrder_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan{System.Char},BelNytheraSeiche.WaveletMatrix.SortOrder)">
   Locate(ReadOnlySpan&lt;char&gt;, SortOrder)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L537"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L573"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Finds all starting positions of a pattern within the text.</p>
@@ -686,10 +800,258 @@ context will be adjusted to fill the requested length.</p>
 
 
   <h4 class="section" id="BelNytheraSeiche_WaveletMatrix_FMIndex_Locate_System_ReadOnlySpan_System_Char__BelNytheraSeiche_WaveletMatrix_SortOrder__remarks">Remarks</h4>
-  <div class="markdown level1 remarks"><p>In full Suffix Array mode, this operation is very fast. In sampling mode, locating each position requires additional
+  <div class="markdown level1 remarks"><p><b>Prefix Search (Forward Match):</b> Due to the nature of the FM-Index's backward search algorithm, this method inherently functions as a prefix search. It efficiently finds all positions in the text that <em>start with</em> the specified <code class="paramref">pattern</code>.
+<br><br>
+<b>Regarding Suffix Search (Backward Match):</b> This method does <em>not</em> perform a general suffix search (e.g., finding all words that <em>end with</em> &quot;ing&quot;). For that functionality, an index of the reversed text would be required.
+However, to find the end position of an <em>exact match</em> of the <code class="paramref">pattern</code>, you can simply add the pattern's length to the starting position returned by this method.
+<br><br>
+In full Suffix Array mode, this operation is very fast. In sampling mode, locating each position requires additional
 computation (LF-mapping steps), making it slower but significantly more memory-efficient.
 Specifying <a class="xref" href="BelNytheraSeiche.WaveletMatrix.SortOrder.html#BelNytheraSeiche_WaveletMatrix_SortOrder_Ascending">Ascending</a> or <a class="xref" href="BelNytheraSeiche.WaveletMatrix.SortOrder.html#BelNytheraSeiche_WaveletMatrix_SortOrder_Descending">Descending</a> may require collecting all results
 and sorting them, which incurs a performance cost. For the highest performance where order is not important, use <a class="xref" href="BelNytheraSeiche.WaveletMatrix.SortOrder.html#BelNytheraSeiche_WaveletMatrix_SortOrder_Unordered">Unordered</a>.</p>
+</div>
+
+
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_FMIndex_LocateFuzzy_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.LocateFuzzy*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_LocateFuzzy_System_ReadOnlySpan_System_Char__System_Int32_System_Boolean_System_Boolean_System_Nullable_System_Char__BelNytheraSeiche_WaveletMatrix_SortOrder_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.LocateFuzzy(System.ReadOnlySpan{System.Char},System.Int32,System.Boolean,System.Boolean,System.Nullable{System.Char},BelNytheraSeiche.WaveletMatrix.SortOrder)">
+  LocateFuzzy(ReadOnlySpan&lt;char&gt;, int, bool, bool, char?, SortOrder)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L669"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds all occurrences of a pattern within the text, allowing for a specified number of errors (edit distance).
+This implementation considers substitutions, deletions, and insertions as errors. It can also handle a wildcard character.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;FMIndex.FuzzyMatch&gt; LocateFuzzy(ReadOnlySpan&lt;char&gt; pattern, int maxDistance = 1, bool disableDeletion = false, bool disableInsertion = false, char? wildcardQ = null, SortOrder sortOrder = SortOrder.Ascending)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pattern</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a>&gt;</dt>
+    <dd><p>The pattern to search for.</p>
+</dd>
+    <dt><code>maxDistance</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The maximum allowed edit distance (number of errors). Defaults to 1.</p>
+</dd>
+    <dt><code>disableDeletion</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>When set to <code>true</code>, the search will not allow errors where a character from the pattern is skipped.
+This effectively prevents matching substrings that are shorter than the pattern.</p>
+</dd>
+    <dt><code>disableInsertion</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>When set to <code>true</code>, the search will not allow errors where an extra character from the text is included.
+This effectively prevents matching substrings that are longer than the pattern.</p>
+</dd>
+    <dt><code>wildcardQ</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a>?</dt>
+    <dd><p>Specifies a character to be treated as a single-character wildcard. A wildcard match has an edit distance of 0.
+Defaults to <code>null</code> (no wildcard).</p>
+</dd>
+    <dt><code>sortOrder</code> <a class="xref" href="BelNytheraSeiche.WaveletMatrix.SortOrder.html">SortOrder</a></dt>
+    <dd><p>Specifies the order of the returned matches based on their position. Defaults to <a class="xref" href="BelNytheraSeiche.WaveletMatrix.SortOrder.html#BelNytheraSeiche_WaveletMatrix_SortOrder_Ascending">Ascending</a>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.html">FMIndex</a>.<a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.html">FuzzyMatch</a>&gt;</dt>
+    <dd><p>An enumerable collection of <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.html">FMIndex.FuzzyMatch</a> objects, each containing the position and length of an approximate match.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="BelNytheraSeiche_WaveletMatrix_FMIndex_LocateFuzzy_System_ReadOnlySpan_System_Char__System_Int32_System_Boolean_System_Boolean_System_Nullable_System_Char__BelNytheraSeiche_WaveletMatrix_SortOrder__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Fuzzy search is significantly more computationally expensive than an exact search.
+The complexity increases with the pattern length, the alphabet size, and especially the <code class="paramref">maxDistance</code>.
+<br><br>
+<b>Performance Warning:</b> Using a very short pattern (e.g., 1-2 characters) with a <code class="paramref">maxDistance</code> of 1 or more can result in a very large number of matches, potentially leading to poor performance and high memory usage.
+<br><br>
+For the highest performance where order is not important, use <a class="xref" href="BelNytheraSeiche.WaveletMatrix.SortOrder.html#BelNytheraSeiche_WaveletMatrix_SortOrder_Unordered">Unordered</a>.</p>
+</div>
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>Thrown if <code class="paramref">maxDistance</code> is negative.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_FMIndex_LocateMultiGapped_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.LocateMultiGapped*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_LocateMultiGapped_System_ReadOnlySpan_System_Char__System_Boolean_System_Char_System_Char_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.LocateMultiGapped(System.ReadOnlySpan{System.Char},System.Boolean,System.Char,System.Char)">
+  LocateMultiGapped(ReadOnlySpan&lt;char&gt;, bool, char, char)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L915"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds all occurrences of a pattern containing multiple multi-character wildcards ('*').</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;FMIndex.MultiGappedMatch&gt; LocateMultiGapped(ReadOnlySpan&lt;char&gt; pattern, bool findShortest = true, char wildcardA = &#39;*&#39;, char wildcardQ = &#39;?&#39;)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pattern</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a>&gt;</dt>
+    <dd><p>The pattern containing zero or more '*' wildcards.</p>
+</dd>
+    <dt><code>findShortest</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>When <code>true</code> (default), performs a &quot;shortest&quot; or &quot;non-greedy&quot; match. For each starting part, it finds the first possible chained match and stops. This is the fastest and most common use case.
+When <code>false</code>, finds all possible combinations of matches, which can be computationally expensive if the parts are common.</p>
+</dd>
+    <dt><code>wildcardA</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></dt>
+    <dd><p>Specifies the character to be treated as a multi-character wildcard. Defaults to '*'.</p>
+</dd>
+    <dt><code>wildcardQ</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></dt>
+    <dd><p>Specifies a character to be treated as a single-character wildcard. Defaults to '?'.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.html">FMIndex</a>.<a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.html">MultiGappedMatch</a>&gt;</dt>
+    <dd><p>An enumerable collection of <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.html">FMIndex.MultiGappedMatch</a> objects.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="BelNytheraSeiche_WaveletMatrix_FMIndex_LocateMultiGapped_System_ReadOnlySpan_System_Char__System_Boolean_System_Char_System_Char__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method can handle complex patterns like &quot;a<em>b</em>c&quot;. The parts themselves can also contain single-character wildcards ('?').
+<br><br>
+<b>Wildcard Normalization:</b> Before searching, the pattern is normalized according to the following rules:</p>
+<ul>
+  <li><b>Trimming:</b> Any leading or trailing wildcards are removed. For example, a pattern like <pre><code class="lang-csharp">"*a*b*"</code></pre> is treated as <pre><code class="lang-csharp">"a*b"</code></pre>.</li>
+  <li><b>Collapsing:</b> Any consecutive wildcards are collapsed into a single one. For example, <pre><code class="lang-csharp">"a**b"</code></pre> is treated as <pre><code class="lang-csharp">"a*b"</code></pre>.</li>
+</ul>
+<br>
+<b>Performance Note:</b> Setting <code class="paramref">findShortest</code> to <code>false</code> can result in a very large number of matches and significantly impact performance, especially if intermediate parts (like 'b' in "a*b*c") are very common in the text.
+</div>
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown if <code class="paramref">wildcardA</code> equals <code class="paramref">wildcardQ</code>.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_FMIndex_LocateSingleGapped_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.LocateSingleGapped*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_LocateSingleGapped_System_ReadOnlySpan_System_Char__System_Char_System_Char_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.LocateSingleGapped(System.ReadOnlySpan{System.Char},System.Char,System.Char)">
+  LocateSingleGapped(ReadOnlySpan&lt;char&gt;, char, char)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L831"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds all occurrences of a pattern containing a single multi-character wildcard ('*').
+This method splits the pattern by the wildcard, finds all occurrences of the leading and trailing parts, and then combines the results.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;FMIndex.SingleGappedMatch&gt; LocateSingleGapped(ReadOnlySpan&lt;char&gt; pattern, char wildcardA = &#39;*&#39;, char wildcardQ = &#39;?&#39;)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pattern</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a>&gt;</dt>
+    <dd><p>The pattern containing a single <code class="paramref">wildcardA</code> wildcard.</p>
+</dd>
+    <dt><code>wildcardA</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></dt>
+    <dd><p>Specifies a character to be treated as a multi-character wildcard. Defaults to <code>'*'</code>.</p>
+</dd>
+    <dt><code>wildcardQ</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></dt>
+    <dd><p>Specifies a character to be treated as a single-character wildcard. A wildcard match matches any. Defaults to <code>'?'</code>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.html">FMIndex</a>.<a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.html">SingleGappedMatch</a>&gt;</dt>
+    <dd><p>An enumerable collection of <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.html">FMIndex.SingleGappedMatch</a> objects, each indicating the details of a matched substring.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="BelNytheraSeiche_WaveletMatrix_FMIndex_LocateSingleGapped_System_ReadOnlySpan_System_Char__System_Char_System_Char__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method also supports single-character wildcards ('?') within the parts of the pattern before and after the '<em>'.
+For example, a pattern like &quot;pr?gram</em>engine&quot; can be used.</p>
+</div>
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown if the pattern contains multiple wildcard characters, or <code class="paramref">wildcardA</code> equal <code class="paramref">wildcardQ</code>.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="BelNytheraSeiche_WaveletMatrix_FMIndex_LocateWildcard_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.LocateWildcard*"></a>
+
+  <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_LocateWildcard_System_ReadOnlySpan_System_Char__System_Char_BelNytheraSeiche_WaveletMatrix_SortOrder_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.LocateWildcard(System.ReadOnlySpan{System.Char},System.Char,BelNytheraSeiche.WaveletMatrix.SortOrder)">
+  LocateWildcard(ReadOnlySpan&lt;char&gt;, char, SortOrder)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L758"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds all occurrences of a pattern containing single-character wildcards ('?').</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;int&gt; LocateWildcard(ReadOnlySpan&lt;char&gt; pattern, char wildcardQ = &#39;?&#39;, SortOrder sortOrder = SortOrder.Ascending)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pattern</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a>&gt;</dt>
+    <dd><p>The pattern to search for, which can include <code class="paramref">wildcardQ</code> as a wildcard.</p>
+</dd>
+    <dt><code>wildcardQ</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></dt>
+    <dd><p>Specifies a character to be treated as a single-character wildcard. A wildcard match matches any. Defaults to <code>'?'</code>.</p>
+</dd>
+    <dt><code>sortOrder</code> <a class="xref" href="BelNytheraSeiche.WaveletMatrix.SortOrder.html">SortOrder</a></dt>
+    <dd><p>Specifies the order of the returned positions.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd><p>An enumerable collection of the zero-based starting positions of all matches.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="BelNytheraSeiche_WaveletMatrix_FMIndex_LocateWildcard_System_ReadOnlySpan_System_Char__System_Char_BelNytheraSeiche_WaveletMatrix_SortOrder__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>The <code class="paramref">wildcardQ</code> character matches any single character. This search is an exact match for all non-wildcard characters.
+This method is optimized for strict wildcard searches and is generally faster than using wildcards with <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_LocateFuzzy_System_ReadOnlySpan_System_Char__System_Int32_System_Boolean_System_Boolean_System_Nullable_System_Char__BelNytheraSeiche_WaveletMatrix_SortOrder_">LocateFuzzy(ReadOnlySpan&lt;char&gt;, int, bool, bool, char?, SortOrder)</a>.</p>
 </div>
 
 
@@ -699,7 +1061,7 @@ and sorting them, which incurs a performance cost. For the highest performance w
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_RestoreSourceText" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.RestoreSourceText">
   RestoreSourceText()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L622"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L984"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Reconstructs the original source text from the compressed index by inverting the Burrows-Wheeler Transform.</p>
@@ -732,7 +1094,7 @@ and sorting them, which incurs a performance cost. For the highest performance w
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_Serialize_BelNytheraSeiche_WaveletMatrix_FMIndex_BelNytheraSeiche_WaveletMatrix_SerializationOptions_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.Serialize(BelNytheraSeiche.WaveletMatrix.FMIndex,BelNytheraSeiche.WaveletMatrix.SerializationOptions)">
   Serialize(FMIndex, SerializationOptions?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L181"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L190"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Serializes the <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.html">FMIndex</a> instance into a byte array.</p>
@@ -781,7 +1143,7 @@ If null, <a class="xref" href="BelNytheraSeiche.WaveletMatrix.SerializationOptio
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_Serialize_BelNytheraSeiche_WaveletMatrix_FMIndex_System_IO_Stream_BelNytheraSeiche_WaveletMatrix_SerializationOptions_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.Serialize(BelNytheraSeiche.WaveletMatrix.FMIndex,System.IO.Stream,BelNytheraSeiche.WaveletMatrix.SerializationOptions)">
   Serialize(FMIndex, Stream, SerializationOptions?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L232"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L241"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Serializes the <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.html">FMIndex</a> instance to a stream.
@@ -828,7 +1190,7 @@ If null, <a class="xref" href="BelNytheraSeiche.WaveletMatrix.SerializationOptio
 
   <h3 id="BelNytheraSeiche_WaveletMatrix_FMIndex_Serialize_BelNytheraSeiche_WaveletMatrix_FMIndex_System_String_BelNytheraSeiche_WaveletMatrix_SerializationOptions_" data-uid="BelNytheraSeiche.WaveletMatrix.FMIndex.Serialize(BelNytheraSeiche.WaveletMatrix.FMIndex,System.String,BelNytheraSeiche.WaveletMatrix.SerializationOptions)">
   Serialize(FMIndex, string, SerializationOptions?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L205"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/src/FMIndex.cs/#L214"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Serializes the <a class="xref" href="BelNytheraSeiche.WaveletMatrix.FMIndex.html">FMIndex</a> instance to the specified file.</p>

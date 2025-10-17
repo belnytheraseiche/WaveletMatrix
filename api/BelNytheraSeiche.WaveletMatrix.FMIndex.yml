@@ -5,21 +5,28 @@ items:
   id: FMIndex
   parent: BelNytheraSeiche.WaveletMatrix
   children:
+  - BelNytheraSeiche.WaveletMatrix.FMIndex.Contains(System.ReadOnlySpan{System.Char})
   - BelNytheraSeiche.WaveletMatrix.FMIndex.Count(System.ReadOnlySpan{System.Char})
   - BelNytheraSeiche.WaveletMatrix.FMIndex.Create(System.ReadOnlyMemory{System.Char},System.Int32)
   - BelNytheraSeiche.WaveletMatrix.FMIndex.Create(System.String,System.Int32)
   - BelNytheraSeiche.WaveletMatrix.FMIndex.Deserialize(System.Byte[])
   - BelNytheraSeiche.WaveletMatrix.FMIndex.Deserialize(System.IO.Stream)
   - BelNytheraSeiche.WaveletMatrix.FMIndex.Deserialize(System.String)
+  - BelNytheraSeiche.WaveletMatrix.FMIndex.FindFirst(System.ReadOnlySpan{System.Char})
   - BelNytheraSeiche.WaveletMatrix.FMIndex.GetSnippet(System.Int32,System.Int32,System.Int32,System.Double)
   - BelNytheraSeiche.WaveletMatrix.FMIndex.IsSampled
   - BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan{System.Char},BelNytheraSeiche.WaveletMatrix.SortOrder)
+  - BelNytheraSeiche.WaveletMatrix.FMIndex.LocateFuzzy(System.ReadOnlySpan{System.Char},System.Int32,System.Boolean,System.Boolean,System.Nullable{System.Char},BelNytheraSeiche.WaveletMatrix.SortOrder)
+  - BelNytheraSeiche.WaveletMatrix.FMIndex.LocateMultiGapped(System.ReadOnlySpan{System.Char},System.Boolean,System.Char,System.Char)
+  - BelNytheraSeiche.WaveletMatrix.FMIndex.LocateSingleGapped(System.ReadOnlySpan{System.Char},System.Char,System.Char)
+  - BelNytheraSeiche.WaveletMatrix.FMIndex.LocateWildcard(System.ReadOnlySpan{System.Char},System.Char,BelNytheraSeiche.WaveletMatrix.SortOrder)
   - BelNytheraSeiche.WaveletMatrix.FMIndex.RestoreSourceText
   - BelNytheraSeiche.WaveletMatrix.FMIndex.SA
   - BelNytheraSeiche.WaveletMatrix.FMIndex.Serialize(BelNytheraSeiche.WaveletMatrix.FMIndex,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
   - BelNytheraSeiche.WaveletMatrix.FMIndex.Serialize(BelNytheraSeiche.WaveletMatrix.FMIndex,System.IO.Stream,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
   - BelNytheraSeiche.WaveletMatrix.FMIndex.Serialize(BelNytheraSeiche.WaveletMatrix.FMIndex,System.String,BelNytheraSeiche.WaveletMatrix.SerializationOptions)
   - BelNytheraSeiche.WaveletMatrix.FMIndex.Text
+  - BelNytheraSeiche.WaveletMatrix.FMIndex.UniqueCharacters
   - BelNytheraSeiche.WaveletMatrix.FMIndex.WM
   langs:
   - csharp
@@ -60,6 +67,41 @@ items:
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.UniqueCharacters
+  commentId: P:BelNytheraSeiche.WaveletMatrix.FMIndex.UniqueCharacters
+  id: UniqueCharacters
+  parent: BelNytheraSeiche.WaveletMatrix.FMIndex
+  langs:
+  - csharp
+  - vb
+  name: UniqueCharacters
+  nameWithType: FMIndex.UniqueCharacters
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.UniqueCharacters
+  type: Property
+  source:
+    remote:
+      path: src/FMIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
+    id: UniqueCharacters
+    path: src/FMIndex.cs
+    startLine: 56
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Gets an enumerable collection of the unique characters present in the indexed text.
+  remarks: >-
+    The order of the characters in the returned collection is not guaranteed.
+
+    This property provides a simple way to inspect the alphabet of the indexed text.
+  example: []
+  syntax:
+    content: public IEnumerable<char> UniqueCharacters { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IEnumerable{System.Char}
+    content.vb: Public ReadOnly Property UniqueCharacters As IEnumerable(Of Char)
+  overload: BelNytheraSeiche.WaveletMatrix.FMIndex.UniqueCharacters*
 - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Text
   commentId: P:BelNytheraSeiche.WaveletMatrix.FMIndex.Text
   id: Text
@@ -78,7 +120,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Text
     path: src/FMIndex.cs
-    startLine: 54
+    startLine: 63
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -116,7 +158,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: WM
     path: src/FMIndex.cs
-    startLine: 59
+    startLine: 68
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -147,7 +189,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: SA
     path: src/FMIndex.cs
-    startLine: 66
+    startLine: 75
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -185,7 +227,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: IsSampled
     path: src/FMIndex.cs
-    startLine: 71
+    startLine: 80
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -216,7 +258,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Create
     path: src/FMIndex.cs
-    startLine: 97
+    startLine: 106
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -267,7 +309,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Create
     path: src/FMIndex.cs
-    startLine: 111
+    startLine: 120
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -318,7 +360,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Serialize
     path: src/FMIndex.cs
-    startLine: 180
+    startLine: 189
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -366,7 +408,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Serialize
     path: src/FMIndex.cs
-    startLine: 204
+    startLine: 213
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -414,7 +456,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Serialize
     path: src/FMIndex.cs
-    startLine: 231
+    startLine: 240
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -465,7 +507,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Deserialize
     path: src/FMIndex.cs
-    startLine: 384
+    startLine: 393
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -507,7 +549,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Deserialize
     path: src/FMIndex.cs
-    startLine: 403
+    startLine: 412
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -549,7 +591,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Deserialize
     path: src/FMIndex.cs
-    startLine: 424
+    startLine: 433
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -576,6 +618,82 @@ items:
   - type: System.IO.InvalidDataException
     commentId: T:System.IO.InvalidDataException
     description: Thrown if the data format is unsupported, the type is incompatible, or the data is corrupt.
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Contains(System.ReadOnlySpan{System.Char})
+  commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.Contains(System.ReadOnlySpan{System.Char})
+  id: Contains(System.ReadOnlySpan{System.Char})
+  parent: BelNytheraSeiche.WaveletMatrix.FMIndex
+  langs:
+  - csharp
+  - vb
+  name: Contains(ReadOnlySpan<char>)
+  nameWithType: FMIndex.Contains(ReadOnlySpan<char>)
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Contains(System.ReadOnlySpan<char>)
+  type: Method
+  source:
+    remote:
+      path: src/FMIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
+    id: Contains
+    path: src/FMIndex.cs
+    startLine: 526
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Determines whether the specified pattern exists within the text.
+  example: []
+  syntax:
+    content: public bool Contains(ReadOnlySpan<char> pattern)
+    parameters:
+    - id: pattern
+      type: System.ReadOnlySpan{System.Char}
+      description: The pattern to check for.
+    return:
+      type: System.Boolean
+      description: <code>true</code> if the pattern is found; otherwise, <code>false</code>.
+    content.vb: Public Function Contains(pattern As ReadOnlySpan(Of Char)) As Boolean
+  overload: BelNytheraSeiche.WaveletMatrix.FMIndex.Contains*
+  nameWithType.vb: FMIndex.Contains(ReadOnlySpan(Of Char))
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.Contains(System.ReadOnlySpan(Of Char))
+  name.vb: Contains(ReadOnlySpan(Of Char))
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.FindFirst(System.ReadOnlySpan{System.Char})
+  commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.FindFirst(System.ReadOnlySpan{System.Char})
+  id: FindFirst(System.ReadOnlySpan{System.Char})
+  parent: BelNytheraSeiche.WaveletMatrix.FMIndex
+  langs:
+  - csharp
+  - vb
+  name: FindFirst(ReadOnlySpan<char>)
+  nameWithType: FMIndex.FindFirst(ReadOnlySpan<char>)
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.FindFirst(System.ReadOnlySpan<char>)
+  type: Method
+  source:
+    remote:
+      path: src/FMIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
+    id: FindFirst
+    path: src/FMIndex.cs
+    startLine: 534
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Finds the first occurrence of a pattern within the text.
+  example: []
+  syntax:
+    content: public int FindFirst(ReadOnlySpan<char> pattern)
+    parameters:
+    - id: pattern
+      type: System.ReadOnlySpan{System.Char}
+      description: The pattern to search for.
+    return:
+      type: System.Int32
+      description: The zero-based starting position of the first occurrence, or -1 if the pattern is not found.
+    content.vb: Public Function FindFirst(pattern As ReadOnlySpan(Of Char)) As Integer
+  overload: BelNytheraSeiche.WaveletMatrix.FMIndex.FindFirst*
+  nameWithType.vb: FMIndex.FindFirst(ReadOnlySpan(Of Char))
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.FindFirst(System.ReadOnlySpan(Of Char))
+  name.vb: FindFirst(ReadOnlySpan(Of Char))
 - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Count(System.ReadOnlySpan{System.Char})
   commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.Count(System.ReadOnlySpan{System.Char})
   id: Count(System.ReadOnlySpan{System.Char})
@@ -594,7 +712,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Count
     path: src/FMIndex.cs
-    startLine: 518
+    startLine: 549
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -635,12 +753,22 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Locate
     path: src/FMIndex.cs
-    startLine: 536
+    startLine: 572
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
   summary: Finds all starting positions of a pattern within the text.
   remarks: >-
+    <b>Prefix Search (Forward Match):</b> Due to the nature of the FM-Index's backward search algorithm, this method inherently functions as a prefix search. It efficiently finds all positions in the text that *start with* the specified <code class="paramref">pattern</code>.
+
+    <br /><br />
+
+    <b>Regarding Suffix Search (Backward Match):</b> This method does *not* perform a general suffix search (e.g., finding all words that *end with* "ing"). For that functionality, an index of the reversed text would be required.
+
+    However, to find the end position of an *exact match* of the <code class="paramref">pattern</code>, you can simply add the pattern's length to the starting position returned by this method.
+
+    <br /><br />
+
     In full Suffix Array mode, this operation is very fast. In sampling mode, locating each position requires additional
 
     computation (LF-mapping steps), making it slower but significantly more memory-efficient.
@@ -666,6 +794,259 @@ items:
   nameWithType.vb: FMIndex.Locate(ReadOnlySpan(Of Char), SortOrder)
   fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.Locate(System.ReadOnlySpan(Of Char), BelNytheraSeiche.WaveletMatrix.SortOrder)
   name.vb: Locate(ReadOnlySpan(Of Char), SortOrder)
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateFuzzy(System.ReadOnlySpan{System.Char},System.Int32,System.Boolean,System.Boolean,System.Nullable{System.Char},BelNytheraSeiche.WaveletMatrix.SortOrder)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.LocateFuzzy(System.ReadOnlySpan{System.Char},System.Int32,System.Boolean,System.Boolean,System.Nullable{System.Char},BelNytheraSeiche.WaveletMatrix.SortOrder)
+  id: LocateFuzzy(System.ReadOnlySpan{System.Char},System.Int32,System.Boolean,System.Boolean,System.Nullable{System.Char},BelNytheraSeiche.WaveletMatrix.SortOrder)
+  parent: BelNytheraSeiche.WaveletMatrix.FMIndex
+  langs:
+  - csharp
+  - vb
+  name: LocateFuzzy(ReadOnlySpan<char>, int, bool, bool, char?, SortOrder)
+  nameWithType: FMIndex.LocateFuzzy(ReadOnlySpan<char>, int, bool, bool, char?, SortOrder)
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateFuzzy(System.ReadOnlySpan<char>, int, bool, bool, char?, BelNytheraSeiche.WaveletMatrix.SortOrder)
+  type: Method
+  source:
+    remote:
+      path: src/FMIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
+    id: LocateFuzzy
+    path: src/FMIndex.cs
+    startLine: 668
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Finds all occurrences of a pattern within the text, allowing for a specified number of errors (edit distance).
+
+    This implementation considers substitutions, deletions, and insertions as errors. It can also handle a wildcard character.
+  remarks: >-
+    Fuzzy search is significantly more computationally expensive than an exact search.
+
+    The complexity increases with the pattern length, the alphabet size, and especially the <code class="paramref">maxDistance</code>.
+
+    <br /><br />
+
+    <b>Performance Warning:</b> Using a very short pattern (e.g., 1-2 characters) with a <code class="paramref">maxDistance</code> of 1 or more can result in a very large number of matches, potentially leading to poor performance and high memory usage.
+
+    <br /><br />
+
+    For the highest performance where order is not important, use <xref href="BelNytheraSeiche.WaveletMatrix.SortOrder.Unordered" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public IEnumerable<FMIndex.FuzzyMatch> LocateFuzzy(ReadOnlySpan<char> pattern, int maxDistance = 1, bool disableDeletion = false, bool disableInsertion = false, char? wildcardQ = null, SortOrder sortOrder = SortOrder.Ascending)
+    parameters:
+    - id: pattern
+      type: System.ReadOnlySpan{System.Char}
+      description: The pattern to search for.
+    - id: maxDistance
+      type: System.Int32
+      description: The maximum allowed edit distance (number of errors). Defaults to 1.
+    - id: disableDeletion
+      type: System.Boolean
+      description: >-
+        When set to <code>true</code>, the search will not allow errors where a character from the pattern is skipped.
+
+        This effectively prevents matching substrings that are shorter than the pattern.
+    - id: disableInsertion
+      type: System.Boolean
+      description: >-
+        When set to <code>true</code>, the search will not allow errors where an extra character from the text is included.
+
+        This effectively prevents matching substrings that are longer than the pattern.
+    - id: wildcardQ
+      type: System.Nullable{System.Char}
+      description: >-
+        Specifies a character to be treated as a single-character wildcard. A wildcard match has an edit distance of 0.
+
+        Defaults to <code>null</code> (no wildcard).
+    - id: sortOrder
+      type: BelNytheraSeiche.WaveletMatrix.SortOrder
+      description: Specifies the order of the returned matches based on their position. Defaults to <xref href="BelNytheraSeiche.WaveletMatrix.SortOrder.Ascending" data-throw-if-not-resolved="false"></xref>.
+    return:
+      type: System.Collections.Generic.IEnumerable{BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch}
+      description: An enumerable collection of <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch" data-throw-if-not-resolved="false"></xref> objects, each containing the position and length of an approximate match.
+    content.vb: Public Function LocateFuzzy(pattern As ReadOnlySpan(Of Char), maxDistance As Integer = 1, disableDeletion As Boolean = False, disableInsertion As Boolean = False, wildcardQ As Char? = Nothing, sortOrder As SortOrder = SortOrder.Ascending) As IEnumerable(Of FMIndex.FuzzyMatch)
+  overload: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateFuzzy*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if <code class="paramref">maxDistance</code> is negative.
+  nameWithType.vb: FMIndex.LocateFuzzy(ReadOnlySpan(Of Char), Integer, Boolean, Boolean, Char?, SortOrder)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateFuzzy(System.ReadOnlySpan(Of Char), Integer, Boolean, Boolean, Char?, BelNytheraSeiche.WaveletMatrix.SortOrder)
+  name.vb: LocateFuzzy(ReadOnlySpan(Of Char), Integer, Boolean, Boolean, Char?, SortOrder)
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateWildcard(System.ReadOnlySpan{System.Char},System.Char,BelNytheraSeiche.WaveletMatrix.SortOrder)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.LocateWildcard(System.ReadOnlySpan{System.Char},System.Char,BelNytheraSeiche.WaveletMatrix.SortOrder)
+  id: LocateWildcard(System.ReadOnlySpan{System.Char},System.Char,BelNytheraSeiche.WaveletMatrix.SortOrder)
+  parent: BelNytheraSeiche.WaveletMatrix.FMIndex
+  langs:
+  - csharp
+  - vb
+  name: LocateWildcard(ReadOnlySpan<char>, char, SortOrder)
+  nameWithType: FMIndex.LocateWildcard(ReadOnlySpan<char>, char, SortOrder)
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateWildcard(System.ReadOnlySpan<char>, char, BelNytheraSeiche.WaveletMatrix.SortOrder)
+  type: Method
+  source:
+    remote:
+      path: src/FMIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
+    id: LocateWildcard
+    path: src/FMIndex.cs
+    startLine: 757
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Finds all occurrences of a pattern containing single-character wildcards ('?').
+  remarks: >-
+    The <code class="paramref">wildcardQ</code> character matches any single character. This search is an exact match for all non-wildcard characters.
+
+    This method is optimized for strict wildcard searches and is generally faster than using wildcards with <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex.LocateFuzzy(System.ReadOnlySpan%7bSystem.Char%7d%2cSystem.Int32%2cSystem.Boolean%2cSystem.Boolean%2cSystem.Nullable%7bSystem.Char%7d%2cBelNytheraSeiche.WaveletMatrix.SortOrder)" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public IEnumerable<int> LocateWildcard(ReadOnlySpan<char> pattern, char wildcardQ = '?', SortOrder sortOrder = SortOrder.Ascending)
+    parameters:
+    - id: pattern
+      type: System.ReadOnlySpan{System.Char}
+      description: The pattern to search for, which can include <code class="paramref">wildcardQ</code> as a wildcard.
+    - id: wildcardQ
+      type: System.Char
+      description: Specifies a character to be treated as a single-character wildcard. A wildcard match matches any. Defaults to <code>'?'</code>.
+    - id: sortOrder
+      type: BelNytheraSeiche.WaveletMatrix.SortOrder
+      description: Specifies the order of the returned positions.
+    return:
+      type: System.Collections.Generic.IEnumerable{System.Int32}
+      description: An enumerable collection of the zero-based starting positions of all matches.
+    content.vb: Public Function LocateWildcard(pattern As ReadOnlySpan(Of Char), wildcardQ As Char = "?"c, sortOrder As SortOrder = SortOrder.Ascending) As IEnumerable(Of Integer)
+  overload: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateWildcard*
+  nameWithType.vb: FMIndex.LocateWildcard(ReadOnlySpan(Of Char), Char, SortOrder)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateWildcard(System.ReadOnlySpan(Of Char), Char, BelNytheraSeiche.WaveletMatrix.SortOrder)
+  name.vb: LocateWildcard(ReadOnlySpan(Of Char), Char, SortOrder)
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateSingleGapped(System.ReadOnlySpan{System.Char},System.Char,System.Char)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.LocateSingleGapped(System.ReadOnlySpan{System.Char},System.Char,System.Char)
+  id: LocateSingleGapped(System.ReadOnlySpan{System.Char},System.Char,System.Char)
+  parent: BelNytheraSeiche.WaveletMatrix.FMIndex
+  langs:
+  - csharp
+  - vb
+  name: LocateSingleGapped(ReadOnlySpan<char>, char, char)
+  nameWithType: FMIndex.LocateSingleGapped(ReadOnlySpan<char>, char, char)
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateSingleGapped(System.ReadOnlySpan<char>, char, char)
+  type: Method
+  source:
+    remote:
+      path: src/FMIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
+    id: LocateSingleGapped
+    path: src/FMIndex.cs
+    startLine: 830
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Finds all occurrences of a pattern containing a single multi-character wildcard ('*').
+
+    This method splits the pattern by the wildcard, finds all occurrences of the leading and trailing parts, and then combines the results.
+  remarks: >-
+    This method also supports single-character wildcards ('?') within the parts of the pattern before and after the '*'.
+
+    For example, a pattern like "pr?gram*engine" can be used.
+  example: []
+  syntax:
+    content: public IEnumerable<FMIndex.SingleGappedMatch> LocateSingleGapped(ReadOnlySpan<char> pattern, char wildcardA = '*', char wildcardQ = '?')
+    parameters:
+    - id: pattern
+      type: System.ReadOnlySpan{System.Char}
+      description: The pattern containing a single <code class="paramref">wildcardA</code> wildcard.
+    - id: wildcardA
+      type: System.Char
+      description: Specifies a character to be treated as a multi-character wildcard. Defaults to <code>'*'</code>.
+    - id: wildcardQ
+      type: System.Char
+      description: Specifies a character to be treated as a single-character wildcard. A wildcard match matches any. Defaults to <code>'?'</code>.
+    return:
+      type: System.Collections.Generic.IEnumerable{BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch}
+      description: An enumerable collection of <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch" data-throw-if-not-resolved="false"></xref> objects, each indicating the details of a matched substring.
+    content.vb: Public Function LocateSingleGapped(pattern As ReadOnlySpan(Of Char), wildcardA As Char = "*"c, wildcardQ As Char = "?"c) As IEnumerable(Of FMIndex.SingleGappedMatch)
+  overload: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateSingleGapped*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if the pattern contains multiple wildcard characters, or <code class="paramref">wildcardA</code> equal <code class="paramref">wildcardQ</code>.
+  nameWithType.vb: FMIndex.LocateSingleGapped(ReadOnlySpan(Of Char), Char, Char)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateSingleGapped(System.ReadOnlySpan(Of Char), Char, Char)
+  name.vb: LocateSingleGapped(ReadOnlySpan(Of Char), Char, Char)
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateMultiGapped(System.ReadOnlySpan{System.Char},System.Boolean,System.Char,System.Char)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.LocateMultiGapped(System.ReadOnlySpan{System.Char},System.Boolean,System.Char,System.Char)
+  id: LocateMultiGapped(System.ReadOnlySpan{System.Char},System.Boolean,System.Char,System.Char)
+  parent: BelNytheraSeiche.WaveletMatrix.FMIndex
+  langs:
+  - csharp
+  - vb
+  name: LocateMultiGapped(ReadOnlySpan<char>, bool, char, char)
+  nameWithType: FMIndex.LocateMultiGapped(ReadOnlySpan<char>, bool, char, char)
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateMultiGapped(System.ReadOnlySpan<char>, bool, char, char)
+  type: Method
+  source:
+    remote:
+      path: src/FMIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
+    id: LocateMultiGapped
+    path: src/FMIndex.cs
+    startLine: 914
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Finds all occurrences of a pattern containing multiple multi-character wildcards ('*').
+  remarks: >-
+    This method can handle complex patterns like "a*b*c". The parts themselves can also contain single-character wildcards ('?').
+
+    <br /><br />
+
+    <b>Wildcard Normalization:</b> Before searching, the pattern is normalized according to the following rules:
+
+    <ul>
+      <li><b>Trimming:</b> Any leading or trailing wildcards are removed. For example, a pattern like <pre><code class="lang-csharp">"*a*b*"</code></pre> is treated as <pre><code class="lang-csharp">"a*b"</code></pre>.</li>
+      <li><b>Collapsing:</b> Any consecutive wildcards are collapsed into a single one. For example, <pre><code class="lang-csharp">"a**b"</code></pre> is treated as <pre><code class="lang-csharp">"a*b"</code></pre>.</li>
+    </ul>
+
+    <br />
+
+    <b>Performance Note:</b> Setting <code class="paramref">findShortest</code> to <code>false</code> can result in a very large number of matches and significantly impact performance, especially if intermediate parts (like 'b' in "a*b*c") are very common in the text.
+  example: []
+  syntax:
+    content: public IEnumerable<FMIndex.MultiGappedMatch> LocateMultiGapped(ReadOnlySpan<char> pattern, bool findShortest = true, char wildcardA = '*', char wildcardQ = '?')
+    parameters:
+    - id: pattern
+      type: System.ReadOnlySpan{System.Char}
+      description: The pattern containing zero or more '*' wildcards.
+    - id: findShortest
+      type: System.Boolean
+      description: >-
+        When <code>true</code> (default), performs a "shortest" or "non-greedy" match. For each starting part, it finds the first possible chained match and stops. This is the fastest and most common use case.
+
+        When <code>false</code>, finds all possible combinations of matches, which can be computationally expensive if the parts are common.
+    - id: wildcardA
+      type: System.Char
+      description: Specifies the character to be treated as a multi-character wildcard. Defaults to '*'.
+    - id: wildcardQ
+      type: System.Char
+      description: Specifies a character to be treated as a single-character wildcard. Defaults to '?'.
+    return:
+      type: System.Collections.Generic.IEnumerable{BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch}
+      description: An enumerable collection of <xref href="BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch" data-throw-if-not-resolved="false"></xref> objects.
+    content.vb: Public Function LocateMultiGapped(pattern As ReadOnlySpan(Of Char), findShortest As Boolean = True, wildcardA As Char = "*"c, wildcardQ As Char = "?"c) As IEnumerable(Of FMIndex.MultiGappedMatch)
+  overload: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateMultiGapped*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if <code class="paramref">wildcardA</code> equals <code class="paramref">wildcardQ</code>.
+  nameWithType.vb: FMIndex.LocateMultiGapped(ReadOnlySpan(Of Char), Boolean, Char, Char)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateMultiGapped(System.ReadOnlySpan(Of Char), Boolean, Char, Char)
+  name.vb: LocateMultiGapped(ReadOnlySpan(Of Char), Boolean, Char, Char)
 - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.RestoreSourceText
   commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.RestoreSourceText
   id: RestoreSourceText
@@ -684,7 +1065,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: RestoreSourceText
     path: src/FMIndex.cs
-    startLine: 621
+    startLine: 983
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -715,7 +1096,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: GetSnippet
     path: src/FMIndex.cs
-    startLine: 657
+    startLine: 1019
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -1097,6 +1478,112 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.UniqueCharacters*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.UniqueCharacters
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_UniqueCharacters
+  name: UniqueCharacters
+  nameWithType: FMIndex.UniqueCharacters
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.UniqueCharacters
+- uid: System.Collections.Generic.IEnumerable{System.Char}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Char}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<char>
+  nameWithType: IEnumerable<char>
+  fullName: System.Collections.Generic.IEnumerable<char>
+  nameWithType.vb: IEnumerable(Of Char)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of Char)
+  name.vb: IEnumerable(Of Char)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: System.Char
+    name: char
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Char
+    name: Char
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.IsSampled
   commentId: P:BelNytheraSeiche.WaveletMatrix.FMIndex.IsSampled
   href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_IsSampled
@@ -1413,12 +1900,12 @@ references:
   name: InvalidDataException
   nameWithType: InvalidDataException
   fullName: System.IO.InvalidDataException
-- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Count*
-  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.Count
-  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Count_System_ReadOnlySpan_System_Char__
-  name: Count
-  nameWithType: FMIndex.Count
-  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Count
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Contains*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.Contains
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Contains_System_ReadOnlySpan_System_Char__
+  name: Contains
+  nameWithType: FMIndex.Contains
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Contains
 - uid: System.ReadOnlySpan{System.Char}
   commentId: T:System.ReadOnlySpan{System.Char}
   parent: System
@@ -1482,6 +1969,18 @@ references:
   - name: " "
   - name: T
   - name: )
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.FindFirst*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.FindFirst
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_FindFirst_System_ReadOnlySpan_System_Char__
+  name: FindFirst
+  nameWithType: FMIndex.FindFirst
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.FindFirst
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Count*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.Count
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Count_System_ReadOnlySpan_System_Char__
+  name: Count
+  nameWithType: FMIndex.Count
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Count
 - uid: BelNytheraSeiche.WaveletMatrix.SortOrder.Ascending
   commentId: F:BelNytheraSeiche.WaveletMatrix.SortOrder.Ascending
   href: BelNytheraSeiche.WaveletMatrix.SortOrder.html#BelNytheraSeiche_WaveletMatrix_SortOrder_Ascending
@@ -1548,23 +2047,81 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
-- uid: System.Collections.Generic.IEnumerable`1
-  commentId: T:System.Collections.Generic.IEnumerable`1
-  isExternal: true
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch
+  commentId: T:BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
+  name: FMIndex.FuzzyMatch
+  nameWithType: FMIndex.FuzzyMatch
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex
+    name: FMIndex
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch
+    name: FuzzyMatch
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.html
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex
+    name: FMIndex
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch
+    name: FuzzyMatch
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.html
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateFuzzy*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.LocateFuzzy
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_LocateFuzzy_System_ReadOnlySpan_System_Char__System_Int32_System_Boolean_System_Boolean_System_Nullable_System_Char__BelNytheraSeiche_WaveletMatrix_SortOrder_
+  name: LocateFuzzy
+  nameWithType: FMIndex.LocateFuzzy
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateFuzzy
+- uid: System.Nullable{System.Char}
+  commentId: T:System.Nullable{System.Char}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.char
+  name: char?
+  nameWithType: char?
+  fullName: char?
+  nameWithType.vb: Char?
+  fullName.vb: Char?
+  name.vb: Char?
+  spec.csharp:
+  - uid: System.Char
+    name: char
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: '?'
+  spec.vb:
+  - uid: System.Char
+    name: Char
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: '?'
+- uid: System.Collections.Generic.IEnumerable{BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch}
+  commentId: T:System.Collections.Generic.IEnumerable{BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: IEnumerable<T>
-  nameWithType: IEnumerable<T>
-  fullName: System.Collections.Generic.IEnumerable<T>
-  nameWithType.vb: IEnumerable(Of T)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
-  name.vb: IEnumerable(Of T)
+  name: IEnumerable<FMIndex.FuzzyMatch>
+  nameWithType: IEnumerable<FMIndex.FuzzyMatch>
+  fullName: System.Collections.Generic.IEnumerable<BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch>
+  nameWithType.vb: IEnumerable(Of FMIndex.FuzzyMatch)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch)
+  name.vb: IEnumerable(Of FMIndex.FuzzyMatch)
   spec.csharp:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
-  - name: T
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex
+    name: FMIndex
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch
+    name: FuzzyMatch
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.html
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.IEnumerable`1
@@ -1574,45 +2131,308 @@ references:
   - name: (
   - name: Of
   - name: " "
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex
+    name: FMIndex
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch
+    name: FuzzyMatch
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.html
+  - name: )
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
   - name: T
   - name: )
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateFuzzy(System.ReadOnlySpan{System.Char},System.Int32,System.Boolean,System.Boolean,System.Nullable{System.Char},BelNytheraSeiche.WaveletMatrix.SortOrder)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.LocateFuzzy(System.ReadOnlySpan{System.Char},System.Int32,System.Boolean,System.Boolean,System.Nullable{System.Char},BelNytheraSeiche.WaveletMatrix.SortOrder)
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_LocateFuzzy_System_ReadOnlySpan_System_Char__System_Int32_System_Boolean_System_Boolean_System_Nullable_System_Char__BelNytheraSeiche_WaveletMatrix_SortOrder_
+  name: LocateFuzzy(ReadOnlySpan<char>, int, bool, bool, char?, SortOrder)
+  nameWithType: FMIndex.LocateFuzzy(ReadOnlySpan<char>, int, bool, bool, char?, SortOrder)
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateFuzzy(System.ReadOnlySpan<char>, int, bool, bool, char?, BelNytheraSeiche.WaveletMatrix.SortOrder)
+  nameWithType.vb: FMIndex.LocateFuzzy(ReadOnlySpan(Of Char), Integer, Boolean, Boolean, Char?, SortOrder)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateFuzzy(System.ReadOnlySpan(Of Char), Integer, Boolean, Boolean, Char?, BelNytheraSeiche.WaveletMatrix.SortOrder)
+  name.vb: LocateFuzzy(ReadOnlySpan(Of Char), Integer, Boolean, Boolean, Char?, SortOrder)
   spec.csharp:
-  - uid: System
-    name: System
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateFuzzy(System.ReadOnlySpan{System.Char},System.Int32,System.Boolean,System.Boolean,System.Nullable{System.Char},BelNytheraSeiche.WaveletMatrix.SortOrder)
+    name: LocateFuzzy
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_LocateFuzzy_System_ReadOnlySpan_System_Char__System_Int32_System_Boolean_System_Boolean_System_Nullable_System_Char__BelNytheraSeiche_WaveletMatrix_SortOrder_
+  - name: (
+  - uid: System.ReadOnlySpan`1
+    name: ReadOnlySpan
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
+    href: https://learn.microsoft.com/dotnet/api/system.readonlyspan-1
+  - name: <
+  - uid: System.Char
+    name: char
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.Char
+    name: char
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: BelNytheraSeiche.WaveletMatrix.SortOrder
+    name: SortOrder
+    href: BelNytheraSeiche.WaveletMatrix.SortOrder.html
+  - name: )
   spec.vb:
-  - uid: System
-    name: System
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateFuzzy(System.ReadOnlySpan{System.Char},System.Int32,System.Boolean,System.Boolean,System.Nullable{System.Char},BelNytheraSeiche.WaveletMatrix.SortOrder)
+    name: LocateFuzzy
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_LocateFuzzy_System_ReadOnlySpan_System_Char__System_Int32_System_Boolean_System_Boolean_System_Nullable_System_Char__BelNytheraSeiche_WaveletMatrix_SortOrder_
+  - name: (
+  - uid: System.ReadOnlySpan`1
+    name: ReadOnlySpan
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
+    href: https://learn.microsoft.com/dotnet/api/system.readonlyspan-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Char
+    name: Char
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.Char
+    name: Char
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: BelNytheraSeiche.WaveletMatrix.SortOrder
+    name: SortOrder
+    href: BelNytheraSeiche.WaveletMatrix.SortOrder.html
+  - name: )
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateWildcard*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.LocateWildcard
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_LocateWildcard_System_ReadOnlySpan_System_Char__System_Char_BelNytheraSeiche_WaveletMatrix_SortOrder_
+  name: LocateWildcard
+  nameWithType: FMIndex.LocateWildcard
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateWildcard
+- uid: System.Char
+  commentId: T:System.Char
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.char
+  name: char
+  nameWithType: char
+  fullName: char
+  nameWithType.vb: Char
+  fullName.vb: Char
+  name.vb: Char
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch
+  commentId: T:BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
+  name: FMIndex.SingleGappedMatch
+  nameWithType: FMIndex.SingleGappedMatch
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex
+    name: FMIndex
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
   - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch
+    name: SingleGappedMatch
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.html
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex
+    name: FMIndex
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
   - name: .
-  - uid: System.Collections.Generic
-    name: Generic
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch
+    name: SingleGappedMatch
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.html
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentexception
+  name: ArgumentException
+  nameWithType: ArgumentException
+  fullName: System.ArgumentException
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateSingleGapped*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.LocateSingleGapped
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_LocateSingleGapped_System_ReadOnlySpan_System_Char__System_Char_System_Char_
+  name: LocateSingleGapped
+  nameWithType: FMIndex.LocateSingleGapped
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateSingleGapped
+- uid: System.Collections.Generic.IEnumerable{BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch}
+  commentId: T:System.Collections.Generic.IEnumerable{BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<FMIndex.SingleGappedMatch>
+  nameWithType: IEnumerable<FMIndex.SingleGappedMatch>
+  fullName: System.Collections.Generic.IEnumerable<BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch>
+  nameWithType.vb: IEnumerable(Of FMIndex.SingleGappedMatch)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch)
+  name.vb: IEnumerable(Of FMIndex.SingleGappedMatch)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex
+    name: FMIndex
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch
+    name: SingleGappedMatch
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex
+    name: FMIndex
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch
+    name: SingleGappedMatch
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.html
+  - name: )
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch
+  commentId: T:BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
+  name: FMIndex.MultiGappedMatch
+  nameWithType: FMIndex.MultiGappedMatch
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex
+    name: FMIndex
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch
+    name: MultiGappedMatch
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.html
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex
+    name: FMIndex
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch
+    name: MultiGappedMatch
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.html
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateMultiGapped*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.LocateMultiGapped
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_LocateMultiGapped_System_ReadOnlySpan_System_Char__System_Boolean_System_Char_System_Char_
+  name: LocateMultiGapped
+  nameWithType: FMIndex.LocateMultiGapped
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateMultiGapped
+- uid: System.Collections.Generic.IEnumerable{BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch}
+  commentId: T:System.Collections.Generic.IEnumerable{BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<FMIndex.MultiGappedMatch>
+  nameWithType: IEnumerable<FMIndex.MultiGappedMatch>
+  fullName: System.Collections.Generic.IEnumerable<BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch>
+  nameWithType.vb: IEnumerable(Of FMIndex.MultiGappedMatch)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch)
+  name.vb: IEnumerable(Of FMIndex.MultiGappedMatch)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex
+    name: FMIndex
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch
+    name: MultiGappedMatch
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex
+    name: FMIndex
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch
+    name: MultiGappedMatch
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.html
+  - name: )
 - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.RestoreSourceText*
   commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.RestoreSourceText
   href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_RestoreSourceText
@@ -1666,13 +2486,6 @@ references:
   name: KeyPosition
   nameWithType: FMIndex.Snippet.KeyPosition
   fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet.KeyPosition
-- uid: System.ArgumentException
-  commentId: T:System.ArgumentException
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.argumentexception
-  name: ArgumentException
-  nameWithType: ArgumentException
-  fullName: System.ArgumentException
 - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.GetSnippet*
   commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.GetSnippet
   href: BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_GetSnippet_System_Int32_System_Int32_System_Int32_System_Double_

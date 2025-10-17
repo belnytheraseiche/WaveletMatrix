@@ -48,6 +48,58 @@ public class FMIndexTests
     }
 
     [TestMethod]
+    public void LocateFuzzy()
+    {
+        var result1 = fm1_.LocateFuzzy("lazy fax", 2).Select(n => (n.Position, n.Length, n.EditDistance)).ToArray();
+        CollectionAssert.AreEqual(((int, int, int)[])[(80, 8, 1), (81, 7, 2)], result1);
+
+        var result2 = fm2_.LocateFuzzy("lazy fax", 2).Select(n => (n.Position, n.Length, n.EditDistance)).ToArray();
+        CollectionAssert.AreEqual(((int, int, int)[])[(80, 8, 1), (81, 7, 2)], result2);
+
+        var result3 = fm1_.LocateFuzzy("?he", 0, true, true, '?').Select(n => (n.Position, n.Length, n.EditDistance)).ToArray();
+        CollectionAssert.AreEqual(((int, int, int)[])[(0, 3, 0), (31, 3, 0), (45, 3, 0), (76, 3, 0)], result3);
+
+        var result4 = fm2_.LocateFuzzy("?he", 0, true, true, '?').Select(n => (n.Position, n.Length, n.EditDistance)).ToArray();
+        CollectionAssert.AreEqual(((int, int, int)[])[(0, 3, 0), (31, 3, 0), (45, 3, 0), (76, 3, 0)], result4);
+    }
+
+    [TestMethod]
+    public void LocateWildcard()
+    {
+        var result1 = fm1_.LocateWildcard("f_x", '_').ToArray();
+        CollectionAssert.AreEqual((int[])[16, 85], result1);
+
+        var result2 = fm2_.LocateWildcard("f_x", '_').ToArray();
+        CollectionAssert.AreEqual((int[])[16, 85], result2);
+    }
+
+    [TestMethod]
+    public void LocateSingleGapped()
+    {
+        var result1 = fm1_.LocateSingleGapped("T*q").Select(n => (n.Position, n.Length)).ToArray();
+        CollectionAssert.AreEqual(((int, int)[])[(0, 5), (45, 5)], result1);
+
+        var result2 = fm2_.LocateSingleGapped("T*q").Select(n => (n.Position, n.Length)).ToArray();
+        CollectionAssert.AreEqual(((int, int)[])[(0, 5), (45, 5)], result2);
+    }
+
+    [TestMethod]
+    public void LocateMultiGapped()
+    {
+        var result1 = fm1_.LocateMultiGapped("T*q*b*n").Select(n => (n.Position, n.Length)).ToArray();
+        CollectionAssert.AreEqual(((int, int)[])[(0, 15), (45, 15)], result1);
+
+        var result2 = fm2_.LocateMultiGapped("T*q*b*n").Select(n => (n.Position, n.Length)).ToArray();
+        CollectionAssert.AreEqual(((int, int)[])[(0, 15), (45, 15)], result2);
+
+        var result3 = fm1_.LocateMultiGapped("T*q*b*n", false).Select(n => (n.Position, n.Length)).ToArray();
+        CollectionAssert.AreEqual(((int, int)[])[(0, 15), (0, 60), (0, 60), (0, 60), (45, 15)], result3);
+
+        var result4 = fm2_.LocateMultiGapped("T*q*b*n", false).Select(n => (n.Position, n.Length)).ToArray();
+        CollectionAssert.AreEqual(((int, int)[])[(0, 15), (0, 60), (0, 60), (0, 60), (45, 15)], result4);
+    }
+
+    [TestMethod]
     public void RestoreSourceText()
     {
         Assert.AreEqual(text_, fm1_.RestoreSourceText(), "Reconstructed text should match the original.");

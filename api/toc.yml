@@ -19,6 +19,15 @@ items:
   - uid: BelNytheraSeiche.WaveletMatrix.FMIndex
     name: FMIndex
     type: Class
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch
+    name: FMIndex.FuzzyMatch
+    type: Class
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch
+    name: FMIndex.MultiGappedMatch
+    type: Class
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch
+    name: FMIndex.SingleGappedMatch
+    type: Class
   - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet
     name: FMIndex.Snippet
     type: Class

@@ -9,6 +9,9 @@ items:
   - BelNytheraSeiche.WaveletMatrix.BurrowsWheelerTransform
   - BelNytheraSeiche.WaveletMatrix.BurrowsWheelerTransform.BwtResult
   - BelNytheraSeiche.WaveletMatrix.FMIndex
+  - BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch
+  - BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch
+  - BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch
   - BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet
   - BelNytheraSeiche.WaveletMatrix.FischerHeunSparseTable`1
   - BelNytheraSeiche.WaveletMatrix.ImmutableBitSet
@@ -105,6 +108,72 @@ references:
   name: FMIndex
   nameWithType: FMIndex
   fullName: BelNytheraSeiche.WaveletMatrix.FMIndex
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch
+  commentId: T:BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
+  name: FMIndex.FuzzyMatch
+  nameWithType: FMIndex.FuzzyMatch
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex
+    name: FMIndex
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch
+    name: FuzzyMatch
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.html
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex
+    name: FMIndex
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch
+    name: FuzzyMatch
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.html
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch
+  commentId: T:BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
+  name: FMIndex.SingleGappedMatch
+  nameWithType: FMIndex.SingleGappedMatch
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex
+    name: FMIndex
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch
+    name: SingleGappedMatch
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.html
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex
+    name: FMIndex
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch
+    name: SingleGappedMatch
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.html
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch
+  commentId: T:BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
+  name: FMIndex.MultiGappedMatch
+  nameWithType: FMIndex.MultiGappedMatch
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex
+    name: FMIndex
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch
+    name: MultiGappedMatch
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.html
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex
+    name: FMIndex
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch
+    name: MultiGappedMatch
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.html
 - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet
   commentId: T:BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet
   parent: BelNytheraSeiche.WaveletMatrix

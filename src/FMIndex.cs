@@ -48,6 +48,15 @@ public sealed class FMIndex
     int TextLength => length_ - 1;
 
     /// <summary>
+    /// Gets an enumerable collection of the unique characters present in the indexed text.
+    /// </summary>
+    /// <remarks>
+    /// The order of the characters in the returned collection is not guaranteed.
+    /// This property provides a simple way to inspect the alphabet of the indexed text.
+    /// </remarks>
+    public IEnumerable<char> UniqueCharacters => ctable_.Keys;
+
+    /// <summary>
     /// Gets the original source text used to build the index, excluding the internal terminator character.
     /// This property is only available when the index is built in full Suffix Array mode (i.e., when <see cref="IsSampled"/> is <c>false</c>).
     /// </summary>
@@ -511,6 +520,28 @@ public sealed class FMIndex
     }
 
     /// <summary>
+    /// Determines whether the specified pattern exists within the text.
+    /// </summary>
+    /// <param name="pattern">The pattern to check for.</param>
+    /// <returns><c>true</c> if the pattern is found; otherwise, <c>false</c>.</returns>
+    public bool Contains(ReadOnlySpan<char> pattern)
+    => Count(pattern) != 0;
+
+    /// <summary>
+    /// Finds the first occurrence of a pattern within the text.
+    /// </summary>
+    /// <param name="pattern">The pattern to search for.</param>
+    /// <returns>The zero-based starting position of the first occurrence, or -1 if the pattern is not found.</returns>
+    public int FindFirst(ReadOnlySpan<char> pattern)
+    {
+        var (start, end) = FindRange(pattern);
+        if (start >= end)
+            return -1;
+
+        return sa_?.SA.Span[start] ?? CalculateOriginalPosition(start);
+    }
+
+    /// <summary>
     /// Counts the number of occurrences of a pattern within the text.
     /// This operation is extremely fast, with performance proportional to the pattern length, not the text length.
     /// </summary>
@@ -529,6 +560,11 @@ public sealed class FMIndex
     /// <param name="sortOrder">Specifies the order of the returned positions. Defaults to <see cref="SortOrder.Ascending"/>.</param>
     /// <returns>An enumerable collection of the zero-based starting positions of all occurrences.</returns>
     /// <remarks>
+    /// <b>Prefix Search (Forward Match):</b> Due to the nature of the FM-Index's backward search algorithm, this method inherently functions as a prefix search. It efficiently finds all positions in the text that *start with* the specified <paramref name="pattern"/>.
+    /// <br/><br/>
+    /// <b>Regarding Suffix Search (Backward Match):</b> This method does *not* perform a general suffix search (e.g., finding all words that *end with* "ing"). For that functionality, an index of the reversed text would be required.
+    /// However, to find the end position of an *exact match* of the <paramref name="pattern"/>, you can simply add the pattern's length to the starting position returned by this method.
+    /// <br/><br/>
     /// In full Suffix Array mode, this operation is very fast. In sampling mode, locating each position requires additional
     /// computation (LF-mapping steps), making it slower but significantly more memory-efficient.
     /// Specifying <see cref="SortOrder.Ascending"/> or <see cref="SortOrder.Descending"/> may require collecting all results
@@ -578,7 +614,7 @@ public sealed class FMIndex
                 case SortOrder.Unordered:
                     {
                         for (var i = start; i < end; i++)
-                            yield return __CalculateOriginalPosition(i);
+                            yield return CalculateOriginalPosition(i);
                     }
                     break;
                 case SortOrder.Ascending:
@@ -586,7 +622,7 @@ public sealed class FMIndex
                     {
                         var result = new List<int>(end - start);
                         for (var i = start; i < end; i++)
-                            result.Add(__CalculateOriginalPosition(i));
+                            result.Add(CalculateOriginalPosition(i));
                         result.Sort();
                         if (sortOrder == SortOrder.Descending)
                             result.Reverse();
@@ -597,20 +633,346 @@ public sealed class FMIndex
                 default:
                     throw new ArgumentException($"Invalid sort order.", nameof(sortOrder));
             }
+        }
+        #endregion
+    }
+
+    /// <summary>
+    /// Finds all occurrences of a pattern within the text, allowing for a specified number of errors (edit distance).
+    /// This implementation considers substitutions, deletions, and insertions as errors. It can also handle a wildcard character.
+    /// </summary>
+    /// <param name="pattern">The pattern to search for.</param>
+    /// <param name="maxDistance">The maximum allowed edit distance (number of errors). Defaults to 1.</param>
+    /// <param name="disableDeletion">
+    /// When set to <c>true</c>, the search will not allow errors where a character from the pattern is skipped.
+    /// This effectively prevents matching substrings that are shorter than the pattern.
+    /// </param>
+    /// <param name="disableInsertion">
+    /// When set to <c>true</c>, the search will not allow errors where an extra character from the text is included.
+    /// This effectively prevents matching substrings that are longer than the pattern.
+    /// </param>
+    /// <param name="wildcardQ">
+    /// Specifies a character to be treated as a single-character wildcard. A wildcard match has an edit distance of 0.
+    /// Defaults to <c>null</c> (no wildcard).
+    /// </param>
+    /// <param name="sortOrder">Specifies the order of the returned matches based on their position. Defaults to <see cref="SortOrder.Ascending"/>.</param>
+    /// <returns>An enumerable collection of <see cref="FuzzyMatch"/> objects, each containing the position and length of an approximate match.</returns>
+    /// <remarks>
+    /// Fuzzy search is significantly more computationally expensive than an exact search.
+    /// The complexity increases with the pattern length, the alphabet size, and especially the <paramref name="maxDistance"/>.
+    /// <br/><br/>
+    /// <b>Performance Warning:</b> Using a very short pattern (e.g., 1-2 characters) with a <paramref name="maxDistance"/> of 1 or more can result in a very large number of matches, potentially leading to poor performance and high memory usage.
+    /// <br/><br/>
+    /// For the highest performance where order is not important, use <see cref="SortOrder.Unordered"/>.
+    /// </remarks>
+    /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="maxDistance"/> is negative.</exception>
+    public IEnumerable<FuzzyMatch> LocateFuzzy(ReadOnlySpan<char> pattern, int maxDistance = 1, bool disableDeletion = false, bool disableInsertion = false, char? wildcardQ = null, SortOrder sortOrder = SortOrder.Ascending)
+    {
+#if NET8_0_OR_GREATER
+        ArgumentOutOfRangeException.ThrowIfNegative(maxDistance);
+#else
+        if (maxDistance < 0)
+            throw new ArgumentOutOfRangeException(nameof(maxDistance), $"{nameof(maxDistance)} must be greater than or equal 0.");
+#endif
+
+        if (pattern.IsEmpty)
+            return [];
+
+        // key: position, value: (length, distance)
+        var results = new Dictionary<int, (int, int)>();
+
+        __FindRecursive(pattern, pattern.Length - 1, 0, 0, 0, length_);
+
+        return sortOrder switch
+        {
+            SortOrder.Unordered => results.Select(n => new FuzzyMatch(n.Key, n.Value.Item1, n.Value.Item2)),
+            SortOrder.Ascending => results.Select(n => new FuzzyMatch(n.Key, n.Value.Item1, n.Value.Item2)).OrderBy(n => n.Position),
+            SortOrder.Descending => results.Select(n => new FuzzyMatch(n.Key, n.Value.Item1, n.Value.Item2)).OrderByDescending(n => n.Position),
+            _ => throw new ArgumentException($"Invalid sort order.", nameof(sortOrder)),
+        };
+
+        #region @@
+        void __FindRecursive(ReadOnlySpan<char> pattern, int patternPosition, int matchLength, int currentDistance, int rangeStart, int rangeEnd)
+        {
+            if (currentDistance > maxDistance)
+                return;
+
+            if (patternPosition < 0)
+            {
+                for (var i = rangeStart; i < rangeEnd; i++)
+                {
+                    var matchPosition = __GetPosition(i);
+                    if (matchPosition + matchLength > this.TextLength)
+                        continue;
+
+                    if (!results.TryAdd(matchPosition, (matchLength, currentDistance)))
+                    {
+                        var (existingLength, existingDistance) = results[matchPosition];
+                        if (currentDistance < existingDistance || (currentDistance == existingDistance && Math.Abs(pattern.Length - matchLength) < Math.Abs(pattern.Length - existingLength)))
+                            results[matchPosition] = (matchLength, currentDistance);
+                    }
+                }
+
+                return;
+            }
+
+            // deletion
+            if (!disableDeletion)
+                __FindRecursive(pattern, patternPosition - 1, matchLength, currentDistance + 1, rangeStart, rangeEnd);
+
+            foreach (var c in ctable_.Keys)
+            {
+                var nextStart = ctable_[c] + wm_.Rank(rangeStart, c);
+                var nextEnd = ctable_[c] + wm_.Rank(rangeEnd, c);
+                if (nextStart < nextEnd)
+                {
+                    // match or substitution
+                    var patternChar = pattern[patternPosition];
+                    var cost = (wildcardQ.HasValue && wildcardQ.Value == patternChar) ? 0 : (c == patternChar ? 0 : 1);
+                    __FindRecursive(pattern, patternPosition - 1, matchLength + 1, currentDistance + cost, nextStart, nextEnd);
+                    // insertion
+                    if (!disableInsertion)
+                        __FindRecursive(pattern, patternPosition, matchLength + 1, currentDistance + 1, nextStart, nextEnd);
+                }
+            }
 
             #region @@
-            int __CalculateOriginalPosition(int index)
-            {
-                var (steps, current) = (0, index);
-                while (current % sampleRate_ != 0)
-                {
-                    var c = wm_.Access(current);
-                    current = ctable_[c] + wm_.Rank(current, c);
-                    steps++;
-                }
-                return (sampleSa_![current / sampleRate_] + steps) % length_;
-            }
+            int __GetPosition(int index)
+            => sa_?.SA.Span[index] ?? CalculateOriginalPosition(index);
             #endregion
+        }
+        #endregion
+    }
+
+    /// <summary>
+    /// Finds all occurrences of a pattern containing single-character wildcards ('?').
+    /// </summary>
+    /// <param name="pattern">The pattern to search for, which can include <paramref name="wildcardQ"/> as a wildcard.</param>
+    /// <param name="wildcardQ">Specifies a character to be treated as a single-character wildcard. A wildcard match matches any. Defaults to <c>'?'</c>.</param>
+    /// <param name="sortOrder">Specifies the order of the returned positions.</param>
+    /// <returns>An enumerable collection of the zero-based starting positions of all matches.</returns>
+    /// <remarks>
+    /// The <paramref name="wildcardQ"/> character matches any single character. This search is an exact match for all non-wildcard characters.
+    /// This method is optimized for strict wildcard searches and is generally faster than using wildcards with <see cref="LocateFuzzy"/>.
+    /// </remarks>
+    public IEnumerable<int> LocateWildcard(ReadOnlySpan<char> pattern, char wildcardQ = '?', SortOrder sortOrder = SortOrder.Ascending)
+    {
+        if (pattern.IsEmpty)
+            return [];
+
+        var results = new List<int>();
+        __FindRecursive(pattern, pattern.Length - 1, 0, length_);
+
+        return sortOrder switch
+        {
+            SortOrder.Unordered => results,
+            SortOrder.Ascending => results.Order(),
+            SortOrder.Descending => results.OrderDescending(),
+            _ => throw new ArgumentException("Invalid sort order.", nameof(sortOrder)),
+        };
+
+        #region @@
+        void __FindRecursive(ReadOnlySpan<char> pattern, int patternPosition, int rangeStart, int rangeEnd)
+        {
+            if (patternPosition < 0)
+            {
+                for (var i = rangeStart; i < rangeEnd; i++)
+                {
+                    var matchPosition = __GetPosition(i);
+                    if (matchPosition + pattern.Length <= this.TextLength)
+                        results.Add(matchPosition);
+                }
+                return;
+            }
+
+            var patternChar = pattern[patternPosition];
+            if (patternChar == wildcardQ)
+            {
+                foreach (var c in ctable_.Keys)
+                {
+                    var nextStart = ctable_[c] + wm_.Rank(rangeStart, c);
+                    var nextEnd = ctable_[c] + wm_.Rank(rangeEnd, c);
+                    if (nextStart < nextEnd)
+                        __FindRecursive(pattern, patternPosition - 1, nextStart, nextEnd);
+                }
+            }
+            else
+            {
+                if (ctable_.TryGetValue(patternChar, out var cValue))
+                {
+                    var nextStart = cValue + wm_.Rank(rangeStart, patternChar);
+                    var nextEnd = cValue + wm_.Rank(rangeEnd, patternChar);
+                    if (nextStart < nextEnd)
+                        __FindRecursive(pattern, patternPosition - 1, nextStart, nextEnd);
+                }
+            }
+
+            #region @@
+            int __GetPosition(int index)
+            => sa_?.SA.Span[index] ?? CalculateOriginalPosition(index);
+            #endregion
+        }
+        #endregion
+    }
+
+    /// <summary>
+    /// Finds all occurrences of a pattern containing a single multi-character wildcard ('*').
+    /// This method splits the pattern by the wildcard, finds all occurrences of the leading and trailing parts, and then combines the results.
+    /// </summary>
+    /// <param name="pattern">The pattern containing a single <paramref name="wildcardA"/> wildcard.</param>
+    /// <param name="wildcardA">Specifies a character to be treated as a multi-character wildcard. Defaults to <c>'*'</c>.</param>
+    /// <param name="wildcardQ">Specifies a character to be treated as a single-character wildcard. A wildcard match matches any. Defaults to <c>'?'</c>.</param>
+    /// <returns>An enumerable collection of <see cref="SingleGappedMatch"/> objects, each indicating the details of a matched substring.</returns>
+    /// <exception cref="ArgumentException">Thrown if the pattern contains multiple wildcard characters, or <paramref name="wildcardA"/> equal <paramref name="wildcardQ"/>.</exception>
+    /// <remarks>
+    /// This method also supports single-character wildcards ('?') within the parts of the pattern before and after the '*'.
+    /// For example, a pattern like "pr?gram*engine" can be used.
+    /// </remarks>
+    public IEnumerable<SingleGappedMatch> LocateSingleGapped(ReadOnlySpan<char> pattern, char wildcardA = '*', char wildcardQ = '?')
+    => InternalLocateSingleGapped(pattern.ToString(), wildcardA, wildcardQ);
+
+    IEnumerable<SingleGappedMatch> InternalLocateSingleGapped(string pattern, char wildcardA, char wildcardQ)
+    {
+        if (wildcardA == wildcardQ)
+            throw new ArgumentException($"A multi-character wildcard must be different a single-character wildcard.", nameof(wildcardA));
+
+        var wildcardPosition = pattern.IndexOf(wildcardA);
+        if (wildcardPosition != -1 && wildcardPosition != pattern.LastIndexOf(wildcardA))
+            throw new ArgumentException($"Pattern must contain exactly one wildcard character ({wildcardA}).", nameof(pattern));
+
+        if (wildcardPosition == -1)
+        {
+            foreach (var foundPosition in LocateWildcard(pattern, wildcardQ))
+                yield return new(foundPosition, pattern.Length, 0, 0);
+            yield break;
+        }
+
+        if (pattern.Length == 1 && pattern[0] == wildcardA)
+        {
+            yield return new(0, this.TextLength, 0, this.TextLength);
+            yield break;
+        }
+
+        var leadingPart = pattern[..wildcardPosition];
+        var trailingPart = pattern[(wildcardPosition + 1)..];
+        if (trailingPart.Length == 0)
+        {
+            foreach (var foundPosition in LocateWildcard(leadingPart, wildcardQ))
+                yield return new(foundPosition, this.TextLength, wildcardPosition, this.TextLength - foundPosition - wildcardPosition);
+            yield break;
+        }
+        if (leadingPart.Length == 0)
+        {
+            foreach (var foundPosition in LocateWildcard(trailingPart, wildcardQ))
+                yield return new(0, foundPosition + pattern.Length, 0, foundPosition);
+            yield break;
+        }
+
+        var leadingPositions = LocateWildcard(leadingPart, wildcardQ).ToArray();
+        var trailingPositions = LocateWildcard(trailingPart, wildcardQ).ToArray();
+        if (leadingPositions.Length == 0 || trailingPositions.Length == 0)
+            yield break;
+
+        using var enumerator = ((IEnumerable<int>)trailingPositions).GetEnumerator();
+        foreach (var leadingPosition in leadingPositions)
+        {
+            var findPosition = leadingPosition + leadingPart.Length;
+            while (enumerator.MoveNext())
+            {
+                var trailingPosition = enumerator.Current;
+                if (findPosition < trailingPosition)
+                {
+                    yield return new(leadingPosition, trailingPosition + trailingPart.Length - leadingPosition, leadingPart.Length, trailingPosition - findPosition);
+                    break;
+                }
+            }
+        }
+    }
+
+    /// <summary>
+    /// Finds all occurrences of a pattern containing multiple multi-character wildcards ('*').
+    /// </summary>
+    /// <param name="pattern">The pattern containing zero or more '*' wildcards.</param>
+    /// <param name="findShortest">
+    /// When <c>true</c> (default), performs a "shortest" or "non-greedy" match. For each starting part, it finds the first possible chained match and stops. This is the fastest and most common use case.
+    /// When <c>false</c>, finds all possible combinations of matches, which can be computationally expensive if the parts are common.
+    /// </param>
+    /// <param name="wildcardA">Specifies the character to be treated as a multi-character wildcard. Defaults to '*'.</param>
+    /// <param name="wildcardQ">Specifies a character to be treated as a single-character wildcard. Defaults to '?'.</param>
+    /// <returns>An enumerable collection of <see cref="MultiGappedMatch"/> objects.</returns>
+    /// <exception cref="ArgumentException">Thrown if <paramref name="wildcardA"/> equals <paramref name="wildcardQ"/>.</exception>
+    /// <remarks>
+    /// This method can handle complex patterns like "a*b*c". The parts themselves can also contain single-character wildcards ('?').
+    /// <br/><br/>
+    /// <b>Wildcard Normalization:</b> Before searching, the pattern is normalized according to the following rules:
+    /// <ul>
+    ///   <li><b>Trimming:</b> Any leading or trailing wildcards are removed. For example, a pattern like <code>"*a*b*"</code> is treated as <code>"a*b"</code>.</li>
+    ///   <li><b>Collapsing:</b> Any consecutive wildcards are collapsed into a single one. For example, <code>"a**b"</code> is treated as <code>"a*b"</code>.</li>
+    /// </ul>
+    /// <br/>
+    /// <b>Performance Note:</b> Setting <paramref name="findShortest"/> to <c>false</c> can result in a very large number of matches and significantly impact performance, especially if intermediate parts (like 'b' in "a*b*c") are very common in the text.
+    /// </remarks>
+    public IEnumerable<MultiGappedMatch> LocateMultiGapped(ReadOnlySpan<char> pattern, bool findShortest = true, char wildcardA = '*', char wildcardQ = '?')
+    => InternalLocateMultiGapped(pattern.ToString(), findShortest, wildcardA, wildcardQ);
+
+    IEnumerable<MultiGappedMatch> InternalLocateMultiGapped(string pattern, bool findShortest, char wildcardA, char wildcardQ)
+    {
+        var patternParts = pattern.Trim(wildcardA).Split(wildcardA).Where(n => n.Length != 0).ToArray();
+        if (patternParts.Length == 0)
+            yield break;
+
+        if (patternParts.Length == 1)
+        {
+            foreach (var foundPosition in LocateWildcard(patternParts[0], wildcardQ))
+                yield return new(foundPosition, patternParts[0].Length, []);
+            yield break;
+        }
+
+        var results = new List<MultiGappedMatch>();
+        var patternResults = patternParts.Select(n => LocateWildcard(n, wildcardQ)).ToArray();
+        using var enumerator = patternResults[0].GetEnumerator();
+        while (enumerator.MoveNext())
+        {
+            var foundPositions = new Stack<int>();
+            foundPositions.Push(enumerator.Current);
+            __FindRecursive(patternParts, patternResults, 1, findShortest, foundPositions, results);
+        }
+        foreach (var result in results)
+            yield return result;
+
+        #region @@
+        static bool __FindRecursive(string[] patternParts, IEnumerable<int>[] patternResults, int index, bool findShortest, Stack<int> foundPositions, List<MultiGappedMatch> results)
+        {
+            if (index == patternParts.Length)
+            {
+                var gaps = new SingleGappedMatch[patternParts.Length - 1];
+                var array = foundPositions.Reverse().ToArray();
+                for (var i = 0; i < patternParts.Length - 1; i++)
+                {
+                    var gapStart = array[i] + patternParts[i].Length;
+                    var gapCount = array[i + 1] - gapStart;
+                    gaps[i] = new(array[i], array[i + 1] + patternParts[i + 1].Length - array[i], gapStart, gapCount);
+                }
+
+                results.Add(new(array[0], array[^1] + patternParts[^1].Length - array[0], gaps));
+                return true;
+            }
+
+            var findPosition = foundPositions.Peek() + patternParts[index - 1].Length;
+            var enumerator = patternResults[index].GetEnumerator();
+            while (enumerator.MoveNext())
+            {
+                if (findPosition <= enumerator.Current)
+                {
+                    foundPositions.Push(enumerator.Current);
+                    var isMatched = __FindRecursive(patternParts, patternResults, index + 1, findShortest, foundPositions, results);
+                    foundPositions.Pop();
+                    if (isMatched && findShortest)
+                        return true;
+                }
+            }
+
+            return false;
         }
         #endregion
     }
@@ -697,7 +1059,7 @@ public sealed class FMIndex
             end = this.TextLength;
         }
 
-        return new(__GetText(start, end - start), start, end - start, position - start);;
+        return new(__GetText(start, end - start), start, end - start, position - start); ;
 
         #region @@
         string? __GetText(int index, int length)
@@ -707,7 +1069,7 @@ public sealed class FMIndex
 
     (int, int) FindRange(ReadOnlySpan<char> pattern)
     {
-        if (pattern.Length == 0)
+        if (pattern.IsEmpty)
             return (0, 0);
 
         var lastChar = pattern[^1];
@@ -729,8 +1091,48 @@ public sealed class FMIndex
         return (start, end);
     }
 
+    int CalculateOriginalPosition(int index)
+    {
+        var (steps, current) = (0, index);
+        while (current % sampleRate_ != 0)
+        {
+            var c = wm_.Access(current);
+            current = ctable_[c] + wm_.Rank(current, c);
+            steps++;
+        }
+        return (sampleSa_![current / sampleRate_] + steps) % length_;
+    }
+
     // 
     // 
+
+    /// <summary>
+    /// Represents an approximate match found by a fuzzy search.
+    /// </summary>
+    /// <param name="Position">The zero-based starting position of the match in the original text.</param>
+    /// <param name="Length">The length of the matched substring in the original text.</param>
+    /// <param name="EditDistance">The number of errors (substitutions, deletions, insertions) from the pattern.</param>
+    public record FuzzyMatch(int Position, int Length, int EditDistance);
+
+    /// <summary>
+    /// Represents a match for a gapped pattern (e.g., "begin*end").
+    /// </summary>
+    /// <param name="Position">The start position of the entire match (i.e., the beginning of the leading part).</param>
+    /// <param name="Length">The total length of the entire match, from the start of the leading part to the end of the trailing part.</param>
+    /// <param name="GapStart">The starting position of the gap (the part matched by '*') within the matched text, relative to <paramref name="Position"/>.</param>
+    /// <param name="GapCount">The length of the gap (the number of characters matched by '*').</param>
+    public record SingleGappedMatch(int Position, int Length, int GapStart, int GapCount);
+
+    /// <summary>
+    /// Represents a complete match for a pattern containing multiple multi-character wildcards (e.g., "part1*part2*part3").
+    /// </summary>
+    /// <param name="Position">The zero-based starting position of the entire match in the original text (i.e., the start of the first part).</param>
+    /// <param name="Length">The total length of the entire match, from the start of the first part to the end of the last part.</param>
+    /// <param name="Gaps">
+    /// An array of <see cref="SingleGappedMatch"/> records, where each element represents one of the gapped segments.
+    /// For a pattern like "a*b*c", this array would contain two elements: one for the "a*b" segment and one for the "b*c" segment.
+    /// </param>
+    public record MultiGappedMatch(int Position, int Length, SingleGappedMatch[] Gaps);
 
     /// <summary>
     /// Represents a snippet of text, including its content and position.

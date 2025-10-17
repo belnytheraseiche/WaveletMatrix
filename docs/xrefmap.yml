@@ -284,6 +284,22 @@ references:
   commentId: T:BelNytheraSeiche.WaveletMatrix.FMIndex
   fullName: BelNytheraSeiche.WaveletMatrix.FMIndex
   nameWithType: FMIndex
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Contains(System.ReadOnlySpan{System.Char})
+  name: Contains(ReadOnlySpan<char>)
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Contains_System_ReadOnlySpan_System_Char__
+  commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.Contains(System.ReadOnlySpan{System.Char})
+  name.vb: Contains(ReadOnlySpan(Of Char))
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Contains(System.ReadOnlySpan<char>)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.Contains(System.ReadOnlySpan(Of Char))
+  nameWithType: FMIndex.Contains(ReadOnlySpan<char>)
+  nameWithType.vb: FMIndex.Contains(ReadOnlySpan(Of Char))
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Contains*
+  name: Contains
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Contains_
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.Contains
+  isSpec: "True"
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Contains
+  nameWithType: FMIndex.Contains
 - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Count(System.ReadOnlySpan{System.Char})
   name: Count(ReadOnlySpan<char>)
   href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Count_System_ReadOnlySpan_System_Char__
@@ -356,6 +372,86 @@ references:
   isSpec: "True"
   fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Deserialize
   nameWithType: FMIndex.Deserialize
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.FindFirst(System.ReadOnlySpan{System.Char})
+  name: FindFirst(ReadOnlySpan<char>)
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_FindFirst_System_ReadOnlySpan_System_Char__
+  commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.FindFirst(System.ReadOnlySpan{System.Char})
+  name.vb: FindFirst(ReadOnlySpan(Of Char))
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.FindFirst(System.ReadOnlySpan<char>)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.FindFirst(System.ReadOnlySpan(Of Char))
+  nameWithType: FMIndex.FindFirst(ReadOnlySpan<char>)
+  nameWithType.vb: FMIndex.FindFirst(ReadOnlySpan(Of Char))
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.FindFirst*
+  name: FindFirst
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_FindFirst_
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.FindFirst
+  isSpec: "True"
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.FindFirst
+  nameWithType: FMIndex.FindFirst
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch
+  name: FMIndex.FuzzyMatch
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.html
+  commentId: T:BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch
+  nameWithType: FMIndex.FuzzyMatch
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.#ctor(System.Int32,System.Int32,System.Int32)
+  name: FuzzyMatch(int, int, int)
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.html#BelNytheraSeiche_WaveletMatrix_FMIndex_FuzzyMatch__ctor_System_Int32_System_Int32_System_Int32_
+  commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.#ctor(System.Int32,System.Int32,System.Int32)
+  name.vb: New(Integer, Integer, Integer)
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.FuzzyMatch(int, int, int)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.New(Integer, Integer, Integer)
+  nameWithType: FMIndex.FuzzyMatch.FuzzyMatch(int, int, int)
+  nameWithType.vb: FMIndex.FuzzyMatch.New(Integer, Integer, Integer)
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.#ctor*
+  name: FuzzyMatch
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.html#BelNytheraSeiche_WaveletMatrix_FMIndex_FuzzyMatch__ctor_
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.FuzzyMatch
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.New
+  nameWithType: FMIndex.FuzzyMatch.FuzzyMatch
+  nameWithType.vb: FMIndex.FuzzyMatch.New
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.EditDistance
+  name: EditDistance
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.html#BelNytheraSeiche_WaveletMatrix_FMIndex_FuzzyMatch_EditDistance
+  commentId: P:BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.EditDistance
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.EditDistance
+  nameWithType: FMIndex.FuzzyMatch.EditDistance
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.EditDistance*
+  name: EditDistance
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.html#BelNytheraSeiche_WaveletMatrix_FMIndex_FuzzyMatch_EditDistance_
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.EditDistance
+  isSpec: "True"
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.EditDistance
+  nameWithType: FMIndex.FuzzyMatch.EditDistance
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.Length
+  name: Length
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.html#BelNytheraSeiche_WaveletMatrix_FMIndex_FuzzyMatch_Length
+  commentId: P:BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.Length
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.Length
+  nameWithType: FMIndex.FuzzyMatch.Length
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.Length*
+  name: Length
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.html#BelNytheraSeiche_WaveletMatrix_FMIndex_FuzzyMatch_Length_
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.Length
+  isSpec: "True"
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.Length
+  nameWithType: FMIndex.FuzzyMatch.Length
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.Position
+  name: Position
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.html#BelNytheraSeiche_WaveletMatrix_FMIndex_FuzzyMatch_Position
+  commentId: P:BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.Position
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.Position
+  nameWithType: FMIndex.FuzzyMatch.Position
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.Position*
+  name: Position
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.html#BelNytheraSeiche_WaveletMatrix_FMIndex_FuzzyMatch_Position_
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.Position
+  isSpec: "True"
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.Position
+  nameWithType: FMIndex.FuzzyMatch.Position
 - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.GetSnippet(System.Int32,System.Int32,System.Int32,System.Double)
   name: GetSnippet(int, int, int, double)
   href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_GetSnippet_System_Int32_System_Int32_System_Int32_System_Double_
@@ -401,6 +497,134 @@ references:
   isSpec: "True"
   fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Locate
   nameWithType: FMIndex.Locate
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateFuzzy(System.ReadOnlySpan{System.Char},System.Int32,System.Boolean,System.Boolean,System.Nullable{System.Char},BelNytheraSeiche.WaveletMatrix.SortOrder)
+  name: LocateFuzzy(ReadOnlySpan<char>, int, bool, bool, char?, SortOrder)
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_LocateFuzzy_System_ReadOnlySpan_System_Char__System_Int32_System_Boolean_System_Boolean_System_Nullable_System_Char__BelNytheraSeiche_WaveletMatrix_SortOrder_
+  commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.LocateFuzzy(System.ReadOnlySpan{System.Char},System.Int32,System.Boolean,System.Boolean,System.Nullable{System.Char},BelNytheraSeiche.WaveletMatrix.SortOrder)
+  name.vb: LocateFuzzy(ReadOnlySpan(Of Char), Integer, Boolean, Boolean, Char?, SortOrder)
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateFuzzy(System.ReadOnlySpan<char>, int, bool, bool, char?, BelNytheraSeiche.WaveletMatrix.SortOrder)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateFuzzy(System.ReadOnlySpan(Of Char), Integer, Boolean, Boolean, Char?, BelNytheraSeiche.WaveletMatrix.SortOrder)
+  nameWithType: FMIndex.LocateFuzzy(ReadOnlySpan<char>, int, bool, bool, char?, SortOrder)
+  nameWithType.vb: FMIndex.LocateFuzzy(ReadOnlySpan(Of Char), Integer, Boolean, Boolean, Char?, SortOrder)
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateFuzzy*
+  name: LocateFuzzy
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_LocateFuzzy_
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.LocateFuzzy
+  isSpec: "True"
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateFuzzy
+  nameWithType: FMIndex.LocateFuzzy
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateMultiGapped(System.ReadOnlySpan{System.Char},System.Boolean,System.Char,System.Char)
+  name: LocateMultiGapped(ReadOnlySpan<char>, bool, char, char)
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_LocateMultiGapped_System_ReadOnlySpan_System_Char__System_Boolean_System_Char_System_Char_
+  commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.LocateMultiGapped(System.ReadOnlySpan{System.Char},System.Boolean,System.Char,System.Char)
+  name.vb: LocateMultiGapped(ReadOnlySpan(Of Char), Boolean, Char, Char)
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateMultiGapped(System.ReadOnlySpan<char>, bool, char, char)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateMultiGapped(System.ReadOnlySpan(Of Char), Boolean, Char, Char)
+  nameWithType: FMIndex.LocateMultiGapped(ReadOnlySpan<char>, bool, char, char)
+  nameWithType.vb: FMIndex.LocateMultiGapped(ReadOnlySpan(Of Char), Boolean, Char, Char)
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateMultiGapped*
+  name: LocateMultiGapped
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_LocateMultiGapped_
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.LocateMultiGapped
+  isSpec: "True"
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateMultiGapped
+  nameWithType: FMIndex.LocateMultiGapped
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateSingleGapped(System.ReadOnlySpan{System.Char},System.Char,System.Char)
+  name: LocateSingleGapped(ReadOnlySpan<char>, char, char)
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_LocateSingleGapped_System_ReadOnlySpan_System_Char__System_Char_System_Char_
+  commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.LocateSingleGapped(System.ReadOnlySpan{System.Char},System.Char,System.Char)
+  name.vb: LocateSingleGapped(ReadOnlySpan(Of Char), Char, Char)
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateSingleGapped(System.ReadOnlySpan<char>, char, char)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateSingleGapped(System.ReadOnlySpan(Of Char), Char, Char)
+  nameWithType: FMIndex.LocateSingleGapped(ReadOnlySpan<char>, char, char)
+  nameWithType.vb: FMIndex.LocateSingleGapped(ReadOnlySpan(Of Char), Char, Char)
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateSingleGapped*
+  name: LocateSingleGapped
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_LocateSingleGapped_
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.LocateSingleGapped
+  isSpec: "True"
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateSingleGapped
+  nameWithType: FMIndex.LocateSingleGapped
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateWildcard(System.ReadOnlySpan{System.Char},System.Char,BelNytheraSeiche.WaveletMatrix.SortOrder)
+  name: LocateWildcard(ReadOnlySpan<char>, char, SortOrder)
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_LocateWildcard_System_ReadOnlySpan_System_Char__System_Char_BelNytheraSeiche_WaveletMatrix_SortOrder_
+  commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.LocateWildcard(System.ReadOnlySpan{System.Char},System.Char,BelNytheraSeiche.WaveletMatrix.SortOrder)
+  name.vb: LocateWildcard(ReadOnlySpan(Of Char), Char, SortOrder)
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateWildcard(System.ReadOnlySpan<char>, char, BelNytheraSeiche.WaveletMatrix.SortOrder)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateWildcard(System.ReadOnlySpan(Of Char), Char, BelNytheraSeiche.WaveletMatrix.SortOrder)
+  nameWithType: FMIndex.LocateWildcard(ReadOnlySpan<char>, char, SortOrder)
+  nameWithType.vb: FMIndex.LocateWildcard(ReadOnlySpan(Of Char), Char, SortOrder)
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateWildcard*
+  name: LocateWildcard
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_LocateWildcard_
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.LocateWildcard
+  isSpec: "True"
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.LocateWildcard
+  nameWithType: FMIndex.LocateWildcard
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch
+  name: FMIndex.MultiGappedMatch
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.html
+  commentId: T:BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch
+  nameWithType: FMIndex.MultiGappedMatch
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.#ctor(System.Int32,System.Int32,BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch[])
+  name: MultiGappedMatch(int, int, SingleGappedMatch[])
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.html#BelNytheraSeiche_WaveletMatrix_FMIndex_MultiGappedMatch__ctor_System_Int32_System_Int32_BelNytheraSeiche_WaveletMatrix_FMIndex_SingleGappedMatch___
+  commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.#ctor(System.Int32,System.Int32,BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch[])
+  name.vb: New(Integer, Integer, SingleGappedMatch())
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.MultiGappedMatch(int, int, BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch[])
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.New(Integer, Integer, BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch())
+  nameWithType: FMIndex.MultiGappedMatch.MultiGappedMatch(int, int, FMIndex.SingleGappedMatch[])
+  nameWithType.vb: FMIndex.MultiGappedMatch.New(Integer, Integer, FMIndex.SingleGappedMatch())
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.#ctor*
+  name: MultiGappedMatch
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.html#BelNytheraSeiche_WaveletMatrix_FMIndex_MultiGappedMatch__ctor_
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.MultiGappedMatch
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.New
+  nameWithType: FMIndex.MultiGappedMatch.MultiGappedMatch
+  nameWithType.vb: FMIndex.MultiGappedMatch.New
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.Gaps
+  name: Gaps
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.html#BelNytheraSeiche_WaveletMatrix_FMIndex_MultiGappedMatch_Gaps
+  commentId: P:BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.Gaps
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.Gaps
+  nameWithType: FMIndex.MultiGappedMatch.Gaps
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.Gaps*
+  name: Gaps
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.html#BelNytheraSeiche_WaveletMatrix_FMIndex_MultiGappedMatch_Gaps_
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.Gaps
+  isSpec: "True"
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.Gaps
+  nameWithType: FMIndex.MultiGappedMatch.Gaps
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.Length
+  name: Length
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.html#BelNytheraSeiche_WaveletMatrix_FMIndex_MultiGappedMatch_Length
+  commentId: P:BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.Length
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.Length
+  nameWithType: FMIndex.MultiGappedMatch.Length
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.Length*
+  name: Length
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.html#BelNytheraSeiche_WaveletMatrix_FMIndex_MultiGappedMatch_Length_
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.Length
+  isSpec: "True"
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.Length
+  nameWithType: FMIndex.MultiGappedMatch.Length
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.Position
+  name: Position
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.html#BelNytheraSeiche_WaveletMatrix_FMIndex_MultiGappedMatch_Position
+  commentId: P:BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.Position
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.Position
+  nameWithType: FMIndex.MultiGappedMatch.Position
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.Position*
+  name: Position
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.html#BelNytheraSeiche_WaveletMatrix_FMIndex_MultiGappedMatch_Position_
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.Position
+  isSpec: "True"
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.Position
+  nameWithType: FMIndex.MultiGappedMatch.Position
 - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.RestoreSourceText
   name: RestoreSourceText()
   href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_RestoreSourceText
@@ -461,6 +685,83 @@ references:
   isSpec: "True"
   fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Serialize
   nameWithType: FMIndex.Serialize
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch
+  name: FMIndex.SingleGappedMatch
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.html
+  commentId: T:BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch
+  nameWithType: FMIndex.SingleGappedMatch
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  name: SingleGappedMatch(int, int, int, int)
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.html#BelNytheraSeiche_WaveletMatrix_FMIndex_SingleGappedMatch__ctor_System_Int32_System_Int32_System_Int32_System_Int32_
+  commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  name.vb: New(Integer, Integer, Integer, Integer)
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.SingleGappedMatch(int, int, int, int)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.New(Integer, Integer, Integer, Integer)
+  nameWithType: FMIndex.SingleGappedMatch.SingleGappedMatch(int, int, int, int)
+  nameWithType.vb: FMIndex.SingleGappedMatch.New(Integer, Integer, Integer, Integer)
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.#ctor*
+  name: SingleGappedMatch
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.html#BelNytheraSeiche_WaveletMatrix_FMIndex_SingleGappedMatch__ctor_
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.SingleGappedMatch
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.New
+  nameWithType: FMIndex.SingleGappedMatch.SingleGappedMatch
+  nameWithType.vb: FMIndex.SingleGappedMatch.New
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.GapCount
+  name: GapCount
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.html#BelNytheraSeiche_WaveletMatrix_FMIndex_SingleGappedMatch_GapCount
+  commentId: P:BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.GapCount
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.GapCount
+  nameWithType: FMIndex.SingleGappedMatch.GapCount
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.GapCount*
+  name: GapCount
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.html#BelNytheraSeiche_WaveletMatrix_FMIndex_SingleGappedMatch_GapCount_
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.GapCount
+  isSpec: "True"
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.GapCount
+  nameWithType: FMIndex.SingleGappedMatch.GapCount
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.GapStart
+  name: GapStart
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.html#BelNytheraSeiche_WaveletMatrix_FMIndex_SingleGappedMatch_GapStart
+  commentId: P:BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.GapStart
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.GapStart
+  nameWithType: FMIndex.SingleGappedMatch.GapStart
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.GapStart*
+  name: GapStart
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.html#BelNytheraSeiche_WaveletMatrix_FMIndex_SingleGappedMatch_GapStart_
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.GapStart
+  isSpec: "True"
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.GapStart
+  nameWithType: FMIndex.SingleGappedMatch.GapStart
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.Length
+  name: Length
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.html#BelNytheraSeiche_WaveletMatrix_FMIndex_SingleGappedMatch_Length
+  commentId: P:BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.Length
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.Length
+  nameWithType: FMIndex.SingleGappedMatch.Length
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.Length*
+  name: Length
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.html#BelNytheraSeiche_WaveletMatrix_FMIndex_SingleGappedMatch_Length_
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.Length
+  isSpec: "True"
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.Length
+  nameWithType: FMIndex.SingleGappedMatch.Length
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.Position
+  name: Position
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.html#BelNytheraSeiche_WaveletMatrix_FMIndex_SingleGappedMatch_Position
+  commentId: P:BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.Position
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.Position
+  nameWithType: FMIndex.SingleGappedMatch.Position
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.Position*
+  name: Position
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.html#BelNytheraSeiche_WaveletMatrix_FMIndex_SingleGappedMatch_Position_
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.Position
+  isSpec: "True"
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.Position
+  nameWithType: FMIndex.SingleGappedMatch.Position
 - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet
   name: FMIndex.Snippet
   href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet.html
@@ -538,30 +839,6 @@ references:
   isSpec: "True"
   fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet.Text
   nameWithType: FMIndex.Snippet.Text
-- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder
-  name: FMIndex.SortOrder
-  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.html
-  commentId: T:BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder
-  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder
-  nameWithType: FMIndex.SortOrder
-- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Ascending
-  name: Ascending
-  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.html#BelNytheraSeiche_WaveletMatrix_FMIndex_SortOrder_Ascending
-  commentId: F:BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Ascending
-  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Ascending
-  nameWithType: FMIndex.SortOrder.Ascending
-- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Descending
-  name: Descending
-  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.html#BelNytheraSeiche_WaveletMatrix_FMIndex_SortOrder_Descending
-  commentId: F:BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Descending
-  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Descending
-  nameWithType: FMIndex.SortOrder.Descending
-- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Unordered
-  name: Unordered
-  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.html#BelNytheraSeiche_WaveletMatrix_FMIndex_SortOrder_Unordered
-  commentId: F:BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Unordered
-  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.Unordered
-  nameWithType: FMIndex.SortOrder.Unordered
 - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.Text
   name: Text
   href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_Text
@@ -575,6 +852,19 @@ references:
   isSpec: "True"
   fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.Text
   nameWithType: FMIndex.Text
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.UniqueCharacters
+  name: UniqueCharacters
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_UniqueCharacters
+  commentId: P:BelNytheraSeiche.WaveletMatrix.FMIndex.UniqueCharacters
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.UniqueCharacters
+  nameWithType: FMIndex.UniqueCharacters
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.UniqueCharacters*
+  name: UniqueCharacters
+  href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_UniqueCharacters_
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.UniqueCharacters
+  isSpec: "True"
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.UniqueCharacters
+  nameWithType: FMIndex.UniqueCharacters
 - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.WM
   name: WM
   href: api/BelNytheraSeiche.WaveletMatrix.FMIndex.html#BelNytheraSeiche_WaveletMatrix_FMIndex_WM

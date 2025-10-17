@@ -68,6 +68,48 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch",
+      "Summary": "<p sourcefile=\"api/BelNytheraSeiche.WaveletMatrix.FMIndex.FuzzyMatch.yml\" sourcestartlinenumber=\"1\">Represents an approximate match found by a fuzzy search.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch",
+      "Summary": "<p sourcefile=\"api/BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.yml\" sourcestartlinenumber=\"1\">Represents a complete match for a pattern containing multiple multi-character wildcards (e.g., &quot;part1<em sourcefile=\"api/BelNytheraSeiche.WaveletMatrix.FMIndex.MultiGappedMatch.yml\" sourcestartlinenumber=\"1\">part2</em>part3&quot;).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch",
+      "Summary": "<p sourcefile=\"api/BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.yml\" sourcestartlinenumber=\"1\">Represents a match for a gapped pattern (e.g., &quot;begin*end&quot;).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet.yml",
       "output": {
         ".html": {
@@ -79,20 +121,6 @@
       "IsMRef": true,
       "Title": "BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet",
       "Summary": "<p sourcefile=\"api/BelNytheraSeiche.WaveletMatrix.FMIndex.Snippet.yml\" sourcestartlinenumber=\"1\">Represents a snippet of text, including its content and position.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder",
-      "Summary": "<p sourcefile=\"api/BelNytheraSeiche.WaveletMatrix.FMIndex.SortOrder.yml\" sourcestartlinenumber=\"1\">Specifies the sort order for the results of a Locate operation.</p>\n"
     },
     {
       "type": "ManagedReference",

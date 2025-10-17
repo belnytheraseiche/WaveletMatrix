@@ -628,7 +628,7 @@ public sealed class SuffixArray
 
     public IEnumerable<MatchGroup> SearchLongestCommon(ReadOnlyMemory<char> text)
     {
-        if (text.Length == 0 || text_.Length == 0)
+        if (text.IsEmpty || text_.IsEmpty)
             yield break;
 
         foreach (var m in InternalSearchLongestCommon(this, Create(text)))
@@ -647,7 +647,7 @@ public sealed class SuffixArray
 
     public static IEnumerable<MatchGroup> SearchLongestCommon(ReadOnlyMemory<char> text1, ReadOnlyMemory<char> text2)
     {
-        if (text1.Length == 0 || text2.Length == 0)
+        if (text1.IsEmpty || text2.IsEmpty)
             yield break;
 
         foreach (var m in InternalSearchLongestCommon(Create(text1), Create(text2)))
@@ -709,7 +709,7 @@ public sealed class SuffixArray
             throw new ArgumentOutOfRangeException(nameof(minLength), $"{minLength} must be greater than or equal 2.");
 #endif
 
-        if (text.Length == 0 || text_.Length == 0)
+        if (text.IsEmpty || text_.IsEmpty)
             yield break;
 
         foreach (var m in InternalSearchCommon(this, Create(text), minLength))
@@ -737,7 +737,7 @@ public sealed class SuffixArray
             throw new ArgumentOutOfRangeException(nameof(minLength), $"{minLength} must be greater than or equal 2.");
 #endif
 
-        if (text1.Length == 0 || text2.Length == 0)
+        if (text1.IsEmpty || text2.IsEmpty)
             yield break;
 
         foreach (var m in InternalSearchCommon(Create(text1), Create(text2), minLength))
@@ -922,7 +922,7 @@ public sealed class SuffixArray
 
     static Memory<int> CreateSA(ReadOnlyMemory<char> text)
     {
-        if (text.Length == 0)
+        if (text.IsEmpty)
             return new([0]);
 
         var span = text.Span;

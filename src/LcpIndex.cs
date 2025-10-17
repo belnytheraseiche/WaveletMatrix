@@ -605,7 +605,7 @@ public sealed class LcpIndex
     public Repeat? FindLongestRepeats()
     {
         var lcpSpan = sa_.Lcp.Span;
-        if (lcpSpan.Length == 0)
+        if (lcpSpan.IsEmpty)
             return null;
 
         var (lcpMax, lcpMaxPosition) = (0, -1);
@@ -645,7 +645,7 @@ public sealed class LcpIndex
     /// <returns>The LZ78 complexity of the text.</returns>
     public int CalculateZivLempelComplexity()
     {
-        if (sa_.Text.Length == 0)
+        if (sa_.Text.IsEmpty)
             return 0;
 
         var found = new HashSet<ReadOnlyMemory<char>>(CharMemoryComparer.Instance);
@@ -806,7 +806,7 @@ public sealed class LcpIndex
         var lcpSpan = sa_.Lcp.Span;
         var textSpan = this.Text.Span;
 
-        if (saSpan.Length == 0)
+        if (saSpan.IsEmpty)
             return null;
         else if (saSpan.Length == 1)
             return new(textSpan.ToString(), 0);
@@ -843,7 +843,7 @@ public sealed class LcpIndex
     {
         var saSpan = sa_.SA.Span;
 
-        if (saSpan.Length == 0)
+        if (saSpan.IsEmpty)
             return [];
         else if (saSpan.Length == 1)
             return [new(this.Text.Span.ToString(), 0)];
@@ -878,7 +878,7 @@ public sealed class LcpIndex
 
     (int, int) FindSuffixRange(ReadOnlySpan<char> pattern)
     {
-        if (pattern.Length == 0)
+        if (pattern.IsEmpty)
             return (-1, -1);
 
         var textSpan = this.Text.Span;

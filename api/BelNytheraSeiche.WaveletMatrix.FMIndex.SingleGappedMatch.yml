@@ -1,0 +1,588 @@
+### YamlMime:ManagedReference
+items:
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch
+  commentId: T:BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch
+  id: FMIndex.SingleGappedMatch
+  parent: BelNytheraSeiche.WaveletMatrix
+  children:
+  - BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  - BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.GapCount
+  - BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.GapStart
+  - BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.Length
+  - BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.Position
+  langs:
+  - csharp
+  - vb
+  name: FMIndex.SingleGappedMatch
+  nameWithType: FMIndex.SingleGappedMatch
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch
+  type: Class
+  source:
+    remote:
+      path: src/FMIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
+    id: SingleGappedMatch
+    path: src/FMIndex.cs
+    startLine: 1123
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Represents a match for a gapped pattern (e.g., "begin*end").
+  example: []
+  syntax:
+    content: 'public record FMIndex.SingleGappedMatch : IEquatable<FMIndex.SingleGappedMatch>'
+    content.vb: Public Class FMIndex.SingleGappedMatch Implements IEquatable(Of FMIndex.SingleGappedMatch)
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  id: '#ctor(System.Int32,System.Int32,System.Int32,System.Int32)'
+  parent: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch
+  langs:
+  - csharp
+  - vb
+  name: SingleGappedMatch(int, int, int, int)
+  nameWithType: FMIndex.SingleGappedMatch.SingleGappedMatch(int, int, int, int)
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.SingleGappedMatch(int, int, int, int)
+  type: Constructor
+  source:
+    remote:
+      path: src/FMIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
+    id: .ctor
+    path: src/FMIndex.cs
+    startLine: 1123
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: Represents a match for a gapped pattern (e.g., "begin*end").
+  example: []
+  syntax:
+    content: public SingleGappedMatch(int Position, int Length, int GapStart, int GapCount)
+    parameters:
+    - id: Position
+      type: System.Int32
+      description: The start position of the entire match (i.e., the beginning of the leading part).
+    - id: Length
+      type: System.Int32
+      description: The total length of the entire match, from the start of the leading part to the end of the trailing part.
+    - id: GapStart
+      type: System.Int32
+      description: The starting position of the gap (the part matched by '*') within the matched text, relative to <code class="paramref">Position</code>.
+    - id: GapCount
+      type: System.Int32
+      description: The length of the gap (the number of characters matched by '*').
+    content.vb: Public Sub New(Position As Integer, Length As Integer, GapStart As Integer, GapCount As Integer)
+  overload: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.#ctor*
+  nameWithType.vb: FMIndex.SingleGappedMatch.New(Integer, Integer, Integer, Integer)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.New(Integer, Integer, Integer, Integer)
+  name.vb: New(Integer, Integer, Integer, Integer)
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.Position
+  commentId: P:BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.Position
+  id: Position
+  parent: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch
+  langs:
+  - csharp
+  - vb
+  name: Position
+  nameWithType: FMIndex.SingleGappedMatch.Position
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.Position
+  type: Property
+  source:
+    remote:
+      path: src/FMIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
+    id: Position
+    path: src/FMIndex.cs
+    startLine: 1123
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: The start position of the entire match (i.e., the beginning of the leading part).
+  example: []
+  syntax:
+    content: public int Position { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Position As Integer
+  overload: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.Position*
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.Length
+  commentId: P:BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.Length
+  id: Length
+  parent: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch
+  langs:
+  - csharp
+  - vb
+  name: Length
+  nameWithType: FMIndex.SingleGappedMatch.Length
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.Length
+  type: Property
+  source:
+    remote:
+      path: src/FMIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
+    id: Length
+    path: src/FMIndex.cs
+    startLine: 1123
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: The total length of the entire match, from the start of the leading part to the end of the trailing part.
+  example: []
+  syntax:
+    content: public int Length { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Length As Integer
+  overload: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.Length*
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.GapStart
+  commentId: P:BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.GapStart
+  id: GapStart
+  parent: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch
+  langs:
+  - csharp
+  - vb
+  name: GapStart
+  nameWithType: FMIndex.SingleGappedMatch.GapStart
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.GapStart
+  type: Property
+  source:
+    remote:
+      path: src/FMIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
+    id: GapStart
+    path: src/FMIndex.cs
+    startLine: 1123
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: The starting position of the gap (the part matched by '*') within the matched text, relative to <code class="paramref">Position</code>.
+  example: []
+  syntax:
+    content: public int GapStart { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property GapStart As Integer
+  overload: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.GapStart*
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.GapCount
+  commentId: P:BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.GapCount
+  id: GapCount
+  parent: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch
+  langs:
+  - csharp
+  - vb
+  name: GapCount
+  nameWithType: FMIndex.SingleGappedMatch.GapCount
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.GapCount
+  type: Property
+  source:
+    remote:
+      path: src/FMIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
+    id: GapCount
+    path: src/FMIndex.cs
+    startLine: 1123
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: The length of the gap (the number of characters matched by '*').
+  example: []
+  syntax:
+    content: public int GapCount { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property GapCount As Integer
+  overload: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.GapCount*
+references:
+- uid: BelNytheraSeiche.WaveletMatrix
+  commentId: N:BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.html
+  name: BelNytheraSeiche.WaveletMatrix
+  nameWithType: BelNytheraSeiche.WaveletMatrix
+  fullName: BelNytheraSeiche.WaveletMatrix
+  spec.csharp:
+  - uid: BelNytheraSeiche
+    name: BelNytheraSeiche
+    href: BelNytheraSeiche.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix
+    name: WaveletMatrix
+    href: BelNytheraSeiche.WaveletMatrix.html
+  spec.vb:
+  - uid: BelNytheraSeiche
+    name: BelNytheraSeiche
+    href: BelNytheraSeiche.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix
+    name: WaveletMatrix
+    href: BelNytheraSeiche.WaveletMatrix.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IEquatable{BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch}
+  commentId: T:System.IEquatable{BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<FMIndex.SingleGappedMatch>
+  nameWithType: IEquatable<FMIndex.SingleGappedMatch>
+  fullName: System.IEquatable<BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch>
+  nameWithType.vb: IEquatable(Of FMIndex.SingleGappedMatch)
+  fullName.vb: System.IEquatable(Of BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch)
+  name.vb: IEquatable(Of FMIndex.SingleGappedMatch)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex
+    name: FMIndex
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch
+    name: SingleGappedMatch
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex
+    name: FMIndex
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch
+    name: SingleGappedMatch
+    href: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.#ctor*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.#ctor
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.html#BelNytheraSeiche_WaveletMatrix_FMIndex_SingleGappedMatch__ctor_System_Int32_System_Int32_System_Int32_System_Int32_
+  name: SingleGappedMatch
+  nameWithType: FMIndex.SingleGappedMatch.SingleGappedMatch
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.SingleGappedMatch
+  nameWithType.vb: FMIndex.SingleGappedMatch.New
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.New
+  name.vb: New
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.Position*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.Position
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.html#BelNytheraSeiche_WaveletMatrix_FMIndex_SingleGappedMatch_Position
+  name: Position
+  nameWithType: FMIndex.SingleGappedMatch.Position
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.Position
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.Length*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.Length
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.html#BelNytheraSeiche_WaveletMatrix_FMIndex_SingleGappedMatch_Length
+  name: Length
+  nameWithType: FMIndex.SingleGappedMatch.Length
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.Length
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.GapStart*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.GapStart
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.html#BelNytheraSeiche_WaveletMatrix_FMIndex_SingleGappedMatch_GapStart
+  name: GapStart
+  nameWithType: FMIndex.SingleGappedMatch.GapStart
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.GapStart
+- uid: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.GapCount*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.GapCount
+  href: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.html#BelNytheraSeiche_WaveletMatrix_FMIndex_SingleGappedMatch_GapCount
+  name: GapCount
+  nameWithType: FMIndex.SingleGappedMatch.GapCount
+  fullName: BelNytheraSeiche.WaveletMatrix.FMIndex.SingleGappedMatch.GapCount
