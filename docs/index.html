@@ -207,83 +207,339 @@ Benchmarks were run on a typical machine using <code>BenchmarkDotNet</code> to m
 <li><strong><code>english.50MB</code></strong>: A 100MB file of English text, representing a <strong>large alphabet</strong>.</li>
 <li><strong><code>dna.50MB</code></strong>: A 100MB file of DNA sequences, representing a <strong>small alphabet</strong>.</li>
 </ul>
-<p>The patterns used for searching were <code>{&quot;the&quot;, &quot;government&quot;, &quot;internationalization&quot;}</code> for English and <code>{&quot;GATTACA&quot;, &quot;T&quot;, &quot;ACGTACGTACGTACGT&quot;}</code> for DNA.</p>
+<p>The patterns used for searching were <code>{&quot;government&quot;, &quot;internationalization&quot;, &quot;the&quot;}</code> for English and <code>{&quot;ACGTACGT&quot;, &quot;ACGTACGTACGTACGT&quot;, &quot;GATTACA&quot;, &quot;T&quot;}</code> for DNA.</p>
 <h3 id="benchmark-results">Benchmark Results</h3>
-<p>Pending, please wait for a few days.</p>
-<!--
-
-This benchmark meatures the time taken to perform `SuffixArray.Search`.
-
-- english.50MB
-
-| Method | pattern              | Mean            | Error         | StdDev        | Gen0   | Allocated  |
-|------- |--------------------- |----------------:|--------------:|--------------:|-------:|-----------:|
-| Search | government           |     17,079.8 ns |     100.55 ns |      89.13 ns | 4.9438 |    20680 B |
-| Search | internationalization |        154.2 ns |       0.31 ns |       0.29 ns | 0.0305 |      128 B |
-| Search | the                  | 89,991,934.4 ns | 547,648.45 ns | 512,270.70 ns |      - | 21189896 B |
-
-This benchmark meatures the time taken to perform `FMIndex.Count`.
-
-- english.50MB
-
-| Method | pattern              | Mean     | Error   | StdDev  | Allocated |
-|--------|--------------------- |---------:|--------:|--------:|----------:|
-| Count  | government           | 167.9 ns | 0.76 ns | 0.71 ns |         - |
-| Count  | internationalization | 179.7 ns | 1.60 ns | 1.50 ns |         - |
-| Count  | the                  | 168.9 ns | 0.38 ns | 0.35 ns |         - |
-
-- dna.50MB
-
-| Method | pattern          | Mean      | Error     | StdDev    | Median    | Allocated |
-|--------|----------------- |----------:|----------:|----------:|----------:|----------:|
-| Count  | ACGTACGT         | 655.13 ns |  0.489 ns |  0.409 ns | 655.16 ns |         - |
-| Count  | ACGTACGTACGTACGT | 895.86 ns |  1.120 ns |  1.048 ns | 895.78 ns |         - |
-| Count  | GATTACA          | 523.64 ns | 10.282 ns | 15.390 ns | 532.35 ns |         - |
-| Count  | T                |  27.33 ns |  0.006 ns |  0.005 ns |  27.33 ns |         - |
-
-This benchmark meatures the time taken to perform `LcpIndex.GetLcp`.
-
-- english.50MB
-
-| Method | Mean     | Error     | StdDev    | Allocated |
-|--------|---------:|----------:|----------:|----------:|
-| GetLcp | 4.012 ns | 0.0060 ns | 0.0056 ns |         - |
-
-- dna.50MB
-
-| Method | Mean     | Error     | StdDev    | Allocated |
-|------- |---------:|----------:|----------:|----------:|
-| GetLcp | 4.116 ns | 0.0266 ns | 0.0248 ns |         - |
-
-This benchmark meatures the time taken to perform `WaveletMatrixGeneric<char>.Rank`.
-
-- dna.50MB
-
-| Method | Mean     | Error    | StdDev   | Allocated |
-|------- |---------:|---------:|---------:|----------:|
-| Rank   | 15.05 ns | 0.053 ns | 0.044 ns |         - |
-
-This benchmark measures the final file size after serializing.
-
-- english.50MB
-
-| Method        | Serialized |
-|-------------- |-----------:|
-| SuffixArray   |  455.33 MB |
-| FMIndex       |  467.38 MB |
-| LcpIndex      |  914.63 MB |
-| WaveletMatrix |   27.44 MB |
-
-- dna.50MB
-
-| Method        | Serialized |
-|-------------- |-----------:|
-| SuffixArray   |  417.51 MB |
-| FMIndex       |  429.10 MB |
-| LcpIndex      |  806.07 MB |
-| WaveletMatrix |   12.32 MB |
-
--->
+<p>This benchmark meatures the time taken to perform <code>SuffixArray.Search</code>.</p>
+<ul>
+<li>english.50MB</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>pattern</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">Error</th>
+<th style="text-align: right;">StdDev</th>
+<th style="text-align: right;">Gen0</th>
+<th style="text-align: right;">Allocated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Search</td>
+<td>government</td>
+<td style="text-align: right;">16,536.8 ns</td>
+<td style="text-align: right;">302.53 ns</td>
+<td style="text-align: right;">268.18 ns</td>
+<td style="text-align: right;">4.9438</td>
+<td style="text-align: right;">20680 B</td>
+</tr>
+<tr>
+<td>Search</td>
+<td>internationalization</td>
+<td style="text-align: right;">145.5 ns</td>
+<td style="text-align: right;">0.61 ns</td>
+<td style="text-align: right;">0.58 ns</td>
+<td style="text-align: right;">0.0305</td>
+<td style="text-align: right;">128 B</td>
+</tr>
+<tr>
+<td>Search</td>
+<td>the</td>
+<td style="text-align: right;">83,279,781.1 ns</td>
+<td style="text-align: right;">380,001.20 ns</td>
+<td style="text-align: right;">355,453.36 ns</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">21189896 B</td>
+</tr>
+</tbody>
+</table>
+<p>This benchmark meatures the time taken to perform <code>FMIndex.Count</code>.</p>
+<ul>
+<li>english.50MB</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>pattern</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">Error</th>
+<th style="text-align: right;">StdDev</th>
+<th style="text-align: right;">Allocated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Count (no sampling)</td>
+<td>government</td>
+<td style="text-align: right;">1,358.2 ns</td>
+<td style="text-align: right;">2.92 ns</td>
+<td style="text-align: right;">2.73 ns</td>
+<td style="text-align: right;">-</td>
+</tr>
+<tr>
+<td>Count (sampling rate 32)</td>
+<td>government</td>
+<td style="text-align: right;">1,343.4 ns</td>
+<td style="text-align: right;">2.19 ns</td>
+<td style="text-align: right;">2.05 ns</td>
+<td style="text-align: right;">-</td>
+</tr>
+<tr>
+<td>Count (no sampling)</td>
+<td>internationalization</td>
+<td style="text-align: right;">1,347.0 ns</td>
+<td style="text-align: right;">17.27 ns</td>
+<td style="text-align: right;">16.15 ns</td>
+<td style="text-align: right;">-</td>
+</tr>
+<tr>
+<td>Count (sampling rate 32)</td>
+<td>internationalization</td>
+<td style="text-align: right;">1,282.2 ns</td>
+<td style="text-align: right;">3.03 ns</td>
+<td style="text-align: right;">2.69 ns</td>
+<td style="text-align: right;">-</td>
+</tr>
+<tr>
+<td>Count (no sampling)</td>
+<td>the</td>
+<td style="text-align: right;">321.5 ns</td>
+<td style="text-align: right;">0.62 ns</td>
+<td style="text-align: right;">0.55 ns</td>
+<td style="text-align: right;">-</td>
+</tr>
+<tr>
+<td>Count (sampling rate 32)</td>
+<td>the</td>
+<td style="text-align: right;">283.3 ns</td>
+<td style="text-align: right;">0.78 ns</td>
+<td style="text-align: right;">0.73 ns</td>
+<td style="text-align: right;">-</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>dna.50MB</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>pattern</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">Error</th>
+<th style="text-align: right;">StdDev</th>
+<th style="text-align: right;">Allocated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Count (no sampling)</td>
+<td>ACGTACGT</td>
+<td style="text-align: right;">554.24 ns</td>
+<td style="text-align: right;">1.333 ns</td>
+<td style="text-align: right;">1.182 ns</td>
+<td style="text-align: right;">-</td>
+</tr>
+<tr>
+<td>Count (sampling rate 32)</td>
+<td>ACGTACGT</td>
+<td style="text-align: right;">559.41 ns</td>
+<td style="text-align: right;">4.838 ns</td>
+<td style="text-align: right;">4.525 ns</td>
+<td style="text-align: right;">-</td>
+</tr>
+<tr>
+<td>Count (no sampling)</td>
+<td>ACGTACGTACGTACGT</td>
+<td style="text-align: right;">728.51 ns</td>
+<td style="text-align: right;">1.815 ns</td>
+<td style="text-align: right;">1.417 ns</td>
+<td style="text-align: right;">-</td>
+</tr>
+<tr>
+<td>Count (sampling rate 32)</td>
+<td>ACGTACGTACGTACGT</td>
+<td style="text-align: right;">727.01 ns</td>
+<td style="text-align: right;">2.037 ns</td>
+<td style="text-align: right;">1.905 ns</td>
+<td style="text-align: right;">-</td>
+</tr>
+<tr>
+<td>Count (no sampling)</td>
+<td>GATTACA</td>
+<td style="text-align: right;">493.43 ns</td>
+<td style="text-align: right;">1.561 ns</td>
+<td style="text-align: right;">1.304 ns</td>
+<td style="text-align: right;">-</td>
+</tr>
+<tr>
+<td>Count (sampling rate 32)</td>
+<td>GATTACA</td>
+<td style="text-align: right;">498.76 ns</td>
+<td style="text-align: right;">9.615 ns</td>
+<td style="text-align: right;">10.288 ns</td>
+<td style="text-align: right;">-</td>
+</tr>
+<tr>
+<td>Count (no sampling)</td>
+<td>T</td>
+<td style="text-align: right;">27.54 ns</td>
+<td style="text-align: right;">0.247 ns</td>
+<td style="text-align: right;">0.231 ns</td>
+<td style="text-align: right;">-</td>
+</tr>
+<tr>
+<td>Count (sampling rate 32)</td>
+<td>T</td>
+<td style="text-align: right;">27.35 ns</td>
+<td style="text-align: right;">0.055 ns</td>
+<td style="text-align: right;">0.051 ns</td>
+<td style="text-align: right;">-</td>
+</tr>
+</tbody>
+</table>
+<p>This benchmark meatures the time taken to perform <code>LcpIndex.GetLcp</code>.</p>
+<ul>
+<li>english.50MB</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">Error</th>
+<th style="text-align: right;">StdDev</th>
+<th style="text-align: right;">Allocated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GetLcp</td>
+<td style="text-align: right;">21.71 ns</td>
+<td style="text-align: right;">0.027 ns</td>
+<td style="text-align: right;">0.026 ns</td>
+<td style="text-align: right;">-</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>dna.50MB</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">Error</th>
+<th style="text-align: right;">StdDev</th>
+<th style="text-align: right;">Allocated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GetLcp</td>
+<td style="text-align: right;">26.94 ns</td>
+<td style="text-align: right;">0.381 ns</td>
+<td style="text-align: right;">0.356 ns</td>
+<td style="text-align: right;">-</td>
+</tr>
+</tbody>
+</table>
+<p>This benchmark meatures the time taken to perform <code>WaveletMatrixGeneric&lt;char&gt;.Rank</code>.</p>
+<ul>
+<li>dna.50MB</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">Error</th>
+<th style="text-align: right;">StdDev</th>
+<th style="text-align: right;">Allocated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rank</td>
+<td style="text-align: right;">17.79 ns</td>
+<td style="text-align: right;">0.046 ns</td>
+<td style="text-align: right;">0.043 ns</td>
+<td style="text-align: right;">-</td>
+</tr>
+</tbody>
+</table>
+<p>This benchmark measures the final file size after serializing.</p>
+<ul>
+<li>english.50MB</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th style="text-align: right;">Serialized</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SuffixArray</td>
+<td style="text-align: right;">455.33 MB</td>
+</tr>
+<tr>
+<td>FMIndex (no sampling)</td>
+<td style="text-align: right;">467.38 MB</td>
+</tr>
+<tr>
+<td>FMIndex (sampling rate 32)</td>
+<td style="text-align: right;">17.71 MB</td>
+</tr>
+<tr>
+<td>LcpIndex</td>
+<td style="text-align: right;">556.21 MB</td>
+</tr>
+<tr>
+<td>WaveletMatrix</td>
+<td style="text-align: right;">27.44 MB</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>dna.50MB</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th style="text-align: right;">Serialized</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SuffixArray</td>
+<td style="text-align: right;">417.51 MB</td>
+</tr>
+<tr>
+<td>FMIndex (no sampling)</td>
+<td style="text-align: right;">429.10 MB</td>
+</tr>
+<tr>
+<td>FMIndex (sampling rate 32)</td>
+<td style="text-align: right;">17.25 MB</td>
+</tr>
+<tr>
+<td>LcpIndex</td>
+<td style="text-align: right;">501.07 MB</td>
+</tr>
+<tr>
+<td>WaveletMatrix</td>
+<td style="text-align: right;">12.32 MB</td>
+</tr>
+</tbody>
+</table>
 <hr>
 <h2 id="license">License</h2>
 <p>This project is licensed under the MIT License. See the  <strong><a href="https://github.com/belnytheraseiche/WaveletMatrix/blob/main/LICENSE">LICENSE</a></strong> file for details.</p>

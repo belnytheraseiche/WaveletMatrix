@@ -150,13 +150,9 @@ Benchmarks were run on a typical machine using `BenchmarkDotNet` to measure the 
 -   **`english.50MB`**: A 100MB file of English text, representing a **large alphabet**.
 -   **`dna.50MB`**: A 100MB file of DNA sequences, representing a **small alphabet**.
 
-The patterns used for searching were `{"the", "government", "internationalization"}` for English and `{"GATTACA", "T", "ACGTACGTACGTACGT"}` for DNA.
+The patterns used for searching were `{"government", "internationalization", "the"}` for English and `{"ACGTACGT", "ACGTACGTACGTACGT", "GATTACA", "T"}` for DNA.
 
 ### Benchmark Results
-
-Pending, please wait for a few days.
-
-<!--
 
 This benchmark meatures the time taken to perform `SuffixArray.Search`.
 
@@ -164,42 +160,50 @@ This benchmark meatures the time taken to perform `SuffixArray.Search`.
 
 | Method | pattern              | Mean            | Error         | StdDev        | Gen0   | Allocated  |
 |------- |--------------------- |----------------:|--------------:|--------------:|-------:|-----------:|
-| Search | government           |     17,079.8 ns |     100.55 ns |      89.13 ns | 4.9438 |    20680 B |
-| Search | internationalization |        154.2 ns |       0.31 ns |       0.29 ns | 0.0305 |      128 B |
-| Search | the                  | 89,991,934.4 ns | 547,648.45 ns | 512,270.70 ns |      - | 21189896 B |
+| Search | government           |     16,536.8 ns |     302.53 ns |     268.18 ns | 4.9438 |    20680 B |
+| Search | internationalization |        145.5 ns |       0.61 ns |       0.58 ns | 0.0305 |      128 B |
+| Search | the                  | 83,279,781.1 ns | 380,001.20 ns | 355,453.36 ns |      - | 21189896 B |
 
 This benchmark meatures the time taken to perform `FMIndex.Count`.
 
 - english.50MB
 
-| Method | pattern              | Mean     | Error   | StdDev  | Allocated |
-|--------|--------------------- |---------:|--------:|--------:|----------:|
-| Count  | government           | 167.9 ns | 0.76 ns | 0.71 ns |         - |
-| Count  | internationalization | 179.7 ns | 1.60 ns | 1.50 ns |         - |
-| Count  | the                  | 168.9 ns | 0.38 ns | 0.35 ns |         - |
+| Method                   | pattern              | Mean       | Error    | StdDev   | Allocated |
+|------------------------- |--------------------- |-----------:|---------:|---------:|----------:|
+| Count (no sampling)      | government           | 1,358.2 ns |  2.92 ns |  2.73 ns |         - |
+| Count (sampling rate 32) | government           | 1,343.4 ns |  2.19 ns |  2.05 ns |         - |
+| Count (no sampling)      | internationalization | 1,347.0 ns | 17.27 ns | 16.15 ns |         - |
+| Count (sampling rate 32) | internationalization | 1,282.2 ns |  3.03 ns |  2.69 ns |         - |
+| Count (no sampling)      | the                  |   321.5 ns |  0.62 ns |  0.55 ns |         - |
+| Count (sampling rate 32) | the                  |   283.3 ns |  0.78 ns |  0.73 ns |         - |
 
 - dna.50MB
 
-| Method | pattern          | Mean      | Error     | StdDev    | Median    | Allocated |
-|--------|----------------- |----------:|----------:|----------:|----------:|----------:|
-| Count  | ACGTACGT         | 655.13 ns |  0.489 ns |  0.409 ns | 655.16 ns |         - |
-| Count  | ACGTACGTACGTACGT | 895.86 ns |  1.120 ns |  1.048 ns | 895.78 ns |         - |
-| Count  | GATTACA          | 523.64 ns | 10.282 ns | 15.390 ns | 532.35 ns |         - |
-| Count  | T                |  27.33 ns |  0.006 ns |  0.005 ns |  27.33 ns |         - |
+| Method                   | pattern          | Mean      | Error    | StdDev    | Allocated |
+|------------------------- |----------------- |----------:|---------:|----------:|----------:|
+| Count (no sampling)      | ACGTACGT         | 554.24 ns | 1.333 ns |  1.182 ns |         - |
+| Count (sampling rate 32) | ACGTACGT         | 559.41 ns | 4.838 ns |  4.525 ns |         - |
+| Count (no sampling)      | ACGTACGTACGTACGT | 728.51 ns | 1.815 ns |  1.417 ns |         - |
+| Count (sampling rate 32) | ACGTACGTACGTACGT | 727.01 ns | 2.037 ns |  1.905 ns |         - |
+| Count (no sampling)      | GATTACA          | 493.43 ns | 1.561 ns |  1.304 ns |         - |
+| Count (sampling rate 32) | GATTACA          | 498.76 ns | 9.615 ns | 10.288 ns |         - |
+| Count (no sampling)      | T                |  27.54 ns | 0.247 ns |  0.231 ns |         - |
+| Count (sampling rate 32) | T                |  27.35 ns | 0.055 ns |  0.051 ns |         - |
+
 
 This benchmark meatures the time taken to perform `LcpIndex.GetLcp`.
 
 - english.50MB
 
-| Method | Mean     | Error     | StdDev    | Allocated |
-|--------|---------:|----------:|----------:|----------:|
-| GetLcp | 4.012 ns | 0.0060 ns | 0.0056 ns |         - |
+| Method | Mean     | Error    | StdDev   | Allocated |
+|------- |---------:|---------:|---------:|----------:|
+| GetLcp | 21.71 ns | 0.027 ns | 0.026 ns |         - |
 
 - dna.50MB
 
-| Method | Mean     | Error     | StdDev    | Allocated |
-|------- |---------:|----------:|----------:|----------:|
-| GetLcp | 4.116 ns | 0.0266 ns | 0.0248 ns |         - |
+| Method | Mean     | Error    | StdDev   | Allocated |
+|------- |---------:|---------:|---------:|----------:|
+| GetLcp | 26.94 ns | 0.381 ns | 0.356 ns |         - |
 
 This benchmark meatures the time taken to perform `WaveletMatrixGeneric<char>.Rank`.
 
@@ -207,29 +211,29 @@ This benchmark meatures the time taken to perform `WaveletMatrixGeneric<char>.Ra
 
 | Method | Mean     | Error    | StdDev   | Allocated |
 |------- |---------:|---------:|---------:|----------:|
-| Rank   | 15.05 ns | 0.053 ns | 0.044 ns |         - |
+| Rank   | 17.79 ns | 0.046 ns | 0.043 ns |         - |
 
 This benchmark measures the final file size after serializing.
 
 - english.50MB
 
-| Method        | Serialized |
-|-------------- |-----------:|
-| SuffixArray   |  455.33 MB |
-| FMIndex       |  467.38 MB |
-| LcpIndex      |  914.63 MB |
-| WaveletMatrix |   27.44 MB |
+| Method                     | Serialized |
+|--------------------------- |-----------:|
+| SuffixArray                |  455.33 MB |
+| FMIndex (no sampling)      |  467.38 MB |
+| FMIndex (sampling rate 32) |   17.71 MB |
+| LcpIndex                   |  556.21 MB |
+| WaveletMatrix              |   27.44 MB |
 
 - dna.50MB
 
-| Method        | Serialized |
-|-------------- |-----------:|
-| SuffixArray   |  417.51 MB |
-| FMIndex       |  429.10 MB |
-| LcpIndex      |  806.07 MB |
-| WaveletMatrix |   12.32 MB |
-
--->
+| Method                     | Serialized |
+|--------------------------- |-----------:|
+| SuffixArray                |  417.51 MB |
+| FMIndex (no sampling)      |  429.10 MB |
+| FMIndex (sampling rate 32) |   17.25 MB |
+| LcpIndex                   |  501.07 MB |
+| WaveletMatrix              |   12.32 MB |
 
 ---
 
