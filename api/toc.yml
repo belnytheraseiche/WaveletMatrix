@@ -40,6 +40,12 @@ items:
   - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
     name: LcpIndex
     type: Class
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher
+    name: LcpIndex.MultiSimilarityMatcher
+    type: Class
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch
+    name: LcpIndex.MultiSimilarityMatcher.MultiMatch
+    type: Class
   - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat
     name: LcpIndex.Repeat
     type: Class

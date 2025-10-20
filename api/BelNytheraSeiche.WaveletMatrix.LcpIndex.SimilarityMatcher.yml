@@ -26,7 +26,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: SimilarityMatcher
     path: src/LcpIndex.cs
-    startLine: 934
+    startLine: 979
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -65,7 +65,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: .ctor
     path: src/LcpIndex.cs
-    startLine: 934
+    startLine: 979
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -109,7 +109,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: LcpIndex
     path: src/LcpIndex.cs
-    startLine: 939
+    startLine: 984
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -140,7 +140,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Text1
     path: src/LcpIndex.cs
-    startLine: 944
+    startLine: 989
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -171,7 +171,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Text2
     path: src/LcpIndex.cs
-    startLine: 949
+    startLine: 994
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -202,7 +202,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Matches
     path: src/LcpIndex.cs
-    startLine: 962
+    startLine: 1007
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -249,18 +249,21 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: LongestMatch
     path: src/LcpIndex.cs
-    startLine: 994
+    startLine: 1042
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
-  summary: Finds the longest common substring between the two texts.
+  summary: Finds all longest common substrings between the two texts.
   example: []
   syntax:
-    content: public LcpIndex.SimilarityMatcher.Match? LongestMatch()
+    content: public IEnumerable<LcpIndex.SimilarityMatcher.Match> LongestMatch()
     return:
-      type: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match
-      description: A <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match" data-throw-if-not-resolved="false"></xref> record representing the longest common substring, or null if no common part exists.
-    content.vb: Public Function LongestMatch() As LcpIndex.SimilarityMatcher.Match
+      type: System.Collections.Generic.IEnumerable{BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match}
+      description: >-
+        An enumerable collection of <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match" data-throw-if-not-resolved="false"></xref> records representing the longest common substrings.
+
+        Returns an empty collection if no common part exists.
+    content.vb: Public Function LongestMatch() As IEnumerable(Of LcpIndex.SimilarityMatcher.Match)
   overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.LongestMatch*
 - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.FindPalindrome
   commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.FindPalindrome
@@ -280,7 +283,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: FindPalindrome
     path: src/LcpIndex.cs
-    startLine: 1025
+    startLine: 1110
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -629,7 +632,6 @@ references:
   fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Text2
 - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match
   commentId: T:BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match
-  parent: BelNytheraSeiche.WaveletMatrix
   href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
   name: LcpIndex.SimilarityMatcher.Match
   nameWithType: LcpIndex.SimilarityMatcher.Match

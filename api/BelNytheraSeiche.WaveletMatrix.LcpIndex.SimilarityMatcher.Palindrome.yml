@@ -22,7 +22,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Palindrome
     path: src/LcpIndex.cs
-    startLine: 1068
+    startLine: 1153
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -61,7 +61,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: .ctor
     path: src/LcpIndex.cs
-    startLine: 1068
+    startLine: 1153
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -99,7 +99,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Position
     path: src/LcpIndex.cs
-    startLine: 1068
+    startLine: 1153
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -130,7 +130,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Length
     path: src/LcpIndex.cs
-    startLine: 1068
+    startLine: 1153
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix

@@ -672,60 +672,6 @@ public sealed class LcpIndex
     }
 
     /// <summary>
-    /// Creates a new <see cref="SimilarityMatcher"/> instance to find common substrings between two texts.
-    /// This is achieved by concatenating the two texts with a unique separator and building a single LCP index on the result.
-    /// </summary>
-    /// <param name="text1">The first text to compare.</param>
-    /// <param name="text2">The second text to compare.</param>
-    /// <returns>A new <see cref="SimilarityMatcher"/> instance ready for finding matches.</returns>
-    /// <exception cref="ArgumentNullException">Thrown if <paramref name="text1"/> or <paramref name="text2"/> is null.</exception>
-    public static SimilarityMatcher CreateSimilarityMatcher(string text1, string text2)
-    {
-#if NET6_0_OR_GREATER
-        ArgumentNullException.ThrowIfNull(text1);
-        ArgumentNullException.ThrowIfNull(text2);
-#else
-        if (text1 == null)
-            throw new ArgumentNullException(nameof(text1));
-        if (text2 == null)
-            throw new ArgumentNullException(nameof(text2));
-#endif
-
-        var buffer = new char[text1.Length + text2.Length + 1];
-        text1.CopyTo(0, buffer, 0, text1.Length);
-        text2.CopyTo(0, buffer, text1.Length + 1, text2.Length);
-        return new(LcpIndex.Create(SuffixArray.Create(buffer)), text1, text2);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="SimilarityMatcher"/> instance specifically configured to find palindromic substrings within a single text.
-    /// This is achieved by concatenating the text with its reverse, separated by a unique character,
-    /// and building an LCP index on the combined result.
-    /// </summary>
-    /// <param name="text">The text in which to find palindromes.</param>
-    /// <returns>A new <see cref="SimilarityMatcher"/> instance ready for palindrome detection.</returns>
-    /// <exception cref="ArgumentNullException">Thrown if <paramref name="text"/> is null.</exception>
-    /// <remarks>
-    /// The returned matcher will have its <c>Text1</c> property set to the original <paramref name="text"/> and its <c>Text2</c>
-    /// property set to the reversed version of the text.
-    /// </remarks>
-    public static SimilarityMatcher CreateSimilarityMatcherForPalindrome(string text)
-    {
-#if NET6_0_OR_GREATER
-        ArgumentNullException.ThrowIfNull(text);
-#else
-        if (text == null)
-            throw new ArgumentNullException(nameof(text));
-#endif
-
-        var buffer = new char[text.Length * 2 + 1];
-        text.CopyTo(0, buffer, 0, text.Length);
-        text.CopyTo(0, buffer, text.Length + 1, text.Length);
-        Array.Reverse(buffer, text.Length + 1, text.Length);
-        return new(LcpIndex.Create(SuffixArray.Create(buffer)), text, new(buffer[(text.Length + 1)..]));
-    }
-
-    /// <summary>
     /// Efficiently counts the occurrences of a specified pattern within the text.
     /// It leverages binary search over the suffix array to quickly find the range, ensuring high performance even with large texts.
     /// </summary>
@@ -876,6 +822,105 @@ public sealed class LcpIndex
         return results.Order().Select(n => new TextWithPosition(this.Text.Span[n.Item1..(n.Item1 + n.Item2)].ToString(), n.Item1));
     }
 
+    /// <summary>
+    /// Creates a new <see cref="SimilarityMatcher"/> instance to find common substrings between two texts.
+    /// This is achieved by concatenating the two texts with a unique separator and building a single LCP index on the result.
+    /// </summary>
+    /// <param name="text1">The first text to compare.</param>
+    /// <param name="text2">The second text to compare.</param>
+    /// <returns>A new <see cref="SimilarityMatcher"/> instance ready for finding matches.</returns>
+    /// <exception cref="ArgumentNullException">Thrown if <paramref name="text1"/> or <paramref name="text2"/> is null.</exception>
+    public static SimilarityMatcher CreateSimilarityMatcher(string text1, string text2)
+    {
+#if NET6_0_OR_GREATER
+        ArgumentNullException.ThrowIfNull(text1);
+        ArgumentNullException.ThrowIfNull(text2);
+#else
+        if (text1 == null)
+            throw new ArgumentNullException(nameof(text1));
+        if (text2 == null)
+            throw new ArgumentNullException(nameof(text2));
+#endif
+
+        var buffer = new char[text1.Length + text2.Length + 1];
+        text1.CopyTo(0, buffer, 0, text1.Length);
+        text2.CopyTo(0, buffer, text1.Length + 1, text2.Length);
+        return new(LcpIndex.Create(SuffixArray.Create(buffer)), text1, text2);
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="SimilarityMatcher"/> instance specifically configured to find palindromic substrings within a single text.
+    /// This is achieved by concatenating the text with its reverse, separated by a unique character,
+    /// and building an LCP index on the combined result.
+    /// </summary>
+    /// <param name="text">The text in which to find palindromes.</param>
+    /// <returns>A new <see cref="SimilarityMatcher"/> instance ready for palindrome detection.</returns>
+    /// <exception cref="ArgumentNullException">Thrown if <paramref name="text"/> is null.</exception>
+    /// <remarks>
+    /// The returned matcher will have its <c>Text1</c> property set to the original <paramref name="text"/> and its <c>Text2</c>
+    /// property set to the reversed version of the text.
+    /// </remarks>
+    public static SimilarityMatcher CreateSimilarityMatcherForPalindrome(string text)
+    {
+#if NET6_0_OR_GREATER
+        ArgumentNullException.ThrowIfNull(text);
+#else
+        if (text == null)
+            throw new ArgumentNullException(nameof(text));
+#endif
+
+        var buffer = new char[text.Length * 2 + 1];
+        text.CopyTo(0, buffer, 0, text.Length);
+        text.CopyTo(0, buffer, text.Length + 1, text.Length);
+        Array.Reverse(buffer, text.Length + 1, text.Length);
+        return new(LcpIndex.Create(SuffixArray.Create(buffer)), text, new(buffer[(text.Length + 1)..]));
+    }
+
+    // In LcpIndex class
+
+    /// <summary>
+    /// Creates a new <see cref="MultiSimilarityMatcher"/> instance to find common substrings among multiple texts.
+    /// This is achieved by concatenating the texts with unique separators and building a single LCP index on the result.
+    /// </summary>
+    /// <param name="texts">The collection of texts to compare.</param>
+    /// <returns>A new <see cref="MultiSimilarityMatcher"/> instance ready for finding matches.</returns>
+    /// <exception cref="ArgumentNullException">Thrown if <paramref name="texts"/> is null.</exception>
+    /// <exception cref="ArgumentException">Thrown if fewer than two texts are provided, if more than 6400 texts are provided, or if a text contains a reserved separator character (U+E000 - U+F8FF, Private Use Area).</exception>
+    public static MultiSimilarityMatcher CreateMultiSimilarityMatcher(params string[] texts)
+    {
+#if NET6_0_OR_GREATER
+        ArgumentNullException.ThrowIfNull(texts);
+#else
+        if (texts == null)
+            throw new ArgumentNullException(nameof(texts));
+#endif
+        if (texts.Length < 2)
+            throw new ArgumentException("At least two texts are required.", nameof(texts));
+        if (texts.Length > 6400)
+            throw new ArgumentException("Too many texts.", nameof(texts));
+        if (texts.Any(n => n == null))
+            throw new ArgumentException($"{nameof(texts)} contains null.");
+
+        // E000-F8FF: Private Use Area
+        if (texts.Any(n => n.Any(m => (int)m is >= 0xE000 and <= 0xF8FF)))
+            throw new ArgumentException($"{nameof(texts)} contains a reserved separator character.");
+
+        var totalLength = texts.Sum(t => t.Length) + texts.Length - 1;
+        var buffer = new char[totalLength];
+
+        var index = 0;
+        for (var i = 0; i < texts.Length; i++)
+        {
+            texts[i].CopyTo(0, buffer, index, texts[i].Length);
+            index += texts[i].Length;
+
+            if (i < texts.Length - 1)
+                buffer[index++] = (char)(0xE000 + i);
+        }
+
+        return new(Create(SuffixArray.Create(buffer)), texts.ToList().AsReadOnly());
+    }
+
     (int, int) FindSuffixRange(ReadOnlySpan<char> pattern)
     {
         if (pattern.IsEmpty)
@@ -989,6 +1034,45 @@ public sealed class LcpIndex
         }
 
         /// <summary>
+        /// Finds all longest common substrings between the two texts.
+        /// </summary>
+        /// <returns>
+        /// An enumerable collection of <see cref="Match"/> records representing the longest common substrings.
+        /// Returns an empty collection if no common part exists.
+        /// </returns>
+        public IEnumerable<Match> LongestMatch()
+        {
+            var boundaryPosition = this.Text1.Length;
+            var saSpan = this.LcpIndex.SA.SA.Span;
+            var lcpSpan = this.LcpIndex.SA.Lcp.Span;
+            var results = new List<Match>();
+            var lcpMax = 0;
+            for (var i = 1; i < lcpSpan.Length; i++)
+            {
+                var lcpLength = lcpSpan[i];
+                if (lcpLength >= lcpMax)
+                {
+                    var (tmpPosition1, tmpPosition2) = (saSpan[i - 1], saSpan[i]);
+                    if ((tmpPosition1 < boundaryPosition && tmpPosition2 > boundaryPosition) || (tmpPosition2 < boundaryPosition && tmpPosition1 > boundaryPosition))
+                    {
+                        if (lcpLength > lcpMax)
+                        {
+                            lcpMax = lcpLength;
+                            results.Clear();
+                        }
+
+                        var resultPosition1 = tmpPosition1 < boundaryPosition ? tmpPosition1 : tmpPosition2;
+                        var resultPosition2 = tmpPosition1 > boundaryPosition ? tmpPosition1 - boundaryPosition - 1 : tmpPosition2 - boundaryPosition - 1;
+                        results.Add(new(resultPosition1, resultPosition2, lcpLength));
+                    }
+                }
+            }
+
+            return results;
+        }
+
+#if false
+        /// <summary>
         /// Finds the longest common substring between the two texts.
         /// </summary>
         /// <returns>A <see cref="Match"/> record representing the longest common substring, or null if no common part exists.</returns>
@@ -1016,6 +1100,7 @@ public sealed class LcpIndex
 
             return lcpMax == 0 ? null : new(lcpMaxPosition1, lcpMaxPosition2, lcpMax);
         }
+#endif
 
         /// <summary>
         /// Finds the longest palindromic substring within the original text.
@@ -1067,6 +1152,194 @@ public sealed class LcpIndex
         /// <param name="Position">The 0-based starting position of the palindrome in the original text.</param>
         /// <param name="Length">The length of the palindrome.</param>
         public record Palindrome(int Position, int Length);
+    }
+
+    /// <summary>
+    /// Provides functionality to find all common substrings among multiple texts using a combined <see cref="LcpIndex"/>.
+    /// An instance of this class is created via the <see cref="LcpIndex.CreateMultiSimilarityMatcher"/> factory method.
+    /// </summary>
+    /// <param name="lcpIndex">The LcpIndex built on the combined text.</param>
+    /// <param name="texts">The original texts.</param>
+    public sealed class MultiSimilarityMatcher(LcpIndex lcpIndex, IReadOnlyList<string> texts)
+    {
+        /// <summary>
+        /// Gets the underlying <see cref="LcpIndex"/> built on the combined text.
+        /// </summary>
+        public LcpIndex LcpIndex => lcpIndex;
+
+        /// <summary>
+        /// Gets the original texts used for the comparison.
+        /// </summary>
+        public IReadOnlyList<string> Texts => texts;
+
+        // 
+        // 
+
+        /// <summary>
+        /// Finds substrings that appear in at least a specified number of texts.
+        /// This corrected version identifies the full extent of a common substring across all relevant texts.
+        /// </summary>
+        /// <param name="minTexts">The minimum number of texts the substring must appear in.</param>
+        /// <param name="minLength">The minimum length of the common substring.</param>
+        /// <returns>An enumerable collection of <see cref="MultiMatch"/> records, with each record containing all occurrences.</returns>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if minTexts is less than 2 or minLength is negative.</exception>
+        public IEnumerable<MultiMatch> Matches(int minTexts, int minLength = 2)
+        {
+#if NET8_0_OR_GREATER
+            ArgumentOutOfRangeException.ThrowIfLessThan(minTexts, 2);
+            ArgumentOutOfRangeException.ThrowIfNegative(minLength);
+#else
+            if (minTexts < 2)
+                throw new ArgumentOutOfRangeException(nameof(minTexts), $"{nameof(minTexts)} must be at least 2.");
+            if (minLength < 0)
+                throw new ArgumentOutOfRangeException(nameof(minLength), $"{nameof(minLength)} must be greater than or equal 0.");
+#endif
+
+            if (minTexts > this.Texts.Count)
+                yield break;
+
+            var saMemory = this.LcpIndex.SA.SA;
+            var lcpMemory = this.LcpIndex.SA.Lcp;
+            var textMemory = this.LcpIndex.Text;
+            var detected = new HashSet<ReadOnlyMemory<char>>(CharMemoryComparer.Instance);
+            var stack = new Stack<(int, int)>();
+            for (var i = 1; i < lcpMemory.Length; i++)
+            {
+                var currentLcp = i == lcpMemory.Length ? 0 : lcpMemory.Span[i];
+                if (currentLcp < minLength)
+                    currentLcp = 0;
+
+                var lcpIndex = i;
+                while (stack.TryPeek(out var tmpState) && tmpState.Item1 > currentLcp)
+                {
+                    var (tmpLcp, tmpIndex) = stack.Pop();
+                    var occurrences = new Dictionary<int, int>();
+                    for (var k = tmpIndex - 1; k <= i - 1; k++)
+                    {
+                        var (textIndex, originalPosition) = GetPosition(saMemory.Span[k]);
+                        if (textIndex != -1)
+                            occurrences.TryAdd(textIndex, originalPosition);
+                    }
+                    if (occurrences.Count >= minTexts)
+                    {
+                        var detectedSubstring = textMemory.Slice(saMemory.Span[tmpIndex - 1], tmpLcp);
+                        if (detected.Add(detectedSubstring))
+                            yield return new(tmpLcp, occurrences.OrderBy(n => n.Key).Select(n => (n.Key, n.Value)).ToArray());
+                    }
+
+                    lcpIndex = tmpIndex;
+                }
+
+                if (currentLcp == 0)
+                    stack.Clear();
+                else
+                {
+                    if (!stack.TryPeek(out var tmpState) || tmpState.Item1 < currentLcp)
+                        stack.Push((currentLcp, lcpIndex));
+                }
+            }
+        }
+
+        /// <summary>
+        /// Finds the longest substring(s) that appear in at least a specified number of texts.
+        /// This method is optimized to only track the longest matches, avoiding the overhead of finding all matches.
+        /// </summary>
+        /// <param name="minTexts">The minimum number of texts the substring must appear in.</param>
+        /// <returns>
+        /// An enumerable collection of <see cref="MultiMatch"/> records for the longest common substring(s).
+        /// Returns an empty collection if no match is found.
+        /// </returns>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if minTexts is less than 2.</exception>
+        public IEnumerable<MultiMatch> LongestMatch(int minTexts)
+        // => Matches(minTexts).OrderByDescending(n => n.Length).FirstOrDefault();
+        {
+#if NET8_0_OR_GREATER
+            ArgumentOutOfRangeException.ThrowIfLessThan(minTexts, 2);
+#else
+            if (minTexts < 2)
+                throw new ArgumentOutOfRangeException(nameof(minTexts), $"{nameof(minTexts)} must be at least 2.");
+#endif
+
+            if (minTexts > this.Texts.Count)
+                return [];
+
+            var saMemory = this.LcpIndex.SA.SA;
+            var lcpMemory = this.LcpIndex.SA.Lcp;
+            var textMemory = this.LcpIndex.Text;
+            var results = new List<(string, MultiMatch)>();
+            var stack = new Stack<(int, int)>();
+            var maxLength = 1;
+            for (var i = 1; i <= lcpMemory.Length; i++)
+            {
+                var currentLcp = i == lcpMemory.Length ? 0 : lcpMemory.Span[i];
+                if (currentLcp < 2)
+                    currentLcp = 0;
+
+                var lcpIndex = i;
+                while (stack.TryPeek(out var tmpState) && tmpState.Item1 > currentLcp)
+                {
+                    var (tmpLcp, tmpIndex) = stack.Pop();
+                    if (tmpLcp >= maxLength)
+                    {
+                        var occurrence = new Dictionary<int, int>();
+                        for (var k = tmpIndex - 1; k <= i - 1; k++)
+                        {
+                            var (textIndex, originalPosition) = GetPosition(saMemory.Span[k]);
+                            if (textIndex != -1)
+                                occurrence.TryAdd(textIndex, originalPosition);
+                        }
+                        if (occurrence.Count >= minTexts)
+                        {
+                            if (tmpLcp > maxLength)
+                            {
+                                maxLength = tmpLcp;
+                                results.Clear();
+                            }
+
+                            var text = textMemory.Slice(saMemory.Span[tmpIndex - 1], tmpLcp).Span.ToString();
+                            results.Add((text, new(tmpLcp, occurrence.OrderBy(n => n.Key).Select(n => (n.Key, n.Value)).ToArray())));
+                        }
+                    }
+
+                    lcpIndex = tmpIndex;
+                }
+
+                if (currentLcp == 0)
+                    stack.Clear();
+                else
+                {
+                    if (!stack.TryPeek(out var tmpState) || tmpState.Item1 < currentLcp)
+                        stack.Push((currentLcp, lcpIndex));
+                }
+            }
+
+            return results.GroupBy(n => n.Item1, StringComparer.Ordinal).Select(n => n.First().Item2);
+        }
+
+        (int, int) GetPosition(int concatenatedPosition)
+        {
+            int cumulativePosition = 0;
+            for (int i = 0; i < this.Texts.Count; i++)
+            {
+                int textLength = this.Texts[i].Length;
+                if (concatenatedPosition >= cumulativePosition && concatenatedPosition < cumulativePosition + textLength)
+                    return (i, concatenatedPosition - cumulativePosition);
+
+                cumulativePosition += textLength + 1;
+            }
+
+            return (-1, -1);
+        }
+
+        // 
+        // 
+
+        /// <summary>
+        /// Represents a common substring found among multiple texts.
+        /// </summary>
+        /// <param name="Length">The length of the common substring.</param>
+        /// <param name="Occurrences">A list of where the substring was found, as tuples of (text index, position).</param>
+        public record MultiMatch(int Length, (int, int)[] Occurrences);
     }
 
     class CharMemoryComparer : IEqualityComparer<ReadOnlyMemory<char>>

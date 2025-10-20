@@ -1,6 +1,8 @@
 
 using BelNytheraSeiche.WaveletMatrix;
 
+namespace Tests;
+
 [TestClass]
 public class LcpIndexTests
 {
@@ -81,9 +83,9 @@ public class LcpIndexTests
         var text1 = "The quick brown fox jumps over the lazy dog. The quick brown dog jumps over the lazy fox.";
         var text2 = "The quick brown cat jumps over the lazy dog. The quick brown rabbit jumps over the lazy fox.";
         var matcher = LcpIndex.CreateSimilarityMatcher(text1, text2);
-        var result = matcher.LongestMatch();
-        Assert.IsNotNull(result);
-        Assert.AreEqual((19, 19, 42), (result.Position1, result.Position2, result.Length));
+        var result = matcher.LongestMatch().ToArray();
+        Assert.AreEqual(1, result.Length);
+        Assert.AreEqual((19, 19, 42), (result[0].Position1, result[0].Position2, result[0].Length));
     }
 
     [TestMethod]
@@ -94,6 +96,50 @@ public class LcpIndexTests
         var result = matcher.FindPalindrome();
         Assert.IsNotNull(result);
         Assert.AreEqual((1, 14), (result.Position, result.Length));
+    }
+
+    [TestMethod]
+    public void MultiSimilarityMatches()
+    {
+        var text1 = "011000000";
+        var text2 = "999111999111";
+        var text3 = "8811100777";
+        var text4 = "666660110555511";
+        var matcher = LcpIndex.CreateMultiSimilarityMatcher(text1, text2, text3, text4);
+        var result = matcher.Matches(2).ToArray();
+        Assert.AreEqual(8, result.Length);
+        Assert.AreEqual(2, result[0].Length);
+        CollectionAssert.AreEquivalent(((int, int)[])[(0, 3), (2, 5)], result[0].Occurrences);
+        Assert.AreEqual(4, result[1].Length);
+        CollectionAssert.AreEquivalent(((int, int)[])[(0, 0), (3, 5)], result[1].Occurrences);
+        Assert.AreEqual(3, result[2].Length);
+        CollectionAssert.AreEquivalent(((int, int)[])[(0, 2), (2, 4)], result[2].Occurrences);
+        Assert.AreEqual(2, result[3].Length);
+        CollectionAssert.AreEquivalent(((int, int)[])[(0, 2), (2, 4), (3, 7)], result[3].Occurrences);
+        Assert.AreEqual(4, result[4].Length);
+        CollectionAssert.AreEquivalent(((int, int)[])[(0, 1), (2, 3)], result[4].Occurrences);
+        Assert.AreEqual(3, result[5].Length);
+        CollectionAssert.AreEquivalent(((int, int)[])[(0, 1), (2, 3), (3, 6)], result[5].Occurrences);
+        Assert.AreEqual(3, result[6].Length);
+        CollectionAssert.AreEquivalent(((int, int)[])[(1, 3), (2, 2)], result[6].Occurrences);
+        Assert.AreEqual(2, result[7].Length);
+        CollectionAssert.AreEquivalent(((int, int)[])[(0, 1), (1, 3), (2, 3), (3, 13)], result[7].Occurrences);
+    }
+
+    [TestMethod]
+    public void MultiSimilarityLongestMatch()
+    {
+        var text1 = "011000000";
+        var text2 = "999111999111";
+        var text3 = "8811100777";
+        var text4 = "666660110555511";
+        var matcher = LcpIndex.CreateMultiSimilarityMatcher(text1, text2, text3, text4);
+        var result = matcher.LongestMatch(2).ToArray();
+        Assert.AreEqual(2, result.Length);
+        Assert.AreEqual(4, result[0].Length);
+        CollectionAssert.AreEquivalent(((int, int)[])[(0, 0), (3, 5)], result[0].Occurrences);
+        Assert.AreEqual(4, result[1].Length);
+        CollectionAssert.AreEquivalent(((int, int)[])[(0, 1), (2, 3)], result[1].Occurrences);
     }
 
     [TestMethod]

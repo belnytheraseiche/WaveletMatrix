@@ -1,41 +1,40 @@
 ### YamlMime:ManagedReference
 items:
-- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match
-  commentId: T:BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match
-  id: LcpIndex.SimilarityMatcher.Match
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch
+  commentId: T:BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch
+  id: LcpIndex.MultiSimilarityMatcher.MultiMatch
   parent: BelNytheraSeiche.WaveletMatrix
   children:
-  - BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.#ctor(System.Int32,System.Int32,System.Int32)
-  - BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.Length
-  - BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.Position1
-  - BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.Position2
+  - BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.#ctor(System.Int32,System.ValueTuple{System.Int32,System.Int32}[])
+  - BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.Length
+  - BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.Occurrences
   langs:
   - csharp
   - vb
-  name: LcpIndex.SimilarityMatcher.Match
-  nameWithType: LcpIndex.SimilarityMatcher.Match
-  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match
+  name: LcpIndex.MultiSimilarityMatcher.MultiMatch
+  nameWithType: LcpIndex.MultiSimilarityMatcher.MultiMatch
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch
   type: Class
   source:
     remote:
       path: src/LcpIndex.cs
       branch: main
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
-    id: Match
+    id: MultiMatch
     path: src/LcpIndex.cs
-    startLine: 1146
+    startLine: 1341
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
-  summary: Represents a common substring found between two texts.
+  summary: Represents a common substring found among multiple texts.
   example: []
   syntax:
-    content: 'public record LcpIndex.SimilarityMatcher.Match : IEquatable<LcpIndex.SimilarityMatcher.Match>'
-    content.vb: Public Class LcpIndex.SimilarityMatcher.Match Implements IEquatable(Of LcpIndex.SimilarityMatcher.Match)
+    content: 'public record LcpIndex.MultiSimilarityMatcher.MultiMatch : IEquatable<LcpIndex.MultiSimilarityMatcher.MultiMatch>'
+    content.vb: Public Class LcpIndex.MultiSimilarityMatcher.MultiMatch Implements IEquatable(Of LcpIndex.MultiSimilarityMatcher.MultiMatch)
   inheritance:
   - System.Object
   implements:
-  - System.IEquatable{BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match}
+  - System.IEquatable{BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch}
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -44,16 +43,16 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.#ctor(System.Int32,System.Int32,System.Int32)
-  commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.#ctor(System.Int32,System.Int32,System.Int32)
-  id: '#ctor(System.Int32,System.Int32,System.Int32)'
-  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.#ctor(System.Int32,System.ValueTuple{System.Int32,System.Int32}[])
+  commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.#ctor(System.Int32,System.ValueTuple{System.Int32,System.Int32}[])
+  id: '#ctor(System.Int32,System.ValueTuple{System.Int32,System.Int32}[])'
+  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch
   langs:
   - csharp
   - vb
-  name: Match(int, int, int)
-  nameWithType: LcpIndex.SimilarityMatcher.Match.Match(int, int, int)
-  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.Match(int, int, int)
+  name: MultiMatch(int, (int, int)[])
+  nameWithType: LcpIndex.MultiSimilarityMatcher.MultiMatch.MultiMatch(int, (int, int)[])
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.MultiMatch(int, (int, int)[])
   type: Constructor
   source:
     remote:
@@ -62,101 +61,36 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: .ctor
     path: src/LcpIndex.cs
-    startLine: 1146
+    startLine: 1341
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
-  summary: Represents a common substring found between two texts.
+  summary: Represents a common substring found among multiple texts.
   example: []
   syntax:
-    content: public Match(int Position1, int Position2, int Length)
+    content: public MultiMatch(int Length, (int, int)[] Occurrences)
     parameters:
-    - id: Position1
-      type: System.Int32
-      description: The zero-based starting position of the match in the first text.
-    - id: Position2
-      type: System.Int32
-      description: The zero-based starting position of the match in the second text.
     - id: Length
       type: System.Int32
       description: The length of the common substring.
-    content.vb: Public Sub New(Position1 As Integer, Position2 As Integer, Length As Integer)
-  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.#ctor*
-  nameWithType.vb: LcpIndex.SimilarityMatcher.Match.New(Integer, Integer, Integer)
-  fullName.vb: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.New(Integer, Integer, Integer)
-  name.vb: New(Integer, Integer, Integer)
-- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.Position1
-  commentId: P:BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.Position1
-  id: Position1
-  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match
-  langs:
-  - csharp
-  - vb
-  name: Position1
-  nameWithType: LcpIndex.SimilarityMatcher.Match.Position1
-  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.Position1
-  type: Property
-  source:
-    remote:
-      path: src/LcpIndex.cs
-      branch: main
-      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
-    id: Position1
-    path: src/LcpIndex.cs
-    startLine: 1146
-  assemblies:
-  - BelNytheraSeiche.WaveletMatrix
-  namespace: BelNytheraSeiche.WaveletMatrix
-  summary: The zero-based starting position of the match in the first text.
-  example: []
-  syntax:
-    content: public int Position1 { get; init; }
-    parameters: []
-    return:
-      type: System.Int32
-    content.vb: Public Property Position1 As Integer
-  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.Position1*
-- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.Position2
-  commentId: P:BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.Position2
-  id: Position2
-  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match
-  langs:
-  - csharp
-  - vb
-  name: Position2
-  nameWithType: LcpIndex.SimilarityMatcher.Match.Position2
-  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.Position2
-  type: Property
-  source:
-    remote:
-      path: src/LcpIndex.cs
-      branch: main
-      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
-    id: Position2
-    path: src/LcpIndex.cs
-    startLine: 1146
-  assemblies:
-  - BelNytheraSeiche.WaveletMatrix
-  namespace: BelNytheraSeiche.WaveletMatrix
-  summary: The zero-based starting position of the match in the second text.
-  example: []
-  syntax:
-    content: public int Position2 { get; init; }
-    parameters: []
-    return:
-      type: System.Int32
-    content.vb: Public Property Position2 As Integer
-  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.Position2*
-- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.Length
-  commentId: P:BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.Length
+    - id: Occurrences
+      type: System.ValueTuple{System.Int32,System.Int32}[]
+      description: A list of where the substring was found, as tuples of (text index, position).
+    content.vb: Public Sub New(Length As Integer, Occurrences As (Integer, Integer)())
+  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.#ctor*
+  nameWithType.vb: LcpIndex.MultiSimilarityMatcher.MultiMatch.New(Integer, (Integer, Integer)())
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.New(Integer, (Integer, Integer)())
+  name.vb: New(Integer, (Integer, Integer)())
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.Length
+  commentId: P:BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.Length
   id: Length
-  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match
+  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch
   langs:
   - csharp
   - vb
   name: Length
-  nameWithType: LcpIndex.SimilarityMatcher.Match.Length
-  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.Length
+  nameWithType: LcpIndex.MultiSimilarityMatcher.MultiMatch.Length
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.Length
   type: Property
   source:
     remote:
@@ -165,7 +99,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Length
     path: src/LcpIndex.cs
-    startLine: 1146
+    startLine: 1341
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -177,7 +111,38 @@ items:
     return:
       type: System.Int32
     content.vb: Public Property Length As Integer
-  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.Length*
+  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.Length*
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.Occurrences
+  commentId: P:BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.Occurrences
+  id: Occurrences
+  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch
+  langs:
+  - csharp
+  - vb
+  name: Occurrences
+  nameWithType: LcpIndex.MultiSimilarityMatcher.MultiMatch.Occurrences
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.Occurrences
+  type: Property
+  source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
+    id: Occurrences
+    path: src/LcpIndex.cs
+    startLine: 1341
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: A list of where the substring was found, as tuples of (text index, position).
+  example: []
+  syntax:
+    content: public (int, int)[] Occurrences { get; init; }
+    parameters: []
+    return:
+      type: System.ValueTuple{System.Int32,System.Int32}[]
+    content.vb: Public Property Occurrences As (Integer, Integer)()
+  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.Occurrences*
 references:
 - uid: BelNytheraSeiche.WaveletMatrix
   commentId: N:BelNytheraSeiche.WaveletMatrix
@@ -212,17 +177,17 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: System.IEquatable{BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match}
-  commentId: T:System.IEquatable{BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match}
+- uid: System.IEquatable{BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch}
+  commentId: T:System.IEquatable{BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch}
   parent: System
   definition: System.IEquatable`1
   href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
-  name: IEquatable<LcpIndex.SimilarityMatcher.Match>
-  nameWithType: IEquatable<LcpIndex.SimilarityMatcher.Match>
-  fullName: System.IEquatable<BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match>
-  nameWithType.vb: IEquatable(Of LcpIndex.SimilarityMatcher.Match)
-  fullName.vb: System.IEquatable(Of BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match)
-  name.vb: IEquatable(Of LcpIndex.SimilarityMatcher.Match)
+  name: IEquatable<LcpIndex.MultiSimilarityMatcher.MultiMatch>
+  nameWithType: IEquatable<LcpIndex.MultiSimilarityMatcher.MultiMatch>
+  fullName: System.IEquatable<BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch>
+  nameWithType.vb: IEquatable(Of LcpIndex.MultiSimilarityMatcher.MultiMatch)
+  fullName.vb: System.IEquatable(Of BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch)
+  name.vb: IEquatable(Of LcpIndex.MultiSimilarityMatcher.MultiMatch)
   spec.csharp:
   - uid: System.IEquatable`1
     name: IEquatable
@@ -233,13 +198,13 @@ references:
     name: LcpIndex
     href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
   - name: .
-  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
-    name: SimilarityMatcher
-    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.html
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher
+    name: MultiSimilarityMatcher
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.html
   - name: .
-  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match
-    name: Match
-    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.html
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch
+    name: MultiMatch
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.html
   - name: '>'
   spec.vb:
   - uid: System.IEquatable`1
@@ -253,13 +218,13 @@ references:
     name: LcpIndex
     href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
   - name: .
-  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
-    name: SimilarityMatcher
-    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.html
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher
+    name: MultiSimilarityMatcher
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.html
   - name: .
-  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match
-    name: Match
-    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.html
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch
+    name: MultiMatch
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.html
   - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
@@ -515,14 +480,14 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.#ctor*
-  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.#ctor
-  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_SimilarityMatcher_Match__ctor_System_Int32_System_Int32_System_Int32_
-  name: Match
-  nameWithType: LcpIndex.SimilarityMatcher.Match.Match
-  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.Match
-  nameWithType.vb: LcpIndex.SimilarityMatcher.Match.New
-  fullName.vb: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.New
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.#ctor*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.#ctor
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_MultiSimilarityMatcher_MultiMatch__ctor_System_Int32_System_ValueTuple_System_Int32_System_Int32____
+  name: MultiMatch
+  nameWithType: LcpIndex.MultiSimilarityMatcher.MultiMatch.MultiMatch
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.MultiMatch
+  nameWithType.vb: LcpIndex.MultiSimilarityMatcher.MultiMatch.New
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.New
   name.vb: New
 - uid: System.Int32
   commentId: T:System.Int32
@@ -535,21 +500,54 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
-- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.Position1*
-  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.Position1
-  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_SimilarityMatcher_Match_Position1
-  name: Position1
-  nameWithType: LcpIndex.SimilarityMatcher.Match.Position1
-  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.Position1
-- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.Position2*
-  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.Position2
-  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_SimilarityMatcher_Match_Position2
-  name: Position2
-  nameWithType: LcpIndex.SimilarityMatcher.Match.Position2
-  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.Position2
-- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.Length*
-  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.Length
-  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_SimilarityMatcher_Match_Length
+- uid: System.ValueTuple{System.Int32,System.Int32}[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: (int, int)[]
+  nameWithType: (int, int)[]
+  fullName: (int, int)[]
+  nameWithType.vb: (Integer, Integer)()
+  fullName.vb: (Integer, Integer)()
+  name.vb: (Integer, Integer)()
+  spec.csharp:
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  - name: (
+  - name: )
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.Length*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.Length
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_MultiSimilarityMatcher_MultiMatch_Length
   name: Length
-  nameWithType: LcpIndex.SimilarityMatcher.Match.Length
-  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match.Length
+  nameWithType: LcpIndex.MultiSimilarityMatcher.MultiMatch.Length
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.Length
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.Occurrences*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.Occurrences
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_MultiSimilarityMatcher_MultiMatch_Occurrences
+  name: Occurrences
+  nameWithType: LcpIndex.MultiSimilarityMatcher.MultiMatch.Occurrences
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.Occurrences

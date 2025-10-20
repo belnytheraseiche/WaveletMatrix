@@ -166,6 +166,34 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch",
+      "Summary": "<p sourcefile=\"api/BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.yml\" sourcestartlinenumber=\"1\">Represents a common substring found among multiple texts.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher",
+      "Summary": "<p sourcefile=\"api/BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.yml\" sourcestartlinenumber=\"1\">Provides functionality to find all common substrings among multiple texts using a combined <xref href=\"BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.LcpIndex\" data-throw-if-not-resolved=\"false\"></xref>.\nAn instance of this class is created via the <xref href=\"BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateMultiSimilarityMatcher(System.String%5b%5d)\" data-throw-if-not-resolved=\"false\"></xref> factory method.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat.yml",
       "output": {
         ".html": {

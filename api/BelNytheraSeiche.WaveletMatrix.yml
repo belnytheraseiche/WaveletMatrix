@@ -16,6 +16,8 @@ items:
   - BelNytheraSeiche.WaveletMatrix.FischerHeunSparseTable`1
   - BelNytheraSeiche.WaveletMatrix.ImmutableBitSet
   - BelNytheraSeiche.WaveletMatrix.LcpIndex
+  - BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher
+  - BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match
@@ -229,7 +231,6 @@ references:
     href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.html
 - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match
   commentId: T:BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Match
-  parent: BelNytheraSeiche.WaveletMatrix
   href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
   name: LcpIndex.SimilarityMatcher.Match
   nameWithType: LcpIndex.SimilarityMatcher.Match
@@ -289,6 +290,59 @@ references:
   - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Palindrome
     name: Palindrome
     href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.Palindrome.html
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher
+  commentId: T:BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  name: LcpIndex.MultiSimilarityMatcher
+  nameWithType: LcpIndex.MultiSimilarityMatcher
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher
+    name: MultiSimilarityMatcher
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.html
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher
+    name: MultiSimilarityMatcher
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.html
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch
+  commentId: T:BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  name: LcpIndex.MultiSimilarityMatcher.MultiMatch
+  nameWithType: LcpIndex.MultiSimilarityMatcher.MultiMatch
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher
+    name: MultiSimilarityMatcher
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch
+    name: MultiMatch
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.html
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher
+    name: MultiSimilarityMatcher
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch
+    name: MultiMatch
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.html
 - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat
   commentId: T:BelNytheraSeiche.WaveletMatrix.LcpIndex.TandemRepeat
   href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html

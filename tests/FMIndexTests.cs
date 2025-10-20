@@ -1,6 +1,8 @@
 
 using BelNytheraSeiche.WaveletMatrix;
 
+namespace Tests;
+
 [TestClass]
 public class FMIndexTests
 {

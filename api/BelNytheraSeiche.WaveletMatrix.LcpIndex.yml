@@ -9,6 +9,7 @@ items:
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.CountOccurrences(System.ReadOnlySpan{System.Char})
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.CountUniqueSubstrings
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.Create(BelNytheraSeiche.WaveletMatrix.SuffixArray)
+  - BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateMultiSimilarityMatcher(System.String[])
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcher(System.String,System.String)
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcherForPalindrome(System.String)
   - BelNytheraSeiche.WaveletMatrix.LcpIndex.Deserialize(System.Byte[])
@@ -674,105 +675,6 @@ items:
       description: The LZ78 complexity of the text.
     content.vb: Public Function CalculateZivLempelComplexity() As Integer
   overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.CalculateZivLempelComplexity*
-- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcher(System.String,System.String)
-  commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcher(System.String,System.String)
-  id: CreateSimilarityMatcher(System.String,System.String)
-  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex
-  langs:
-  - csharp
-  - vb
-  name: CreateSimilarityMatcher(string, string)
-  nameWithType: LcpIndex.CreateSimilarityMatcher(string, string)
-  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcher(string, string)
-  type: Method
-  source:
-    remote:
-      path: src/LcpIndex.cs
-      branch: main
-      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
-    id: CreateSimilarityMatcher
-    path: src/LcpIndex.cs
-    startLine: 681
-  assemblies:
-  - BelNytheraSeiche.WaveletMatrix
-  namespace: BelNytheraSeiche.WaveletMatrix
-  summary: >-
-    Creates a new <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher" data-throw-if-not-resolved="false"></xref> instance to find common substrings between two texts.
-
-    This is achieved by concatenating the two texts with a unique separator and building a single LCP index on the result.
-  example: []
-  syntax:
-    content: public static LcpIndex.SimilarityMatcher CreateSimilarityMatcher(string text1, string text2)
-    parameters:
-    - id: text1
-      type: System.String
-      description: The first text to compare.
-    - id: text2
-      type: System.String
-      description: The second text to compare.
-    return:
-      type: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
-      description: A new <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher" data-throw-if-not-resolved="false"></xref> instance ready for finding matches.
-    content.vb: Public Shared Function CreateSimilarityMatcher(text1 As String, text2 As String) As LcpIndex.SimilarityMatcher
-  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcher*
-  exceptions:
-  - type: System.ArgumentNullException
-    commentId: T:System.ArgumentNullException
-    description: Thrown if <code class="paramref">text1</code> or <code class="paramref">text2</code> is null.
-  nameWithType.vb: LcpIndex.CreateSimilarityMatcher(String, String)
-  fullName.vb: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcher(String, String)
-  name.vb: CreateSimilarityMatcher(String, String)
-- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcherForPalindrome(System.String)
-  commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcherForPalindrome(System.String)
-  id: CreateSimilarityMatcherForPalindrome(System.String)
-  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex
-  langs:
-  - csharp
-  - vb
-  name: CreateSimilarityMatcherForPalindrome(string)
-  nameWithType: LcpIndex.CreateSimilarityMatcherForPalindrome(string)
-  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcherForPalindrome(string)
-  type: Method
-  source:
-    remote:
-      path: src/LcpIndex.cs
-      branch: main
-      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
-    id: CreateSimilarityMatcherForPalindrome
-    path: src/LcpIndex.cs
-    startLine: 711
-  assemblies:
-  - BelNytheraSeiche.WaveletMatrix
-  namespace: BelNytheraSeiche.WaveletMatrix
-  summary: >-
-    Creates a new <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher" data-throw-if-not-resolved="false"></xref> instance specifically configured to find palindromic substrings within a single text.
-
-    This is achieved by concatenating the text with its reverse, separated by a unique character,
-
-    and building an LCP index on the combined result.
-  remarks: >-
-    The returned matcher will have its <code>Text1</code> property set to the original <code class="paramref">text</code> and its <code>Text2</code>
-
-    property set to the reversed version of the text.
-  example: []
-  syntax:
-    content: public static LcpIndex.SimilarityMatcher CreateSimilarityMatcherForPalindrome(string text)
-    parameters:
-    - id: text
-      type: System.String
-      description: The text in which to find palindromes.
-    return:
-      type: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
-      description: A new <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher" data-throw-if-not-resolved="false"></xref> instance ready for palindrome detection.
-    content.vb: Public Shared Function CreateSimilarityMatcherForPalindrome(text As String) As LcpIndex.SimilarityMatcher
-  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcherForPalindrome*
-  exceptions:
-  - type: System.ArgumentNullException
-    commentId: T:System.ArgumentNullException
-    description: Thrown if <code class="paramref">text</code> is null.
-  nameWithType.vb: LcpIndex.CreateSimilarityMatcherForPalindrome(String)
-  fullName.vb: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcherForPalindrome(String)
-  name.vb: CreateSimilarityMatcherForPalindrome(String)
 - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.CountOccurrences(System.ReadOnlySpan{System.Char})
   commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.CountOccurrences(System.ReadOnlySpan{System.Char})
   id: CountOccurrences(System.ReadOnlySpan{System.Char})
@@ -791,7 +693,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: CountOccurrences
     path: src/LcpIndex.cs
-    startLine: 733
+    startLine: 679
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -832,7 +734,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: Locate
     path: src/LcpIndex.cs
-    startLine: 755
+    startLine: 701
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -884,7 +786,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: FindShortestUniqueSubstring
     path: src/LcpIndex.cs
-    startLine: 802
+    startLine: 748
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -921,7 +823,7 @@ items:
       repo: https://github.com/belnytheraseiche/WaveletMatrix.git
     id: FindAllShortestUniqueSubstrings
     path: src/LcpIndex.cs
-    startLine: 841
+    startLine: 787
   assemblies:
   - BelNytheraSeiche.WaveletMatrix
   namespace: BelNytheraSeiche.WaveletMatrix
@@ -940,6 +842,153 @@ items:
         one of the shortest unique substrings found. Returns an empty collection if no unique substring exists.
     content.vb: Public Function FindAllShortestUniqueSubstrings() As IEnumerable(Of LcpIndex.TextWithPosition)
   overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.FindAllShortestUniqueSubstrings*
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcher(System.String,System.String)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcher(System.String,System.String)
+  id: CreateSimilarityMatcher(System.String,System.String)
+  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex
+  langs:
+  - csharp
+  - vb
+  name: CreateSimilarityMatcher(string, string)
+  nameWithType: LcpIndex.CreateSimilarityMatcher(string, string)
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcher(string, string)
+  type: Method
+  source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
+    id: CreateSimilarityMatcher
+    path: src/LcpIndex.cs
+    startLine: 832
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Creates a new <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher" data-throw-if-not-resolved="false"></xref> instance to find common substrings between two texts.
+
+    This is achieved by concatenating the two texts with a unique separator and building a single LCP index on the result.
+  example: []
+  syntax:
+    content: public static LcpIndex.SimilarityMatcher CreateSimilarityMatcher(string text1, string text2)
+    parameters:
+    - id: text1
+      type: System.String
+      description: The first text to compare.
+    - id: text2
+      type: System.String
+      description: The second text to compare.
+    return:
+      type: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
+      description: A new <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher" data-throw-if-not-resolved="false"></xref> instance ready for finding matches.
+    content.vb: Public Shared Function CreateSimilarityMatcher(text1 As String, text2 As String) As LcpIndex.SimilarityMatcher
+  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcher*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code class="paramref">text1</code> or <code class="paramref">text2</code> is null.
+  nameWithType.vb: LcpIndex.CreateSimilarityMatcher(String, String)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcher(String, String)
+  name.vb: CreateSimilarityMatcher(String, String)
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcherForPalindrome(System.String)
+  commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcherForPalindrome(System.String)
+  id: CreateSimilarityMatcherForPalindrome(System.String)
+  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex
+  langs:
+  - csharp
+  - vb
+  name: CreateSimilarityMatcherForPalindrome(string)
+  nameWithType: LcpIndex.CreateSimilarityMatcherForPalindrome(string)
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcherForPalindrome(string)
+  type: Method
+  source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
+    id: CreateSimilarityMatcherForPalindrome
+    path: src/LcpIndex.cs
+    startLine: 862
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Creates a new <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher" data-throw-if-not-resolved="false"></xref> instance specifically configured to find palindromic substrings within a single text.
+
+    This is achieved by concatenating the text with its reverse, separated by a unique character,
+
+    and building an LCP index on the combined result.
+  remarks: >-
+    The returned matcher will have its <code>Text1</code> property set to the original <code class="paramref">text</code> and its <code>Text2</code>
+
+    property set to the reversed version of the text.
+  example: []
+  syntax:
+    content: public static LcpIndex.SimilarityMatcher CreateSimilarityMatcherForPalindrome(string text)
+    parameters:
+    - id: text
+      type: System.String
+      description: The text in which to find palindromes.
+    return:
+      type: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
+      description: A new <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher" data-throw-if-not-resolved="false"></xref> instance ready for palindrome detection.
+    content.vb: Public Shared Function CreateSimilarityMatcherForPalindrome(text As String) As LcpIndex.SimilarityMatcher
+  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcherForPalindrome*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code class="paramref">text</code> is null.
+  nameWithType.vb: LcpIndex.CreateSimilarityMatcherForPalindrome(String)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcherForPalindrome(String)
+  name.vb: CreateSimilarityMatcherForPalindrome(String)
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateMultiSimilarityMatcher(System.String[])
+  commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateMultiSimilarityMatcher(System.String[])
+  id: CreateMultiSimilarityMatcher(System.String[])
+  parent: BelNytheraSeiche.WaveletMatrix.LcpIndex
+  langs:
+  - csharp
+  - vb
+  name: CreateMultiSimilarityMatcher(params string[])
+  nameWithType: LcpIndex.CreateMultiSimilarityMatcher(params string[])
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateMultiSimilarityMatcher(params string[])
+  type: Method
+  source:
+    remote:
+      path: src/LcpIndex.cs
+      branch: main
+      repo: https://github.com/belnytheraseiche/WaveletMatrix.git
+    id: CreateMultiSimilarityMatcher
+    path: src/LcpIndex.cs
+    startLine: 888
+  assemblies:
+  - BelNytheraSeiche.WaveletMatrix
+  namespace: BelNytheraSeiche.WaveletMatrix
+  summary: >-
+    Creates a new <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher" data-throw-if-not-resolved="false"></xref> instance to find common substrings among multiple texts.
+
+    This is achieved by concatenating the texts with unique separators and building a single LCP index on the result.
+  example: []
+  syntax:
+    content: public static LcpIndex.MultiSimilarityMatcher CreateMultiSimilarityMatcher(params string[] texts)
+    parameters:
+    - id: texts
+      type: System.String[]
+      description: The collection of texts to compare.
+    return:
+      type: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher
+      description: A new <xref href="BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher" data-throw-if-not-resolved="false"></xref> instance ready for finding matches.
+    content.vb: Public Shared Function CreateMultiSimilarityMatcher(ParamArray texts As String()) As LcpIndex.MultiSimilarityMatcher
+  overload: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateMultiSimilarityMatcher*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code class="paramref">texts</code> is null.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if fewer than two texts are provided, if more than 6400 texts are provided, or if a text contains a reserved separator character (U+E000 - U+F8FF, Private Use Area).
+  nameWithType.vb: LcpIndex.CreateMultiSimilarityMatcher(ParamArray String())
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateMultiSimilarityMatcher(ParamArray String())
+  name.vb: CreateMultiSimilarityMatcher(ParamArray String())
 references:
 - uid: BelNytheraSeiche.WaveletMatrix.FischerHeunSparseTable`1
   commentId: T:BelNytheraSeiche.WaveletMatrix.FischerHeunSparseTable`1
@@ -1661,41 +1710,6 @@ references:
   name: CalculateZivLempelComplexity
   nameWithType: LcpIndex.CalculateZivLempelComplexity
   fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.CalculateZivLempelComplexity
-- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
-  commentId: T:BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
-  parent: BelNytheraSeiche.WaveletMatrix
-  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
-  name: LcpIndex.SimilarityMatcher
-  nameWithType: LcpIndex.SimilarityMatcher
-  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
-  spec.csharp:
-  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
-    name: LcpIndex
-    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
-  - name: .
-  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
-    name: SimilarityMatcher
-    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.html
-  spec.vb:
-  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
-    name: LcpIndex
-    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
-  - name: .
-  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
-    name: SimilarityMatcher
-    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.html
-- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcher*
-  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcher
-  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_CreateSimilarityMatcher_System_String_System_String_
-  name: CreateSimilarityMatcher
-  nameWithType: LcpIndex.CreateSimilarityMatcher
-  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcher
-- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcherForPalindrome*
-  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcherForPalindrome
-  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_CreateSimilarityMatcherForPalindrome_System_String_
-  name: CreateSimilarityMatcherForPalindrome
-  nameWithType: LcpIndex.CreateSimilarityMatcherForPalindrome
-  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcherForPalindrome
 - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.CountOccurrences*
   commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.CountOccurrences
   href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_CountOccurrences_System_ReadOnlySpan_System_Char__
@@ -1907,4 +1921,91 @@ references:
   - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.TextWithPosition
     name: TextWithPosition
     href: BelNytheraSeiche.WaveletMatrix.LcpIndex.TextWithPosition.html
+  - name: )
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
+  commentId: T:BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  name: LcpIndex.SimilarityMatcher
+  nameWithType: LcpIndex.SimilarityMatcher
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
+    name: SimilarityMatcher
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.html
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher
+    name: SimilarityMatcher
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.SimilarityMatcher.html
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcher*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcher
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_CreateSimilarityMatcher_System_String_System_String_
+  name: CreateSimilarityMatcher
+  nameWithType: LcpIndex.CreateSimilarityMatcher
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcher
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcherForPalindrome*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcherForPalindrome
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_CreateSimilarityMatcherForPalindrome_System_String_
+  name: CreateSimilarityMatcherForPalindrome
+  nameWithType: LcpIndex.CreateSimilarityMatcherForPalindrome
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcherForPalindrome
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher
+  commentId: T:BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher
+  parent: BelNytheraSeiche.WaveletMatrix
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  name: LcpIndex.MultiSimilarityMatcher
+  nameWithType: LcpIndex.MultiSimilarityMatcher
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher
+  spec.csharp:
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher
+    name: MultiSimilarityMatcher
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.html
+  spec.vb:
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex
+    name: LcpIndex
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html
+  - name: .
+  - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher
+    name: MultiSimilarityMatcher
+    href: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.html
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateMultiSimilarityMatcher*
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateMultiSimilarityMatcher
+  href: BelNytheraSeiche.WaveletMatrix.LcpIndex.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_CreateMultiSimilarityMatcher_System_String___
+  name: CreateMultiSimilarityMatcher
+  nameWithType: LcpIndex.CreateMultiSimilarityMatcher
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateMultiSimilarityMatcher
+- uid: System.String[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string[]
+  nameWithType: string[]
+  fullName: string[]
+  nameWithType.vb: String()
+  fullName.vb: String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
   - name: )

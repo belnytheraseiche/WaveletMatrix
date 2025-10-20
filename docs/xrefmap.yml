@@ -1121,6 +1121,22 @@ references:
   isSpec: "True"
   fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.Create
   nameWithType: LcpIndex.Create
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateMultiSimilarityMatcher(System.String[])
+  name: CreateMultiSimilarityMatcher(params string[])
+  href: api/BelNytheraSeiche.WaveletMatrix.LcpIndex.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_CreateMultiSimilarityMatcher_System_String___
+  commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateMultiSimilarityMatcher(System.String[])
+  name.vb: CreateMultiSimilarityMatcher(ParamArray String())
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateMultiSimilarityMatcher(params string[])
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateMultiSimilarityMatcher(ParamArray String())
+  nameWithType: LcpIndex.CreateMultiSimilarityMatcher(params string[])
+  nameWithType.vb: LcpIndex.CreateMultiSimilarityMatcher(ParamArray String())
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateMultiSimilarityMatcher*
+  name: CreateMultiSimilarityMatcher
+  href: api/BelNytheraSeiche.WaveletMatrix.LcpIndex.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_CreateMultiSimilarityMatcher_
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateMultiSimilarityMatcher
+  isSpec: "True"
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateMultiSimilarityMatcher
+  nameWithType: LcpIndex.CreateMultiSimilarityMatcher
 - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.CreateSimilarityMatcher(System.String,System.String)
   name: CreateSimilarityMatcher(string, string)
   href: api/BelNytheraSeiche.WaveletMatrix.LcpIndex.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_CreateSimilarityMatcher_System_String_System_String_
@@ -1284,6 +1300,140 @@ references:
   isSpec: "True"
   fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.Locate
   nameWithType: LcpIndex.Locate
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher
+  name: LcpIndex.MultiSimilarityMatcher
+  href: api/BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.html
+  commentId: T:BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher
+  nameWithType: LcpIndex.MultiSimilarityMatcher
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.#ctor(BelNytheraSeiche.WaveletMatrix.LcpIndex,System.Collections.Generic.IReadOnlyList{System.String})
+  name: MultiSimilarityMatcher(LcpIndex, IReadOnlyList<string>)
+  href: api/BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_MultiSimilarityMatcher__ctor_BelNytheraSeiche_WaveletMatrix_LcpIndex_System_Collections_Generic_IReadOnlyList_System_String__
+  commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.#ctor(BelNytheraSeiche.WaveletMatrix.LcpIndex,System.Collections.Generic.IReadOnlyList{System.String})
+  name.vb: New(LcpIndex, IReadOnlyList(Of String))
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiSimilarityMatcher(BelNytheraSeiche.WaveletMatrix.LcpIndex, System.Collections.Generic.IReadOnlyList<string>)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.New(BelNytheraSeiche.WaveletMatrix.LcpIndex, System.Collections.Generic.IReadOnlyList(Of String))
+  nameWithType: LcpIndex.MultiSimilarityMatcher.MultiSimilarityMatcher(LcpIndex, IReadOnlyList<string>)
+  nameWithType.vb: LcpIndex.MultiSimilarityMatcher.New(LcpIndex, IReadOnlyList(Of String))
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.#ctor*
+  name: MultiSimilarityMatcher
+  href: api/BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_MultiSimilarityMatcher__ctor_
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiSimilarityMatcher
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.New
+  nameWithType: LcpIndex.MultiSimilarityMatcher.MultiSimilarityMatcher
+  nameWithType.vb: LcpIndex.MultiSimilarityMatcher.New
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.LcpIndex
+  name: LcpIndex
+  href: api/BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_MultiSimilarityMatcher_LcpIndex
+  commentId: P:BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.LcpIndex
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.LcpIndex
+  nameWithType: LcpIndex.MultiSimilarityMatcher.LcpIndex
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.LcpIndex*
+  name: LcpIndex
+  href: api/BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_MultiSimilarityMatcher_LcpIndex_
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.LcpIndex
+  isSpec: "True"
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.LcpIndex
+  nameWithType: LcpIndex.MultiSimilarityMatcher.LcpIndex
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.LongestMatch(System.Int32)
+  name: LongestMatch(int)
+  href: api/BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_MultiSimilarityMatcher_LongestMatch_System_Int32_
+  commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.LongestMatch(System.Int32)
+  name.vb: LongestMatch(Integer)
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.LongestMatch(int)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.LongestMatch(Integer)
+  nameWithType: LcpIndex.MultiSimilarityMatcher.LongestMatch(int)
+  nameWithType.vb: LcpIndex.MultiSimilarityMatcher.LongestMatch(Integer)
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.LongestMatch*
+  name: LongestMatch
+  href: api/BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_MultiSimilarityMatcher_LongestMatch_
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.LongestMatch
+  isSpec: "True"
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.LongestMatch
+  nameWithType: LcpIndex.MultiSimilarityMatcher.LongestMatch
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.Matches(System.Int32,System.Int32)
+  name: Matches(int, int)
+  href: api/BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_MultiSimilarityMatcher_Matches_System_Int32_System_Int32_
+  commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.Matches(System.Int32,System.Int32)
+  name.vb: Matches(Integer, Integer)
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.Matches(int, int)
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.Matches(Integer, Integer)
+  nameWithType: LcpIndex.MultiSimilarityMatcher.Matches(int, int)
+  nameWithType.vb: LcpIndex.MultiSimilarityMatcher.Matches(Integer, Integer)
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.Matches*
+  name: Matches
+  href: api/BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_MultiSimilarityMatcher_Matches_
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.Matches
+  isSpec: "True"
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.Matches
+  nameWithType: LcpIndex.MultiSimilarityMatcher.Matches
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch
+  name: LcpIndex.MultiSimilarityMatcher.MultiMatch
+  href: api/BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.html
+  commentId: T:BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch
+  nameWithType: LcpIndex.MultiSimilarityMatcher.MultiMatch
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.#ctor(System.Int32,System.ValueTuple{System.Int32,System.Int32}[])
+  name: MultiMatch(int, (int, int)[])
+  href: api/BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_MultiSimilarityMatcher_MultiMatch__ctor_System_Int32_System_ValueTuple_System_Int32_System_Int32____
+  commentId: M:BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.#ctor(System.Int32,System.ValueTuple{System.Int32,System.Int32}[])
+  name.vb: New(Integer, (Integer, Integer)())
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.MultiMatch(int, (int, int)[])
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.New(Integer, (Integer, Integer)())
+  nameWithType: LcpIndex.MultiSimilarityMatcher.MultiMatch.MultiMatch(int, (int, int)[])
+  nameWithType.vb: LcpIndex.MultiSimilarityMatcher.MultiMatch.New(Integer, (Integer, Integer)())
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.#ctor*
+  name: MultiMatch
+  href: api/BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_MultiSimilarityMatcher_MultiMatch__ctor_
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.MultiMatch
+  fullName.vb: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.New
+  nameWithType: LcpIndex.MultiSimilarityMatcher.MultiMatch.MultiMatch
+  nameWithType.vb: LcpIndex.MultiSimilarityMatcher.MultiMatch.New
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.Length
+  name: Length
+  href: api/BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_MultiSimilarityMatcher_MultiMatch_Length
+  commentId: P:BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.Length
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.Length
+  nameWithType: LcpIndex.MultiSimilarityMatcher.MultiMatch.Length
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.Length*
+  name: Length
+  href: api/BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_MultiSimilarityMatcher_MultiMatch_Length_
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.Length
+  isSpec: "True"
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.Length
+  nameWithType: LcpIndex.MultiSimilarityMatcher.MultiMatch.Length
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.Occurrences
+  name: Occurrences
+  href: api/BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_MultiSimilarityMatcher_MultiMatch_Occurrences
+  commentId: P:BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.Occurrences
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.Occurrences
+  nameWithType: LcpIndex.MultiSimilarityMatcher.MultiMatch.Occurrences
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.Occurrences*
+  name: Occurrences
+  href: api/BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_MultiSimilarityMatcher_MultiMatch_Occurrences_
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.Occurrences
+  isSpec: "True"
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.MultiMatch.Occurrences
+  nameWithType: LcpIndex.MultiSimilarityMatcher.MultiMatch.Occurrences
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.Texts
+  name: Texts
+  href: api/BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_MultiSimilarityMatcher_Texts
+  commentId: P:BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.Texts
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.Texts
+  nameWithType: LcpIndex.MultiSimilarityMatcher.Texts
+- uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.Texts*
+  name: Texts
+  href: api/BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.html#BelNytheraSeiche_WaveletMatrix_LcpIndex_MultiSimilarityMatcher_Texts_
+  commentId: Overload:BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.Texts
+  isSpec: "True"
+  fullName: BelNytheraSeiche.WaveletMatrix.LcpIndex.MultiSimilarityMatcher.Texts
+  nameWithType: LcpIndex.MultiSimilarityMatcher.Texts
 - uid: BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat
   name: LcpIndex.Repeat
   href: api/BelNytheraSeiche.WaveletMatrix.LcpIndex.Repeat.html
