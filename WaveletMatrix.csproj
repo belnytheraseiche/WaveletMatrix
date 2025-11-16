@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <!-- <TargetFramework>net9.0</TargetFramework> -->
-    <TargetFrameworks>netstandard2.1;net8.0;net9.0</TargetFrameworks>
+    <!-- <TargetFramework>net10.0</TargetFramework> -->
+    <TargetFrameworks>netstandard2.1;net8.0;net9.0;net10.0</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
@@ -12,7 +12,7 @@
     <AssemblyName>BelNytheraSeiche.WaveletMatrix</AssemblyName>
     <Product>BelNytheraSeiche.WaveletMatrix</Product>
     <Company></Company>
-    <Version>1.0.5</Version>
+    <Version>1.0.6</Version>
     <Copyright>© belnytheraseiche</Copyright>
     <Authors>belnytheraseiche</Authors>
     <PackageId>BelNytheraSeiche.WaveletMatrix</PackageId>
@@ -64,6 +64,9 @@
     <!-- <gcAllowVeryLargeObjects>true</gcAllowVeryLargeObjects> -->
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net10.0'">
+    <NoWarn>CS9191</NoWarn>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(TargetFramework)' == 'net9.0'">
     <NoWarn>CS9191</NoWarn>
   </PropertyGroup>
@@ -89,6 +92,8 @@
     <Deterministic>true</Deterministic>
     <!-- <AnalysisLevel>latest-Recommended</AnalysisLevel> -->
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release' And '$(TargetFramework)' == 'net10.0'">
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Release' And '$(TargetFramework)' == 'net9.0'">
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Release' And '$(TargetFramework)' == 'net8.0'">
@@ -101,6 +106,6 @@
     <!-- <Compile Remove="tests/**/*.cs" /> -->
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="System.IO.Hashing" Version="9.0.9" />
+    <PackageReference Include="System.IO.Hashing" Version="10.0.0" />
   </ItemGroup>
 </Project>
