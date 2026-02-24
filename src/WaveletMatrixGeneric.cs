@@ -44,8 +44,9 @@ namespace BelNytheraSeiche.WaveletMatrix;
 public sealed class WaveletMatrixGeneric<T> where T : IComparable<T>
 {
     readonly WaveletMatrixCore core_;
-    readonly Dictionary<T, int> assignMap_;
-    readonly T[] resolveMap_;
+    readonly Dictionary<T, int>? assignMap_;
+    readonly T[]? resolveMap_;
+    readonly WaveletMatrixOptions options_;
 
     /// <summary>
     /// Gets the total number of elements in the sequence.
@@ -58,17 +59,19 @@ public sealed class WaveletMatrixGeneric<T> where T : IComparable<T>
     WaveletMatrixGeneric(WaveletMatrixCore core, Init<T> init)
     {
         core_ = core;
-        (assignMap_, resolveMap_) = init;
+        assignMap_ = init.AssignMap;
+        resolveMap_ = init.ResolveMap;
+        options_ = init.Options ?? WaveletMatrixOptions.Default;
     }
 
     /// <summary>
     /// Creates a new instance of the <see cref="WaveletMatrixGeneric{T}"/> from a sequence of elements.
-    /// This factory method performs coordinate compression on the input sequence before building the core data structure.
     /// </summary>
     /// <param name="sequence">The input sequence of data to be indexed.</param>
+    /// <param name="options">Algorithm configuration options.</param>
     /// <returns>A new, fully initialized <see cref="WaveletMatrixGeneric{T}"/> instance.</returns>
     /// <exception cref="ArgumentNullException">Thrown if <paramref name="sequence"/> is null.</exception>
-    public static WaveletMatrixGeneric<T> Create(IEnumerable<T> sequence)
+    public static WaveletMatrixGeneric<T> Create(IEnumerable<T> sequence, WaveletMatrixOptions? options = null)
     {
 #if NET6_0_OR_GREATER
         ArgumentNullException.ThrowIfNull(sequence);
@@ -77,8 +80,18 @@ public sealed class WaveletMatrixGeneric<T> where T : IComparable<T>
             throw new ArgumentNullException(nameof(sequence));
 #endif
 
+        options ??= WaveletMatrixOptions.Default;
         var array1 = sequence.ToArray();
         var array2 = new int[array1.Length];
+
+        if (options.BypassCoordinateCompression && typeof(T) == typeof(int))
+        {
+            // Optimization for dense integer sequences (e.g. LLM tokens)
+            var intArr = (int[])(object)array1;
+            var core = WaveletMatrixCore.Create(intArr);
+            return new(core, new(null, null, options));
+        }
+
         var elements = array1.Distinct().Order().ToArray();
         var assignMap = new Dictionary<T, int>(elements.Length);
         for (var i = 0; i < elements.Length; i++)
@@ -86,8 +99,26 @@ public sealed class WaveletMatrixGeneric<T> where T : IComparable<T>
         for (var i = 0; i < array1.Length; i++)
             array2[i] = assignMap[array1[i]];
 
-        var core = WaveletMatrixCore.Create(array2);
-        return new(core, new(assignMap, elements));
+        var coreGeneric = WaveletMatrixCore.Create(array2);
+        return new(coreGeneric, new(assignMap, elements, options));
+    }
+
+    /// <summary>
+    /// Maps a Wavelet Matrix directly from a flat binary file using Memory-Mapped Files (MMF).
+    /// This is the fastest way to load large matrices for inference or low-latency lookups.
+    /// </summary>
+    /// <param name="filePath">The path to the binary file.</param>
+    /// <param name="options">Algorithm configuration options.</param>
+    /// <returns>A mapped <see cref="WaveletMatrixGeneric{T}"/> instance.</returns>
+    public static WaveletMatrixGeneric<T> Map(string filePath, WaveletMatrixOptions? options = null)
+    {
+        if (typeof(T) != typeof(int))
+            throw new NotSupportedException("Memory mapping is currently only supported for direct integer underlying core (uncompressed).");
+
+        options ??= WaveletMatrixOptions.Default;
+        var mapper = new FlatMemoryMappedSerializer();
+        var core = mapper.Deserialize(filePath, options);
+        return new(core, new(null, null, options));
     }
 
     /// <summary>
@@ -209,7 +240,7 @@ public sealed class WaveletMatrixGeneric<T> where T : IComparable<T>
             using var memoryStream = new MemoryStream();
             {
                 using var compressStream = new BrotliStream(memoryStream, options.CompressionLevel);
-                genericSerializer.WriteResolveMap(compressStream, obj.resolveMap_);
+                genericSerializer.WriteResolveMap(compressStream, obj.resolveMap_ ?? Array.Empty<T>());
             }
             var array = memoryStream.ToArray();
             size1 = array.Length;
@@ -234,7 +265,8 @@ public sealed class WaveletMatrixGeneric<T> where T : IComparable<T>
         stream.Seek(lastPosition, SeekOrigin.Begin);
 
         // core
-        WaveletMatrixCore.Serialize(obj.core_, stream, options);
+        var serializer = obj.options_.Serializer ?? new BrotliWaveletSerializer();
+        serializer.Serialize(stream, obj.core_, obj.options_);
     }
 
     /// <summary>
@@ -246,10 +278,13 @@ public sealed class WaveletMatrixGeneric<T> where T : IComparable<T>
     /// If null, a default serializer for <see cref="byte"/>, <see cref="int"/>, or <see cref="char"/> will be used if applicable.
     /// If a default serializer is not available for <typeparamref name="T"/>, an exception will be thrown.
     /// </param>
+    /// <param name="options">
+    /// Algorithm configuration options.
+    /// </param>
     /// <returns>A new, deserialized instance of <see cref="WaveletMatrixGeneric{T}"/>.</returns>
     /// <exception cref="ArgumentNullException">Thrown if <paramref name="data"/> is null.</exception>
     /// <exception cref="ArgumentException">Thrown if <paramref name="genericSerializer"/> is null and a default serializer for type <typeparamref name="T"/> cannot be found.</exception>
-    public static WaveletMatrixGeneric<T> Deserialize(byte[] data, IGenericSerializer<T>? genericSerializer = null)
+    public static WaveletMatrixGeneric<T> Deserialize(byte[] data, IGenericSerializer<T>? genericSerializer = null, WaveletMatrixOptions? options = null)
     {
 #if NET6_0_OR_GREATER
         ArgumentNullException.ThrowIfNull(data);
@@ -259,7 +294,7 @@ public sealed class WaveletMatrixGeneric<T> where T : IComparable<T>
 #endif
 
         using var memoryStream = new MemoryStream(data);
-        return Deserialize(memoryStream, genericSerializer);
+        return Deserialize(memoryStream, genericSerializer, options);
     }
 
     /// <summary>
@@ -271,10 +306,13 @@ public sealed class WaveletMatrixGeneric<T> where T : IComparable<T>
     /// If null, a default serializer for <see cref="byte"/>, <see cref="int"/>, or <see cref="char"/> will be used if applicable.
     /// If a default serializer is not available for <typeparamref name="T"/>, an exception will be thrown.
     /// </param>
+    /// <param name="options">
+    /// Algorithm configuration options.
+    /// </param>
     /// <returns>A new, deserialized instance.</returns>
     /// <exception cref="ArgumentNullException">Thrown if <paramref name="file"/> is null.</exception>
     /// <exception cref="ArgumentException">Thrown if <paramref name="genericSerializer"/> is null and a default serializer for type <typeparamref name="T"/> cannot be found.</exception>
-    public static WaveletMatrixGeneric<T> Deserialize(string file, IGenericSerializer<T>? genericSerializer = null)
+    public static WaveletMatrixGeneric<T> Deserialize(string file, IGenericSerializer<T>? genericSerializer = null, WaveletMatrixOptions? options = null)
     {
 #if NET6_0_OR_GREATER
         ArgumentNullException.ThrowIfNull(file);
@@ -284,7 +322,7 @@ public sealed class WaveletMatrixGeneric<T> where T : IComparable<T>
 #endif
 
         using var fileStream = new FileStream(file, FileMode.Open, FileAccess.Read, FileShare.Read);
-        return Deserialize(fileStream, genericSerializer);
+        return Deserialize(fileStream, genericSerializer, options);
     }
 
     /// <summary>
@@ -300,7 +338,7 @@ public sealed class WaveletMatrixGeneric<T> where T : IComparable<T>
     /// <returns>A new, deserialized instance.</returns>
     /// <exception cref="ArgumentException">Thrown if <paramref name="genericSerializer"/> is null and a default serializer for type <typeparamref name="T"/> cannot be found.</exception>
     /// <exception cref="InvalidDataException">Thrown if the data format is unsupported, the type is incompatible, or the data is corrupt.</exception>
-    public static WaveletMatrixGeneric<T> Deserialize(Stream stream, IGenericSerializer<T>? genericSerializer = null)
+    public static WaveletMatrixGeneric<T> Deserialize(Stream stream, IGenericSerializer<T>? genericSerializer = null, WaveletMatrixOptions? options = null)
     {
 #if NET6_0_OR_GREATER
         ArgumentNullException.ThrowIfNull(stream);
@@ -350,8 +388,10 @@ public sealed class WaveletMatrixGeneric<T> where T : IComparable<T>
         if (xxh.GetCurrentHashAsUInt32() != BinaryPrimitives.ReadUInt32LittleEndian(buffer0[4..]))
             throw new InvalidDataException("Broken.");
 
-        var core = WaveletMatrixCore.Deserialize(stream);
-        return new(core, new(assignMap, resolveMap));
+        var serializer = options?.Serializer ?? new BrotliWaveletSerializer();
+        var core = serializer.Deserialize(stream, options);
+
+        return new WaveletMatrixGeneric<T>(core, new Init<T>(assignMap, resolveMap, options));
     }
 
     /// <summary>
@@ -630,10 +670,16 @@ public sealed class WaveletMatrixGeneric<T> where T : IComparable<T>
     }
 
     T GetResolved(int value)
-    => resolveMap_[value];
+    => resolveMap_ != null ? resolveMap_[value] : (T)(object)value;
 
     bool TryGetAssigned(T value, out int assigned)
-    => assignMap_.TryGetValue(value, out assigned);
+    {
+        if (assignMap_ != null)
+            return assignMap_.TryGetValue(value, out assigned);
+        
+        assigned = (int)(object)value;
+        return true;
+    }
 
     bool TryGetAssignedBounds(T minValue, T maxValue, out int lower, out int upper)
     {
@@ -841,5 +887,5 @@ public sealed class WaveletMatrixGeneric<T> where T : IComparable<T>
     /// <param name="Frequency">The number of times the value occurred.</param>
     public record ValueWithFrequency<Tx>(Tx Value, int Frequency);
 
-    record Init<Tx>(Dictionary<Tx, int> AssignMap, Tx[] ResolveMap) where Tx : IComparable<T>;
+    internal record Init<Tx>(Dictionary<Tx, int>? AssignMap, Tx[]? ResolveMap, WaveletMatrixOptions? Options) where Tx : IComparable<Tx>;
 }
