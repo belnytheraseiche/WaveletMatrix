@@ -46,10 +46,20 @@ public sealed class WaveletMatrixCore
     /// </summary>
     public int Size => size_;
 
+    /// <summary>
+    /// Gets the bits of each level.
+    /// </summary>
+    public RankSelectBitSet[] Matrix => matrix_;
+
+    /// <summary>
+    /// Gets the index offset of 1 in each level.
+    /// </summary>
+    public ReadOnlyMemory<int> Zeros => zeros_;
+
     // 
     // 
 
-    WaveletMatrixCore(Init init)
+    internal WaveletMatrixCore(Init init)
     {
         (size_, zeros_, matrix_) = init;
     }
@@ -1044,5 +1054,8 @@ public sealed class WaveletMatrixCore
 
     record KFindFrame(int Value, int Depth, int Start, int End, int Frequency);
 
-    record Init(int Size, int[] Zeros, RankSelectBitSet[] Matrix);
+    /// <summary>
+    /// Represents the initialization state of a <see cref="WaveletMatrixCore"/>.
+    /// </summary>
+    public record Init(int Size, int[] Zeros, RankSelectBitSet[] Matrix);
 }
