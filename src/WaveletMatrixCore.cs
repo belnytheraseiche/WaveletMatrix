@@ -40,19 +40,33 @@ public sealed class WaveletMatrixCore
     readonly int size_;
     readonly int[] zeros_;
     readonly RankSelectBitSet[] matrix_;
+    readonly Init _init;
 
     /// <summary>
     /// Gets the total number of elements in the sequence.
     /// </summary>
     public int Size => size_;
 
+    /// <summary>
+    /// Gets the bits of each level.
+    /// </summary>
+    public RankSelectBitSet[] Matrix => matrix_;
+
+    /// <summary>
+    /// Gets the index offset of 1 in each level.
+    /// </summary>
+    public ReadOnlyMemory<int> Zeros => zeros_;
+
     // 
     // 
 
-    WaveletMatrixCore(Init init)
+    public WaveletMatrixCore(Init init)
     {
+        _init = init;
         (size_, zeros_, matrix_) = init;
     }
+
+    public Init GetInit() => _init;
 
     /// <summary>
     /// Creates a new instance of the <see cref="WaveletMatrixCore"/> from a sequence of non-negative integers.
@@ -532,24 +546,6 @@ public sealed class WaveletMatrixCore
 
         return current;
     }
-
-    // ok, binary search
-    // public int Select(int k, int value)
-    // {
-    //     var total = Rank(size_, value);
-    //     if (k <= 0 || k > total)
-    //         return -1;
-    //     var (lo, hi, result) = (0, size_ - 1, -1);
-    //     while (lo <= hi)
-    //     {
-    //         var mid = lo + ((hi - lo) >> 1);
-    //         if (Rank(mid + 1, value) >= k)
-    //             hi = (result = mid) - 1;
-    //         else
-    //             lo = mid + 1;
-    //     }
-    //     return result;
-    // }
 
     /// <summary>
     /// Counts the number of occurrences of a specified value.
@@ -1044,5 +1040,8 @@ public sealed class WaveletMatrixCore
 
     record KFindFrame(int Value, int Depth, int Start, int End, int Frequency);
 
-    record Init(int Size, int[] Zeros, RankSelectBitSet[] Matrix);
+    /// <summary>
+    /// Represents the initialization state of a <see cref="WaveletMatrixCore"/>.
+    /// </summary>
+    public record Init(int Size, int[] Zeros, RankSelectBitSet[] Matrix);
 }

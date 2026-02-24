@@ -8,6 +8,7 @@
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <AssemblyTitle>BelNytheraSeiche: Advanced Sequence and Text Analysis Library</AssemblyTitle>
     <AssemblyName>BelNytheraSeiche.WaveletMatrix</AssemblyName>
     <Product>BelNytheraSeiche.WaveletMatrix</Product>
@@ -107,5 +108,8 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="System.IO.Hashing" Version="10.0.0" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.1'">
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0" />
   </ItemGroup>
 </Project>
