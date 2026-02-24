@@ -153,12 +153,12 @@ public sealed class BitSet(int arrayAlignment = 65536)
 /// </summary>
 /// <param name="buffer">The underlying ulong array that stores the bits.</param>
 /// <param name="count">The total number of bits in the set.</param>
-public class ImmutableBitSet(ulong[] buffer, int count)
+public class ImmutableBitSet(ReadOnlyMemory<ulong> buffer, int count)
 {
     /// <summary>
-    /// Gets the underlying ulong array that stores the bits.
+    /// Gets the underlying ulong buffer that stores the bits.
     /// </summary>
-    public ulong[] Buffer { get; } = buffer;
+    public ReadOnlyMemory<ulong> Buffer { get; } = buffer;
     /// <summary>
     /// Gets the total number of bits in the set.
     /// </summary>
@@ -184,7 +184,7 @@ public class ImmutableBitSet(ulong[] buffer, int count)
 
             var ai = (int)((uint)index >> 6);
             var bi = index & 0x3F;
-            return 0 != ((this.Buffer[ai] >> bi) & 1ul);
+            return 0 != ((this.Buffer.Span[ai] >> bi) & 1ul);
         }
     }
 
@@ -256,15 +256,15 @@ public class ImmutableBitSet(ulong[] buffer, int count)
 /// Select (finding the n-th bit) operations in near-constant time, making it suitable for
 /// succinct data structures like LOUDS Tries.
 /// </remarks>
-/// <param name="buffer">The underlying ulong array that stores the bits.</param>
+/// <param name="buffer">The underlying ulong buffer that stores the bits.</param>
 /// <param name="count">The total number of bits in the set.</param>
-public sealed class RankSelectBitSet(ulong[] buffer, int count) : ImmutableBitSet(buffer, count)
+public sealed class RankSelectBitSet(ReadOnlyMemory<ulong> buffer, int count) : ImmutableBitSet(buffer, count)
 {
     const int PrimaryAuxDirInterval = 512;
     const int SecondaryAuxDirInterval = 64;
-    int[] rankPrimaryAuxDir_ = [];
-    short[] rankSecondaryAuxDir_ = [];
-    int[] selectAuxDir_ = [];
+    ReadOnlyMemory<int> rankPrimaryAuxDir_ = ReadOnlyMemory<int>.Empty;
+    ReadOnlyMemory<short> rankSecondaryAuxDir_ = ReadOnlyMemory<short>.Empty;
+    ReadOnlyMemory<int> selectAuxDir_ = ReadOnlyMemory<int>.Empty;
     int lastRank0_ = -1;
     int totalOnes_ = -1;
 
@@ -277,8 +277,8 @@ public sealed class RankSelectBitSet(ulong[] buffer, int count) : ImmutableBitSe
             if (totalOnes_ == -1)
             {
                 var k = this.Count - 1;
-                var rank = rankPrimaryAuxDir_[k / PrimaryAuxDirInterval] + rankSecondaryAuxDir_[k / SecondaryAuxDirInterval];
-                var word = this.Buffer[k / 64];
+                var rank = rankPrimaryAuxDir_.Span[k / PrimaryAuxDirInterval] + rankSecondaryAuxDir_.Span[k / SecondaryAuxDirInterval];
+                var word = this.Buffer.Span[k / 64];
                 var offset = (k & 63) + 1;
                 var mask = offset == 64 ? UInt64.MaxValue : ((1ul << offset) - 1);
                 totalOnes_ = rank + PopCount(word & mask);
@@ -304,8 +304,8 @@ public sealed class RankSelectBitSet(ulong[] buffer, int count) : ImmutableBitSe
         else if (k >= this.Count)
             return this.TotalOnes;
 
-        var rank = rankPrimaryAuxDir_[k / PrimaryAuxDirInterval] + rankSecondaryAuxDir_[k / SecondaryAuxDirInterval];
-        var word = this.Buffer[k / 64];
+        var rank = rankPrimaryAuxDir_.Span[k / PrimaryAuxDirInterval] + rankSecondaryAuxDir_.Span[k / SecondaryAuxDirInterval];
+        var word = this.Buffer.Span[k / 64];
         var offset = k & 63;
         var mask = offset == 0 ? 0ul : ((1ul << offset) - 1);
         return rank + PopCount(word & mask);
@@ -328,7 +328,7 @@ public sealed class RankSelectBitSet(ulong[] buffer, int count) : ImmutableBitSe
     /// <returns>The zero-based index of the k-th set bit, or -1 if not found.</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public int Select1(int k)
-    => k > 0 && k <= selectAuxDir_.Length ? selectAuxDir_[k - 1] : -1;
+    => k > 0 && k <= selectAuxDir_.Length ? selectAuxDir_.Span[k - 1] : -1;
 
     /// <summary>
     /// Finds the position of the k-th unset bit (0).
@@ -357,7 +357,7 @@ public sealed class RankSelectBitSet(ulong[] buffer, int count) : ImmutableBitSe
     /// Sets the pre-calculated auxiliary directories for Rank and Select operations.
     /// </summary>
     /// <param name="auxDir">A tuple containing the rank primary directory, rank secondary directory, and the select directory.</param>
-    public void SetAuxDir((int[], short[], int[]) auxDir)
+    public void SetAuxDir((ReadOnlyMemory<int>, ReadOnlyMemory<short>, ReadOnlyMemory<int>) auxDir)
     {
         (rankPrimaryAuxDir_, rankSecondaryAuxDir_, selectAuxDir_) = auxDir;
     }
@@ -366,7 +366,7 @@ public sealed class RankSelectBitSet(ulong[] buffer, int count) : ImmutableBitSe
     /// Gets the pre-calculated auxiliary directories for Rank and Select operations.
     /// </summary>
     /// <returns>A tuple containing the rank primary directory, rank secondary directory, and the select directory.</returns>
-    public (int[], short[], int[]) GetAuxDir()
+    public (ReadOnlyMemory<int>, ReadOnlyMemory<short>, ReadOnlyMemory<int>) GetAuxDir()
     => (rankPrimaryAuxDir_, rankSecondaryAuxDir_, selectAuxDir_);
 
     /// <summary>
@@ -374,7 +374,7 @@ public sealed class RankSelectBitSet(ulong[] buffer, int count) : ImmutableBitSe
     /// </summary>
     /// <param name="bitSet">The immutable bit set to process.</param>
     /// <returns>A tuple containing the generated directories for rank and select.</returns>
-    public static (int[], short[], int[]) CreateAuxDir(ImmutableBitSet bitSet)
+    public static (ReadOnlyMemory<int>, ReadOnlyMemory<short>, ReadOnlyMemory<int>) CreateAuxDir(ImmutableBitSet bitSet)
     {
         var rankPrimaryAuxDir = new int[(bitSet.Count + PrimaryAuxDirInterval - 1) / PrimaryAuxDirInterval];
         var rankSecondaryAuxDir = new short[(bitSet.Count + SecondaryAuxDirInterval - 1) / SecondaryAuxDirInterval];
@@ -397,7 +397,7 @@ public sealed class RankSelectBitSet(ulong[] buffer, int count) : ImmutableBitSe
                 l.Add(i);
             }
         }
-        return (rankPrimaryAuxDir, rankSecondaryAuxDir, [.. l]);
+        return (rankPrimaryAuxDir, rankSecondaryAuxDir, l.ToArray());
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
