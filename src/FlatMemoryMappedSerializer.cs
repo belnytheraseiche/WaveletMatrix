@@ -85,9 +85,40 @@ public sealed class FlatMemoryMappedSerializer : IWaveletSerializer
     }
 
     /// <summary>
-    /// Serialization to flat file is currently not implemented for this specialized mapper.
-    /// Typically used for reading pre-compiled matrices.
+    /// Serializes a Wavelet Matrix Core to a flat binary file for high-speed memory mapping.
     /// </summary>
+    public unsafe void Save(string filePath, WaveletMatrixCore core)
+    {
+        var init = core.GetInit(); 
+        
+        using var fs = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.None);
+        using var writer = new BinaryWriter(fs);
+
+        // Header: [Magic (4)] [TypeSize (4)] [Length (4)] [Depth (4)]
+        writer.Write(0x574D5847); // WMXG
+        writer.Write(4); // Only supports 4-byte (int) cores for now
+        writer.Write(core.Size);
+        writer.Write(init.Matrix.Length);
+
+        for (int i = 0; i < init.Matrix.Length; i++)
+        {
+            var bitset = init.Matrix[i];
+            if (bitset is not ImmutableBitSet immutable)
+                throw new NotSupportedException("FlatMemoryMappedSerializer only supports saving ImmutableBitSet based cores.");
+
+            writer.Write(immutable.Count);
+            
+            // Writing raw bit data
+            var data = immutable.Buffer.Span;
+            for (int j = 0; j < data.Length; j++)
+            {
+                writer.Write(data[j]);
+            }
+
+            writer.Write(init.Zeros[i]);
+        }
+    }
+
     public void Serialize(Stream stream, WaveletMatrixCore core, WaveletMatrixOptions? options = null)
     {
         throw new NotSupportedException("FlatMemoryMappedSerializer is optimized for high-speed reading. Use a standard serializer for writing.");

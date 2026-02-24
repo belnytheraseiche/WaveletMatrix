@@ -43,6 +43,7 @@ namespace BelNytheraSeiche.WaveletMatrix;
 /// </example>
 public sealed class WaveletMatrixGeneric<T> where T : IComparable<T>
 {
+    public WaveletMatrixCore Core => core_;
     readonly WaveletMatrixCore core_;
     readonly Dictionary<T, int>? assignMap_;
     readonly T[]? resolveMap_;
@@ -87,8 +88,8 @@ public sealed class WaveletMatrixGeneric<T> where T : IComparable<T>
         if (options.BypassCoordinateCompression && typeof(T) == typeof(int))
         {
             // Optimization for dense integer sequences (e.g. LLM tokens)
-            var intArr = (int[])(object)array1;
-            var core = WaveletMatrixCore.Create(intArr);
+            var intArr = (int[])(object)array1; 
+            var core = WaveletMatrixCore.Create(intArr); 
             return new(core, new(null, null, options));
         }
 
